@@ -22,7 +22,7 @@
 
 html {
   min-height: 100svh;
-  background-color: #f9f7f8;
+  background-color: var(--white);
   scrollbar-gutter: stable;
   overflow-x: hidden;
   /* hanging-punctuation: first last; */
@@ -31,6 +31,7 @@ html {
 body {
   min-height: 100dvh;
   color: var(--black);
+  padding-inline: var(--gap-16);
 }
 
 body,

@@ -54,6 +54,7 @@ a {
 }
 
 .btn-secondary {
+  background-color: var(--white);
   border: 1.5px solid var(--grey-200);
   color: var(--grey-500);
 }

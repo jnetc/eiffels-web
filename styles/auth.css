@@ -20,9 +20,13 @@
 }
 
 .container {
-  display: grid;
-  max-width: 460px;
+  --container-width: 460px;
+
   width: 100%;
+  max-width: var(--container-width);
+  display: grid;
+  position: relative;
+  padding-block-start: var(--gap-64);
 }
 
 .title {
@@ -94,15 +98,20 @@
 
 .auth__checkbox-group {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   column-gap: var(--gap-12);
   padding-block: var(--gap-16) var(--gap-32);
   font-size: var(--font-16);
+  align-items: baseline;
 
   & input {
-    width: var(--size-20);
+    flex: 1 0 var(--size-20);
+    max-width: var(--size-20);
     aspect-ratio: 1;
+    position: relative;
+    top: 3px;
+  }
+  & p {
+    flex: 0 1 auto;
   }
 }
 
@@ -116,4 +125,16 @@
 
 .container:last-of-type a {
   justify-self: center;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/svg/grid_auth.svg');
+  background-position:top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
 }

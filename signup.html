@@ -21,28 +21,28 @@
     <div class="container">
       <h1 class="title">Sign Up</h1>
       <p class="auth_txt">Please, fill all the fields and we'll send you to your <strong>whatsapp</strong> number for authorization.</p>
-        <form action="/auth.html" method="post" class="auth__form">
-          <div class="auth__input-group">
-            <label for="first-name">First Name *</label>
-            <input type="text" name="first-name" id="first-name" placeholder="First Name" pattern="\w{2,}" title="Minimum 2 characters" required>
-          </div>
-          <div class="auth__input-group">
-            <label for="last-name">Last Name *</label>
-            <input type="text" name="last-name" id="last-name" placeholder="Last Name" pattern="\w{2,}" title="Minimum 2 characters" required>
-          </div>
-          <div class="auth__input-group">
-            <label for="phone-number">Phone Number *</label>
-            <input type="tel" name="phone-number" id="phone-number" placeholder="Phone Number" inputmode="tel" pattern="[0-9+#]{10,}" title="Minimum 10 digits" required >
-          </div>
-          <!-- IF WE HAVE AN ERROR -->
-          <b class="error-message">Your phone number is already registered</b>
-          <!-- Accept terms and policy -->
-          <div class="auth__checkbox-group">
-            <input type="checkbox" name="terms" id="terms" required>
-            <p class="accept-terms">I agree with <a href="#" class="href" title="Terms of Use">Terms of Use</a> and <a href="#" class="href" title="Privacy Policy">Privacy Policy</a></p>
-          </div>
-          <button type="submit" class="btn-64 btn-primary auth__btn">Sign Up</button>
-        </form>
+      <form action="/auth.html" method="post" class="auth__form">
+        <div class="auth__input-group">
+          <label for="first-name">First Name *</label>
+          <input type="text" name="first-name" id="first-name" placeholder="First Name" pattern="\w{2,}" title="Minimum 2 characters" required>
+        </div>
+        <div class="auth__input-group">
+          <label for="last-name">Last Name *</label>
+          <input type="text" name="last-name" id="last-name" placeholder="Last Name" pattern="\w{2,}" title="Minimum 2 characters" required>
+        </div>
+        <div class="auth__input-group">
+          <label for="phone-number">Phone Number *</label>
+          <input type="tel" name="phone-number" id="phone-number" placeholder="Phone Number" inputmode="tel" pattern="[0-9+#]{10,}" title="Minimum 10 digits" required >
+        </div>
+        <!-- IF WE HAVE AN ERROR -->
+        <b class="error-message">Your phone number is already registered</b>
+        <!-- Accept terms and policy -->
+        <div class="auth__checkbox-group">
+          <input type="checkbox" name="terms" id="terms" required>
+          <p class="accept-terms">I agree with <a href="#" class="href" title="Terms of Use">Terms of Use</a> and <a href="#" class="href" title="Privacy Policy">Privacy Policy</a></p>
+        </div>
+        <button type="submit" class="btn-64 btn-primary auth__btn">Sign Up</button>
+      </form>
       <!-- IF YOU HAVE AN ACCOUNT -->
       <p class="auth_txt">Already have an account? <a href="/signin.html" class="href" title="Sign In">Sign In</a></p>
 
