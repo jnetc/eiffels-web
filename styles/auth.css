@@ -1,0 +1,119 @@
+.auth {
+  max-width: 1920px;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  margin-inline: auto;
+}
+
+.auth nav {
+  padding-block: var(--gap-18);
+}
+
+.eiffels-logo {
+  display: flex;
+  max-width: 6rem;
+}
+
+.auth .main {
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  display: grid;
+  max-width: 460px;
+  width: 100%;
+}
+
+.title {
+  justify-self: center;
+  display: inline;
+  color: transparent;
+  font-size: var(--font-48);
+  font-weight: bold;
+  background-image: var(--gradient);
+  background-clip: text;
+}
+
+.auth_txt:not(:has(a)) {
+    padding-block: var(--gap-24) 0;
+}
+.auth_txt:has(a) {
+  justify-self: center;
+  padding-block: var(--gap-24) var(--gap-64);
+}
+
+.sub-txt {
+  font-size: var(--font-14);
+}
+
+
+.auth__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-16);
+  row-gap: var(--gap-16);
+  padding-block: var(--gap-32);
+  border-bottom: 1.5px solid var(--grey-200);
+}
+
+
+.auth__form:not(:has(.auth__checkbox-group)) .auth__input-group,
+.auth__input-group:nth-of-type(3),
+.auth__checkbox-group,
+.error-message,
+.auth__btn {
+  grid-column: 1 / -1;
+}
+
+.auth__input-group {
+  display: grid;
+  row-gap: var(--gap-8);
+
+  & label {
+    font-size: var(--font-14);
+    font-weight: bold;
+  }
+
+  & input {
+    width: 100%;
+    font-size: var(--font-18);
+    border: none;
+    border-bottom: 1.5px solid var(--black);
+    padding: .725rem 1rem;
+    border-radius: .5rem;
+    background-color: transparent;
+  }
+
+  & input::placeholder {
+    color: var(--grey-200);
+    font-size: var(--font-18);
+  }
+}
+
+
+.auth__checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--gap-12);
+  padding-block: var(--gap-16) var(--gap-32);
+  font-size: var(--font-16);
+
+  & input {
+    width: var(--size-20);
+    aspect-ratio: 1;
+  }
+}
+
+.auth__form:not(:has(.auth__checkbox-group)) .error-message {
+  padding-block-end: var(--gap-32);
+}
+
+.error-message {
+  color: var(--error);
+}
+
+.container:last-of-type a {
+  justify-self: center;
+}

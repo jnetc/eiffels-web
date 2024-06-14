@@ -1,0 +1,22 @@
+/*
+Don't put font-face in styled-components!!!
+because of this, has a strange visual effect
+when iterating elements for the first time.
+*/
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('../public/fonts/SF-Pro-Text-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: none;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('../public/fonts/SF-Pro-Text-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: none;
+}

@@ -1,0 +1,30 @@
+.landing {
+  max-width: 1920px;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  margin-inline: auto;
+}
+
+.landing nav {
+  padding-block: var(--gap-18);
+}
+
+.eiffels-logo {
+  display: flex;
+  max-width: 6rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.landing .main {
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  display: grid;
+  max-width: 460px;
+  width: 100%;
+}

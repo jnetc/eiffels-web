@@ -1,0 +1,169 @@
+@import url("./buttons-and-links.css");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* DEBUG */
+/* * * * * * {
+  outline: 1px solid red;
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 2rem;
+  }
+}
+
+html {
+  min-height: 100svh;
+  background-color: #f9f7f8;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+  /* hanging-punctuation: first last; */
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--black);
+}
+
+body,
+button {
+  font-family: 'SF Pro Text', sans-serif;
+  -webkit-font-smoothing: antialiased; /* for MacOs */
+
+}
+
+/* GLOBAL MEDIA */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+svg {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* GLOBAL TEXT */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: pretty;
+  line-height: 1.2;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.4;
+}
+
+p,
+input,
+textarea {
+  font-weight: 300;
+}
+
+/* a,
+p,
+em,
+input,
+textarea {
+  font-size: clamp(var(--font-16), 3vw, var(--font-18));
+} */
+
+input,
+textarea {
+  color: inherit;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 1.5px solid  var(--violet-light);
+  outline-offset: .25rem;
+}
+
+/* ::placeholder {
+  color: var(--grey-100);
+} */
+
+p,
+label,
+li:not(:has(h1, h2, h3, h4, h5, h6)),
+time {
+  color: var(--grey-500);
+  font-size: var(--font-18);
+}
+
+
+
+/* a:has(h1, h2, h3, h4, h5, h6, p),
+a:active {
+} */
+
+ul {
+  list-style-type: none;
+}
+
+strong {
+  color: var(--grey-500);
+}
+
+.font-20,
+.font-20 p {
+  font-size: clamp(var(--font-18), 2.75vw, var(--font-20));
+}
+
+.font-24,
+.font-24 p {
+  font-size: clamp(var(--font-20), 2.5vw, var(--font-24));
+}
+
+
+
+/* CLASSES */
+/* 1920 > */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(0, 6rem)) 1fr;
+  grid-auto-rows: min-content;
+  column-gap: var(--gap-32);
+  position: relative;
+}
+
+footer {
+  flex: 0 1 0;
+  margin-inline: auto;
+  padding-block: var(--gap-48) var(--gap-18);
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 959px) {
+  :root {
+    --body-padding: 1rem;
+  }
+
+}
+
+@media (max-width: 559px) {
+
+}

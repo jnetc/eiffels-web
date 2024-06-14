@@ -1,0 +1,102 @@
+:root {
+  --primary: #0073e6;
+  --white: #f5f5f7;
+  --grey-100: #EFF2F7;
+  --grey-200: #D2D9E7;
+  --grey-300: #8FA0C3;
+  --grey-400: #5973A6;
+  --grey-500: #3B4B6D;
+  --black: #282829;
+  --error: #FF006B;
+  --success: #67d74b;
+  --gradient: linear-gradient(to right, hsl(155 54% 47% / 1), hsl(210 100% 45% / 1),hsl(197 87% 30% / 1), hsl(197 87% 30% / 1));
+  --reflection: linear-gradient(to bottom, hsl(0 0% 100% / 0), hsl(213 73% 97% / .8));
+
+  --opacity-3: hsl(253 75% 61% / .03);
+  --opacity-5: hsl(253 75% 61% / .05);
+  --opacity-8: hsl(253 75% 61% / .08);
+  --opacity-10: hsl(253 75% 61% / .1);
+  --opacity-20: hsl(253 75% 61% / .2);
+  --opacity-30: hsl(253 75% 61% / .3);
+
+  /* CORNER SIZES */
+  --border-corner-4: 0.25rem;
+  --border-corner-6: 0.375rem;
+  --border-corner-8: 0.5rem;
+  --border-corner-12: 0.75rem;
+  --border-corner-16: 1rem;
+  --border-corner-24: 1.5rem;
+  --border-corner-32: 2rem;
+
+  /* GAP SIZES */
+  --gap-4: 0.25rem;
+  --gap-6: 0.375rem;
+  --gap-8: 0.5rem;
+  --gap-12: 0.75rem;
+  --gap-14: 0.875rem;
+  --gap-16: 1rem;
+  --gap-18: 1.125rem;
+  --gap-20: 1.25rem;
+  --gap-24: 1.5rem;
+  --gap-32: 2rem;
+  --gap-36: 2.25rem;
+  --gap-40: 2.5rem;
+  --gap-48: 3rem;
+  --gap-56: 3.5rem;
+  --gap-64: 4rem;
+  --gap-72: 4.5rem;
+  --gap-80: 5rem;
+  --gap-88: 5.5rem;
+  --gap-96: 6rem;
+  --gap-128: 8rem;
+  --gap-152: 9.5rem;
+  --gap-176: 11rem;
+  --gap-192: 12rem;
+  --gap-208: 13rem;
+  --gap-224: 14rem;
+  --gap-240: 15rem;
+
+  /* FONT SIZES */
+  --font-12: 0.75rem;
+  --font-14: 0.875rem;
+  --font-16: 1rem;
+  --font-18: 1.125rem;
+  --font-20: 1.25rem;
+  --font-24: 1.5rem;
+  --font-28: 1.75rem;
+  --font-32: 2rem;
+  --font-36: 2.25rem;
+  --font-40: 2.5rem;
+  --font-48: 3rem;
+  --font-56: 3.5rem;
+  --font-64: 4rem;
+  --font-72: 4.5rem;
+  --font-80: 5rem;
+  --font-88: 5.5rem;
+  --font-96: 6rem;
+  --font-112: 7rem;
+  --font-128: 8rem;
+
+  /* DOM ELEMENT SIZES */
+  --size-4: .25rem;
+  --size-8: .5rem;
+  --size-12: .75rem;
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+  --size-20: 1.25rem;
+  --size-24: 1.5rem;
+  --size-32: 2rem;
+  --size-36: 2.25rem;
+  --size-40: 2.5rem;
+  --size-48: 3rem;
+  --size-56: 3.5rem;
+  --size-64: 4rem;
+  --size-72: 4.5rem;
+  --size-96: 6rem;
+  --size-112: 7rem;
+  --size-128: 8rem;
+  --size-152: 9.5rem;
+  --size-176: 11rem;
+  --size-192: 12rem;
+  --size-208: 13rem;
+}

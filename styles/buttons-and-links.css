@@ -1,0 +1,81 @@
+/* RESET BUTTON STYLE */
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.btn-64,
+.btn-48 {
+  display: grid;
+  place-content: center;
+  padding: var(--gap-12) var(--gap-24);
+  border-radius: 50vw;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-64 {
+  min-height: var(--size-64);
+  font-size: var(--font-20);
+  text-transform: uppercase;
+  transition: background-color .3s ease-in-out;
+}
+
+.btn-48 {
+  min-height: var(--size-48);
+  font-size: var(--font-18);
+  text-transform: capitalize;
+  transition: border-color .3s ease-in-out;
+}
+
+.btn-fit {
+  width: fit-content;
+}
+
+.btn-primary {
+  --primary-active: #2089f2;
+  background-color: var(--primary);
+  color: var(--white);
+
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-active);
+}
+.btn-primary:active {
+  background-color: var(--primary-active);
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--grey-200);
+  color: var(--grey-500);
+}
+.btn-secondary:hover {
+  border-color: var(--black);
+}
+
+.btn-secondary:active {
+  border-color: var(--black);
+}
+
+
+.href {
+  position: relative;
+  color: var(--primary);
+  text-decoration: underline var(--primary);
+  font-weight: bold;
+  text-underline-offset: 2px;
+  transition: all .3s ease-in-out;
+}
+
+.href:hover {
+  text-decoration: underline transparent;
+  text-underline-offset: 5px;
+}

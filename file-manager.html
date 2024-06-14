@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+  <link rel="stylesheet" href="/styles/variable.css">
+  <link rel="stylesheet" href="/styles/fonts.css">
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/documentation.css">
+  <title>File Manager</title>
+  <meta name="description" content="" />
+</head>
+
+<body class="dashboard">
+
+  <nav>
+    <ul>
+      <!-- <li><a href="/">Home</a></li> -->
+      <li>
+        <button class="btn-signin">Julia Keikannen</button>
+      </li>
+    </ul>
+  </nav>
+
+  <aside>
+    <div class="aside__top">
+      <h2>Eiffers</h2>
+      <h3>Welcome: Julia Keikannen</h3>
+    </div>
+
+    <ul class="aside__center">
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/chat">Eiffels Chat</a></li>
+      <li><a href="/marketplace">Marketplace</a></li>
+      <li><a href="/file-manager" class="active">File Manager</a></li>
+      <li><a href="/sessions">Sessions</a></li>
+    </ul>
+
+    <ul class="aside__bottom">
+      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/share-referral">Share referral</a></li>
+      <form action="/signout" method="post" class="aside__bottom">
+        <button type="submit" class="btn-signin">Sign Out</button">
+      </form>
+    </ul>
+  </aside>
+
+  <main>
+    <div class="container">
+      <h1>Your File Manager</h1>
+    </div>
+  </main>
+
+</body>
+
+</html>
