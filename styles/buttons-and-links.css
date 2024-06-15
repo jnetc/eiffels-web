@@ -6,10 +6,17 @@ button {
   cursor: pointer;
 }
 
-a {
+nav a {
+  color: var(--black);
+  font-weight: 300;
+  text-decoration: none;
+}
+
+main a {
   color: var(--primary);
   font-weight: bold;
 }
+
 
 .btn-64,
 .btn-48 {
