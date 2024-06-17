@@ -73,18 +73,6 @@ main a {
   border-color: var(--black);
 }
 
-.fm-filters__btn {
-  min-height: var(--size-48);
-  min-width: var(--size-96);
-  padding: var(--gap-12) var(--gap-18);
-  border: 1.5px solid var(--grey-200);
-  border-radius: 5rem;
-  color: var(--grey-500);
-  font-size: var(--font-18);
-  font-weight: bold;
-  transition: all .3s ease-in-out;
-}
-
 /* GLASS BUTTON STYLE WHEN SELECTED */
 .btn-selected {
   position: relative;
