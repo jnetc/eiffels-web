@@ -31,7 +31,7 @@ html {
 body {
   min-height: 100dvh;
   color: var(--black);
-  padding-inline: var(--gap-16);
+  position: relative;
 }
 
 body,
@@ -122,6 +122,16 @@ ul {
 
 strong {
   color: var(--grey-500);
+}
+
+.title-gradient {
+  width: fit-content;
+  display: inline;
+  color: transparent;
+  font-size: var(--font-48);
+  font-weight: bold;
+  background-image: var(--gradient);
+  background-clip: text;
 }
 
 .font-20,

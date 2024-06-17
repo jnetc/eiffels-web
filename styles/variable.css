@@ -10,7 +10,9 @@
   --error: #FF006B;
   --success: #67d74b;
   --gradient: linear-gradient(to right, hsl(155 54% 47% / 1), hsl(210 100% 45% / 1),hsl(197 87% 30% / 1), hsl(197 87% 30% / 1));
-  --reflection: linear-gradient(to bottom, hsl(0 0% 100% / 0), hsl(213 73% 97% / .8));
+  --gradient-10: linear-gradient(to right, hsl(155 54% 47% / .1), hsl(210 100% 45% / .1),hsl(197 87% 30% / .1), hsl(197 87% 30% / .1));
+  --gradient-20: linear-gradient(to right, hsl(155 54% 47% / .2), hsl(210 100% 45% / .2),hsl(197 87% 30% / .2), hsl(197 87% 30% / .2));
+  --reflection: linear-gradient(to top, hsl(0 0% 100% / 0), hsl(213 73% 97% / .7));
 
   --opacity-3: hsl(253 75% 61% / .03);
   --opacity-5: hsl(253 75% 61% / .05);

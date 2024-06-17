@@ -73,6 +73,41 @@ main a {
   border-color: var(--black);
 }
 
+.btn-filter {
+  min-height: var(--size-48);
+  min-width: var(--size-96);
+  padding: var(--gap-12) var(--gap-18);
+  border: 1.5px solid var(--grey-200);
+  border-radius: 5rem;
+  color: var(--grey-500);
+  font-size: var(--font-18);
+  font-weight: bold;
+  transition: all .3s ease-in-out;
+}
+
+/* GLASS BUTTON STYLE WHEN SELECTED */
+.btn-selected {
+  position: relative;
+  background-image: var(--gradient-10);
+  border: 1px solid var(--white);
+  box-shadow:
+    inset 0 -5px 10px hsl(0 0% 100% / .6),
+    inset 0 5px 10px #E0E8F2,
+    0 15px 15px hsl(205 45% 83% / .25),
+    0 5px 5px hsl(0 66% 89% / .1);
+
+  &::before {
+    content: '';
+    height: var(--size-16);
+    position: absolute;
+    top: 4px;
+    inset-inline: 15%;
+    background-image: var(--reflection);
+    border-radius: 5rem;
+    filter: blur(.5px);
+  }
+}
+
 
 .href {
   position: relative;

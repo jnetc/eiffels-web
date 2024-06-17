@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   margin-inline: auto;
+  padding-inline: var(--gap-16);
 }
 
 .landing nav {
@@ -42,19 +43,7 @@
 .auth-links__signup {
   padding: var(--gap-12) var(--gap-24);
   border-radius: var(--border-corner-24);
-  background-color: var(--primary);
-  color: var(--white);
-  border: 1.5px solid transparent;
-  transition:
-  background-color .3s ease-in-out,
-  border-color .3s ease-in-out,
-  color .3s ease-in-out;
-}
-.auth-links__signup:hover {
-  background-color: var(--white);
-  color: var(--black);
-  border-color: var(--primary);
-
+  transition: background-color .3s ease-in-out;
 }
 
 .landing .main {

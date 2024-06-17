@@ -8,52 +8,191 @@
   <link rel="stylesheet" href="/styles/variable.css">
   <link rel="stylesheet" href="/styles/fonts.css">
   <link rel="stylesheet" href="/styles/global.css">
-  <link rel="stylesheet" href="/styles/documentation.css">
+  <link rel="stylesheet" href="/styles/file-manager.css">
   <title>File Manager</title>
   <meta name="description" content="" />
+  <script src="/scripts/dashboard.js" defer></script>
 </head>
 
 <body class="dashboard">
-
-  <nav>
-    <ul>
-      <!-- <li><a href="/">Home</a></li> -->
-      <li>
-        <button class="btn-signin">Julia Keikannen</button>
-      </li>
-    </ul>
-  </nav>
-
-  <aside>
-    <div class="aside__top">
-      <h2>Eiffers</h2>
-      <h3>Welcome: Julia Keikannen</h3>
+  <!-- Вынести за пределы сдвигающейся сетки -->
+  <header class="dashboard__header">
+    <button class="btn-menu">
+      <svg class="icon">
+        <use xlink:href="./public/svg/ui_icons.svg#menu"></use>
+    </svg>
+  </button>
+    <a href="/" title="Eiffels home page" class="eiffels-logo">
+      <img src="./public/svg/logo.svg" class="logo" alt="Eiffels logo" title="">
+    </a>
+    <div class="header__user">
+      <p class="user__name">Name Surname</p>
+      <p class="user__role">Role</p>
+      <button class="user__account">NS</button>
     </div>
+  </header>
 
-    <ul class="aside__center">
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/chat">Eiffels Chat</a></li>
-      <li><a href="/marketplace">Marketplace</a></li>
-      <li><a href="/file-manager" class="active">File Manager</a></li>
-      <li><a href="/sessions">Sessions</a></li>
-    </ul>
+  <div class="dashboard__wrapper">
+    <nav class="dashboard__nav">
+      <div class="nav__scroll">
+        <ul class="nav__top">
+          <li class="nav__nav-item">
+            <a href="/eiffels-chat">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#eiffels-chat"></use></svg>
+              Eiffels Chat
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="/marketplace">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#marketplace"></use></svg>
+              Marketplace
+            </a>
+          </li>
+          <li class="nav__nav-item btn-selected">
+            <a href="/file-manager">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#file-manager"></use></svg>
+              File Manager
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="/sessions">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#sessions"></use></svg>
+              Sessions
+            </a>
+          </li>
+        </ul>
+        <ul class="nav__center">
+          <li class="nav__nav-item">
+            <a href="/documentation">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#documentation"></use></svg>
+              Documentation
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="/support">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#support"></use></svg>
+              Support
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="/share-referral">
+              <svg class="icon"><use xlink:href="./public/svg/ui_icons.svg#share-referral"></use></svg>
+              Share referral
+            </a>
+          </li>
+        </ul>
 
-    <ul class="aside__bottom">
-      <li><a href="/documentation">Documentation</a></li>
-      <li><a href="/support">Support</a></li>
-      <li><a href="/share-referral">Share referral</a></li>
-      <form action="/signout" method="post" class="aside__bottom">
-        <button type="submit" class="btn-signin">Sign Out</button">
-      </form>
-    </ul>
-  </aside>
+        <div class="nav__bottom">
+          <a href=https://wa.me/0501234567" class="nav__whatsapp">
+            <img src="./public/svg/whatsapp.svg" alt="whatsapp">
+            <p>Send it for</p>
+            <p>WhatsApp</p>
+          </a>
+        </div>
+      </div>
 
-  <main>
-    <div class="container">
-      <h1>Your File Manager</h1>
-    </div>
-  </main>
+      <!-- <footer class="footer">Copyright © 2024 Eiffels</footer> -->
+    </nav>
+
+    <main class="dashboard__main">
+      <div class="container">
+        <div class="main__header">
+          <h1 class="title-gradient">File Manager</h1>
+          <p class="main__description">Our File Manager Application is designed to provide a seamless and intuitive experience for managing and editing files
+          and documents.</p>
+        </div>
+
+        <div class="main__filters">
+          <div class="filters__scroll-area">
+            <button type="button" class="btn-filter btn-selected">All</button>
+            <button type="button" class="btn-filter">Eiffels</button>
+            <button type="button" class="btn-filter">WA Group 1</button>
+            <button type="button" class="btn-filter">WA Group 2</button>
+            <button type="button" class="btn-filter">WA Group 3</button>
+          </div>
+        </div>
+        <section class="main__table">
+          <div class="table__scroll-area">
+            <div class="table__header">
+              <p class="header__name">Name</p>
+              <p class="header__date">Date</p>
+              <p class="header__type">Type</p>
+              <p class="header__actions">Actions</p>
+            </div>
+            <ol class="table__body">
+              <li class="table__row">
+                <p class="row__name">Feedback from some customers</p>
+                <p class="row__date">15/04/2024 12:11</p>
+                <p class="row__type">pdf</p>
+                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">Caruna electricity bill for april</p>
+                <p class="row__date">02/04/2024 15:21</p>
+                <p class="row__type">pdf</p>
+                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">A funny photo when we were on vacation at the cottage</p>
+                <p class="row__date">01/04/2024 09:02</p>
+                <p class="row__type">png</p>
+                <div class="row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">A cloud that looks like a cake</p>
+                <p class="row__date">21/03/2024 11:19</p>
+                <p class="row__type">png</p>
+                <div class="row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">The accounting count from Jussi Miltonen</p>
+                <p class="row__date">16/02/2024 09:51</p>
+                <p class="row__type">pdf</p>
+                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">Our dog is lying in the snow</p>
+                <p class="row__date">03/01/2024 20:01</p>
+                <p class="row__type">jpg</p>
+                <div class="row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">New Year's greeting from our family to friends in Tokyo</p>
+                <p class="row__date">31/12/2024 16:34</p>
+                <p class="row__type">mp4</p>
+                <div class="row__actions"><button type="button" popovertarget="video-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">A list of groceries to buy for the week</p>
+                <p class="row__date">21/12/2024 10:47</p>
+                <p class="row__type">mp3</p>
+                <div class="row__actions"><button type="button" popovertarget="audio-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+              <li class="table__row">
+                <p class="row__name">Amendments to the lease agreement for the following year</p>
+                <p class="row__date">24/11/2024 13:51</p>
+                <p class="row__type">pdf</p>
+                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+<!-- Modal windows for different file types -->
+  <div id="image-file" popover>
+    <img src="./public/image/img487111.jpg" alt="alternate text">
+  </div>
+  <div id="pdf-file" popover>
+    <iframe src="./public/pdf/RC62IIcutshee.pdf" frameborder="0"></iframe>
+  </div>
+  <div id="video-file" popover>
+    <video src="./public/video/2_5436326585437275963.MP4" controls></video>
+  </div>
+  <div id="audio-file" popover>
+    <audio src="./public/audio/Hanz Zimmer - The Dark Knight.mp3" controls></audio>
+  </div>
 
 </body>
-
 </html>
