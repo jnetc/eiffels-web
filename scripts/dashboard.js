@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // Set source
       switch (folder) {
         case 'image':
-          imageFile.querySelector('img').setAttribute('src', `./public/${folder}/${filename}`)
+          imageFile.querySelector('img').setAttribute('src', `public/${folder}/${filename}`)
           break;
         case 'pdf':
-          pdfFile.querySelector('iframe').setAttribute('src', `./public/${folder}/${filename}`)
+          pdfFile.querySelector('iframe').setAttribute('src', `public/${folder}/${filename}`)
           break;
         case 'video':
-          videoFile.querySelector('video').setAttribute('src', `./public/${folder}/${filename}`)
+          videoFile.querySelector('video').setAttribute('src', `public/${folder}/${filename}`)
           break;
         case 'audio':
-          audioFile.querySelector('audio').setAttribute('src', `./public/${folder}/${filename}`)
+          audioFile.querySelector('audio').setAttribute('src', `public/${folder}/${filename}`)
           break;
         default:
           break;
