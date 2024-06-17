@@ -94,7 +94,7 @@
       <!-- <footer class="footer">Copyright © 2024 Eiffels</footer> -->
     </nav>
 
-    <main class="dashboard__main">
+    <main class="dashboard__main fm">
       <div class="container">
         <div class="main__header">
           <h1 class="title-gradient">File Manager</h1>
@@ -102,79 +102,79 @@
           and documents.</p>
         </div>
 
-        <div class="main__filters">
-          <div class="filters__scroll-area">
-            <button type="button" class="btn-filter btn-selected">All</button>
-            <button type="button" class="btn-filter">Eiffels</button>
-            <button type="button" class="btn-filter">WA Group 1</button>
-            <button type="button" class="btn-filter">WA Group 2</button>
-            <button type="button" class="btn-filter">WA Group 3</button>
+        <div class="fm-filters">
+          <div class="fm-filters__scroll-area">
+            <button type="button" class="fm-filters__btn btn-selected">All</button>
+            <button type="button" class="fm-filters__btn">Eiffels</button>
+            <button type="button" class="fm-filters__btn">WA Group 1</button>
+            <button type="button" class="fm-filters__btn">WA Group 2</button>
+            <button type="button" class="fm-filters__btn">WA Group 3</button>
           </div>
         </div>
-        <section class="main__table">
-          <div class="table__scroll-area">
-            <div class="table__header">
-              <p class="header__name">Name</p>
-              <p class="header__date">Date</p>
-              <p class="header__type">Type</p>
-              <p class="header__actions">Actions</p>
+        <section class="fm-tb">
+          <div class="fm-tb__scroll-area">
+            <div class="fm-tb__fm-header">
+              <p class="fm-header__name">Name</p>
+              <p class="fm-header__date">Date</p>
+              <p class="fm-header__type">Type</p>
+              <p class="fm-header__actions">Actions</p>
             </div>
-            <ol class="table__body">
-              <li class="table__row">
-                <p class="row__name">Feedback from some customers</p>
-                <p class="row__date">15/04/2024 12:11</p>
-                <p class="row__type">pdf</p>
-                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+            <ul class="fm-tb-body">
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">Feedback from some customers</p>
+                <p class="fm-row__date">15/04/2024 12:11</p>
+                <p class="fm-row__type">pdf</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">Caruna electricity bill for april</p>
-                <p class="row__date">02/04/2024 15:21</p>
-                <p class="row__type">pdf</p>
-                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">Caruna electricity bill for april</p>
+                <p class="fm-row__date">02/04/2024 15:21</p>
+                <p class="fm-row__type">pdf</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">A funny photo when we were on vacation at the cottage</p>
-                <p class="row__date">01/04/2024 09:02</p>
-                <p class="row__type">png</p>
-                <div class="row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">A funny photo when we were on vacation at the cottage</p>
+                <p class="fm-row__date">01/04/2024 09:02</p>
+                <p class="fm-row__type">png</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">A cloud that looks like a cake</p>
-                <p class="row__date">21/03/2024 11:19</p>
-                <p class="row__type">png</p>
-                <div class="row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">A cloud that looks like a cake</p>
+                <p class="fm-row__date">21/03/2024 11:19</p>
+                <p class="fm-row__type">png</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">The accounting count from Jussi Miltonen</p>
-                <p class="row__date">16/02/2024 09:51</p>
-                <p class="row__type">pdf</p>
-                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">The accounting count from Jussi Miltonen</p>
+                <p class="fm-row__date">16/02/2024 09:51</p>
+                <p class="fm-row__type">pdf</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">Our dog is lying in the snow</p>
-                <p class="row__date">03/01/2024 20:01</p>
-                <p class="row__type">jpg</p>
-                <div class="row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">Our dog is lying in the snow</p>
+                <p class="fm-row__date">03/01/2024 20:01</p>
+                <p class="fm-row__type">jpg</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="image-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">New Year's greeting from our family to friends in Tokyo</p>
-                <p class="row__date">31/12/2024 16:34</p>
-                <p class="row__type">mp4</p>
-                <div class="row__actions"><button type="button" popovertarget="video-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">New Year's greeting from our family to friends in Tokyo</p>
+                <p class="fm-row__date">31/12/2024 16:34</p>
+                <p class="fm-row__type">mp4</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="video-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">A list of groceries to buy for the week</p>
-                <p class="row__date">21/12/2024 10:47</p>
-                <p class="row__type">mp3</p>
-                <div class="row__actions"><button type="button" popovertarget="audio-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">A list of groceries to buy for the week</p>
+                <p class="fm-row__date">21/12/2024 10:47</p>
+                <p class="fm-row__type">mp3</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="audio-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-              <li class="table__row">
-                <p class="row__name">Amendments to the lease agreement for the following year</p>
-                <p class="row__date">24/11/2024 13:51</p>
-                <p class="row__type">pdf</p>
-                <div class="row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <li class="fm-tb__fm-row">
+                <p class="fm-row__name">Amendments to the lease agreement for the following year</p>
+                <p class="fm-row__date">24/11/2024 13:51</p>
+                <p class="fm-row__type">pdf</p>
+                <div class="fm-row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
               </li>
-            </ol>
+            </ul>
           </div>
         </section>
       </div>

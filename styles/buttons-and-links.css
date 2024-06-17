@@ -73,7 +73,7 @@ main a {
   border-color: var(--black);
 }
 
-.btn-filter {
+.fm-filters__btn {
   min-height: var(--size-48);
   min-width: var(--size-96);
   padding: var(--gap-12) var(--gap-18);
@@ -89,7 +89,7 @@ main a {
 .btn-selected {
   position: relative;
   background-image: var(--gradient-10);
-  border: 1px solid var(--white);
+  border: 1.5px solid var(--white);
   box-shadow:
     inset 0 -5px 10px hsl(0 0% 100% / .6),
     inset 0 5px 10px #E0E8F2,
