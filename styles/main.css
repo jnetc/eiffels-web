@@ -42,16 +42,16 @@ a {
   display: grid;
   place-items: center;
 }
-.dashboard {
+.app {
   display: grid;
   grid-template-columns: 360px 1fr;
   grid-template-rows: 4rem 1fr;
 }
-.dashboard nav {
+.app nav {
   grid-row: 1;
   grid-column: 2;
 }
-.dashboard aside {
+.app aside {
   grid-row: 2 span;
   grid-column: 1;
   height:100dvh;
@@ -60,19 +60,19 @@ a {
   padding: 2rem;
   background-color: rgb(254, 251, 255);
 }
-.dashboard .aside__top {
+.app .aside__top {
   display: grid;
   place-content: center;
   padding-block: 1rem;
 }
-.dashboard .aside__center {
+.app .aside__center {
   display: flex;
   flex-direction: column;
   gap: .5rem;
   padding-block: 2rem;
 }
 
-.dashboard .aside__bottom {
+.app .aside__bottom {
   display: flex;
   flex-direction: column;
   gap: .5rem;
@@ -91,7 +91,7 @@ aside a.active {
   color: white;
 }
 
-.dashboard main {
+.app main {
   grid-row: 2;
   grid-column: 2;
   display: grid;

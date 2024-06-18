@@ -168,6 +168,16 @@ footer {
   font-size: var(--font-14);
 }
 
+/* Hide navigation from DOM to prevent selection by keyboard after collapsing */
+@keyframes hide-from-DOM {
+  90% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 1200px) {

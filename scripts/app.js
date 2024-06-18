@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Toggle left side menu
   const menuButton = document.querySelector('.btn-menu')
-  const dashboard = document.querySelector('.dashboard__wrapper')
+  const app = document.querySelector('.app__wrapper')
 
   menuButton.addEventListener('click', () => {
-    dashboard.classList.toggle('hidden')
+    app.classList.toggle('hidden')
   })
 
   // Change active state of filter buttons
