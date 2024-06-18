@@ -332,11 +332,20 @@
   padding-block-start: var(--gap-24);
 }
 
-.fm-tb__fm-row:nth-of-type(even) {
-  background-color: var(--grey-100);
+.fm-tb__fm-row {
+  transition: background-color .3s ease-in-out;
+
+  &:nth-of-type(even) {
+    background-color: var(--grey-100);
+  }
+
+  &:hover,
+  &:has(input:checked) {
+    background-color: var(--grey-200);
+  }
 }
 
-/* .fm-row__checkbox, */
+/* Using button because only input and button have popever API */
 .fm-row__button {
   padding-block: var(--gap-16);
 }
