@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   popoverButons.forEach((button) => {
 
-    console.log(button);
     button.addEventListener('click', () => {
       // Get filename from data-file attribute
       const filename = button.closest('.fm-tb__fm-row').querySelector('.fm-row__name').dataset.file
@@ -58,5 +57,62 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
       }
     })
+  })
+
+  // Working with file manager table and rows
+  const selectAllCheckBox = document.getElementById('select-all')
+  const tableBody = document.querySelector('.fm-tb-body')
+  const rowCheckBoxes = [...tableBody.querySelectorAll('input')]
+  const actionBar = document.querySelector('.fm-tb__action-bar')
+  const listOfCheckBoxes = [...tableBody.querySelectorAll('input')]
+
+  listOfCheckBoxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+
+      const isChecked = listOfCheckBoxes.filter((checkbox) => checkbox.checked === true)
+      const isCheckedAll = listOfCheckBoxes.every((checkbox) => checkbox.checked === true)
+
+      // Selecting or deselecting all files
+      selectAllCheckBox.checked = isCheckedAll ? true : false
+
+      // "not-enable" class needed for disable buttons which should be enabled only when one file is selected
+      // to prevent multiple editings files
+      if (isChecked.length === 1) {
+        actionBar.classList.add('show')
+        actionBar.classList.remove('not-enable')
+        return
+      }
+
+      if (isChecked.length > 1) {
+        actionBar.classList.add('not-enable')
+        return
+      }
+
+      // Hide action bar if no files selected
+      actionBar.classList.remove('show')
+      actionBar.classList.remove('not-enable')
+    })
+  })
+
+
+  // Selecting or deselecting all files
+  selectAllCheckBox.addEventListener('change', (event) => {
+
+    if (!event.target.checked) {
+      for (let i = 0; i < rowCheckBoxes.length; i++) {
+        rowCheckBoxes[i].checked = false;
+      }
+      // Hide action bar
+      actionBar.classList.remove('show')
+      actionBar.classList.remove('not-enable')
+      return
+    }
+
+    for (let i = 0; i < rowCheckBoxes.length; i++) {
+      rowCheckBoxes[i].checked = true;
+    }
+    // Show action bar
+    actionBar.classList.add('show')
+    actionBar.classList.add('not-enable')
   })
 })
