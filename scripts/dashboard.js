@@ -30,12 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioFile = document.querySelector('#audio-file')
 
   popoverButons.forEach((button) => {
+
+    console.log(button);
     button.addEventListener('click', () => {
       // Get filename from data-file attribute
       const filename = button.closest('.fm-tb__fm-row').querySelector('.fm-row__name').dataset.file
-      // Get folder name from data-file attribute
+      // Get folder name from data-source attribute
       // Folder name is the same as the "public" folder
-      const folder = button.closest('.fm-tb__fm-row').querySelector('.fm-row__name').dataset.source
+      // image folder = pablic/image
+      // audio folder = pablic/audio
+      const folder = button.closest('.fm-tb__fm-row').querySelector('.fm-row__type').dataset.source
       // Set source
       switch (folder) {
         case 'image':

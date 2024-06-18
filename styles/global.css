@@ -124,6 +124,11 @@ strong {
   color: var(--grey-500);
 }
 
+.title {
+  font-size: var(--font-48);
+  font-weight: bold;
+  color: var(--grey-500);
+}
 .title-gradient {
   width: fit-content;
   display: inline;

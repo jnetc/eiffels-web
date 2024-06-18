@@ -106,7 +106,7 @@
 .dashboard__nav {
   grid-row: 2;
   grid-column: 1;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 /* Prevent text collapse when hide navigation */
 .dashboard__nav * {
@@ -293,17 +293,28 @@
   }
 }
 /* TABLE */
-.fm-tb {
-  display: grid;
-  grid-template-columns: 1fr 12rem 6rem 11rem;
-}
+/* .fm-tb { */
+  /* display: grid; */
+  /* grid-template-columns: var(--size-24) var(--size-64) 1fr 12rem; */
+  /* column-gap: var(--gap-12); */
+/* } */
 
 .fm-tb__fm-header,
-.fm-tb-body,
 .fm-tb__fm-row {
-  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: subgrid;
+  grid-template-columns: var(--size-24) var(--size-64) 1fr 12rem;
+  column-gap: var(--gap-18);
+  align-items: center;
+}
+
+.fm-header__checkbox,
+.fm-row__checkbox  {
+  display: flex;
+
+  & input {
+    width: var(--size-20);
+    aspect-ratio: 1;
+  }
 }
 
 .fm-tb__fm-header {
@@ -316,20 +327,56 @@
   }
 }
 
+/* TABLE BODY */
 .fm-tb-body {
-  /* display: contents; */
   padding-block-start: var(--gap-24);
 }
-.fm-tb__fm-row {
-  padding-block: var(--gap-16);
 
-  &:nth-of-type(even) {
-    background-color: var(--grey-100);
-  }
+.fm-tb__fm-row:nth-of-type(even) {
+  background-color: var(--grey-100);
 }
+
+/* .fm-row__checkbox, */
+.fm-row__button {
+  padding-block: var(--gap-16);
+}
+
+.fm-row__button {
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+  text-align: left;
+}
+
 .fm-row__type {
+  min-width: var(--size-64);
+  min-height: var(--size-32);
+  display: grid;
+  place-content: center;
+  border-radius: var(--border-corner-8);
+  color: var(--white);
+  font-size: var(--font-14);
+  font-weight: bold;
   text-transform: uppercase;
 }
+
+.fm-row__type[data-source="pdf"] {
+  background-color: #FE6565;
+}
+
+.fm-row__type[data-source="audio"] {
+  background-color: #2BD04D;
+}
+
+.fm-row__type[data-source="video"] {
+  background-color: #657FFE;
+}
+
+.fm-row__type[data-source="image"] {
+  background-color: #A52BD0;
+}
+
 
 /* MODAL POPOVER STYLE */
 #pdf-file,

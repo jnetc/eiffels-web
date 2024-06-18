@@ -96,7 +96,7 @@
     <main class="dashboard__main fm">
       <div class="container">
         <div class="main__header">
-          <h1 class="title-gradient">File Manager</h1>
+          <h1 class="title">File Manager</h1>
           <p class="main__description">Our File Manager Application is designed to provide a seamless and intuitive experience for managing and editing files
             and documents.</p>
         </div>
@@ -111,17 +111,24 @@
 
         <section class="fm-tb">
           <div class="fm-tb__fm-header">
+            <div class="fm-header__checkbox">
+              <input type="checkbox" name="select-all" id="select-all">
+            </div>
+            <p class="fm-header__type">Type</p>
             <p class="fm-header__name">Name</p>
             <p class="fm-header__date">Date</p>
-            <p class="fm-header__type">Type</p>
-            <p class="fm-header__actions">Actions</p>
           </div>
           <ul class="fm-tb-body">
             <li class="fm-tb__fm-row">
-              <p class="fm-row__name" data-file="RC62IIcutsheet_center.pdf" data-source="pdf">Feedback from some customers</p>
-              <p class="fm-row__date">15/04/2024 12:11</p>
-              <p class="fm-row__type">pdf</p>
-              <div class="fm-row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div>
+              <div class="fm-row__checkbox">
+                <input type="checkbox" name="select-file">
+              </div>
+              <button class="fm-row__button" popovertarget="pdf-file">
+                <p class="fm-row__type" data-source="pdf">pdf</p>
+                <p class="fm-row__name" data-file="RC62IIcutsheet_center.pdf" data-source="pdf">Feedback from some customers</p>
+                <p class="fm-row__date">15/04/2024 12:11</p>
+              </button>
+              <!-- <div class="fm-row__actions"><button type="button" popovertarget="pdf-file" class="btn-primary" style="padding: 8px 12px; border-radius: 50vw;">open</button></div> -->
             </li>
             <li class="fm-tb__fm-row">
               <p class="fm-row__name" data-file="RF62IIcutsheet_side.pdf" data-source="pdf">Caruna electricity bill for april</p>
