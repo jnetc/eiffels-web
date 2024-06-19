@@ -29,9 +29,16 @@
   row-gap: var(--gap-12);
 }
 
-.main__description {
+.header__title {
+  color: var(--grey-500);
+  font-size: clamp(var(--font-32), 3vw, var(--font-48));
+  font-weight: bold;
+}
+
+.header__description {
   max-width: 800px;
-  padding-block-end: var(--gap-48);
+  padding-block-end: clamp(var(--font-32), 3vw, var(--font-48));
+  font-size: clamp(var(--font-16), 1.25vw, var(--font-18));
 }
 
 .fm-filters {
@@ -51,7 +58,7 @@
   border: 1.5px solid transparent;
   border-radius: 5rem;
   color: var(--grey-500);
-  font-size: var(--font-18);
+  font-size: clamp(var(--font-14), 1.2vw, var(--font-18));
   font-weight: bold;
   white-space: nowrap;
   transition: all .3s ease-in-out;
@@ -157,6 +164,17 @@
 
 .fm-row__type[data-source="image"] {
   background-color: #A52BD0;
+}
+
+.fm-row__name {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fm-row__date {
+  color: var(--grey-400);
 }
 
 /* BOTTOM ACTION BAR */
@@ -278,33 +296,54 @@
     background-color: transparent;
   }
 }
+@media screen and (max-width: 1200px) {
+  .fm-tb__fm-header,
+  .fm-tb__fm-row {
+    grid-template-columns: var(--size-24) var(--size-64) 1fr;
+  }
+
+  .fm-header__date {
+    display: none;
+  }
+
+  .fm-row__checkbox,
+  .fm-row__type {
+    grid-column: 1;
+    grid-row: 1 / 2 span;
+  }
+
+  .fm-row__name {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: var(--font-16);
+  }
+
+  .fm-row__date {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: var(--font-14);
+  }
+}
 
 @media screen and (max-width: 768px) {
-  /* Hide navigation mobile priority  */
-  .app__wrapper {
-    grid-template-columns: 0 1fr;
+  .fm-tb__fm-header,
+  .fm-tb__fm-row {
+    grid-template-columns: var(--size-24) var(--size-48) 1fr;
+    column-gap: var(--gap-12);
   }
+  /* .fm-tb__fm-row {
+    grid-template-rows: auto;
+  } */
 
-  .app__wrapper.hidden {
-    grid-template-columns: 100vw 0;
-  }
-
-  .app__wrapper.hidden .app__nav {
-    animation: none;
-  }
-
-  /* Check animation in global css */
-  .app__wrapper .app__nav {
-    animation: hide-from-DOM .3s ease-in-out forwards;
-  }
-
-  .nav__scroll > *{
-    max-width: 320px;
+  .fm-row__type {
+    min-width: var(--size-48);
+    min-height: var(--size-32);
+    border-radius: var(--border-corner-8);
+    font-size: 10px;
   }
 
   .user__name,
-  .user__role,
-  .fm-row__date {
+  .user__role {
     display: none;
   }
 

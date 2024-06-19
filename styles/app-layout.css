@@ -4,8 +4,9 @@
 
 /* HEADER */
 .app__header {
-  grid-row: 1;
-  grid-column: 2 span;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
   display: grid;
   grid-template-columns: var(--size-48) auto 1fr;
   column-gap: var(--gap-16);
@@ -68,11 +69,12 @@
   }
 }
 
-/* APP MENU */
+/* APP WRAPPER */
 .app__wrapper {
   display: grid;
   grid-template-columns: 360px 1fr;
   column-gap: var(--gap-48);
+  padding-block-start: var(--gap-80);
   transition:
     grid-template-columns .3s cubic-bezier(0, 0.5, 0.25, 1),
     column-gap .3s cubic-bezier(0, 0.5, 0.25, 1);
@@ -221,5 +223,32 @@
     grid-row: 2;
     color: var(--white);
     font-size: var(--font-20);
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /* Hide navigation mobile priority  */
+  .app__wrapper {
+    grid-template-columns: 0 1fr;
+    column-gap: 0;
+  }
+
+  .app__wrapper.hidden {
+    grid-template-columns: 100vw 0;
+  }
+
+  .app__wrapper.hidden .app__nav {
+    animation: none;
+  }
+
+  /* Check animation in global css */
+  .app__wrapper .app__nav {
+    animation: hide-from-DOM .3s ease-in-out forwards;
+  }
+
+  .nav__scroll > * {
+    max-width: 320px;
   }
 }
