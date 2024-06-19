@@ -1,47 +1,42 @@
-.fm-filters {
-  display: flex;
-  gap: var(--gap-24);
-  overflow-y: hidden;
-  position: sticky;
-  top: 0;
-  padding-block: var(--gap-4) var(--gap-24);
+/* DAHSBOARD MAIN CONTENT */
+.app__main {
+  grid-row: 2;
+  grid-column: 2;
+  overflow-x: hidden;
+  height: calc(100vh - (var(--gap-48) + var(--gap-16) * 2));
+  position: relative;
   background-color: var(--white);
-  z-index: 1;
 }
 
-.fm-filters__scroll-area {
-  /* flex-grow: 1; */
-  /* width: 100%; */
-  /* min-width: 100%; */
-  /* max-width: 100%; */
-  display: flex;
-  /* flex-flow: nowrap; */
-  /* flex-direction: row; */
-  /* flex: 1 0 100%; */
-  /* white-space: nowrap; */
-  /* grid-template-columns: max-content; */
-  /* grid-auto-flow: column;
-  grid-auto-columns: 6rem; */
-  /* flex-wrap: nowrap; */
-  gap: var(--gap-24);
+.container {
+  width: min(100%, 1280px);
+  min-height: 100%;
+  position: relative;
+  margin-inline: auto;
+  padding-block-end: var(--gap-48);
 }
 
-.fm-filters__btn {
-  /* display: flex; */
-  /* flex-grow: 1; */
-  /* flex-basis: 100%; */
-  /* display: inline-block; */
-  /* flex: 1 0 auto; */
-  /* justify-content: center; */
-  /* height: var(--size-48); */
-  /* width: var(--size-96); */
-  /* min-width: var(--size-96); */
-  padding: var(--gap-12) var(--gap-18);
-  border: 1.5px solid var(--grey-200);
-  border-radius: 5rem;
+/* MAIN SECTION LEFT/RIGHT PADDINGS */
+.main__header,
+.fm-filters,
+.fm-tb__fm-header,
+.fm-tb__fm-row {
+  padding-inline: var(--gap-16);
+}
+
+.main__header {
+  display: grid;
+  row-gap: var(--gap-12);
+}
+
+.header__title {
   color: var(--grey-500);
-  font-size: var(--font-18);
+  font-size: clamp(var(--font-32), 3vw, var(--font-48));
   font-weight: bold;
-  white-space: nowrap;
-  transition: all .3s ease-in-out;
+}
+
+.header__description {
+  max-width: 800px;
+  padding-block-end: clamp(var(--font-32), 3vw, var(--font-48));
+  font-size: clamp(var(--font-16), 1.25vw, var(--font-18));
 }
