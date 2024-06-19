@@ -240,19 +240,19 @@
   & :where(iframe, video, img, audio) {
     margin: auto;
   }
-  & :where(iframe, video, img) {
-    height: calc(100dvh - var(--gap-96) * 2);
-  }
 
   & iframe {
     width: 100%;
+    height: 100%;
   }
 
   & video {
+    width: 100%;
     aspect-ratio: 16 / 9;
   }
 
   & img {
+    height: calc(100dvh - var(--gap-80) * 2);
     object-fit: contain;
     object-position: center;
   }
@@ -334,9 +334,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  /* .container {
+  .container {
     width: 100vw;
-  } */
+  }
 
   .fm-tb__fm-header,
   .fm-tb__fm-row {
