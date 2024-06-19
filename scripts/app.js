@@ -23,11 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // Modal windows for different file types
-  const popoverButons = document.querySelectorAll('[popovertarget]')
-  const imageFile = document.querySelector('#image-file')
-  const pdfFile = document.querySelector('#pdf-file')
-  const videoFile = document.querySelector('#video-file')
-  const audioFile = document.querySelector('#audio-file')
+  const popoverButons = document.querySelectorAll('.fm-row__button')
+  const dialog = document.querySelector('#fm-dialog')
+
+  dialog.querySelector('#fm-dialog__close-btn').addEventListener('click', () => {
+    dialog.close()
+
+    dialog.querySelector('img').classList.add('hide-file')
+    dialog.querySelector('iframe').classList.add('hide-file')
+    dialog.querySelector('audio').classList.add('hide-file')
+    dialog.querySelector('video').classList.add('hide-file')
+    // Stop playing audio and video after close
+    dialog.querySelector('audio').pause()
+    dialog.querySelector('video').pause()
+  })
+
 
   popoverButons.forEach((button) => {
 
@@ -39,19 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
       // image folder = pablic/image
       // audio folder = pablic/audio
       const folder = button.closest('.fm-tb__fm-row').querySelector('.fm-row__type').dataset.source
-      // Set source
+
+      dialog.showModal()
+      // Remove "hide-file" class to show the dialog window
+      // Set source to the attribute
+      // Adding filename to the top bar on the popover
       switch (folder) {
         case 'image':
-          imageFile.querySelector('img').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('img').classList.remove('hide-file')
+          dialog.querySelector('img').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('.fm-dialog__file-name').textContent = filename
           break;
         case 'pdf':
-          pdfFile.querySelector('iframe').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('iframe').classList.remove('hide-file')
+          dialog.querySelector('iframe').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('.fm-dialog__file-name').textContent = filename
           break;
         case 'video':
-          videoFile.querySelector('video').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('video').classList.remove('hide-file')
+          dialog.querySelector('video').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('.fm-dialog__file-name').textContent = filename
           break;
         case 'audio':
-          audioFile.querySelector('audio').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('audio').classList.remove('hide-file')
+          dialog.querySelector('audio').setAttribute('src', `public/${folder}/${filename}`)
+          dialog.querySelector('.fm-dialog__file-name').textContent = filename
           break;
         default:
           break;
@@ -59,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // Working with file manager table and rows
+  // Working with file manager table and rows selection
   const selectAllCheckBox = document.getElementById('select-all')
   const tableBody = document.querySelector('.fm-tb-body')
   const rowCheckBoxes = [...tableBody.querySelectorAll('input')]

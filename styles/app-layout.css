@@ -230,6 +230,21 @@ input {
   }
 }
 
+/* Style for circle buttons in app */
+.btn-circle {
+  width: var(--size-48);
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  border: 1.5px solid var(--grey-200);
+  border-radius: 50vw;
+
+  & svg {
+    width: var(--size-32);
+    aspect-ratio: 1;
+  }
+}
+
 @media screen and (max-width: 768px) {
 
   /* Hide navigation mobile priority  */
