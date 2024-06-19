@@ -1,3 +1,7 @@
+input {
+  accent-color: var(--grey-400);
+}
+
 .app {
   overflow: hidden;
 }
@@ -225,7 +229,6 @@
     font-size: var(--font-20);
   }
 }
-
 
 @media screen and (max-width: 768px) {
 

@@ -17,10 +17,7 @@
 }
 
 /* MAIN SECTION LEFT/RIGHT PADDINGS */
-.main__header,
-.fm-filters,
-.fm-tb__fm-header,
-.fm-tb__fm-row {
+.main__header {
   padding-inline: var(--gap-16);
 }
 
