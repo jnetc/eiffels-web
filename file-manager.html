@@ -29,7 +29,7 @@
     <div class="header__user">
       <p class="user__name">Name Surname</p>
       <p class="user__role">Role</p>
-      <button class="user__account">NS</button>
+      <button type="button" popovertarget="settings" class="user__account">NS</button>
     </div>
   </header>
 
@@ -231,6 +231,25 @@
 
       </div>
     </main>
+  </div>
+
+  <div id="settings" popover>
+
+      <a href="#">
+        <svg><use xlink:href="public/svg/ui_icons.svg#eiffels"></use></svg>
+        My Eiffels
+      </a>
+      <a href="#">
+        <svg><use xlink:href="public/svg/ui_icons.svg#settings"></use></svg>
+        Settings
+      </a>
+      <form action="signout" method="post">
+        <button type="submit">
+          <svg><use xlink:href="public/svg/ui_icons.svg#signout"></use></svg>
+          Sign Out
+        </button>
+      </form>
+
   </div>
 
 <!-- Modal windows for different file types -->

@@ -14,8 +14,10 @@ input {
   display: grid;
   grid-template-columns: var(--size-48) auto 1fr;
   column-gap: var(--gap-16);
-  padding: var(--gap-16);
   align-items: center;
+  padding: var(--gap-16);
+  background-color: var(--white);
+  z-index: 99;
 }
 
 .eiffels-logo {
@@ -244,6 +246,57 @@ input {
     aspect-ratio: 1;
   }
 }
+
+/* User Settings Popover */
+[popover]:popover-open {
+  display: grid;
+}
+
+#settings {
+  min-width: 280px;
+  align-items: center;
+  gap: var(--gap-16);
+  inset: 0 var(--gap-24) auto auto;
+  inset-block-start: 5rem;
+  padding: var(--gap-32);
+  background-color: var(--surface);
+  border: 1px solid var(--grey-100);
+  border-radius: var(--border-corner-12);
+  box-shadow:
+      0 15px 15px hsl(205 45% 83% / .25),
+      0 5px 5px hsl(0 66% 89% / .1);
+
+  & svg {
+    width: var(--size-32);
+    aspect-ratio: 1;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  & :where(a, button) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-18);
+    padding: var(--gap-8) var(--gap-12);
+    border-radius: var(--border-corner-8);
+    color: var(--black);
+    font-size: var(--font-20);
+    transition: background-color .3s ease-in-out;
+
+    &:hover {
+      background-color: var(--grey-100);
+    }
+  }
+
+  & form {
+    padding-block-start: var(--gap-12);
+    border-top: 1px solid var(--grey-200);
+  }
+}
+
 
 @media screen and (max-width: 768px) {
 
