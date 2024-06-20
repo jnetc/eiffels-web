@@ -77,10 +77,10 @@ main a {
 .btn-selected {
   position: relative;
   background-image: var(--gradient-10);
-  border: 1.5px solid var(--white);
   box-shadow:
     inset 0 -5px 10px hsl(0 0% 100% / .6),
     inset 0 5px 10px #E0E8F2,
+    inset 0 0 10px 7px #E0E8F2,
     0 15px 15px hsl(205 45% 83% / .25),
     0 5px 5px hsl(0 66% 89% / .1);
 
@@ -97,6 +97,7 @@ main a {
 }
 
 
+/* Text links */
 .href {
   position: relative;
   color: var(--primary);

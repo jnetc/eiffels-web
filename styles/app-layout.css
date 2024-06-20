@@ -107,8 +107,8 @@ input {
 }
 
 /* Adding padding to ath all children of navigation  */
-.app__nav>* {
-  padding-inline: var(--gap-48);
+.app__nav > * {
+  padding-inline: var(--gap-24);
 }
 
 .nav__scroll {
@@ -161,9 +161,9 @@ input {
 }
 
 .nav__nav-item {
-  min-width: 265px;
+  min-width: 275px;
   padding: var(--gap-12) var(--size-32);
-  border: 1.5px solid transparent;
+  /* border: 5px solid transparent; */
   border-radius: 5rem;
   transition: background-color .3s ease-in-out;
 
@@ -262,7 +262,7 @@ input {
       0 5px 5px hsl(0 66% 89% / .1);
 
   & svg {
-    width: var(--size-32);
+    width: var(--size-36);
     aspect-ratio: 1;
   }
 
@@ -279,6 +279,7 @@ input {
     border-radius: var(--border-corner-8);
     color: var(--black);
     font-size: var(--font-20);
+    font-weight: bold;
     transition: background-color .3s ease-in-out;
 
     &:hover {
@@ -294,6 +295,11 @@ input {
 
 
 @media screen and (max-width: 768px) {
+
+  .user__name,
+  .user__role {
+    display: none;
+  }
 
   /* Hide navigation mobile priority  */
   .app__wrapper {

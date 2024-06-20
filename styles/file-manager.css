@@ -58,17 +58,13 @@
   min-width: var(--size-96);
   max-width: fit-content;
   padding: var(--gap-12) var(--gap-18);
-  border: 1.5px solid transparent;
+  border: 3px solid var(--white);
   border-radius: 5rem;
   color: var(--grey-500);
   font-size: clamp(var(--font-14), 1.2vw, var(--font-18));
   font-weight: bold;
   white-space: nowrap;
   transition: all .3s ease-in-out;
-
-  &:not(.btn-selected) {
-    border-color: var(--grey-200);
-  }
 }
 
 /* TABLE */
@@ -281,7 +277,6 @@
   display: grid;
   grid-template-columns: var(--size-36) 1fr var(--size-48);
   align-items: center;
-  border-bottom: 1px solid var(--grey-200);
 
   & p {
     grid-column: 2;
@@ -296,7 +291,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--grey-200);
 }
 
 /* Disable hover style on the touch devices */
@@ -350,11 +344,6 @@
   .fm-row__type {
     min-width: var(--size-48);
     font-size: 10px;
-  }
-
-  .user__name,
-  .user__role {
-    display: none;
   }
 
   .fm-tb__action-bar {
