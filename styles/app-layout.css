@@ -20,11 +20,6 @@ input {
   z-index: 99;
 }
 
-.eiffels-logo {
-  max-width: 4.5rem;
-  height: auto;
-}
-
 .header__user {
   justify-self: flex-end;
   display: grid;

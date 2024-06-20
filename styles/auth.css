@@ -10,11 +10,6 @@
   padding-block: var(--gap-18);
 }
 
-.eiffels-logo {
-  display: flex;
-  max-width: 4.5rem;
-}
-
 .auth .main {
   display: grid;
   place-content: center;

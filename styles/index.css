@@ -21,11 +21,6 @@
   font-size: var(--font-16);
 }
 
-.eiffels-logo {
-  display: flex;
-  max-width: 4.5rem;
-}
-
 .nav-links,
 .auth-links {
   display: flex;

@@ -79,14 +79,6 @@ textarea {
   font-weight: 300;
 }
 
-/* a,
-p,
-em,
-input,
-textarea {
-  font-size: clamp(var(--font-16), 3vw, var(--font-18));
-} */
-
 input,
 textarea {
   color: inherit;
@@ -124,6 +116,11 @@ strong {
   color: var(--grey-500);
 }
 
+.eiffels-logo {
+  max-width: 6rem;
+  height: auto;
+}
+
 .title-gradient {
   width: fit-content;
   display: inline;
@@ -133,28 +130,6 @@ strong {
   background-image: var(--gradient);
   background-clip: text;
 }
-
-/* .font-20,
-.font-20 p {
-  font-size: clamp(var(--font-18), 2.75vw, var(--font-20));
-}
-
-.font-24,
-.font-24 p {
-  font-size: clamp(var(--font-20), 2.5vw, var(--font-24));
-} */
-
-
-
-/* CLASSES */
-/* 1920 > */
-/* .grid {
-  display: grid;
-  grid-template-columns: 1fr repeat(12, minmax(0, 6rem)) 1fr;
-  grid-auto-rows: min-content;
-  column-gap: var(--gap-32);
-  position: relative;
-} */
 
 footer {
   flex: 0 1 0;
