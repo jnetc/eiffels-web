@@ -49,7 +49,7 @@
   top: 0;
   padding-block: var(--gap-4) var(--gap-24);
   background-color: var(--white);
-  z-index: 2;
+  z-index: 9;
 }
 
 
@@ -294,7 +294,7 @@
 }
 
 /* Disable hover style on the touch devices */
-@media only screen and (hover: none) {
+@media only screen and (hover: none) and (pointer: coarse) {
   .fm-tb__fm-row:hover {
     background-color: transparent;
   }
