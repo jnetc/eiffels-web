@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="stylesheet" href="styles/variable.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/app-layout.css">
+  <link rel="stylesheet" href="styles/marketplace.css">
+  <title>Marketplace</title>
+  <meta name="description" content="" />
+  <script src="scripts/app.js" defer></script>
+</head>
+
+<body class="app">
+  <header class="app__header">
+    <button class="btn-menu">
+      <svg class="icon">
+        <use xlink:href="./public/svg/ui_icons.svg#menu"></use>
+      </svg>
+    </button>
+    <a href="index.html" title="Eiffels home page" class="eiffels-logo">
+      <img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels logo" title="Eiffels logo">
+    </a>
+    <div class="header__user">
+      <p class="user__name">Name Surname</p>
+      <p class="user__role">Role</p>
+      <button class="user__account">NS</button>
+    </div>
+  </header>
+
+  <div class="app__wrapper">
+    <nav class="app__nav">
+      <div class="nav__scroll">
+        <ul class="nav__top">
+          <li class="nav__nav-item">
+            <a href="eiffels-chat.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_eiffels-chat"></use>
+              </svg>
+              Eiffels Chat
+            </a>
+          </li>
+          <li class="nav__nav-item btn-selected">
+            <a href="marketplace.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_marketplace"></use>
+              </svg>
+              Marketplace
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="file-manager.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_file-manager"></use>
+              </svg>
+              File Manager
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="sessions.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_sessions"></use>
+              </svg>
+              Sessions
+            </a>
+          </li>
+        </ul>
+        <ul class="nav__center">
+          <li class="nav__nav-item">
+            <a href="documentation.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_documentation"></use>
+              </svg>
+              Documentation
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="support.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_support"></use>
+              </svg>
+              Support
+            </a>
+          </li>
+          <li class="nav__nav-item">
+            <a href="share-referral.html">
+              <svg class="icon">
+                <use xlink:href="./public/svg/ui_icons.svg#sidenav_share-referral"></use>
+              </svg>
+              Share referral
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__bottom">
+          <a href=https://wa.me/0501234567" class="nav__whatsapp">
+            <img src="public/svg/whatsapp.svg" alt="whatsapp">
+            <p>Open in</p>
+            <p>WhatsApp</p>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="app__main fm">
+      <div class="container">
+
+        <section class="main__header">
+          <h1 class="header__title">Marketplace</h1>
+          <p class="header__description">Our File Manager Application is designed to provide a seamless and intuitive
+            experience for managing and editing files and documents.</p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

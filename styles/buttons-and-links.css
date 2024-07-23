@@ -6,8 +6,9 @@ button {
   cursor: pointer;
 }
 
-nav a {
-  color: var(--black);
+/* COMMON STYLES  */
+header a {
+  color: var(--grey-500);
   font-weight: 300;
   text-decoration: none;
 }
@@ -17,48 +18,126 @@ main a {
   font-weight: bold;
 }
 
-
-.btn-64,
-.btn-48 {
-  display: grid;
-  place-content: center;
+/* BUTTONS STYLES */
+.btn-56,
+.btn-48,
+.btn-40 {
+  display: flex;
+  align-items: center;
   padding: var(--gap-12) var(--gap-24);
   border-radius: 50vw;
+  font-size: var(--font-16);
   font-weight: bold;
   text-decoration: none;
+  text-transform: capitalize;
+  transition:
+    background-color .3s ease-in-out,
+    border-color .3s ease-in-out;
+
+  & .icon {
+    width: var(--size-24);
+    height: var(--size-24);
+    aspect-ratio: 1;
+  }
+
+  &:has(.icon)  {
+    min-width: 260px;
+    justify-content: space-between;
+  }
 }
 
-.btn-64 {
-  min-height: var(--size-64);
-  font-size: var(--font-20);
-  text-transform: uppercase;
-  transition: background-color .3s ease-in-out;
+.btn-56 {
+  min-height: var(--size-56);
 }
 
 .btn-48 {
   min-height: var(--size-48);
-  font-size: var(--font-18);
-  text-transform: capitalize;
-  transition: border-color .3s ease-in-out;
+
 }
 
 .btn-fit {
   width: fit-content;
 }
 
-.btn-primary {
-  --primary-active: #2089f2;
+.btn-blue {
   background-color: var(--primary);
+}
+.btn-green {
+  background-color: var(--whatsapp-dark-green);
+}
+.btn-black {
+  background-color: var(--black);
+}
+.btn-red {
+  background-color: var(--warning-error);
+}
+.btn-blue,
+.btn-black,
+.btn-red,
+.btn-green {
   color: var(--white);
+  transition:
+    background-color .2s ease-in-out,
+    border-color .2s ease-in-out;
 
+  &:has(.icon) use {
+    fill: var(--white);
+  }
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-active);
+.btn-blue:active {
+  background-color: hsl(from var(--primary) h s 55% / 1);
 }
-.btn-primary:active {
-  background-color: var(--primary-active);
+.btn-blue:hover {
+  background-color: hsl(from var(--primary) h s 35% / 1);
 }
+
+.btn-black:active {
+  background-color: hsl(from var(--black) h s 55% / 1);
+}
+.btn-black:hover {
+  background-color: hsl(from var(--black) h s 35% / 1);
+}
+
+.btn-red:active {
+  background-color: hsl(from var(--warning-error) h s 55% / 1);
+}
+.btn-red:hover {
+  background-color: hsl(from var(--warning-error) h s 35% / 1);
+}
+.btn-green:active {
+  background-color: hsl(from var(--whatsapp-dark-green) h s 55% / 1);
+}
+.btn-green:hover {
+  background-color: hsl(from var(--whatsapp-dark-green) h s 35% / 1);
+}
+
+
+/* CIRCLE BUTTONS */
+.btn-circle-48 {
+  height: var(--size-48);
+  width: var(--size-48);
+  display: grid;
+  place-content: center;
+  border-radius: 50vw;
+
+  & .icon {
+    width: var(--size-32);
+    height: var(--size-32);
+    aspect-ratio: 1;
+    transition: transform .2s ease-in-out;
+  }
+}
+
+.btn-blue-border {
+  border: 1.5px solid var(--primary);
+  contain: content;
+
+  & .icon use {
+    fill: var(--primary);
+  }
+}
+
 
 .btn-secondary {
   background-color: var(--white);

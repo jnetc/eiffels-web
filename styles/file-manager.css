@@ -124,7 +124,7 @@
   }
 }
 
-/* Using button because only input and button have popever API */
+/* Using button because only input and button have popover API */
 .fm-row__button {
   padding-block: var(--gap-16);
 }

@@ -251,7 +251,7 @@ input {
   min-width: 280px;
   align-items: center;
   gap: var(--gap-16);
-  inset: 0 var(--gap-24) auto auto;
+  inset: var(--gap-24) auto auto auto;
   inset-block-start: 5rem;
   padding: var(--gap-32);
   background-color: var(--surface);

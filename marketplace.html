@@ -8,116 +8,107 @@
   <link rel="stylesheet" href="styles/variable.css">
   <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/app-layout.css">
+  <!-- <link rel="stylesheet" href="styles/app-layout.css"> -->
   <link rel="stylesheet" href="styles/marketplace.css">
   <title>Marketplace</title>
   <meta name="description" content="" />
-  <script src="scripts/app.js" defer></script>
+  <script src="scripts/marketplace.js" defer></script>
 </head>
 
-<body class="app">
-  <header class="app__header">
-    <button class="btn-menu">
-      <svg class="icon">
-        <use xlink:href="./public/svg/ui_icons.svg#menu"></use>
+<body class="marketplace">
+  <header class="marketplace__header">
+    <a href="index.html" id="btn-back" title="back to home page" class="btn-blue-border btn-circle-48">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="./public/svg/ui_icons.svg#arrow-left"></use>
       </svg>
-    </button>
-    <a href="index.html" title="Eiffels home page" class="eiffels-logo">
-      <img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels logo" title="Eiffels logo">
     </a>
-    <div class="header__user">
-      <p class="user__name">Name Surname</p>
-      <p class="user__role">Role</p>
-      <button class="user__account">NS</button>
-    </div>
-  </header>
-
-  <div class="app__wrapper">
-    <nav class="app__nav">
-      <div class="nav__scroll">
-        <ul class="nav__top">
-          <li class="nav__nav-item">
-            <a href="eiffels-chat.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_eiffels-chat"></use>
-              </svg>
-              Eiffels Chat
-            </a>
-          </li>
-          <li class="nav__nav-item btn-selected">
-            <a href="marketplace.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_marketplace"></use>
-              </svg>
-              Marketplace
-            </a>
-          </li>
-          <li class="nav__nav-item">
-            <a href="file-manager.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_file-manager"></use>
-              </svg>
-              File Manager
-            </a>
-          </li>
-          <li class="nav__nav-item">
-            <a href="sessions.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_sessions"></use>
-              </svg>
-              Sessions
-            </a>
-          </li>
-        </ul>
-        <ul class="nav__center">
-          <li class="nav__nav-item">
-            <a href="documentation.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_documentation"></use>
-              </svg>
-              Documentation
-            </a>
-          </li>
-          <li class="nav__nav-item">
-            <a href="support.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_support"></use>
-              </svg>
-              Support
-            </a>
-          </li>
-          <li class="nav__nav-item">
-            <a href="share-referral.html">
-              <svg class="icon">
-                <use xlink:href="./public/svg/ui_icons.svg#sidenav_share-referral"></use>
-              </svg>
-              Share referral
-            </a>
-          </li>
-        </ul>
-
-        <div class="nav__bottom">
-          <a href=https://wa.me/0501234567" class="nav__whatsapp">
-            <img src="public/svg/whatsapp.svg" alt="whatsapp">
-            <p>Open in</p>
-            <p>WhatsApp</p>
-          </a>
-        </div>
-      </div>
+    <nav aria-label="desktop navigation">
+      <ul class="nav__links">
+        <li><a class="active" href="marketplace.html">All</a></li>
+        <li><a href="marketplace/workers.html">Workers</a></li>
+        <li><a href="marketplace/materials.html">Materials</a></li>
+        <li><a href="marketplace/jobs.html">Jobs</a></li>
+      </ul>
     </nav>
 
-    <main class="app__main fm">
-      <div class="container">
+    <div class="header__add-new">
+      <span>Add New</span>
+      <button type="button" id="btn-add" title="Add new item" class="btn-green btn-circle-48">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="./public/svg/ui_icons.svg#add"></use>
+        </svg>
+      </button>
+    </div>
 
-        <section class="main__header">
-          <h1 class="header__title">Marketplace</h1>
-          <p class="header__description">Our File Manager Application is designed to provide a seamless and intuitive
-            experience for managing and editing files and documents.</p>
-        </section>
+    <!-- Popover section call from popovertarget -->
+    <!-- <div id="add-new" popover>
+      <button type="button">Supply Services</button>
+      <button type="button">Sell Materials</button>
+      <button type="button">List Vacancies</button>
+    </div> -->
+  </header>
 
-      </div>
-    </main>
-  </div>
+
+  <main class="marketplace__main grid">
+    <section class="main__search">
+      <p>Describe what you are looking for, including details such as price range, qualifications, and other specifics.</p>
+      <form action="" method="post" id="search__form" class="search__form">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="./public/svg/ui_icons.svg#search"></use>
+        </svg>
+        <label for="search__input" class="glass-effect"></label>
+        <input type="search" name="search" id="search__input" class="search__input" placeholder="Type to search">
+        <button type="submit" id="search__submit" class="btn-circle-48 btn-blue" title="Search">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="./public/svg/ui_icons.svg#send"></use>
+          </svg>
+        </button>
+      </form>
+    </section>
+  </main>
+
+
+
+
+  <footer class="marketplace__footer">Copyright © 2024 Eiffels</footer>
+
+  <!-- Modal windows  -->
+  <dialog id="mp-dialog" class="glass-effect">
+    <button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="public/svg/ui_icons.svg#close"></use>
+      </svg>
+    </button>
+
+    <div class="dialog__wrapper">
+      <header class="dialog__header">
+        <h2>Choose Your Proposal</h2>
+        <p>And then you will be move to the WhatsApp to complete your form</p>
+      </header>
+      <!-- Bottom bar for action buttons -->
+      <main class="dialog__main">
+        <button type="button" id="list_vacancies" class="dialog__select">
+          <img src="public/image/list_vacancies.webp" alt="List Vacancies">
+          <span class="button-title">List Vacancies</span>
+          <p class="button-description">Click to view a comprehensive list of all current job openings. This feature allows you to explore various
+          opportunities, filter positions by your skills and preferences, and find the best matches for your career goals.</p>
+        </button>
+        <button type="button" id="supply_services" class="dialog__select">
+          <img src="public/image/supply_services.webp" alt="Supply Services">
+          <span class="button-title">Supply Services</span>
+          <p class="button-description">Click to access a detailed list of available supply services. This feature helps you explore different service
+          providers, compare options, and find the best solutions for your supply needs</p>
+        </button>
+        <button type="button" id="sell_materials" class="dialog__select">
+          <img src="public/image/sell_materials.webp" alt="Sell Materials">
+          <span class="button-title">Sell Materials</span>
+          <p class="button-description">Click to list and manage your materials for sale. This feature allows you to showcase your inventory, set prices, and
+          connect with potential buyers to efficiently manage your sales.</p>
+        </button>
+      </main>
+    </div>
+  </dialog>
+
 </body>
 
 </html>

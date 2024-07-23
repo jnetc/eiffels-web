@@ -8,8 +8,13 @@
   --grey-400: #5C6C8B;
   --grey-500: #3B4B6D;
   --black: #282829;
-  --error: #FF006B;
-  --success: #67d74b;
+  --red: #FD7474;
+  --blue-grey: #657FFE;
+  --purpur: #A52BD0;
+  --warning-error: #FF006B;
+  --whatsapp-light-green: #44EB61;
+  --whatsapp-dark-green: #1DC73F;
+
   --gradient: linear-gradient(to right, hsl(155 54% 47% / 1), hsl(210 100% 45% / 1),hsl(197 87% 30% / 1), hsl(197 87% 30% / 1));
   --gradient-10: linear-gradient(to right, hsl(155 54% 47% / .1), hsl(210 100% 45% / .1),hsl(197 87% 30% / .1), hsl(197 87% 30% / .1));
   --gradient-20: linear-gradient(to right, hsl(155 54% 47% / .2), hsl(210 100% 45% / .2),hsl(197 87% 30% / .2), hsl(197 87% 30% / .2));
@@ -29,6 +34,8 @@
   --border-corner-8: 0.5rem;
   --border-corner-12: 0.75rem;
   --border-corner-16: 1rem;
+  --border-corner-18: 1.125rem;
+  --border-corner-20: 1.25rem;
   --border-corner-24: 1.5rem;
   --border-corner-32: 2rem;
 
@@ -89,6 +96,7 @@
   --size-18: 1.125rem;
   --size-20: 1.25rem;
   --size-24: 1.5rem;
+  --size-28: 1.75rem;
   --size-32: 2rem;
   --size-36: 2.25rem;
   --size-40: 2.5rem;

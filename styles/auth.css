@@ -104,7 +104,7 @@
 }
 
 .error-message {
-  color: var(--error);
+  color: var(--warning-error);
 }
 
 .container:last-of-type a {
