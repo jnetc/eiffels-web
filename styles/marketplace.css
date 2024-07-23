@@ -195,7 +195,8 @@ footer {
     opacity .2s ease-in-out,
     scale .2s ease-in-out,
     translate .2s ease-in-out;
-  pointer-events: none;
+    pointer-events: none;
+
   &.show {
     opacity: 1;
     scale: 1;
@@ -213,15 +214,18 @@ footer {
   &::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: var(--inset-val);
     border-radius: var(--br); /* Create var from parent */
     border: 1.5px solid transparent;
 
-    background: linear-gradient(160deg,
-    hsl(from var(--primary) h s l / 20%) 0%,
-    hsl(from var(--primary) h s l / 5%) 25%,
-    hsl(from var(--primary) h s l / 5%) 75%,
-    hsl(from var(--primary) h s l / 10%) 100%);
+    background: linear-gradient(
+      160deg,
+      hsl(from var(--primary) h s l / 20%) 0%,
+      hsl(from var(--primary) h s l / 5%) 15%,
+      hsl(from #fff h s l / 65%) 25%,
+      hsl(from #fff h s l / 85%) 75%,
+      hsl(from var(--primary) h s l / 10%) 100%
+    );
     background-origin: border-box;
     /* This code defines a mask for an element using two gradients and different clipping areas:
 
@@ -246,6 +250,7 @@ footer {
 
 /* MODAL DIALOG STYLE */
 #mp-dialog {
+  --inset-val: 0;
   --br: var(--border-corner-12);
   max-width: 800px;
   padding-inline: var(--gap-36);
