@@ -18,7 +18,7 @@ footer {
   position: relative;
 }
 
-.grid {
+/* .grid {
   --colums: 12;
   --colums-width: 6rem;
   --outside: 1fr;
@@ -26,7 +26,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(var(--colums), minmax(0, var(--colums-width)));
   column-gap: var(--gap-36);
-}
+} */
 
 /* HEADER & NAVIGATION */
 .marketplace__header {
@@ -184,7 +184,7 @@ footer {
 /* MAIN LIST OF CARDS */
 .main__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 373px));
   grid-auto-rows: min-content;
   gap: var(--gap-18);
 }
@@ -266,7 +266,7 @@ footer {
 .card__whatsapp {
   display: flex;
   align-items: center;
-  gap: var(--gap-8);
+  gap: var(--gap-4);
   margin-inline-end: auto;
   padding-inline: var(--gap-16);
   padding-block: var(--gap-6);
@@ -435,8 +435,8 @@ footer {
 }
 
 #mp-dialog::backdrop {
-  background-color: hsla(219, 100%, 97%, 0.1);
-  backdrop-filter: blur(7px);
+  background-color: hsl(from var(--white) h s l / 90%);
+  backdrop-filter: blur(10px);
 }
 
 .dialog__wrapper {
@@ -447,6 +447,7 @@ footer {
 .dialog__header {
   display: grid;
   align-items: center;
+  row-gap: var(--gap-8);
 
   & * {
       text-align: center;
@@ -460,6 +461,10 @@ footer {
   & p {
     color: var(--grey-500);
     font-size: var(--font-20);
+  }
+
+  & strong {
+    color: var(--whatsapp-dark-green);
   }
 }
 
