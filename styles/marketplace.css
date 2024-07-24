@@ -190,16 +190,19 @@ footer {
 }
 
 .card {
-  display: grid;
+  /* display: grid;
+  grid-template-rows: min-content 1fr min-content; */
+  display: flex;
+  flex-direction: column;
   row-gap: var(--gap-18);
   padding: var(--gap-24);
   background-color: var(--surface);
   border: 1px solid var(--grey-200);
   border-radius: var(--border-corner-16);
 
-  & > * {
+  /* & > * {
     grid-column: 1 / -1;
-  }
+  } */
 }
 
 .card__header {
@@ -304,12 +307,12 @@ footer {
 
 
 .card__description {
+  flex: 1 0 auto;
   display: grid;
   gap: var(--gap-12);
-  /* grid-template-rows: 1fr min-content; */
+  grid-template-rows: 150px min-content;
 
   & p {
-    min-height: 150px;
     display: -webkit-box;
     line-clamp: 6;
     -webkit-line-clamp: 6;
@@ -348,6 +351,9 @@ footer {
 }
 
 /* if we don't have images */
+.card__description:not(:has(+ .card__images)) {
+  grid-template-rows: 1fr min-content;
+}
 .card__description:not(:has(+ .card__images)) p {
   line-clamp: 12;
   -webkit-line-clamp: 12;
@@ -355,15 +361,13 @@ footer {
 
 .card__images {
   contain: content;
-  overflow: hidden;
-  /* max-height: var(--size-96); */
-  padding-block-end: var(--gap-24);
 }
 
 .images__scroll-area {
   display: flex;
   gap: var(--gap-8);
   overflow-x: auto;
+  scrollbar-width: thin;
   scrollbar-gutter: stable;
 
   & img {
