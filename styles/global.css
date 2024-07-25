@@ -1,44 +1,43 @@
-@import url("./buttons-and-links.css");
+@import url('./buttons-and-links.css');
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 /* DEBUG */
 /* * {
-  outline: 1px solid red;
+	outline: 1px solid red;
 } */
 
 @media (prefers-reduced-motion: no-preference) {
-  :has(:target) {
-    scroll-behavior: smooth !important;
-    scroll-padding-top: 2rem;
-  }
+	:has(:target) {
+		scroll-behavior: smooth !important;
+		scroll-padding-top: 2rem;
+	}
 }
 
 html {
-  min-height: 100svh;
-  background-color: var(--white);
-  scrollbar-gutter: stable;
-  overflow-x: hidden;
-  /* hanging-punctuation: first last; */
+	min-height: 100svh;
+	background-color: var(--white);
+	scrollbar-gutter: stable;
+	/* hanging-punctuation: first last; */
 }
 
 body {
-  min-height: 100dvh;
-  color: var(--black);
-  position: relative;
+	min-height: 100dvh;
+	color: var(--black);
+	position: relative;
 }
 
 body,
-button {
-  font-family: 'SF Pro Text', sans-serif;
-  -webkit-font-smoothing: antialiased; /* for MacOs */
-
+button,
+select {
+	font-family: 'SF Pro Text', sans-serif;
+	-webkit-font-smoothing: antialiased; /* for MacOs */
 }
 
 /* GLOBAL MEDIA */
@@ -47,14 +46,14 @@ picture,
 svg,
 video,
 canvas {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 img,
 svg {
-  user-select: none;
-  -webkit-user-select: none;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 /* GLOBAL TEXT */
@@ -64,29 +63,29 @@ h3,
 h4,
 h5,
 h6 {
-  text-wrap: pretty;
-  line-height: 1.2;
+	text-wrap: pretty;
+	line-height: 1.2;
 }
 
 p {
-  line-height: 1.4;
+	line-height: 1.4;
 }
 
 p,
 input,
 textarea {
-  font-weight: 300;
+	font-weight: 300;
 }
 
 input,
 textarea {
-  color: inherit;
+	color: inherit;
 }
 
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1.5px solid  var(--violet-light);
-  outline-offset: .25rem;
+	outline: 1.5px solid var(--violet-light);
+	outline-offset: 0.25rem;
 }
 
 /* ::placeholder {
@@ -97,134 +96,140 @@ p,
 label,
 li:not(:has(h1, h2, h3, h4, h5, h6)),
 time {
-  color: var(--grey-500);
-  font-size: var(--font-18);
+	color: var(--grey-500);
+	font-size: var(--font-18);
 }
-
-
 
 /* a:has(h1, h2, h3, h4, h5, h6, p),
 a:active {
 } */
 
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 strong {
-  color: var(--grey-500);
+	color: var(--grey-500);
 }
 
 .header__logo {
-  max-width: 10rem;
-  height: auto;
+	max-width: 10rem;
+	height: auto;
 }
 
 .title-gradient {
-  width: fit-content;
-  display: inline;
-  color: transparent;
-  font-size: var(--font-48);
-  font-weight: bold;
-  background-image: var(--gradient);
-  background-clip: text;
+	width: fit-content;
+	display: inline;
+	color: transparent;
+	font-size: var(--font-48);
+	font-weight: bold;
+	background-image: var(--gradient);
+	background-clip: text;
 }
 
 footer {
-  flex: 0 1 0;
-  margin-inline: auto;
-  padding-block: var(--gap-48) var(--gap-18);
-  font-size: var(--font-14);
+	flex: 0 1 0;
+	margin-inline: auto;
+	padding-block: var(--gap-48) var(--gap-18);
+	font-size: var(--font-14);
 }
 
 /* Hide navigation from DOM to prevent selection by keyboard after collapsing */
 @keyframes hide-from-DOM {
-  90% {
-    visibility: visible;
-  }
+	90% {
+		visibility: visible;
+	}
 
-  100% {
-    visibility: hidden;
-  }
+	100% {
+		visibility: hidden;
+	}
 }
 
 /* MEDIA QUERIES */
 @media (max-width: 1200px) {
-
 }
 
 @media (max-width: 959px) {
-  :root {
-    --body-padding: 1rem;
-  }
-
+	:root {
+		--body-padding: 1rem;
+	}
 }
 
 @media (max-width: 559px) {
-
 }
 
-
 .glass {
-  backdrop-filter: blur(15px);
-  background-image: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
-  border-radius: .75rem;
-  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
-  position: relative;
-  /* border: 1.5px solid transparent; */
-  /* mask-image: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%); */
-  /* mask-clip: border-box; */
-  /* mask-size: cover; */
-  /* mask-repeat: no-repeat; */
-  /* mask-origin: border-box; */
-  /* mask-clip: border-box; */
-  /* mask-composite: add; */
+	backdrop-filter: blur(15px);
+	background-image: linear-gradient(
+		45deg,
+		hsl(from var(--primary) h s l / 3%) 0%,
+		hsl(from var(--white) h s l / 10%) 60%
+	);
+	border-radius: 0.75rem;
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
+	position: relative;
+	/* border: 1.5px solid transparent; */
+	/* mask-image: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%); */
+	/* mask-clip: border-box; */
+	/* mask-size: cover; */
+	/* mask-repeat: no-repeat; */
+	/* mask-origin: border-box; */
+	/* mask-clip: border-box; */
+	/* mask-composite: add; */
 
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: -1.5px;
-    border-radius: inherit;
-    border: 1.5px solid transparent;
-    background: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%) border-box;
-    /* mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); */
-    /* Представьте,
+	&::after {
+		content: '';
+		position: absolute;
+		inset: -1.5px;
+		border-radius: inherit;
+		border: 1.5px solid transparent;
+		background: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%)
+			border-box;
+		/* mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); */
+		/* Представьте,
     что у вас есть элемент с padding и border. Первая маска применяется к области padding-box,
     которая включает контент и padding,
     но не включает border. Вторая маска применяется к общей области элемента. С mask-composite: exclude, первая маска "вырезает" область из второй маски, показывая нижележащий контент. */
-    /* first mask all content with paddings */
-    /* second mask all element include borders */
-    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-    mask-origin: padding-box, border-box;
-    mask-clip: padding-box, border-box;
-    mask-composite: exclude;
-    z-index: -1;
-  }
+		/* first mask all content with paddings */
+		/* second mask all element include borders */
+		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+		mask-origin: padding-box, border-box;
+		mask-clip: padding-box, border-box;
+		mask-composite: exclude;
+		z-index: -1;
+	}
 }
 
 .item2 {
-  backdrop-filter: blur(15px);
-  background-image: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
-  border-radius: .75rem;
-  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
-  position: relative;
+	backdrop-filter: blur(15px);
+	background-image: linear-gradient(
+		45deg,
+		hsl(from var(--primary) h s l / 3%) 0%,
+		hsl(from var(--white) h s l / 10%) 60%
+	);
+	border-radius: 0.75rem;
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
+	position: relative;
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: -1.5px;
-    border-radius: inherit;
-    border: 1.5px solid transparent;
+	&::after {
+		content: '';
+		position: absolute;
+		inset: -1.5px;
+		border-radius: inherit;
+		border: 1.5px solid transparent;
 
-    background: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%);
-    background-origin: border-box;
+		background: linear-gradient(
+			160deg,
+			hsl(from var(--primary) h s l / 20%) 0%,
+			hsl(from var(--white) h s l / 70%) 25%
+		);
+		background-origin: border-box;
 
-    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-    /* mask-origin: padding-box, border-box; */
-    mask-clip: padding-box, border-box;
-    mask-composite: exclude;
+		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+		/* mask-origin: padding-box, border-box; */
+		mask-clip: padding-box, border-box;
+		mask-composite: exclude;
 
-    z-index: -1;
-  }
+		z-index: -1;
+	}
 }

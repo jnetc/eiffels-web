@@ -14,20 +14,31 @@
   <script src="scripts/marketplace.js" defer></script>
 </head>
 
-<body class="marketplace">
-  <header class="marketplace__header">
+<body class="mp">
+  <header class="mp__header">
     <a href="index.html" id="btn-back" title="back to home page" class="btn-blue-border btn-circle-48">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="./public/svg/ui_icons.svg#arrow-left"></use>
       </svg>
     </a>
-    <nav aria-label="desktop navigation">
-      <ul class="nav__links">
-        <li><a class="active" href="marketplace.html">All</a></li>
-        <li><a href="marketplace/workers.html">Workers</a></li>
-        <li><a href="marketplace/materials.html">Materials</a></li>
-        <li><a href="marketplace/jobs.html">Jobs</a></li>
-      </ul>
+    <nav class="nav__links" aria-label="desktop navigation">
+      <!-- Desktop Navigation -->
+      <a class="active" href="marketplace.html">All</a>
+      <a href="marketplace/workers.html">Workers</a>
+      <a href="marketplace/materials.html">Materials</a>
+      <a href="marketplace/jobs.html">Jobs</a>
+      <!-- Mobile Navigation -->
+      <div class="links__select">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="./public/svg/ui_icons.svg#shevron"></use>
+        </svg>
+        <select id="navigation-select" class="nav-select">
+          <option value="marketplace.html">All Available</option>
+          <option value="marketplace/workers.html">Workers</option>
+          <option value="marketplace/materials.html">Materials</option>
+          <option value="marketplace/jobs.html">Jobs</option>
+        </select>
+      </div>
     </nav>
 
     <div class="header__add-new">
@@ -41,9 +52,9 @@
   </header>
 
 
-  <main class="marketplace__main">
+  <main class="mp__main">
+    <p>Describe what you are looking for, including details such as price range, qualifications, and other specifics.</p>
     <section class="main__search">
-      <p>Describe what you are looking for, including details such as price range, qualifications, and other specifics.</p>
       <form action="" method="post" id="search__form" class="search__form">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="./public/svg/ui_icons.svg#search"></use>
@@ -57,7 +68,6 @@
         </button>
       </form>
     </section>
-
     <div class="main__list">
       <article class="card">
         <header class="card__header">
@@ -376,47 +386,509 @@
          </div>
         </section>
       </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
+      <article class="card">
+        <header class="card__header">
+          <img src="public/image/maja.png" alt="Maja Koskinen">
+          <h2>Maja Koskinen</h2>
+          <p>Logoclic Oy</p>
+          <nav class="card__contact" aria-label="contact with person">
+            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#whatsapp"></use>
+              </svg>
+              <span>Maisku</span>
+            </a>
+            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#link"></use>
+              </svg>
+            </a>
+            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Maja Koskinen">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="public/svg/ui_icons.svg#email"></use>
+              </svg>
+            </a>
+          </nav>
+        </header>
+        <section class="card__description">
+          <p>
+            Logoclic Silentos Oak Fondi Laminate</p>
+          <div class="card__offer">
+            <span class="card__price">Offer Price</span>
+            <span class="card__amount">€76<sub>/ 1pst</sub></span>
+          </div>
+        </section>
+        <section class="card__images">
+         <div class="images__scroll-area">
+            <img src="public/svg/pdf.svg" alt="pdf file">
+            <img src="public/image/vinil1.png" alt="vinil 1">
+            <img src="public/image/vinil2.png" alt="vinil 2">
+         </div>
+        </section>
+      </article>
     </div>
   </main>
 
 
 
 
-  <footer class="marketplace__footer">Copyright © 2024 Eiffels</footer>
+  <footer class="mp__footer">Copyright © 2024 Eiffels</footer>
 
   <!-- Modal windows  -->
   <dialog id="mp-dialog" class="glass-effect">
-    <button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black">
+    <!-- <button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="public/svg/ui_icons.svg#close"></use>
       </svg>
-    </button>
+    </button> -->
 
     <div class="dialog__wrapper">
       <header class="dialog__header">
+        <button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="public/svg/ui_icons.svg#close"></use>
+          </svg>
+        </button>
         <h2>Choose Your Proposal</h2>
         <p>And then you will be move to the <strong>WhatsApp</strong> to complete your form</p>
       </header>
       <!-- Bottom bar for action buttons -->
       <main class="dialog__main">
-        <button type="button" id="list_vacancies" class="dialog__select">
-          <img src="public/image/list_vacancies.webp" alt="List Vacancies">
-          <span class="button-title">List Vacancies</span>
-          <p class="button-description">Click to view a comprehensive list of all current job openings. This feature allows you to explore various
-          opportunities, filter positions by your skills and preferences, and find the best matches for your career goals.</p>
-        </button>
-        <button type="button" id="supply_services" class="dialog__select">
-          <img src="public/image/supply_services.webp" alt="Supply Services">
-          <span class="button-title">Supply Services</span>
-          <p class="button-description">Click to access a detailed list of available supply services. This feature helps you explore different service
-          providers, compare options, and find the best solutions for your supply needs</p>
-        </button>
-        <button type="button" id="sell_materials" class="dialog__select">
-          <img src="public/image/sell_materials.webp" alt="Sell Materials">
-          <span class="button-title">Sell Materials</span>
-          <p class="button-description">Click to list and manage your materials for sale. This feature allows you to showcase your inventory, set prices, and
-          connect with potential buyers to efficiently manage your sales.</p>
-        </button>
+        <div class="main__scroll-area">
+          <button type="button" id="list_vacancies" class="dialog__select">
+            <img src="public/image/list_vacancies.webp" alt="List Vacancies">
+            <span class="button-title">List Vacancies</span>
+            <p class="button-description">Click to view a comprehensive list of all current job openings. This feature allows you to explore various
+            opportunities, filter positions by your skills and preferences, and find the best matches for your career goals.</p>
+            <span class="button-arrow" aria-hidden="true">
+              <svg class="icon">
+                <use xlink:href="public/svg/ui_icons.svg#arrow-right"></use>
+              </svg>
+            </span>
+          </button>
+          <button type="button" id="supply_services" class="dialog__select">
+            <img src="public/image/supply_services.webp" alt="Supply Services">
+            <span class="button-title">Supply Services</span>
+            <p class="button-description">Click to access a detailed list of available supply services. This feature helps you explore different service
+            providers, compare options, and find the best solutions for your supply needs</p>
+            <span class="button-arrow" aria-hidden="true">
+              <svg class="icon">
+                <use xlink:href="public/svg/ui_icons.svg#arrow-right"></use>
+              </svg>
+            </span>
+          </button>
+          <button type="button" id="sell_materials" class="dialog__select">
+            <img src="public/image/sell_materials.webp" alt="Sell Materials">
+            <span class="button-title">Sell Materials</span>
+            <p class="button-description">Click to list and manage your materials for sale. This feature allows you to showcase your inventory, set prices, and
+            connect with potential buyers to efficiently manage your sales.</p>
+            <span class="button-arrow" aria-hidden="true">
+              <svg class="icon">
+                <use xlink:href="public/svg/ui_icons.svg#arrow-right"></use>
+              </svg>
+            </span>
+          </button>
+        </div>
       </main>
     </div>
   </dialog>
