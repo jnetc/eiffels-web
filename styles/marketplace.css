@@ -19,16 +19,6 @@ footer {
 	position: relative;
 }
 
-/* .grid {
-  --columns: 12;
-  --columns-width: 6rem;
-  --outside: 1fr;
-
-  display: grid;
-  grid-template-columns: repeat(var(--columns), minmax(0, var(--columns-width)));
-  column-gap: var(--gap-36);
-} */
-
 /* HEADER & NAVIGATION */
 .mp__header {
 	container-type: inline-size;
@@ -109,6 +99,7 @@ footer {
 .links__select {
 	display: none;
 }
+
 .nav-select {
 	appearance: none;
 	padding-inline: var(--gap-12) var(--gap-48);
@@ -119,8 +110,13 @@ footer {
 	background-color: transparent;
 	font-size: var(--font-20);
 	color: var(--grey-500);
+
+	&:nth-of-type(1) {
+		font-weight: bold;
+	}
 }
 
+/* Media queries */
 @container (max-width: 800px) {
 	.header__add-new {
 		& span {
@@ -153,13 +149,10 @@ footer {
 }
 
 /* MAIN CONTENT */
-
 /* SEARCH SECTION */
 .mp__main {
 	display: grid;
 	min-height: 100%;
-	/* position: relative; */
-	/* outline: 1px solid red; */
 
 	& > * {
 		grid-column: 1 / -1;
@@ -248,8 +241,6 @@ footer {
 }
 
 .card {
-	/* display: grid;
-  grid-template-rows: min-content 1fr min-content; */
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--gap-18);
@@ -257,10 +248,6 @@ footer {
 	background-color: var(--surface);
 	border: 1px solid var(--grey-200);
 	border-radius: var(--border-corner-16);
-
-	/* & > * {
-    grid-column: 1 / -1;
-  } */
 }
 
 .card__header {
@@ -435,50 +422,6 @@ footer {
 	}
 }
 
-/* GLASS EFFECT FOR ELEMENTS */
-.glass-effect {
-	background: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
-	backdrop-filter: blur(15px);
-	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset: var(--inset-val);
-		border-radius: var(--br);
-		/* Create var from parent */
-		border: 1.5px solid transparent;
-
-		background: linear-gradient(
-			160deg,
-			hsl(from var(--primary) h s l / 20%) 0%,
-			hsl(from var(--primary) h s l / 5%) 15%,
-			hsl(from #fff h s l / 65%) 25%,
-			hsl(from #fff h s l / 85%) 75%,
-			hsl(from var(--primary) h s l / 10%) 100%
-		);
-		background-origin: border-box;
-		/* This code defines a mask for an element using two gradients and different clipping areas:
-
-    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-    Uses two linear gradients as masks.
-
-    mask-clip: padding-box, border-box;
-    The first gradient is applied to the padding-box area,
-    and the second to the border-box area.
-
-    mask-composite: exclude;
-    Sets the compositing mode to exclude,
-    which subtracts the overlapping areas of the masks. This creates a mask that makes only the area between the padding-box and border-box visible.
-    */
-		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-		mask-clip: padding-box, border-box;
-		mask-composite: exclude;
-
-		z-index: -1;
-	}
-}
-
 /* MODAL DIALOG STYLE */
 #mp-dialog {
 	--inset-val: 0;
@@ -539,7 +482,7 @@ footer {
 
 .dialog__select {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-rows: auto var(--size-48) 1fr auto;
 	gap: var(--gap-12) var(--gap-32);
 	background-color: var(--surface);
 	border-radius: var(--border-corner-12);
@@ -556,10 +499,10 @@ footer {
 		height: 220px;
 		border-radius: var(--border-corner-8);
 		object-fit: cover;
-		object-position: center;
 	}
 
 	& .button-title {
+		align-self: flex-end;
 		color: var(--grey-500);
 		font-weight: bold;
 		font-size: var(--font-24);
@@ -606,6 +549,7 @@ footer {
 
 	.dialog__select {
 		grid-template-columns: var(--size-64) 1fr;
+		grid-template-rows: auto;
 		gap: var(--gap-12) var(--gap-16);
 
 		& img {
@@ -634,4 +578,48 @@ footer {
 .mp__footer {
 	align-self: flex-end;
 	margin-block-start: auto;
+}
+
+/* GLASS EFFECT FOR ELEMENTS */
+.glass-effect {
+	background: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
+	backdrop-filter: blur(15px);
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: var(--inset-val);
+		border-radius: var(--br);
+		/* Create var from parent */
+		border: 1.5px solid transparent;
+
+		background: linear-gradient(
+			160deg,
+			hsl(from var(--primary) h s l / 20%) 0%,
+			hsl(from var(--primary) h s l / 5%) 15%,
+			hsl(from #fff h s l / 65%) 25%,
+			hsl(from #fff h s l / 85%) 75%,
+			hsl(from var(--primary) h s l / 10%) 100%
+		);
+		background-origin: border-box;
+		/* This code defines a mask for an element using two gradients and different clipping areas:
+
+    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    Uses two linear gradients as masks.
+
+    mask-clip: padding-box, border-box;
+    The first gradient is applied to the padding-box area,
+    and the second to the border-box area.
+
+    mask-composite: exclude;
+    Sets the compositing mode to exclude,
+    which subtracts the overlapping areas of the masks. This creates a mask that makes only the area between the padding-box and border-box visible.
+    */
+		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+		mask-clip: padding-box, border-box;
+		mask-composite: exclude;
+
+		z-index: -1;
+	}
 }
