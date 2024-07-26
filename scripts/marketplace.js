@@ -35,4 +35,25 @@ document.addEventListener('DOMContentLoaded', () => {
 			window.location.href = this.value;
 		}
 	});
+
+	function getLineCount(element) {
+		const style = element.textContent.length;
+		if (style > 300) {
+			console.log('Слишком длинное описание');
+			return true;
+		}
+		if (style <= 300) {
+			console.log(' описание');
+			return false;
+		}
+		// const lineHeight = parseFloat(style.lineHeight);
+		// const elementHeight = element.offsetHeight;
+		// return Math.round(elementHeight / lineHeight);
+	}
+
+	const textBox = document.querySelectorAll('.card__description p');
+	textBox.forEach(element => {
+		const lineCount = getLineCount(element);
+		console.log(`Количество строк: ${lineCount}`);
+	});
 });

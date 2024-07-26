@@ -1,203 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+		<link rel="stylesheet" href="../styles/variable.css" />
+		<link rel="stylesheet" href="../styles/fonts.css" />
+		<link rel="stylesheet" href="../styles/global.css" />
+		<link rel="stylesheet" href="../styles/marketplace.css" />
+		<title>Jobs</title>
+		<meta name="description" content="" />
+		<script src="../scripts/marketplace.js" defer></script>
+		<script src="../scripts/marketplace-with-search.js" defer></script>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
-  <link rel="stylesheet" href="../styles/variable.css">
-  <link rel="stylesheet" href="../styles/fonts.css">
-  <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="../styles/marketplace.css">
-  <title>Jobs</title>
-  <meta name="description" content="" />
-  <script src="../scripts/marketplace.js" defer></script>
-  <script src="../scripts/marketplace-with-search.js" defer></script>
-</head>
+	<body class="mp">
+		<header class="mp__header">
+			<a href="../index.html" id="btn-back" title="back to home page" class="btn-blue-border btn-circle-48">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="../public/svg/ui_icons.svg#arrow-left"></use>
+				</svg>
+			</a>
+			<nav class="nav__links" aria-label="desktop navigation">
+				<!-- Desktop Navigation -->
+				<a href="../marketplace.html">All</a>
+				<a href="workers.html">Workers</a>
+				<a href="materials.html">Materials</a>
+				<a class="active" href="jobs.html">Jobs</a>
+				<!-- Mobile Navigation -->
+				<div class="links__select">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="../public/svg/ui_icons.svg#shevron"></use>
+					</svg>
+					<select id="navigation-select" class="nav-select">
+						<option value="jobs.html">Jobs</option>
+						<option value="../marketplace.html">All Available</option>
+						<option value="workers.html">Workers</option>
+						<option value="materials.html">Materials</option>
+					</select>
+				</div>
+			</nav>
 
-<body class="mp">
-  <header class="mp__header">
-    <a href="../index.html" id="btn-back" title="back to home page" class="btn-blue-border btn-circle-48">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="../public/svg/ui_icons.svg#arrow-left"></use>
-      </svg>
-    </a>
-    <nav class="nav__links" aria-label="desktop navigation">
-      <!-- Desktop Navigation -->
-      <a href="../marketplace.html">All</a>
-      <a href="workers.html">Workers</a>
-      <a href="materials.html">Materials</a>
-      <a class="active" href="jobs.html">Jobs</a>
-      <!-- Mobile Navigation -->
-      <div class="links__select">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="../public/svg/ui_icons.svg#shevron"></use>
-        </svg>
-        <select id="navigation-select" class="nav-select">
-          <option value="jobs.html">Jobs</option>
-          <option value="../marketplace.html">All Available</option>
-          <option value="workers.html">Workers</option>
-          <option value="materials.html">Materials</option>
-        </select>
-      </div>
-    </nav>
+			<div class="header__add-new">
+				<span>Add New</span>
+				<button type="button" id="btn-add" title="Add new item" class="btn-green btn-circle-48">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="../public/svg/ui_icons.svg#add"></use>
+					</svg>
+				</button>
+			</div>
+		</header>
 
-    <div class="header__add-new">
-      <span>Add New</span>
-      <button type="button" id="btn-add" title="Add new item" class="btn-green btn-circle-48">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="../public/svg/ui_icons.svg#add"></use>
-        </svg>
-      </button>
-    </div>
-  </header>
+		<main class="mp__main">
+			<p>
+				Describe what you are looking for, including details such as profession, qualifications, and other specifics.
+			</p>
+			<section class="main__search">
+				<form action="" method="post" id="search__form" class="search__form">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="../public/svg/ui_icons.svg#search"></use>
+					</svg>
+					<label for="search__input" class="glass-effect"></label>
+					<input type="search" name="search" id="search__input" class="search__input" placeholder="Type to search" />
+					<button type="submit" id="search__submit" class="btn-circle-48 btn-blue" title="Search">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="../public/svg/ui_icons.svg#send"></use>
+						</svg>
+					</button>
+				</form>
+			</section>
 
+			<div class="main__list">
+				<article class="card">
+					<header class="card__header">
+						<img src="../public/image/juhanna.png" alt="Juhanna Keilaniemi" />
+						<h2>Juhanna Keilaniemi</h2>
+						<nav class="card__contact" aria-label="contact with person">
+							<a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="../public/svg/ui_icons.svg#whatsapp"></use>
+								</svg>
+								<span>Firsu Kissu</span>
+							</a>
+							<a
+								href="https://google.com"
+								class="card__link"
+								title="Open in Google"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="../public/svg/ui_icons.svg#link"></use>
+								</svg>
+							</a>
+							<a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Juhanna Keilaniemi">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="../public/svg/ui_icons.svg#email"></use>
+								</svg>
+							</a>
+						</nav>
+					</header>
+					<main class="card__description">
+						<p>
+							Professional painter with over five years of experience seeking new opportunities for painting walls and
+							ceilings. I ensure high-quality work, attention to detail, and adherence to deadlines.
+						</p>
+					</main>
+					<footer class="card__workers">
+						<span class="card__label">Amount of Workers</span>
+						<span class="card__amount">2</span>
+					</footer>
+				</article>
 
-  <main class="mp__main">
-    <p>Describe what you are looking for, including details such as profession, qualifications, and other specifics.</p>
-    <section class="main__search">
-      <form action="" method="post" id="search__form" class="search__form">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="../public/svg/ui_icons.svg#search"></use>
-        </svg>
-        <label for="search__input" class="glass-effect"></label>
-        <input type="search" name="search" id="search__input" class="search__input" placeholder="Type to search">
-        <button type="submit" id="search__submit" class="btn-circle-48 btn-blue" title="Search">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="../public/svg/ui_icons.svg#send"></use>
-          </svg>
-        </button>
-      </form>
-    </section>
+				<article class="card">
+					<header class="card__header">
+						<img src="../public/image/jouni.png" alt="Jouni Savugrilli" />
+						<h2>Jouni Savugrilli</h2>
+						<nav class="card__contact" aria-label="contact with person">
+							<a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="../public/svg/ui_icons.svg#whatsapp"></use>
+								</svg>
+								<span>Jouni Savugrilli</span>
+							</a>
+						</nav>
+					</header>
+					<main class="card__description">
+						<p>
+							Selling your high-quality drill has never been easier with our comprehensive platform designed for both
+							professional contractors and DIY enthusiasts. List your drill with detailed specifications, including
+							brand, model, power, and condition, to attract serious buyers. Our user-friendly interface allows you to
+							upload photos, set your price, and provide a compelling description to highlight the tool's features and
+							benefits. Reach a wide audience of potential buyers looking for reliable and efficient tools to complete
+							their construction projects. Join our community today and turn your unused equipment into cash
+							effortlessly!
+						</p>
+					</main>
+					<footer class="card__workers">
+						<span class="card__label">Amount of Workers</span>
+						<span class="card__amount">21</span>
+					</footer>
+				</article>
+			</div>
+		</main>
 
-    <div class="main__list">
+		<footer class="mp__footer">Copyright © 2024 Eiffels</footer>
 
-      <article class="card">
-        <header class="card__header">
-          <img src="../public/image/juhanna.png" alt="Juhanna Keilaniemi">
-          <h2>Juhanna Keilaniemi</h2>
-          <nav class="card__contact" aria-label="contact with person">
-            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="../public/svg/ui_icons.svg#whatsapp"></use>
-              </svg>
-              <span>Firsu Kissu</span>
-            </a>
-            <a href="https://google.com" class="card__link" title="Open in Google" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="../public/svg/ui_icons.svg#link"></use>
-              </svg>
-            </a>
-            <a href="mailto:jussi.heinola@mail.fi" class="card__link" title="Email Juhanna Keilaniemi">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="../public/svg/ui_icons.svg#email"></use>
-              </svg>
-            </a>
-          </nav>
-        </header>
-        <section class="card__description">
-          <p>
-            Professional painter with over five years of experience seeking new opportunities for painting walls and ceilings. I
-            ensure high-quality work, attention to detail, and adherence to deadlines.</p>
-          <div class="card__offer">
-            <span class="card__price">Amount of Workers</span>
-            <span class="card__amount">2</span>
-          </div>
-        </section>
-        <section class="card__images">
-         <div class="images__scroll-area">
-            <a href="../public/pdf/RF62IIcutsheet_side.pdf" target="_blank" rel="noopener noreferrer"">
-              <img src="../public/svg/pdf.svg" alt="pdf file">
-            </a>
-            <img src="../public/image/no-image.png" alt="no image">
-            <img src="../public/image/no-image.png" alt="no image">
-         </div>
-        </section>
-      </article>
-
-      <article class="card">
-        <header class="card__header">
-          <img src="../public/image/jouni.png" alt="Jouni Savugrilli">
-          <h2>Jouni Savugrilli</h2>
-          <nav class="card__contact" aria-label="contact with person">
-            <a href="https://wa.me/0501234567" class="card__whatsapp" title="Open in WhatsApp">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="../public/svg/ui_icons.svg#whatsapp"></use>
-              </svg>
-              <span>Jouni Savugrilli</span>
-            </a>
-          </nav>
-        </header>
-        <section class="card__description">
-          <p>
-            Professional welder with over five years of experience seeking new opportunities. Specializing in various welding
-            techniques, including MIG, TIG, and arc welding. I ensure high-quality work, attention to detail, and adherence to
-            deadlines. I offer competitive pricing and flexible scheduling. Please contact me to discuss your project details.
-            </p>
-          <div class="card__offer">
-            <span class="card__price">Amount of Workers</span>
-            <span class="card__amount">21</span>
-          </div>
-        </section>
-      </article>
-    </div>
-  </main>
-
-  <footer class="mp__footer">Copyright © 2024 Eiffels</footer>
-
-  <!-- Modal windows  -->
-  <dialog id="mp-dialog" class="glass-effect">
-    <div class="dialog__wrapper">
-      <header class="dialog__header">
-        <button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="../public/svg/ui_icons.svg#close"></use>
-          </svg>
-        </button>
-        <h2>Choose Your Proposal</h2>
-        <p>And then you will be move to the <strong>WhatsApp</strong> to complete your form</p>
-      </header>
-      <!-- Bottom bar for action buttons -->
-      <main class="dialog__main">
-        <div class="main__scroll-area">
-          <button type="button" id="list_vacancies" class="dialog__select">
-            <img src="../public/image/list_vacancies.webp" alt="List Vacancies">
-            <span class="button-title">List Vacancies</span>
-            <p class="button-description">Click to view a comprehensive list of all current job openings. This feature allows you to explore various
-            opportunities, filter positions by your skills and preferences, and find the best matches for your career goals.</p>
-            <span class="button-arrow" aria-hidden="true">
-              <svg class="icon">
-                <use xlink:href="../public/svg/ui_icons.svg#arrow-right"></use>
-              </svg>
-            </span>
-          </button>
-          <button type="button" id="supply_services" class="dialog__select">
-            <img src="../public/image/supply_services.webp" alt="Supply Services">
-            <span class="button-title">Supply Services</span>
-            <p class="button-description">Click to access a detailed list of available supply services. This feature helps you explore different service
-            providers, compare options, and find the best solutions for your supply needs</p>
-            <span class="button-arrow" aria-hidden="true">
-              <svg class="icon">
-                <use xlink:href="../public/svg/ui_icons.svg#arrow-right"></use>
-              </svg>
-            </span>
-          </button>
-          <button type="button" id="sell_materials" class="dialog__select">
-            <img src="../public/image/sell_materials.webp" alt="Sell Materials">
-            <span class="button-title">Sell Materials</span>
-            <p class="button-description">Click to list and manage your materials for sale. This feature allows you to showcase your inventory, set prices, and
-            connect with potential buyers to efficiently manage your sales.</p>
-            <span class="button-arrow" aria-hidden="true">
-              <svg class="icon">
-                <use xlink:href="../public/svg/ui_icons.svg#arrow-right"></use>
-              </svg>
-            </span>
-          </button>
-        </div>
-      </main>
-    </div>
-  </dialog>
-
-</body>
-
+		<!-- Modal windows  -->
+		<dialog id="mp-dialog" class="glass-effect">
+			<div class="dialog__wrapper">
+				<header class="dialog__header">
+					<button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="../public/svg/ui_icons.svg#close"></use>
+						</svg>
+					</button>
+					<h2>Choose Your Proposal</h2>
+					<p>And then you will be move to the <strong>WhatsApp</strong> to complete your form</p>
+				</header>
+				<!-- Bottom bar for action buttons -->
+				<main class="dialog__main">
+					<div class="main__scroll-area">
+						<button type="button" id="list_vacancies" class="dialog__select">
+							<img src="../public/image/list_vacancies.webp" alt="List Vacancies" />
+							<span class="button-title">List Vacancies</span>
+							<p class="button-description">
+								Click to view a comprehensive list of all current job openings. This feature allows you to explore
+								various opportunities, filter positions by your skills and preferences, and find the best matches for
+								your career goals.
+							</p>
+							<span class="button-arrow" aria-hidden="true">
+								<svg class="icon">
+									<use xlink:href="../public/svg/ui_icons.svg#arrow-right"></use>
+								</svg>
+							</span>
+						</button>
+						<button type="button" id="supply_services" class="dialog__select">
+							<img src="../public/image/supply_services.webp" alt="Supply Services" />
+							<span class="button-title">Supply Services</span>
+							<p class="button-description">
+								Click to access a detailed list of available supply services. This feature helps you explore different
+								service providers, compare options, and find the best solutions for your supply needs
+							</p>
+							<span class="button-arrow" aria-hidden="true">
+								<svg class="icon">
+									<use xlink:href="../public/svg/ui_icons.svg#arrow-right"></use>
+								</svg>
+							</span>
+						</button>
+						<button type="button" id="sell_materials" class="dialog__select">
+							<img src="../public/image/sell_materials.webp" alt="Sell Materials" />
+							<span class="button-title">Sell Materials</span>
+							<p class="button-description">
+								Click to list and manage your materials for sale. This feature allows you to showcase your inventory,
+								set prices, and connect with potential buyers to efficiently manage your sales.
+							</p>
+							<span class="button-arrow" aria-hidden="true">
+								<svg class="icon">
+									<use xlink:href="../public/svg/ui_icons.svg#arrow-right"></use>
+								</svg>
+							</span>
+						</button>
+					</div>
+				</main>
+			</div>
+		</dialog>
+	</body>
 </html>

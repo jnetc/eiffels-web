@@ -127,7 +127,7 @@ strong {
 	background-clip: text;
 }
 
-footer {
+body > footer {
 	flex: 0 1 0;
 	margin-inline: auto;
 	padding-block: var(--gap-48) var(--gap-18);
