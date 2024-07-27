@@ -36,22 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
+	//
+	const cardMaterialsHeight = 206;
+	const cardWorkersHeight = 259;
+
 	function getLineCount(element) {
-		const style = element.textContent.length;
-		if (style > 300) {
+		const descriptionClass = element.nextSibling.nextSibling.classList.value;
+		const descriptionHeight = element.children[0].scrollHeight;
+		console.log(descriptionHeight, descriptionClass, element.children[0]);
+
+		if (descriptionHeight > cardMaterialsHeight && descriptionClass === 'card__materials') {
 			console.log('Слишком длинное описание');
 			return true;
 		}
-		if (style <= 300) {
+
+		if (descriptionHeight > cardWorkersHeight && descriptionClass === 'card__workers') {
 			console.log(' описание');
-			return false;
+			return true;
 		}
-		// const lineHeight = parseFloat(style.lineHeight);
-		// const elementHeight = element.offsetHeight;
-		// return Math.round(elementHeight / lineHeight);
+
+		return false;
 	}
 
-	const textBox = document.querySelectorAll('.card__description p');
+	const textBox = document.querySelectorAll('.card__description');
 	textBox.forEach(element => {
 		const lineCount = getLineCount(element);
 		console.log(`Количество строк: ${lineCount}`);
