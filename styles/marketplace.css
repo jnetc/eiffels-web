@@ -523,6 +523,16 @@
 	}
 }
 
+.dialog__select:hover {
+	border-color: var(--grey-300);
+	box-shadow: inset 0 0 0 1px var(--grey-300);
+}
+
+.mp__footer {
+	align-self: flex-end;
+	margin-block-start: auto;
+}
+
 @media screen and (max-width: 960px) {
 	#mp-dialog {
 		max-height: 95dvh;
@@ -562,22 +572,25 @@
 		}
 	}
 }
+@media screen and (max-width: 480px) {
+	.search__form {
+		grid-template-columns: var(--size-32) 1fr var(--size-48);
 
-.dialog__select:hover {
-	border-color: var(--grey-300);
-	box-shadow: inset 0 0 0 1px var(--grey-300);
-}
+		& > .icon {
+			display: none;
+		}
+	}
 
-.mp__footer {
-	align-self: flex-end;
-	margin-block-start: auto;
+	.search__input {
+		grid-column: 1 / span 2;
+	}
 }
 
 /* GLASS EFFECT FOR ELEMENTS */
 .glass-effect {
 	background: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
 	backdrop-filter: blur(15px);
-	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
 
 	&::after {
 		content: '';
@@ -585,15 +598,16 @@
 		inset: var(--inset-val);
 		border-radius: var(--br);
 		/* Create var from parent */
+
 		border: 1.5px solid transparent;
 
 		background: linear-gradient(
 			160deg,
 			hsl(from var(--primary) h s l / 20%) 0%,
 			hsl(from var(--primary) h s l / 5%) 15%,
-			hsl(from #fff h s l / 65%) 25%,
-			hsl(from #fff h s l / 85%) 75%,
-			hsl(from var(--primary) h s l / 10%) 100%
+			hsl(from #fff h s l / 100%) 25%,
+			hsl(from #fff h s l / 100%) 75%,
+			hsl(from var(--primary) h s l / 15%) 100%
 		);
 		background-origin: border-box;
 		/* This code defines a mask for an element using two gradients and different clipping areas:
@@ -619,30 +633,28 @@
 
 .glass-input {
 	background: linear-gradient(
-		45deg,
-		hsl(from var(--primary) h s l / 5%) 0%,
-		hsl(from var(--white) h s l / 10%) 60%,
-		hsl(from var(--white) h s l / 100%) 100%
-	);
-	backdrop-filter: blur(15px);
-	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), inset 0 0 0 3px hsl(from var(--white) h s l / 55%);
+			45deg,
+			hsl(from var(--primary) h s l / 5%) 0%,
+			hsl(from var(--white) h s l / 10%) 60%,
+			hsl(from var(--primary) h s l / 3%) 100%
+		)
+		padding-box;
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 0 hsl(from #fff h s l / 25%);
+	border: 1.5px solid #fff;
 
 	&::after {
 		content: '';
 		position: absolute;
 		inset: var(--inset-val);
 		border-radius: var(--br);
-		/* Create var from parent */
 		border: 1.5px solid transparent;
-
 		background: linear-gradient(
-			160deg,
-			hsl(from var(--primary) h s l / 25%) 0%,
-			hsl(from var(--primary) h s l / 5%) 15%,
-			hsl(from #fff h s l / 85%) 25%,
-			hsl(from #fff h s l / 85%) 90%,
-			hsl(from var(--primary) h s l / 15%) 100%
-		);
+				175deg,
+				hsl(from var(--primary) h s l / 35%) 0%,
+				hsl(from var(--primary) h s l / 0%) 45%,
+				hsl(from #fff h s l / 20%) 100%
+			)
+			border-box;
 		/* background-image: conic-gradient(
 			from 0deg at 50% 50%,
 			hsl(from #fff h s l / 86%) 86deg,
@@ -651,25 +663,9 @@
 			hsl(from #fff h s l / 85%) 267deg,
 			hsl(from var(--primary) h s l / 20%) 271deg,
 			hsl(from #fff h s l / 65%) 275deg
-		);
-		background-size: 100vw 110px;
-		background-position: center; */
-		background-origin: border-box;
-		/* This code defines a mask for an element using two gradients and different clipping areas:
+		);*/
 
-    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-    Uses two linear gradients as masks.
-
-    mask-clip: padding-box, border-box;
-    The first gradient is applied to the padding-box area,
-    and the second to the border-box area.
-
-    mask-composite: exclude;
-    Sets the compositing mode to exclude,
-    which subtracts the overlapping areas of the masks. This creates a mask that makes only the area between the padding-box and border-box visible.
-    */
-		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-		mask-clip: padding-box, border-box;
+		mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) border-box;
 		mask-composite: exclude;
 
 		z-index: -1;
