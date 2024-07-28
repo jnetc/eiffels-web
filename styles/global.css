@@ -13,18 +13,18 @@
 	outline: 1px solid red;
 } */
 
-@media (prefers-reduced-motion: no-preference) {
-	:has(:target) {
-		scroll-behavior: smooth !important;
-		scroll-padding-top: 2rem;
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
 	}
 }
 
 html {
-	min-height: 100svh;
 	background-color: var(--white);
+	scroll-behavior: smooth;
 	scrollbar-gutter: stable;
-	/* hanging-punctuation: first last; */
 }
 
 body {
@@ -112,6 +112,10 @@ strong {
 	color: var(--grey-500);
 }
 
+blockquote {
+	hanging-punctuation: first last;
+}
+
 .header__logo {
 	max-width: 10rem;
 	height: auto;
@@ -158,7 +162,93 @@ body > footer {
 @media (max-width: 559px) {
 }
 
-.glass {
+/* GLASS EFFECT FOR ELEMENTS */
+.glass-effect {
+	background: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
+	backdrop-filter: blur(15px);
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: var(--inset-val);
+		border-radius: var(--br);
+		/* Create var from parent */
+
+		border: 1.5px solid transparent;
+
+		background: linear-gradient(
+			160deg,
+			hsl(from var(--primary) h s l / 20%) 0%,
+			hsl(from var(--primary) h s l / 5%) 15%,
+			hsl(from #fff h s l / 100%) 25%,
+			hsl(from #fff h s l / 100%) 75%,
+			hsl(from var(--primary) h s l / 15%) 100%
+		);
+		background-origin: border-box;
+		/* This code defines a mask for an element using two gradients and different clipping areas:
+
+    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    Uses two linear gradients as masks.
+
+    mask-clip: padding-box, border-box;
+    The first gradient is applied to the padding-box area,
+    and the second to the border-box area.
+
+    mask-composite: exclude;
+    Sets the compositing mode to exclude,
+    which subtracts the overlapping areas of the masks. This creates a mask that makes only the area between the padding-box and border-box visible.
+    */
+		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+		mask-clip: padding-box, border-box;
+		mask-composite: exclude;
+
+		z-index: -1;
+	}
+}
+
+.glass-input {
+	background: linear-gradient(
+			45deg,
+			hsl(from var(--primary) h s l / 5%) 0%,
+			hsl(from var(--white) h s l / 10%) 60%,
+			hsl(from var(--primary) h s l / 3%) 100%
+		)
+		padding-box;
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 0 hsl(from #fff h s l / 25%);
+	border: 1.5px solid #fff;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: var(--inset-val);
+		border-radius: var(--br);
+		border: 1.5px solid transparent;
+		background: linear-gradient(
+				175deg,
+				hsl(from var(--primary) h s l / 35%) 0%,
+				hsl(from var(--primary) h s l / 0%) 45%,
+				hsl(from #fff h s l / 20%) 100%
+			)
+			border-box;
+		/* background-image: conic-gradient(
+			from 0deg at 50% 50%,
+			hsl(from #fff h s l / 86%) 86deg,
+			hsl(from var(--primary) h s l / 20%) 88deg,
+			hsl(from #fff h s l / 85%) 91deg,
+			hsl(from #fff h s l / 85%) 267deg,
+			hsl(from var(--primary) h s l / 20%) 271deg,
+			hsl(from #fff h s l / 65%) 275deg
+		);*/
+
+		mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) border-box;
+		mask-composite: exclude;
+
+		z-index: -1;
+	}
+}
+
+/* .glass {
 	backdrop-filter: blur(15px);
 	background-image: linear-gradient(
 		45deg,
@@ -168,14 +258,6 @@ body > footer {
 	border-radius: 0.75rem;
 	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 2px hsl(from var(--white) h s l / 25%);
 	position: relative;
-	/* border: 1.5px solid transparent; */
-	/* mask-image: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%); */
-	/* mask-clip: border-box; */
-	/* mask-size: cover; */
-	/* mask-repeat: no-repeat; */
-	/* mask-origin: border-box; */
-	/* mask-clip: border-box; */
-	/* mask-composite: add; */
 
 	&::after {
 		content: '';
@@ -185,21 +267,14 @@ body > footer {
 		border: 1.5px solid transparent;
 		background: linear-gradient(160deg, hsl(from var(--primary) h s l / 20%) 0%, hsl(from var(--white) h s l / 70%) 25%)
 			border-box;
-		/* mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); */
-		/* Представьте,
-    что у вас есть элемент с padding и border. Первая маска применяется к области padding-box,
-    которая включает контент и padding,
-    но не включает border. Вторая маска применяется к общей области элемента. С mask-composite: exclude, первая маска "вырезает" область из второй маски, показывая нижележащий контент. */
-		/* first mask all content with paddings */
-		/* second mask all element include borders */
 		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
 		mask-origin: padding-box, border-box;
 		mask-clip: padding-box, border-box;
 		mask-composite: exclude;
 		z-index: -1;
 	}
-}
-
+} */
+/*
 .item2 {
 	backdrop-filter: blur(15px);
 	background-image: linear-gradient(
@@ -226,10 +301,9 @@ body > footer {
 		background-origin: border-box;
 
 		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-		/* mask-origin: padding-box, border-box; */
 		mask-clip: padding-box, border-box;
 		mask-composite: exclude;
 
 		z-index: -1;
 	}
-}
+} */
