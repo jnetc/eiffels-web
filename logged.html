@@ -7,99 +7,129 @@
 		<link rel="stylesheet" href="styles/variable.css" />
 		<link rel="stylesheet" href="styles/fonts.css" />
 		<link rel="stylesheet" href="styles/global.css" />
-		<link rel="stylesheet" href="styles/auth.css" />
+		<link rel="stylesheet" href="styles/index.css" />
 		<link rel="stylesheet" href="styles/backdrop.css" />
-		<script src="scripts/auth.js" defer></script>
-		<title>Auth</title>
+		<script src="scripts/index.js" defer></script>
+		<title>Document</title>
 		<meta name="description" content="" />
 	</head>
-
-	<body class="auth">
-		<header class="auth__header">
-			<a href="index.html" title="Eiffels home page" class="eiffels-logo">
-				<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels logo" title="" />
+	<body class="landing">
+		<header class="landing__header">
+			<a href="index.html" title="Eiffels home page" class="header__logo">
+				<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels" title="Eiffels" />
 			</a>
+			<nav>
+				<ul class="nav__links">
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#pricing">Pricing</a></li>
+					<li><a href="#faq">FAQ</a></li>
+					<li><a href="#support">Support</a></li>
+				</ul>
+			</nav>
+			<!-- Only show when user is logged -->
+			<ul class="header__logged-links">
+				<li class="logged__href">
+					<a href="marketplace.html">
+						<span>AI Marketplace</span>
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="./public/svg/ui_icons.svg#sidenav_marketplace"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="logged__href">
+					<a href="signup.html">
+						<span>Settings</span>
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="./public/svg/ui_icons.svg#settings"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+			<!-- ------- -->
 		</header>
-		<main class="auth__main">
-			<div class="container glass-effect">
-				<h1>Waiting<span>.</span><span>.</span><span>.</span></h1>
-				<p>Check your <strong>WhatsApp</strong> and input <span>6</span> digits number for authorization.</p>
-				<form action="auth.html" method="post" class="auth__form">
+
+		<main class="landing__main">
+			<section id="hero" class="grid">
+				<h1>A Smart Assistant for Every Day</h1>
+				<p>
+					Eiffels is not just another app but a transformative solution that integrates deeply into the industry’s
+					existing communication channels.
+				</p>
+				<p>
+					Write your phone number and we'll send you to your <strong>WhatsApp</strong> <span>6</span> digits number for
+					authorization.
+				</p>
+				<form action="auth.html" method="post" class="hero__auth-form">
 					<div class="auth__input-group">
+						<label for="phone-number">Phone Number <span>*</span></label>
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="./public/svg/ui_icons.svg#iphone"></use>
+						</svg>
 						<input
-							type="text"
-							id="digit-0"
-							placeholder="0"
-							inputmode="numeric"
-							pattern="[0-9]{1}"
-							title="Only number"
-							required
-						/>
-						<input
-							type="text"
-							id="digit-1"
-							placeholder="0"
-							inputmode="numeric"
-							pattern="[0-9]{1}"
-							title="Only number"
-							required
-						/>
-						<input
-							type="text"
-							id="digit-2"
-							placeholder="0"
-							inputmode="numeric"
-							pattern="[0-9]{1}"
-							title="Only number"
-							required
-						/>
-						<input
-							type="text"
-							id="digit-3"
-							placeholder="0"
-							inputmode="numeric"
-							pattern="[0-9]{1}"
-							title="Only number"
-							required
-						/>
-						<input
-							type="text"
-							id="digit-4"
-							placeholder="0"
-							inputmode="numeric"
-							pattern="[0-9]{1}"
-							title="Only number"
-							required
-						/>
-						<input
-							type="text"
-							id="digit-5"
-							placeholder="0"
-							inputmode="numeric"
-							pattern="[0-9]{1}"
-							title="Only number"
+							type="tel"
+							name="phone-number"
+							id="phone-number"
+							placeholder="+358401234567"
+							inputmode="tel"
+							pattern="[+][0-9]{10,}"
+							title="Minimum 10 digits, without spaces"
 							required
 						/>
 					</div>
 					<button type="submit" class="btn-56 btn-blue auth__btn">
-						<span>Submit</span>
+						<span>Access</span>
 						<svg class="icon" aria-hidden="true">
 							<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>
 						</svg>
 					</button>
 					<!-- IF WE HAVE AN ERROR -->
-					<!-- <b class="error-message"> Your phone number is already registered</b> -->
+					<!-- <strong class="error-message">Something wrong with your number phone or access to WhatsApp</strong> -->
 				</form>
-				<!-- IF YOU HAVE AN ACCOUNT -->
-			</div>
-			<a href="#" class="btn-48 btn-blue-border auth__share-btn">Share referral</a>
+				<div class="hero__partners">
+					<span>Official Partner</span>
+					<img src="./public/svg/meta.svg" alt="Meta official partner" />
+					<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
+				</div>
+			</section>
+			<section id="overview" class="grid">
+				<h2>Step <span>by</span> Step</h2>
+				<p>
+					Explore an Overview of our integrated WhatsApp-based application, offering streamlined functionality and
+					seamless user interaction within your chats.
+				</p>
+			</section>
+			<section id="features" class="grid">
+				<h2>Features <span>that</span> Improve Workflow</h2>
+				<p>
+					In the fast-paced world of modern applications, enhancing workflow efficiency is paramount. Our application,
+					designed with cutting-edge artificial intelligence, incorporates several key features to streamline your work
+					processes and maximize productivity.
+				</p>
+			</section>
+			<section class="grid">
+				<h2><span>Empower</span> Your Business with AI</h2>
+				<p>
+					With its unique approach, it stands to become the smartest assistant in the construction industry, fostering
+					improved site management and setting a new standard for AI-driven solution in B2B construction.
+				</p>
+			</section>
+			<section id="pricing" class="grid">
+				<h2>Flexible And Predictable Pricing to <span>Scale</span></h2>
+				<p>
+					Our pricing model is designed to grow with your needs, offering three distinct tiers to ensure you get the
+					best value.
+				</p>
+			</section>
+			<section id="faq" class="grid">
+				<h2><span>F</span>requently <span>A</span>sked <span>Q</span>uestions</h2>
+				<p>
+					Our pricing model is designed to grow with your needs, offering three distinct tiers to ensure you get the
+					best value.
+				</p>
+			</section>
 		</main>
-		<div class="hero__partners">
-			<span>Official Partner</span>
-			<img src="./public/svg/meta.svg" alt="Meta official partner" />
-			<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
-		</div>
-		<footer class="auth__footer">Copyright © 2024 Eiffels</footer>
+		<footer class="landing__footer">Copyright © 2024 Eiffels</footer>
 		<!-- BACKGROUND -->
 		<div class="bg" aria-hidden="true">
 			<div class="bg__wrapper">

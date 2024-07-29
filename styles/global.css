@@ -92,6 +92,7 @@ textarea {
 }
 
 input:focus-visible,
+button:focus-visible,
 textarea:focus-visible {
 	outline: 1.5px solid var(--black);
 	outline-offset: 0.25rem;
