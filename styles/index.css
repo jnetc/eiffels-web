@@ -138,10 +138,8 @@ footer {
 	}
 
 	& p:nth-of-type(2) {
-		max-width: 400px;
-		color: var(--grey-500);
+		max-width: 45ch;
 		font-size: var(--font-16);
-		line-height: 1.4;
 		text-align: center;
 
 		& strong {

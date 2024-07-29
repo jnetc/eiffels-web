@@ -416,14 +416,11 @@
 
 /* MODAL DIALOG STYLE */
 #mp-dialog {
-	--inset-val: 0;
-	--br: var(--border-corner-12);
 	width: min(1200px, 100%);
 	padding: var(--gap-36);
 	row-gap: var(--gap-36);
 	margin: auto;
 	border: none;
-	border-radius: var(--br);
 }
 
 #mp-dialog::backdrop {

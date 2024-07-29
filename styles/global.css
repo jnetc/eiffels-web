@@ -69,12 +69,21 @@ h6 {
 
 p {
 	line-height: 1.4;
+	/* text-wrap: balance; */
 }
 
 p,
 input,
 textarea {
 	font-weight: 300;
+}
+
+p,
+label,
+li:not(:has(h1, h2, h3, h4, h5, h6)),
+time {
+	color: var(--grey-500);
+	font-size: var(--font-18);
 }
 
 input,
@@ -84,21 +93,13 @@ textarea {
 
 input:focus-visible,
 textarea:focus-visible {
-	outline: 1.5px solid var(--violet-light);
+	outline: 1.5px solid var(--black);
 	outline-offset: 0.25rem;
 }
 
 /* ::placeholder {
   color: var(--grey-100);
 } */
-
-p,
-label,
-li:not(:has(h1, h2, h3, h4, h5, h6)),
-time {
-	color: var(--grey-500);
-	font-size: var(--font-18);
-}
 
 /* a:has(h1, h2, h3, h4, h5, h6, p),
 a:active {
@@ -171,8 +172,8 @@ body > footer {
 	&::after {
 		content: '';
 		position: absolute;
-		inset: var(--inset-val);
-		border-radius: var(--br);
+		inset: 0;
+		border-radius: var(--border-corner-12);
 		/* Create var from parent */
 
 		border: 1.5px solid transparent;
@@ -207,6 +208,7 @@ body > footer {
 	}
 }
 
+/* GLASS EFFECT FOR INPUTS */
 .glass-input {
 	background: linear-gradient(
 			45deg,

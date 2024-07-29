@@ -1,47 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+		<link rel="stylesheet" href="styles/variable.css" />
+		<link rel="stylesheet" href="styles/fonts.css" />
+		<link rel="stylesheet" href="styles/global.css" />
+		<link rel="stylesheet" href="styles/auth.css" />
+		<link rel="stylesheet" href="styles/backdrop.css" />
+		<script src="scripts/auth.js" defer></script>
+		<title>Auth</title>
+		<meta name="description" content="" />
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
-  <link rel="stylesheet" href="styles/variable.css">
-  <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/auth.css">
-  <title>Sign Up</title>
-  <meta name="description" content="" />
-</head>
+	<body class="auth">
+		<header class="auth__header">
+			<a href="index.html" title="Eiffels home page" class="eiffels-logo">
+				<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels logo" title="" />
+			</a>
+		</header>
+		<main class="auth__main">
+			<div class="container glass-effect">
+				<h1>Waiting<span>.</span><span>.</span><span>.</span></h1>
+				<p>Check your <strong>WhatsApp</strong> and input <span>6</span> digits number for authorization.</p>
+				<form action="auth.html" method="post" class="auth__form">
+					<div class="auth__input-group">
+						<input
+							type="text"
+							name="0"
+							id="digit-0"
+							placeholder="0"
+							inputmode="numeric"
+							pattern="^[0-9]{1}$"
+							title="Required 1 digit"
+							required
+						/>
+						<input
+							type="text"
+							name="1"
+							id="digit-1"
+							placeholder="0"
+							inputmode="numeric"
+							pattern="^[0-9]{1}$"
+							title="Required 1 digit"
+							required
+						/>
+						<input
+							type="text"
+							name="2"
+							id="digit-2"
+							placeholder="0"
+							inputmode="numeric"
+							pattern="^[0-9]{1}$"
+							title="Required 1 digit"
+							required
+						/>
+						<input
+							type="text"
+							name="3"
+							id="digit-3"
+							placeholder="0"
+							inputmode="numeric"
+							pattern="^[0-9]{1}$"
+							title="Required 1 digit"
+							required
+						/>
+						<input
+							type="text"
+							name="4"
+							id="digit-4"
+							placeholder="0"
+							inputmode="numeric"
+							pattern="^[0-9]{1}$"
+							title="Required 1 digit"
+							required
+						/>
+						<input
+							type="text"
+							name="5"
+							id="digit-5"
+							placeholder="0"
+							inputmode="numeric"
+							pattern="^[0-9]{1}$"
+							title="Required 1 digit"
+							required
+						/>
+					</div>
+					<button type="submit" class="btn-56 btn-blue auth__btn">
+						<span>Submit</span>
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>
+						</svg>
+					</button>
+					<!-- IF WE HAVE AN ERROR -->
+					<!-- <b class="error-message"> Your phone number is already registered</b> -->
+				</form>
+				<!-- IF YOU HAVE AN ACCOUNT -->
+			</div>
+			<a href="#" class="btn-48 btn-blue-border auth__share-btn">Share referral</a>
+		</main>
+		<div class="hero__partners">
+			<span>Official Partner</span>
+			<img src="./public/svg/meta.svg" alt="Meta official partner" />
+			<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
+		</div>
+		<footer class="auth__footer">Copyright © 2024 Eiffels</footer>
+		<!-- BACKGROUND -->
+		<div class="bg" aria-hidden="true">
+			<div class="bg__wrapper">
+				<div class="bg__linear-gradient"></div>
+				<div class="bg__radial-gradient"></div>
+				<svg viewBox="0 0 1920 920" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg__wave">
+					<g filter="url(#filter0_d_452_3269)">
+						<path
+							d="M-0.345215 0H1920.35V596.755C1785.9 720.379 1359.62 526.179 1169.32 459.755C957.324 385.755 749.502 697.04 508.439 590.044C219.468 461.784 150.209 377.624 -0.345215 384.614V0Z"
+							fill="url(#paint0_linear_452_3269)"
+							shape-rendering="crispEdges"
+						/>
+						<path
+							d="M-0.345215 0H1920.35V596.755C1785.9 720.379 1359.62 526.179 1169.32 459.755C957.324 385.755 749.502 697.04 508.439 590.044C219.468 461.784 150.209 377.624 -0.345215 384.614V0Z"
+							stroke="#F9F9FA"
+							shape-rendering="crispEdges"
+						/>
+					</g>
+					<defs>
+						<filter
+							id="filter0_d_452_3269"
+							x="0"
+							y="350"
+							width="100%"
+							height="100%"
+							filterUnits="userSpaceOnUse"
+							color-interpolation-filters="sRGB"
+						>
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix
+								in="SourceAlpha"
+								type="matrix"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha"
+							/>
+							<feOffset dy="25" />
+							<feGaussianBlur stdDeviation="25" />
+							<feComposite in2="hardAlpha" operator="out" />
+							<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.443137 0 0 0 0 0.890196 0 0 0 0.15 0" />
+							<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_452_3269" />
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_452_3269" result="shape" />
+						</filter>
+						<linearGradient
+							id="paint0_linear_452_3269"
+							x1="715.155"
+							y1="0"
+							x2="699.777"
+							y2="1500"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#F5F5F7" stop-opacity="0" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0.03" />
+						</linearGradient>
+					</defs>
+				</svg>
 
-<body class="auth">
-  <nav>
-    <a href="index.html" title="Eiffels home page" class="eiffels-logo">
-      <img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels logo" title="">
-    </a>
-  </nav>
-  <main class="main">
-    <div class="container">
-      <h1 class="title-gradient auth__title">Sign In</h1>
-      <p class="auth__txt">Write your phone number and we'll send you to your <strong>WhatsApp</strong> 6 digits number
-        for authorization.</p>
-      <form action="auth.html" method="post" class="auth__form">
-        <div class="auth__input-group">
-          <label for="digits">Only 6 Digits</label>
-          <input type="text" name="digits" id="digits" placeholder="Your 6 digits" inputmode="numeric"
-            pattern="[0-9]{6}" title="Required 6 digits" required>
-        </div>
-        <!-- IF WE HAVE AN ERROR -->
-        <b class="error-message"> Your phone number is already registered</b>
-        <button type="submit" class="btn-64 btn-blue auth__btn">Sign In</button>
-      </form>
-      <!-- IF YOU HAVE AN ACCOUNT -->
-      <p class="auth__txt">You don't have an account? <a href="signup.html" class="href" title="Sign In">Sign Up</a>
-      </p>
+				<svg viewBox="0 0 1920 920" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg__wave">
+					<g filter="url(#filter0_d_452_3267)">
+						<path
+							d="M1162.62 483.868C708.394 780.603 539.575 365.019 0.266113 519.375V0H1920V538.49C1675.22 705.555 1498.52 264.434 1162.62 483.868Z"
+							fill="url(#paint0_linear_452_3267)"
+							shape-rendering="crispEdges"
+						/>
+						<path
+							d="M1162.62 483.868C708.394 780.603 539.575 365.019 0.266113 519.375V0H1920V538.49C1675.22 705.555 1498.52 264.434 1162.62 483.868Z"
+							stroke="#F9F9FA"
+							shape-rendering="crispEdges"
+						/>
+					</g>
+					<defs>
+						<filter
+							id="filter0_d_452_3267"
+							x="0"
+							y="350"
+							width="100%"
+							height="100%"
+							filterUnits="userSpaceOnUse"
+							color-interpolation-filters="sRGB"
+						>
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix
+								in="SourceAlpha"
+								type="matrix"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha"
+							/>
+							<feOffset dy="25" />
+							<feGaussianBlur stdDeviation="25" />
+							<feComposite in2="hardAlpha" operator="out" />
+							<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.443137 0 0 0 0 0.890196 0 0 0 0.15 0" />
+							<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_452_3267" />
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_452_3267" result="shape" />
+						</filter>
+						<linearGradient
+							id="paint0_linear_452_3267"
+							x1="894.956"
+							y1="0"
+							x2="879.996"
+							y2="1500"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#F5F5F7" stop-opacity="0" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0.03" />
+						</linearGradient>
+					</defs>
+				</svg>
 
-      <a href="#" class="btn-48 btn-secondary btn-fit auth__share-btn">Share referral</a>
-    </div>
-  </main>
-  <footer class="footer">Copyright © 2024 Eiffels</footer>
-</body>
+				<svg viewBox="0 0 1920 920" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg__wave">
+					<g filter="url(#filter0_d_449_3215)">
+						<path
+							d="M837.974 463.785C463.171 349.613 349.213 755.137 -0.184814 563.931V0H1919.34C1919.34 115.336 1920.25 463.785 1920.25 463.785C1661.16 636.873 1105.25 545.202 837.974 463.785Z"
+							fill="url(#paint0_linear_449_3215)"
+							shape-rendering="crispEdges"
+						/>
+						<path
+							d="M837.974 463.785C463.171 349.613 349.213 755.137 -0.184814 563.931V0H1919.34C1919.34 115.336 1920.25 463.785 1920.25 463.785C1661.16 636.873 1105.25 545.202 837.974 463.785Z"
+							stroke="#F9F9FA"
+							shape-rendering="crispEdges"
+						/>
+					</g>
+					<defs>
+						<filter
+							id="filter0_d_449_3215"
+							x="0"
+							y="400"
+							width="100%"
+							height="100%"
+							filterUnits="userSpaceOnUse"
+							color-interpolation-filters="sRGB"
+						>
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix
+								in="SourceAlpha"
+								type="matrix"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha"
+							/>
+							<feOffset dy="25" />
+							<feGaussianBlur stdDeviation="25" result="blur" />
+							<feComposite in2="hardAlpha" operator="out" />
+							<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.443137 0 0 0 0 0.890196 0 0 0 0.15 0" />
+							<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_449_3215" />
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_449_3215" result="shape" />
+						</filter>
+						<linearGradient
+							id="paint0_linear_449_3215"
+							x1="961.072"
+							y1="0"
+							x2="961.072"
+							y2="1500"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#F5F5F7" stop-opacity="0" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0.03" />
+						</linearGradient>
+					</defs>
+				</svg>
 
+				<svg class="bg__lines" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M234 1.39746V1079.64" stroke="url(#paint0_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M234 979.638V1079.64" stroke="url(#paint1)" class="lines__v-animation from-bottom" />
+					<path d="M366 1.39746V1079.64" stroke="url(#paint2_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M498 1.39746V1079.64" stroke="url(#paint3_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M630 1.39746V1079.64" stroke="url(#paint4_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M630 0V100" stroke="url(#paint5)" class="lines__v-animation from-top" />
+					<path d="M762 1.39746V1079.64" stroke="url(#paint6_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M894 1.39746V1079.64" stroke="url(#paint7_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1026 1.39746V1079.64" stroke="url(#paint8_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1158 1.39746V1079.64" stroke="url(#paint9_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1290 1.39746V1079.64" stroke="url(#paint10_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1422 1.39746V1079.64" stroke="url(#paint11_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1422 0V100" stroke="url(#paint12)" class="lines__v-animation from-top" />
+					<path d="M1554 1.39746V1079.64" stroke="url(#paint13_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1554 979.638V1079.64" stroke="url(#paint14)" class="lines__v-animation from-bottom" />
+					<path d="M1686 1.39746V1079.64" stroke="url(#paint15_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1850 78.5166L50 78.5165" stroke="url(#paint16_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1850 210.517L50 210.517" stroke="url(#paint17_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1920 210.517L1820 210.517" stroke="url(#paint18)" class="lines__h-animation from-left" />
+					<path d="M1850 342.517L50 342.517" stroke="url(#paint19_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M100 342.517L2.56385e-06 342.517" stroke="url(#paint20)" class="lines__h-animation from-right" />
+					<path d="M1850 474.517L50 474.517" stroke="url(#paint21_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1850 606.517L50 606.517" stroke="url(#paint22_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1850 738.517L50 738.517" stroke="url(#paint23_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1850 870.517L50 870.517" stroke="url(#paint24_linear_449_3124)" stroke-opacity="0.1" />
+					<path d="M1920 870.517L1820 870.517" stroke="url(#paint25)" class="lines__h-animation from-left" />
+					<path d="M1850 1002.52L50 1002.52" stroke="url(#paint26_linear_449_3124)" stroke-opacity="0.1" />
+					<circle id="circle-1" cx="498" cy="210.517" r="4.5" fill="#97C7F7" class="circle-to-bottom" />
+					<circle id="circle-2" cx="1554" cy="210.517" r="4.5" fill="#97C7F7" class="circle-to-left" />
+					<circle id="circle-3" cx="366" cy="474.517" r="4.5" fill="#97C7F7" class="circle-to-right" />
+					<circle id="circle-4" cx="1686" cy="474.517" r="4.5" fill="#97C7F7" class="circle-to-top" />
+					<circle id="circle-5" cx="1290" cy="78.5166" r="4.5" fill="#97C7F7" class="circle-to-left" />
+					<circle id="circle-6" cx="1422" cy="606.517" r="4.5" fill="#97C7F7" class="circle-to-right" />
+					<circle id="circle-7" cx="1290" cy="870.517" r="4.5" fill="#97C7F7" class="circle-to-top" />
+					<circle id="circle-8" cx="366" cy="870.517" r="4.5" fill="#97C7F7" class="circle-to-left" />
+					<circle id="circle-9" cx="630" cy="738.517" r="4.5" fill="#97C7F7" class="circle-to-bottom" />
+					<circle id="circle-10" cx="1554" cy="1002.52" r="4.5" fill="#97C7F7" class="circle-to-left" />
+					<defs>
+						<linearGradient
+							id="paint0_linear_449_3124"
+							x1="234.5"
+							y1="1.39746"
+							x2="234.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient id="paint1" x1="234.5" y1="979.638" x2="234.5" y2="1079.64" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.5" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint2_linear_449_3124"
+							x1="366.5"
+							y1="1.39746"
+							x2="366.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint3_linear_449_3124"
+							x1="498.5"
+							y1="1.39746"
+							x2="498.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint4_linear_449_3124"
+							x1="630.5"
+							y1="1.39746"
+							x2="630.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient id="paint5" x1="630.5" y1="0" x2="630.5" y2="100" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.502852" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint6_linear_449_3124"
+							x1="762.5"
+							y1="1.39746"
+							x2="762.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint7_linear_449_3124"
+							x1="894.5"
+							y1="1.39746"
+							x2="894.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint8_linear_449_3124"
+							x1="1026.5"
+							y1="1.39746"
+							x2="1026.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint9_linear_449_3124"
+							x1="1158.5"
+							y1="1.39746"
+							x2="1158.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint10_linear_449_3124"
+							x1="1290.5"
+							y1="1.39746"
+							x2="1290.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint11_linear_449_3124"
+							x1="1422.5"
+							y1="1.39746"
+							x2="1422.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient id="paint12" x1="1422.5" y1="0" x2="1422.5" y2="100" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.5" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint13_linear_449_3124"
+							x1="1554.5"
+							y1="1.39746"
+							x2="1554.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint14"
+							x1="1554.5"
+							y1="979.638"
+							x2="1554.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.5" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint15_linear_449_3124"
+							x1="1686.5"
+							y1="1.39746"
+							x2="1686.5"
+							y2="1079.64"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint16_linear_449_3124"
+							x1="950"
+							y1="78.5166"
+							x2="950"
+							y2="79.5166"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint17_linear_449_3124"
+							x1="950"
+							y1="210.517"
+							x2="950"
+							y2="211.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint18"
+							x1="1921.94"
+							y1="210.517"
+							x2="1814.68"
+							y2="210.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.5" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint19_linear_449_3124"
+							x1="950"
+							y1="342.517"
+							x2="950"
+							y2="343.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint20"
+							x1="-6.61369"
+							y1="343.555"
+							x2="105.662"
+							y2="343.555"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.5" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint21_linear_449_3124"
+							x1="950"
+							y1="474.517"
+							x2="950"
+							y2="475.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint22_linear_449_3124"
+							x1="950"
+							y1="606.517"
+							x2="950"
+							y2="607.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint23_linear_449_3124"
+							x1="950"
+							y1="738.517"
+							x2="950"
+							y2="739.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint24_linear_449_3124"
+							x1="950"
+							y1="870.517"
+							x2="950"
+							y2="871.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint25"
+							x1="1921.94"
+							y1="870.517"
+							x2="1815.97"
+							y2="870.517"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.5" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+						<linearGradient
+							id="paint26_linear_449_3124"
+							x1="950"
+							y1="1002.52"
+							x2="950"
+							y2="1003.52"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#0071E3" stop-opacity="0" />
+							<stop offset="0.1" stop-color="#0071E3" />
+							<stop offset="0.9" stop-color="#0071E3" />
+							<stop offset="1" stop-color="#0071E3" stop-opacity="0" />
+						</linearGradient>
+					</defs>
+				</svg>
+			</div>
+		</div>
+	</body>
 </html>

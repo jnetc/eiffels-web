@@ -142,11 +142,11 @@ path[class*='lines__'] {
 	--time: 15s;
 }
 
-[stroke='url(#paint5_line-animated)'] {
+[stroke='url(#paint5)'] {
 	translate: 0 -100px;
 	--delay: 10s;
 }
-[stroke='url(#paint12_line-animated)'] {
+[stroke='url(#paint12)'] {
 	translate: 0 -100px;
 	--delay: 3s;
 }
@@ -157,11 +157,11 @@ path[class*='lines__'] {
 	--time: 18s;
 }
 
-[stroke='url(#paint1_line-animated)'] {
+[stroke='url(#paint1)'] {
 	translate: 0 100px;
 	--delay: 5s;
 }
-[stroke='url(#paint14_line-animated)'] {
+[stroke='url(#paint14)'] {
 	translate: 0 100px;
 	--delay: 1s;
 }
@@ -172,7 +172,7 @@ path[class*='lines__'] {
 	--time: 20s;
 }
 
-[stroke='url(#paint20_line-animated)'] {
+[stroke='url(#paint20)'] {
 	translate: -100px 0;
 	--delay: 11s;
 }
@@ -183,11 +183,11 @@ path[class*='lines__'] {
 	--time: 14s;
 }
 
-[stroke='url(#paint18_line-animated)'] {
+[stroke='url(#paint18)'] {
 	translate: 100px 0;
 	--delay: 6s;
 }
-[stroke='url(#paint25_line-animated)'] {
+[stroke='url(#paint25)'] {
 	translate: 100px 0;
 	--delay: 2s;
 }
@@ -244,11 +244,11 @@ circle[class*='circle-to'] {
 	animation: to-bottom;
 }
 
-circle[cx='498'] {
+circle#circle-1 {
 	--time: 19s;
 	--delay: 1s;
 }
-circle[cx='630'] {
+circle#circle-9 {
 	--time: 21s;
 	--delay: 5s;
 }
@@ -257,11 +257,11 @@ circle[cx='630'] {
 	animation: to-top;
 }
 
-circle[cx='1686'] {
+circle#circle-4 {
 	--time: 20s;
 	--delay: 1s;
 }
-circle[cy='870.517'][cx='1290'] {
+circle#circle-7 {
 	--time: 25s;
 	--delay: 3s;
 }
@@ -270,31 +270,31 @@ circle[cy='870.517'][cx='1290'] {
 	animation: to-left;
 }
 
-circle[cy='78.5166'][cx='1290'] {
+circle#circle-2 {
+	--time: 17s;
+	--delay: 15s;
+}
+circle#circle-5 {
 	--time: 20s;
 	--delay: 7s;
 }
-circle[cy='870.517'][cx='366'] {
+circle#circle-8 {
 	--time: 21s;
 }
-circle[cx='894'] {
+circle#circle-10 {
 	--time: 26s;
 	--delay: 8s;
-}
-circle[cx='1554'] {
-	--time: 17s;
-	--delay: 15s;
 }
 
 .circle-to-right {
 	animation: to-right;
 }
 
-circle[cy='474.517'][cx='366'] {
+circle#circle-3 {
 	--time: 18s;
 	--delay: 1s;
 }
-circle[cx='1422'] {
+circle#circle-6 {
 	--time: 20s;
 	--delay: 7s;
 }

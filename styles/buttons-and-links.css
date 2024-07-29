@@ -22,6 +22,8 @@ main a {
 .btn-56,
 .btn-48,
 .btn-40 {
+	width: fit-content;
+	max-width: 260px;
 	display: flex;
 	align-items: center;
 	padding: var(--gap-12) var(--gap-24);
@@ -54,10 +56,6 @@ main a {
 
 .btn-40 {
 	height: var(--size-40);
-}
-
-.btn-fit {
-	width: fit-content;
 }
 
 .btn-blue {
