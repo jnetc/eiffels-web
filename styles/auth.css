@@ -17,15 +17,19 @@
 }
 
 .container {
+	max-width: 680px;
 	display: grid;
 	justify-items: center;
-	position: relative;
-	padding: var(--gap-96);
+	padding-block: var(--gap-96);
+	padding-inline: var(--gap-96);
+
+	& > * {
+		grid-column: 2;
+	}
 
 	& h1 {
 		display: flex;
 		flex-wrap: nowrap;
-		max-width: 768px;
 		color: var(--black);
 		font-size: clamp(var(--font-32), 7vw, var(--font-64));
 		line-height: 1;
@@ -42,8 +46,7 @@
 		}
 	}
 
-	p {
-		max-width: 45ch;
+	p:not(.error-message) {
 		padding-block-start: var(--gap-16);
 		text-align: center;
 
@@ -64,17 +67,20 @@
 }
 
 .auth__form {
+	justify-self: stretch;
 	display: grid;
-	column-gap: var(--gap-16);
-	row-gap: var(--gap-36);
-	padding-block-start: var(--gap-48);
+	padding-block-start: var(--gap-36);
 }
 
 .auth__input-group {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	column-gap: var(--gap-16);
-	position: relative;
+	padding-block-end: var(--gap-36);
+
+	& ::selection {
+		background-color: var(--grey-500);
+	}
 
 	& input {
 		width: var(--size-64);
@@ -104,10 +110,6 @@
 	background-color: var(--white);
 }
 
-.error-message {
-	color: var(--warning-error);
-}
-
 .hero__partners {
 	justify-self: center;
 	max-width: fit-content;
@@ -119,7 +121,19 @@
 
 	& span {
 		grid-column: 1 / -1;
-		grid-row: 1;
 		text-align: center;
+	}
+
+	& span:nth-of-type(1) {
+		grid-row: 1;
+	}
+
+	& img:nth-of-type(1) {
+		justify-self: flex-end;
+	}
+
+	& span:nth-of-type(2) {
+		padding-block-start: var(--gap-24);
+		grid-row: 3;
 	}
 }

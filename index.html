@@ -53,13 +53,24 @@
 			<section id="hero" class="grid">
 				<h1>A Smart Assistant for Every Day</h1>
 				<p>
-					Eiffels is not just another app but a transformative solution that integrates deeply into the industry’s
-					existing communication channels.
+					<strong>Eiffels</strong> is not just another app but a transformative solution that integrates deeply into the
+					industry’s existing communication channels.
 				</p>
 				<p>
-					Write your phone number and we'll send you to your <strong>WhatsApp</strong> <span>6</span> digits number for
+					Write your phone number and we'll send you to your <strong>WhatsApp</strong> <span>6</span> number for
 					authorization.
 				</p>
+				<!-- IF WE HAVE AN ERROR -->
+				<span class="error-message" role="alert" aria-live="assertive">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="public/svg/ui_icons.svg#warning"></use>
+					</svg>
+					<strong>
+						Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is neither
+						more nor less than 6 digits.
+					</strong>
+				</span>
+				<!-- /// -->
 				<form action="auth.html" method="post" class="hero__auth-form">
 					<div class="auth__input-group">
 						<label for="phone-number">Phone Number <span>*</span></label>
@@ -73,7 +84,7 @@
 							placeholder="+358401234567"
 							inputmode="tel"
 							pattern="[+][0-9]{10,}"
-							title="Minimum 10 digits, without spaces"
+							title="Please enter a minimum of 10 digits without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
 							required
 						/>
 					</div>
@@ -83,13 +94,15 @@
 							<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>
 						</svg>
 					</button>
-					<!-- IF WE HAVE AN ERROR -->
-					<!-- <strong class="error-message">Something wrong with your number phone or access to WhatsApp</strong> -->
 				</form>
 				<div class="hero__partners">
 					<span>Official Partner</span>
 					<img src="./public/svg/meta.svg" alt="Meta official partner" />
 					<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
+					<span
+						>Encrypted with
+						<a href="http://www.lets-encrypt.org/" class="href" target="_blank">Blockchain Technology</a>
+					</span>
 				</div>
 			</section>
 			<section id="overview" class="grid">

@@ -119,10 +119,10 @@ footer {
 	& > * {
 		grid-column: 1 / -1;
 		justify-self: center;
+		max-width: 768px;
 	}
 
 	& h1 {
-		max-width: 768px;
 		color: var(--black);
 		font-size: clamp(var(--font-32), 7vw, var(--font-64));
 		line-height: 1;
@@ -130,7 +130,6 @@ footer {
 	}
 
 	& p:nth-of-type(1) {
-		max-width: 768px;
 		padding-block: var(--gap-24) var(--gap-48);
 		color: var(--grey-400);
 		font-size: clamp(var(--font-18), 3vw, var(--font-24));
@@ -141,6 +140,7 @@ footer {
 		max-width: 45ch;
 		font-size: var(--font-16);
 		text-align: center;
+		padding-block-end: var(--gap-36);
 
 		& strong {
 			color: var(--whatsapp-dark-green);
@@ -152,12 +152,16 @@ footer {
 }
 /* INPUTs / FORM */
 .hero__auth-form {
-	max-width: 360px;
+	/* max-width: 460px; */
 	display: grid;
 	column-gap: var(--gap-16);
 	row-gap: var(--gap-36);
-	padding-block-start: var(--gap-36);
+
 	position: relative;
+
+	& > button.auth__btn {
+		min-width: 100%;
+	}
 }
 
 .auth__input-group {
@@ -174,11 +178,11 @@ footer {
 	}
 
 	& .icon {
-		width: var(--size-24);
-		height: var(--size-24);
+		width: var(--size-40);
+		height: var(--size-40);
 		aspect-ratio: 1;
 		position: absolute;
-		top: 50%;
+		inset-block: 2.35rem;
 		left: var(--gap-6);
 
 		& use {
@@ -187,28 +191,24 @@ footer {
 	}
 
 	& input {
-		width: 100%;
+		max-width: 360px;
 		padding-block: var(--gap-12);
-		padding-inline: var(--gap-32) var(--gap-12);
+		padding-inline: var(--gap-48) var(--gap-12);
 		background-color: hsl(from var(--white) h s l / 0.5);
 		border: none;
 		border-bottom: 1px solid var(--black);
-		font-size: var(--font-18);
+		font-size: var(--font-32);
+		font-weight: bold;
 	}
 
 	& input::placeholder {
 		color: var(--grey-200);
-		font-size: var(--font-18);
+		font-size: var(--font-32);
 	}
-}
 
-.error-message {
-	max-width: max-content;
-	position: absolute;
-	inset-inline: -25%;
-	bottom: -15%;
-	color: var(--warning-error);
-	text-align: center;
+	& input:focus {
+		outline: none;
+	}
 }
 
 .hero__partners {
@@ -220,8 +220,20 @@ footer {
 
 	& span {
 		grid-column: 1 / -1;
-		grid-row: 1;
 		text-align: center;
+	}
+
+	& span:nth-of-type(1) {
+		grid-row: 1;
+	}
+
+	& img:nth-of-type(1) {
+		justify-self: flex-end;
+	}
+
+	& span:nth-of-type(2) {
+		grid-row: 3;
+		padding-block-start: var(--gap-24);
 	}
 }
 

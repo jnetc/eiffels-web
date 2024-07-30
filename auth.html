@@ -23,8 +23,17 @@
 		<main class="auth__main">
 			<div class="container glass-effect">
 				<h1>Waiting<span>.</span><span>.</span><span>.</span></h1>
-				<p>Check your <strong>WhatsApp</strong> and input <span>6</span> digits number for authorization.</p>
+				<p>Check your <strong>WhatsApp</strong> and input <span>6</span> number for authorization.</p>
 				<form action="auth.html" method="post" class="auth__form">
+					<span class="error-message" role="alert" aria-live="assertive">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="public/svg/ui_icons.svg#warning"></use>
+						</svg>
+						<strong>
+							Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
+							neither more nor less than 6 digits.
+						</strong>
+					</span>
 					<div class="auth__input-group">
 						<input
 							type="text"
@@ -98,6 +107,10 @@
 			<span>Official Partner</span>
 			<img src="./public/svg/meta.svg" alt="Meta official partner" />
 			<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
+			<span
+				>Encrypted with
+				<a href="http://www.lets-encrypt.org/" class="href" target="_blank"> Blockchain Technology </a>
+			</span>
 		</div>
 		<footer class="auth__footer">Copyright © 2024 Eiffels</footer>
 		<!-- BACKGROUND -->

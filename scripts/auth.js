@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const authForm = document.querySelector('.auth__form');
 	const digits = document.querySelectorAll('[inputmode="numeric"]');
 	const submitButton = document.querySelector('.auth__btn');
+	const errorMessage = document.querySelector('.error-message');
+
+	digits[0].focus();
 
 	digits.forEach((input, index) => {
 		input.addEventListener('input', () => {
@@ -20,7 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			event.preventDefault();
 
 			// Ensure pasted content is exactly 6 digits
-			if (!/^[0-9]{6}$/.test(paste)) return;
+			if (!/^[0-9]{6}$/.test(paste)) {
+				errorMessage.classList.add('show');
+				return;
+			}
+
+			// Hide error message
+			errorMessage.classList.remove('show');
 
 			// Fill each input with the corresponding digit from the pasted value
 			digits.forEach((input, index) => {
