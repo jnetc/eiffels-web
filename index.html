@@ -50,7 +50,7 @@
 		</header>
 
 		<main class="landing__main">
-			<section id="hero" class="grid">
+			<section id="unlogged" class="grid">
 				<h1>A Smart Assistant for Every Day</h1>
 				<p>
 					<strong>Eiffels</strong> is not just another app but a transformative solution that integrates deeply into the
@@ -71,16 +71,16 @@
 					</strong>
 				</span>
 				<!-- /// -->
-				<form action="auth.html" method="post" class="hero__auth-form">
-					<div class="auth__input-group">
-						<label for="phone-number">Phone Number <span>*</span></label>
+				<form action="auth.html" method="post" class="unlogged__form">
+					<div class="unlogged__input-group">
+						<label for="unlogged__phone-number">Phone Number <span>*</span></label>
 						<svg class="icon" aria-hidden="true">
 							<use xlink:href="./public/svg/ui_icons.svg#iphone"></use>
 						</svg>
 						<input
 							type="tel"
 							name="phone-number"
-							id="phone-number"
+							id="unlogged__phone-number"
 							placeholder="+358401234567"
 							inputmode="tel"
 							pattern="[+][0-9]{10,}"
@@ -88,7 +88,7 @@
 							required
 						/>
 					</div>
-					<button type="submit" class="btn-56 btn-blue auth__btn">
+					<button type="submit" class="btn-56 btn-blue unlogged__btn">
 						<span>Access</span>
 						<svg class="icon" aria-hidden="true">
 							<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>

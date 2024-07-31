@@ -1,5 +1,5 @@
 /* UNLOGGED HERO SECTION */
-#hero {
+#unlogged {
 	/* height: 1080px; */
 	min-height: calc(100vh - 68px);
 	/* height: clamp(100%, 95vw, 100vh); */
@@ -44,28 +44,28 @@
 }
 
 /* If intered value is not number */
-#hero:has(.error-message.show) form input#phone-number {
+#unlogged:has(.error-message.show) form input#phone-number {
 	color: var(--warning-error);
 }
-#hero:has(.error-message.show) .auth__input-group svg use {
+#unlogged:has(.error-message.show) .unlogged__input-group svg use {
 	fill: var(--warning-error);
 }
 
 /* INPUTs / FORM */
-.hero__auth-form {
+.unlogged__form {
 	/* max-width: 460px; */
 	display: grid;
 	column-gap: var(--gap-16);
 	row-gap: var(--gap-36);
 	padding-block-end: var(--gap-72);
 
-	& > button.auth__btn {
+	& > button.unlogged__btn {
 		/* min-width: 100%; */
 		justify-self: center;
 	}
 }
 
-.auth__input-group {
+.unlogged__input-group {
 	display: grid;
 	row-gap: var(--gap-8);
 	position: relative;
@@ -112,6 +112,7 @@
 	}
 }
 
+/* OUR PARTNERS BLOCK */
 .our-partners {
 	justify-self: center;
 	max-width: fit-content;

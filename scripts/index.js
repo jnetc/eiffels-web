@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const heroAuthForm = document.querySelector('.hero__auth-form');
-	const phoneNumberInput = document.getElementById('phone-number');
+	const heroAuthForm = document.querySelector('.unlogged__form');
+	const phoneNumberInput = document.getElementById('unlogged__phone-number');
 	const errorMessage = document.querySelector('.error-message');
 	let phoneNumber = '';
 
