@@ -416,6 +416,7 @@
 
 /* MODAL DIALOG STYLE */
 #mp-dialog {
+	--br: var(--border-corner-12);
 	width: min(1200px, 100%);
 	padding: var(--gap-36);
 	row-gap: var(--gap-36);

@@ -6,7 +6,7 @@
 	/* height: max(100dvh, 1080px); */
 	place-content: center;
 	/* border: 1px solid red; */
-	padding-block-start: var(--gap-64);
+	padding-block-start: var(--gap-48);
 
 	& > * {
 		grid-column: 1 / -1;
@@ -44,7 +44,7 @@
 }
 
 /* If intered value is not number */
-#unlogged:has(.error-message.show) form input#phone-number {
+#unlogged:has(.error-message.show) form input#unlogged__phone-number {
 	color: var(--warning-error);
 }
 #unlogged:has(.error-message.show) .unlogged__input-group svg use {
@@ -69,8 +69,12 @@
 	display: grid;
 	row-gap: var(--gap-8);
 	position: relative;
+	padding-block-end: var(--gap-12);
+	border: none;
+	border-top: 1px solid var(--grey-200);
 
-	& label {
+	& legend {
+		padding-inline-end: var(--gap-6);
 		font-size: var(--font-14);
 		font-weight: bold;
 		& span {
@@ -83,7 +87,7 @@
 		height: var(--size-40);
 		aspect-ratio: 1;
 		position: absolute;
-		inset-block: 2.35rem;
+		inset-block: 0.725rem;
 		left: var(--gap-6);
 
 		& use {
@@ -109,6 +113,87 @@
 
 	& input:focus {
 		outline: none;
+	}
+}
+
+/* LOGGED HERO SECTION */
+#logged {
+	/* height: 1080px; */
+	min-height: calc(100vh - 68px);
+	/* height: clamp(100%, 95vw, 100vh); */
+	/* height: max(100dvh, 1080px); */
+	place-content: center;
+	/* border: 1px solid red; */
+	padding-block-start: var(--gap-64);
+
+	& > * {
+		grid-column: 1 / -1;
+		justify-self: center;
+		max-width: 768px;
+	}
+}
+
+.logged__wrapper {
+	display: grid;
+	gap: var(--gap-12);
+	justify-items: center;
+	padding-block-end: var(--gap-72);
+
+	& > span {
+		padding-block-start: var(--gap-12);
+		color: var(--grey-400);
+		font-size: var(--font-24);
+		font-weight: bold;
+	}
+
+	& h1 {
+		color: var(--black);
+		font-size: clamp(var(--font-32), 7vw, var(--font-64));
+		line-height: 1;
+		text-align: center;
+	}
+
+	& p:nth-of-type(1) {
+		padding-block: var(--gap-12) var(--gap-36);
+		color: var(--grey-400);
+		font-size: clamp(var(--font-18), 3vw, var(--font-24));
+		text-align: center;
+	}
+}
+
+.logged__picture {
+	--br: 50vw
+	justify-self: center;
+	padding: var(--gap-24);
+	position: relative;
+	border-radius: 50vw;
+
+	& img {
+		width: var(--size-128);
+		aspect-ratio: 1;
+		border-radius: 50vw;
+	}
+
+	.logged__checkmark {
+		width: var(--size-48);
+		aspect-ratio: 1;
+		display: grid;
+		place-content: center;
+		position: absolute;
+		bottom: 0;
+		right: 10%;
+		border-radius: 50vw;
+		background-color: var(--surface);
+		box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%);
+
+		& .icon {
+			width: var(--size-36);
+			height: var(--size-36);
+			aspect-ratio: 1;
+			& use {
+				fill: var(--whatsapp-dark-green);
+			}
+		}
 	}
 }
 

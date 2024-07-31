@@ -50,46 +50,43 @@
 		</header>
 
 		<main class="landing__main">
-			<section id="hero" class="grid">
-				<h1>A Smart Assistant for Every Day</h1>
-				<p>
-					Eiffels is not just another app but a transformative solution that integrates deeply into the industry’s
-					existing communication channels.
-				</p>
-				<p>
-					Write your phone number and we'll send you to your <strong>WhatsApp</strong> <span>6</span> digits number for
-					authorization.
-				</p>
-				<form action="auth.html" method="post" class="hero__auth-form">
-					<div class="auth__input-group">
-						<label for="phone-number">Phone Number <span>*</span></label>
+			<section id="logged" class="grid">
+				<div class="logged__wrapper">
+					<picture class="logged__picture glass-effect">
+						<img src="./public/image/jussi.png" alt="Jussi Heinola" />
+						<div class="logged__checkmark" aria-hidden="true">
+							<svg class="icon">
+								<use xlink:href="./public/svg/ui_icons.svg#checkmark-shield"></use>
+							</svg>
+						</div>
+					</picture>
+					<span>Hello</span>
+					<h1>Jussi Heinola</h1>
+					<p>
+						Now you can securely work with your files through your personal account, accessing all the features and
+						tools for managing documents and sharing with colleagues.
+					</p>
+					<a
+						href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage"
+						class="btn-56 btn-blue logged__btn"
+						aria-label="Open OneDrive"
+					>
+						<span>Open OneDrive</span>
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="./public/svg/ui_icons.svg#iphone"></use>
+							<use xlink:href="./public/svg/ui_icons.svg#onedrive"></use>
 						</svg>
-						<input
-							type="tel"
-							name="phone-number"
-							id="phone-number"
-							placeholder="+358401234567"
-							inputmode="tel"
-							pattern="[+][0-9]{10,}"
-							title="Minimum 10 digits, without spaces"
-							required
-						/>
-					</div>
-					<button type="submit" class="btn-56 btn-blue auth__btn">
-						<span>Access</span>
-						<svg class="icon" aria-hidden="true">
-							<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>
-						</svg>
-					</button>
-					<!-- IF WE HAVE AN ERROR -->
-					<!-- <strong class="error-message">Something wrong with your number phone or access to WhatsApp</strong> -->
-				</form>
-				<div class="our-partners">
+					</a>
+				</div>
+				<div class="our-partners" aria-labelledby="partners-title">
 					<span>Official Partner</span>
 					<img src="./public/svg/meta.svg" alt="Meta official partner" />
 					<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
+					<span>
+						Encrypted with
+						<a href="http://www.lets-encrypt.org/" class="href" target="_blank" rel="noopener noreferrer">
+							Blockchain Technology
+						</a>
+					</span>
 				</div>
 			</section>
 			<section id="overview" class="grid">

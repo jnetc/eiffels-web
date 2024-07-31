@@ -23,16 +23,6 @@ main,
 footer {
 	grid-column: 2;
 }
-/* .landing {
-  --colums: 12;
-  --colums-width: 6rem;
-  --outside: 1fr;
-
-  display: grid;
-  grid-template-columns: var(--outside) repeat(var(--colums), minmax(auto, var(--colums-width))) var(--outside);
-  grid-template-rows: min-content 1fr min-content;
-  column-gap: var(--gap-36);
-} */
 
 .grid {
 	--colums: 12;
@@ -66,6 +56,18 @@ footer {
 .nav__links {
 	justify-self: center;
 	gap: 2rem;
+
+	& a {
+		font-size: var(--font-20);
+		text-decoration: underline transparent;
+		text-underline-offset: 2px;
+		transition: all 0.2s ease-in-out;
+	}
+
+	& a:hover {
+		text-underline-offset: 5px;
+		text-decoration: underline var(--grey-500);
+	}
 }
 
 .header__logged-links {
@@ -116,9 +118,6 @@ footer {
 }
 
 @media screen and (max-width: 1360px) {
-	/* #hero {
-		height: 100%;
-	} */
 	.logged__href {
 		justify-content: center;
 		width: var(--size-40);
