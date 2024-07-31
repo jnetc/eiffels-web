@@ -150,17 +150,26 @@ footer {
 		}
 	}
 }
+
+/* If intered value is not number */
+#hero:has(.error-message.show) form input#phone-number {
+	color: var(--warning-error);
+}
+#hero:has(.error-message.show) .auth__input-group svg use {
+	fill: var(--warning-error);
+}
+
 /* INPUTs / FORM */
 .hero__auth-form {
 	/* max-width: 460px; */
 	display: grid;
 	column-gap: var(--gap-16);
 	row-gap: var(--gap-36);
-
-	position: relative;
+	padding-block-end: var(--gap-72);
 
 	& > button.auth__btn {
-		min-width: 100%;
+		/* min-width: 100%; */
+		justify-self: center;
 	}
 }
 
@@ -211,12 +220,13 @@ footer {
 	}
 }
 
-.hero__partners {
+.our-partners {
+	justify-self: center;
+	max-width: fit-content;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	place-content: center;
 	gap: var(--gap-16);
-	padding-block-start: var(--gap-72);
 
 	& span {
 		grid-column: 1 / -1;
@@ -225,6 +235,7 @@ footer {
 
 	& span:nth-of-type(1) {
 		grid-row: 1;
+		font-size: var(--font-18);
 	}
 
 	& img:nth-of-type(1) {
@@ -232,8 +243,9 @@ footer {
 	}
 
 	& span:nth-of-type(2) {
+		font-size: var(--font-14);
+		padding-block-start: var(--gap-12);
 		grid-row: 3;
-		padding-block-start: var(--gap-24);
 	}
 }
 

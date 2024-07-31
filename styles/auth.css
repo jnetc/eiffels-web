@@ -1,7 +1,8 @@
 .auth {
 	max-width: 1920px;
 	display: grid;
-	grid-template-rows: min-content 1fr min-content;
+	grid-template-rows: min-content 1fr min-content min-content;
+	row-gap: var(--font-64);
 	margin-inline: auto;
 	padding-inline: var(--gap-16);
 }
@@ -17,11 +18,14 @@
 }
 
 .container {
-	max-width: 680px;
+	/* width: 100%; */
+	/* max-width: 680px; */
 	display: grid;
+	grid-template-columns: minmax(var(--gap-12), var(--gap-96)) 1fr minmax(var(--gap-12), var(--gap-96));
 	justify-items: center;
 	padding-block: var(--gap-96);
-	padding-inline: var(--gap-96);
+	/* padding-inline: clamp(var(--gap-18), 8vw, var(--gap-96)); */
+	/* container-type: inline-size; */
 
 	& > * {
 		grid-column: 2;
@@ -34,6 +38,8 @@
 		font-size: clamp(var(--font-32), 7vw, var(--font-64));
 		line-height: 1;
 		text-align: center;
+		pointer-events: none;
+		user-select: none;
 
 		& span {
 			animation: bounce 2s ease-in-out infinite;
@@ -74,8 +80,8 @@
 
 .auth__input-group {
 	display: flex;
-	justify-content: space-between;
-	column-gap: var(--gap-16);
+	justify-content: center;
+	column-gap: clamp(var(--gap-8), 2vw, var(--gap-16));
 	padding-block-end: var(--gap-36);
 
 	& ::selection {
@@ -83,21 +89,21 @@
 	}
 
 	& input {
-		width: var(--size-64);
-		aspect-ratio: 1;
-		padding: var(--gap-12);
+		width: clamp(var(--size-36), 10vw, var(--size-64));
+		aspect-ratio: 1 / 1.3;
+		/* padding: var(--gap-12); */
 		background-color: var(--grey-500);
 		border: none;
 		border-radius: var(--border-corner-8);
 		color: var(--white);
-		font-size: var(--font-48);
+		font-size: clamp(var(--size-36), 10vw, var(--size-64));
 		font-weight: bold;
 		text-align: center;
 	}
 
 	& input::placeholder {
 		color: var(--grey-400);
-		font-size: var(--font-48);
+		font-size: clamp(var(--size-36), 10vw, var(--size-64));
 	}
 }
 
@@ -110,14 +116,13 @@
 	background-color: var(--white);
 }
 
-.hero__partners {
+.our-partners {
 	justify-self: center;
 	max-width: fit-content;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	place-content: center;
 	gap: var(--gap-16);
-	padding-block-end: var(--gap-48);
 
 	& span {
 		grid-column: 1 / -1;
@@ -126,6 +131,7 @@
 
 	& span:nth-of-type(1) {
 		grid-row: 1;
+		font-size: var(--font-18);
 	}
 
 	& img:nth-of-type(1) {
@@ -133,7 +139,8 @@
 	}
 
 	& span:nth-of-type(2) {
-		padding-block-start: var(--gap-24);
+		font-size: var(--font-14);
+		padding-block-start: var(--gap-12);
 		grid-row: 3;
 	}
 }
