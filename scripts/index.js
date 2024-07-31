@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const errorMessage = document.querySelector('.error-message');
 	let phoneNumber = '';
 
+	// Immediately focus on phone number input
 	phoneNumberInput.focus();
 
 	heroAuthForm.addEventListener('submit', event => {

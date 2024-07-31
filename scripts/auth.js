@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const submitButton = document.querySelector('.auth__btn');
 	const errorMessage = document.querySelector('.error-message');
 
+	// Focus on the first digit input
 	digits[0].focus();
 
 	digits.forEach((input, index) => {

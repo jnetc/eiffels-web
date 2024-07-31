@@ -1,0 +1,142 @@
+/* UNLOGGED HERO SECTION */
+#hero {
+	/* height: 1080px; */
+	min-height: calc(100vh - 68px);
+	/* height: clamp(100%, 95vw, 100vh); */
+	/* height: max(100dvh, 1080px); */
+	place-content: center;
+	/* border: 1px solid red; */
+	padding-block-start: var(--gap-64);
+
+	& > * {
+		grid-column: 1 / -1;
+		justify-self: center;
+		max-width: 768px;
+	}
+
+	& h1 {
+		color: var(--black);
+		font-size: clamp(var(--font-32), 7vw, var(--font-64));
+		line-height: 1;
+		text-align: center;
+	}
+
+	& p:nth-of-type(1) {
+		padding-block: var(--gap-24) var(--gap-48);
+		color: var(--grey-400);
+		font-size: clamp(var(--font-18), 3vw, var(--font-24));
+		text-align: center;
+	}
+
+	& p:nth-of-type(2) {
+		max-width: 45ch;
+		font-size: var(--font-16);
+		text-align: center;
+		padding-block-end: var(--gap-36);
+
+		& strong {
+			color: var(--whatsapp-dark-green);
+		}
+		& span {
+			font-weight: bold;
+		}
+	}
+}
+
+/* If intered value is not number */
+#hero:has(.error-message.show) form input#phone-number {
+	color: var(--warning-error);
+}
+#hero:has(.error-message.show) .auth__input-group svg use {
+	fill: var(--warning-error);
+}
+
+/* INPUTs / FORM */
+.hero__auth-form {
+	/* max-width: 460px; */
+	display: grid;
+	column-gap: var(--gap-16);
+	row-gap: var(--gap-36);
+	padding-block-end: var(--gap-72);
+
+	& > button.auth__btn {
+		/* min-width: 100%; */
+		justify-self: center;
+	}
+}
+
+.auth__input-group {
+	display: grid;
+	row-gap: var(--gap-8);
+	position: relative;
+
+	& label {
+		font-size: var(--font-14);
+		font-weight: bold;
+		& span {
+			color: var(--warning-error);
+		}
+	}
+
+	& .icon {
+		width: var(--size-40);
+		height: var(--size-40);
+		aspect-ratio: 1;
+		position: absolute;
+		inset-block: 2.35rem;
+		left: var(--gap-6);
+
+		& use {
+			fill: var(--grey-500);
+		}
+	}
+
+	& input {
+		max-width: 360px;
+		padding-block: var(--gap-12);
+		padding-inline: var(--gap-48) var(--gap-12);
+		background-color: hsl(from var(--white) h s l / 0.5);
+		border: none;
+		border-bottom: 1px solid var(--black);
+		font-size: var(--font-32);
+		font-weight: bold;
+	}
+
+	& input::placeholder {
+		color: var(--grey-200);
+		font-size: var(--font-32);
+	}
+
+	& input:focus {
+		outline: none;
+	}
+}
+
+.our-partners {
+	justify-self: center;
+	max-width: fit-content;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	place-content: center;
+	gap: var(--gap-16);
+
+	& span {
+		grid-column: 1 / -1;
+		text-align: center;
+	}
+
+	& span:nth-of-type(1) {
+		grid-row: 1;
+		font-size: var(--font-18);
+	}
+
+	& img:nth-of-type(1) {
+		justify-self: flex-end;
+	}
+
+	& span:nth-of-type(2) {
+		font-size: var(--font-14);
+		padding-block-start: var(--gap-12);
+		grid-row: 3;
+	}
+}
