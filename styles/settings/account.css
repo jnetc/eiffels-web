@@ -1,4 +1,4 @@
-.settings__preferences {
+.account {
 	padding-block-start: var(--gap-24);
 	border-radius: var(--border-corner-8);
 	border: 1px solid var(--grey-200);
@@ -7,22 +7,26 @@
 		padding-inline: var(--gap-18);
 	}
 
-	& h3 {
+	& > h3 {
 		color: var(--grey-400);
 		font-size: var(--font-20);
+	}
+
+	& > p {
+		padding-block: var(--gap-12) var(--gap-32);
 	}
 
 	& p {
 		color: var(--grey-500);
 		font-size: var(--font-16);
-		padding-block: var(--gap-16) var(--gap-32);
+
 		& span {
 			color: var(--warning-error);
 		}
 	}
 }
 
-.settings__preferences:last-child {
+.account:last-child {
 	margin-block-end: var(--gap-56);
 }
 
@@ -78,6 +82,7 @@
 	}
 
 	& input {
+		width: 100%;
 		padding-inline: var(--gap-12);
 	}
 
@@ -85,43 +90,21 @@
 		color: var(--grey-200);
 		font-size: var(--font-20);
 	}
-
-	& input:focus {
-		/* outline: none; */
-	}
 }
 
-/* #preference__language {
-	& .icon {
-		width: var(--size-24);
-		height: var(--size-24);
-		aspect-ratio: 1;
-		position: absolute;
-		inset-inline: auto var(--gap-6);
-		inset-block: 1rem;
-		fill: var(--grey-500);
-		rotate: -90deg;
-		pointer-events: none;
-		user-select: none;
+.form__verified {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	& span {
+		padding: var(--gap-12) var(--gap-24);
+		border-radius: 2rem;
+		border: 1.5px solid var(--whatsapp-dark-green);
+		color: var(--whatsapp-dark-green);
+		font-weight: bold;
+		font-size: var(--font-14);
 	}
-} */
-
-/* #preference__language {
-	appearance: none;
-	padding-inline: var(--gap-12) var(--gap-48);
-	padding-block: var(--gap-16);
-	border: 0;
-	outline-color: var(--violet);
-	border-bottom: 1px solid var(--grey-300);
-	background-color: transparent;
-	font-size: var(--font-20);
-	color: var(--grey-500);
-} */
-
-.links__select {
-	display: grid;
-	position: relative;
-	row-gap: var(--gap-8);
 }
 
 .submit__group {
@@ -130,5 +113,10 @@
 	align-items: center;
 	column-gap: var(--gap-24);
 	padding: var(--gap-24) var(--gap-18);
+	border-radius: 0 0 var(--border-corner-8) var(--border-corner-8);
 	background-color: var(--grey-100);
+
+	& div {
+		display: grid;
+	}
 }

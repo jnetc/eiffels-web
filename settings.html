@@ -39,7 +39,7 @@
 							</svg>
 						</div>
 					</h2>
-					<form action="" method="post" class="settings__preferences">
+					<form action="" method="post" id="settings__preferences" class="account">
 						<h3>Preferences</h3>
 						<p>
 							Please select your preferred language and place of residence. These fields are optional but will help us
@@ -59,19 +59,18 @@
 									<option value="es">Spanish</option>
 								</select>
 							</fieldset>
-
 							<fieldset class="form__fieldset">
-								<legend>Your Location</legend>
-								<input type="text" name="location" value="Helsinki, Finland" placeholder="Helsinki, Finland" />
+								<legend>Postal code</legend>
+								<input type="text" name="location" value="01010" placeholder="01010" />
 							</fieldset>
 						</div>
 
 						<div class="submit__group">
 							<p>Default language is English and location is Finland</p>
-							<button type="submit" class="btn-48 btn-blue preferences__btn" aria-label="Save Preferences">Save</button>
+							<button type="submit" class="btn-48 btn-blue" aria-label="Save Preferences">Save</button>
 						</div>
 					</form>
-					<form action="" method="post" class="settings__preferences">
+					<form action="" method="post" id="settings__personal" class="account">
 						<h3>Personal</h3>
 						<p>
 							Please enter your full name. This is a required field and should include your first name and last name.
@@ -81,18 +80,127 @@
 						<div class="form__group">
 							<fieldset class="form__fieldset">
 								<legend>First Name<span> *</span></legend>
-								<input type="text" name="first-name" value="Jussi" placeholder="Jussi" />
+								<input type="text" name="firstName" value="Jussi" placeholder="Jussi" />
 							</fieldset>
-
 							<fieldset class="form__fieldset">
 								<legend>Last Name<span> *</span></legend>
-								<input type="text" name="last-name" value="Heinola" placeholder="Heinola" />
+								<input type="text" name="lastName" value="Heinola" placeholder="Heinola" />
 							</fieldset>
 						</div>
 
 						<div class="submit__group">
 							<p><span>*</span> Required fields</p>
-							<button type="submit" class="btn-48 btn-blue preferences__btn" aria-label="Save Preferences">Save</button>
+							<button type="submit" class="btn-48 btn-blue" aria-label="Save Personal">Save</button>
+						</div>
+					</form>
+
+					<form action="" method="post" id="settings__phone-number" class="account">
+						<h3>Phone</h3>
+						<p>
+							Please enter your phone number. This is a required field and should include the country your full phone
+							number. Make sure to enter it accurately, as it will be used for account verification and communication
+							purposes.
+						</p>
+
+						<div class="form__group">
+							<fieldset class="form__fieldset">
+								<legend>Phone Number<span> *</span></legend>
+								<input type="text" name="phoneNumber" value="+358501234567" placeholder="+358501234567" />
+							</fieldset>
+							<div class="form__verified">
+								<span>Verified</span>
+							</div>
+						</div>
+
+						<div class="submit__group">
+							<p><span>*</span> Required fields</p>
+							<button type="submit" class="btn-48 btn-blue" aria-label="Save Phone Number">Save</button>
+						</div>
+					</form>
+
+					<form action="" method="post" id="settings__email" class="account">
+						<h3>Email</h3>
+						<p>
+							Please enter your email address. This is a required field and should be entered accurately, as it will be
+							used for account verification, receiving promotional offers, discounts, and other marketing-related
+							communications.
+						</p>
+
+						<div class="form__group">
+							<fieldset class="form__fieldset">
+								<legend>Email Address<span> *</span></legend>
+								<input
+									type="text"
+									name="phoneNumber"
+									value="jussi.heinola@mail.com"
+									placeholder="jussi.heinola@mail.com"
+								/>
+							</fieldset>
+							<div class="form__verified">
+								<span>Verified</span>
+							</div>
+						</div>
+
+						<div class="submit__group">
+							<p><span>*</span> Required fields</p>
+							<button type="submit" class="btn-48 btn-blue" aria-label="Save Email Address">Save</button>
+						</div>
+					</form>
+					<form action="" method="post" id="settings__email" class="account">
+						<h3>Email</h3>
+						<p>
+							Please enter your email address. This is a required field and should be entered accurately, as it will be
+							used for account verification, receiving promotional offers, discounts, and other marketing-related
+							communications.
+						</p>
+
+						<div class="form__group">
+							<fieldset class="form__fieldset">
+								<legend>Email Address<span> *</span></legend>
+								<input
+									type="text"
+									name="phoneNumber"
+									value="jussi.heinola@mail.com"
+									placeholder="jussi.heinola@mail.com"
+								/>
+							</fieldset>
+							<div class="form__verified">
+								<span>Verified</span>
+							</div>
+						</div>
+
+						<div class="submit__group">
+							<div>
+								<p><span>*</span> Required fields</p>
+								<p>Emails must be verified to be able to used as primary email</p>
+							</div>
+							<button type="submit" class="btn-48 btn-blue" aria-label="Save Email Address">Save</button>
+						</div>
+					</form>
+					<form action="" method="post" id="settings__role" class="account">
+						<h3>Role</h3>
+						<p>
+							Please select your role. This is a required field and helps us tailor your experience on the platform to
+							better match your skills and job preferences.
+						</p>
+
+						<div class="form__group">
+							<fieldset class="form__fieldset">
+								<legend>Select Role</legend>
+								<svg class="icon-chevron" aria-hidden="true">
+									<use xlink:href="./public/svg/ui_icons.svg#chevron-left"></use>
+								</svg>
+								<select name="language" id="preference__role">
+									<option value="en">Worker</option>
+									<option value="fi">Jobs</option>
+									<option value="de">Material</option>
+								</select>
+							</fieldset>
+						</div>
+
+						<div class="submit__group">
+							<p>This action will change your functionality and subscription plan</p>
+							<button type="submit" class="btn-48 btn-blue" aria-label="Save Role">Save</button>
 						</div>
 					</form>
 				</li>

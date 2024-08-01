@@ -17,11 +17,15 @@
 }
 
 .settings__main {
+	/* width: 100%; */
+	/* max-width: 768px; */
 	width: min(768px, 100%);
 	display: grid;
 	grid-auto-rows: min-content;
 	row-gap: var(--gap-24);
 	margin: auto;
+	/* place-content: center; */
+	/* overflow: hidden; */
 
 	& h1 {
 		color: var(--black);
