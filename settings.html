@@ -22,7 +22,7 @@
 		<main class="settings__main">
 			<picture class="user__picture glass-effect">
 				<img src="./public/image/jussi.png" alt="Jussi Heinola" />
-				<div class="picture__checkmark" aria-hidden="true">
+				<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
 					<svg class="icon">
 						<use xlink:href="./public/svg/ui_icons.svg#checkmark-shield"></use>
 					</svg>
@@ -47,8 +47,11 @@
 						</p>
 
 						<div class="form__group">
-							<fieldset>
+							<fieldset class="form__fieldset">
 								<legend>Select Language</legend>
+								<svg class="icon-chevron" aria-hidden="true">
+									<use xlink:href="./public/svg/ui_icons.svg#chevron-left"></use>
+								</svg>
 								<select name="language" id="preference__language">
 									<option value="en">English</option>
 									<option value="fi">Finnish</option>
@@ -57,14 +60,38 @@
 								</select>
 							</fieldset>
 
-							<fieldset>
+							<fieldset class="form__fieldset">
 								<legend>Your Location</legend>
-								<input type="text" name="location" id="preference__location" />
+								<input type="text" name="location" value="Helsinki, Finland" placeholder="Helsinki, Finland" />
 							</fieldset>
 						</div>
 
 						<div class="submit__group">
 							<p>Default language is English and location is Finland</p>
+							<button type="submit" class="btn-48 btn-blue preferences__btn" aria-label="Save Preferences">Save</button>
+						</div>
+					</form>
+					<form action="" method="post" class="settings__preferences">
+						<h3>Personal</h3>
+						<p>
+							Please enter your full name. This is a required field and should include your first name and last name.
+							Make sure to use the exact name as it appears on your official documents.
+						</p>
+
+						<div class="form__group">
+							<fieldset class="form__fieldset">
+								<legend>First Name<span> *</span></legend>
+								<input type="text" name="first-name" value="Jussi" placeholder="Jussi" />
+							</fieldset>
+
+							<fieldset class="form__fieldset">
+								<legend>Last Name<span> *</span></legend>
+								<input type="text" name="last-name" value="Heinola" placeholder="Heinola" />
+							</fieldset>
+						</div>
+
+						<div class="submit__group">
+							<p><span>*</span> Required fields</p>
 							<button type="submit" class="btn-48 btn-blue preferences__btn" aria-label="Save Preferences">Save</button>
 						</div>
 					</form>

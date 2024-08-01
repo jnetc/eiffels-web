@@ -2,7 +2,6 @@
 	padding-block-start: var(--gap-24);
 	border-radius: var(--border-corner-8);
 	border: 1px solid var(--grey-200);
-	margin-block-end: var(--gap-56);
 
 	& > :where(h3, p, .form__group) {
 		padding-inline: var(--gap-18);
@@ -14,10 +13,115 @@
 	}
 
 	& p {
-		color: var(--grey-400);
+		color: var(--grey-500);
 		font-size: var(--font-16);
 		padding-block: var(--gap-16) var(--gap-32);
+		& span {
+			color: var(--warning-error);
+		}
 	}
+}
+
+.settings__preferences:last-child {
+	margin-block-end: var(--gap-56);
+}
+
+.form__group {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gap-32);
+	padding-block-end: var(--gap-18);
+}
+
+.form__fieldset {
+	display: grid;
+	row-gap: var(--gap-8);
+	position: relative;
+	padding-block-end: var(--gap-12);
+	border: none;
+
+	& legend {
+		color: var(--grey-300);
+		font-size: var(--font-14);
+		font-weight: bold;
+		& span {
+			color: var(--warning-error);
+		}
+	}
+
+	& :where(select, input) {
+		padding-block: var(--gap-12);
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid var(--grey-300);
+		color: var(--black);
+		font-size: var(--font-20);
+	}
+
+	& select {
+		appearance: none;
+		padding-inline: var(--gap-12) var(--gap-48);
+		outline-color: var(--grey-400);
+	}
+
+	& .icon-chevron {
+		width: var(--size-24);
+		height: var(--size-24);
+		aspect-ratio: 1;
+		position: absolute;
+		inset-inline: auto var(--gap-6);
+		inset-block: 0.725rem;
+		fill: var(--grey-500);
+		rotate: -90deg;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	& input {
+		padding-inline: var(--gap-12);
+	}
+
+	& input::placeholder {
+		color: var(--grey-200);
+		font-size: var(--font-20);
+	}
+
+	& input:focus {
+		/* outline: none; */
+	}
+}
+
+/* #preference__language {
+	& .icon {
+		width: var(--size-24);
+		height: var(--size-24);
+		aspect-ratio: 1;
+		position: absolute;
+		inset-inline: auto var(--gap-6);
+		inset-block: 1rem;
+		fill: var(--grey-500);
+		rotate: -90deg;
+		pointer-events: none;
+		user-select: none;
+	}
+} */
+
+/* #preference__language {
+	appearance: none;
+	padding-inline: var(--gap-12) var(--gap-48);
+	padding-block: var(--gap-16);
+	border: 0;
+	outline-color: var(--violet);
+	border-bottom: 1px solid var(--grey-300);
+	background-color: transparent;
+	font-size: var(--font-20);
+	color: var(--grey-500);
+} */
+
+.links__select {
+	display: grid;
+	position: relative;
+	row-gap: var(--gap-8);
 }
 
 .submit__group {
