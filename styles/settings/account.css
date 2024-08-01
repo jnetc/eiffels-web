@@ -1,0 +1,30 @@
+.settings__preferences {
+	padding-block-start: var(--gap-24);
+	border-radius: var(--border-corner-8);
+	border: 1px solid var(--grey-200);
+	margin-block-end: var(--gap-56);
+
+	& > :where(h3, p, .form__group) {
+		padding-inline: var(--gap-18);
+	}
+
+	& h3 {
+		color: var(--grey-400);
+		font-size: var(--font-20);
+	}
+
+	& p {
+		color: var(--grey-400);
+		font-size: var(--font-16);
+		padding-block: var(--gap-16) var(--gap-32);
+	}
+}
+
+.submit__group {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: var(--gap-24);
+	padding: var(--gap-24) var(--gap-18);
+	background-color: var(--grey-100);
+}

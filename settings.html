@@ -31,7 +31,7 @@
 			<h1>Jussi Heinola</h1>
 			<ul class="settings__list">
 				<li class="settings__item">
-					<h2 class="settings__title">
+					<h2 class="settings__name">
 						<span>Account</span>
 						<div class="title__arrow" aria-hidden="true">
 							<svg class="icon">
@@ -39,9 +39,38 @@
 							</svg>
 						</div>
 					</h2>
+					<form action="" method="post" class="settings__preferences">
+						<h3>Preferences</h3>
+						<p>
+							Please select your preferred language and place of residence. These fields are optional but will help us
+							personalize your experience and provide relevant job opportunities and content.
+						</p>
+
+						<div class="form__group">
+							<fieldset>
+								<legend>Select Language</legend>
+								<select name="language" id="preference__language">
+									<option value="en">English</option>
+									<option value="fi">Finnish</option>
+									<option value="de">German</option>
+									<option value="es">Spanish</option>
+								</select>
+							</fieldset>
+
+							<fieldset>
+								<legend>Your Location</legend>
+								<input type="text" name="location" id="preference__location" />
+							</fieldset>
+						</div>
+
+						<div class="submit__group">
+							<p>Default language is English and location is Finland</p>
+							<button type="submit" class="btn-48 btn-blue preferences__btn" aria-label="Save Preferences">Save</button>
+						</div>
+					</form>
 				</li>
 				<li class="settings__item">
-					<h2 class="settings__title">
+					<h2 class="settings__name">
 						<span>Subscribing Plan</span>
 						<div class="title__arrow" aria-hidden="true">
 							<svg class="icon">
@@ -51,7 +80,7 @@
 					</h2>
 				</li>
 				<li class="settings__item">
-					<h2 class="settings__title">
+					<h2 class="settings__name">
 						<span>My Eiffels</span>
 						<div class="title__arrow" aria-hidden="true">
 							<svg class="icon">
@@ -61,7 +90,7 @@
 					</h2>
 				</li>
 				<li class="settings__item">
-					<h2 class="settings__title">
+					<h2 class="settings__name">
 						<span>Terms of Use, GDPR, DPA</span>
 						<div class="title__arrow" aria-hidden="true">
 							<svg class="icon">
