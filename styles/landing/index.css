@@ -1,10 +1,10 @@
-@import url('./landing/section-hero.css');
-@import url('./landing/section-overview.css');
-@import url('./landing/section-features.css');
-@import url('./landing/section-pricing.css');
-@import url('./landing/section-customers.css');
-@import url('./landing/section-faq.css');
-@import url('./landing/section-support.css');
+@import url('section-hero.css');
+@import url('section-overview.css');
+@import url('section-features.css');
+@import url('section-pricing.css');
+@import url('section-customers.css');
+@import url('section-faq.css');
+@import url('section-support.css');
 
 .landing {
 	--colums: 12;

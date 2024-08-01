@@ -1,0 +1,112 @@
+@import url('account.css');
+@import url('subscribing-plans.css');
+@import url('my-eiffels.css');
+@import url('terms-of-use.css');
+
+.settings {
+	max-width: 1920px;
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+	row-gap: var(--font-64);
+	margin-inline: auto;
+	padding-inline: var(--gap-16);
+}
+
+.settings__header {
+	padding-block: var(--gap-18);
+}
+
+.settings__main {
+	width: min(768px, 100%);
+	display: grid;
+	grid-auto-rows: min-content;
+	row-gap: var(--gap-24);
+	margin: auto;
+
+	& h1 {
+		color: var(--black);
+		font-size: clamp(var(--font-32), 7vw, var(--font-64));
+		line-height: 1;
+		text-align: center;
+	}
+}
+
+.user__picture {
+	--br: 50vw;
+	justify-self: center;
+	padding: var(--gap-24);
+	position: relative;
+	border-radius: 50vw;
+
+	& img {
+		width: var(--size-128);
+		aspect-ratio: 1;
+		border-radius: 50vw;
+	}
+
+	.picture__checkmark {
+		width: var(--size-48);
+		aspect-ratio: 1;
+		display: grid;
+		place-content: center;
+		position: absolute;
+		bottom: 0;
+		right: 10%;
+		border-radius: 50vw;
+		background-color: var(--surface);
+		box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%);
+
+		& .icon {
+			width: var(--size-36);
+			height: var(--size-36);
+			aspect-ratio: 1;
+			& use {
+				fill: var(--whatsapp-dark-green);
+			}
+		}
+	}
+}
+
+.settings__list {
+	display: grid;
+	padding-block: var(--gap-56) var(--gap-96);
+}
+
+.settings__title {
+	display: flex;
+	column-gap: var(--gap-32);
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--gap-18);
+	border-bottom: 1px solid var(--grey-200);
+	cursor: pointer;
+
+	& span {
+		color: var(--black);
+		font-size: var(--font-24);
+	}
+
+	& .title__arrow {
+		width: var(--size-32);
+		aspect-ratio: 1;
+		display: grid;
+		place-content: center;
+		background-color: var(--black);
+		border-radius: 50vw;
+
+		& .icon {
+			width: var(--size-24);
+			height: var(--size-24);
+			aspect-ratio: 1;
+			fill: var(--white);
+		}
+	}
+}
+
+.settings__item:last-child .settings__title {
+	border: none;
+}
+
+.settings__btn-signout {
+	justify-self: flex-end;
+}

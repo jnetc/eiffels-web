@@ -161,7 +161,7 @@
 	}
 }
 
-.logged__picture {
+.user__picture {
 	--br: 50vw
 	justify-self: center;
 	padding: var(--gap-24);
@@ -174,7 +174,7 @@
 		border-radius: 50vw;
 	}
 
-	.logged__checkmark {
+	.picture__checkmark {
 		width: var(--size-48);
 		aspect-ratio: 1;
 		display: grid;
