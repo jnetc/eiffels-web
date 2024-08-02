@@ -110,8 +110,12 @@
 	align-items: center;
 	padding: var(--gap-24) var(--gap-18);
 	border-radius: var(--border-corner-8);
-
+	user-select: none;
 	cursor: pointer;
+
+	& > * {
+		pointer-events: none;
+	}
 
 	& span {
 		color: var(--black);
