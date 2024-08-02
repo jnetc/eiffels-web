@@ -78,9 +78,15 @@
 
 .settings__item {
 	display: grid;
+	grid-template-rows: min-content 0fr;
 	row-gap: var(--gap-18);
 	border-block: 1px solid transparent;
 	border-block-end-color: var(--grey-200);
+	transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.settings__item:has(.settings__name.open-settings) {
+	grid-template-rows: min-content 1fr;
 }
 
 .settings__item:last-child {
@@ -88,6 +94,7 @@
 }
 
 .settings__name {
+	grid-row: 1;
 	display: flex;
 	column-gap: var(--gap-32);
 	justify-content: space-between;
@@ -101,7 +108,7 @@
 	}
 
 	& .title__arrow {
-		width: var(--size-32);
+		min-width: var(--size-32);
 		aspect-ratio: 1;
 		display: grid;
 		place-content: center;
@@ -116,6 +123,13 @@
 			fill: var(--white);
 		}
 	}
+}
+
+.settings__container {
+	grid-row: 2;
+	display: grid;
+	row-gap: var(--gap-24);
+	overflow: hidden;
 }
 
 .settings__btn-signout {

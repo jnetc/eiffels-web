@@ -1,4 +1,5 @@
 .account {
+	container-type: inline-size;
 	padding-block-start: var(--gap-24);
 	border-radius: var(--border-corner-8);
 	border: 1px solid var(--grey-200);
@@ -26,8 +27,16 @@
 	}
 }
 
-.account:last-child {
-	margin-block-end: var(--gap-56);
+/* for delete account*/
+.account:not(:has(.form__group)) {
+	padding-inline-end: var(--gap-24);
+	padding-block-end: var(--gap-24);
+	margin-block: var(--gap-32) var(--gap-56);
+	border-color: hsl(from var(--warning-error) h s l / 50%);
+
+	& > button {
+		margin-inline: auto 0;
+	}
 }
 
 .form__group {
@@ -35,6 +44,12 @@
 	grid-template-columns: 1fr 1fr;
 	gap: var(--gap-32);
 	padding-block-end: var(--gap-18);
+}
+
+@container (max-width: 480px) {
+	.form__group {
+		grid-template-columns: 1fr;
+	}
 }
 
 .form__fieldset {
