@@ -79,6 +79,7 @@
 	border-block: 1px solid transparent;
 	border-block-start-color: var(--grey-200);
 	transition: grid-template-rows 0.3s ease-in-out, row-gap 0.3s ease-in-out, border-block-start-color 0.3s ease-in-out;
+	contain: paint;
 }
 
 .settings__item:has(.settings__name.open-settings) {
@@ -96,6 +97,7 @@
 
 	& .settings__container {
 		visibility: visible;
+		animation: none;
 	}
 }
 
@@ -143,8 +145,14 @@
 .settings__container {
 	display: grid;
 	row-gap: var(--gap-18);
-	visibility: hidden;
 	overflow: hidden;
+	animation: has-focus 0.3s forwards;
+}
+
+@keyframes has-focus {
+	to {
+		visibility: hidden;
+	}
 }
 
 .settings__btn-signout {
