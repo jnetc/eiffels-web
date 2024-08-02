@@ -77,13 +77,14 @@
 	grid-template-rows: min-content 0fr;
 	row-gap: 0;
 	border-block: 1px solid transparent;
-	border-block-end-color: var(--grey-200);
-	transition: grid-template-rows 0.3s ease-in-out, row-gap 0.3s ease-in-out;
+	border-block-start-color: var(--grey-200);
+	transition: grid-template-rows 0.3s ease-in-out, row-gap 0.3s ease-in-out, border-block-start-color 0.3s ease-in-out;
 }
 
 .settings__item:has(.settings__name.open-settings) {
 	grid-template-rows: min-content 1fr;
 	row-gap: var(--gap-18);
+	border-block-start-color: transparent;
 
 	& .settings__name {
 		background-color: var(--grey-200);
@@ -98,8 +99,8 @@
 	}
 }
 
-.settings__item:last-child {
-	border-block-end-color: transparent;
+.settings__item:first-child {
+	border-block-start-color: transparent;
 }
 
 .settings__name {
@@ -107,7 +108,7 @@
 	column-gap: var(--gap-32);
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--gap-24);
+	padding: var(--gap-24) var(--gap-18);
 	border-radius: var(--border-corner-8);
 
 	cursor: pointer;

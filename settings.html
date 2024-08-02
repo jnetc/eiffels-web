@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="styles/fonts.css" />
 		<link rel="stylesheet" href="styles/global.css" />
 		<link rel="stylesheet" href="styles/settings/settings.css" />
-		<script src="scripts/settings.js" defer></script>
+		<script src="scripts/settings/settings.js" defer></script>
+		<script src="scripts/settings/my_eiffels.js" defer></script>
 		<title>Settings</title>
 		<meta name="description" content="" />
 	</head>
@@ -205,18 +206,29 @@
 						</div>
 					</h2>
 					<div class="settings__container">
-						<button type="button" class="connetion connected" aria-label="Connect One Drive">
-							<img src="public/svg/settings_onedrive.svg" alt="One Drive Logo" />
-							<h3>One Drive</h3>
-							<p>Eiffels Connected App</p>
-							<span class="connection__status">Connected</span>
-						</button>
-						<button type="button" class="connetion" aria-label="Connect One Drive">
-							<img src="public/svg/settings_ukko.svg" alt="Ukko Logo" />
-							<h3>Ukko</h3>
-							<p>Eiffels Connected App</p>
-							<span class="connection__status">Connect</span>
-						</button>
+						<div class="settings__connection">
+							<input type="checkbox" name="onedrive" id="onedrive" class="connection__checkbox" />
+							<label for="onedrive" class="connetion" aria-label="Connect One Drive">
+								<img src="public/svg/settings_onedrive.svg" alt="One Drive Logo" />
+								<div class="connection__name">
+									<h3>One Drive</h3>
+									<p>Eiffels Connected App</p>
+								</div>
+								<span class="connection__status">Disconnected</span>
+							</label>
+						</div>
+
+						<div class="settings__connection">
+							<input type="checkbox" name="ukko" id="ukko" class="connection__checkbox" />
+							<label for="ukko" class="connetion" aria-label="Connect One Drive">
+								<img src="public/svg/settings_ukko.svg" alt="Ukko Logo" />
+								<div class="connection__name">
+									<h3>Ukko</h3>
+									<p>Eiffels Connected App</p>
+								</div>
+								<span class="connection__status">Disconnected</span>
+							</label>
+						</div>
 					</div>
 				</li>
 				<li class="settings__item">

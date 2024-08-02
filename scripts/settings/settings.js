@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const list = document.querySelector('.settings__list');
+	// Select all elements with the class 'settings__name'
 	const listItems = document.querySelectorAll('.settings__name');
 
-	console.log(listItems);
-
 	function collapseList(event) {
+		// Get the clicked item
 		const item = event.target;
 
+		// Collapse item if it is open
 		if (item.classList.contains('open-settings')) {
 			item.classList.remove('open-settings');
 			return;
@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 
+		// Open the clicked item
 		item.classList.add('open-settings');
 	}
 
+	// Add 'pointerup' event listener to each connection element
 	listItems.forEach(item => {
 		item.addEventListener('pointerup', collapseList);
 	});
