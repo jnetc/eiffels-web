@@ -17,15 +17,11 @@
 }
 
 .settings__main {
-	/* width: 100%; */
-	/* max-width: 768px; */
 	width: min(768px, 100%);
 	display: grid;
 	grid-auto-rows: min-content;
 	row-gap: var(--gap-24);
-	margin: auto;
-	/* place-content: center; */
-	/* overflow: hidden; */
+	margin-inline: auto;
 
 	& h1 {
 		color: var(--black);
@@ -79,14 +75,27 @@
 .settings__item {
 	display: grid;
 	grid-template-rows: min-content 0fr;
-	row-gap: var(--gap-18);
+	row-gap: 0;
 	border-block: 1px solid transparent;
 	border-block-end-color: var(--grey-200);
-	transition: grid-template-rows 0.3s ease-in-out;
+	transition: grid-template-rows 0.3s ease-in-out, row-gap 0.3s ease-in-out;
 }
 
 .settings__item:has(.settings__name.open-settings) {
 	grid-template-rows: min-content 1fr;
+	row-gap: var(--gap-18);
+
+	& .settings__name {
+		background-color: var(--grey-200);
+	}
+
+	& .title__arrow {
+		rotate: 90deg;
+	}
+
+	& .settings__container {
+		visibility: visible;
+	}
 }
 
 .settings__item:last-child {
@@ -94,12 +103,13 @@
 }
 
 .settings__name {
-	grid-row: 1;
 	display: flex;
 	column-gap: var(--gap-32);
 	justify-content: space-between;
 	align-items: center;
 	padding: var(--gap-24);
+	border-radius: var(--border-corner-8);
+
 	cursor: pointer;
 
 	& span {
@@ -114,7 +124,7 @@
 		place-content: center;
 		background-color: var(--black);
 		border-radius: 50vw;
-		transition: rorate 0.2s ease-in-out;
+		transition: rotate 0.2s ease-in-out;
 
 		& .icon {
 			width: var(--size-24);
@@ -126,9 +136,9 @@
 }
 
 .settings__container {
-	grid-row: 2;
 	display: grid;
-	row-gap: var(--gap-24);
+	row-gap: var(--gap-18);
+	visibility: hidden;
 	overflow: hidden;
 }
 
