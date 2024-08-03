@@ -34,15 +34,6 @@ footer {
 	column-gap: var(--gap-36);
 }
 
-.landing__header {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
-	padding-block: var(--gap-20);
-	align-items: center;
-	column-gap: var(--gap-32);
-}
-
 /* ONLY FOR TOP NAVIGATION*/
 .landing__header :where(a, span) {
 	font-size: var(--font-20);
@@ -112,6 +103,7 @@ footer {
 
 /* MAIN CONTENT */
 .landing__main {
+	container-type: inline-size;
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--gap-240);
@@ -120,7 +112,7 @@ footer {
 @media screen and (max-width: 1360px) {
 	.logged__href {
 		justify-content: center;
-		width: var(--size-40);
+		width: var(--size-48);
 		aspect-ratio: 1;
 		border-radius: 50%;
 

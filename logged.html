@@ -14,7 +14,7 @@
 		<meta name="description" content="" />
 	</head>
 	<body class="landing">
-		<header class="landing__header">
+		<header class="header">
 			<a href="index.html" title="Eiffels home page" class="header__logo">
 				<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels" title="Eiffels" />
 			</a>
@@ -50,33 +50,31 @@
 		</header>
 
 		<main class="landing__main">
-			<section id="logged" class="grid">
-				<div class="logged__wrapper">
-					<picture class="user__picture glass-effect">
-						<img src="./public/image/jussi.png" alt="Jussi Heinola" />
-						<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
-							<svg class="icon">
-								<use xlink:href="./public/svg/ui_icons.svg#checkmark-shield"></use>
-							</svg>
-						</div>
-					</picture>
-					<span>Hello</span>
-					<h1>Jussi Heinola</h1>
-					<p>
-						Now you can securely work with your files through your personal account, accessing all the features and
-						tools for managing documents and sharing with colleagues.
-					</p>
-					<a
-						href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage"
-						class="btn-56 btn-blue logged__btn"
-						aria-label="Open OneDrive"
-					>
-						<span>Open OneDrive</span>
-						<svg class="icon" aria-hidden="true">
-							<use xlink:href="./public/svg/ui_icons.svg#onedrive"></use>
+			<section id="logged">
+				<picture class="user__picture glass-effect">
+					<img src="./public/image/jussi.png" alt="Jussi Heinola" />
+					<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
+						<svg class="icon">
+							<use xlink:href="./public/svg/ui_icons.svg#checkmark-shield"></use>
 						</svg>
-					</a>
-				</div>
+					</div>
+				</picture>
+				<span>Hello</span>
+				<h1>Jussi Heinola</h1>
+				<p>
+					Now you can securely work with your files through your personal account, accessing all the features and tools
+					for managing documents and sharing with colleagues.
+				</p>
+				<a
+					href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage"
+					class="btn-56 btn-blue logged__btn"
+					aria-label="Open OneDrive"
+				>
+					<span>Open OneDrive</span>
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="./public/svg/ui_icons.svg#onedrive"></use>
+					</svg>
+				</a>
 				<div class="our-partners" aria-labelledby="partners-title">
 					<span>Official Partner</span>
 					<img src="./public/svg/meta.svg" alt="Meta official partner" />
@@ -128,7 +126,7 @@
 		</main>
 		<footer class="landing__footer">Copyright © 2024 Eiffels</footer>
 		<!-- BACKGROUND -->
-		<div class="bg" aria-hidden="true">
+		<div class="bg" aria-hidden="true" style="display: none">
 			<div class="bg__wrapper">
 				<div class="bg__linear-gradient"></div>
 				<div class="bg__radial-gradient"></div>

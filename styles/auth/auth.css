@@ -7,10 +7,6 @@
 	padding-inline: var(--gap-16);
 }
 
-.auth__header {
-	padding-block: var(--gap-18);
-}
-
 .auth__main {
 	display: grid;
 	place-content: center;
@@ -110,6 +106,7 @@
 .auth__share-btn {
 	justify-self: center;
 	background-color: var(--white);
+	color: var(--primary);
 }
 
 /* OUR PARTNERS BLOCK */
