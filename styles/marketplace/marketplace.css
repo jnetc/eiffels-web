@@ -45,25 +45,9 @@
 	}
 }
 
-#btn-back {
-	&:hover .icon {
-		animation: arrow-outward 0.5s forwards;
-	}
-}
-
 #btn-add {
 	&:hover .icon {
 		transform: scale(1.3);
-	}
-}
-
-@keyframes arrow-outward {
-	50% {
-		transform: translate(-3rem, 0rem);
-	}
-
-	50.01% {
-		transform: translate(3rem, 0rem);
 	}
 }
 
@@ -142,7 +126,6 @@
 			fill: var(--grey-500);
 			rotate: -90deg;
 			pointer-events: none;
-			user-select: none;
 		}
 	}
 }

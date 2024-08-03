@@ -143,8 +143,10 @@
 }
 
 .settings__container {
+	container-type: inline-size;
 	display: grid;
 	row-gap: var(--gap-18);
+	padding-block-end: var(--gap-4);
 	overflow: hidden;
 	animation: has-focus 0.3s forwards;
 }

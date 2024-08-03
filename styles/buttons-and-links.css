@@ -13,10 +13,10 @@ header a {
 	text-decoration: none;
 }
 
-main a {
+/* main a {
 	color: var(--primary);
 	font-weight: bold;
-}
+} */
 
 /* BUTTONS STYLES */
 .btn-56,
@@ -115,6 +115,7 @@ main a {
 	display: grid;
 	place-content: center;
 	border-radius: 50vw;
+	user-select: none;
 
 	& .icon {
 		aspect-ratio: 1;
@@ -164,6 +165,22 @@ main a {
 
 	& .icon use {
 		fill: var(--whatsapp-dark-green);
+	}
+}
+
+#btn-back {
+	&:hover .icon {
+		animation: arrow-outward 0.3s forwards;
+	}
+}
+
+@keyframes arrow-outward {
+	50% {
+		transform: translate(-3rem, 0rem);
+	}
+
+	50.01% {
+		transform: translate(3rem, 0rem);
 	}
 }
 

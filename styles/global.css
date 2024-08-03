@@ -53,7 +53,10 @@ canvas {
 }
 
 img,
-svg {
+svg,
+label,
+legend,
+button {
 	user-select: none;
 	-webkit-user-select: none;
 }
@@ -98,7 +101,6 @@ button:focus-visible {
 	outline: 1.5px solid var(--black);
 	outline-offset: 0.25rem;
 }
-
 /* ::placeholder {
   color: var(--grey-100);
 } */

@@ -93,7 +93,6 @@
 		fill: var(--grey-500);
 		rotate: -90deg;
 		pointer-events: none;
-		user-select: none;
 	}
 
 	& input {
