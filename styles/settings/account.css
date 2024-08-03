@@ -57,7 +57,6 @@
 	row-gap: var(--gap-8);
 	position: relative;
 	padding-block-end: var(--gap-12);
-	border: none;
 
 	& legend {
 		color: var(--grey-300);

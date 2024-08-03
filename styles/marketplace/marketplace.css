@@ -176,7 +176,6 @@
 	padding-block: var(--gap-16);
 	color: var(--black);
 	font-size: var(--font-20);
-	border: none;
 	background-color: transparent;
 
 	&::placeholder {
@@ -392,7 +391,6 @@
 	padding: var(--gap-36);
 	row-gap: var(--gap-36);
 	margin: auto;
-	border: none;
 }
 
 #mp-dialog::backdrop {
