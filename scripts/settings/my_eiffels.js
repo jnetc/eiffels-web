@@ -12,9 +12,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Toggle status text based on checkbox state
 		if (!checkbox.checked) {
-			status.textContent = 'Connected';
+			emulateConnectOnServer(status, connection);
 		} else {
-			status.textContent = 'Disconnected';
+			emulateDisconnectOnServer(status, connection);
+		}
+	}
+
+	async function emulateConnectOnServer(status, connection) {
+		try {
+			status.textContent = 'Connecting';
+			connection.classList.add('disabled');
+			console.log('Connecting...');
+
+			// Emulate saving data to server with a timeout
+			const timeout = setTimeout(() => {
+				connection.classList.remove('disabled');
+				status.textContent = 'Connected';
+
+				console.log('Connected');
+				clearTimeout(timeout);
+			}, 3000);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+	async function emulateDisconnectOnServer(status, connection) {
+		try {
+			status.textContent = 'Disconnecting';
+			connection.classList.add('disabled');
+			console.log('Disconnecting...');
+
+			// Emulate saving data to server with a timeout
+			const timeout = setTimeout(() => {
+				connection.classList.remove('disabled');
+				status.textContent = 'Disconnected';
+
+				console.log('Disconnected');
+				clearTimeout(timeout);
+			}, 3000);
+		} catch (error) {
+			console.log(error);
 		}
 	}
 

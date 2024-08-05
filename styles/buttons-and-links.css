@@ -39,9 +39,13 @@ header a {
 		aspect-ratio: 1;
 	}
 
-	&:has(.icon) {
+	&:has(.icon):not(.btn-short) {
 		min-width: 260px;
 		justify-content: space-between;
+	}
+
+	&.btn-short {
+		column-gap: var(--gap-8);
 	}
 }
 

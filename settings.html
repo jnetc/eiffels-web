@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="styles/global.css" />
 		<link rel="stylesheet" href="styles/settings/settings.css" />
 		<script src="scripts/settings/settings.js" defer></script>
+		<script src="scripts/settings/account.js" defer"></script>
 		<script src="scripts/settings/my_eiffels.js" defer></script>
 		<title>Settings</title>
 		<meta name="description" content="" />
@@ -57,7 +58,7 @@
 									<svg class="icon-chevron" aria-hidden="true">
 										<use xlink:href="./public/svg/ui_icons.svg#chevron-left"></use>
 									</svg>
-									<select name="language" id="preference__language">
+									<select name="language" id="preferences__language">
 										<option value="en">English</option>
 										<option value="fi">Finnish</option>
 										<option value="de">German</option>
@@ -66,12 +67,18 @@
 								</fieldset>
 								<fieldset class="form__fieldset">
 									<legend>Postal code</legend>
-									<input type="text" name="location" value="01010" placeholder="01010" />
+									<input type="text" name="postal-code" id="preferences__postal-code" value="01010" placeholder="01010" />
 								</fieldset>
 							</div>
 							<div class="submit__group">
 								<p>Default language is English and location is Finland</p>
-								<button type="submit" class="btn-48 btn-blue" aria-label="Save Preferences">Save</button>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Preferences">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use xlink:href="./public/svg/ui_icons.svg#updating" class="icon__updating hidden"></use>
+									</svg>
+								</button>
 							</div>
 						</form>
 
@@ -84,20 +91,26 @@
 							<div class="form__group">
 								<fieldset class="form__fieldset">
 									<legend>First Name<span> *</span></legend>
-									<input type="text" name="firstName" value="Jussi" placeholder="Jussi" />
+									<input type="text" name="firstName" id="personal__first-name" value="Jussi" placeholder="Jussi" />
 								</fieldset>
 								<fieldset class="form__fieldset">
 									<legend>Last Name<span> *</span></legend>
-									<input type="text" name="lastName" value="Heinola" placeholder="Heinola" />
+									<input type="text" name="lastName" id="personal__last-name" value="Heinola" placeholder="Heinola" />
 								</fieldset>
 							</div>
 							<div class="submit__group">
 								<p><span>*</span> Required fields</p>
-								<button type="submit" class="btn-48 btn-blue" aria-label="Save Personal">Save</button>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Personal">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use xlink:href="./public/svg/ui_icons.svg#updating" class="icon__updating hidden"></use>
+									</svg>
+								</button>
 							</div>
 						</form>
 
-						<form action="" method="post" id="settings__phone-number" class="account">
+						<form action="" method="post" id="settings__phone" class="account">
 							<h3>Phone</h3>
 							<p>
 								Please enter your phone number. This is a required field and should include the country your full phone
@@ -107,7 +120,7 @@
 							<div class="form__group">
 								<fieldset class="form__fieldset">
 									<legend>Phone Number<span> *</span></legend>
-									<input type="text" name="phoneNumber" value="+358501234567" placeholder="+358501234567" />
+									<input type="text" name="phoneNumber" id="phone__number" value="+358501234567" placeholder="+358501234567" />
 								</fieldset>
 								<div class="form__verified">
 									<span>Verified</span>
@@ -115,7 +128,13 @@
 							</div>
 							<div class="submit__group">
 								<p><span>*</span> Required fields</p>
-								<button type="submit" class="btn-48 btn-blue" aria-label="Save Phone Number">Save</button>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Phone Number">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use xlink:href="./public/svg/ui_icons.svg#updating" class="icon__updating hidden"></use>
+									</svg>
+								</button>
 							</div>
 						</form>
 
@@ -131,9 +150,10 @@
 									<legend>Email Address<span> *</span></legend>
 									<input
 										type="text"
-										name="phoneNumber"
+										name="emailAddress"
+										id="email__address"
 										value="jussi.heinola@mail.com"
-										placeholder="jussi.heinola@mail.com"
+										placeholder="example@mail.com"
 									/>
 								</fieldset>
 								<div class="form__verified">
@@ -145,11 +165,17 @@
 									<p><span>*</span> Required fields</p>
 									<p>Emails must be verified to be able to used as primary email</p>
 								</div>
-								<button type="submit" class="btn-48 btn-blue" aria-label="Save Email Address">Save</button>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Email Address">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use xlink:href="./public/svg/ui_icons.svg#updating" class="icon__updating hidden"></use>
+									</svg>
+								</button>
 							</div>
 						</form>
 
-						<form action="" method="post" id="settings__role" class="account">
+						<form action="" method="post" id="settings__roles" class="account">
 							<h3>Role</h3>
 							<p>
 								Please select your role. This is a required field and helps us tailor your experience on the platform to
@@ -161,16 +187,21 @@
 									<svg class="icon-chevron" aria-hidden="true">
 										<use xlink:href="./public/svg/ui_icons.svg#chevron-left"></use>
 									</svg>
-									<select name="language" id="preference__role">
-										<option value="en">Worker</option>
-										<option value="fi">Jobs</option>
-										<option value="de">Material</option>
+									<select name="role" id="roles__role">
+										<option value="worker">Worker</option>
+										<option value="jobs">Jobs</option>
+										<option value="materials">Materials</option>
 									</select>
 								</fieldset>
 							</div>
 							<div class="submit__group">
 								<p>This action will change your functionality and subscription plan</p>
-								<button type="submit" class="btn-48 btn-blue" aria-label="Save Role">Save</button>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Role"><span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use xlink:href="./public/svg/ui_icons.svg#updating" class="icon__updating hidden"></use>
+									</svg>
+								</button>
 							</div>
 						</form>
 

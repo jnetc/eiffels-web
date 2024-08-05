@@ -1,6 +1,10 @@
 .settings__connection {
 	container-type: inline-size;
 	position: relative;
+
+	&.disabled {
+		pointer-events: none;
+	}
 }
 
 .connection__checkbox {
@@ -17,6 +21,10 @@
 
 .connection__checkbox:checked + .connetion {
 	filter: grayscale(0);
+}
+
+.connection__checkbox:disabled + .connetion {
+	pointer-events: none;
 }
 
 .connetion {

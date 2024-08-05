@@ -132,4 +132,33 @@
 	& div {
 		display: grid;
 	}
+
+	& button[type='submit'] .icon {
+		fill: var(--white);
+	}
+
+	& button:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	& button:disabled .icon__save,
+	& .icon__updating {
+		display: none;
+	}
+
+	& button:disabled .icon__updating {
+		display: block;
+	}
+
+	& .icon__updating {
+		transform-origin: center;
+		animation: updating 1s linear infinite;
+	}
+}
+
+@keyframes updating {
+	100% {
+		rotate: 360deg;
+	}
 }

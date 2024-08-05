@@ -11,7 +11,6 @@
     "name": "Albania",
     "code": "AL",
     "emoji": "🇦🇱",
-    "lang": "Shqip",
     "unicode": "U+1F1E6 U+1F1F1",
     "dial_code": "+355",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/AL.svg"
@@ -68,7 +67,6 @@
     "name": "Armenia",
     "code": "AM",
     "emoji": "🇦🇲",
-    "lang": "Հայերեն",
     "unicode": "U+1F1E6 U+1F1F2",
     "dial_code": "+374",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/AM.svg"
@@ -92,7 +90,6 @@
     "name": "Australia",
     "code": "AU",
     "emoji": "🇦🇺",
-    "lang": "English (Australia)",
     "unicode": "U+1F1E6 U+1F1FA",
     "dial_code": "+61",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/AU.svg"
@@ -109,7 +106,6 @@
     "name": "Azerbaijan",
     "code": "AZ",
     "emoji": "🇦🇿",
-    "lang": "Azərbaycan dili",
     "unicode": "U+1F1E6 U+1F1FF",
     "dial_code": "+994",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/AZ.svg"
@@ -134,7 +130,6 @@
     "name": "Bangladesh",
     "code": "BD",
     "emoji": "🇧🇩",
-    "lang": "বাংলা",
     "unicode": "U+1F1E7 U+1F1E9",
     "dial_code": "+880",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/BD.svg"
@@ -151,7 +146,6 @@
     "name": "Belarus",
     "code": "BY",
     "emoji": "🇧🇾",
-    "lang": "Беларуская",
     "unicode": "U+1F1E7 U+1F1FE",
     "dial_code": "+375",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/BY.svg"
@@ -224,7 +218,6 @@
     "name": "Brazil",
     "code": "BR",
     "emoji": "🇧🇷",
-    "lang": "Português (Brasil)",
     "unicode": "U+1F1E7 U+1F1F7",
     "dial_code": "+55",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/BR.svg"
@@ -248,7 +241,6 @@
     "name": "Bulgaria",
     "code": "BG",
     "emoji": "🇧🇬",
-    "lang": "Български",
     "unicode": "U+1F1E7 U+1F1EC",
     "dial_code": "+359",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/BG.svg"
@@ -281,7 +273,6 @@
     "name": "Cambodia",
     "code": "KH",
     "emoji": "🇰🇭",
-    "lang": "ខ្មែរ",
     "unicode": "U+1F1F0 U+1F1ED",
     "dial_code": "+855",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KH.svg"
@@ -298,7 +289,6 @@
     "name": "Canada",
     "code": "CA",
     "emoji": "🇨🇦",
-    "lang": "English (Canada)",
     "unicode": "U+1F1E8 U+1F1E6",
     "dial_code": "+1",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/CA.svg"
@@ -339,7 +329,6 @@
     "name": "China",
     "code": "CN",
     "emoji": "🇨🇳",
-    "lang": "中文（简体）",
     "unicode": "U+1F1E8 U+1F1F3",
     "dial_code": "+86",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/CN.svg"
@@ -410,7 +399,6 @@
     "name": "Croatia",
     "code": "HR",
     "emoji": "🇭🇷",
-    "lang": "Hrvatski",
     "unicode": "U+1F1ED U+1F1F7",
     "dial_code": "+385",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/HR.svg"
@@ -443,7 +431,6 @@
     "name": "Czechia",
     "code": "CZ",
     "emoji": "🇨🇿",
-    "lang": "Čeština",
     "unicode": "U+1F1E8 U+1F1FF",
     "dial_code": "+420",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/CZ.svg"
@@ -460,7 +447,6 @@
     "name": "Denmark",
     "code": "DK",
     "emoji": "🇩🇰",
-    "lang": "Dansk",
     "unicode": "U+1F1E9 U+1F1F0",
     "dial_code": "+45",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/DK.svg"
@@ -533,7 +519,6 @@
     "name": "Estonia",
     "code": "EE",
     "emoji": "🇪🇪",
-    "lang": "Eesti",
     "unicode": "U+1F1EA U+1F1EA",
     "dial_code": "+372",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/EE.svg"
@@ -550,7 +535,6 @@
     "name": "Ethiopia",
     "code": "ET",
     "emoji": "🇪🇹",
-    "lang": "አማርኛ",
     "unicode": "U+1F1EA U+1F1F9",
     "dial_code": "+251",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ET.svg"
@@ -583,7 +567,6 @@
     "name": "Finland",
     "code": "FI",
     "emoji": "🇫🇮",
-    "lang": "Suomi",
     "unicode": "U+1F1EB U+1F1EE",
     "dial_code": "+358",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/FI.svg"
@@ -592,7 +575,6 @@
     "name": "France",
     "code": "FR",
     "emoji": "🇫🇷",
-    "lang": "Français",
     "unicode": "U+1F1EB U+1F1F7",
     "dial_code": "+33",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/FR.svg"
@@ -640,7 +622,6 @@
     "name": "Georgia",
     "code": "GE",
     "emoji": "🇬🇪",
-    "lang": "ქართული",
     "unicode": "U+1F1EC U+1F1EA",
     "dial_code": "+995",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GE.svg"
@@ -649,7 +630,6 @@
     "name": "Germany",
     "code": "DE",
     "emoji": "🇩🇪",
-    "lang": "Deutsch",
     "unicode": "U+1F1E9 U+1F1EA",
     "dial_code": "+49",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/DE.svg"
@@ -674,7 +654,6 @@
     "name": "Greece",
     "code": "GR",
     "emoji": "🇬🇷",
-    "lang": "Ελληνικά",
     "unicode": "U+1F1EC U+1F1F7",
     "dial_code": "+30",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GR.svg"
@@ -778,7 +757,6 @@
     "name": "Hong Kong SAR China",
     "code": "HK",
     "emoji": "🇭🇰",
-    "lang": "中文（香港）",
     "unicode": "U+1F1ED U+1F1F0",
     "dial_code": "+852",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/HK.svg"
@@ -787,7 +765,6 @@
     "name": "Hungary",
     "code": "HU",
     "emoji": "🇭🇺",
-    "lang": "Magyar",
     "unicode": "U+1F1ED U+1F1FA",
     "dial_code": "+36",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/HU.svg"
@@ -796,7 +773,6 @@
     "name": "Iceland",
     "code": "IS",
     "emoji": "🇮🇸",
-    "lang": "Íslenska",
     "unicode": "U+1F1EE U+1F1F8",
     "dial_code": "+354",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/IS.svg"
@@ -805,7 +781,6 @@
     "name": "India",
     "code": "IN",
     "emoji": "🇮🇳",
-    "lang": "हिन्दी",
     "unicode": "U+1F1EE U+1F1F3",
     "dial_code": "+91",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/IN.svg"
@@ -814,7 +789,6 @@
     "name": "Indonesia",
     "code": "ID",
     "emoji": "🇮🇩",
-    "lang": "Bahasa Indonesia",
     "unicode": "U+1F1EE U+1F1E9",
     "dial_code": "+62",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ID.svg"
@@ -823,7 +797,6 @@
     "name": "Iran",
     "code": "IR",
     "emoji": "🇮🇷",
-    "lang": "فارسی",
     "unicode": "U+1F1EE U+1F1F7",
     "dial_code": "+98",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/IR.svg"
@@ -856,7 +829,6 @@
     "name": "Israel",
     "code": "IL",
     "emoji": "🇮🇱",
-    "lang": "עברית",
     "unicode": "U+1F1EE U+1F1F1",
     "dial_code": "+972",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/IL.svg"
@@ -865,7 +837,6 @@
     "name": "Italy",
     "code": "IT",
     "emoji": "🇮🇹",
-    "lang": "Italiano",
     "unicode": "U+1F1EE U+1F1F9",
     "dial_code": "+39",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/IT.svg"
@@ -882,7 +853,6 @@
     "name": "Japan",
     "code": "JP",
     "emoji": "🇯🇵",
-    "lang": "日本語",
     "unicode": "U+1F1EF U+1F1F5",
     "dial_code": "+81",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/JP.svg"
@@ -907,7 +877,6 @@
     "name": "Kazakhstan",
     "code": "KZ",
     "emoji": "🇰🇿",
-    "lang": "Қазақ",
     "unicode": "U+1F1F0 U+1F1FF",
     "dial_code": "+7",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KZ.svg"
@@ -948,7 +917,6 @@
     "name": "Kyrgyzstan",
     "code": "KG",
     "emoji": "🇰🇬",
-    "lang": "Кыргызча",
     "unicode": "U+1F1F0 U+1F1EC",
     "dial_code": "+996",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KG.svg"
@@ -957,7 +925,6 @@
     "name": "Laos",
     "code": "LA",
     "emoji": "🇱🇦",
-    "lang": "ລາວ",
     "unicode": "U+1F1F1 U+1F1E6",
     "dial_code": "+856",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/LA.svg"
@@ -966,7 +933,6 @@
     "name": "Latvia",
     "code": "LV",
     "emoji": "🇱🇻",
-    "lang": "Latviešu",
     "unicode": "U+1F1F1 U+1F1FB",
     "dial_code": "+371",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/LV.svg"
@@ -1015,7 +981,6 @@
     "name": "Lithuania",
     "code": "LT",
     "emoji": "🇱🇹",
-    "lang": "Lietuvių",
     "unicode": "U+1F1F1 U+1F1F9",
     "dial_code": "+370",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/LT.svg"
@@ -1056,7 +1021,6 @@
     "name": "Malaysia",
     "code": "MY",
     "emoji": "🇲🇾",
-    "lang": "Bahasa Melayu",
     "unicode": "U+1F1F2 U+1F1FE",
     "dial_code": "+60",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/MY.svg"
@@ -1161,7 +1125,6 @@
     "name": "Mongolia",
     "code": "MN",
     "emoji": "🇲🇳",
-    "lang": "Монгол",
     "unicode": "U+1F1F2 U+1F1F3",
     "dial_code": "+976",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/MN.svg"
@@ -1202,7 +1165,6 @@
     "name": "Myanmar (Burma)",
     "code": "MM",
     "emoji": "🇲🇲",
-    "lang": "ဗမာ",
     "unicode": "U+1F1F2 U+1F1F2",
     "dial_code": "+95",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/MM.svg"
@@ -1227,7 +1189,6 @@
     "name": "Nepal",
     "code": "NP",
     "emoji": "🇳🇵",
-    "lang": "नेपाली",
     "unicode": "U+1F1F3 U+1F1F5",
     "dial_code": "+977",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NP.svg"
@@ -1236,7 +1197,6 @@
     "name": "Netherlands",
     "code": "NL",
     "emoji": "🇳🇱",
-    "lang": "Nederlands",
     "unicode": "U+1F1F3 U+1F1F1",
     "dial_code": "+31",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NL.svg"
@@ -1301,7 +1261,6 @@
     "name": "North Korea",
     "code": "KP",
     "emoji": "🇰🇵",
-    "lang": "한국어",
     "unicode": "U+1F1F0 U+1F1F5",
     "dial_code": "+850",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KP.svg"
@@ -1318,7 +1277,6 @@
     "name": "Norway",
     "code": "NO",
     "emoji": "🇳🇴",
-    "lang": "Norsk",
     "unicode": "U+1F1F3 U+1F1F4",
     "dial_code": "+47",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/NO.svg"
@@ -1335,7 +1293,6 @@
     "name": "Pakistan",
     "code": "PK",
     "emoji": "🇵🇰",
-    "lang": "اردو",
     "unicode": "U+1F1F5 U+1F1F0",
     "dial_code": "+92",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/PK.svg"
@@ -1392,7 +1349,6 @@
     "name": "Philippines",
     "code": "PH",
     "emoji": "🇵🇭",
-    "lang": "Filipino",
     "unicode": "U+1F1F5 U+1F1ED",
     "dial_code": "+63",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/PH.svg"
@@ -1409,7 +1365,6 @@
     "name": "Poland",
     "code": "PL",
     "emoji": "🇵🇱",
-    "lang": "Polski",
     "unicode": "U+1F1F5 U+1F1F1",
     "dial_code": "+48",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/PL.svg"
@@ -1418,7 +1373,6 @@
     "name": "Portugal",
     "code": "PT",
     "emoji": "🇵🇹",
-    "lang": "Português (Portugal)",
     "unicode": "U+1F1F5 U+1F1F9",
     "dial_code": "+351",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/PT.svg"
@@ -1451,7 +1405,6 @@
     "name": "Romania",
     "code": "RO",
     "emoji": "🇷🇴",
-    "lang": "Română",
     "unicode": "U+1F1F7 U+1F1F4",
     "dial_code": "+40",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/RO.svg"
@@ -1460,7 +1413,6 @@
     "name": "Russia",
     "code": "RU",
     "emoji": "🇷🇺",
-    "lang": "Русский",
     "unicode": "U+1F1F7 U+1F1FA",
     "dial_code": "+7",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/RU.svg"
@@ -1547,7 +1499,6 @@
     "name": "Saudi Arabia",
     "code": "SA",
     "emoji": "🇸🇦",
-    "lang": "العربية",
     "unicode": "U+1F1F8 U+1F1E6",
     "dial_code": "+966",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SA.svg"
@@ -1564,7 +1515,6 @@
     "name": "Serbia",
     "code": "RS",
     "emoji": "🇷🇸",
-    "lang": "Српски",
     "unicode": "U+1F1F7 U+1F1F8",
     "dial_code": "+381",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/RS.svg"
@@ -1605,7 +1555,6 @@
     "name": "Slovakia",
     "code": "SK",
     "emoji": "🇸🇰",
-    "lang": "Slovenčina",
     "unicode": "U+1F1F8 U+1F1F0",
     "dial_code": "+421",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SK.svg"
@@ -1614,7 +1563,6 @@
     "name": "Slovenia",
     "code": "SI",
     "emoji": "🇸🇮",
-    "lang": "Slovenščina",
     "unicode": "U+1F1F8 U+1F1EE",
     "dial_code": "+386",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SI.svg"
@@ -1639,7 +1587,6 @@
     "name": "South Africa",
     "code": "ZA",
     "emoji": "🇿🇦",
-    "lang": "Afrikaans",
     "unicode": "U+1F1FF U+1F1E6",
     "dial_code": "+27",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ZA.svg"
@@ -1655,7 +1602,6 @@
     "name": "South Korea",
     "code": "KR",
     "emoji": "🇰🇷",
-    "lang": "한국어",
     "unicode": "U+1F1F0 U+1F1F7",
     "dial_code": "+82",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/KR.svg"
@@ -1672,7 +1618,6 @@
     "name": "Spain",
     "code": "ES",
     "emoji": "🇪🇸",
-    "lang": "Español (España)",
     "unicode": "U+1F1EA U+1F1F8",
     "dial_code": "+34",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ES.svg"
@@ -1681,7 +1626,6 @@
     "name": "Sri Lanka",
     "code": "LK",
     "emoji": "🇱🇰",
-    "lang": "සිංහල",
     "unicode": "U+1F1F1 U+1F1F0",
     "dial_code": "+94",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/LK.svg"
@@ -1713,7 +1657,6 @@
     "name": "Sweden",
     "code": "SE",
     "emoji": "🇸🇪",
-    "lang": "Svenska",
     "unicode": "U+1F1F8 U+1F1EA",
     "dial_code": "+46",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SE.svg"
@@ -1738,7 +1681,6 @@
     "name": "Taiwan",
     "code": "TW",
     "emoji": "🇹🇼",
-    "lang": "中文（繁體）",
     "unicode": "U+1F1F9 U+1F1FC",
     "dial_code": "+886",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/TW.svg"
@@ -1747,7 +1689,6 @@
     "name": "Tajikistan",
     "code": "TJ",
     "emoji": "🇹🇯",
-    "lang": "Тоҷикӣ",
     "unicode": "U+1F1F9 U+1F1EF",
     "dial_code": "+992",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/TJ.svg"
@@ -1756,7 +1697,6 @@
     "name": "Tanzania",
     "code": "TZ",
     "emoji": "🇹🇿",
-    "lang": "Kiswahili",
     "unicode": "U+1F1F9 U+1F1FF",
     "dial_code": "+255",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/TZ.svg"
@@ -1765,7 +1705,6 @@
     "name": "Thailand",
     "code": "TH",
     "emoji": "🇹🇭",
-    "lang": "ไทย",
     "unicode": "U+1F1F9 U+1F1ED",
     "dial_code": "+66",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/TH.svg"
@@ -1822,7 +1761,6 @@
     "name": "Turkey",
     "code": "TR",
     "emoji": "🇹🇷",
-    "lang": "Türkçe",
     "unicode": "U+1F1F9 U+1F1F7",
     "dial_code": "+90",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/TR.svg"
@@ -1831,7 +1769,6 @@
     "name": "Turkmenistan",
     "code": "TM",
     "emoji": "🇹🇲",
-    "lang": "Türkmenler",
     "unicode": "U+1F1F9 U+1F1F2",
     "dial_code": "+993",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/TM.svg"
@@ -1864,7 +1801,6 @@
     "name": "Ukraine",
     "code": "UA",
     "emoji": "🇺🇦",
-    "lang": "Українська",
     "unicode": "U+1F1FA U+1F1E6",
     "dial_code": "+380",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/UA.svg"
@@ -1881,7 +1817,6 @@
     "name": "United Kingdom",
     "code": "GB",
     "emoji": "🇬🇧",
-    "lang": "English (United Kingdom)",
     "unicode": "U+1F1EC U+1F1E7",
     "dial_code": "+44",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/GB.svg"
@@ -1890,7 +1825,6 @@
     "name": "United States",
     "code": "US",
     "emoji": "🇺🇸",
-    "lang": "English (US)",
     "unicode": "U+1F1FA U+1F1F8",
     "dial_code": "+1",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/US.svg"
@@ -1907,7 +1841,6 @@
     "name": "Uzbekistan",
     "code": "UZ",
     "emoji": "🇺🇿",
-    "lang": "O'zbek",
     "unicode": "U+1F1FA U+1F1FF",
     "dial_code": "+998",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/UZ.svg"
@@ -1940,7 +1873,6 @@
     "name": "Vietnam",
     "code": "VN",
     "emoji": "🇻🇳",
-    "lang": "Tiếng Việt",
     "unicode": "U+1F1FB U+1F1F3",
     "dial_code": "+84",
     "image": "https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/VN.svg"
