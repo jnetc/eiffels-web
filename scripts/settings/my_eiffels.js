@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	async function emulateConnectOnServer(status, connection) {
 		try {
-			status.textContent = 'Connecting';
+			status.firstElementChild.textContent = 'Connecting';
 			connection.classList.add('disabled');
 			console.log('Connecting...');
 
 			// Emulate saving data to server with a timeout
 			const timeout = setTimeout(() => {
 				connection.classList.remove('disabled');
-				status.textContent = 'Connected';
+				status.firstElementChild.textContent = 'Connected';
 
 				console.log('Connected');
 				clearTimeout(timeout);
@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	async function emulateDisconnectOnServer(status, connection) {
 		try {
-			status.textContent = 'Disconnecting';
+			status.firstElementChild.textContent = 'Disconnecting';
 			connection.classList.add('disabled');
 			console.log('Disconnecting...');
 
 			// Emulate saving data to server with a timeout
 			const timeout = setTimeout(() => {
 				connection.classList.remove('disabled');
-				status.textContent = 'Disconnected';
+				status.firstElementChild.textContent = 'Disconnected';
 
 				console.log('Disconnected');
 				clearTimeout(timeout);

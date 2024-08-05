@@ -53,10 +53,27 @@
 		font-size: var(--font-14);
 	}
 
-	& span {
+	& .connection__status {
+		display: flex;
+		column-gap: var(--gap-8);
 		color: var(--grey-500);
 		font-size: var(--font-18);
 		font-weight: bold;
+	}
+
+	& .icon {
+		width: var(--size-24);
+		aspect-ratio: 1;
+		fill: var(--grey-500);
+	}
+
+	& :where(.icon__connected-cloud, .icon__updating) {
+		display: none;
+	}
+
+	& .icon__updating {
+		transform-origin: center;
+		animation: updating 1s linear infinite;
 	}
 }
 
@@ -82,18 +99,32 @@
 			font-size: var(--font-16);
 		}
 
-		& span {
+		& .connection__status {
 			font-size: var(--font-20);
 		}
 	}
+}
+
+/* Status icon behavior */
+.settings__connection.disabled .icon__updating {
+	display: block;
+}
+
+.settings__connection:not(.disabled) .connection__checkbox:checked + .connetion .icon__connected-cloud {
+	display: block;
+}
+
+.settings__connection.disabled :where(.icon__disconnected-cloud, .icon__connected-cloud),
+.connection__checkbox:checked + .connetion :where(.icon__disconnected-cloud) {
+	display: none;
 }
 
 .settings__connection:last-child {
 	margin-block-end: var(--gap-56);
 }
 
-.connetion.connected {
-	& span {
-		color: var(--grey-500);
+@keyframes updating {
+	100% {
+		rotate: 360deg;
 	}
 }
