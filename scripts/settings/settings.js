@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+	const signOut = document.getElementById('settings__sign-out');
+
 	// Select all elements with the class 'settings__name'
 	const listItems = document.querySelectorAll('.settings__name');
 
@@ -27,5 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Add 'pointerup' event listener to each connection element
 	listItems.forEach(item => {
 		item.addEventListener('pointerup', collapseList);
+	});
+
+	// Sign Out user on submit and redirect to index
+	signOut.addEventListener('submit', event => {
+		event.preventDefault();
+		window.location.href = 'index.html';
 	});
 });

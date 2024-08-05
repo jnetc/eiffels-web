@@ -161,6 +161,6 @@
 	}
 }
 
-.settings__btn-signout {
+#settings__sign-out {
 	justify-self: flex-end;
 }
