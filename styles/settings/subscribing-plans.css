@@ -111,26 +111,6 @@
 }
 
 .payment-history__download {
-	width: fit-content;
-	display: flex;
-	gap: var(--gap-8);
-	align-items: center;
-	column-gap: var(--gap-8);
-	padding: var(--gap-8) var(--gap-16);
 	margin-block-start: var(--gap-32);
 	margin-inline: auto 0;
-	background-color: var(--surface);
-	border: 1px solid var(--grey-500);
-	border-radius: var(--border-corner-6);
-	color: var(--grey-500);
-	font-size: var(--font-16);
-	font-weight: bold;
-	text-decoration: none;
-	white-space: nowrap;
-
-	& .icon {
-		width: var(--size-32);
-		aspect-ratio: 1;
-		fill: var(--grey-500);
-	}
 }
