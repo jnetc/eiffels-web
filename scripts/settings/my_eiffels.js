@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const status = connection.querySelector('.connection__status');
 
 		// Toggle status text based on checkbox state
-		if (!checkbox.checked) {
+		if (checkbox.checked) {
 			emulateConnectOnServer(status, connection);
 		} else {
 			emulateDisconnectOnServer(status, connection);
@@ -57,6 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Add 'pointerup' event listener to each connection element
 	connections.forEach(connection => {
-		connection.addEventListener('pointerup', connectCloud);
+		connection.addEventListener('click', connectCloud);
 	});
 });

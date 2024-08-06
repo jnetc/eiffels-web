@@ -1,26 +1,13 @@
-.account {
+.styled-box {
 	container-type: inline-size;
-	padding-block-start: var(--gap-24);
 	border-radius: var(--border-corner-8);
 	border: 1px solid var(--grey-200);
-
-	& > :where(h3, p, .form__group) {
-		padding-inline: var(--gap-18);
-	}
-
-	& > h3 {
-		color: var(--grey-400);
-		font-size: var(--font-20);
-	}
 
 	& > p {
 		padding-block: var(--gap-12) var(--gap-32);
 	}
 
 	& p {
-		color: var(--grey-500);
-		font-size: var(--font-16);
-
 		& span {
 			color: var(--warning-error);
 		}
@@ -28,7 +15,7 @@
 }
 
 /* for delete account*/
-.account:not(:has(.form__group)) {
+.styled-box.delete-account {
 	padding-inline-end: var(--gap-24);
 	padding-block-end: var(--gap-24);
 	margin-block: var(--gap-32) var(--gap-56);
@@ -39,7 +26,7 @@
 	}
 }
 
-.form__group {
+.styled-box__group {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: var(--gap-32);
@@ -47,12 +34,12 @@
 }
 
 @container (max-width: 480px) {
-	.form__group {
+	.styled-box__group {
 		grid-template-columns: 1fr;
 	}
 }
 
-.form__fieldset {
+.styled-box__fieldset {
 	display: grid;
 	row-gap: var(--gap-8);
 	position: relative;
@@ -105,7 +92,7 @@
 	}
 }
 
-.form__verified {
+.styled-box__verified {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -120,14 +107,19 @@
 	}
 }
 
-.submit__group {
+.styled-box__footer {
+	container-type: inline-size;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	column-gap: var(--gap-24);
+	gap: var(--gap-24);
 	padding: var(--gap-24) var(--gap-18);
 	border-radius: 0 0 var(--border-corner-8) var(--border-corner-8);
 	background-color: var(--grey-100);
+
+	& > :first-child {
+		flex: 0 1 100%;
+	}
 
 	& div {
 		display: grid;
@@ -154,6 +146,16 @@
 	& .icon__updating {
 		transform-origin: center;
 		animation: updating 1s linear infinite;
+	}
+}
+
+@container (max-width: 480px) {
+	.styled-box__footer {
+		flex-wrap: wrap;
+
+		& :where(.btn-48) {
+			margin-inline: auto 0;
+		}
 	}
 }
 

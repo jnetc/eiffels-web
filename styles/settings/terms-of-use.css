@@ -1,25 +1,18 @@
-.settings__of-rules {
+.simple-box {
 	container-type: inline-size;
 	display: grid;
-	grid-template-columns: 1fr auto;
 	gap: var(--gap-12);
 	padding-inline: var(--gap-18);
 	padding-block: var(--gap-24) var(--gap-36);
 	border-bottom: 1px solid var(--grey-200);
+}
+
+.settings__of-rules {
+	grid-template-columns: 1fr auto;
 
 	& > :where(h3, p) {
 		grid-column: 1;
 		width: 70cqw;
-	}
-
-	& > h3 {
-		color: var(--grey-400);
-		font-size: var(--font-20);
-	}
-
-	& > p {
-		color: var(--grey-500);
-		font-size: var(--font-16);
 	}
 
 	& > p:last-of-type {
@@ -36,7 +29,7 @@
 		column-gap: var(--gap-8);
 		padding: var(--gap-8) var(--gap-16);
 		background-color: var(--surface);
-		border: 1px solid var(--grey-200);
+		border: 1px solid var(--grey-500);
 		border-radius: var(--border-corner-6);
 		color: var(--grey-500);
 		font-size: var(--font-16);

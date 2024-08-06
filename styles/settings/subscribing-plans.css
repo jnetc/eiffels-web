@@ -1,0 +1,136 @@
+.plan__name {
+	padding-block-start: var(--gap-12);
+	color: var(--black);
+	font-size: var(--font-24);
+}
+
+.plan__info {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--gap-16) var(--gap-32);
+	padding-block-end: var(--gap-18);
+}
+
+.plan__price {
+	display: flex;
+	column-gap: var(--gap-8);
+	align-items: flex-end;
+	flex-wrap: nowrap;
+
+	& .price {
+		color: var(--black);
+		font-size: var(--font-36);
+		font-weight: bold;
+	}
+
+	& sub {
+		position: relative;
+		top: -4px;
+		color: var(--grey-500);
+		font-size: var(--font-16);
+	}
+}
+
+.plan__features {
+	width: fit-content;
+	display: flex;
+	column-gap: var(--gap-8);
+	padding: var(--gap-12) var(--gap-18);
+	border: 1px solid var(--grey-200);
+	border-radius: var(--border-corner-8);
+	user-select: none;
+
+	& .plan__workers {
+		color: var(--black);
+		font-size: var(--font-20);
+		font-weight: bold;
+	}
+
+	& .icon {
+		width: var(--size-24);
+		aspect-ratio: 1;
+		fill: var(--grey-300);
+	}
+}
+
+@container (max-width: 480px) {
+	.plan__info,
+	.billing__current-email {
+		flex-wrap: wrap;
+	}
+}
+
+.billing__current-email {
+	display: flex;
+	align-items: center;
+	gap: var(--gap-8) var(--gap-16);
+	padding-block: var(--gap-24) var(--gap-12);
+
+	& #billing__email {
+		padding: var(--gap-12);
+		border: 1px solid var(--grey-200);
+		border-radius: var(--border-corner-8);
+		color: var(--grey-500);
+		font-weight: 900;
+	}
+}
+
+#settings__payment-history.styled-box {
+	border: 0;
+	padding-block-end: var(--gap-56);
+}
+
+.payment-history__container {
+	overflow-x: auto;
+}
+.payment-history__table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.payment-history__table :where(td, th) {
+	padding-inline: var(--gap-18);
+	padding-block: var(--gap-12);
+}
+
+.payment-history__head {
+	color: var(--grey-300);
+	border-bottom: 1px solid var(--grey-200);
+
+	& th {
+		font-weight: bold;
+	}
+}
+
+.payment-history__row:nth-of-type(even) {
+	background-color: var(--grey-100);
+}
+
+.payment-history__row td:last-of-type {
+	font-weight: bold;
+}
+
+.payment-history__download {
+	width: fit-content;
+	display: flex;
+	gap: var(--gap-8);
+	align-items: center;
+	column-gap: var(--gap-8);
+	padding: var(--gap-8) var(--gap-16);
+	margin-block-start: var(--gap-32);
+	margin-inline: auto 0;
+	background-color: var(--surface);
+	border: 1px solid var(--grey-500);
+	border-radius: var(--border-corner-6);
+	color: var(--grey-500);
+	font-size: var(--font-16);
+	font-weight: bold;
+	text-decoration: none;
+	white-space: nowrap;
+
+	& .icon {
+		width: var(--size-32);
+		aspect-ratio: 1;
+		fill: var(--grey-500);
+	}
+}

@@ -1,6 +1,7 @@
 .settings__connection {
 	container-type: inline-size;
 	position: relative;
+	user-select: none;
 
 	&.disabled {
 		pointer-events: none;
