@@ -273,7 +273,7 @@ body > footer {
 	column-gap: var(--gap-12);
 	align-items: center;
 	padding: var(--gap-12);
-	margin-block-end: var(--gap-24);
+	margin-inline: auto;
 	background-color: var(--surface);
 	border-left: 5px solid var(--warning-error);
 	border-top-right-radius: var(--border-corner-8);

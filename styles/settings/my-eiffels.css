@@ -16,22 +16,23 @@
 	z-index: -1;
 }
 
-.connection__checkbox:focus-visible + .connetion {
+.connection__checkbox:focus-visible + .connection {
 	border: 1px solid var(--grey-500);
 }
 
-.connection__checkbox:checked + .connetion {
+.connection__checkbox:checked + .connection {
 	filter: grayscale(0);
 }
 
-.connection__checkbox:disabled + .connetion {
+.connection__checkbox:disabled + .connection {
 	pointer-events: none;
 }
 
-.connetion {
+.connection {
 	container-type: inline-size;
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: var(--gap-18);
 	padding: var(--gap-18);
 	background-color: var(--surface);
@@ -78,8 +79,14 @@
 	}
 }
 
+.connection .error-message {
+	width: 100%;
+	margin-block-end: var(--gag-24);
+	flex: 1 0 100%;
+}
+
 @container (max-width: 480px) {
-	.connetion {
+	.connection {
 		flex-direction: column;
 		padding-block-end: var(--gap-40);
 
@@ -111,12 +118,12 @@
 	display: block;
 }
 
-.settings__connection:not(.disabled) .connection__checkbox:checked + .connetion .icon__connected-cloud {
+.settings__connection:not(.disabled) .connection__checkbox:checked + .connection .icon__connected-cloud {
 	display: block;
 }
 
 .settings__connection.disabled :where(.icon__disconnected-cloud, .icon__connected-cloud),
-.connection__checkbox:checked + .connetion :where(.icon__disconnected-cloud) {
+.connection__checkbox:checked + .connection :where(.icon__disconnected-cloud) {
 	display: none;
 }
 

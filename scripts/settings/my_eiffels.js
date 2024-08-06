@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+	const errorMessage = document.querySelector('.error-message');
 	// Select all elements with class 'settings__connection'
 	const connections = document.querySelectorAll('.settings__connection');
 
@@ -19,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	async function emulateConnectOnServer(status, connection) {
+		if (errorMessage.classList.contains('show')) {
+			errorMessage.classList.remove('show');
+		}
 		try {
 			status.firstElementChild.textContent = 'Connecting';
 			connection.classList.add('disabled');
@@ -34,9 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			}, 3000);
 		} catch (error) {
 			console.log(error);
+			errorMessage.classList.add('show');
 		}
 	}
 	async function emulateDisconnectOnServer(status, connection) {
+		if (errorMessage.classList.contains('show')) {
+			errorMessage.classList.remove('show');
+		}
+
 		try {
 			status.firstElementChild.textContent = 'Disconnecting';
 			connection.classList.add('disabled');
@@ -52,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}, 3000);
 		} catch (error) {
 			console.log(error);
+			errorMessage.classList.add('show');
 		}
 	}
 

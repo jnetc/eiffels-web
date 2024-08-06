@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const emailAddress = document.getElementById('email__address');
 	const role = document.getElementById('roles__role');
 
+	const errorMessage = document.querySelector('.error-message');
+
 	// User data
 	const user = {
 		id: 1,
@@ -66,6 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	async function emulateSaveOnServer(button, user) {
+		if (errorMessage.classList.contains('show')) {
+			errorMessage.classList.remove('show');
+		}
+
 		try {
 			// Emulate saving data to server with a timeout
 			const timeout = setTimeout(() => {
@@ -79,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			console.log('get preferences', user);
 		} catch (error) {
 			console.log(error);
+			errorMessage.classList.add('show');
 		}
 	}
 

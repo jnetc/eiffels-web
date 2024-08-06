@@ -71,6 +71,10 @@
 	padding-block-start: var(--gap-36);
 }
 
+.auth__form:has(.error-message.show) .auth__input-group {
+	margin-block-start: var(--gap-24);
+}
+
 .auth__input-group {
 	display: flex;
 	justify-content: center;

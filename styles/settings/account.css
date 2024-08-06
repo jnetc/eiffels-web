@@ -110,6 +110,7 @@
 .styled-box__footer {
 	container-type: inline-size;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	gap: var(--gap-24);
@@ -157,6 +158,10 @@
 			margin-inline: auto 0;
 		}
 	}
+}
+
+.styled-box__footer .error-message {
+	flex: 1 0 100%;
 }
 
 @keyframes updating {

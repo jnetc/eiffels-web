@@ -107,6 +107,9 @@ p {
 }
 
 /* If intered value is not number */
+#unlogged:has(.error-message.show) form {
+	padding-block-start: var(--gap-24);
+}
 #unlogged:has(.error-message.show) form input#unlogged__phone-number {
 	color: var(--warning-error);
 }
