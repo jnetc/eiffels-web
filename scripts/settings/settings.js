@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 	// Sign Out element
 	const signOut = document.getElementById('settings__sign-out');
-	// Delete Account elements
-	const deleteAccountBtn = document.getElementById('delete-account__btn');
-	const dialog = document.getElementById('da-dialog');
-	const deleteForm = document.getElementById('da__form');
+
+	// Add user picture
+	const openDialogAUP = document.getElementById('open__aup-dialog');
+	const dialogAUP = document.getElementById('aup-dialog');
+	const formAUP = document.getElementById('aup__form');
 
 	// Select all elements with the class 'settings__name'
 	const listItems = document.querySelectorAll('.settings__name');
 
+	// ------------------------------
+	// SETTINGS LIST ITEMS
 	function collapseList(event) {
 		// Get the clicked item
 		const item = event.target;
@@ -42,61 +45,75 @@ document.addEventListener('DOMContentLoaded', () => {
 		window.location.href = 'index.html';
 	});
 
-	// Open dialog "Delete Account"
-	deleteAccountBtn.addEventListener('click', () => {
+	// ------------------------------
+	// OPEN DIALOG "ADD USER PICTURE"
+	openDialogAUP.addEventListener('click', () => {
+		// Get image from UI and display it in the dialog
+		document.getElementById('aup__photo-display').src = document.getElementById('profile__picture').src;
+
 		document.body.style.overflow = 'hidden';
-		dialog.showModal();
+		dialogAUP.showModal();
 	});
 
 	// Close dialog if cancel button or close button is clicked
-	function cancelOrCloseDialog() {
-		const inputs = [...dialog.querySelectorAll('.form__reason-delete')];
-		const errorMessage = dialog.querySelector('.error-message');
+	function cancelOrCloseDialogAUP() {
+		console.log('cancelOrCloseDialog');
 
-		// Uncheck all inputs
-		inputs.forEach(el => {
-			el.querySelector('input').checked = false;
-		});
+		const file = dialogAUP.querySelector('#aup__picture-file');
+		const preview = dialogAUP.querySelector('#aup__photo-display');
+		const errorMessage = dialogAUP.querySelector('.error-message');
+
+		// Clear selected file
+		file.value = '';
+		preview.src = '';
 
 		// Hide error message
 		errorMessage.classList.remove('show');
 
 		document.body.removeAttribute('style');
-		dialog.close();
+		dialogAUP.close();
 	}
 
-	dialog.querySelector('#dialog__close-btn').addEventListener('click', cancelOrCloseDialog);
-	dialog.querySelector('#dialog__cancel').addEventListener('click', cancelOrCloseDialog);
+	console.log('dialogAUP', formAUP.querySelector('#aup__picture-file'));
 
-	// Delete Account on submit
-	function deleteAccount(event) {
-		event.preventDefault();
-		const inputs = [...dialog.querySelectorAll('.form__reason-delete')];
-		const errorMessage = dialog.querySelector('.error-message');
+	dialogAUP.querySelector('#aup-dialog__close-btn').addEventListener('click', cancelOrCloseDialogAUP);
 
-		// Hide error message
-		errorMessage.classList.remove('show');
+	async function getImageData() {
+		document.addEventListener('change', event => {
+			const file = event.target.files[0];
 
-		// Get selected reason
-		const selectedElement = inputs.find(el => {
-			if (el.querySelector('input').checked) {
-				return el;
+			if (file) {
+				const reader = new FileReader();
+
+				reader.onload = function (e) {
+					// Display the image in the UI by setting the source of the image element
+					document.getElementById('aup__photo-display').src = e.target.result;
+				};
+				// Read the selected file as a Data URL
+				reader.readAsDataURL(file);
 			}
 		});
-
-		// Check if reason is selected
-		if (!selectedElement) {
-			errorMessage.classList.add('show');
-			return;
-		}
-
-		// Get reason text
-		const reason = selectedElement.querySelector('label').textContent;
-
-		console.log(reason);
-
-		window.location.href = 'index.html';
 	}
 
-	deleteForm.addEventListener('submit', deleteAccount);
+	// Select file and preview image
+	formAUP.querySelector('#aup__picture-file').addEventListener('click', getImageData);
+
+	formAUP.addEventListener('submit', event => {
+		event.preventDefault();
+		const button = event.target.querySelector('button');
+		button.disabled = true;
+		button.querySelector('.btn-text').textContent = 'Uploading Image';
+
+		const timeout = setTimeout(() => {
+			// Show selected image in UI after submitting form
+			document.getElementById('profile__picture').src = document.getElementById('aup__photo-display').src;
+			// Close dialog and reset form
+			cancelOrCloseDialogAUP();
+
+			button.firstElementChild.textContent = 'Upload Image';
+			button.disabled = false;
+
+			clearTimeout(timeout);
+		}, 3000);
+	});
 });

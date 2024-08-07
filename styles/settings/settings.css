@@ -41,6 +41,7 @@
 	padding: var(--gap-24);
 	position: relative;
 	border-radius: 50vw;
+	cursor: pointer;
 
 	& img {
 		width: var(--size-128);

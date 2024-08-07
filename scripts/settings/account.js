@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const errorMessage = document.querySelector('.error-message');
 
+	// Delete Account elements
+	const openDialogDA = document.getElementById('open__da-dialog');
+	const dialogDA = document.getElementById('da-dialog');
+	const formDA = document.getElementById('da__form');
+
 	// User data
 	const user = {
 		id: 1,
@@ -105,4 +110,64 @@ document.addEventListener('DOMContentLoaded', () => {
 	emailForm.addEventListener('submit', event => updateAccount(event, 'email'));
 	rolesForm.addEventListener('submit', event => updateAccount(event, 'role'));
 	deleteAccountForm.addEventListener('submit', deleteAccount);
+
+	// ------------------------------
+	// OPEN DIALOG "DELETE ACCOUNT"
+	openDialogDA.addEventListener('click', () => {
+		document.body.style.overflow = 'hidden';
+		dialogDA.showModal();
+	});
+
+	// Close dialog if cancel button or close button is clicked
+	function cancelOrCloseDialogDA() {
+		const inputs = [...dialogDA.querySelectorAll('.form__reason-delete')];
+		const errorMessage = dialogDA.querySelector('.error-message');
+
+		// Uncheck all inputs
+		inputs.forEach(el => {
+			el.querySelector('input').checked = false;
+		});
+
+		// Hide error message
+		errorMessage.classList.remove('show');
+
+		document.body.removeAttribute('style');
+		dialogDA.close();
+	}
+
+	dialogDA.querySelector('#da-dialog__close-btn').addEventListener('click', cancelOrCloseDialogDA);
+	dialogDA.querySelector('#da-dialog__cancel').addEventListener('click', cancelOrCloseDialogDA);
+
+	// Delete Account on submit
+	function deleteAccount(event) {
+		event.preventDefault();
+
+		const inputs = [...dialogDA.querySelectorAll('.form__reason-delete')];
+		const errorMessage = dialogDA.querySelector('.error-message');
+
+		// Hide error message
+		errorMessage.classList.remove('show');
+
+		// Get selected reason
+		const selectedElement = inputs.find(el => {
+			if (el.querySelector('input').checked) {
+				return el;
+			}
+		});
+
+		// Check if reason is selected
+		if (!selectedElement) {
+			errorMessage.classList.add('show');
+			return;
+		}
+
+		// Get reason text
+		const reason = selectedElement.querySelector('label').textContent;
+
+		console.log(reason);
+
+		window.location.href = 'index.html';
+	}
+
+	formDA.addEventListener('submit', deleteAccount);
 });

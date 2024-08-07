@@ -26,14 +26,20 @@
 			<span>Settings</span>
 		</header>
 		<main class="settings__main">
-			<picture class="user__picture glass-effect">
-				<img src="./public/image/jussi.png" alt="Jussi Heinola" />
+			<button
+				type="button"
+				id="open__aup-dialog"
+				class="user__picture glass-effect"
+				title="Jussi Heinola"
+				aria-label="Select Profile Picture"
+			>
+				<img id="profile__picture" src="./public/image/jussi.png" alt="Jussi Heinola" />
 				<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
 					<svg class="icon">
 						<use xlink:href="./public/svg/ui_icons.svg#checkmark-shield"></use>
 					</svg>
 				</div>
-			</picture>
+			</button>
 			<span>Profile</span>
 			<h1>Jussi Heinola</h1>
 			<ul class="settings__list">
@@ -237,7 +243,7 @@
 								deleted and cannot be restored. Make sure you really want to delete it before you proceed.
 							</p>
 
-							<button type="button" id="delete-account__btn" class="btn-56 btn-red" aria-label="Delete Account">
+							<button type="button" id="open__da-dialog" class="btn-56 btn-red" aria-label="Delete Account">
 								Delete Account
 								<svg class="icon" aria-hidden="true">
 									<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>
@@ -550,11 +556,57 @@
 			</form>
 		</main>
 		<footer class="settings__footer">Copyright © 2024 Eiffels</footer>
-		<!-- Modal windows  -->
+		<!-- Modal windows for Add User Picture (aup)  -->
+		<dialog id="aup-dialog" class="dialog glass-effect">
+			<div class="dialog__wrapper">
+				<header class="dialog__header">
+					<button type="button" id="aup-dialog__close-btn" class="btn-circle-48 btn-black" aria-label="Close Dialog">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="public/svg/ui_icons.svg#close"></use>
+						</svg>
+					</button>
+					<h2>Choose Profile Picture</h2>
+					<p>
+						Please select an image file of a smaller size to ensure smooth uploading. Large files may take longer to
+						upload and could result in errors.
+					</p>
+				</header>
+				<!-- Bottom bar for action buttons -->
+				<main class="dialog__main">
+					<div class="main__scroll-area">
+						<!-- IF WE HAVE AN ERROR -->
+						<span class="error-message" role="alert" aria-live="assertive">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="public/svg/ui_icons.svg#warning"></use>
+							</svg>
+							<strong>
+								The file you uploaded is either invalid or exceeds the maximum allowed size. Please upload a valid file
+								that meets the size requirements.
+							</strong>
+						</span>
+						<!-- /// -->
+						<form method="post" id="aup__form">
+							<div class="aup__picture-upload">
+								<input type="file" id="aup__picture-file" accept="image/*" />
+								<img id="aup__photo-display" src="" alt="" />
+							</div>
+							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Upload Image">
+								<span class="btn-text">Upload Image</span>
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+									<use xlink:href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+								</svg>
+							</button>
+						</form>
+					</div>
+				</main>
+			</div>
+		</dialog>
+		<!-- Modal windows for Delete Account (da) -->
 		<dialog id="da-dialog" class="dialog glass-effect">
 			<div class="dialog__wrapper">
 				<header class="dialog__header">
-					<button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black" aria-label="Close Dialog">
+					<button type="button" id="da-dialog__close-btn" class="btn-circle-48 btn-black" aria-label="Close Dialog">
 						<svg class="icon" aria-hidden="true">
 							<use xlink:href="public/svg/ui_icons.svg#close"></use>
 						</svg>
@@ -602,7 +654,7 @@
 							</div>
 							<button
 								type="button"
-								id="dialog__cancel"
+								id="da-dialog__cancel"
 								class="btn-48 btn-blue-border"
 								aria-label="Cancel and close dialog"
 							>
