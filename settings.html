@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="styles/fonts.css" />
 		<link rel="stylesheet" href="styles/global.css" />
 		<link rel="stylesheet" href="styles/settings/settings.css" />
+		<link rel="stylesheet" href="styles/dialogs.css" />
 		<script src="scripts/settings/settings.js" defer></script>
 		<script src="scripts/settings/account.js" defer></script>
 		<script src="scripts/settings/my_eiffels.js" defer></script>
@@ -78,7 +79,7 @@
 							</div>
 							<div class="styled-box__footer">
 								<!-- IF WE HAVE AN ERROR -->
-								<span class="error-message" role="alert" aria-live="assertive">
+								<span class="error-message show" role="alert" aria-live="assertive">
 									<svg class="icon" aria-hidden="true">
 										<use xlink:href="public/svg/ui_icons.svg#warning"></use>
 									</svg>
@@ -229,20 +230,20 @@
 							</div>
 						</form>
 
-						<form method="post" id="settings__delete-account" class="styled-box delete-account">
+						<article id="settings__delete-account" class="styled-box delete-account">
 							<h3>Danger Zone</h3>
 							<p>
 								Once you delete your account, all your personal information, files, and settings will be permanently
 								deleted and cannot be restored. Make sure you really want to delete it before you proceed.
 							</p>
 
-							<button type="submit" class="btn-56 btn-red" aria-label="Delete Account">
+							<button type="button" id="delete-account__btn" class="btn-56 btn-red" aria-label="Delete Account">
 								Delete Account
 								<svg class="icon" aria-hidden="true">
 									<use xlink:href="./public/svg/ui_icons.svg#arrow-right"></use>
 								</svg>
 							</button>
-						</form>
+						</article>
 					</div>
 				</li>
 				<li class="settings__item">
@@ -549,5 +550,69 @@
 			</form>
 		</main>
 		<footer class="settings__footer">Copyright © 2024 Eiffels</footer>
+		<!-- Modal windows  -->
+		<dialog id="da-dialog" class="dialog glass-effect">
+			<div class="dialog__wrapper">
+				<header class="dialog__header">
+					<button type="button" id="dialog__close-btn" class="btn-circle-48 btn-black" aria-label="Close Dialog">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="public/svg/ui_icons.svg#close"></use>
+						</svg>
+					</button>
+					<h2>Are you sure?</h2>
+					<p>What is your reason for deleting your profile?</p>
+				</header>
+				<!-- Bottom bar for action buttons -->
+				<main class="dialog__main">
+					<div class="main__scroll-area">
+						<!-- IF WE HAVE AN ERROR -->
+						<span class="error-message" role="alert" aria-live="assertive">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="public/svg/ui_icons.svg#warning"></use>
+							</svg>
+							<strong>
+								Please select at least one option. This field is required and must be completed to proceed.
+							</strong>
+						</span>
+						<!-- /// -->
+						<form method="post" id="da__form">
+							<div class="form__reason-delete">
+								<input type="radio" name="reason" id="reason1" />
+								<label for="reason1">I no longer need the services provided by this platform.</label>
+							</div>
+							<div class="form__reason-delete">
+								<input type="radio" name="reason" id="reason2" />
+								<label for="reason2">I found an alternative service that better suits my needs.</label>
+							</div>
+							<div class="form__reason-delete">
+								<input type="radio" name="reason" id="reason3" />
+								<label for="reason3">I am closing my account due to inactivity.</label>
+							</div>
+							<div class="form__reason-delete">
+								<input type="radio" name="reason" id="reason4" />
+								<label for="reason4">I had a negative experience with another user on this platform.</label>
+							</div>
+							<div class="form__reason-delete">
+								<input type="radio" name="reason" id="reason5" />
+								<label for="reason5">I am dissatisfied with the user experience and support.</label>
+							</div>
+							<div class="form__reason-delete">
+								<input type="radio" name="reason" id="reason6" />
+								<label for="reason6">Just delete it</label>
+							</div>
+							<button
+								type="button"
+								id="dialog__cancel"
+								class="btn-48 btn-blue-border"
+								aria-label="Cancel and close dialog"
+							>
+								Cancel
+							</button>
+							<button type="submit" class="btn-48 btn-red" aria-label="Delete Account">Delete Account</button>
+						</form>
+					</div>
+				</main>
+			</div>
+		</dialog>
 	</body>
 </html>

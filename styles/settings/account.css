@@ -110,7 +110,7 @@
 .styled-box__footer {
 	container-type: inline-size;
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	justify-content: space-between;
 	align-items: center;
 	gap: var(--gap-24);
@@ -119,11 +119,23 @@
 	background-color: var(--grey-100);
 
 	& > :first-child {
-		flex: 0 1 100%;
+		flex: 1 1 auto;
+	}
+
+	&:has(.error-message) {
+		flex-wrap: wrap;
+	}
+
+	&:has(.error-message) :where(.btn-48) {
+		margin-inline: auto 0;
 	}
 
 	& div {
 		display: grid;
+	}
+
+	& :where(.btn-48) {
+		flex: 0 1 auto;
 	}
 
 	& button[type='submit'] .icon {
@@ -158,10 +170,6 @@
 			margin-inline: auto 0;
 		}
 	}
-}
-
-.styled-box__footer .error-message {
-	flex: 1 0 100%;
 }
 
 @keyframes updating {

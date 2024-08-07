@@ -149,17 +149,19 @@ header a {
 
 .btn-blue-border {
 	border: 1.5px solid var(--primary);
+	color: var(--primary);
 	contain: content;
 
-	& .icon use {
+	& .icon {
 		fill: var(--primary);
 	}
 }
 
 .btn-black-border {
 	border: 1.5px solid var(--grey-500);
+	color: var(--grey-500);
 
-	& .icon use {
+	& .icon {
 		fill: var(--grey-500);
 	}
 }
@@ -168,7 +170,7 @@ header a {
 	border: 1.5px solid var(--whatsapp-dark-green);
 	color: var(--whatsapp-dark-green);
 
-	& .icon use {
+	& .icon {
 		fill: var(--whatsapp-dark-green);
 	}
 }
