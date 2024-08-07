@@ -101,9 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	formAUP.addEventListener('submit', event => {
 		event.preventDefault();
 		const button = event.target.querySelector('button');
+		const file = event.target.querySelector('#aup__picture-file');
+		// When the form is submitted, disable the button and show a loading indicator
+		file.disabled = true;
 		button.disabled = true;
 		button.querySelector('.btn-text').textContent = 'Uploading Image';
 
+		// Emulate save on server
 		const timeout = setTimeout(() => {
 			// Show selected image in UI after submitting form
 			document.getElementById('profile__picture').src = document.getElementById('aup__photo-display').src;
@@ -111,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			cancelOrCloseDialogAUP();
 
 			button.firstElementChild.textContent = 'Upload Image';
+			file.disabled = false;
 			button.disabled = false;
 
 			clearTimeout(timeout);
