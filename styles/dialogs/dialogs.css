@@ -1,0 +1,71 @@
+/* MODAL DIALOG STYLE */
+.dialog {
+	--border: 2px;
+	--border-r: var(--border-corner-12);
+	padding: var(--gap-36);
+	row-gap: var(--gap-36);
+	margin: auto;
+}
+
+.dialog::backdrop {
+	background-color: hsl(from var(--white) h s l / 90%);
+	backdrop-filter: blur(10px);
+}
+
+.dialog__wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--gap-36);
+}
+
+.dialog__header {
+	display: grid;
+	align-items: center;
+	row-gap: var(--gap-8);
+
+	& * {
+		text-align: center;
+	}
+
+	& h2 {
+		padding-block-start: var(--gap-18);
+		color: var(--black);
+		font-size: var(--font-32);
+	}
+
+	& p {
+		color: var(--grey-500);
+		font-size: var(--font-20);
+	}
+
+	& strong {
+		color: var(--whatsapp-dark-green);
+	}
+
+	& button {
+		justify-self: flex-end;
+	}
+}
+
+.main__scroll-area {
+	display: grid;
+	gap: var(--gap-16);
+}
+
+@media screen and (max-width: 960px) {
+	.dialog {
+		max-height: 95dvh;
+	}
+
+	.dialog__main {
+		/* height: 42dvh; */
+		overflow: hidden;
+		scrollbar-gutter: stable;
+	}
+
+	.main__scroll-area {
+		grid-auto-flow: row;
+		max-height: 100%;
+		overflow-y: auto;
+	}
+}

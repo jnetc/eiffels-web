@@ -181,48 +181,25 @@ body > footer {
 
 /* GLASS EFFECT FOR ELEMENTS */
 .glass-effect {
-	background: linear-gradient(45deg, hsl(from var(--primary) h s l / 3%) 0%, hsl(from var(--white) h s l / 10%) 60%);
-	backdrop-filter: blur(15px);
-	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
-	border-radius: var(--br);
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		border-radius: inherit;
-		/* Create var from parent */
-
-		border: 1.5px solid transparent;
-
-		background: linear-gradient(
+	border: var(--border) solid transparent;
+	border-radius: var(--border-r);
+	background-image: linear-gradient(
+			45deg,
+			hsl(from var(--grey-100) h s l / 100%) 0%,
+			hsl(from var(--grey-100) h s l / 100%) 100%
+		),
+		linear-gradient(
 			160deg,
-			hsl(from var(--primary) h s l / 20%) 0%,
+			hsl(from var(--primary) h s l / 35%) 0%,
 			hsl(from var(--primary) h s l / 5%) 15%,
 			hsl(from #fff h s l / 100%) 25%,
 			hsl(from #fff h s l / 100%) 75%,
-			hsl(from var(--primary) h s l / 15%) 100%
+			hsl(from var(--primary) h s l / 18%) 100%
 		);
-		background-origin: border-box;
-		/* This code defines a mask for an element using two gradients and different clipping areas:
-
-    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-    Uses two linear gradients as masks.
-
-    mask-clip: padding-box, border-box;
-    The first gradient is applied to the padding-box area,
-    and the second to the border-box area.
-
-    mask-composite: exclude;
-    Sets the compositing mode to exclude,
-    which subtracts the overlapping areas of the masks. This creates a mask that makes only the area between the padding-box and border-box visible.
-    */
-		mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
-		mask-clip: padding-box, border-box;
-		mask-composite: exclude;
-
-		z-index: -1;
-	}
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	backdrop-filter: blur(15px);
+	box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
 }
 
 /* GLASS EFFECT FOR INPUTS */

@@ -1,0 +1,103 @@
+#mp-dialog {
+	width: min(1200px, 100%);
+}
+
+.main__scroll-area {
+	grid-auto-flow: column;
+}
+
+.dialog__select {
+	display: grid;
+	grid-template-rows: auto var(--size-48) 1fr auto;
+	gap: var(--gap-12) var(--gap-32);
+	background-color: var(--surface);
+	border-radius: var(--border-corner-12);
+	border: 1px solid var(--grey-200);
+	padding: var(--gap-18);
+	transition: all 0.2s ease-in-out;
+
+	& * {
+		text-align: left;
+	}
+
+	& img {
+		width: 100%;
+		height: 220px;
+		border-radius: var(--border-corner-8);
+		object-fit: cover;
+	}
+
+	& .button-title {
+		align-self: flex-end;
+		color: var(--grey-500);
+		font-weight: bold;
+		font-size: var(--font-24);
+		line-height: 1.2;
+	}
+
+	& .button-description {
+		padding-block-end: var(--gap-24);
+	}
+
+	& .button-arrow {
+		width: var(--size-48);
+		height: var(--size-48);
+		aspect-ratio: 1;
+		display: grid;
+		place-items: center;
+		border-radius: 50vw;
+		background-color: var(--primary);
+
+		& .icon {
+			width: var(--size-32);
+			height: var(--size-32);
+			aspect-ratio: 1;
+			fill: var(--white);
+		}
+	}
+}
+
+.dialog__select:hover {
+	border-color: var(--grey-300);
+	box-shadow: inset 0 0 0 1px var(--grey-300);
+}
+
+@media screen and (max-width: 960px) {
+	#mp-dialog {
+		max-height: 95dvh;
+	}
+
+	.dialog__main {
+		height: 42dvh;
+		overflow: hidden;
+		scrollbar-gutter: stable;
+	}
+
+	.main__scroll-area {
+		grid-auto-flow: row;
+		max-height: 100%;
+		overflow-y: auto;
+	}
+
+	.dialog__select {
+		grid-template-columns: var(--size-64) 1fr;
+		grid-template-rows: auto;
+		gap: var(--gap-12) var(--gap-16);
+
+		& img {
+			height: var(--size-64);
+		}
+
+		& .button-title {
+			align-self: center;
+		}
+
+		& .button-description {
+			display: none;
+		}
+
+		& .button-arrow {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,72 @@
+#aup-dialog {
+	width: min(560px, 100%);
+	/* max-height: 95dvh; */
+	/* min-height: max-content; */
+}
+
+#aup__form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: var(--gap-48);
+	align-self: center;
+
+	& [type='submit'] {
+		grid-column: 1 / -1;
+		justify-self: center;
+	}
+
+	& button:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	& button:disabled .icon__save,
+	& .icon__updating {
+		display: none;
+	}
+
+	& button:disabled .icon__updating {
+		display: block;
+	}
+
+	& .icon__updating {
+		transform-origin: center;
+		animation: updating 1s linear infinite;
+	}
+}
+
+@keyframes updating {
+	100% {
+		rotate: 360deg;
+	}
+}
+
+.aup__picture-upload {
+	grid-column: 1 / -1;
+	width: 220px;
+	height: 220px;
+	aspect-ratio: 1;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--gap-16);
+	margin: auto;
+
+	& :where(img, input) {
+		grid-column: 1;
+		grid-row: 1;
+		width: 100%;
+		border-radius: 50vw;
+	}
+
+	& input {
+		opacity: 0;
+		cursor: pointer;
+		z-index: 5;
+	}
+
+	& img {
+		object-fit: cover;
+		object-position: center;
+		z-index: 4;
+	}
+}
