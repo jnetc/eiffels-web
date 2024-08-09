@@ -76,6 +76,7 @@
   background-color: var(--whatsapp-dark-green);
   border-radius: var(--border-corner-32);
   overflow: hidden;
+  user-select: none;
 
   & .icon {
     flex: 1 0 auto;
@@ -97,14 +98,18 @@
   flex: 1 0 auto;
   display: grid;
   row-gap: var(--gap-12);
+}
+.card__text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-clamp: 10;
+  -webkit-line-clamp: 10;
 
-  & .card__text {
-    display: -webkit-box;
+  &.card__text-clamp {
     line-clamp: 6;
     -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 

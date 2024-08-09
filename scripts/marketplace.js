@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		button.addEventListener("click", openDialogAndCloneCard);
 
 		if (cardTextscrollHeight > cardTextHeight) {
+			cardText.classList.add("card__text-clamp");
 			element.appendChild(button);
 		}
 	}
