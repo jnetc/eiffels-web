@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		button.className = "btn-green-border btn-overflow open__mpi-dialog";
 		button.setAttribute("aria-label", "Read all text");
 		button.setAttribute("title", "Read all text");
-		button.textContent = "...Read More";
+		button.textContent = "Read More";
 		// Adding event listener for open "dialogMPI"
 		button.addEventListener("click", openDialogAndCloneCard);
 
