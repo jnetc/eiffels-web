@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Add 'pointerup' event listener to each connection element
-	connections.forEach(connection => {
+	for (const connection of connections) {
 		connection.addEventListener('click', connectCloud);
-	});
+	}
 });

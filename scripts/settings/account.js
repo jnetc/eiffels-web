@@ -124,9 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		const errorMessage = dialogDA.querySelector('.error-message');
 
 		// Uncheck all inputs
-		inputs.forEach(el => {
+		for (const el of inputs) {
 			el.querySelector('input').checked = false;
-		});
+
+		}
 
 		// Hide error message
 		errorMessage.classList.remove('show');
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	dialogDA.querySelector('#da-dialog__cancel').addEventListener('click', cancelOrCloseDialogDA);
 
 	// Delete Account on submit
-	function deleteAccount(event) {
+	function deleteThisAccount(event) {
 		event.preventDefault();
 
 		const inputs = [...dialogDA.querySelectorAll('.form__reason-delete')];
@@ -169,5 +170,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		window.location.href = 'index.html';
 	}
 
-	formDA.addEventListener('submit', deleteAccount);
+	formDA.addEventListener('submit', deleteThisAccount);
 });

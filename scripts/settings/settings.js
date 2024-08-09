@@ -23,21 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		// Collapse all summaries without target
-		listItems.forEach(el => {
+		for (const el of listItems) {
 			if (el.classList.contains('open-settings')) {
 				el.classList.remove('open-settings');
 				return;
 			}
-		});
+		}
 
 		// Open the clicked item
 		item.classList.add('open-settings');
 	}
 
 	// Add 'click' event listener to each connection element
-	listItems.forEach(item => {
+	for (const item of listItems) {
 		item.addEventListener('click', collapseList);
-	});
+	}
 
 	// Sign Out user on submit and redirect to index
 	signOut.addEventListener('submit', event => {
@@ -57,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Close dialog if cancel button or close button is clicked
 	function cancelOrCloseDialogAUP() {
-		console.log('cancelOrCloseDialog');
-
 		const file = dialogAUP.querySelector('#aup__picture-file');
 		const preview = dialogAUP.querySelector('#aup__photo-display');
 		const errorMessage = dialogAUP.querySelector('.error-message');
@@ -74,8 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		dialogAUP.close();
 	}
 
-	console.log('dialogAUP', formAUP.querySelector('#aup__picture-file'));
-
 	dialogAUP.querySelector('#aup-dialog__close-btn').addEventListener('click', cancelOrCloseDialogAUP);
 
 	async function getImageData() {
@@ -85,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (file) {
 				const reader = new FileReader();
 
-				reader.onload = function (e) {
+				reader.onload = (e) => {
 					// Display the image in the UI by setting the source of the image element
 					document.getElementById('aup__photo-display').src = e.target.result;
 				};

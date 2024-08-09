@@ -1,66 +1,107 @@
-document.addEventListener('DOMContentLoaded', () => {
-	// Add new materials, workers and jobs
-	const addNewButton = document.getElementById('btn-add');
-	const dialog = document.getElementById('mp-dialog');
-	const btnListVacancies = document.getElementById('list_vacancies');
-	const btnSupplyServices = document.getElementById('supply_services');
-	const btnSellMaterials = document.getElementById('sell_materials');
+document.addEventListener("DOMContentLoaded", () => {
+	// All card with overflow description
+	const textBox = document.querySelectorAll(".card__description");
 
 	// Add new materials, workers and jobs
-	addNewButton.addEventListener('click', () => {
-		document.body.style.overflow = 'hidden';
-		dialog.showModal();
-	});
+	const openDialogMP = document.getElementById("open__mp-dialog");
+	const dialogMP = document.getElementById("mp-dialog");
+	const btnListVacancies = document.getElementById("list_vacancies");
+	const btnSupplyServices = document.getElementById("supply_services");
+	const btnSellMaterials = document.getElementById("sell_materials");
 
-	dialog.querySelector('#dialog__close-btn').addEventListener('click', () => {
-		document.body.removeAttribute('style');
-		dialog.close();
-	});
+	// Read more
+	const dialogMPI = document.getElementById("mpi-dialog");
 
-	btnListVacancies.addEventListener('click', () => {
-		console.log('handle vacancies');
-	});
-
-	btnSupplyServices.addEventListener('click', () => {
-		console.log('handle services');
-	});
-
-	btnSellMaterials.addEventListener('click', () => {
-		console.log('handle materials');
-	});
-
-	// Handle navigation select change and move to other page
-	document.getElementById('navigation-select').addEventListener('change', function () {
-		if (this.value) {
-			window.location.href = this.value;
-		}
-	});
-
-	//
-	const cardMaterialsHeight = 206;
-	const cardWorkersHeight = 259;
-
+	// ------------------------------
+	// CUT TEXT IN CARD AND SHOW MORE BUTTON
 	function getLineCount(element) {
-		const descriptionClass = element.nextSibling.nextSibling.classList.value;
-		const descriptionHeight = element.children[0].scrollHeight;
-		console.log(descriptionHeight, descriptionClass, element.children[0]);
+		const cardText = element.querySelector(".card__text");
+		const cardTextHeight = Math.round(cardText.getBoundingClientRect().height);
+		const cardTextscrollHeight = cardText.scrollHeight;
 
-		if (descriptionHeight > cardMaterialsHeight && descriptionClass === 'card__materials') {
-			console.log('Слишком длинное описание');
-			return true;
+		// Creating button
+		const button = document.createElement("button");
+		button.className = "btn-green-border btn-overflow open__mpi-dialog";
+		button.setAttribute("aria-label", "Read all text");
+		button.setAttribute("title", "Read all text");
+		button.textContent = "...Read More";
+		// Adding event listener for open "dialogMPI"
+		button.addEventListener("click", openDialogAndCloneCard);
+
+		if (cardTextscrollHeight > cardTextHeight) {
+			element.appendChild(button);
 		}
-
-		if (descriptionHeight > cardWorkersHeight && descriptionClass === 'card__workers') {
-			console.log(' описание');
-			return true;
-		}
-
-		return false;
 	}
 
-	const textBox = document.querySelectorAll('.card__description');
-	textBox.forEach(element => {
-		const lineCount = getLineCount(element);
-		console.log(`Количество строк: ${lineCount}`);
+	for (const element of textBox) {
+		getLineCount(element);
+	}
+
+	// ------------------------------
+	// OPEN DIALOG "ADD NEW MATERIALS, WORKERS, JOBS"
+	openDialogMP.addEventListener("click", () => {
+		document.body.style.overflow = "hidden";
+		dialogMP.showModal();
 	});
+
+	dialogMP
+		.querySelector("#mp-dialog__close-btn")
+		.addEventListener("click", () => {
+			document.body.removeAttribute("style");
+			dialogMP.close();
+		});
+
+	btnListVacancies.addEventListener("click", () => {
+		console.log("handle vacancies");
+	});
+
+	btnSupplyServices.addEventListener("click", () => {
+		console.log("handle services");
+	});
+
+	btnSellMaterials.addEventListener("click", () => {
+		console.log("handle materials");
+	});
+
+	// ------------------------------
+	// MOBILE NAVIGATION SELECT MENU
+	document
+		.getElementById("navigation-select")
+		.addEventListener("change", function () {
+			if (this.value) {
+				window.location.href = this.value;
+			}
+		});
+
+	// ------------------------------
+	// OPEN DIALOG "READ MORE"
+	function openDialogAndCloneCard(event) {
+		// Clones the closest .card element to the clicked element.
+		const copyTarget = event.target.closest(".card").cloneNode(true);
+		// Replaces the class "card__text" with "card__full-text" on the element with class "card__text inside" copyTarget.
+		copyTarget
+			.querySelector(".card__text")
+			.classList.replace("card__text", "card__full-text");
+		// Removes the element with class open__mpi-dialog from copyTarget.
+		copyTarget.querySelector(".open__mpi-dialog").remove();
+		// Inserts the cloned element at the beginning of the .main__scroll-area element in dialogMPI.
+		dialogMPI
+			.querySelector(".main__scroll-area")
+			.insertAdjacentElement("afterbegin", copyTarget);
+
+		document.body.style.overflow = "hidden";
+		dialogMPI.showModal();
+	}
+
+	function cancelOrCloseDialogMPI(event) {
+		// Removing the cloned .card element from the dialog box.
+		event.target.closest("#mpi-dialog").querySelector(".card").remove();
+
+		document.body.removeAttribute("style");
+		dialogMPI.close();
+	}
+
+	dialogMPI
+		.querySelector("#mpi-dialog__close-btn")
+		.addEventListener("click", cancelOrCloseDialogMPI);
 });

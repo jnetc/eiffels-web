@@ -1,0 +1,11 @@
+#mpi-dialog {
+  width: min(500px, 100%);
+}
+
+#mpi-dialog .card {
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
