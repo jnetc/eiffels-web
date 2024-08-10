@@ -33,12 +33,15 @@ header a {
   text-decoration: none;
   text-transform: capitalize;
   white-space: nowrap;
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
   & .icon {
     width: var(--size-24);
-    height: var(--size-24);
     aspect-ratio: 1;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover .icon:has(use[href*='#arrow-right']) {
+    transform: translateX(0.5rem);
   }
 
   &:has(.icon):not(.btn-short) {
@@ -153,7 +156,9 @@ header a {
   contain: content;
 
   & .icon {
+    aspect-ratio: 1;
     fill: var(--primary);
+    transition: transform 0.2s ease-in-out;
   }
 }
 

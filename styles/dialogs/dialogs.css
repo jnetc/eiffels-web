@@ -1,7 +1,5 @@
 /* MODAL DIALOG STYLE */
 .dialog {
-  --border: 2px;
-  --border-r: var(--border-corner-12);
   padding-inline: clamp(var(--gap-16), 5vw, var(--gap-36));
   padding-block-end: var(--gap-36);
   row-gap: var(--gap-36);
@@ -25,7 +23,8 @@
   row-gap: var(--gap-8);
   position: sticky;
   inset-block-start: 0;
-  background-color: var(--grey-100);
+  background-color: hsl(from var(--grey-100) h s l / 10%);
+  backdrop-filter: blur(50px);
   padding-block: var(--gap-36) var(--gap-16);
 
   & * {

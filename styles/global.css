@@ -181,21 +181,22 @@ body > footer {
 
 /* GLASS EFFECT FOR ELEMENTS */
 .glass-effect {
-  border: var(--border) solid transparent;
-  border-radius: var(--border-r);
+  border: var(--border, 1.5px) solid transparent;
+  border-radius: var(--border-r, var(--border-corner-12));
   background-image: linear-gradient(
-      45deg,
-      hsl(from var(--grey-100) h s l / 100%) 0%,
+      var(--rotation, 160deg),
+      hsl(from var(--primary) h s 95% / 100%) 0%,
+      hsl(from var(--grey-100) h s l / 100%) 25%,
       hsl(from var(--grey-100) h s l / 100%) 100%
     ),
     linear-gradient(
-      160deg,
-      hsl(from var(--primary) h s l / 35%) 0%,
-      hsl(from var(--primary) h s l / 5%) 15%,
+      var(--rotation, 160deg),
+      hsl(from var(--primary) h s l / 25%) 0%,
       hsl(from #fff h s l / 100%) 25%,
       hsl(from #fff h s l / 100%) 75%,
-      hsl(from var(--primary) h s l / 18%) 100%
+      hsl(from var(--primary) h s l / 20%) 100%
     );
+  background-repeat: no-repeat;
   background-origin: border-box;
   background-clip: padding-box, border-box;
   backdrop-filter: blur(15px);

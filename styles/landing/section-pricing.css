@@ -1,3 +1,126 @@
-#pricing {
-	min-height: 100vh;
+.pricing__plan {
+  display: grid;
+  grid-auto-rows: min-content;
+  row-gap: var(--gap-16);
+  padding-block: var(--gap-48);
+  padding-inline: var(--gap-48);
+
+  & h3 {
+    color: var(--black);
+    font-size: var(--font-32);
+  }
+
+  p {
+    color: var(--grey-400);
+    font-size: var(--font-16);
+  }
+
+  & .plan__divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--grey-200);
+    margin-block: var(--gap-18);
+  }
+
+  & h4 {
+    padding-block-end: var(--gap-8);
+    color: var(--black);
+  }
+}
+
+.plan-individual {
+  grid-column: 1 / 4 span;
+}
+.plan-standard {
+  --border-r: var(--border-corner-16);
+  --rotation: 115deg;
+  grid-column: 5 / 4 span;
+}
+.plan-enterprise {
+  grid-column: 9 / 4 span;
+}
+
+.plan__price {
+  display: flex;
+  column-gap: var(--gap-8);
+  align-items: flex-end;
+  padding-block: var(--gap-8) var(--gap-20);
+  flex-wrap: nowrap;
+
+  & span {
+    color: var(--black);
+    font-size: var(--font-48);
+    font-weight: bold;
+    line-height: 0.8;
+  }
+}
+
+.plan__features {
+  display: grid;
+  row-gap: var(--gap-8);
+
+  & li {
+    display: flex;
+    column-gap: var(--gap-8);
+    align-items: center;
+    color: var(--black);
+
+    & .icon {
+      width: var(--size-32);
+      aspect-ratio: 1;
+      fill: var(--grey-500);
+    }
+  }
+}
+.plan__team {
+  height: var(--size-48);
+  display: grid;
+  position: relative;
+  align-items: center;
+  margin-block-end: var(--gap-20);
+
+  & :where(span, .icon) {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  & .icon {
+    width: var(--size-24);
+    aspect-ratio: 1;
+  }
+
+  & .icon-workers {
+    fill: var(--grey-300);
+    inset-inline-start: var(--gap-18);
+  }
+
+  & span {
+    inset-inline-start: calc(var(--gap-18) + var(--size-24) + var(--gap-8));
+    color: var(--grey-300);
+    font-weight: bold;
+  }
+
+  & .icon-chevron {
+    inset-inline: auto var(--gap-18);
+    fill: var(--grey-500);
+    rotate: -90deg;
+  }
+}
+
+#plan__select-workers {
+  height: var(--size-48);
+  appearance: none;
+  width: 100%;
+  padding-inline: var(--gap-18) var(--gap-48);
+  border: 1px solid var(--grey-300);
+  border-radius: var(--border-corner-8);
+  outline-color: var(--violet);
+  text-align: right;
+  background-color: transparent;
+  font-size: var(--font-20);
+  color: var(--grey-500);
+
+  &:nth-of-type(1) {
+    font-weight: bold;
+  }
 }

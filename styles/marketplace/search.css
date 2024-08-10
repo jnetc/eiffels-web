@@ -30,8 +30,6 @@
 }
 
 [for='search__input'] {
-  --border: 1.5px;
-  --border-r: var(--border-corner-12);
   position: absolute;
   inset: 0;
   z-index: -1;
