@@ -22,8 +22,6 @@
 /* GLASS EFFECT FOR INPUTS */
 
 .glass-effect {
-  position: var(--position, absolute);
-  inset: 0;
   background: linear-gradient(
     var(--rotation, 160deg),
     hsl(from var(--primary) h s l / 4%) 0%,

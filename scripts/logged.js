@@ -4,6 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
 	const dialogAUP = document.getElementById("aup-dialog");
 	const formAUP = document.getElementById("aup__form");
 
+	// Select all elements with the class 'faq__question'
+	const faqItems = document.querySelectorAll(".faq__question");
+
+	// ------------------------------
+	// FAQ LIST ITEMS
+	function collapseList(event) {
+		// Get the clicked item
+		const item = event.target;
+		console.log(item);
+
+		// Collapse item if it is open
+		if (item.classList.contains("open-answer")) {
+			item.classList.remove("open-answer");
+			return;
+		}
+
+		// Collapse all summaries without target
+		for (const el of faqItems) {
+			if (el.classList.contains("open-answer")) {
+				el.classList.remove("open-answer");
+			}
+		}
+
+		// Open the clicked item
+		item.classList.add("open-answer");
+	}
+
+	// Add 'click' event listener to each connection element
+	for (const item of faqItems) {
+		item.addEventListener("click", collapseList);
+	}
+
 	// ------------------------------
 	// OPEN DIALOG "ADD USER PICTURE"
 	openDialogAUP.addEventListener("click", () => {

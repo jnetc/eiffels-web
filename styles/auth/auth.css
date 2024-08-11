@@ -14,8 +14,6 @@
 }
 
 .container {
-  --border: 2px;
-  --border-r: var(--border-corner-12);
   display: grid;
   grid-template-columns: minmax(var(--gap-12), var(--gap-96)) 1fr minmax(var(--gap-12), var(--gap-96));
   justify-items: center;
