@@ -1,0 +1,96 @@
+.glass-dialog {
+  background-image: linear-gradient(
+      var(--rotation, 160deg),
+      hsl(from #edeff6 h s l / 100%) 0%,
+      hsl(from #f1f2f6 h s l / 100%) 100%
+    ),
+    linear-gradient(
+      var(--rotation, 160deg),
+      hsl(from var(--primary) h s l / 20%) 0%,
+      hsl(from #fff h s l / 100%) 35%,
+      hsl(from #fff h s l / 100%) 75%,
+      hsl(from var(--primary) h s l / 15%) 100%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(15px);
+  border: var(--border, 1.5px) solid transparent;
+  border-radius: var(--border-r, var(--border-corner-12));
+  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
+}
+
+/* GLASS EFFECT FOR INPUTS */
+
+.glass-effect {
+  position: var(--position, absolute);
+  inset: 0;
+  background: linear-gradient(
+    var(--rotation, 160deg),
+    hsl(from var(--primary) h s l / 4%) 0%,
+    hsl(from var(--primary) h s l / 2%) 100%
+  );
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-r, var(--border-corner-12));
+  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    background: linear-gradient(
+      var(--rotation, 160deg),
+      hsl(from var(--primary) h s l / 20%) 0%,
+      hsl(from #fff h s l / 100%) 35%,
+      hsl(from #fff h s l / 100%) 75%,
+      hsl(from var(--primary) h s l / 15%) 100%
+    );
+    background-origin: border-box;
+    border: var(--border, 1.5px) solid transparent;
+    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    mask-clip: padding-box, border-box;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+}
+.glass-input {
+  background: linear-gradient(
+      45deg,
+      hsl(from var(--primary) h s l / 5%) 0%,
+      hsl(from var(--white) h s l / 10%) 60%,
+      hsl(from var(--primary) h s l / 3%) 100%
+    )
+    padding-box;
+  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%), 2px 2px 0 0 hsl(from #fff h s l / 25%);
+  border: 1.5px solid #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: var(--inset-val);
+    border-radius: var(--br);
+    border: 1.5px solid transparent;
+    background: linear-gradient(
+        175deg,
+        hsl(from var(--primary) h s l / 35%) 0%,
+        hsl(from var(--primary) h s l / 0%) 45%,
+        hsl(from #fff h s l / 20%) 100%
+      )
+      border-box;
+    /* background-image: conic-gradient(
+			from 0deg at 50% 50%,
+			hsl(from #fff h s l / 86%) 86deg,
+			hsl(from var(--primary) h s l / 20%) 88deg,
+			hsl(from #fff h s l / 85%) 91deg,
+			hsl(from #fff h s l / 85%) 267deg,
+			hsl(from var(--primary) h s l / 20%) 271deg,
+			hsl(from #fff h s l / 65%) 275deg
+		);*/
+
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) border-box;
+    mask-composite: exclude;
+
+    z-index: -1;
+  }
+}

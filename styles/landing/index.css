@@ -118,7 +118,7 @@ section > :where(.section__title, .section__description) {
 
 h2 {
   color: var(--black);
-  font-size: var(--font-64);
+  font-size: clamp(var(--font-32), 7vw, var(--font-64));
 
   & span {
     color: var(--grey-400);
@@ -127,7 +127,7 @@ h2 {
 
 .section__description {
   padding-block: var(--gap-48) var(--gap-96);
-  font-size: var(--font-24);
+  font-size: clamp(var(--font-18), 3vw, var(--font-24));
   color: var(--grey-400);
   text-wrap: balance;
 }
