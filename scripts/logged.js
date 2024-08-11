@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const dialogAUP = document.getElementById("aup-dialog");
 	const formAUP = document.getElementById("aup__form");
 
+	// Choose Standard plan by selecting worker amounts
+	const standardPlan = document.querySelector(".plan-standard");
+	const workerAmounts = document.getElementById("plan__select-workers");
+
 	// Select all elements with the class 'faq__question'
 	const faqItems = document.querySelectorAll(".faq__question");
 
@@ -12,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	function collapseList(event) {
 		// Get the clicked item
 		const item = event.target;
-		console.log(item);
 
 		// Collapse item if it is open
 		if (item.classList.contains("open-answer")) {
@@ -35,6 +38,32 @@ document.addEventListener("DOMContentLoaded", () => {
 	for (const item of faqItems) {
 		item.addEventListener("click", collapseList);
 	}
+
+	// ------------------------------
+	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS
+
+	workerAmounts.addEventListener("change", (event) => {
+		const workerAmount = event.target.value;
+		const price = standardPlan.querySelector(".plan__price").firstElementChild;
+
+		switch (workerAmount) {
+			case "11-20":
+				price.textContent = "€350";
+				break;
+			case "21-30":
+				price.textContent = "€750";
+				break;
+			case "31-40":
+				price.textContent = "€1100";
+				break;
+			case "41-50":
+				price.textContent = "€1700";
+				break;
+			default:
+				price.textContent = "€100";
+				break;
+		}
+	});
 
 	// ------------------------------
 	// OPEN DIALOG "ADD USER PICTURE"

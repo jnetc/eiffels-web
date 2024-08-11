@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const errorMessage = document.querySelector(".error-message");
 	let phoneNumber = "";
 
+	// Choose Standard plan by selecting worker amounts
+	const standardPlan = document.querySelector(".plan-standard");
+	const workerAmounts = document.getElementById("plan__select-workers");
+
 	// Select all elements with the class 'faq__question'
 	const faqItems = document.querySelectorAll(".faq__question");
 
@@ -39,6 +43,32 @@ document.addEventListener("DOMContentLoaded", () => {
 			phoneNumber = event.target.value;
 		});
 	}
+
+	// ------------------------------
+	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS
+
+	workerAmounts.addEventListener("change", (event) => {
+		const workerAmount = event.target.value;
+		const price = standardPlan.querySelector(".plan__price").firstElementChild;
+
+		switch (workerAmount) {
+			case "11-20":
+				price.textContent = "€350";
+				break;
+			case "21-30":
+				price.textContent = "€750";
+				break;
+			case "31-40":
+				price.textContent = "€1100";
+				break;
+			case "41-50":
+				price.textContent = "€1700";
+				break;
+			default:
+				price.textContent = "€100";
+				break;
+		}
+	});
 
 	// ------------------------------
 	// FAQ LIST ITEMS
