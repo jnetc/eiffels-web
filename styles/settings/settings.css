@@ -46,10 +46,29 @@
     user-select: none;
   }
 
-  & img {
+  & > img {
     width: var(--size-128);
     aspect-ratio: 1;
     border-radius: var(--border-r);
+  }
+
+  & .picture__recognition {
+    position: absolute;
+    inset-inline-end: -15%;
+    inset-block-end: -15%;
+    rotate: -45deg;
+    scale: 1;
+    animation: click 10s ease-out infinite;
+    pointer-events: none;
+
+    & > span {
+      position: absolute;
+      inset-inline-end: -5rem;
+      inset-block-end: -2.5rem;
+      color: var(--grey-300);
+      rotate: 45deg;
+      white-space: nowrap;
+    }
   }
 
   .picture__checkmark {
@@ -72,6 +91,31 @@
         fill: var(--whatsapp-dark-green);
       }
     }
+  }
+}
+
+.user__picture:has(img[src*='avatar.svg']) .picture__checkmark,
+.user__picture:has(:not([src*='avatar.svg'])) .picture__recognition {
+  display: none;
+}
+
+.user__picture:has(img[src*='avatar.svg']) .picture__recognition,
+.user__picture:has(:not([src*='avatar.svg'])) .picture__checkmark {
+  display: grid;
+}
+
+@keyframes click {
+  10% {
+    scale: 1;
+    translate: 0 0;
+  }
+  15% {
+    scale: 0.9;
+    translate: -2rem -2rem;
+  }
+  20% {
+    translate: 0 0;
+    scale: 1;
   }
 }
 
@@ -182,4 +226,10 @@
 
 #settings__sign-out {
   justify-self: flex-end;
+}
+
+@media screen and (max-width: 480px) {
+  .picture__recognition span {
+    display: none;
+  }
 }

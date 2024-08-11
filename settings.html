@@ -29,9 +29,13 @@
 		<span>Settings</span>
 	</header>
 	<main class="settings__main">
-		<button type="button" id="open__aup-dialog" class="user__picture glass-effect" title="Jussi Heinola"
+		<button type="button" id="open__aup-dialog" class="user__picture glass-effect" title="User Profile Picture"
 			aria-label="Select Profile Picture">
 			<img src="./public/svg/avatar.svg" id="profile__picture" alt="User Profile Picture" />
+			<div class="picture__recognition" aria-hidden="true" title="The account is protected and encrypted.">
+				<img src="./public/svg/pointer.svg" alt="pointer" />
+				<span>Be Recognizible</span>
+			</div>
 			<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
 				<svg class="icon">
 					<use href="./public/svg/ui_icons.svg#checkmark-shield"></use>

@@ -252,18 +252,15 @@ p {
 
 @keyframes click {
   10% {
-    /* opacity: 0; */
     scale: 1;
     translate: 0 0;
   }
   15% {
-    /* opacity: 1; */
     scale: 0.9;
     translate: -2rem -2rem;
   }
   20% {
     translate: 0 0;
-    /* opacity: 0; */
     scale: 1;
   }
 }
