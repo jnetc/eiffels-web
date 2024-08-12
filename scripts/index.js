@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// ------------------------------
 	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS
-
 	workerAmounts.addEventListener("change", (event) => {
 		const workerAmount = event.target.value;
 		const price = standardPlan.querySelector(".plan__price").firstElementChild;
