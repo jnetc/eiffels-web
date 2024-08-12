@@ -1,7 +1,3 @@
-p {
-  text-wrap: balance;
-}
-
 /* HERO SECTION */
 #unlogged,
 #logged {
@@ -15,6 +11,10 @@ p {
   & > * {
     justify-self: center;
     max-width: 768px;
+  }
+
+  & p {
+    text-wrap: balance;
   }
 
   & > h1 {

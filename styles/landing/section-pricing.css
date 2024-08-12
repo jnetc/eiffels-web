@@ -102,6 +102,7 @@
     inset-inline-start: calc(var(--gap-18) + var(--size-24) + var(--gap-8));
     color: var(--grey-300);
     font-weight: bold;
+    user-select: none;
   }
 
   & .icon-chevron {

@@ -1,15 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
+	// Cookie buttons
+	const cookieElement = document.querySelector(".landing__cookie");
+	const declineCookieBtn = document.getElementById("cookie-decline");
+	const acceptCookieBtn = document.getElementById("cookie-accept");
+
+	// Elemets for handling authentication with phone number
 	const heroAuthForm = document.querySelector(".unlogged__form");
 	const phoneNumberInput = document.getElementById("unlogged__phone-number");
 	const errorMessage = document.querySelector(".error-message");
 	let phoneNumber = "";
 
-	// Choose Standard plan by selecting worker amounts
+	// Elements for selecting standard plan by selecting worker amounts
 	const standardPlan = document.querySelector(".plan-standard");
 	const workerAmounts = document.getElementById("plan__select-workers");
 
 	// Select all elements with the class 'faq__question'
 	const faqItems = document.querySelectorAll(".faq__question");
+
+	// ------------------------------
+	// COOKIE BUTTONS
+
+	// If the cookie exists, remove element from DOM
+	if (document.cookie) {
+		cookieElement.remove();
+	}
+
+	function setCookie(name, value, days) {
+		console.log("accept cookie", name, value, days);
+
+		const date = new Date();
+		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+		const expires = `expires=${date.toUTCString()}`;
+		document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure`;
+		cookieElement.remove();
+	}
+
+	acceptCookieBtn.addEventListener("click", () =>
+		setCookie("accepted", "1", 1),
+	);
+	declineCookieBtn.addEventListener("click", () =>
+		setCookie("declined", "1", 0.001),
+	);
 
 	// ------------------------------
 	// AUTH FORM FOR PHONE NUMBER IN HERO SECTION
@@ -74,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	function collapseList(event) {
 		// Get the clicked item
 		const item = event.target;
-		console.log(item);
 
 		// Collapse item if it is open
 		if (item.classList.contains("open-answer")) {
