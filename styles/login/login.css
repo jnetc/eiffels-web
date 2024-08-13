@@ -1,0 +1,124 @@
+.login {
+  max-width: var(--min-grid-size);
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: var(--font-64);
+  margin-inline: auto;
+  padding-inline: var(--gap-16);
+}
+
+.login__main {
+  display: flex;
+}
+
+.login__section {
+  display: grid;
+  grid-auto-rows: min-content;
+  align-content: center;
+  margin-block: auto;
+  margin-inline: auto;
+  gap: var(--gap-12);
+
+  & > * {
+    justify-self: center;
+    max-width: 768px;
+  }
+
+  & h1 {
+    max-width: 45ch;
+    font-size: clamp(var(--font-18), 3vw, var(--font-24));
+    text-align: center;
+    padding-block-end: var(--gap-36);
+    font-weight: 300;
+    line-height: 1.4;
+    text-wrap: balance;
+
+    & strong {
+      color: var(--whatsapp-dark-green);
+    }
+  }
+
+  & span {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .bg__lines path {
+    animation: none;
+  }
+
+  .header {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* If intered value is not number */
+.login__section:has(.error-message.show) form {
+  padding-block-start: var(--gap-24);
+}
+.login__section:has(.error-message.show) form input#login__phone-number {
+  color: var(--warning-error);
+}
+.login__section:has(.error-message.show) .login__input-group svg use {
+  fill: var(--warning-error);
+}
+
+/* INPUTs / FORM */
+.login__form {
+  width: min(100%, 400px);
+  display: grid;
+  column-gap: var(--gap-16);
+  row-gap: var(--gap-32);
+
+  & > button.login__btn {
+    justify-self: center;
+  }
+}
+
+.login__input-group {
+  display: grid;
+  row-gap: var(--gap-8);
+  position: relative;
+
+  & legend {
+    padding-inline-end: var(--gap-6);
+    font-size: var(--font-14);
+    font-weight: bold;
+    & span {
+      color: var(--warning-error);
+    }
+  }
+
+  & .icon {
+    width: var(--size-40);
+    height: var(--size-40);
+    aspect-ratio: 1;
+    position: absolute;
+    inset-block: 0.725rem;
+    left: var(--gap-6);
+
+    & use {
+      fill: var(--grey-500);
+    }
+  }
+
+  & input {
+    width: 100%;
+    padding-block: var(--gap-12);
+    padding-inline: var(--gap-48) var(--gap-12);
+    background-color: hsl(from var(--white) h s l / 0.5);
+    border-bottom: 1px solid var(--black);
+    font-size: var(--font-32);
+    font-weight: bold;
+  }
+
+  & input::placeholder {
+    color: var(--grey-200);
+    font-size: var(--font-32);
+  }
+
+  & input:focus {
+    outline: none;
+  }
+}

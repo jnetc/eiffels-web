@@ -1,4 +1,8 @@
-@import url('./buttons-and-links.css');
+@import url('./components/buttons.css');
+@import url('./components/links.css');
+@import url('./components/official-partners.css');
+@import url('./components/cookie.css');
+
 @import url('./glass-effects.css');
 
 *,
@@ -29,6 +33,12 @@ html {
 }
 
 body {
+  --colums: 12;
+  --colums-width: var(--size-96);
+  --gap: var(--gap-36);
+  --outside: auto;
+  --min-grid-size: calc(var(--colums) * var(--colums-width) + (var(--colums) - 1) * var(--gap));
+
   min-height: 100dvh;
   color: var(--black);
   position: relative;

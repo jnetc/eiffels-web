@@ -1,5 +1,5 @@
 .auth {
-  max-width: 1920px;
+  max-width: var(--min-grid-size);
   display: grid;
   grid-template-rows: min-content 1fr min-content min-content;
   row-gap: var(--font-64);
@@ -110,35 +110,4 @@
   justify-self: center;
   background-color: var(--white);
   color: var(--primary);
-}
-
-/* OUR PARTNERS BLOCK */
-.our-partners {
-  justify-self: center;
-  max-width: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-content: center;
-  gap: var(--gap-16);
-  padding-block-start: var(--gap-72);
-
-  & span {
-    grid-column: 1 / -1;
-    text-align: center;
-  }
-
-  & span:nth-of-type(1) {
-    grid-row: 1;
-    font-size: var(--font-18);
-  }
-
-  & img:nth-of-type(1) {
-    justify-self: flex-end;
-  }
-
-  & span:nth-of-type(2) {
-    font-size: var(--font-14);
-    padding-block-start: var(--gap-12);
-    grid-row: 3;
-  }
 }

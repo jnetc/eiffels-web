@@ -55,37 +55,6 @@
   }
 }
 
-/* OUR PARTNERS BLOCK */
-.our-partners {
-  justify-self: center;
-  max-width: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-content: center;
-  gap: var(--gap-16);
-  padding-block-start: var(--gap-72);
-
-  & span {
-    grid-column: 1 / -1;
-    text-align: center;
-  }
-
-  & span:nth-of-type(1) {
-    grid-row: 1;
-    font-size: var(--font-18);
-  }
-
-  & img:nth-of-type(1) {
-    justify-self: flex-end;
-  }
-
-  & span:nth-of-type(2) {
-    font-size: var(--font-14);
-    padding-block-start: var(--gap-12);
-    grid-row: 3;
-  }
-}
-
 /* UNLOGGED HERO SECTION */
 #unlogged {
   & p:nth-of-type(2) {
@@ -117,6 +86,7 @@
 
 /* INPUTs / FORM */
 .unlogged__form {
+  width: min(100%, 400px);
   display: grid;
   column-gap: var(--gap-16);
   row-gap: var(--gap-32);
@@ -154,7 +124,7 @@
   }
 
   & input {
-    max-width: 340px;
+    width: 100%;
     padding-block: var(--gap-12);
     padding-inline: var(--gap-48) var(--gap-12);
     background-color: hsl(from var(--white) h s l / 0.5);

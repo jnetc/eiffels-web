@@ -15,6 +15,7 @@
   <script src="scripts/marketplace/mp.js" defer></script>
   <script src="scripts/dialogs/mp-add-dialog.js" defer></script>
   <script src="scripts/dialogs/mp-item-dialog.js" defer></script>
+  <script src="scripts/cookie/cookie.js" defer></script>
   <title>Marketplace</title>
   <meta name="description" content="" />
 </head>
@@ -360,6 +361,17 @@
   </main>
 
   <footer class="mp__footer">Copyright © 2024 Eiffels</footer>
+  <!-- Cookie window  -->
+  <div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+    <img src="public/svg/cookie.svg" alt="" aria-hidden="false">
+    <p id="cookie-description">We use cookies to collect data to improve your experience on our site. Read our
+      <a href="http://#" class="href">cookie policy.</a>
+    </p>
+    <div class="cookie-btns">
+      <button id="cookie-decline" class="btn-40 btn-blue-border" aria-label="Decline cookie">Decline</button>
+      <button id="cookie-accept" class="btn-40 btn-blue" aria-label="Accept cookie">Accept</button>
+    </div>
+  </div>
 
   <!-- Modal windows for MarketPlace Add (mp-add)  -->
   <dialog id="mp-add-dialog" class="dialog glass-dialog">

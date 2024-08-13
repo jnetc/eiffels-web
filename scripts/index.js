@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-	// Cookie buttons
-	const cookieElement = document.querySelector(".landing__cookie");
-	const declineCookieBtn = document.getElementById("cookie-decline");
-	const acceptCookieBtn = document.getElementById("cookie-accept");
-
 	// Mobile menu button and menu container
 	const mobMenuButton = document.getElementById("header__mob-menu-btn");
 	const mobNavigation = document.querySelector(".header__nav");
@@ -42,31 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 	}
-
-	// ------------------------------
-	// COOKIE BUTTONS
-
-	// If the cookie exists, remove element from DOM
-	if (document.cookie) {
-		cookieElement.remove();
-	}
-
-	function setCookie(name, value, days) {
-		console.log("accept cookie", name, value, days);
-
-		const date = new Date();
-		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-		const expires = `expires=${date.toUTCString()}`;
-		document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure`;
-		cookieElement.remove();
-	}
-
-	acceptCookieBtn.addEventListener("click", () =>
-		setCookie("accepted", "1", 1),
-	);
-	declineCookieBtn.addEventListener("click", () =>
-		setCookie("declined", "1", 0.001),
-	);
 
 	// ------------------------------
 	// AUTH FORM FOR PHONE NUMBER IN HERO SECTION

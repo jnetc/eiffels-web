@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="styles/landing/index.css" />
 	<link rel="stylesheet" href="styles/landing/backdrop.css" />
 	<script src="scripts/index.js" defer></script>
+	<script src="scripts/cookie/cookie.js" defer></script>
 	<title>Document</title>
 	<meta name="description" content="" />
 </head>
@@ -35,6 +36,17 @@
 				<li><a href="#support">Support</a></li>
 			</ul>
 		</nav>
+		<ul class="header__right-side">
+			<li class="logged__href">
+				<a href="marketplace.html">
+					<span>AI Marketplace</span>
+					<svg class="icon" aria-hidden="true">
+						<use href="./public/svg/ui_icons.svg#sidenav_marketplace"></use>
+					</svg>
+				</a>
+			</li>
+		</ul>
+		<!-- ------- -->
 	</header>
 
 	<main class="landing__main">
@@ -75,14 +87,14 @@
 					</svg>
 				</button>
 			</form>
-			<div class="our-partners" aria-labelledby="partners-title">
+			<div class="official-partners" aria-labelledby="partners-title">
 				<span>Official Partner</span>
 				<img src="./public/svg/meta.svg" alt="Meta official partner" />
 				<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
 				<span>
-					Encrypted with
+					E-signatures powered by
 					<a href="https://letsencrypt.org/" class="href" target="_blank" rel="noopener noreferrer">
-						Blockchain Technology
+						blockchain
 					</a>
 				</span>
 			</div>
@@ -403,7 +415,7 @@
 	</main>
 	<footer class="landing__footer">Copyright © 2024 Eiffels</footer>
 	<!-- Cookie window  -->
-	<div class="landing__cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
 		<img src="public/svg/cookie.svg" alt="" aria-hidden="false">
 		<p id="cookie-description">We use cookies to collect data to improve your experience on our site. Read our
 			<a href="http://#" class="href">cookie policy.</a>
