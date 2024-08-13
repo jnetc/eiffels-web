@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const declineCookieBtn = document.getElementById("cookie-decline");
 	const acceptCookieBtn = document.getElementById("cookie-accept");
 
+	// Mobile menu button and menu container
+	const mobMenuButton = document.getElementById("header__mob-menu-btn");
+	const mobNavigation = document.querySelector(".header__nav");
+
 	// Elemets for handling authentication with phone number
 	const heroAuthForm = document.querySelector(".unlogged__form");
 	const phoneNumberInput = document.getElementById("unlogged__phone-number");
@@ -16,6 +20,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Select all elements with the class 'faq__question'
 	const faqItems = document.querySelectorAll(".faq__question");
+
+	// ------------------------------
+	// MOBILE MENU
+
+	mobMenuButton.addEventListener("click", () => {
+		mobNavigation.classList.toggle("open");
+		mobNavigation.classList.contains("open")
+			? addEventsToLinks(true)
+			: addEventsToLinks(false);
+	});
+
+	function addEventsToLinks(boolean) {
+		for (const element of mobNavigation.querySelectorAll("a")) {
+			if (boolean) {
+				element.addEventListener("click", () => {
+					mobNavigation.classList.remove("open");
+				});
+			} else {
+				element.removeEventListener("click", () => {});
+			}
+		}
+	}
 
 	// ------------------------------
 	// COOKIE BUTTONS

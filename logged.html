@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="styles/landing/index.css" />
 	<link rel="stylesheet" href="styles/landing/backdrop.css" />
 	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
-	<link rel="stylesheet" href="styles/dialogs/add-profile-image.css" />
+	<link rel="stylesheet" href="styles/dialogs/add-user-picture.css" />
 	<script src="scripts/index.js" defer></script>
 	<script src="scripts/logged.js" defer></script>
 	<title>Document</title>
@@ -20,10 +20,18 @@
 
 <body class="landing">
 	<header class="header">
-		<a href="index.html" title="Eiffels home page" class="header__logo">
-			<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels" title="Eiffels" />
-		</a>
-		<nav>
+		<div class="header__left-side">
+			<button type="button" id="header__mob-menu-btn" class="btn-circle-48 btn-black-border header__menu"
+				aria-label="Open menu">
+				<svg class="icon" aria-hidden="true">
+					<use href="public/svg/ui_icons.svg#menu"></use>
+				</svg>
+			</button>
+			<a href="index.html" title="Eiffels home page" class="header__logo">
+				<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels" title="Eiffels" />
+			</a>
+		</div>
+		<nav class="header__nav">
 			<ul class="nav__links">
 				<li><a href="#overview">Overview</a></li>
 				<li><a href="#features">Features</a></li>
@@ -33,7 +41,7 @@
 			</ul>
 		</nav>
 		<!-- Only show when user is logged -->
-		<ul class="header__logged-links">
+		<ul class="header__right-side">
 			<li class="logged__href">
 				<a href="marketplace.html">
 					<span>AI Marketplace</span>

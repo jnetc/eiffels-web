@@ -35,7 +35,7 @@
   }
 }
 
-#open__mp-dialog {
+#open__mp-add-dialog {
   &:hover .icon {
     transform: scale(1.3);
   }

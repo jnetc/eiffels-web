@@ -1,8 +1,8 @@
-#mpi-dialog {
+#mp-item-dialog {
   width: min(500px, 100%);
 }
 
-#mpi-dialog .card {
+#mp-item-dialog .card {
   height: 100%;
   padding: 0;
   background-color: transparent;

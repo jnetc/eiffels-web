@@ -121,6 +121,7 @@ header a {
 /* CIRCLE BUTTONS */
 .btn-circle-48,
 .btn-circle-40 {
+  aspect-ratio: 1;
   display: grid;
   place-content: center;
   border-radius: 50vw;
@@ -134,20 +135,16 @@ header a {
 
 .btn-circle-48 {
   height: var(--size-48);
-  width: var(--size-48);
 
   & .icon {
-    width: var(--size-32);
-    height: var(--size-32);
+    width: var(--size-28);
   }
 }
 .btn-circle-40 {
   min-height: var(--size-40);
-  min-width: var(--size-40);
 
   & .icon {
     width: var(--size-28);
-    height: var(--size-28);
   }
 }
 
@@ -157,9 +154,7 @@ header a {
   contain: content;
 
   & .icon {
-    aspect-ratio: 1;
     fill: var(--primary);
-    transition: transform 0.2s ease-in-out;
   }
 }
 
@@ -184,6 +179,12 @@ header a {
 #btn-back {
   &:hover .icon {
     animation: arrow-outward 0.3s forwards;
+  }
+
+  @media (hover: none) {
+    &:hover .icon {
+      animation: none;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-#mp-dialog {
+#mp-add-dialog {
   width: min(1200px, 100%);
 }
 
@@ -63,7 +63,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  #mp-dialog {
+  #mp-add-dialog {
     max-height: 95dvh;
   }
 
