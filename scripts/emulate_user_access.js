@@ -1,9 +1,9 @@
 export default function emulate() {
 	const userEnable = document.getElementById("user-enable");
 	const userDisable = document.getElementById("user-disable");
-	const UNLOGGED = "/index.html";
-	const LOGGED = "/logged.html";
-	const MARKETPLACE = "/marketplace.html";
+	const UNLOGGED = "index.html";
+	const LOGGED = "logged.html";
+	const MARKETPLACE = "marketplace.html";
 
 	if (document.cookie.match("tokken")) {
 		userEnable.className = "btn-40 btn-blue";
