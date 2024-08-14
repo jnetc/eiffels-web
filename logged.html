@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="styles/landing/backdrop.css" />
 	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="styles/dialogs/add-user-picture.css" />
+	<script src="scripts/global.js" defer></script>
 	<script src="scripts/index.js" defer></script>
 	<script src="scripts/logged.js" defer></script>
 	<script src="scripts/cookie/cookie.js" defer></script>
@@ -445,6 +446,11 @@
 			<button id="cookie-decline" class="btn-40 btn-blue-border" aria-label="Decline cookie">Decline</button>
 			<button id="cookie-accept" class="btn-40 btn-blue" aria-label="Accept cookie">Accept</button>
 		</div>
+	</div>
+	<!-- Emulate User Access  -->
+	<div class="user-access">
+		<button id="user-enable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">User Enable</button>
+		<button id="user-disable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">User Disable</button>
 	</div>
 	<!-- Modal windows for Add User Picture (aup)  -->
 	<dialog id="aup-dialog" class="dialog glass-dialog">

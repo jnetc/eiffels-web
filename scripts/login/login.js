@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-	const loginForm = document.querySelector(".login__form");
-	const phoneNumberInput = document.getElementById("login__phone-number");
+export default function handlePhoneNumber() {
+	const loginForm = document.querySelector(".unlogged__form");
+	const phoneNumberInput = document.getElementById("unlogged__phone-number");
 	const errorMessage = document.querySelector(".error-message");
 	let phoneNumber = "";
 
@@ -34,4 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
 			phoneNumber = event.target.value;
 		});
 	}
-});
+}

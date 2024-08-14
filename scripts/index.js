@@ -1,13 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+	const { default: handlePhoneNumber } = await import("./login/login.js");
+
 	// Mobile menu button and menu container
 	const mobMenuButton = document.getElementById("header__mob-menu-btn");
 	const mobNavigation = document.querySelector(".header__nav");
-
-	// Elemets for handling authentication with phone number
-	const heroAuthForm = document.querySelector(".unlogged__form");
-	const phoneNumberInput = document.getElementById("unlogged__phone-number");
-	const errorMessage = document.querySelector(".error-message");
-	let phoneNumber = "";
 
 	// Elements for selecting standard plan by selecting worker amounts
 	const standardPlan = document.querySelector(".plan-standard");
@@ -40,36 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// ------------------------------
 	// AUTH FORM FOR PHONE NUMBER IN HERO SECTION
-	if (heroAuthForm) {
-		heroAuthForm.addEventListener("submit", (event) => {
-			event.preventDefault();
-
-			console.log("phone number", phoneNumber);
-			window.location.href = "auth.html";
-		});
-	}
-
-	if (phoneNumberInput) {
-		// Immediately focus on phone number input
-		phoneNumberInput.focus();
-
-		phoneNumberInput.addEventListener("input", (event) => {
-			// If input is empty
-			if (event.target.value === "") {
-				errorMessage.classList.remove("show");
-				return;
-			}
-
-			// If intered value is not number
-			if (!/^[+][0-9]{0,}$/.test(event.target.value)) {
-				errorMessage.classList.add("show");
-				return;
-			}
-
-			errorMessage.classList.remove("show");
-			phoneNumber = event.target.value;
-		});
-	}
+	handlePhoneNumber();
 
 	// ------------------------------
 	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS

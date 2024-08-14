@@ -1,8 +1,7 @@
 #mp-add-dialog {
   width: min(1200px, 100%);
 }
-
-.main__scroll-area {
+#mp-add-dialog:has(.main__scroll-area) .main__scroll-area {
   grid-auto-flow: column;
 }
 
