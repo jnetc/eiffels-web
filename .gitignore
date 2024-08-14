@@ -28,4 +28,4 @@ pnpm-lock.yaml*
 .vercel
 .netlify
 /source
-/old_*
+old_*/
