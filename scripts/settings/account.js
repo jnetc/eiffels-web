@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-	// Forms
+	// Получаем ссылки на формы по их ID
 	const preferencesForm = document.getElementById("settings__preferences");
 	const personalForm = document.getElementById("settings__personal");
 	const phoneForm = document.getElementById("settings__phone");
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const rolesForm = document.getElementById("settings__roles");
 	const deleteAccountForm = document.getElementById("settings__delete-account");
 
-	// Inputs
+	// Получаем ссылки на элементы ввода по их ID
 	const language = document.getElementById("preferences__language");
 	const postalCode = document.getElementById("preferences__postal-code");
 	const firstName = document.getElementById("personal__first-name");
@@ -16,9 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const emailAddress = document.getElementById("email__address");
 	const role = document.getElementById("roles__role");
 
+	// Получаем ссылку на элемент для отображения сообщений об ошибке
 	const errorMessage = document.querySelector(".error-message");
 
-	// User data
+	// Имитированные данные пользователя
 	const user = {
 		id: 1,
 		language: "fi",
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		role: "jobs",
 	};
 
-	// Load data to inputs
+	// Заполняем поля формы данными пользователя
 	language.value = user.language;
 	postalCode.value = user.postalCode;
 	firstName.value = user.firstName;
@@ -39,13 +40,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 	emailAddress.value = user.emailAddress;
 	role.value = user.role;
 
+	// Функция для обработки отправки формы
 	function updateAccount(event, section) {
-		event.preventDefault();
-		const button = event.target.querySelector("button");
-		button.disabled = true;
-		button.querySelector(".btn-text").textContent = "Saving";
+		event.preventDefault(); // Предотвращаем стандартное действие формы
+		const button = event.target.querySelector("button"); // Находим кнопку в форме
+		button.disabled = true; // Отключаем кнопку
+		button.querySelector(".btn-text").textContent = "Saving"; // Меняем текст на кнопке
 
-		// Update user data based on the section
+		// Обновляем данные пользователя в зависимости от раздела формы
 		switch (section) {
 			case "preferences":
 				emulateSaveOnServer(button, {
@@ -81,29 +83,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 		}
 	}
 
+	// Функция для имитации сохранения данных на сервере
 	async function emulateSaveOnServer(button, user) {
 		if (errorMessage.classList.contains("show")) {
+			// Убираем сообщение об ошибке, если оно есть
 			errorMessage.classList.remove("show");
 		}
 
 		try {
-			// Emulate saving data to server with a timeout
+			// Имитация задержки при сохранении данных
 			const timeout = setTimeout(() => {
-				button.firstElementChild.textContent = "Save";
-				button.disabled = false;
-
-				console.log("updated");
-				clearTimeout(timeout);
+				button.firstElementChild.textContent = "Save"; // Восстанавливаем исходный текст кнопки
+				button.disabled = false; // Включаем кнопку
+				console.log("updated"); // Выводим сообщение в консоль о том, что данные обновлены
+				clearTimeout(timeout); // Очищаем таймер
 			}, 3000);
 
-			console.log("get preferences", user);
+			console.log("get preferences", user); // Логируем данные, которые нужно сохранить
 		} catch (error) {
-			console.log(error);
-			errorMessage.classList.add("show");
+			console.log(error); // Логируем ошибку в консоль
+			errorMessage.classList.add("show"); // Показываем сообщение об ошибке
 		}
 	}
 
-	// Add submit event listeners to forms
+	// Добавляем обработчики событий для отправки форм
 	preferencesForm.addEventListener("submit", (event) =>
 		updateAccount(event, "preferences"),
 	);
@@ -118,14 +121,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 	);
 	rolesForm.addEventListener("submit", (event) => updateAccount(event, "role"));
 
+	// Функция для удаления аккаунта
 	async function deleteAccount(event) {
+		// Предотвращаем стандартное действие формы
 		event.preventDefault();
 
 		try {
+			// Логируем сообщение о удалении аккаунта
 			console.log("delete account");
 		} catch (error) {
+			// Логируем ошибку в консоль
 			console.log(error);
 		}
 	}
+	// Добавляем обработчик события для удаления аккаунта
 	deleteAccountForm.addEventListener("submit", deleteAccount);
 });

@@ -1,51 +1,56 @@
 document.addEventListener("DOMContentLoaded", async () => {
-	// Mobile menu button and menu container
+	// Кнопка мобильного меню и контейнер меню
 	const mobMenuButton = document.getElementById("header__mob-menu-btn");
 	const mobNavigation = document.querySelector(".header__nav");
 
-	// Open dialog button
+	// Кнопка для открытия диалогового окна
 	const dialogHSAuth = document.getElementById("hs-auth-dialog");
 
-	// Elements for selecting standard plan by selecting worker amounts
+	// Элементы для выбора стандартного плана по количеству работников
 	const standardPlan = document.querySelector(".plan-standard");
 	const workerAmounts = document.getElementById("plan__select-workers");
 
-	// Select all elements with the class 'faq__question'
+	// Выбор всех элементов с классом 'faq__question'
 	const faqItems = document.querySelectorAll(".faq__question");
 
 	// ------------------------------
-	// MOBILE MENU
+	// МОБИЛЬНОЕ МЕНЮ
 
+	// Обработка клика по кнопке мобильного меню
 	mobMenuButton.addEventListener("click", () => {
 		mobNavigation.classList.toggle("open");
 		mobNavigation.classList.contains("open")
-			? addEventsToLinks(true)
-			: addEventsToLinks(false);
+			? addEventsToLinks(true) // Если меню открыто, добавляем события клика
+			: addEventsToLinks(false); // Если меню закрыто, убираем события клика
 	});
 
+	// Функция для добавления или удаления событий клика на ссылки
 	function addEventsToLinks(boolean) {
 		for (const element of mobNavigation.querySelectorAll("a")) {
 			if (boolean) {
+				// Добавляем обработчик клика для закрытия меню
 				element.addEventListener("click", () => {
 					mobNavigation.classList.remove("open");
 				});
 			} else {
+				// Удаляем обработчик клика
 				element.removeEventListener("click", () => {});
 			}
 		}
 	}
 
 	// ------------------------------
-	// PHONE NUMBER FIELD IN HERO SECTION
+	// ПОЛЕ ДЛЯ ВВОДА НОМЕРА ТЕЛЕФОНА В РАЗДЕЛЕ HERO
 	const { default: handlePhoneNumber } = await import("./login/login.js");
 	handlePhoneNumber(INDEX, dialogHSAuth);
 
 	// ------------------------------
-	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS
+	// ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
 	workerAmounts.addEventListener("change", (event) => {
 		const workerAmount = event.target.value;
 		const price = standardPlan.querySelector(".plan__price").firstElementChild;
 
+		// Обновляем цену в зависимости от выбранного количества работников
 		switch (workerAmount) {
 			case "11-20":
 				price.textContent = "€350";
@@ -66,29 +71,29 @@ document.addEventListener("DOMContentLoaded", async () => {
 	});
 
 	// ------------------------------
-	// FAQ LIST ITEMS
+	// ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ / FAQ
 	function collapseList(event) {
-		// Get the clicked item
+		// Получаем кликнутый элемент
 		const item = event.target;
 
-		// Collapse item if it is open
+		// Закрываем элемент, если он открыт
 		if (item.classList.contains("open-answer")) {
 			item.classList.remove("open-answer");
 			return;
 		}
 
-		// Collapse all summaries without target
+		// Закрываем все элементы, кроме кликнутого
 		for (const el of faqItems) {
 			if (el.classList.contains("open-answer")) {
 				el.classList.remove("open-answer");
 			}
 		}
 
-		// Open the clicked item
+		// Открываем кликнутый элемент
 		item.classList.add("open-answer");
 	}
 
-	// Add 'click' event listener to each connection element
+	// Добавляем обработчик клика к каждому элементу FAQ
 	for (const item of faqItems) {
 		item.addEventListener("click", collapseList);
 	}

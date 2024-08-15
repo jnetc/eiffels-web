@@ -1,7 +1,3 @@
-// const LOGGED = "/logged";
-// const MARKETPLACE = "/marketplace";
-// const url = new URL(window.location.href);
-
 export default async function authentication(pathname) {
 	const { setTokken } = await import("../emulate_user_access.js");
 	const authForm = document.querySelector(".auth__form");
@@ -69,22 +65,18 @@ export default async function authentication(pathname) {
 	authForm.addEventListener("submit", (event) => {
 		event.preventDefault();
 
-		// const serverTimeoutEmulator = setTimeout(() => {
-		// 	const title = event.querySelector("#hs-auth-dialog__title");
-		// 	title.classList.add("status-changed");
-		// 	// errorMessage.classList.add("show");
-		// 	clearTimeout(serverTimeoutEmulator);
-		// }, 2000);
+		const serverTimeoutEmulator = setTimeout(() => {
+			const title = event.querySelector("#hs-auth-dialog__title");
+			title.classList.add("status-changed");
+			errorMessage.classList.add("show");
+			clearTimeout(serverTimeoutEmulator);
+		}, 2000);
 
 		console.log(pathname.includes("marketplace"));
 
 		if (pathname.includes(MARKETPLACE)) {
 			// Set a cookie to indicate that the user has accepted the terms of service
 			setTokken("tokken", "1", 1);
-			console.log("set tokken");
-
-			// Redirect to the marketplace page
-			// window.location.href = "/marketplace";
 			return;
 		}
 
@@ -92,7 +84,6 @@ export default async function authentication(pathname) {
 			setTokken("tokken", "1", 1);
 			url.pathname = LOGGED_PATH;
 			window.location.href = url.toString();
-			// window.location.href = "/logged";
 			return;
 		}
 	});
