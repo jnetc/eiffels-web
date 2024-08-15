@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			.classList.replace("card__text", "card__full-text");
 		// Removes the element with class open__mp-item-dialog from copyTarget.
 		copyTarget.querySelector(".mp-item-dialog").remove();
-		// Inserts the cloned element at the beginning of the .main__scroll-area element in dialogMPI.
+		// Inserts the cloned element at the beginning of the .dialog__scroll-area element in dialogMPI.
 		dialogMPI
-			.querySelector(".main__scroll-area")
+			.querySelector(".dialog__scroll-area")
 			.insertAdjacentElement("afterbegin", copyTarget);
 
 		document.body.style.overflow = "hidden";

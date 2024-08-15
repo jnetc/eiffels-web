@@ -35,27 +35,27 @@
 #mp-login-dialog:has(.error-message.show) form {
   padding-block-start: var(--gap-24);
 }
-#mp-login-dialog:has(.error-message.show) form input#unlogged__phone-number {
+#mp-login-dialog:has(.error-message.show) form input#login__phone-number {
   color: var(--warning-error);
 }
-#mp-login-dialog:has(.error-message.show) .unlogged__input-group svg use {
+#mp-login-dialog:has(.error-message.show) .login__input-group svg use {
   fill: var(--warning-error);
 }
 
 /* INPUTs / FORM */
-.unlogged__form {
+.login__form {
   justify-self: center;
   width: min(100%, 400px);
   display: grid;
   column-gap: var(--gap-16);
   row-gap: var(--gap-32);
 
-  & > button.unlogged__btn {
+  & > button.login__btn {
     justify-self: center;
   }
 }
 
-.unlogged__input-group {
+.login__input-group {
   display: grid;
   row-gap: var(--gap-8);
   position: relative;

@@ -1,0 +1,150 @@
+#hs-auth-dialog .dialog__wrapper {
+  max-width: 768px;
+  padding-block-end: var(--gap-36);
+}
+
+.auth__main {
+  display: grid;
+  place-content: center;
+  row-gap: var(--gap-12);
+}
+
+.dialog__header {
+  & h2 {
+    color: var(--black);
+    font-size: clamp(var(--font-32), 7vw, var(--font-64));
+    line-height: 1;
+  }
+
+  & p:not(.error-message) {
+    padding-block-start: var(--gap-16);
+    text-align: center;
+    text-wrap: balance;
+
+    & strong {
+      color: var(--whatsapp-dark-green);
+    }
+
+    & span {
+      font-weight: bold;
+    }
+  }
+}
+.dialog__header {
+  & h2 {
+    /* grid-row: 2; */
+    display: flex;
+    flex-wrap: nowrap;
+    margin-inline: auto;
+    color: var(--black);
+    font-size: clamp(var(--font-32), 7vw, var(--font-64));
+    line-height: 1;
+    user-select: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    & span {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    & span:nth-of-type(2) {
+      animation-delay: 0.3s;
+    }
+    & span:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+  }
+
+  & #hs-auth-dialog__title {
+    opacity: 1;
+  }
+  & #hs-auth-dialog__title + h2 {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  & #hs-auth-dialog__title.status-changed {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  & #hs-auth-dialog__title.status-changed + h2 {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  & p:not(.error-message) {
+    padding-block-start: var(--gap-16);
+    text-align: center;
+    text-wrap: balance;
+
+    & strong {
+      color: var(--whatsapp-dark-green);
+    }
+
+    & span {
+      font-weight: bold;
+    }
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: scale(1.1) translateY(-1rem);
+    opacity: 0;
+  }
+}
+
+/* If intered value is not number */
+#hs-auth-dialog:has(.error-message.show) form {
+  padding-block-start: var(--gap-24);
+}
+#hs-auth-dialog:has(.error-message.show) form input#login__phone-number {
+  color: var(--warning-error);
+}
+#hs-auth-dialog:has(.error-message.show) .login__input-group svg use {
+  fill: var(--warning-error);
+}
+
+.auth__form {
+  justify-self: stretch;
+  display: grid;
+  padding-block-start: var(--gap-36);
+}
+
+.auth__form:has(.error-message.show) .auth__input-group {
+  margin-block-start: var(--gap-24);
+}
+
+.auth__input-group {
+  display: flex;
+  justify-content: center;
+  column-gap: clamp(var(--gap-8), 2vw, var(--gap-16));
+  padding-block-end: var(--gap-32);
+
+  & ::selection {
+    background-color: var(--grey-500);
+  }
+
+  & input {
+    width: clamp(var(--size-36), 10vw, var(--size-64));
+    aspect-ratio: 1 / 1.3;
+    background-color: var(--grey-500);
+    border-radius: var(--border-corner-8);
+    color: var(--white);
+    font-size: clamp(var(--size-36), 10vw, var(--size-64));
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & input::placeholder {
+    color: var(--grey-400);
+    font-size: clamp(var(--size-36), 10vw, var(--size-64));
+  }
+}
+
+.auth__btn {
+  justify-self: center;
+}
+
+.auth__share-btn {
+  justify-self: center;
+  background-color: var(--white);
+  color: var(--primary);
+}

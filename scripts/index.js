@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
-	const { default: handlePhoneNumber } = await import("./login/login.js");
-
 	// Mobile menu button and menu container
 	const mobMenuButton = document.getElementById("header__mob-menu-btn");
 	const mobNavigation = document.querySelector(".header__nav");
+
+	// Open dialog button
+	const dialogHSAuth = document.getElementById("hs-auth-dialog");
 
 	// Elements for selecting standard plan by selecting worker amounts
 	const standardPlan = document.querySelector(".plan-standard");
@@ -35,8 +36,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	}
 
 	// ------------------------------
-	// AUTH FORM FOR PHONE NUMBER IN HERO SECTION
-	handlePhoneNumber();
+	// PHONE NUMBER FIELD IN HERO SECTION
+	const { default: handlePhoneNumber } = await import("./login/login.js");
+	handlePhoneNumber("index.html", dialogHSAuth);
 
 	// ------------------------------
 	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS

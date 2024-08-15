@@ -1,15 +1,34 @@
-export default function handlePhoneNumber() {
-	const loginForm = document.querySelector(".unlogged__form");
-	const phoneNumberInput = document.getElementById("unlogged__phone-number");
+export default function handlePhoneNumber(pathname) {
+	const loginForm = document.querySelector(".login__form");
+	const phoneNumberInput = document.getElementById("login__phone-number");
 	const errorMessage = document.querySelector(".error-message");
 	let phoneNumber = "";
 
 	if (loginForm) {
-		loginForm.addEventListener("submit", (event) => {
+		loginForm.addEventListener("submit", async (event) => {
 			event.preventDefault();
+			// Dynamic imports for lazy loading
+			const { default: authentication } = await import("../login/auth.js");
+			const { openDialog } = await import("../dialogs/dialogUtils.js");
 
 			console.log("phone number", phoneNumber);
-			window.location.href = "auth.html";
+
+			if (pathname.includes("marketplace")) {
+				console.log("marketplace", phoneNumber);
+
+				openDialog(document.getElementById("mp-auth-dialog"));
+				authentication("marketplace");
+				// window.location.href = "marketplace.html";
+				return;
+			}
+
+			if (pathname === "/") {
+				console.log("index", phoneNumber);
+				openDialog(document.getElementById("hs-auth-dialog"));
+				authentication("logged");
+				// window.location.href = "auth.html";
+				return;
+			}
 		});
 	}
 

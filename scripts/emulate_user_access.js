@@ -1,40 +1,24 @@
 export default function emulate() {
 	const userEnable = document.getElementById("user-enable");
 	const userDisable = document.getElementById("user-disable");
-	const UNLOGGED = "index.html";
-	const LOGGED = "logged.html";
-	const MARKETPLACE = "marketplace.html";
+	const backButton = document.getElementById("btn-back");
+	const UNLOGGED = "/";
 
 	if (document.cookie.match("tokken")) {
 		userEnable.className = "btn-40 btn-blue";
 		userDisable.classList = "btn-40 btn-blue-border";
-		// if (window.location.pathname === LOGGED) return;
+		if (backButton) {
+			backButton.href = "/logged";
+		}
 	} else {
 		userDisable.className = "btn-40 btn-blue";
 		userEnable.classList = "btn-40 btn-blue-border";
-		// if (window.location.pathname === UNLOGGED) return;
-	}
-
-	function setCookie(name, value, days) {
-		console.log("accept cookie", name, value, days);
-
-		const date = new Date();
-		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-		const expires = `expires=${date.toUTCString()}`;
-		document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure`;
-		userEnable.className = "btn-40 btn-blue";
-		userDisable.classList = "btn-40 btn-blue-border";
-
-		if (window.location.pathname === MARKETPLACE) {
-			window.location.href = MARKETPLACE;
-			return;
-		}
-		if (window.location.pathname !== LOGGED) {
-			window.location.href = LOGGED;
+		if (backButton) {
+			backButton.href = "/";
 		}
 	}
 
-	userEnable.addEventListener("click", () => setCookie("tokken", "1", 1));
+	userEnable.addEventListener("click", () => setTokken("tokken", "1", 1));
 
 	userDisable.addEventListener("click", () => {
 		if (document.cookie.match("tokken")) {
@@ -48,4 +32,30 @@ export default function emulate() {
 			}
 		}
 	});
+}
+
+export function setTokken(name, value, days) {
+	const userEnable = document.getElementById("user-enable");
+	const userDisable = document.getElementById("user-disable");
+	const LOGGED = "/logged";
+	const MARKETPLACE = "/marketplace";
+
+	console.log("set tokken", name, value, days);
+
+	const date = new Date();
+	date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+	const expires = `expires=${date.toUTCString()}`;
+	document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure`;
+	userEnable.className = "btn-40 btn-blue";
+	userDisable.classList = "btn-40 btn-blue-border";
+
+	console.log(window.location.pathname);
+
+	if (window.location.pathname.includes(MARKETPLACE)) {
+		window.location.href = MARKETPLACE;
+		return;
+	}
+	if (window.location.pathname !== LOGGED) {
+		window.location.href = LOGGED;
+	}
 }

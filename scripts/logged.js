@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+	const { openDialog, closeDialog } = await import(
+		"../scripts/dialogs/dialogUtils.js"
+	);
 	// Add user picture
 	const openDialogAUP = document.getElementById("open__aup-dialog");
 	const dialogAUP = document.getElementById("aup-dialog");
@@ -11,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.getElementById("aup__photo-display").src =
 			document.getElementById("profile__picture").src;
 
-		document.body.style.overflow = "hidden";
-		dialogAUP.showModal();
+		openDialog(dialogAUP);
 	});
 
 	// Close dialog if cancel button or close button is clicked
@@ -28,13 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		// Hide error message
 		errorMessage.classList.remove("show");
 
-		document.body.removeAttribute("style");
-		dialogAUP.close();
+		closeDialog(dialogAUP);
 	}
-
-	dialogAUP
-		.querySelector("#aup-dialog__close-btn")
-		.addEventListener("click", cancelOrCloseDialogAUP);
 
 	async function getImageData() {
 		document.addEventListener("change", (event) => {

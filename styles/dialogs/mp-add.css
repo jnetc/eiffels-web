@@ -1,7 +1,7 @@
 #mp-add-dialog {
   width: min(1200px, 100%);
 }
-#mp-add-dialog:has(.main__scroll-area) .main__scroll-area {
+#mp-add-dialog:has(.dialog__scroll-area) .dialog__scroll-area {
   grid-auto-flow: column;
 }
 
@@ -72,7 +72,7 @@
     scrollbar-gutter: stable;
   }
 
-  .main__scroll-area {
+  .dialog__scroll-area {
     grid-auto-flow: row;
     max-height: 100%;
     overflow-y: auto;
