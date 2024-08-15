@@ -1,5 +1,9 @@
+// const INDEX = "/index";
+// const url = new URL(window.location.href);
+
 document.addEventListener("DOMContentLoaded", async () => {
 	const { openDialog, closeDialog } = await import("../dialogs/dialogUtils.js");
+	const { revokeTokken } = await import("../emulate_user_access.js");
 	// Sign Out element
 	const signOut = document.getElementById("settings__sign-out");
 
@@ -42,7 +46,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// Sign Out user on submit and redirect to index
 	signOut.addEventListener("submit", (event) => {
 		event.preventDefault();
-		window.location.href = "index.html";
+		url.pathname = INDEX;
+		window.location.href = url.toString();
+		revokeTokken();
 	});
 
 	// ------------------------------

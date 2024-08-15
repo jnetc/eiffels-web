@@ -1,3 +1,7 @@
+const INDEX = "/index";
+const LOGGED = "/logged";
+const MARKETPLACE = "/marketplace";
+
 export default function handlePhoneNumber(pathname) {
 	const loginForm = document.querySelector(".login__form");
 	const phoneNumberInput = document.getElementById("login__phone-number");
@@ -13,19 +17,19 @@ export default function handlePhoneNumber(pathname) {
 
 			console.log("phone number", phoneNumber);
 
-			if (pathname.includes("marketplace")) {
+			if (pathname.includes(MARKETPLACE)) {
 				console.log("marketplace", phoneNumber);
 
 				openDialog(document.getElementById("mp-auth-dialog"));
-				authentication("marketplace");
+				authentication(MARKETPLACE);
 				// window.location.href = "marketplace.html";
 				return;
 			}
 
-			if (pathname === "/") {
+			if (pathname.includes(INDEX)) {
 				console.log("index", phoneNumber);
 				openDialog(document.getElementById("hs-auth-dialog"));
-				authentication("logged");
+				authentication(LOGGED);
 				// window.location.href = "auth.html";
 				return;
 			}

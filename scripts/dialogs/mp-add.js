@@ -1,3 +1,5 @@
+// const MARKETPLACE = "/marketplace";
+
 document.addEventListener("DOMContentLoaded", async () => {
 	const { openDialog } = await import("./dialogUtils.js");
 	const buttonMPAddDialog = document.getElementById("button__mp-add-dialog");
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	// If the user is logged in check cookie tokken
 	if (document.cookie.match("tokken")) {
-		buttonMPAddDialog?.addEventListener("click", async () => {
+		buttonMPAddDialog?.addEventListener("click", () => {
 			openDialog(dialogMPAdd);
 		});
 	} else {
@@ -18,13 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 			openDialog(dialogMPLogin);
 
 			const { default: handlePhoneNumber } = await import("../login/login.js");
-			handlePhoneNumber("marketplace");
+			handlePhoneNumber(MARKETPLACE);
 		});
 	}
 
 	// ------------------------------
 	// OPEN DIALOG "ADD NEW MATERIALS, WORKERS, JOBS"
-
 	btnListVacancies.addEventListener("click", () => {
 		console.log("handle vacancies");
 	});

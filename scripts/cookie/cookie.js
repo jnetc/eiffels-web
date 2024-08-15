@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-	const { setCookie } = await import("./setCookie.js");
+	const { default: setCookie } = await import("./setCookie.js");
 	const cookieElement = document.querySelector(".cookie");
 	const declineCookieBtn = document.getElementById("cookie-decline");
 	const acceptCookieBtn = document.getElementById("cookie-accept");

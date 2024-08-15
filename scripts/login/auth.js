@@ -1,3 +1,7 @@
+// const LOGGED = "/logged";
+// const MARKETPLACE = "/marketplace";
+// const url = new URL(window.location.href);
+
 export default async function authentication(pathname) {
 	const { setTokken } = await import("../emulate_user_access.js");
 	const authForm = document.querySelector(".auth__form");
@@ -74,7 +78,7 @@ export default async function authentication(pathname) {
 
 		console.log(pathname.includes("marketplace"));
 
-		if (pathname.includes("marketplace")) {
+		if (pathname.includes(MARKETPLACE)) {
 			// Set a cookie to indicate that the user has accepted the terms of service
 			setTokken("tokken", "1", 1);
 			console.log("set tokken");
@@ -84,8 +88,11 @@ export default async function authentication(pathname) {
 			return;
 		}
 
-		if (pathname === "logged") {
-			window.location.href = "/logged";
+		if (pathname.includes(LOGGED)) {
+			setTokken("tokken", "1", 1);
+			url.pathname = LOGGED;
+			window.location.href = url.toString();
+			// window.location.href = "/logged";
 			return;
 		}
 	});

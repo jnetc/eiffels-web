@@ -1,3 +1,5 @@
+// const INDEX = "/index";
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// Mobile menu button and menu container
 	const mobMenuButton = document.getElementById("header__mob-menu-btn");
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// ------------------------------
 	// PHONE NUMBER FIELD IN HERO SECTION
 	const { default: handlePhoneNumber } = await import("./login/login.js");
-	handlePhoneNumber("index.html", dialogHSAuth);
+	handlePhoneNumber(INDEX, dialogHSAuth);
 
 	// ------------------------------
 	// SELECT STANDARD PLAN BY SELECTING WORKER AMOUNTS
