@@ -1,18 +1,19 @@
 // const INDEX = "/index";
 // const LOGGED = "/logged";
 // const MARKETPLACE = "/marketplace";
-// const url = new URL(window.location.href);
 
 const userEnable = document.getElementById("user-enable");
 const userDisable = document.getElementById("user-disable");
 
 export default function emulate() {
 	const backButton = document.getElementById("btn-back");
+	const url = new URL(window.location.href);
 
 	if (document.cookie.match("tokken")) {
 		userEnable.className = "btn-40 btn-blue";
 		userDisable.classList = "btn-40 btn-blue-border";
 		if (backButton) {
+			console.log("logged", url);
 			url.pathname = LOGGED;
 			backButton.href = url.toString();
 			// backButton.href = "/logged";
@@ -21,6 +22,7 @@ export default function emulate() {
 		userDisable.className = "btn-40 btn-blue";
 		userEnable.classList = "btn-40 btn-blue-border";
 		if (backButton) {
+			console.log("unlogged", url);
 			url.pathname = INDEX;
 			backButton.href = url.toString();
 		}
