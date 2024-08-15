@@ -1,5 +1,3 @@
-// const INDEX = "/index";
-
 document.addEventListener("DOMContentLoaded", async () => {
 	// Mobile menu button and menu container
 	const mobMenuButton = document.getElementById("header__mob-menu-btn");

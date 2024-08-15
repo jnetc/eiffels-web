@@ -1,6 +1,3 @@
-// const INDEX = "/index";
-// const url = new URL(window.location.href);
-
 document.addEventListener("DOMContentLoaded", async () => {
 	const { closeDialog, openDialog } = await import("../dialogs/dialogUtils.js");
 	const { revokeTokken } = await import("../emulate_user_access.js");
@@ -64,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 		console.log(reason);
 
-		url.pathname = INDEX;
+		url.pathname = INDEX_PATH;
 		window.location.href = url.toString();
 		revokeTokken();
 	}

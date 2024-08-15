@@ -90,7 +90,7 @@ export default async function authentication(pathname) {
 
 		if (pathname.includes(LOGGED)) {
 			setTokken("tokken", "1", 1);
-			url.pathname = LOGGED;
+			url.pathname = LOGGED_PATH;
 			window.location.href = url.toString();
 			// window.location.href = "/logged";
 			return;

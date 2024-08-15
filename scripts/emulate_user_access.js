@@ -1,20 +1,16 @@
-// const INDEX = "/index";
-// const LOGGED = "/logged";
-// const MARKETPLACE = "/marketplace";
-
 const userEnable = document.getElementById("user-enable");
 const userDisable = document.getElementById("user-disable");
 
 export default function emulate() {
 	const backButton = document.getElementById("btn-back");
-	const url = new URL(window.location.href);
+	// const url = new URL(window.location.href);
 
 	if (document.cookie.match("tokken")) {
 		userEnable.className = "btn-40 btn-blue";
 		userDisable.classList = "btn-40 btn-blue-border";
 		if (backButton) {
 			console.log("logged", url);
-			url.pathname = LOGGED;
+			url.pathname = LOGGED_PATH;
 			backButton.href = url.toString();
 			// backButton.href = "/logged";
 		}
@@ -23,7 +19,7 @@ export default function emulate() {
 		userEnable.classList = "btn-40 btn-blue-border";
 		if (backButton) {
 			console.log("unlogged", url);
-			url.pathname = INDEX;
+			url.pathname = INDEX_PATH;
 			backButton.href = url.toString();
 		}
 	}
@@ -39,7 +35,7 @@ export function revokeTokken() {
 		userEnable.classList = "btn-40 btn-blue-border";
 
 		if (window.location.pathname !== INDEX) {
-			url.pathname = INDEX;
+			url.pathname = INDEX_PATH;
 			window.location.href = url.toString();
 			return;
 		}
@@ -58,12 +54,12 @@ export function setTokken(name, value, days) {
 	userDisable.classList = "btn-40 btn-blue-border";
 
 	if (window.location.pathname.includes(MARKETPLACE)) {
-		url.pathname = MARKETPLACE;
+		url.pathname = MARKETPLACE_PATH;
 		window.location.href = url.toString();
 		return;
 	}
 	if (window.location.pathname !== LOGGED) {
-		url.pathname = LOGGED;
+		url.pathname = LOGGED_PATH;
 		window.location.href = url.toString();
 	}
 }

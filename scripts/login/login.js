@@ -1,7 +1,3 @@
-const INDEX = "/index";
-const LOGGED = "/logged";
-const MARKETPLACE = "/marketplace";
-
 export default function handlePhoneNumber(pathname) {
 	const loginForm = document.querySelector(".login__form");
 	const phoneNumberInput = document.getElementById("login__phone-number");

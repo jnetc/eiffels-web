@@ -1,6 +1,3 @@
-// const INDEX = "/index";
-// const url = new URL(window.location.href);
-
 document.addEventListener("DOMContentLoaded", async () => {
 	const { openDialog, closeDialog } = await import("../dialogs/dialogUtils.js");
 	const { revokeTokken } = await import("../emulate_user_access.js");
@@ -46,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// Sign Out user on submit and redirect to index
 	signOut.addEventListener("submit", (event) => {
 		event.preventDefault();
-		url.pathname = INDEX;
+		url.pathname = INDEX_PATH;
 		window.location.href = url.toString();
 		revokeTokken();
 	});
