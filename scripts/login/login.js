@@ -43,8 +43,11 @@ export default function handlePhoneNumber(pathname) {
 				// Открыть диалоговое окно для аутентификации на главной странице
 				openDialog(document.getElementById("hs-auth-dialog"));
 
+				// Вызов функции аутентификации для маркетплейса
+				authentication(MARKETPLACE);
+
 				// Вызов функции аутентификации для главной страницы
-				authentication(LOGGED);
+				// authentication(LOGGED);
 				return;
 			}
 		});

@@ -52,6 +52,17 @@
   & button {
     justify-self: flex-end;
   }
+
+  & span {
+    font-weight: bold;
+  }
+}
+
+[id*='auth-dialog'] .dialog__header p:not(.error-message),
+[id*='login-dialog'] .dialog__header p:not(.error-message) {
+  padding-block-start: var(--gap-16);
+  text-align: center;
+  text-wrap: balance;
 }
 
 .dialog__scroll-area {

@@ -71,16 +71,19 @@ export function setTokken(name, value, days) {
 	userEnable.className = "btn-40 btn-blue";
 	userDisable.classList = "btn-40 btn-blue-border";
 
-	// Если пользователь находится на странице "MARKETPLACE", перенаправляем его на соответствующую страницу
+	// Если (незарегистрированный) пользователь находится на странице "MARKETPLACE",
+	// то оставляем его на ней после подтверждения входа
 	if (window.location.pathname.includes(MARKETPLACE)) {
 		url.pathname = MARKETPLACE_PATH;
 		window.location.href = url.toString();
 		return;
 	}
 
-	// Если пользователь не на странице авторизованных пользователей, перенаправляем его туда
+	// Если (незарегистрированный) пользователь находится на странице "INDEX",
+	// то перенаправляем его на страницу "MARKETPLACE" (надо уточнить)
 	if (window.location.pathname !== LOGGED) {
-		url.pathname = LOGGED_PATH;
+		// url.pathname = LOGGED_PATH;
+		url.pathname = MARKETPLACE_PATH;
 		window.location.href = url.toString();
 	}
 }
