@@ -228,7 +228,8 @@ body > footer {
   right: 1rem;
   bottom: 1rem;
   padding: var(--gap-18);
-  background-color: hsl(from var(--primary) h s l / 10%);
+  background-color: hsl(from var(--primary) h s 95% / 100);
   color: var(--black);
   font-size: var(--font-16);
+  z-index: 99999;
 }
