@@ -4,12 +4,12 @@
 @import url('terms-of-use.css');
 
 .settings {
-  max-width: 1920px;
+  max-width: var(--min-grid-size);
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   row-gap: var(--font-64);
   margin-inline: auto;
-  padding-inline: var(--gap-16);
+  padding-inline: var(--gap-20);
 }
 
 .settings__main {
@@ -202,7 +202,7 @@
   overflow: hidden;
   animation: has-focus 0.3s forwards;
 
-  & .styled-box > *:not(.styled-box__footer, .payment-history__container) {
+  & .styled-box > *:not(.styled-box__footer, .payment-history__container, button) {
     padding-inline: var(--gap-18);
   }
 

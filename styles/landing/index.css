@@ -7,15 +7,9 @@
 @import url('section-support.css');
 
 .landing {
-  --colums: 12;
-  --colums-width: var(--size-96);
-  --gap: var(--gap-36);
-  --outside: auto;
-  --min-grid-size: calc(var(--colums) * var(--colums-width) + (var(--colums) - 1) * var(--gap));
-
   display: grid;
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
-  column-gap: var(--gap-16);
+  column-gap: var(--gap-20);
 }
 
 header,
@@ -154,7 +148,7 @@ h2 {
   text-wrap: balance;
 }
 
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 1366px) {
   .logged__href {
     justify-content: center;
     width: var(--size-48);
