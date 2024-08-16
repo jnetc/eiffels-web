@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
 
-  /* height: 500px; */
   row-gap: var(--gap-16);
   padding: var(--gap-24);
   background-color: var(--surface);
@@ -31,7 +30,7 @@
   }
 
   /* Center heading without company name */
-  &:not(:has(.card__company)) .card__name {
+  &:not(:has(.card__company, .card__logo)) .card__name {
     grid-row: 1 / 2 span;
     align-self: center;
   }
@@ -50,6 +49,12 @@
     color: var(--grey-400);
     font-size: var(--font-14);
     font-weight: bold;
+  }
+
+  & .card__logo {
+    grid-column: 2;
+    grid-row: 2;
+    height: var(--size-18);
   }
 }
 
@@ -144,9 +149,14 @@
     font-weight: bold;
   }
 
-  & img {
+  & img:not(.footer__logo) {
     width: 66px;
     aspect-ratio: 1;
+    border-radius: var(--border-corner-8);
+  }
+
+  & img.footer__logo {
+    height: var(--size-32);
     border-radius: var(--border-corner-8);
   }
 
