@@ -5,6 +5,46 @@
   padding-block-end: var(--gap-36);
   row-gap: var(--gap-36);
   margin: auto;
+  animation: hide-dialog 0.1s ease-in-out;
+}
+
+.dialog[open] {
+  animation: show-dialog 0.2s ease-in-out;
+}
+
+@keyframes show-dialog {
+  0% {
+    translate: 0 5rem;
+    opacity: 0;
+    display: none;
+  }
+  1% {
+    display: block;
+    translate: 0 5rem;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+    display: block;
+  }
+}
+@keyframes hide-dialog {
+  0% {
+    translate: 0 0;
+    opacity: 1;
+    display: block;
+  }
+  99% {
+    display: block;
+    translate: 0 5rem;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 5rem;
+    opacity: 0;
+    display: none;
+  }
 }
 
 .dialog::backdrop {
