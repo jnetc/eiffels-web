@@ -9,7 +9,11 @@ export default async function authentication(pathname) {
 	const errorMessage = document.querySelector(".error-message");
 
 	// Устанавливаем фокус на первое поле ввода цифры
-	digits[0].focus();
+	// Ожидание 300 миллисекунд (анимация всплытия 200 миллисекунд)
+	const timeout = setTimeout(() => {
+		digits[0].focus();
+		clearTimeout(timeout);
+	}, 300);
 
 	// Для каждого поля ввода цифры добавляем обработчики событий
 	digits.forEach((input, index) => {

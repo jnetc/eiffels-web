@@ -14,13 +14,13 @@
 
 @keyframes show-dialog {
   0% {
-    translate: 0 5rem;
+    translate: 0 2rem;
     opacity: 0;
     display: none;
   }
   1% {
     display: block;
-    translate: 0 5rem;
+    translate: 0 2rem;
     opacity: 0;
   }
   100% {
@@ -37,11 +37,11 @@
   }
   99% {
     display: block;
-    translate: 0 5rem;
+    translate: 0 2rem;
     opacity: 0;
   }
   100% {
-    translate: 0 5rem;
+    translate: 0 2rem;
     opacity: 0;
     display: none;
   }
