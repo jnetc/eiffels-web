@@ -82,8 +82,8 @@ export function setTokken(name, value, days) {
 	// Если (незарегистрированный) пользователь находится на странице "INDEX",
 	// то перенаправляем его на страницу "MARKETPLACE" (надо уточнить)
 	if (window.location.pathname !== LOGGED) {
-		// url.pathname = LOGGED_PATH;
-		url.pathname = MARKETPLACE_PATH;
+		url.pathname = LOGGED_PATH;
+		// url.pathname = MARKETPLACE_PATH;
 		window.location.href = url.toString();
 	}
 }

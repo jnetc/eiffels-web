@@ -132,12 +132,21 @@ section > :where(.section__title, .section__description) {
   justify-self: center;
 }
 
-h2 {
+section:not(#faq) h2 {
   color: var(--black);
   font-size: clamp(var(--font-32), 7vw, var(--font-64));
 
   & span {
-    color: var(--grey-400);
+    color: var(--primary);
+  }
+}
+
+section#faq h2 {
+  color: var(--primary);
+  font-size: clamp(var(--font-32), 7vw, var(--font-64));
+
+  & span {
+    color: var(--black);
   }
 }
 

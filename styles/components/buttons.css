@@ -176,9 +176,9 @@ header a {
   }
 }
 
-#btn-back {
+/* #btn-back {
   &:hover .icon {
-    animation: arrow-outward 0.3s forwards;
+    animation: arrow-outward 0.15s forwards;
   }
 
   @media screen and (hover: none) {
@@ -196,7 +196,7 @@ header a {
   50.01% {
     transform: translate(3rem, 0rem);
   }
-}
+} */
 
 .btn-secondary {
   background-color: var(--white);

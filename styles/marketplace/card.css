@@ -1,6 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  max-height: 466px;
 
   row-gap: var(--gap-16);
   padding: var(--gap-24);
@@ -21,6 +22,10 @@
     width: var(--size-48);
     height: var(--size-48);
     border-radius: 50vw;
+    object-fit: contain;
+  }
+  & img.card__company-logo {
+    border-radius: var(--border-corner-8);
   }
 
   & :is(h2, p) {
@@ -114,8 +119,8 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  line-clamp: 10;
-  -webkit-line-clamp: 10;
+  line-clamp: 8;
+  -webkit-line-clamp: 8;
 
   &.card__text-clamp {
     line-clamp: 6;

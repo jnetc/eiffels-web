@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 		// Создаем кнопку "Читать далее"
 		const button = document.createElement("button");
-		button.className = "btn-green-border btn-overflow mp-item-dialog";
+		button.className = "btn-blue-border btn-overflow mp-item-dialog";
 		button.setAttribute("aria-label", "Read all text");
 		button.setAttribute("title", "Read all text");
-		button.textContent = "Read More";
+		button.textContent = "Open";
 		// Добавляем обработчик клика для открытия диалога
 		button.addEventListener("click", openDialogAndCloneCard);
 

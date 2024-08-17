@@ -89,7 +89,7 @@ export default async function authentication(pathname) {
 				setTokken("tokken", "1", 1);
 			}
 			clearTimeout(serverTimeoutEmulator);
-		}, 5000);
+		}, 2000);
 
 		// // Проверяем, авторизован ли пользователь
 		// if (pathname.includes(LOGGED)) {

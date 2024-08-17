@@ -57,6 +57,10 @@
   flex-direction: column;
   row-gap: var(--gap-36);
 }
+/* Gap  for ITEM DIALOG */
+.dialog#mp-item-dialog .dialog__wrapper {
+  row-gap: var(--gap-8);
+}
 
 .dialog__header {
   display: grid;
