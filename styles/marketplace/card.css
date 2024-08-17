@@ -168,7 +168,7 @@
 
   & .card__label {
     color: var(--grey-300);
-    font-size: var(--font-16);
+    font-size: var(--font-14);
   }
 
   & .card__amount {

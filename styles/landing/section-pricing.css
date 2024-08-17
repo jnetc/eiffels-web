@@ -30,8 +30,6 @@
 }
 
 .plan-individual {
-  --border-r: var(--border-corner-16);
-  --rotation: 115deg;
   grid-column: 1 / 4 span;
 }
 .plan-standard {
@@ -41,6 +39,11 @@
 }
 .plan-enterprise {
   grid-column: 9 / 4 span;
+}
+.plan-individual,
+.plan-enterprise {
+  border-radius: var(--border-corner-16);
+  border: 1px solid var(--surface);
 }
 
 .plan__price {

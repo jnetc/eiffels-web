@@ -9,7 +9,7 @@
 .landing {
   display: grid;
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
-  column-gap: var(--gap-20);
+  column-gap: var(--gap-48);
 }
 
 header,
@@ -159,7 +159,7 @@ h2 {
       background-color: var(--primary);
     }
     &:nth-of-type(2) {
-      border: 1.5px solid var(--black);
+      border: 1.5px solid var(--grey-200);
     }
 
     & span {
@@ -172,6 +172,10 @@ h2 {
   }
 }
 @media screen and (max-width: 960px) {
+  .landing {
+    column-gap: var(--gap-20);
+  }
+
   .grid {
     --colums: 3;
     --colums-width: 1fr;
@@ -215,7 +219,7 @@ h2 {
       font-size: var(--font-32);
     }
 
-    @media (hover: none) {
+    @media screen and (hover: none) {
       & a:hover {
         text-underline-offset: 2px;
         text-decoration: underline transparent;

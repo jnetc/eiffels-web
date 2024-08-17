@@ -47,7 +47,16 @@
   }
 }
 
+/* PREVENTS OVERFLOW  */
 @container (max-width: 1366px) {
+  #unlogged,
+  #logged {
+    height: 100%;
+    padding-block-start: var(--gap-64);
+  }
+}
+
+@media screen and (hover: none) {
   #unlogged,
   #logged {
     height: 100%;
