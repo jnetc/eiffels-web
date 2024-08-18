@@ -10,6 +10,7 @@
 }
 
 .dialog__header {
+  overflow: hidden;
   & h2 {
     justify-self: center;
     grid-row: 2;
@@ -22,7 +23,6 @@
   & #auth-dialog__title-wait {
     position: absolute;
     inset-block-start: 0;
-    inset-inline: 0;
 
     & span {
       animation: bounce 2s ease-in-out infinite;
