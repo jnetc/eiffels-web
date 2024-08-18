@@ -19,9 +19,10 @@
 
 .faq__item:has(.faq__question.open-answer) {
   grid-template-rows: min-content 1fr;
+  row-gap: var(--gap-18);
   border-block-start-color: transparent;
 
-  & .faq__name {
+  & .faq__question {
     background-color: var(--grey-200);
   }
 

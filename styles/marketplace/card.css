@@ -1,8 +1,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  max-height: 466px;
-
   row-gap: var(--gap-16);
   padding: var(--gap-24);
   background-color: var(--surface);
@@ -161,7 +159,7 @@
   }
 
   & img.footer__logo {
-    height: var(--size-32);
+    height: var(--size-28);
     border-radius: var(--border-corner-8);
   }
 
