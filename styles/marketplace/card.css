@@ -22,7 +22,7 @@
     border-radius: 50vw;
     object-fit: contain;
   }
-  & img.card__company-logo {
+  & img.card__header-name-logo {
     border-radius: var(--border-corner-8);
   }
 
@@ -33,12 +33,12 @@
   }
 
   /* Center heading without company name */
-  &:not(:has(.card__company, .card__logo)) .card__name {
+  &:not(:has(.card__header-name, .card__logo)) .card__header-title {
     grid-row: 1 / 2 span;
     align-self: center;
   }
 
-  & .card__name {
+  & .card__header-title {
     grid-column: 2;
     grid-row: 1;
     align-self: flex-end;
@@ -46,7 +46,7 @@
     font-size: var(--font-20);
   }
 
-  & .card__company {
+  & .card__header-name {
     grid-column: 2;
     grid-row: 2;
     color: var(--grey-400);
@@ -61,7 +61,7 @@
   }
 }
 
-.card__contact {
+.card__header-contact {
   grid-column: 1 / -1;
   display: flex;
   gap: var(--gap-8);
@@ -74,7 +74,7 @@
   }
 }
 
-.card__whatsapp {
+.card__whatsapp-btn {
   display: flex;
   height: var(--size-40);
   align-items: center;
