@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./scripts", // Папка, куда будут выводиться скомпилированные JS файлы
+    "rootDir": "./src", // Корневая папка проекта, где находятся исходные файлы
+    "sourceMap": true, // Генерация sourcemaps для отладки
+    "strict": true, // Включение строгого режима компиляции
+    "target": "ES2017", // Целевая версия JavaScript
+    "module": "ESNext", // Модульная система
+    "allowJs": true, // Позволяет компилировать файлы .js
+    "skipLibCheck": true, // Пропуск проверки типов в файлах деклараций
+    "forceConsistentCasingInFileNames": true, // Обеспечивает использование одинакового регистра символов в именах файлов
+    "noEmit": false, // Разрешает генерацию выходных файлов
+    "esModuleInterop": true, // Совместимость с ES6 модулями
+    "moduleResolution": "node", // Стратегия разрешения модулей
+    "resolveJsonModule": true, // Разрешение JSON модулей
+    "isolatedModules": true, // Компиляция каждого файла как отдельного модуля
+    "incremental": true, // Инкрементальная компиляция
+    "baseUrl": ".", // Базовый каталог для разрешения модулей
+    "noFallthroughCasesInSwitch": true, // Запрещает переход к следующему case в switch
+    "noUnusedLocals": true, // Ошибки на неиспользуемые локальные переменные
+    "noUnusedParameters": true, // Ошибки на неиспользуемые параметры функций
+    "pretty": true, // Форматирование сообщений об ошибках
+    "verbatimModuleSyntax": false, // Сохраняет исходный синтаксис модулей
+    "allowImportingTsExtensions": false, // Разрешение импорта файлов .ts
+    "lib": ["dom", "dom.iterable", "esnext"], // Используемые библиотеки
+    "paths": {
+      "@Scripts/*": ["./scripts/*"]
+    }
+  },
+  "include": ["src/**/*"], // Включает файлы из папки src
+  "exclude": ["node_modules"] // Исключает папку node_modules
+}

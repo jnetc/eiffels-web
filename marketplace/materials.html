@@ -360,7 +360,7 @@
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- IF WE HAVE AN ERROR -->
-					<span class="error-message" role="alert" aria-live="assertive">
+					<div class="error-message" role="alert" aria-live="assertive">
 						<svg class="icon" aria-hidden="true">
 							<use href="../public/svg/ui_icons.svg#warning"></use>
 						</svg>
@@ -368,7 +368,7 @@
 							Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
 							neither more nor less than 6 digits.
 						</strong>
-					</span>
+					</div>
 					<!-- /// -->
 					<form method="post" class="login__form">
 						<fieldset class="login__input-group">
@@ -410,7 +410,7 @@
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- IF WE HAVE AN ERROR -->
-					<span class="error-message" role="alert" aria-live="assertive">
+					<div class="error-message" role="alert" aria-live="assertive">
 						<svg class="icon" aria-hidden="true">
 							<use href="../public/svg/ui_icons.svg#warning"></use>
 						</svg>
@@ -418,7 +418,7 @@
 							Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
 							neither more nor less than 6 digits.
 						</strong>
-					</span>
+					</div>
 					<!-- /// -->
 					<form method="post" class="auth__form">
 						<div class="auth__input-group">
@@ -549,7 +549,7 @@
 	<dialog id="mp-item-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header">
-				<button type="button" id="mp-item-dialog__close-btn" class="btn-circle-48 btn-black">
+				<button type="button" class="btn-circle-48 btn-black">
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>

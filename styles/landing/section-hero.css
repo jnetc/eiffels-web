@@ -4,9 +4,9 @@
   padding-block-start: clamp(var(--gap-64), 6vw, var(--gap-192));
   display: grid;
   grid-auto-rows: min-content;
+  gap: var(--gap-12);
   align-content: center;
   margin-inline: auto;
-  gap: var(--gap-12);
 
   & > * {
     justify-self: center;
@@ -31,7 +31,7 @@
     text-align: center;
   }
 
-  & > p:nth-of-type(2) {
+  /* & > p:nth-of-type(2) {
     max-width: 45ch;
     font-size: var(--font-16);
     text-align: center;
@@ -44,7 +44,7 @@
 
   & span {
     font-weight: bold;
-  }
+  } */
 }
 
 /* PREVENTS OVERFLOW  */
@@ -70,7 +70,7 @@
     max-width: 45ch;
     font-size: var(--font-16);
     text-align: center;
-    padding-block-end: var(--gap-36);
+    padding-block-end: var(--gap-24);
 
     & strong {
       color: var(--whatsapp-dark-green);
@@ -83,32 +83,50 @@
 }
 
 /* If intered value is not number */
-#unlogged:has(.error-message.show) form {
+/* #unlogged:has(.error-message.show) form {
   padding-block-start: var(--gap-24);
-}
-#unlogged:has(.error-message.show) form input#login__phone-number {
+} */
+
+#unlogged:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
 }
-#unlogged:has(.error-message.show) .login__input-group svg use {
-  fill: var(--warning-error);
+
+#unlogged:has(.error-message.show) .login__input-group {
+  border-bottom-color: var(--warning-error);
+  margin-block-start: var(--gap-20);
 }
 
 /* INPUTs / FORM */
 .login__form {
-  width: min(100%, 400px);
+  width: min(100%, 440px);
   display: grid;
   column-gap: var(--gap-16);
-  row-gap: var(--gap-32);
+  /* row-gap: var(--gap-32); */
+  transition: grid-template-rows 0.3s linear;
 
   & > button.login__btn {
+    margin-block-start: var(--gap-32);
     justify-self: center;
+  }
+
+  &:has(.error-message) {
+    grid-template-rows: 0fr min-content;
+  }
+  &:has(.error-message.show) {
+    grid-template-rows: 1fr min-content;
   }
 }
 
 .login__input-group {
+  --input-font-size: var(--font-28);
   display: grid;
-  row-gap: var(--gap-8);
+  align-items: center;
+  grid-auto-flow: column;
   position: relative;
+  border-bottom: 1px solid var(--black);
+  background-color: hsl(from var(--white) h s l / 1);
+  padding-inline-end: var(--gap-12);
+  transition: margin-block-start 0.3s linear;
 
   & legend {
     padding-inline-end: var(--gap-6);
@@ -119,37 +137,70 @@
     }
   }
 
-  & .icon {
+  & .icon-phone {
     width: var(--size-40);
-    height: var(--size-40);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
+
+  & .icon-chevron {
+    width: var(--size-24);
     aspect-ratio: 1;
     position: absolute;
-    inset-block: 0.725rem;
-    left: var(--gap-6);
-
-    & use {
-      fill: var(--grey-500);
-    }
+    inset-inline-start: var(--gap-48);
+    inset-block: 1.175rem;
+    fill: var(--grey-500);
+    rotate: -90deg;
+    pointer-events: none;
+    z-index: 100;
   }
+}
 
-  & input {
-    width: 100%;
-    padding-block: var(--gap-12);
-    padding-inline: var(--gap-48) var(--gap-12);
-    background-color: hsl(from var(--white) h s l / 0.5);
-    border-bottom: 1px solid var(--black);
-    font-size: var(--font-32);
-    font-weight: bold;
-  }
+#login__country-code {
+  appearance: none;
+  border: 0;
+  max-width: var(--size-72);
+  padding-block: var(--gap-6);
+  padding-inline: var(--gap-8);
+  background-color: var(--grey-200);
+  border-radius: var(--border-corner-6);
+  color: var(--grey-400);
+  font-family: 'Noto Emoji', 'SF Pro Text', sans-serif;
+  -webkit-font-smoothing: antialiased; /* for MacOs */
+  font-size: var(--input-font-size);
+  font-weight: bold;
+  word-spacing: 5rem;
+  outline-color: var(--black);
 
-  & input::placeholder {
-    color: var(--grey-200);
-    font-size: var(--font-32);
+  & option {
+    font-size: large;
   }
+}
 
-  & input:focus {
-    outline: none;
-  }
+#login__phone-code {
+  color: var(--grey-300);
+  font-size: var(--input-font-size);
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+}
+
+#login__phone-number {
+  width: 100%;
+  padding-block: var(--gap-12);
+  padding-inline-start: var(--gap-8);
+  background-color: transparent;
+  font-size: var(--input-font-size);
+  font-weight: bold;
+}
+
+#login__phone-number::placeholder {
+  color: var(--grey-200);
+  font-size: var(--input-font-size);
+}
+
+#login__phone-number:focus {
+  outline: none;
 }
 
 /* LOGGED HERO SECTION */
@@ -164,6 +215,7 @@
 .user__picture {
   --border-r: 50vw;
   width: var(--size-152);
+  aspect-ratio: 1;
   justify-self: center;
   padding: var(--gap-12);
   position: relative;
@@ -174,7 +226,7 @@
 
   & > img {
     width: var(--size-128);
-    aspect-ratio: 1;
+    height: var(--size-128);
     border-radius: var(--border-r);
   }
 
@@ -245,7 +297,7 @@
   }
 }
 
-.whatsapp__users {
+/* .whatsapp__users {
   display: none;
   padding-block-end: var(--gap-24);
   pointer-events: none;
@@ -328,10 +380,37 @@
     opacity: 1;
     translate: 0 0;
   }
-}
+} */
 
 @media screen and (max-width: 480px) {
   .picture__recognition span {
     display: none;
+  }
+
+  .login__input-group {
+    --input-font-size: var(--font-24);
+
+    & legend {
+      font-size: var(--font-14);
+    }
+
+    & .icon-phone {
+      display: none;
+      width: var(--size-36);
+    }
+
+    & .icon-chevron {
+      width: var(--size-20);
+      inset-inline-start: var(--gap-40);
+      inset-block: 1rem;
+    }
+  }
+
+  #login__country-code {
+    max-width: var(--size-64);
+  }
+
+  #login__phone-code {
+    padding-inline-start: var(--gap-8);
   }
 }

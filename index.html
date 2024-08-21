@@ -28,7 +28,7 @@
 			</svg>
 		</button>
 		<a href="index.html" title="Eiffels home page" class="header__logo">
-			<img src="public/svg/eiffels_logo.svg" class="logo" alt="Eiffels" title="Eiffels" />
+			<img src="public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
 		</a>
 		<nav class="header__nav">
 			<ul class="nav__links">
@@ -44,7 +44,7 @@
 				<a href="marketplace.html">
 					<span>AI Marketplace</span>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#sidenav_marketplace"></use>
+						<use href="./public/svg/ui_icons.svg#marketplace"></use>
 					</svg>
 				</a>
 			</li>
@@ -61,24 +61,30 @@
 			</p>
 			<p>Please. Enter your phone number, and we will send a <span>6-digit</span> authorization code to
 				your <strong>WhatsApp</strong>.</p>
-			<!-- IF WE HAVE AN ERROR -->
-			<span class="error-message" role="alert" aria-live="assertive">
-				<svg class="icon" aria-hidden="true">
-					<use href="public/svg/ui_icons.svg#warning"></use>
-				</svg>
-				<strong>Invalid input. The phone number must start with a plus sign (+) and contain only numerical values.
-					Please correct your entry.</strong>
-			</span>
-			<!-- /// -->
 			<form method="post" class="login__form">
+				<!-- IF WE HAVE AN ERROR -->
+				<!-- <div class="error-message" role="alert" aria-live="assertive">
+					<svg class="icon" aria-hidden="true">
+						<use href="public/svg/ui_icons.svg#warning"></use>
+					</svg>
+					<strong>Invalid input. The phone number must start with a plus sign (+) and contain only numerical values.
+						Please correct your entry.</strong>
+				</div> -->
+				<!-- /// -->
 				<fieldset class="login__input-group">
 					<legend for="login__phone-number">Your Phone Number <span>*</span></legend>
-					<svg class="icon" aria-hidden="true">
+					<svg class="icon-chevron" aria-hidden="true">
+						<use href="./public/svg/ui_icons.svg#chevron-left"></use>
+					</svg>
+					<select name="country-code" id="login__country-code">
+					</select>
+					<svg class="icon-phone" aria-hidden="true">
 						<use href="./public/svg/ui_icons.svg#iphone"></use>
 					</svg>
-					<input type="tel" name="phone-number" id="login__phone-number" placeholder="+358401234567" inputmode="tel"
-						pattern="^\+[0-9]{10,}$"
-						title="Please enter a minimum of 10 digits without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
+					<span id="login__phone-code"></span>
+					<input type="tel" name="phone-number" id="login__phone-number" placeholder="401234567" inputmode="tel"
+						pattern="^[0-9]{6,}$"
+						title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
 						aria-describedby="phone-number-description" required />
 				</fieldset>
 				<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Access">
@@ -90,8 +96,8 @@
 			</form>
 			<div class="official-partners" aria-labelledby="partners-title">
 				<span>Official Partner</span>
-				<img src="./public/svg/meta.svg" alt="Meta official partner" />
-				<img src="./public/svg/microsoft.svg" alt="Microsoft official partner" />
+				<img src="./public/svg/logos/meta_com.svg" alt="Meta official partner" />
+				<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
 				<span>
 					E-SIGNATURES powered by
 					<a href="https://letsencrypt.org/" class="href" target="_blank" rel="noopener noreferrer">
@@ -448,18 +454,18 @@
 			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
-					<!-- IF WE HAVE AN ERROR -->
-					<span class="error-message" role="alert" aria-live="assertive">
-						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#warning"></use>
-						</svg>
-						<strong>
-							Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
-							neither more nor less than 6 digits.
-						</strong>
-					</span>
-					<!-- /// -->
 					<form method="post" class="auth__form">
+						<!-- IF WE HAVE AN ERROR -->
+						<!-- <div class="error-message" role="alert" aria-live="assertive">
+							<svg class="icon" aria-hidden="true">
+								<use href="public/svg/ui_icons.svg#warning"></use>
+							</svg>
+							<strong>
+								Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
+								neither more nor less than 6 digits.
+							</strong>
+						</div> -->
+						<!-- /// -->
 						<div class="auth__input-group">
 							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
 							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
@@ -482,98 +488,6 @@
 	<!-- BACKGROUND -->
 	<div class="bg" aria-hidden="true">
 		<div class="bg__wrapper">
-			<div class="bg__linear-gradient"></div>
-			<div class="bg__radial-gradient"></div>
-			<svg viewBox="0 0 1920 920" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg__wave">
-				<g filter="url(#filter0_d_452_3269)">
-					<path
-						d="M-0.345215 0H1920.35V596.755C1785.9 720.379 1359.62 526.179 1169.32 459.755C957.324 385.755 749.502 697.04 508.439 590.044C219.468 461.784 150.209 377.624 -0.345215 384.614V0Z"
-						fill="url(#paint0_linear_452_3269)" shape-rendering="crispEdges" />
-					<path
-						d="M-0.345215 0H1920.35V596.755C1785.9 720.379 1359.62 526.179 1169.32 459.755C957.324 385.755 749.502 697.04 508.439 590.044C219.468 461.784 150.209 377.624 -0.345215 384.614V0Z"
-						stroke="#F9F9FA" shape-rendering="crispEdges" />
-				</g>
-				<defs>
-					<filter id="filter0_d_452_3269" x="0" y="350" width="100%" height="100%" filterUnits="userSpaceOnUse"
-						color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix" />
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-							result="hardAlpha" />
-						<feOffset dy="25" />
-						<feGaussianBlur stdDeviation="25" />
-						<feComposite in2="hardAlpha" operator="out" />
-						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.443137 0 0 0 0 0.890196 0 0 0 0.15 0" />
-						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_452_3269" />
-						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_452_3269" result="shape" />
-					</filter>
-					<linearGradient id="paint0_linear_452_3269" x1="715.155" y1="0" x2="699.777" y2="1500"
-						gradientUnits="userSpaceOnUse">
-						<stop stop-color="#F5F5F7" stop-opacity="0" />
-						<stop offset="1" stop-color="#0071E3" stop-opacity="0.03" />
-					</linearGradient>
-				</defs>
-			</svg>
-
-			<svg viewBox="0 0 1920 920" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg__wave">
-				<g filter="url(#filter0_d_452_3267)">
-					<path
-						d="M1162.62 483.868C708.394 780.603 539.575 365.019 0.266113 519.375V0H1920V538.49C1675.22 705.555 1498.52 264.434 1162.62 483.868Z"
-						fill="url(#paint0_linear_452_3267)" shape-rendering="crispEdges" />
-					<path
-						d="M1162.62 483.868C708.394 780.603 539.575 365.019 0.266113 519.375V0H1920V538.49C1675.22 705.555 1498.52 264.434 1162.62 483.868Z"
-						stroke="#F9F9FA" shape-rendering="crispEdges" />
-				</g>
-				<defs>
-					<filter id="filter0_d_452_3267" x="0" y="350" width="100%" height="100%" filterUnits="userSpaceOnUse"
-						color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix" />
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-							result="hardAlpha" />
-						<feOffset dy="25" />
-						<feGaussianBlur stdDeviation="25" />
-						<feComposite in2="hardAlpha" operator="out" />
-						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.443137 0 0 0 0 0.890196 0 0 0 0.15 0" />
-						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_452_3267" />
-						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_452_3267" result="shape" />
-					</filter>
-					<linearGradient id="paint0_linear_452_3267" x1="894.956" y1="0" x2="879.996" y2="1500"
-						gradientUnits="userSpaceOnUse">
-						<stop stop-color="#F5F5F7" stop-opacity="0" />
-						<stop offset="1" stop-color="#0071E3" stop-opacity="0.03" />
-					</linearGradient>
-				</defs>
-			</svg>
-
-			<svg viewBox="0 0 1920 920" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg__wave">
-				<g filter="url(#filter0_d_449_3215)">
-					<path
-						d="M837.974 463.785C463.171 349.613 349.213 755.137 -0.184814 563.931V0H1919.34C1919.34 115.336 1920.25 463.785 1920.25 463.785C1661.16 636.873 1105.25 545.202 837.974 463.785Z"
-						fill="url(#paint0_linear_449_3215)" shape-rendering="crispEdges" />
-					<path
-						d="M837.974 463.785C463.171 349.613 349.213 755.137 -0.184814 563.931V0H1919.34C1919.34 115.336 1920.25 463.785 1920.25 463.785C1661.16 636.873 1105.25 545.202 837.974 463.785Z"
-						stroke="#F9F9FA" shape-rendering="crispEdges" />
-				</g>
-				<defs>
-					<filter id="filter0_d_449_3215" x="0" y="400" width="100%" height="100%" filterUnits="userSpaceOnUse"
-						color-interpolation-filters="sRGB">
-						<feFlood flood-opacity="0" result="BackgroundImageFix" />
-						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-							result="hardAlpha" />
-						<feOffset dy="25" />
-						<feGaussianBlur stdDeviation="25" result="blur" />
-						<feComposite in2="hardAlpha" operator="out" />
-						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.443137 0 0 0 0 0.890196 0 0 0 0.15 0" />
-						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_449_3215" />
-						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_449_3215" result="shape" />
-					</filter>
-					<linearGradient id="paint0_linear_449_3215" x1="961.072" y1="0" x2="961.072" y2="1500"
-						gradientUnits="userSpaceOnUse">
-						<stop stop-color="#F5F5F7" stop-opacity="0" />
-						<stop offset="1" stop-color="#0071E3" stop-opacity="0.03" />
-					</linearGradient>
-				</defs>
-			</svg>
-
 			<svg class="bg__lines" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M234 1.39746V1079.64" stroke="url(#paint0_linear_449_3124)" stroke-opacity="0.1" />
 				<path d="M234 979.638V1079.64" stroke="url(#paint1)" class="lines__v-animation from-bottom" />
@@ -793,6 +707,7 @@
 					</linearGradient>
 				</defs>
 			</svg>
+			<img class="bg__wave" src="./public/svg/backdrops/background.svg" alt="svg">
 		</div>
 	</div>
 </body>

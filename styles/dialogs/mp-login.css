@@ -10,14 +10,16 @@
 }
 
 /* If intered value is not number */
-[id*='login-dialog']:has(.error-message.show) form {
+#unlogged:has(.error-message.show) form {
   padding-block-start: var(--gap-24);
 }
-[id*='login-dialog']:has(.error-message.show) form input#login__phone-number {
+
+#unlogged:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
 }
-[id*='login-dialog']:has(.error-message.show) .login__input-group svg use {
-  fill: var(--warning-error);
+
+#unlogged:has(.error-message.show) .login__input-group {
+  border-bottom-color: var(--warning-error);
 }
 
 /* INPUTs / FORM */
@@ -34,9 +36,14 @@
 }
 
 .login__input-group {
+  --input-font-size: var(--font-28);
   display: grid;
-  row-gap: var(--gap-8);
+  align-items: center;
+  grid-auto-flow: column;
   position: relative;
+  border-bottom: 1px solid var(--black);
+  background-color: hsl(from var(--white) h s l / 0);
+  padding-inline-end: var(--gap-12);
 
   & legend {
     padding-inline-end: var(--gap-6);
@@ -47,35 +54,71 @@
     }
   }
 
-  & .icon {
+  & .icon-phone {
     width: var(--size-40);
-    height: var(--size-40);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
+
+  & .icon-chevron {
+    width: var(--size-24);
     aspect-ratio: 1;
     position: absolute;
-    inset-block: 0.725rem;
-    left: var(--gap-6);
-
-    & use {
-      fill: var(--grey-500);
-    }
+    inset-inline-start: var(--gap-48);
+    inset-block: 1.175rem;
+    fill: var(--grey-500);
+    rotate: -90deg;
+    pointer-events: none;
+    z-index: 100;
   }
+}
 
-  & input {
-    width: 100%;
-    padding-block: var(--gap-12);
-    padding-inline: var(--gap-48) var(--gap-12);
-    background-color: hsl(from var(--white) h s l / 0.5);
-    border-bottom: 1px solid var(--black);
-    font-size: var(--font-32);
-    font-weight: bold;
-  }
+#login__country-code {
+  appearance: none;
+  border: 0;
+  /* background-color: transparent; */
+  max-width: var(--size-72);
+  padding-block: var(--gap-6);
+  padding-inline: var(--gap-8);
+  background-color: var(--grey-200);
+  /* border-right: 1.5px solid var(--grey-300); */
+  border-radius: var(--border-corner-6);
+  color: var(--grey-400);
+  font-family: 'Noto Emoji', 'SF Pro Text', sans-serif;
+  -webkit-font-smoothing: antialiased; /* for MacOs */
+  font-size: var(--input-font-size);
+  font-weight: bold;
+  word-spacing: 5rem;
+  outline-color: var(--black);
 
-  & input::placeholder {
-    color: var(--grey-200);
-    font-size: var(--font-32);
+  & option {
+    font-size: large;
   }
+}
 
-  & input:focus {
-    outline: none;
-  }
+#login__phone-code {
+  /* padding-inline-start: var(--gap-8); */
+  color: var(--grey-300);
+  font-size: var(--input-font-size);
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+}
+
+#login__phone-number {
+  width: 100%;
+  padding-block: var(--gap-12);
+  padding-inline-start: var(--gap-8);
+  background-color: transparent;
+  font-size: var(--input-font-size);
+  font-weight: bold;
+}
+
+#login__phone-number::placeholder {
+  color: var(--grey-200);
+  font-size: var(--input-font-size);
+}
+
+#login__phone-number:focus {
+  outline: none;
 }

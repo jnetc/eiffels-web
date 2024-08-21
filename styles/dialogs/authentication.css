@@ -61,18 +61,27 @@
 
 /* If intered value is not number */
 [id*='auth-dialog']:has(.error-message.show) form {
-  padding-block-start: var(--gap-24);
+  /* padding-block-start: var(--gap-24); */
 }
-[id*='auth-dialog']:has(.error-message.show) form input#login__phone-number {
+[id*='auth-dialog']:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
 }
-[id*='auth-dialog']:has(.error-message.show) .login__input-group svg use {
+[id*='auth-dialog']:has(.error-message.show) .login__input-group svg {
   fill: var(--warning-error);
 }
 
 .auth__form {
-  justify-self: stretch;
+  width: min-content;
+  justify-self: center;
   display: grid;
+  transition: grid-template-rows 0.3s linear;
+
+  &:has(.error-message) {
+    grid-template-rows: 0fr min-content;
+  }
+  &:has(.error-message.show) {
+    grid-template-rows: 1fr min-content;
+  }
 }
 
 .auth__form:has(.error-message.show) .auth__input-group {

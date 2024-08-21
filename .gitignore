@@ -1,7 +1,5 @@
 # build output
 dist/
-# generated types
-.astro/
 
 # dependencies
 node_modules/
@@ -22,9 +20,9 @@ pnpm-lock.yaml*
 # macOS-specific files
 .DS_Store
 
-
-# Local folder
-.cache
-.vercel
-.netlify
+# Untracked folders and files
 /source
+/scripts_old
+
+# Map source
+*.map

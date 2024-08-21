@@ -86,7 +86,7 @@
 						</div>
 						<div class="styled-box__footer">
 							<!-- IF WE HAVE AN ERROR -->
-							<span class="error-message show" role="alert" aria-live="assertive">
+							<div class="error-message show" role="alert" aria-live="assertive">
 								<svg class="icon" aria-hidden="true">
 									<use href="public/svg/ui_icons.svg#warning"></use>
 								</svg>
@@ -94,7 +94,7 @@
 									Server error: We encountered an issue while trying to save your changes. Please check your
 									connection and try again. If the problem persists, contact our support team for assistance.
 								</strong>
-							</span>
+							</div>
 							<!-- /// -->
 							<p>Default language is English and location is Finland</p>
 							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Preferences">
@@ -408,7 +408,7 @@
 					<div class="settings__connection">
 						<input type="checkbox" name="onedrive" id="onedrive" class="connection__checkbox" />
 						<label for="onedrive" class="connection" aria-label="Connect One Drive">
-							<img src="public/svg/settings_onedrive.svg" alt="One Drive Logo" />
+							<img src="public/svg/settings/onedrive.svg" alt="One Drive Logo" />
 							<div class="connection__name">
 								<h3>One Drive</h3>
 								<p>Eiffels Connected App</p>
@@ -428,7 +428,7 @@
 						<input type="checkbox" name="ukko" id="ukko" class="connection__checkbox" />
 						<label for="ukko" class="connection" aria-label="Connect One Drive">
 							<!-- IF WE HAVE AN ERROR -->
-							<span class="error-message" role="alert" aria-live="assertive">
+							<div class="error-message" role="alert" aria-live="assertive">
 								<svg class="icon" aria-hidden="true">
 									<use href="public/svg/ui_icons.svg#warning"></use>
 								</svg>
@@ -436,9 +436,9 @@
 									Server error: We encountered an issue while trying to save your changes. Please check your
 									connection and try again. If the problem persists, contact our support team for assistance.
 								</strong>
-							</span>
+							</div>
 							<!-- /// -->
-							<img src="public/svg/settings_ukko.svg" alt="Ukko Logo" />
+							<img src="public/svg/settings/ukko.svg" alt="Ukko Logo" />
 							<div class="connection__name">
 								<h3>Ukko</h3>
 								<p>Eiffels Connected App</p>
@@ -546,7 +546,7 @@
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- IF WE HAVE AN ERROR -->
-					<span class="error-message" role="alert" aria-live="assertive">
+					<div class="error-message" role="alert" aria-live="assertive">
 						<svg class="icon" aria-hidden="true">
 							<use href="public/svg/ui_icons.svg#warning"></use>
 						</svg>
@@ -554,7 +554,7 @@
 							The file you uploaded is either invalid or exceeds the maximum allowed size. Please upload a valid file
 							that meets the size requirements.
 						</strong>
-					</span>
+					</div>
 					<!-- /// -->
 					<form method="post" id="aup__form">
 						<div class="aup__picture-upload">
@@ -590,14 +590,14 @@
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- IF WE HAVE AN ERROR -->
-					<span class="error-message" role="alert" aria-live="assertive">
+					<div class="error-message" role="alert" aria-live="assertive">
 						<svg class="icon" aria-hidden="true">
 							<use href="public/svg/ui_icons.svg#warning"></use>
 						</svg>
 						<strong>
 							Please select at least one option. This field is required and must be completed to proceed.
 						</strong>
-					</span>
+					</div>
 					<!-- /// -->
 					<form method="post" id="da__form">
 						<div class="form__reason-delete">
