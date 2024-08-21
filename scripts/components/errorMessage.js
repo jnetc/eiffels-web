@@ -13,8 +13,9 @@ export default function errorMessage(parent, message) {
     icon.appendChild(iconPath);
     container.appendChild(icon);
     container.appendChild(errorMessage);
-    // console.log('parent_create error', parent);
     const hasErorMessage = document.querySelector('.error-message');
+    if (parent && hasErorMessage)
+        return;
     if (hasErorMessage) {
         hasErorMessage.classList.remove('show');
         const timer = setTimeout(() => {
@@ -23,7 +24,6 @@ export default function errorMessage(parent, message) {
         }, 500);
         return;
     }
-    console.log('parent_create error');
     if (!parent)
         return;
     parent.insertAdjacentElement('afterbegin', container);

@@ -16,9 +16,9 @@ export default function errorMessage(parent: HTMLElement | null, message?: strin
   container.appendChild(icon);
   container.appendChild(errorMessage);
 
-  // console.log('parent_create error', parent);
-
   const hasErorMessage = document.querySelector('.error-message');
+
+  if (parent && hasErorMessage) return;
 
   if (hasErorMessage) {
     hasErorMessage.classList.remove('show');
@@ -28,7 +28,6 @@ export default function errorMessage(parent: HTMLElement | null, message?: strin
     }, 500);
     return;
   }
-  console.log('parent_create error');
 
   if (!parent) return;
 
