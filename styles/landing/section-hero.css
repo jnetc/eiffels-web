@@ -165,7 +165,7 @@
   background-color: var(--grey-200);
   border-radius: var(--border-corner-6);
   color: var(--grey-400);
-  font-family: 'Noto Emoji', 'SF Pro Text', sans-serif;
+  font-family: 'Twemoji Country Flags', 'Noto Emoji', 'SF Pro Text', sans-serif;
   -webkit-font-smoothing: antialiased; /* for MacOs */
   font-size: var(--input-font-size);
   font-weight: bold;

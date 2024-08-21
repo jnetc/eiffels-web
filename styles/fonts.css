@@ -29,3 +29,12 @@ when iterating elements for the first time.
   font-display: swap;
   size-adjust: none;
 }
+
+@font-face {
+  font-family: 'Twemoji Country Flags';
+  src: url('../public/fonts/TwemojiCountryFlags.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: none;
+}
