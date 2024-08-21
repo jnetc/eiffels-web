@@ -22,7 +22,6 @@ pnpm-lock.yaml*
 
 # Untracked folders and files
 /source
-/scripts
 /scripts_old
 
 # Map source
