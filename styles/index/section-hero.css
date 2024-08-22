@@ -102,18 +102,19 @@
   display: grid;
   column-gap: var(--gap-16);
   /* row-gap: var(--gap-32); */
-  transition: grid-template-rows 0.3s linear;
-
-  & > button.login__btn {
-    margin-block-start: var(--gap-32);
-    justify-self: center;
-  }
+  transition: grid-template-rows 0.2s linear;
 
   &:has(.error-message) {
     grid-template-rows: 0fr min-content;
   }
+
   &:has(.error-message.show) {
     grid-template-rows: 1fr min-content;
+  }
+
+  & > button.login__btn {
+    justify-self: center;
+    margin-block-start: var(--gap-32);
   }
 }
 
@@ -159,13 +160,13 @@
 #login__country-code {
   appearance: none;
   border: 0;
-  max-width: var(--size-72);
+  width: var(--size-72);
   padding-block: var(--gap-6);
   padding-inline: var(--gap-8);
   background-color: var(--grey-200);
   border-radius: var(--border-corner-6);
   color: var(--grey-400);
-  font-family: 'Twemoji Country Flags', 'Noto Emoji', 'SF Pro Text', sans-serif;
+  font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
   -webkit-font-smoothing: antialiased; /* for MacOs */
   font-size: var(--input-font-size);
   font-weight: bold;
@@ -396,7 +397,6 @@
 
     & .icon-phone {
       display: none;
-      width: var(--size-36);
     }
 
     & .icon-chevron {
@@ -407,7 +407,7 @@
   }
 
   #login__country-code {
-    max-width: var(--size-64);
+    width: var(--size-64);
   }
 
   #login__phone-code {

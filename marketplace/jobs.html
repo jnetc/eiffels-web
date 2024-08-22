@@ -16,11 +16,11 @@
 	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
 	<script src="../scripts/global.js" defer></script>
 	<script src="../scripts/marketplace/mp.js" defer></script>
-	<script src="../scripts/marketplace/mp-search.js" defer></script>
+	<script src="../scripts/marketplace/mpSearch.js" defer></script>
 	<script src="../scripts/dialogs/dialog.js" defer></script>
-	<script src="../scripts/dialogs/mp-add.js" defer></script>
-	<script src="../scripts/dialogs/mp-item.js" defer></script>
-	<script src="../scripts/dialogs/mp-login.js" defer></script>
+	<script src="../scripts/dialogs/mpAdd.js" defer></script>
+	<script src="../scripts/dialogs/mpItem.js" defer></script>
+	<script src="../scripts/dialogs/mpLogin.js" defer></script>
 	<script src="../scripts/cookie/cookie.js" defer></script>
 	<title>Jobs</title>
 	<meta name="description" content="" />
@@ -182,29 +182,24 @@
 				<p>Please. Enter your phone number, and we will send a <span>6-digit</span> authorization code to
 					your <strong>WhatsApp</strong>.</p>
 			</header>
-			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- IF WE HAVE AN ERROR -->
-					<div class="error-message" role="alert" aria-live="assertive">
-						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#warning"></use>
-						</svg>
-						<strong>
-							Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
-							neither more nor less than 6 digits.
-						</strong>
-					</div>
-					<!-- /// -->
 					<form method="post" class="login__form">
 						<fieldset class="login__input-group">
 							<legend for="login__phone-number">Your Phone Number <span>*</span></legend>
-							<svg class="icon" aria-hidden="true">
+							<svg class="icon-chevron" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#chevron-left"></use>
+							</svg>
+							<select name="country-code" id="login__country-code">
+							</select>
+							<svg class="icon-phone" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#iphone"></use>
 							</svg>
-							<input type="tel" name="phone-number" id="login__phone-number" placeholder="+358401234567" inputmode="tel"
-								pattern="^\+[0-9]{10,}$"
-								title="Please enter a minimum of 10 digits without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
+							<span id="login__phone-code"></span>
+							<input type="tel" name="phone-number" id="login__phone-number" placeholder="401234567" inputmode="tel"
+								pattern="^[0-9]{6,}$"
+								title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
 								aria-describedby="phone-number-description" required />
 						</fieldset>
 						<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Access">
@@ -232,20 +227,9 @@
 				<p>Please. Check your <strong>WhatsApp</strong> for a <span>6-digit</span> code and enter it here to proceed
 					with authorization.</p>
 			</header>
-			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- IF WE HAVE AN ERROR -->
-					<div class="error-message" role="alert" aria-live="assertive">
-						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#warning"></use>
-						</svg>
-						<strong>
-							Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is
-							neither more nor less than 6 digits.
-						</strong>
-					</div>
-					<!-- /// -->
 					<form method="post" class="auth__form">
 						<div class="auth__input-group">
 							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
@@ -375,13 +359,12 @@
 	<dialog id="mp-item-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header">
-				<button type="button" class="btn-circle-48 btn-black">
-					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#close"></use>
-					</svg>
+				<button type="button" class="btn-circle-48 btn-black" data-button-close aria-label="close dialog"></button>>
+				<svg class="icon" aria-hidden="true">
+					<use href="../public/svg/ui_icons.svg#close"></use>
+				</svg>
 				</button>
 			</header>
-			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
 				</div>

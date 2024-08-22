@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const emailAddress = document.getElementById('email__address') as HTMLInputElement;
   const role = document.getElementById('roles__role') as HTMLSelectElement;
 
-  // Получаем ссылку на элемент для отображения сообщений об ошибке
-  const errorMessage = document.querySelector('.error-message') as HTMLDivElement;
+  // Найти элемент для отображения сообщения об ошибке
+  const { default: errorMessage } = await import('../components/errorMessage.js');
 
   // Заполняем поля формы данными пользователя
   language.value = user.language;
@@ -56,11 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Обновляем данные пользователя в зависимости от раздела формы
     switch (section) {
       case 'preferences':
-        emulateSaveOnServer(button, {
-          ...user,
-          language: language.value,
-          postalCode: postalCode.value,
-        });
+        emulateSaveOnServer(button, null);
         return;
       case 'personal':
         emulateSaveOnServer(button, {
@@ -90,25 +86,39 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Функция для имитации сохранения данных на сервере
-  async function emulateSaveOnServer(button: HTMLButtonElement, user: User) {
-    if (errorMessage.classList.contains('show')) {
-      // Убираем сообщение об ошибке, если оно есть
-      errorMessage.classList.remove('show');
-    }
+  async function emulateSaveOnServer(button: HTMLButtonElement, user: User | null) {
+    // Скрываем сообщение об ошибке, если оно отображается
+    errorMessage(null);
 
+    const parentElement = button.closest('.styled-box__footer') as HTMLDivElement; // Находим родительский элемент кнопки
     try {
+      // Искусственно выбрасываем ошибку для тестирования
+      if (!user) {
+        await new Promise((_, reject) => {
+          setTimeout(() => {
+            button.firstElementChild!.textContent = 'Save';
+            button.disabled = false;
+            reject(
+              new Error(
+                'Server error: We encountered an issue while trying to save your changes. Please check your connection and try again. If the problem persists, contact our support team for assistance.'
+              )
+            );
+          }, 1000);
+        });
+      }
       // Имитация задержки при сохранении данных
       const timeout = setTimeout(() => {
-        button.firstElementChild!.textContent = 'Save'; // Восстанавливаем исходный текст кнопки
-        button.disabled = false; // Включаем кнопку
-        console.log('updated'); // Выводим сообщение в консоль о том, что данные обновлены
-        clearTimeout(timeout); // Очищаем таймер
-      }, 3000);
-
-      console.log('get preferences', user); // Логируем данные, которые нужно сохранить
+        button.firstElementChild!.textContent = 'Save';
+        button.disabled = false;
+        console.log('updated');
+        clearTimeout(timeout);
+      }, 1000);
+      console.log('get preferences', user, parentElement);
     } catch (error) {
-      console.log(error); // Логируем ошибку в консоль
-      errorMessage?.classList.add('show'); // Показываем сообщение об ошибке
+      // Приведение ошибки к типу Error для работы с message
+      const errorMessageText = error instanceof Error ? error.message : 'An unknown error occurred';
+      // Показываем сообщение об ошибке
+      errorMessage(parentElement, errorMessageText);
     }
   }
 

@@ -3,9 +3,10 @@ export default async function handlePhoneNumber(pathname: string) {
   const loginForm = document.querySelector('.login__form') as HTMLFormElement;
 
   // Найти поле ввода номера телефона
+  const phoneNumberCode = document.getElementById('login__phone-code') as HTMLSpanElement;
   const phoneNumberInput = document.getElementById('login__phone-number') as HTMLInputElement;
 
-  // Найти элемент для отображения сообщения об ошибке
+  // Сообщение об ошибке
   const { default: errorMessage } = await import('../components/errorMessage.js');
 
   // Переменная для хранения введенного номера телефона
@@ -24,11 +25,14 @@ export default async function handlePhoneNumber(pathname: string) {
       const { default: authentication } = await import('./authentication.js');
       const { openDialog } = await import('../dialogs/dialogUtils.js');
 
-      console.log('phone number', phoneNumber);
+      // Собираем номер телефона код страны и номер из поля ввода
+      const fullPhoneNumber = `${phoneNumberCode.innerText}${phoneNumber}`;
+
+      console.log('phone number', fullPhoneNumber);
 
       // Проверка, если pathname содержит MARKERPLACE
       if (pathname.includes(MARKETPLACE)) {
-        console.log('marketplace', phoneNumber);
+        console.log('marketplace', fullPhoneNumber);
 
         // Открыть диалоговое окно для аутентификации на маркетплейсе
         openDialog(document.getElementById('mp-auth-dialog') as HTMLDialogElement);
@@ -40,7 +44,7 @@ export default async function handlePhoneNumber(pathname: string) {
 
       // Проверка, если pathname содержит INDEX
       if (pathname.includes(INDEX)) {
-        console.log('index', phoneNumber);
+        console.log('index', fullPhoneNumber);
 
         // Открыть диалоговое окно для аутентификации на главной странице
         openDialog(document.getElementById('hs-auth-dialog') as HTMLDialogElement);
@@ -67,7 +71,6 @@ export default async function handlePhoneNumber(pathname: string) {
       // Если поле ввода пустое
       if (input === '') {
         // Убрать сообщение об ошибке
-        // errorMessage.classList.remove('show');
         errorMessage(null);
         return;
       }
@@ -76,19 +79,16 @@ export default async function handlePhoneNumber(pathname: string) {
       if (!/^[0-9]{0,}$/.test(input)) {
         console.log('input_errror', input);
 
+        // Показать сообщение об ошибке
         errorMessage(
           loginForm,
           'Invalid input. The phone number must start with a plus sign (+) and contain only numerical values.	Please correct your entry.'
         );
 
-        // Показать сообщение об ошибке
-        // errorMessage.classList.add('show');
         return;
       }
 
-      console.log('input', input);
       // Убрать сообщение об ошибке, если введенное значение корректно
-      // errorMessage.classList.remove('show');
       errorMessage(null);
 
       // Обновить переменную с номером телефона

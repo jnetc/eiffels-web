@@ -22,7 +22,9 @@ pnpm-lock.yaml*
 
 # Untracked folders and files
 /source
-/scripts_old
 
 # Map source
 *.map
+
+# TS file
+tsconfig.tsbuildinfo

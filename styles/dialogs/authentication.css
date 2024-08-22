@@ -74,7 +74,7 @@
   width: min-content;
   justify-self: center;
   display: grid;
-  transition: grid-template-rows 0.3s linear;
+  transition: grid-template-rows 0.2s linear;
 
   &:has(.error-message) {
     grid-template-rows: 0fr min-content;

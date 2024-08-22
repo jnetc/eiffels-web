@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
-  const { closeDialog, openDialog } = await import('../dialogs/dialogUtils.js');
+  const { closeDialog, openDialog } = await import('./dialogUtils.js');
   // Выбираем все элементы с классом ".card__description"
   const textBox = document.querySelectorAll('.card__description') as NodeListOf<HTMLElement>;
   // Находим элемент, который будет использоваться в качестве диалога

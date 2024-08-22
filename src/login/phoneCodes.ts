@@ -5,7 +5,6 @@ export default function loadPhoneCodes() {
     emoji: string;
     unicode: string;
     dial_code: string;
-    image: string;
   }
 
   const country = {
@@ -14,7 +13,6 @@ export default function loadPhoneCodes() {
     emoji: '🇫🇮',
     unicode: 'U+1F1EB U+1F1EE',
     dial_code: '+358',
-    image: 'https://flagcdn.com/w320/fi.png',
   };
 
   const countryCode = document.getElementById('login__country-code') as HTMLSelectElement;
@@ -26,7 +24,7 @@ export default function loadPhoneCodes() {
     // });
     async function getJson() {
       try {
-        const response = await fetch('./public/json/phone_code.json');
+        const response = await fetch('../public/json/phone_code.json');
 
         // Проверяем, что запрос был успешным (статус 200-299)
         if (!response.ok) {

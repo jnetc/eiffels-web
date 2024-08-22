@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     var _a;
     // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
-    const { closeDialog, openDialog } = await import('../dialogs/dialogUtils.js');
+    const { closeDialog, openDialog } = await import('./dialogUtils.js');
     // Выбираем все элементы с классом ".card__description"
     const textBox = document.querySelectorAll('.card__description');
     // Находим элемент, который будет использоваться в качестве диалога
@@ -61,4 +61,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Добавляем обработчик клика на кнопку закрытия диалога
     (_a = dialogMPI.querySelector('[data-button-close]')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', cancelOrCloseDialogMPI);
 });
-//# sourceMappingURL=mp-item.js.map
+//# sourceMappingURL=mpItem.js.map

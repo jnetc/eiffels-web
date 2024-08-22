@@ -1,10 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   type TypeStatus = 'connected' | 'disconnected';
   // Найдите элемент с классом 'error-message'
-  const errorMessage = document.querySelector('.error-message') as HTMLDivElement;
+  // const errorMessage = document.querySelector('.error-message') as HTMLDivElement;
 
   // Выберите все элементы с классом 'settings__connection'
   const connections = document.querySelectorAll('.settings__connection') as NodeListOf<HTMLDivElement>;
+
+  // Найти элемент для отображения сообщения об ошибке
+  const { default: errorMessage } = await import('../components/errorMessage.js');
 
   // Функция, вызываемая при клике на элемент подключения
   function connectCloud(event: Event) {
@@ -34,9 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     status: TypeStatus
   ) {
     // Если отображается сообщение об ошибке, скрываем его
-    if (errorMessage.classList.contains('show')) {
-      errorMessage.classList.remove('show');
-    }
+    errorMessage(null);
+
     try {
       // Изменяем текст состояния на "Connecting" и добавляем класс 'disabled'
       statusElem.querySelector('span')!.textContent = status.replace('ed', 'ing');
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
       // В случае ошибки показываем сообщение об ошибке
       console.log(error);
-      errorMessage.classList.add('show');
+      errorMessage(null);
     }
   }
 

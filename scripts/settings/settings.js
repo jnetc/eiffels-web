@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const signOut = document.getElementById('settings__sign-out');
     // Получаем все элементы списка настроек по классу
     const listItems = document.querySelectorAll('.settings__name');
+    // Найти элемент для отображения сообщения об ошибке
+    const { default: errorMessage } = await import('../components/errorMessage.js');
     // Функция для обработки клика на элемент списка настроек
     function collapseList(event) {
         // Получаем элемент, на который был произведен клик
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Если кликнутый элемент уже открыт, то просто закрываем его
         if (item.classList.contains('open-settings')) {
             item.classList.remove('open-settings');
+            errorMessage(null);
             return;
         }
         // Если элемент не открыт, закрываем все открытые элементы в списке

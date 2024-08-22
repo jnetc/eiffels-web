@@ -1,9 +1,11 @@
 "use strict";
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // Найдите элемент с классом 'error-message'
-    const errorMessage = document.querySelector('.error-message');
+    // const errorMessage = document.querySelector('.error-message') as HTMLDivElement;
     // Выберите все элементы с классом 'settings__connection'
     const connections = document.querySelectorAll('.settings__connection');
+    // Найти элемент для отображения сообщения об ошибке
+    const { default: errorMessage } = await import('../components/errorMessage.js');
     // Функция, вызываемая при клике на элемент подключения
     function connectCloud(event) {
         // Получаем элемент подключения, на который кликнули
@@ -25,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Асинхронная функция для имитации подключения к серверу
     async function emulateServerConnection(statusElem, connectionElem, status) {
         // Если отображается сообщение об ошибке, скрываем его
-        if (errorMessage.classList.contains('show')) {
-            errorMessage.classList.remove('show');
-        }
+        errorMessage(null);
         try {
             // Изменяем текст состояния на "Connecting" и добавляем класс 'disabled'
             statusElem.querySelector('span').textContent = status.replace('ed', 'ing');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         catch (error) {
             // В случае ошибки показываем сообщение об ошибке
             console.log(error);
-            errorMessage.classList.add('show');
+            errorMessage(null);
         }
     }
     // Добавляем обработчик события 'click' ко всем элементам подключения
@@ -53,4 +53,4 @@ document.addEventListener('DOMContentLoaded', () => {
         connection.addEventListener('click', connectCloud);
     }
 });
-//# sourceMappingURL=my_eiffels.js.map
+//# sourceMappingURL=myEiffels.js.map

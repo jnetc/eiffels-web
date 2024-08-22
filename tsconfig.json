@@ -14,7 +14,7 @@
     "moduleResolution": "node", // Стратегия разрешения модулей
     "resolveJsonModule": true, // Разрешение JSON модулей
     "isolatedModules": true, // Компиляция каждого файла как отдельного модуля
-    "incremental": true, // Инкрементальная компиляция
+    "incremental": false, // Инкрементальная компиляция true будет создавать файлы .tsbuildinfo
     "baseUrl": ".", // Базовый каталог для разрешения модулей
     "noFallthroughCasesInSwitch": true, // Запрещает переход к следующему case в switch
     "noUnusedLocals": true, // Ошибки на неиспользуемые локальные переменные

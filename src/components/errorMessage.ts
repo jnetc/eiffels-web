@@ -1,25 +1,10 @@
 export default function errorMessage(parent: HTMLElement | null, message?: string) {
-  const container = document.createElement('div');
-  const errorMessage = document.createElement('strong');
-  const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  const iconPath = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-
-  container.setAttribute('class', 'error-message');
-  container.setAttribute('role', 'alert');
-  container.setAttribute('aria-live', 'assertive');
-  icon.setAttribute('class', 'icon');
-  icon.setAttribute('aria-hidden', 'true');
-  iconPath.setAttribute('href', 'public/svg/ui_icons.svg#warning');
-
-  errorMessage.textContent = message || 'Sorry, there was an internal server';
-  icon.appendChild(iconPath);
-  container.appendChild(icon);
-  container.appendChild(errorMessage);
+  // console.log(message, parent);
 
   const hasErorMessage = document.querySelector('.error-message');
 
   if (parent && hasErorMessage) return;
-
+  // Если уже есть сообщение об ошибке, убираем его
   if (hasErorMessage) {
     hasErorMessage.classList.remove('show');
     const timer = setTimeout(() => {
@@ -31,7 +16,27 @@ export default function errorMessage(parent: HTMLElement | null, message?: strin
 
   if (!parent) return;
 
+  // Создание контейнера для сообщения об ошибке
+  const container = document.createElement('div');
+  const errorMessage = document.createElement('strong');
+  const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  const iconPath = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+
+  container.setAttribute('class', 'error-message');
+  container.setAttribute('role', 'alert');
+  container.setAttribute('aria-live', 'assertive');
+  icon.setAttribute('class', 'icon');
+  icon.setAttribute('aria-hidden', 'true');
+  iconPath.setAttribute('href', '../public/svg/ui_icons.svg#warning');
+
+  errorMessage.textContent = message || 'Sorry, there was an internal server';
+  icon.appendChild(iconPath);
+  container.appendChild(icon);
+  container.appendChild(errorMessage);
+
+  // Вставка нового сообщения об ошибке
   parent.insertAdjacentElement('afterbegin', container);
+  // Отображаем сообщение об ошибке с задержкой
   const timer = setTimeout(() => {
     container.classList.add('show');
     clearTimeout(timer);

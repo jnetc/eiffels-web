@@ -1,7 +1,7 @@
 export default async function authentication(pathname) {
     // Импортируем функцию setTokken из другого модуля
     const { setTokken } = await import('../emulate_user_access.js');
-    // Найти элемент для отображения сообщения об ошибке
+    // Сообщение об ошибке
     const { default: errorMessage } = await import('../components/errorMessage.js');
     // Получаем элементы формы, ввода цифр, кнопки отправки и сообщения об ошибке
     const authForm = document.querySelector('.auth__form');

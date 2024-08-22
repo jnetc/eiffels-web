@@ -8,15 +8,14 @@
 	<link rel="stylesheet" href="styles/variable.css" />
 	<link rel="stylesheet" href="styles/fonts.css" />
 	<link rel="stylesheet" href="styles/global.css" />
-	<link rel="stylesheet" href="styles/landing/index.css" />
-	<link rel="stylesheet" href="styles/landing/backdrop.css" />
+	<link rel="stylesheet" href="styles/index/index.css" />
+	<link rel="stylesheet" href="styles/index/backdrop.css" />
 	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="styles/dialogs/add-user-picture.css" />
 	<script src="scripts/global.js" defer></script>
-	<script src="scripts/index.js" defer></script>
-	<!-- <script src="scripts/logged.js" defer></script> -->
+	<script src="scripts/index/sectionHeroLogged.js" defer></script>
 	<script src="scripts/dialogs/dialog.js" defer></script>
-	<script src="scripts/dialogs/add-user-picture.js" defer></script>
+	<script src="scripts/dialogs/addUserPicture.js" defer></script>
 	<script src="scripts/cookie/cookie.js" defer></script>
 	<title>Document</title>
 	<meta name="description" content="" />
@@ -471,18 +470,8 @@
 			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
-					<!-- IF WE HAVE AN ERROR -->
-					<div class="error-message" role="alert" aria-live="assertive">
-						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#warning"></use>
-						</svg>
-						<strong>
-							The file you uploaded is either invalid or exceeds the maximum allowed size. Please upload a valid file
-							that meets the size requirements.
-						</strong>
-					</div>
-					<!-- /// -->
 					<form method="post" id="aup__form">
+						<!-- IF WE HAVE AN ERROR -->
 						<div class="aup__picture-upload">
 							<input type="file" id="aup__picture-file" accept="image/*" />
 							<img id="aup__photo-display" src="" alt="" />

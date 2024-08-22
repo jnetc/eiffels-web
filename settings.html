@@ -16,9 +16,9 @@
 	<script src="scripts/settings/settings.js" defer></script>
 	<script src="scripts/settings/account.js" defer></script>
 	<script src="scripts/dialogs/dialog.js" defer></script>
-	<script src="scripts/dialogs/delete-account.js" defer></script>
-	<script src="scripts/settings/my_eiffels.js" defer></script>
-	<script src="scripts/dialogs/add-user-picture.js" defer></script>
+	<script src="scripts/dialogs/deleteAccount.js" defer></script>
+	<script src="scripts/settings/myEiffels.js" defer></script>
+	<script src="scripts/dialogs/addUserPicture.js" defer></script>
 	<title>Settings</title>
 	<meta name="description" content="" />
 </head>
@@ -86,24 +86,16 @@
 						</div>
 						<div class="styled-box__footer">
 							<!-- IF WE HAVE AN ERROR -->
-							<div class="error-message show" role="alert" aria-live="assertive">
-								<svg class="icon" aria-hidden="true">
-									<use href="public/svg/ui_icons.svg#warning"></use>
-								</svg>
-								<strong>
-									Server error: We encountered an issue while trying to save your changes. Please check your
-									connection and try again. If the problem persists, contact our support team for assistance.
-								</strong>
+							<div class="styled-box__footer-box">
+								<p>Default language is English and location is Finland</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Preferences">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
 							</div>
-							<!-- /// -->
-							<p>Default language is English and location is Finland</p>
-							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Preferences">
-								<span class="btn-text">Save</span>
-								<svg class="icon" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
-									<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
-								</svg>
-							</button>
 						</div>
 					</form>
 
@@ -124,14 +116,17 @@
 							</fieldset>
 						</div>
 						<div class="styled-box__footer">
-							<p><span>*</span> Required fields</p>
-							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Personal">
-								<span class="btn-text">Save</span>
-								<svg class="icon" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
-									<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
-								</svg>
-							</button>
+							<!-- IF WE HAVE AN ERROR -->
+							<div class="styled-box__footer-box">
+								<p><span>*</span> Required fields</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Personal">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</form>
 
@@ -153,14 +148,17 @@
 							</div>
 						</div>
 						<div class="styled-box__footer">
-							<p><span>*</span> Required fields</p>
-							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Phone Number">
-								<span class="btn-text">Save</span>
-								<svg class="icon" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
-									<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
-								</svg>
-							</button>
+							<!-- IF WE HAVE AN ERROR -->
+							<div class="styled-box__footer-box">
+								<p><span>*</span> Required fields</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Phone Number">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</form>
 
@@ -182,17 +180,20 @@
 							</div>
 						</div>
 						<div class="styled-box__footer">
-							<div>
-								<p><span>*</span> Required fields</p>
-								<p>Emails must be verified to be able to used as primary email</p>
+							<!-- IF WE HAVE AN ERROR -->
+							<div class="styled-box__footer-box">
+								<div>
+									<p><span>*</span> Required fields</p>
+									<p>Emails must be verified to be able to used as primary email</p>
+								</div>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Email Address">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
 							</div>
-							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Email Address">
-								<span class="btn-text">Save</span>
-								<svg class="icon" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
-									<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
-								</svg>
-							</button>
 						</div>
 					</form>
 
@@ -216,14 +217,17 @@
 							</fieldset>
 						</div>
 						<div class="styled-box__footer">
-							<p>This action will change your functionality and subscription plan</p>
-							<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Role">
-								<span class="btn-text">Save</span>
-								<svg class="icon" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
-									<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
-								</svg>
-							</button>
+							<!-- IF WE HAVE AN ERROR -->
+							<div class="styled-box__footer-box">
+								<p>This action will change your functionality and subscription plan</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Role">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</form>
 
@@ -273,13 +277,16 @@
 							</div>
 						</div>
 						<div class="styled-box__footer">
-							<p>
-								Explore our <a href="#" class="href">Subscribing Plans and Pricing</a> to find the perfect option
-								tailored to your needs and budget
-							</p>
-							<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan">
-								<span class="btn-text">Upgrade Plan</span>
-							</a>
+							<!-- IF WE HAVE AN ERROR -->
+							<div class="styled-box__footer-box">
+								<p>
+									Explore our <a href="#" class="href">Subscribing Plans and Pricing</a> to find the perfect option
+									tailored to your needs and budget
+								</p>
+								<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan">
+									<span class="btn-text">Upgrade Plan</span>
+								</a>
+							</div>
 						</div>
 					</article>
 
@@ -428,7 +435,7 @@
 						<input type="checkbox" name="ukko" id="ukko" class="connection__checkbox" />
 						<label for="ukko" class="connection" aria-label="Connect One Drive">
 							<!-- IF WE HAVE AN ERROR -->
-							<div class="error-message" role="alert" aria-live="assertive">
+							<!-- <div class="error-message" role="alert" aria-live="assertive">
 								<svg class="icon" aria-hidden="true">
 									<use href="public/svg/ui_icons.svg#warning"></use>
 								</svg>
@@ -436,7 +443,7 @@
 									Server error: We encountered an issue while trying to save your changes. Please check your
 									connection and try again. If the problem persists, contact our support team for assistance.
 								</strong>
-							</div>
+							</div> -->
 							<!-- /// -->
 							<img src="public/svg/settings/ukko.svg" alt="Ukko Logo" />
 							<div class="connection__name">
@@ -539,24 +546,15 @@
 					</svg>
 				</button>
 				<h2>Choose Profile Picture</h2>
-				<p>Please select an image file of a smaller size to ensure smooth uploading. Large files may take longer to
-					upload and could result in errors</p>
+				<p>
+					Please select an image file of a smaller size to ensure smooth uploading. Large files may take longer to
+					upload and could result in errors.
+				</p>
 			</header>
-			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
-					<!-- IF WE HAVE AN ERROR -->
-					<div class="error-message" role="alert" aria-live="assertive">
-						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#warning"></use>
-						</svg>
-						<strong>
-							The file you uploaded is either invalid or exceeds the maximum allowed size. Please upload a valid file
-							that meets the size requirements.
-						</strong>
-					</div>
-					<!-- /// -->
 					<form method="post" id="aup__form">
+						<!-- IF WE HAVE AN ERROR -->
 						<div class="aup__picture-upload">
 							<input type="file" id="aup__picture-file" accept="image/*" />
 							<img id="aup__photo-display" src="" alt="" />
@@ -586,44 +584,36 @@
 				<h2>Are you sure?</h2>
 				<p>What is your reason for deleting your profile?</p>
 			</header>
-			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
-					<!-- IF WE HAVE AN ERROR -->
-					<div class="error-message" role="alert" aria-live="assertive">
-						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#warning"></use>
-						</svg>
-						<strong>
-							Please select at least one option. This field is required and must be completed to proceed.
-						</strong>
-					</div>
-					<!-- /// -->
 					<form method="post" id="da__form">
-						<div class="form__reason-delete">
-							<input type="radio" name="reason" id="reason1" />
-							<label for="reason1">I no longer need the services provided by this platform.</label>
-						</div>
-						<div class="form__reason-delete">
-							<input type="radio" name="reason" id="reason2" />
-							<label for="reason2">I found an alternative service that better suits my needs.</label>
-						</div>
-						<div class="form__reason-delete">
-							<input type="radio" name="reason" id="reason3" />
-							<label for="reason3">I am closing my account due to inactivity.</label>
-						</div>
-						<div class="form__reason-delete">
-							<input type="radio" name="reason" id="reason4" />
-							<label for="reason4">I had a negative experience with another user on this platform.</label>
-						</div>
-						<div class="form__reason-delete">
-							<input type="radio" name="reason" id="reason5" />
-							<label for="reason5">I am dissatisfied with the user experience and support.</label>
-						</div>
-						<div class="form__reason-delete">
-							<input type="radio" name="reason" id="reason6" />
-							<label for="reason6">Just delete it</label>
-						</div>
+						<!-- IF WE HAVE AN ERROR -->
+						<ul class="form__reason-list">
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason1" />
+								<label for="reason1">I no longer need the services provided by this platform.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason2" />
+								<label for="reason2">I found an alternative service that better suits my needs.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason3" />
+								<label for="reason3">I am closing my account due to inactivity.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason4" />
+								<label for="reason4">I had a negative experience with another user on this platform.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason5" />
+								<label for="reason5">I am dissatisfied with the user experience and support.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason6" />
+								<label for="reason6">Just delete it</label>
+							</li>
+						</ul>
 						<button type="button" id="da-dialog__cancel" class="btn-48 btn-blue-border"
 							aria-label="Cancel and close dialog">
 							Cancel

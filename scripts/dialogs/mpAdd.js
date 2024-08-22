@@ -46,4 +46,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log('handle materials');
     });
 });
-//# sourceMappingURL=mp-add.js.map
+//# sourceMappingURL=mpAdd.js.map

@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const { closeDialog, openDialog } = await import('../dialogs/dialogUtils.js');
     const { revokeTokken } = await import('../emulate_user_access.js');
     // Элементы для взаимодействия с формой удаления аккаунта
-    const openDialogDA = document.getElementById('open__da-dialog'); // Кнопка открытия диалогового окна удаления аккаунта
-    const dialogDA = document.getElementById('da-dialog'); // Само диалоговое окно удаления аккаунта
-    const formDA = document.getElementById('da__form'); // Форма внутри диалогового окна
+    const openDialogDA = document.getElementById('open__da-dialog');
+    const dialogDA = document.getElementById('da-dialog');
+    const formDA = document.getElementById('da__form');
     // Находим все элементы с классом "form__reason-delete"
     const inputs = [...dialogDA.querySelectorAll('.form__reason-delete')];
-    const errorMessage = dialogDA.querySelector('.error-message');
+    // Сообщение об ошибке
+    const { default: errorMessage } = await import('../components/errorMessage.js');
     // Обработчик события для открытия диалогового окна при клике на кнопку
     openDialogDA.addEventListener('click', () => {
         // Вызов функции открытия диалога
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             radioBtn.checked = false;
         }
         // Скрываем сообщение об ошибке
-        errorMessage.classList.remove('show');
+        errorMessage(null);
         // Закрываем диалоговое окно
         closeDialog(dialogDA);
     }
@@ -35,17 +36,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         var _a;
         // Отменяем стандартное поведение формы
         event.preventDefault();
-        // Скрываем сообщение об ошибке
-        errorMessage.classList.remove('show');
         // Поиск выбранного чекбокса с причиной удаления аккаунта
         const selectedElement = inputs.find(el => {
             const radioBtn = el.querySelector('input');
             if (radioBtn.checked)
                 return el;
         });
+        // Скрываем сообщение об ошибке
+        if (selectedElement) {
+            errorMessage(null);
+        }
         // Если причина не выбрана, показываем сообщение об ошибке
         if (!selectedElement) {
-            errorMessage === null || errorMessage === void 0 ? void 0 : errorMessage.classList.add('show');
+            errorMessage(formDA, 'Please select at least one option. This field is required and must be completed to proceed.');
             return;
         }
         // Получаем текст выбранной причины
@@ -60,5 +63,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     // Добавляем обработчик события для отправки формы удаления аккаунта
     formDA.addEventListener('submit', deleteThisAccount);
+    // Добавляем обработчики событий для изменения состояния чекбоксов
+    for (const input of inputs) {
+        input.addEventListener('change', event => {
+            const radioBtn = event.target;
+            // Скрываем сообщение об ошибке при изменении состояния чекбокса
+            if (radioBtn.checked) {
+                errorMessage(null);
+            }
+        });
+    }
 });
-//# sourceMappingURL=delete-account.js.map
+//# sourceMappingURL=deleteAccount.js.map

@@ -10,28 +10,40 @@
 }
 
 /* If intered value is not number */
-#unlogged:has(.error-message.show) form {
+/* #unlogged:has(.error-message.show) form {
   padding-block-start: var(--gap-24);
-}
+} */
 
-#unlogged:has(.error-message.show) #login__phone-number {
+[id*='login-dialog']:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
 }
 
-#unlogged:has(.error-message.show) .login__input-group {
+[id*='login-dialog']:has(.error-message.show) .login__input-group {
   border-bottom-color: var(--warning-error);
+  margin-block-start: var(--gap-20);
 }
 
 /* INPUTs / FORM */
 .login__form {
+  /* width: min-content; */
   justify-self: center;
-  width: min(100%, 400px);
+  width: min(100%, 460px);
   display: grid;
   column-gap: var(--gap-16);
-  row-gap: var(--gap-32);
+  /* row-gap: var(--gap-32); */
+  transition: grid-template-rows 0.2s linear;
+
+  &:has(.error-message) {
+    grid-template-rows: 0fr min-content;
+  }
+
+  &:has(.error-message.show) {
+    grid-template-rows: 1fr min-content;
+  }
 
   & > button.login__btn {
     justify-self: center;
+    margin-block-start: var(--gap-32);
   }
 }
 
@@ -44,6 +56,7 @@
   border-bottom: 1px solid var(--black);
   background-color: hsl(from var(--white) h s l / 0);
   padding-inline-end: var(--gap-12);
+  transition: margin-block-start 0.3s linear;
 
   & legend {
     padding-inline-end: var(--gap-6);
@@ -76,15 +89,13 @@
 #login__country-code {
   appearance: none;
   border: 0;
-  /* background-color: transparent; */
-  max-width: var(--size-72);
+  width: var(--size-72);
   padding-block: var(--gap-6);
   padding-inline: var(--gap-8);
   background-color: var(--grey-200);
-  /* border-right: 1.5px solid var(--grey-300); */
   border-radius: var(--border-corner-6);
   color: var(--grey-400);
-  font-family: 'Noto Emoji', 'SF Pro Text', sans-serif;
+  font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
   -webkit-font-smoothing: antialiased; /* for MacOs */
   font-size: var(--input-font-size);
   font-weight: bold;
@@ -97,7 +108,6 @@
 }
 
 #login__phone-code {
-  /* padding-inline-start: var(--gap-8); */
   color: var(--grey-300);
   font-size: var(--input-font-size);
   font-weight: bold;
@@ -121,4 +131,32 @@
 
 #login__phone-number:focus {
   outline: none;
+}
+
+@media screen and (max-width: 480px) {
+  .login__input-group {
+    --input-font-size: var(--font-20);
+
+    & legend {
+      font-size: var(--font-14);
+    }
+
+    & .icon-phone {
+      display: none;
+    }
+
+    & .icon-chevron {
+      width: var(--size-20);
+      inset-inline-start: var(--gap-36);
+      inset-block: 0.9rem;
+    }
+  }
+
+  #login__country-code {
+    width: var(--size-64);
+  }
+
+  #login__phone-code {
+    padding-inline-start: var(--gap-8);
+  }
 }

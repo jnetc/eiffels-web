@@ -46,4 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // const debouncedHandleInput = debounce(handleInput, 5000); // Используем дебаунсинг с задержкой 5000 мс
     // searchInput.addEventListener('input', debouncedHandleInput); // Добавляем обработчик ввода с дебаунсингом
 });
-//# sourceMappingURL=mp-search.js.map
+//# sourceMappingURL=mpSearch.js.map

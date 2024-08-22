@@ -1,0 +1,43 @@
+/* ERROR MESSAGE */
+.error-message {
+  width: 100%;
+  /* width: min(100%, 600px); */
+  display: flex;
+  column-gap: var(--gap-12);
+  align-items: center;
+  padding-inline: var(--gap-12);
+  margin-inline: auto;
+  background-color: var(--surface);
+  border-left: 5px solid var(--warning-error);
+  border-top-right-radius: var(--border-corner-8);
+  border-bottom-right-radius: var(--border-corner-8);
+  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%);
+  overflow: hidden;
+  transition: padding-block 0.2s linear;
+
+  & strong {
+    color: var(--warning-error);
+    font-size: var(--font-14);
+  }
+
+  & .icon {
+    flex: 1 0 auto;
+    width: var(--size-36);
+    aspect-ratio: 1;
+
+    & use {
+      fill: var(--warning-error);
+    }
+  }
+
+  /* @starting-style {
+    translate: 0 1rem;
+    opacity: 0;
+  } */
+}
+
+.error-message.show {
+  padding-block: var(--gap-12);
+  /* display: flex; */
+  /* animation: show-error-message 0.3s ease-in-out forwards; */
+}
