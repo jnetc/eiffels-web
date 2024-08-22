@@ -152,12 +152,6 @@
     font-weight: bold;
   }
 
-  & img:not(.footer__logo) {
-    width: 66px;
-    aspect-ratio: 1;
-    border-radius: var(--border-corner-8);
-  }
-
   & img.footer__logo {
     height: var(--size-28);
     border-radius: var(--border-corner-8);
@@ -177,5 +171,28 @@
   & .card__amount {
     color: var(--black);
     font-size: var(--font-36);
+  }
+}
+
+/* footer card scroll images */
+.card__images {
+  contain: content;
+  overflow: hidden;
+}
+
+.images__scroll-area {
+  display: flex;
+  gap: var(--gap-8);
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-300) var(--grey-100);
+  scroll-snap-type: x mandatory;
+
+  & img {
+    height: var(--size-64);
+    aspect-ratio: 1;
+    border-radius: var(--border-corner-8);
+    scroll-snap-align: start;
   }
 }

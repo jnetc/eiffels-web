@@ -159,16 +159,6 @@
   }
 }
 
-/* @container (max-width: 480px) {
-  .styled-box__footer {
-    flex-wrap: wrap;
-
-    & :where(.btn-48) {
-      margin-inline: auto 0;
-    }
-  }
-} */
-
 @keyframes updating {
   100% {
     rotate: 360deg;

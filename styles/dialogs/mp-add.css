@@ -72,7 +72,6 @@ a.dialog__select {
   }
 
   .dialog__main {
-    /* height: 42dvh; */
     overflow: hidden;
     scrollbar-gutter: stable;
   }

@@ -1,12 +1,5 @@
 #da-dialog {
-  --position: fixed;
   width: min(600px, 100%);
-  /* background-color: transparent;
-  border-radius: var(--border-r, var(--border-corner-12));
-  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%); */
-
-  /* & > .glass-effect {
-  } */
 }
 
 #da__form {
@@ -14,7 +7,6 @@
   grid-template-columns: 1fr 1fr;
   align-self: center;
   transition: grid-template-rows 0.2s linear;
-  /* row-gap: var(--gap-16); */
 
   & .error-message {
     grid-column: 1 / -1;

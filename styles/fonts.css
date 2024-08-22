@@ -22,15 +22,6 @@ when iterating elements for the first time.
 }
 
 @font-face {
-  font-family: 'Noto Emoji';
-  src: url('../public/fonts/NotoColorEmoji-flagsonly.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-  size-adjust: none;
-}
-
-@font-face {
   font-family: 'Twemoji Country Flags';
   src: url('../public/fonts/TwemojiCountryFlags.woff2') format('woff2');
   font-weight: 300;

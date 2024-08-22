@@ -10,9 +10,6 @@
 }
 
 /* If intered value is not number */
-/* #unlogged:has(.error-message.show) form {
-  padding-block-start: var(--gap-24);
-} */
 
 [id*='login-dialog']:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
@@ -25,12 +22,10 @@
 
 /* INPUTs / FORM */
 .login__form {
-  /* width: min-content; */
   justify-self: center;
   width: min(100%, 460px);
   display: grid;
   column-gap: var(--gap-16);
-  /* row-gap: var(--gap-32); */
   transition: grid-template-rows 0.2s linear;
 
   &:has(.error-message) {

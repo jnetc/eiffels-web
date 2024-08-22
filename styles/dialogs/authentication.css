@@ -60,9 +60,6 @@
 }
 
 /* If intered value is not number */
-/* [id*='auth-dialog']:has(.error-message.show) form {
-  padding-block-start: var(--gap-24);
-} */
 [id*='auth-dialog']:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
 }

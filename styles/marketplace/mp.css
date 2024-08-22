@@ -112,13 +112,7 @@
 
 /* MAIN CONTENT */
 .mp__main {
-  /* display: grid;
-  min-height: 100%; */
   container-type: inline-size;
-
-  /* & > * {
-    grid-column: 1 / -1;
-  } */
 }
 /* MAIN LIST OF CARDS */
 .main__list {

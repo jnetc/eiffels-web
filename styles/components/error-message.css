@@ -1,7 +1,6 @@
 /* ERROR MESSAGE */
 .error-message {
   width: 100%;
-  /* width: min(100%, 600px); */
   display: flex;
   column-gap: var(--gap-12);
   align-items: center;
@@ -29,15 +28,8 @@
       fill: var(--warning-error);
     }
   }
-
-  /* @starting-style {
-    translate: 0 1rem;
-    opacity: 0;
-  } */
 }
 
 .error-message.show {
   padding-block: var(--gap-12);
-  /* display: flex; */
-  /* animation: show-error-message 0.3s ease-in-out forwards; */
 }
