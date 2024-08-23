@@ -64,7 +64,6 @@
   }
 
   & select {
-    appearance: none;
     padding-inline: var(--gap-12) var(--gap-48);
     outline-color: var(--grey-400);
   }

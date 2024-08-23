@@ -193,13 +193,16 @@
   }
 }
 
+.settings__item:has(.settings__name.open-settings) .settings__container {
+  visibility: visible;
+}
 .settings__container {
   container-type: inline-size;
   display: grid;
   row-gap: var(--gap-18);
   padding-block-end: var(--gap-4);
   overflow: hidden;
-  animation: has-focus 0.3s forwards;
+  visibility: hidden;
 
   & .styled-box > *:not(.styled-box__footer, .payment-history__container, button) {
     padding-inline: var(--gap-18);

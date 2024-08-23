@@ -63,10 +63,8 @@
 }
 
 .nav-select {
-  appearance: none;
   padding-inline: var(--gap-12) var(--gap-48);
   padding-block: var(--gap-16);
-  border: 0;
   outline-color: var(--violet);
   border-bottom: 1px solid var(--grey-300);
   background-color: transparent;

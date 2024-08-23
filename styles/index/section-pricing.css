@@ -82,12 +82,16 @@
 .plan__team {
   height: var(--size-48);
   display: grid;
-  position: relative;
+  grid-template-columns: var(--gap-8) var(--size-24) 1fr min-content var(--size-24) var(--gap-8);
+  column-gap: var(--gap-8);
   align-items: center;
   margin-block-end: var(--gap-20);
 
+  & > * {
+    grid-row: 1;
+  }
+
   & :where(span, .icon) {
-    position: absolute;
     pointer-events: none;
   }
 
@@ -97,42 +101,37 @@
   }
 
   & .icon-workers {
+    grid-column: 2;
     fill: var(--grey-300);
-    inset-inline-start: var(--gap-18);
+    inset-inline: auto calc(var(--gap-18) + var(--size-24) + var(--gap-8));
   }
 
   & span {
-    inset-inline-start: calc(var(--gap-18) + var(--size-24) + var(--gap-8));
+    grid-column: 4;
+    /* inset-inline-start: calc(var(--gap-18) + var(--size-24) + var(--gap-8)); */
+    inset-inline: auto var(--gap-48);
     color: var(--grey-300);
     font-weight: bold;
     user-select: none;
   }
 
   & .icon-chevron {
-    inset-inline: auto var(--gap-18);
+    grid-column: 5;
     fill: var(--grey-500);
     rotate: -90deg;
   }
 }
 
 #plan__select-workers {
+  grid-column: 1 / -1;
   height: var(--size-48);
-  appearance: none;
-  width: 100%;
-  direction: rtl;
-  padding-inline: var(--gap-48);
+  padding-inline-start: var(--gap-48);
   border: 1px solid var(--grey-300);
   border-radius: var(--border-corner-8);
   outline-color: var(--black);
-  text-align: right;
   background-color: transparent;
   font-size: var(--font-20);
   color: var(--grey-500);
-
-  & option {
-    direction: ltr;
-    text-align: right;
-  }
 
   &:nth-of-type(1) {
     font-weight: bold;
