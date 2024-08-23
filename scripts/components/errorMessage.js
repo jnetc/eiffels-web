@@ -24,7 +24,7 @@ export default function errorMessage(parent, message) {
     container.setAttribute('aria-live', 'assertive');
     icon.setAttribute('class', 'icon');
     icon.setAttribute('aria-hidden', 'true');
-    iconPath.setAttribute('href', '../public/svg/ui_icons.svg#warning');
+    iconPath.setAttribute('href', `${ROOT_PATH}public/svg/ui_icons.svg#warning`);
     errorMessage.textContent = message || 'Sorry, there was an internal server';
     icon.appendChild(iconPath);
     container.appendChild(icon);

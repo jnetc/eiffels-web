@@ -5,6 +5,7 @@ const MARKETPLACE = '/marketplace';
 
 // Инициализируем переменные путей с начальными значениями
 // http://127.0.0.1:5500/
+let ROOT_PATH = './';
 let INDEX_PATH = INDEX;
 let LOGGED_PATH = LOGGED;
 let MARKETPLACE_PATH = MARKETPLACE;
@@ -16,6 +17,7 @@ const url = new URL(window.location.href);
 // https://jnetc.github.io/eiffels-web
 if (url.protocol === 'https:') {
   // Если протокол HTTPS, обновляем пути к ресурсам
+  ROOT_PATH = '/eiffels-web/';
   INDEX_PATH = '/eiffels-web/index';
   LOGGED_PATH = '/eiffels-web/logged';
   MARKETPLACE_PATH = '/eiffels-web/marketplace';

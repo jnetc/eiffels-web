@@ -14,10 +14,10 @@ export default function loadPhoneCodes() {
         // });
         async function getJson() {
             try {
-                const response = await fetch('../public/json/phone_code.json');
+                const response = await fetch(`${ROOT_PATH}public/json/phone_code.json`);
                 // Проверяем, что запрос был успешным (статус 200-299)
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    throw new Error(`HTTP error! Status: ${response.status} _ ${ROOT_PATH}`);
                 }
                 const data = (await response.json());
                 return data;
