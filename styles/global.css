@@ -127,6 +127,11 @@ button {
   appearance: none;
   background-color: transparent;
 }
+
+button {
+  cursor: pointer;
+}
+
 ul {
   list-style-type: none;
 }

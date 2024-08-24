@@ -112,6 +112,7 @@
 .mp__main {
   container-type: inline-size;
 }
+
 /* MAIN LIST OF CARDS */
 .main__list {
   display: grid;
@@ -119,8 +120,8 @@
   padding-block-start: var(--gap-48);
 
   &:has(:not(:nth-child(3))) {
-    grid-template-columns: repeat(auto-fit, minmax(320px, calc(100% / 3.5)));
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, calc(100% / 4)));
+    justify-content: flex-start;
   }
 
   &:has(:nth-child(4)) {
