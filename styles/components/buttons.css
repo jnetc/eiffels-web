@@ -169,6 +169,15 @@ header a {
   }
 }
 
+.btn-red-200-border {
+  border: 1px solid var(--grey-200);
+  color: var(--warning-error);
+
+  & .icon {
+    fill: var(--warning-error);
+  }
+}
+
 .btn-green-border {
   border: 1.5px solid var(--whatsapp-dark-green);
   color: var(--whatsapp-dark-green);
