@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const { closeDialog } = await import('./dialogUtils.js');
     // Проходимся по каждому найденному элементу <dialog>
     for (const dialog of dialogs) {
-        // Ищем элемент внутри <dialog>, который имеет атрибут [data-button-close]
+        // Ищем элемент внутри <dialog>, который имеет атрибут [data-button="close"]
         // и добавляем обработчик события клика
-        const closeBtn = dialog.querySelector('[data-button-close]');
+        const closeBtn = dialog.querySelector('[data-button="close"]');
         if (!closeBtn)
             throw new Error('Close button not found');
         closeBtn.addEventListener('click', () => {

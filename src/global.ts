@@ -5,7 +5,7 @@ const MARKETPLACE = '/marketplace';
 
 // Инициализируем переменные путей с начальными значениями
 // http://127.0.0.1:5500/
-let ROOT_PATH = './';
+let ROOT_PATH = '/';
 let INDEX_PATH = INDEX;
 let LOGGED_PATH = LOGGED;
 let MARKETPLACE_PATH = MARKETPLACE;

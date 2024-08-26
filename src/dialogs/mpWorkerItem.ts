@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
   const { closeDialog, openDialog } = await import('./dialogUtils.js');
   // Выбираем все элементы с классом ".card__description"
-  const textBox = document.querySelectorAll('.card__description') as NodeListOf<HTMLElement>;
+  const workers = document.querySelectorAll('.worker') as NodeListOf<HTMLElement>;
+  // const textBox = document.querySelectorAll('.card__description') as NodeListOf<HTMLElement>;
   // Находим элемент, который будет использоваться в качестве диалога
   const dialogMPI = document.getElementById('mp-item-dialog') as HTMLDialogElement;
 
@@ -33,8 +34,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Проходим по всем найденным элементам и применяем функцию для обработки текста
-  for (const element of textBox) {
-    getLineCount(element);
+
+  for (const worker of workers) {
+    const cardText = worker.querySelectorAll('.card__description') as NodeListOf<HTMLElement>;
+
+    for (const element of cardText) {
+      getLineCount(element);
+    }
   }
 
   // ------------------------------
@@ -57,11 +63,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Функция для закрытия диалога и восстановления прокрутки страницы
   function cancelOrCloseDialogMPI(event: Event) {
     // Удаляем клонированный элемент с классом ".card" из диалога
-    (event.target as HTMLElement)!.closest('#mp-item-dialog')?.querySelector('.card')!.remove();
+    (event.target as HTMLElement)?.closest('#mp-item-dialog')?.querySelector('.card')?.remove();
     // Закрываем диалоговое окно
     closeDialog(dialogMPI);
   }
 
   // Добавляем обработчик клика на кнопку закрытия диалога
-  dialogMPI.querySelector('[data-button-close]')?.addEventListener('click', cancelOrCloseDialogMPI);
+  dialogMPI.querySelector('[data-button="close"]')?.addEventListener('click', cancelOrCloseDialogMPI);
 });

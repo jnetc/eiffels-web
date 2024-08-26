@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../styles/marketplace/mp.css" />
 	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="../styles/dialogs/mp-add.css" />
-	<link rel="stylesheet" href="../styles/dialogs/mp-item.css" />
+	<link rel="stylesheet" href="../styles/dialogs/mp-item-workers.css" />
 	<link rel="stylesheet" href="../styles/dialogs/mp-login.css" />
 	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
 	<script src="../scripts/global.js" defer></script>
@@ -19,7 +19,7 @@
 	<script src="../scripts/marketplace/mpSearch.js" defer></script>
 	<script src="../scripts/dialogs/dialog.js" defer></script>
 	<script src="../scripts/dialogs/mpAdd.js" defer></script>
-	<script src="../scripts/dialogs/mpItem.js" defer></script>
+	<script src="../scripts/dialogs/mpWorkerItem.js" defer></script>
 	<script src="../scripts/dialogs/mpLogin.js" defer></script>
 	<script src="../scripts/cookie/cookie.js" defer></script>
 	<title>Workwers</title>
@@ -80,7 +80,7 @@
 			</form>
 		</section>
 		<div class="main__list">
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/jussi.png" alt="Jussi Heinola" />
 					<h2 class="card__header-title">Jussi Heinola</h2>
@@ -93,13 +93,13 @@
 							</svg>
 							<span>Jussi Heinola</span>
 						</a>
-						<a href="https://www.ukko.fi/" class="btn-circle-40 btn-black-border" title="Go to the website ukko.fi"
+						<a href="https://www.ukko.fi/" class="btn-circle-40 btn-grey-200-border" title="Go to the website ukko.fi"
 							aria-label="Go to the website ukko.fi" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Jussi Heinola"
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border" title="Email Jussi Heinola"
 							aria-label="Email Jussi Heinola">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
@@ -125,7 +125,7 @@
 					</div>
 				</footer>
 			</article>
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/mikael.png" alt="Mikael Rosenberg" />
 					<h2 class="card__header-title">Mikael Rosenberg</h2>
@@ -138,21 +138,21 @@
 							</svg>
 							<span>I'm Batman</span>
 						</a>
-						<a href="https://www.ukko.fi/" class="btn-circle-40 btn-black-border" title="Go to the website ukko.fi"
+						<a href="https://www.ukko.fi/" class="btn-circle-40 btn-grey-200-border" title="Go to the website ukko.fi"
 							aria-label="Go to the website ukko.fi" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Mikael Rosenberg"
-							aria-label="Email Mikael Rosenberg">
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
+							title="Email Mikael Rosenberg" aria-label="Email Mikael Rosenberg">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
 							</svg>
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">I am a painter with six years of experience in residential and commercial projects. I
 						specialize in both interior and exterior painting, including surface preparation, priming, and
 						finishing.<br /><br /> I
@@ -160,7 +160,7 @@
 						Lemminkäinen. I hold all the necessary certifications and am committed to delivering high-quality work on
 						every project.
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<img class="footer__logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
 					<div class="card__price">
@@ -169,7 +169,7 @@
 					</div>
 				</footer>
 			</article>
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/juhanna.png" alt="Julianna-Enrikka Vantakoskinen" />
 					<h2 class="card__header-title">Julianna-Enrikka Vantakoskinen</h2>
@@ -182,13 +182,13 @@
 							</svg>
 							<span>Julianna-Enrikka Vantakoskinen</span>
 						</a>
-						<a href="https://www.ukko.fi/" class="btn-circle-40 btn-black-border" title="Go to the website ukko.fi"
+						<a href="https://www.ukko.fi/" class="btn-circle-40 btn-grey-200-border" title="Go to the website ukko.fi"
 							aria-label="Go to the website ukko.fi" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border"
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
 							title="Email Julianna-Enrikka Vantakoskinen" aria-label="Email Julianna-Enrikka Vantakoskinen">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
@@ -196,7 +196,7 @@
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">I have extensive experience in both residential and commercial projects.<br /><br /> I
 						specialize in
 						overseeing all aspects of construction and finishing, including project management, quality control, and
@@ -204,7 +204,7 @@
 						execution to final touches, ensuring projects are completed on time and to the highest quality. I am seeking
 						new opportunities to apply my skills and contribute to successful projects
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<img class="footer__logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
 					<div class="card__price">
@@ -214,7 +214,7 @@
 				</footer>
 			</article>
 
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/logos/Skanska.png" class="card__header-name-logo" alt="Juhanna Keilaniemi" />
 					<h2 class="card__header-title">SKANSKA</h2>
@@ -227,14 +227,14 @@
 							</svg>
 							<span>Firsu Kissu</span>
 						</a>
-						<a href="https://www.skanska.fi/" class="btn-circle-40 btn-black-border"
+						<a href="https://www.skanska.fi/" class="btn-circle-40 btn-grey-200-border"
 							title="Go to the website skanska.fi" aria-label="Go to the website skanska.fi" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border"
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
 							title="Email Juhanna Keilaniemi" aria-label="Email Juhanna Keilaniemi">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
@@ -242,7 +242,7 @@
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">SKANSKA is currently looking for two experienced carpenters with a minimum of five years
 						in the field. The primary responsibilities will include constructing formwork and laying foundations for
 						various construction projects. Candidates should have a strong background in carpentry, particularly in
@@ -250,14 +250,14 @@
 						excellent opportunity to join a leading company in the construction industry and contribute to large-scale
 						projects.
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<span class="card__label">Amount of Workers</span>
 					<span class="card__amount">2</span>
 				</footer>
 			</article>
 
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/logos/amere.png" class="card__header-name-logo"
 						alt="Rakennus Ja Laatoitus A. Mere Oy" />
@@ -271,34 +271,34 @@
 							</svg>
 							<span>Matti Hyvilainen</span>
 						</a>
-						<a href="https://www.amere.fi/" class="btn-circle-40 btn-black-border" title="Go to the website amere.fi"
+						<a href="https://www.amere.fi/" class="btn-circle-40 btn-grey-200-border" title="Go to the website amere.fi"
 							aria-label="Go to the website amere.fi" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Matti Hyvilainen"
-							aria-label="Email Matti Hyvilainen">
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
+							title="Email Matti Hyvilainen" aria-label="Email Matti Hyvilainen">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
 							</svg>
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">Rakennus Ja Laatoitus A. Mere Oy is currently seeking workers for general labor tasks on
 						various construction projects.<br /><br /> I No prior experience is necessary, making this a great
 						opportunity for those
 						looking to start a career in construction.
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<span class="card__label">Amount of Workers</span>
 					<span class="card__amount">2-5</span>
 				</footer>
 			</article>
 
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/logos/SRVLogo.jpg" class="card__header-name-logo" alt="Jouni Savugrilli" />
 					<h2 class="card__header-title">SRV</h2>
@@ -311,31 +311,31 @@
 							</svg>
 							<span>Jouni Savugrilli</span>
 						</a>
-						<a href="https://www.srv.fi/" class="btn-circle-40 btn-black-border" title="Go to the website srv.fi"
+						<a href="https://www.srv.fi/" class="btn-circle-40 btn-grey-200-border" title="Go to the website srv.fi"
 							aria-label="Go to the website srv.fi" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Jouni Savugrilli"
-							aria-label="Email Jouni Savugrilli">
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
+							title="Email Jouni Savugrilli" aria-label="Email Jouni Savugrilli">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
 							</svg>
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">At SRV, we are dedicated to both renovating existing structures and constructing new
 						buildings. We are currently seeking new Whether you have experience or are looking to start a career in
 						construction, we offer opportunities to grow with our team and contribute to exciting projects.</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<span class="card__label">Amount of Workers</span>
 					<span class="card__amount">21</span>
 				</footer>
 			</article>
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/logos/Kirvesmiehet.avif" class="card__header-name-logo" alt="Kirvesmiehet" />
 					<h2 class="card__header-title">Kirvesmiehet</h2>
@@ -348,14 +348,14 @@
 							</svg>
 							<span>Maisku</span>
 						</a>
-						<a href="https://kirvesmiehet.com/" class="btn-circle-40 btn-black-border"
+						<a href="https://kirvesmiehet.com/" class="btn-circle-40 btn-grey-200-border"
 							title="Go to the website kirvesmiehet.com" aria-label="Go to the website kirvesmiehet.com" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Maja Koskinen"
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border" title="Email Maja Koskinen"
 							aria-label="Email Maja Koskinen">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
@@ -363,19 +363,19 @@
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">Kirvesmiehet, a construction firm specializing in woodworking, is currently seeking
 						skilled carpenters. If you have experience with woodwork and are looking for new opportunities, we invite
 						you to apply and join our team.
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<span class="card__label">Amount of Workers</span>
 					<span class="card__amount">~5</span>
 				</footer>
 			</article>
 
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/logos/ran-rakennus.png" class="card__header-name-logo" alt="Ran-Rakennus Oy" />
 					<h2 class="card__header-title">Ran-Rakennus Oy</h2>
@@ -388,14 +388,14 @@
 							</svg>
 							<span>Just Pekka</span>
 						</a>
-						<a href="https://ran-rakennus.fi/" class="btn-circle-40 btn-black-border"
+						<a href="https://ran-rakennus.fi/" class="btn-circle-40 btn-grey-200-border"
 							title="Go to the website ran-rakennus.fi" aria-label="Go to the website ran-rakennus.fi" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Pekka Vistola"
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border" title="Email Pekka Vistola"
 							aria-label="Email Pekka Vistola">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
@@ -403,21 +403,21 @@
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">
 						At Ran-Rakennus Oy, we specialize in renovating old structures and constructing new ones. We are currently
 						seeking new workers to join our team.<br /><br /> I If you're interested in contributing to exciting
 						projects and growing
 						your skills in the construction industry, we'd love to hear from you.
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<span class="card__label">Amount of Workers</span>
 					<span class="card__amount">7</span>
 				</footer>
 			</article>
 
-			<article class="card">
+			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/logos/r-rjoy.webp" class="card__header-name-logo"
 						alt="Rakennus & Remontointi Jussila Oy" />
@@ -431,13 +431,13 @@
 							</svg>
 							<span>Taru Kiski</span>
 						</a>
-						<a href="https://www.rrjoy.fi/" class="btn-circle-40 btn-black-border" title="Go to the website rrjoy.fi"
+						<a href="https://www.rrjoy.fi/" class="btn-circle-40 btn-grey-200-border" title="Go to the website rrjoy.fi"
 							aria-label="Go to the website rrjoy.fi" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-black-border" title="Email Taru Kiski"
+						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border" title="Email Taru Kiski"
 							aria-label="Email Taru Kiski">
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#email"></use>
@@ -445,12 +445,12 @@
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
+				<div class="card__description">
 					<p class="card__text">We is seeking roofers for temporary summer work. This is a great opportunity for
 						experienced roofers looking for seasonal employment with a reputable company. Join our team and contribute
 						to various roofing projects throughout the summer season.
 					</p>
-				</main>
+				</div>
 				<footer class="card__footer">
 					<span class="card__label">Amount of Workers</span>
 					<span class="card__amount">~5</span>
@@ -480,7 +480,7 @@
 	<dialog id="mp-login-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header" aria-live="polite">
-				<button type="button" class="btn-circle-48 btn-black" data-button-close aria-label="close dialog">
+				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
@@ -489,7 +489,7 @@
 				<p>Please. Enter your phone number, and we will send a <span>6-digit</span> authorization code to
 					your <strong>WhatsApp</strong>.</p>
 			</header>
-			<main class="dialog__main">
+			<div class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- ERROR MESSAGE LIVING HERE -->
 					<form method="post" class="login__form">
@@ -500,9 +500,9 @@
 							</svg>
 							<select name="country-code" id="login__country-code">
 							</select>
-							<svg class="icon-phone" aria-hidden="true">
+							<!-- <svg class="icon-phone" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#iphone"></use>
-							</svg>
+							</svg> -->
 							<span id="login__phone-code"></span>
 							<input type="tel" name="phone-number" id="login__phone-number" placeholder="401234567" inputmode="tel"
 								pattern="^[0-9]{6,}$"
@@ -517,14 +517,14 @@
 						</button>
 					</form>
 				</div>
-			</main>
+			</div>
 		</div>
 	</dialog>
 	<!-- Modal windows for MarketPlace Auth (mp-auth)  -->
 	<dialog id="mp-auth-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header" aria-live="polite">
-				<button type="button" class="btn-circle-48 btn-black" data-button-close aria-label="close dialog">
+				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
@@ -534,7 +534,7 @@
 				<p>Please. Check your <strong>WhatsApp</strong> for a <span>6-digit</span> code and enter it here to proceed
 					with authorization.</p>
 			</header>
-			<main class="dialog__main">
+			<div class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- ERROR MESSAGE LIVING HERE -->
 					<form method="post" class="auth__form">
@@ -554,7 +554,7 @@
 						</button>
 					</form>
 				</div>
-			</main>
+			</div>
 		</div>
 	</dialog>
 
@@ -562,7 +562,7 @@
 	<dialog id="mp-add-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header" aria-live="polite">
-				<button type="button" class="btn-circle-48 btn-black" data-button-close aria-label="close dialog">
+				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
@@ -571,7 +571,7 @@
 				<p>And then you will be move to the <strong>WhatsApp</strong> to complete your form</p>
 			</header>
 			<!-- Bottom bar for action buttons -->
-			<main class="dialog__main">
+			<div class="dialog__main">
 				<div class="dialog__scroll-area">
 					<!-- FOR DESKTOP VERSION -->
 					<button type="button" id="list_vacancies" class="dialog__select">
@@ -659,23 +659,23 @@
 						</span>
 					</a>
 				</div>
-			</main>
+			</div>
 		</div>
 	</dialog>
 	<!-- Modal windows for MarketPlace Item (mp-item)  -->
 	<dialog id="mp-item-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header">
-				<button type="button" class="btn-circle-48 btn-black" data-button-close aria-label="close dialog">
+				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 			</header>
-			<main class="dialog__main">
+			<div class="dialog__main">
 				<div class="dialog__scroll-area">
 				</div>
-			</main>
+			</div>
 		</div>
 	</dialog>
 </body>

@@ -82,11 +82,10 @@
 }
 
 #login__country-code {
-  width: var(--size-72);
+  width: var(--size-80);
   padding-block: var(--gap-6);
   padding-inline: var(--gap-8);
-  background-color: var(--grey-200);
-  border-radius: var(--border-corner-6);
+  border-right: 1.5px solid var(--grey-200);
   color: var(--grey-400);
   font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
   -webkit-font-smoothing: antialiased; /* for MacOs */
@@ -101,7 +100,8 @@
 }
 
 #login__phone-code {
-  color: var(--grey-300);
+  padding-inline-start: var(--gap-8);
+  color: hsl(from var(--primary) h s l / 50%);
   font-size: var(--input-font-size);
   font-weight: bold;
   pointer-events: none;

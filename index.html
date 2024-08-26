@@ -70,11 +70,11 @@
 					</svg>
 					<select name="country-code" id="login__country-code">
 					</select>
-					<svg class="icon-phone" aria-hidden="true">
+					<!-- <svg class="icon-phone" aria-hidden="true">
 						<use href="./public/svg/ui_icons.svg#iphone"></use>
-					</svg>
+					</svg> -->
 					<span id="login__phone-code"></span>
-					<input type="tel" name="phone-number" id="login__phone-number" placeholder="401234567" inputmode="tel"
+					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
 						pattern="^[0-9]{6,}$"
 						title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
 						aria-describedby="phone-number-description" required />
@@ -433,7 +433,7 @@
 	<dialog id="hs-auth-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header" aria-live="polite">
-				<button type="button" class="btn-circle-48 btn-black" data-button-close aria-label="close dialog">
+				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
 						<use href="public/svg/ui_icons.svg#close"></use>
 					</svg>

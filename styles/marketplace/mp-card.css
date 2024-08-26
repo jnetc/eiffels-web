@@ -53,12 +53,6 @@
     font-size: var(--font-14);
     font-weight: bold;
   }
-
-  & .card__logo {
-    grid-column: 2;
-    grid-row: 2;
-    height: var(--size-18);
-  }
 }
 
 .card__header-contact {
@@ -110,8 +104,10 @@
 .card__description {
   flex: 1 0 auto;
   display: grid;
+  grid-auto-rows: 1fr min-content;
   row-gap: var(--gap-12);
 }
+
 .card__text {
   overflow: hidden;
   display: -webkit-box;
@@ -174,7 +170,7 @@
   }
 }
 
-/* footer card scroll images */
+/* carousel of images */
 .card__images {
   contain: content;
   overflow: hidden;
@@ -194,5 +190,6 @@
     aspect-ratio: 1;
     border-radius: var(--border-corner-8);
     scroll-snap-align: start;
+    object-fit: cover;
   }
 }

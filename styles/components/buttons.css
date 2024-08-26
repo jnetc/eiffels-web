@@ -151,8 +151,17 @@ header a {
   }
 }
 
-.btn-black-border {
+.btn-grey-200-border {
   border: 1.5px solid var(--grey-500);
+  color: var(--grey-500);
+
+  & .icon {
+    fill: var(--grey-500);
+  }
+}
+
+.btn-grey-200-border {
+  border: 1px solid var(--grey-200);
   color: var(--grey-500);
 
   & .icon {

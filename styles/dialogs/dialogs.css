@@ -94,6 +94,10 @@
   }
 
   & button {
+    grid-row: 1;
+  }
+
+  &:has([data-button='close']) [data-button='close'] {
     justify-self: flex-end;
   }
 

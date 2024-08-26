@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
     const { closeDialog, openDialog } = await import('./dialogUtils.js');
     // Выбираем все элементы с классом ".card__description"
-    const textBox = document.querySelectorAll('.card__description');
+    const workers = document.querySelectorAll('.worker');
+    // const textBox = document.querySelectorAll('.card__description') as NodeListOf<HTMLElement>;
     // Находим элемент, который будет использоваться в качестве диалога
     const dialogMPI = document.getElementById('mp-item-dialog');
     // ------------------------------
@@ -31,8 +32,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     // Проходим по всем найденным элементам и применяем функцию для обработки текста
-    for (const element of textBox) {
-        getLineCount(element);
+    for (const worker of workers) {
+        const cardText = worker.querySelectorAll('.card__description');
+        for (const element of cardText) {
+            getLineCount(element);
+        }
     }
     // ------------------------------
     // Функция для открытия диалога и отображения полного текста
@@ -52,13 +56,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     // Функция для закрытия диалога и восстановления прокрутки страницы
     function cancelOrCloseDialogMPI(event) {
-        var _a;
+        var _a, _b, _c;
         // Удаляем клонированный элемент с классом ".card" из диалога
-        (_a = event.target.closest('#mp-item-dialog')) === null || _a === void 0 ? void 0 : _a.querySelector('.card').remove();
+        (_c = (_b = (_a = event.target) === null || _a === void 0 ? void 0 : _a.closest('#mp-item-dialog')) === null || _b === void 0 ? void 0 : _b.querySelector('.card')) === null || _c === void 0 ? void 0 : _c.remove();
         // Закрываем диалоговое окно
         closeDialog(dialogMPI);
     }
     // Добавляем обработчик клика на кнопку закрытия диалога
-    (_a = dialogMPI.querySelector('[data-button-close]')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', cancelOrCloseDialogMPI);
+    (_a = dialogMPI.querySelector('[data-button="close"]')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', cancelOrCloseDialogMPI);
 });
-//# sourceMappingURL=mpItem.js.map
+//# sourceMappingURL=mpWorkerItem.js.map
