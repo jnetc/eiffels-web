@@ -1,0 +1,18 @@
+/* main styles for diaogs are in "mp-card.css" and "marketplace-card.css" */
+@import url('./mp-item-workers.css');
+@import url('./mp-item-materials.css');
+@import url('./mp-item-jobs.css');
+
+#mp-item-dialog {
+  width: min(500px, 100%);
+}
+
+#mp-item-dialog article {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-16);
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}

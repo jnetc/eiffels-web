@@ -52,14 +52,17 @@
   background-color: hsl(from var(--white) h s l / 80%);
   backdrop-filter: blur(10px);
 }
-
 .dialog__wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.dialog:not(#mp-item-dialog) .dialog__wrapper {
   row-gap: var(--gap-36);
 }
-/* Gap  for ITEM DIALOG */
-.dialog#mp-item-dialog .dialog__wrapper {
+
+/* marketplace item dialog gap */
+#mp-item-dialog .dialog__wrapper {
   row-gap: var(--gap-8);
 }
 

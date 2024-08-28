@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../styles/marketplace/mp.css" />
 	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="../styles/dialogs/mp-add.css" />
-	<link rel="stylesheet" href="../styles/dialogs/mp-item-materials.css" />
+	<link rel="stylesheet" href="../styles/dialogs/mp-item.css" />
 	<link rel="stylesheet" href="../styles/dialogs/mp-login.css" />
 	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
 	<script src="../scripts/global.js" defer></script>
@@ -84,9 +84,9 @@
 			<article class="card material">
 				<header class="card__header">
 					<img src="../public/image/jussi.png" alt="Jussi Heinola" />
-					<h2 class="card__header-title">Jussi Heinola</h2>
-					<p class="card__header-name">Rakennus Oy</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Jussi Heinola</h2>
+					<p class="card__name">Rakennus Oy</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -108,8 +108,8 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						I’m selling a DeWalt rotary saw that's in excellent condition, having been used only a few times for light
 						tasks. This powerful and reliable tool is perfect for both professional and DIY projects. Along with the
 						saw, I'm including four brand-new cutting discs, so you're fully equipped for a variety of cutting needs
@@ -118,11 +118,11 @@
 						Whether you're cutting through metal, wood, or other materials, this set has everything you need to get the
 						job done efficiently and safely.
 					</p>
-					<button class="btn-blue-border btn-overflow mp-item-dialog" aria-label="See all details"
+					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
 						title="See all details">Open</button>
 				</div>
-				<footer class="card__footer">
-					<div class="card__images">
+				<footer class="mp-card__footer">
+					<div class="card__carusel">
 						<div class="images__scroll-area">
 							<img src="../public/image/main-item.png" alt="main-item" />
 							<img src="../public/image/item1.png" alt="item 1" />
@@ -134,9 +134,9 @@
 							<img src="../public/image/item7.png" alt="item 7" />
 						</div>
 					</div>
-					<div class="card__price">
-						<span class="card__label">Full Price</span>
-						<span class="card__amount">€175</span>
+					<div class="mp-card__price">
+						<span class="mp-card__label">Full Price</span>
+						<span class="mp-card__amount">€175</span>
 					</div>
 				</footer>
 			</article>
@@ -144,9 +144,9 @@
 			<article class="card material">
 				<header class="card__header">
 					<img src="../public/image/alibaba.png" alt="Josef-Muhammad Alibabaivich" />
-					<h2 class="card__header-title">Josef-Muhammad Alibabaivich</h2>
-					<p class="card__header-name">Helsingin Moniprofiliset Muuraustyöt Oy</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Josef-Muhammad Alibabaivich</h2>
+					<p class="card__name">Helsingin Moniprofiliset Muuraustyöt Oy</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -168,8 +168,8 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description card__description-overflow">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						Selling your high-quality drill has never been easier with our comprehensive platform designed for both
 						professional contractors and DIY enthusiasts. List your drill with detailed specifications, including
 						brand, model, power, and condition, to attract serious buyers. Our user-friendly interface allows you to
@@ -178,19 +178,19 @@
 						their construction projects. Join our community today and turn your unused equipment into cash
 						effortlessly!
 					</p>
-					<button class="btn-blue-border btn-overflow mp-item-dialog" aria-label="See all details"
+					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
 						title="See all details">Open</button>
 				</div>
-				<footer class="card__footer">
-					<div class="card__images">
+				<footer class="mp-card__footer">
+					<div class="card__carusel">
 						<div class="images__scroll-area">
 							<img src="../public/image/gazon1.png" alt="gazon 1" />
 							<img src="../public/image/gazon1.png" alt="gazon 1" />
 						</div>
 					</div>
-					<div class="card__price">
-						<span class="card__label">Full Price</span>
-						<span class="card__amount">€399</span>
+					<div class="mp-card__price">
+						<span class="mp-card__label">Full Price</span>
+						<span class="mp-card__amount">€399</span>
 					</div>
 				</footer>
 			</article>
@@ -198,9 +198,9 @@
 			<article class="card material">
 				<header class="card__header">
 					<img src="../public/image/mikael.png" alt="Mikael Rosenberg" />
-					<h2 class="card__header-title">Mikael Rosenberg</h2>
-					<p class="card__header-name">Suvin Maalamo Oy</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Mikael Rosenberg</h2>
+					<p class="card__name">Suvin Maalamo Oy</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -222,23 +222,23 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						Selling a Makita electric drill in excellent condition. Includes four batteries and a charger for
 						continuous operation.
 					</p>
-					<button class="btn-blue-border btn-overflow mp-item-dialog" aria-label="See all details"
+					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
 						title="See all details">Open</button>
 				</div>
-				<footer class="card__footer">
-					<div class="card__images">
+				<footer class="mp-card__footer">
+					<div class="card__carusel">
 						<div class="images__scroll-area">
 							<img src="../public/image/drill1.png" alt="drill 1" />
 						</div>
 					</div>
-					<div class="card__price">
-						<span class="card__label">Full Price</span>
-						<span class="card__amount">€295</span>
+					<div class="mp-card__price">
+						<span class="mp-card__label">Full Price</span>
+						<span class="mp-card__amount">€295</span>
 					</div>
 				</footer>
 			</article>
@@ -246,9 +246,9 @@
 			<article class="card material">
 				<header class="card__header">
 					<img src="../public/image/matti.png" alt="Matti Hyvilainen" />
-					<h2 class="card__header-title">Matti Hyvilainen</h2>
-					<p class="card__header-name">Myllyn Muuraus Oy</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Matti Hyvilainen</h2>
+					<p class="card__name">Myllyn Muuraus Oy</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -264,16 +264,16 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						Selling a Dewalt angle grinder used for only one project and in excellent condition. This powerful tool
 						comes with its original accessories and is perfect for cutting, grinding, and polishing various materials.
 					</p>
-					<button class="btn-blue-border btn-overflow mp-item-dialog" aria-label="See all details"
+					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
 						title="See all details">Open</button>
 				</div>
-				<footer class="card__footer">
-					<div class="card__images">
+				<footer class="mp-card__footer">
+					<div class="card__carusel">
 						<div class="images__scroll-area">
 							<img src="../public/image/cutter.png" alt="cutter" />
 							<img src="../public/image/cutter.png" alt="cutter" />
@@ -281,18 +281,18 @@
 							<img src="../public/image/cutter.png" alt="cutter" />
 						</div>
 					</div>
-					<div class="card__price">
-						<span class="card__label">Full Price</span>
-						<span class="card__amount">€95</span>
+					<div class="mp-card__price">
+						<span class="mp-card__label">Full Price</span>
+						<span class="mp-card__amount">€95</span>
 					</div>
 				</footer>
 			</article>
 			<article class="card material">
 				<header class="card__header">
 					<img src="../public/image/alibaba.png" alt="Pekka Vistola" />
-					<h2 class="card__header-title">Pekka Vistola</h2>
-					<p class="card__header-name">Roco Oy</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Pekka Vistola</h2>
+					<p class="card__name">Roco Oy</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -308,25 +308,25 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						With easy-care Roso interior panels, you can make your home uniquely yours. These specially
 						surface-treated interior panels captivate with their embossed textures and are durable in use.
 					</p>
-					<button class="btn-blue-border btn-overflow mp-item-dialog" aria-label="See all details"
+					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
 						title="See all details">Open</button>
 				</div>
-				<footer class="card__footer">
-					<div class="card__images">
+				<footer class="mp-card__footer">
+					<div class="card__carusel">
 						<div class="images__scroll-area">
 							<img src="../public/image/dos1.png" alt="dos 1" />
 							<img src="../public/image/dos1.png" alt="dos 1" />
 							<img src="../public/image/dos1.png" alt="dos 1" />
 						</div>
 					</div>
-					<div class="card__price">
-						<span class="card__label">Per Package</span>
-						<span class="card__amount">€39</span>
+					<div class="mp-card__price">
+						<span class="mp-card__label">Per Package</span>
+						<span class="mp-card__amount">€39</span>
 					</div>
 				</footer>
 			</article>
@@ -334,9 +334,9 @@
 			<article class="card material">
 				<header class="card__header">
 					<img src="../public/image/maja.png" alt="Maja Koskinen" />
-					<h2 class="card__header-title">Maja Koskinen</h2>
-					<p class="card__header-name">Logoclic Oy</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Maja Koskinen</h2>
+					<p class="card__name">Logoclic Oy</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -358,17 +358,17 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						Logoclic Silentos Oak Fondi Laminate offers a durable and stylish flooring solution, featuring an elegant
 						oak finish that enhances any interior space. Easy to install and maintain, it's perfect for both
 						residential and commercial use.
 					</p>
-					<button class="btn-blue-border btn-overflow mp-item-dialog" aria-label="See all details"
+					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
 						title="See all details">Open</button>
 				</div>
-				<footer class="card__footer">
-					<div class="card__images">
+				<footer class="mp-card__footer">
+					<div class="card__carusel">
 						<div class="images__scroll-area">
 							<img src="../public/image/vinil1.png" alt="vinil 1" />
 							<img src="../public/image/vinil1.png" alt="vinil 1" />
@@ -377,9 +377,9 @@
 							<img src="../public/image/vinil1.png" alt="vinil 1" />
 						</div>
 					</div>
-					<div class="card__price">
-						<span class="card__label">Per Package</span>
-						<span class="card__amount">€76</span>
+					<div class="mp-card__price">
+						<span class="mp-card__label">Per Package</span>
+						<span class="mp-card__amount">€76</span>
 					</div>
 				</footer>
 			</article>
@@ -589,7 +589,7 @@
 			</div>
 		</div>
 	</dialog>
-	<!-- Modal windows for MarketPlace Item (mp-item)  -->
+	<!-- Modal windows for MarketPlace Item (mp-item material)  -->
 	<dialog id="mp-item-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header">
@@ -606,7 +606,7 @@
 			</header>
 			<div class="dialog__main">
 				<div class="dialog__scroll-area">
-					<article class="card card-material">
+					<article class="card-material">
 						<!-- Card carousel -->
 						<div class="card-material__id">
 							Item ID: <b>84503121578</b>
@@ -615,27 +615,26 @@
 							<picture class="card-material__preview-image">
 								<img src="../public/image/main-item.png" id="preview-image" alt="item 1" />
 							</picture>
-							<div class="card__carousel">
-								<div class="card__images">
-									<div class="images__scroll-area">
-										<img src="../public/image/main-item.png" class="card__image" alt="main-item" />
-										<img src="../public/image/item1.png" class="card__image" alt="item 1" />
-										<img src="../public/image/item2.png" class="card__image" alt="item 2" />
-										<img src="../public/image/item3.png" class="card__image" alt="item 3" />
-										<img src="../public/image/item4.png" class="card__image" alt="item 4" />
-										<img src="../public/image/item5.png" class="card__image" alt="item 5" />
-										<img src="../public/image/item6.png" class="card__image" alt="item 6" />
-										<img src="../public/image/item7.png" class="card__image" alt="item 7" />
-									</div>
+							<div class="card__carusel">
+								<div class="images__scroll-area">
+									<img src="../public/image/main-item.png" class="mp-card__image" alt="main-item" />
+									<img src="../public/image/item1.png" class="mp-card__image" alt="item 1" />
+									<img src="../public/image/item2.png" class="mp-card__image" alt="item 2" />
+									<img src="../public/image/item3.png" class="mp-card__image" alt="item 3" />
+									<img src="../public/image/item4.png" class="mp-card__image" alt="item 4" />
+									<img src="../public/image/item5.png" class="mp-card__image" alt="item 5" />
+									<img src="../public/image/item6.png" class="mp-card__image" alt="item 6" />
+									<img src="../public/image/item7.png" class="mp-card__image" alt="item 7" />
 								</div>
 							</div>
+
 						</div>
 						<!-- Card header -->
 						<header class="card__header">
 							<img src="../public/image/jussi.png" alt="Jussi Heinola" />
-							<h2 class="card__header-title">Jussi Heinola</h2>
-							<p class="card__header-name">Rakennus Oy</p>
-							<nav class="card__header-contact" aria-label="contact with person">
+							<h2 class="card__title">Jussi Heinola</h2>
+							<p class="card__name">Rakennus Oy</p>
+							<nav class="card__contact" aria-label="contact with person">
 								<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 									rel="noopener noreferrer">
 									<svg class="icon" aria-hidden="true">
@@ -669,21 +668,18 @@
 								<b class="card-material__amount">€175</b>
 							</div>
 						</header>
-						<!-- Card info -->
-						<section class="card__description">
-							<p class="card__text">
-								I’m selling a DeWalt rotary saw that's in excellent condition, having been used only a few times for
-								light
-								tasks. This powerful and reliable tool is perfect for both professional and DIY projects. Along with the
-								saw, I'm including four brand-new cutting discs, so you're fully equipped for a variety of cutting needs
-								right from the start.<br /><br /> Additionally, protective goggles are included to ensure your safety
-								while
-								working.
-								Whether you're cutting through metal, wood, or other materials, this set has everything you need to get
-								the
-								job done efficiently and safely.
-							</p>
-						</section>
+						<p class="mp-card__text">
+							I’m selling a DeWalt rotary saw that's in excellent condition, having been used only a few times for
+							light
+							tasks. This powerful and reliable tool is perfect for both professional and DIY projects. Along with the
+							saw, I'm including four brand-new cutting discs, so you're fully equipped for a variety of cutting needs
+							right from the start.<br /><br /> Additionally, protective goggles are included to ensure your safety
+							while
+							working.
+							Whether you're cutting through metal, wood, or other materials, this set has everything you need to get
+							the
+							job done efficiently and safely.
+						</p>
 						<footer class="card-material__footer">
 							Published <time id="card-material-date" datetime="2025-12-25">25.12.25</time>
 						</footer>

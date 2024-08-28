@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../styles/marketplace/mp.css" />
 	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="../styles/dialogs/mp-add.css" />
-	<link rel="stylesheet" href="../styles/dialogs/mp-item-workers.css" />
+	<link rel="stylesheet" href="../styles/dialogs/mp-item.css" />
 	<link rel="stylesheet" href="../styles/dialogs/mp-login.css" />
 	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
 	<script src="../scripts/global.js" defer></script>
@@ -83,9 +83,9 @@
 			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/jussi.png" alt="Jussi Heinola" />
-					<h2 class="card__header-title">Jussi Heinola</h2>
-					<p class="card__header-name">Gas / Elecro Welder</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Jussi Heinola</h2>
+					<p class="card__name">Gas / Elecro Welder</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -107,8 +107,8 @@
 						</a>
 					</nav>
 				</header>
-				<main class="card__description">
-					<p class="card__text">I am a skilled welder with five years of experience in electroslag welding and seven
+				<main class="mp-card__description">
+					<p class="mp-card__text">I am a skilled welder with five years of experience in electroslag welding and seven
 						years in gas welding, bringing precision and expertise to every project.<br /><br /> I My work spans both
 						private sector
 						projects and large-scale construction sites, where I have collaborated directly with industry leaders like
@@ -117,10 +117,10 @@
 						required in the industry.
 					</p>
 				</main>
-				<footer class="card__footer">
-					<img class="footer__logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
-					<div class="card__price">
-						<span class="card__label">Light Entrepreneurs</span>
+				<footer class="mp-card__footer">
+					<img class="ukko-logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
+					<div class="ukko-link">
+						<span class="mp-card__label">Light Entrepreneurs</span>
 						<a href="https://www.ukko.fi/" class="href" target="_blank" rel="noopener noreferrer">Read more</a>
 					</div>
 				</footer>
@@ -128,9 +128,9 @@
 			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/mikael.png" alt="Mikael Rosenberg" />
-					<h2 class="card__header-title">Mikael Rosenberg</h2>
-					<p class="card__header-name">Painter</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Mikael Rosenberg</h2>
+					<p class="card__name">Painter</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -152,8 +152,9 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">I am a painter with six years of experience in residential and commercial projects. I
+				<div class="mp-card__description">
+					<p class="mp-card__text">I am a painter with six years of experience in residential and commercial projects.
+						I
 						specialize in both interior and exterior painting, including surface preparation, priming, and
 						finishing.<br /><br /> I
 						have successfully completed projects for private clients as well as large companies like NCC and
@@ -161,10 +162,10 @@
 						every project.
 					</p>
 				</div>
-				<footer class="card__footer">
-					<img class="footer__logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
-					<div class="card__price">
-						<span class="card__label">Light Entrepreneurs</span>
+				<footer class="mp-card__footer">
+					<img class="ukko-logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
+					<div class="ukko-link">
+						<span class="mp-card__label">Light Entrepreneurs</span>
 						<a href="https://www.ukko.fi/" class="href" target="_blank" rel="noopener noreferrer">Read more</a>
 					</div>
 				</footer>
@@ -172,9 +173,9 @@
 			<article class="card worker">
 				<header class="card__header">
 					<img src="../public/image/juhanna.png" alt="Julianna-Enrikka Vantakoskinen" />
-					<h2 class="card__header-title">Julianna-Enrikka Vantakoskinen</h2>
-					<p class="card__header-name">Master of construction and finishing works</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Julianna-Enrikka Vantakoskinen</h2>
+					<p class="card__name">Master of construction and finishing works</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -196,8 +197,9 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">I have extensive experience in both residential and commercial projects.<br /><br /> I
+				<div class="mp-card__description">
+					<p class="mp-card__text">I have extensive experience in both residential and commercial projects.<br /><br />
+						I
 						specialize in
 						overseeing all aspects of construction and finishing, including project management, quality control, and
 						ensuring that all work meets high standards. My expertise covers a range of tasks from initial planning and
@@ -205,10 +207,10 @@
 						new opportunities to apply my skills and contribute to successful projects
 					</p>
 				</div>
-				<footer class="card__footer">
-					<img class="footer__logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
-					<div class="card__price">
-						<span class="card__label">Light Entrepreneurs</span>
+				<footer class="mp-card__footer">
+					<img class="ukko-logo" src="../public/svg/logos/ukko_fi.svg" alt="ukko.fi logo" />
+					<div class="ukko-link">
+						<span class="mp-card__label">Light Entrepreneurs</span>
 						<a href="https://www.ukko.fi/" class="href" target="_blank" rel="noopener noreferrer">Read more</a>
 					</div>
 				</footer>
@@ -216,10 +218,10 @@
 
 			<article class="card worker">
 				<header class="card__header">
-					<img src="../public/image/logos/Skanska.png" class="card__header-name-logo" alt="Juhanna Keilaniemi" />
-					<h2 class="card__header-title">SKANSKA</h2>
-					<p class="card__header-name">Juhanna Keilaniemi</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<img src="../public/image/logos/Skanska.png" class="card__name-logo" alt="Juhanna Keilaniemi" />
+					<h2 class="card__title">SKANSKA</h2>
+					<p class="card__name">Juhanna Keilaniemi</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -242,8 +244,9 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">SKANSKA is currently looking for two experienced carpenters with a minimum of five years
+				<div class="mp-card__description">
+					<p class="mp-card__text">SKANSKA is currently looking for two experienced carpenters with a minimum of five
+						years
 						in the field. The primary responsibilities will include constructing formwork and laying foundations for
 						various construction projects. Candidates should have a strong background in carpentry, particularly in
 						working with concrete structures, and be able to deliver high-quality work under tight deadlines. This is an
@@ -251,19 +254,18 @@
 						projects.
 					</p>
 				</div>
-				<footer class="card__footer">
-					<span class="card__label">Amount of Workers</span>
-					<span class="card__amount">2</span>
+				<footer class="mp-card__footer">
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">2</span>
 				</footer>
 			</article>
 
 			<article class="card worker">
 				<header class="card__header">
-					<img src="../public/image/logos/amere.png" class="card__header-name-logo"
-						alt="Rakennus Ja Laatoitus A. Mere Oy" />
-					<h2 class="card__header-title">Rakennus Ja Laatoitus A. Mere Oy</h2>
-					<p class="card__header-name">Matti Hyvilainen</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<img src="../public/image/logos/amere.png" class="card__name-logo" alt="Rakennus Ja Laatoitus A. Mere Oy" />
+					<h2 class="card__title">Rakennus Ja Laatoitus A. Mere Oy</h2>
+					<p class="card__name">Matti Hyvilainen</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -285,25 +287,26 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">Rakennus Ja Laatoitus A. Mere Oy is currently seeking workers for general labor tasks on
+				<div class="mp-card__description">
+					<p class="mp-card__text">Rakennus Ja Laatoitus A. Mere Oy is currently seeking workers for general labor
+						tasks on
 						various construction projects.<br /><br /> I No prior experience is necessary, making this a great
 						opportunity for those
 						looking to start a career in construction.
 					</p>
 				</div>
-				<footer class="card__footer">
-					<span class="card__label">Amount of Workers</span>
-					<span class="card__amount">2-5</span>
+				<footer class="mp-card__footer">
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">2-5</span>
 				</footer>
 			</article>
 
 			<article class="card worker">
 				<header class="card__header">
-					<img src="../public/image/logos/SRVLogo.jpg" class="card__header-name-logo" alt="Jouni Savugrilli" />
-					<h2 class="card__header-title">SRV</h2>
-					<p class="card__header-name">Jouni Savugrilli</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<img src="../public/image/logos/SRVLogo.jpg" class="card__name-logo" alt="Jouni Savugrilli" />
+					<h2 class="card__title">SRV</h2>
+					<p class="card__name">Jouni Savugrilli</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -325,22 +328,22 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">At SRV, we are dedicated to both renovating existing structures and constructing new
+				<div class="mp-card__description">
+					<p class="mp-card__text">At SRV, we are dedicated to both renovating existing structures and constructing new
 						buildings. We are currently seeking new Whether you have experience or are looking to start a career in
 						construction, we offer opportunities to grow with our team and contribute to exciting projects.</p>
 				</div>
-				<footer class="card__footer">
-					<span class="card__label">Amount of Workers</span>
-					<span class="card__amount">21</span>
+				<footer class="mp-card__footer">
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">21</span>
 				</footer>
 			</article>
 			<article class="card worker">
 				<header class="card__header">
-					<img src="../public/image/logos/Kirvesmiehet.avif" class="card__header-name-logo" alt="Kirvesmiehet" />
-					<h2 class="card__header-title">Kirvesmiehet</h2>
-					<p class="card__header-name">Maja Koskinen</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<img src="../public/image/logos/Kirvesmiehet.avif" class="card__name-logo" alt="Kirvesmiehet" />
+					<h2 class="card__title">Kirvesmiehet</h2>
+					<p class="card__name">Maja Koskinen</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -363,24 +366,24 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">Kirvesmiehet, a construction firm specializing in woodworking, is currently seeking
+				<div class="mp-card__description">
+					<p class="mp-card__text">Kirvesmiehet, a construction firm specializing in woodworking, is currently seeking
 						skilled carpenters. If you have experience with woodwork and are looking for new opportunities, we invite
 						you to apply and join our team.
 					</p>
 				</div>
-				<footer class="card__footer">
-					<span class="card__label">Amount of Workers</span>
-					<span class="card__amount">~5</span>
+				<footer class="mp-card__footer">
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">~5</span>
 				</footer>
 			</article>
 
 			<article class="card worker">
 				<header class="card__header">
-					<img src="../public/image/logos/ran-rakennus.png" class="card__header-name-logo" alt="Ran-Rakennus Oy" />
-					<h2 class="card__header-title">Ran-Rakennus Oy</h2>
-					<p class="card__header-name">Pekka Vistola</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<img src="../public/image/logos/ran-rakennus.png" class="card__name-logo" alt="Ran-Rakennus Oy" />
+					<h2 class="card__title">Ran-Rakennus Oy</h2>
+					<p class="card__name">Pekka Vistola</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -403,27 +406,27 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">
+				<div class="mp-card__description">
+					<p class="mp-card__text">
 						At Ran-Rakennus Oy, we specialize in renovating old structures and constructing new ones. We are currently
 						seeking new workers to join our team.<br /><br /> I If you're interested in contributing to exciting
 						projects and growing
 						your skills in the construction industry, we'd love to hear from you.
 					</p>
 				</div>
-				<footer class="card__footer">
-					<span class="card__label">Amount of Workers</span>
-					<span class="card__amount">7</span>
+				<footer class="mp-card__footer">
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">7</span>
 				</footer>
 			</article>
 
 			<article class="card worker">
 				<header class="card__header">
-					<img src="../public/image/logos/r-rjoy.webp" class="card__header-name-logo"
+					<img src="../public/image/logos/r-rjoy.webp" class="card__name-logo"
 						alt="Rakennus & Remontointi Jussila Oy" />
-					<h2 class="card__header-title">Rakennus & Remontointi Jussila Oy</h2>
-					<p class="card__header-name">Taru Kiski</p>
-					<nav class="card__header-contact" aria-label="contact with person">
+					<h2 class="card__title">Rakennus & Remontointi Jussila Oy</h2>
+					<p class="card__name">Taru Kiski</p>
+					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp"
 							aria-label="Open in WhatsApp" target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
@@ -445,15 +448,15 @@
 						</a>
 					</nav>
 				</header>
-				<div class="card__description">
-					<p class="card__text">We is seeking roofers for temporary summer work. This is a great opportunity for
+				<div class="mp-card__description">
+					<p class="mp-card__text">We is seeking roofers for temporary summer work. This is a great opportunity for
 						experienced roofers looking for seasonal employment with a reputable company. Join our team and contribute
 						to various roofing projects throughout the summer season.
 					</p>
 				</div>
-				<footer class="card__footer">
-					<span class="card__label">Amount of Workers</span>
-					<span class="card__amount">~5</span>
+				<footer class="mp-card__footer">
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">~5</span>
 				</footer>
 			</article>
 		</div>

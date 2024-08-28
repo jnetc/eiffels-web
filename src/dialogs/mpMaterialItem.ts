@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
   // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
   const { openDialog } = await import('./dialogUtils.js');
-  // Выбираем все элементы с классом ".card__description"
+  // Выбираем все элементы с классом ".mp-card__description"
   const openDialogMPI = document.querySelectorAll('.mp-item-dialog') as NodeListOf<HTMLElement>;
   // Находим элемент, который будет использоваться в качестве диалога
   const dialogMPI = document.getElementById('mp-item-dialog') as HTMLDialogElement;
 
-  const carouselImages = document.querySelectorAll('.card__image') as NodeListOf<HTMLImageElement>;
+  const carouselImages = document.querySelectorAll('.mp-card__image') as NodeListOf<HTMLImageElement>;
 
   // ------------------------------
   // Функция для открытия диалога и отображения полного текста
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Клонируем родительский элемент с классом ".card" для отображения в диалоге
     // const cardElement = (event.target as HTMLElement).closest('.card') as HTMLElement;
     // const copyTarget = cardElement.cloneNode(true) as HTMLElement;
-    // // Заменяем класс "card__text" на "card__full-text" в клонированном элементе
-    // copyTarget.querySelector('.card__text')?.classList.replace('card__text', 'card__full-text');
+    // // Заменяем класс "article__text" на "mp-card__full-text" в клонированном элементе
+    // copyTarget.querySelector('.mp-card__text')?.classList.replace('mp-card__text', 'card__full-text');
     // // Удаляем кнопку "Читать далее" из клонированного элемента
     // copyTarget.querySelector('.mp-item-dialog')?.remove();
     // // Вставляем клонированный элемент в начало области прокрутки в диалоге
