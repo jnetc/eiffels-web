@@ -1,3 +1,65 @@
-#overview {
-	min-height: 100vh;
+.video-container.fullview {
+  grid-column: 1 / -1;
+  justify-self: center;
+  display: grid;
+  position: relative;
+
+  & > * {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  & .video-controls {
+    justify-self: flex-end;
+    display: flex;
+    gap: var(--gap-16);
+    margin-block-start: var(--gap-8);
+    margin-inline-end: var(--gap-8);
+    z-index: 5;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    inset-block: 0 50%;
+    opacity: 0;
+    background-image: linear-gradient(
+      to top,
+      hsl(from var(--white) h s l / 0%) 0%,
+      hsl(from var(--white) h s l / 100%) 100%
+    );
+    transition: opacity 0.2s ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+[data-playback='play'] svg:first-child,
+[data-playback='pause'] svg:last-child {
+  display: grid;
+}
+
+[data-playback='pause'] svg:first-child,
+[data-playback='play'] svg:last-child {
+  display: none;
+}
+
+[data-sound='mute'] svg:first-child,
+[data-sound='unmute'] svg:last-child {
+  display: grid;
+}
+
+[data-sound='mute'] svg:first-child,
+[data-sound='unmute'] svg:last-child {
+  display: none;
+}
+
+.overview__video {
+  height: min-content;
+  aspect-ratio: 16 / 9;
 }

@@ -7,7 +7,9 @@ export default function sectionPricing() {
   // ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
   workerAmounts.addEventListener('change', event => {
     const workerAmount = (event.target as HTMLInputElement).value;
-    const price = (standardPlan.querySelector('.plan__price') as HTMLSpanElement).firstElementChild!;
+    const price = (standardPlan.querySelector('.plan__price') as HTMLSpanElement)?.firstElementChild;
+
+    if (!price) return;
 
     // Обновляем цену в зависимости от выбранного количества работников
     switch (workerAmount) {

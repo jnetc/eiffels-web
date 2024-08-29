@@ -124,6 +124,10 @@ header a {
     aspect-ratio: 1;
     transition: transform 0.2s ease-in-out;
   }
+
+  & .icon-hide {
+    display: none;
+  }
 }
 
 .btn-circle-48 {
@@ -134,7 +138,7 @@ header a {
   }
 }
 .btn-circle-40 {
-  min-height: var(--size-40);
+  height: var(--size-40);
 
   & .icon {
     width: var(--size-28);

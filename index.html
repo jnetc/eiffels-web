@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="styles/dialogs/authentication.css" />
 	<script src="scripts/global.js" defer></script>
-	<script src="scripts/index/sectionHeroUnlogged.js" defer></script>
+	<script src="scripts/index.js" defer></script>
 	<script src="scripts/dialogs/dialog.js" defer></script>
 	<script src="scripts/cookie/cookie.js" defer></script>
 	<title>Document</title>
@@ -98,24 +98,53 @@
 				</span>
 			</div>
 		</section>
-		<!-- <section id="overview" class="grid">
-			<h2>Step <span>by</span> Step</h2>
-			<p>
-				Explore an Overview of our integrated WhatsApp-based application, offering streamlined functionality and
-				seamless user interaction within your chats.
+		<section id="overview" class="grid">
+			<h2 class="section__title">Eiffels Overview <span>Workflow</span></h2>
+			<p class="section__description">
+				The Eiffels Overview Workflow provides a clear guide on how to efficiently navigate and utilize our platform. It
+				helps
+				you understand the key features and tools available, ensuring a smooth experience as you manage tasks and
+				projects.
 			</p>
+			<div class="video-container fullview">
+				<div class="video-controls">
+					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
+						aria-label="Play video button">
+						<svg class="icon" aria-hidden="true">
+							<use href="public/svg/ui_icons.svg#pause"></use>
+						</svg>
+						<svg class="icon" aria-hidden="true">
+							<use href="public/svg/ui_icons.svg#play"></use>
+						</svg>
+					</button>
+					<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute" aria-label="Mute video button">
+						<svg class="icon" aria-hidden="true">
+							<use href="public/svg/ui_icons.svg#unmute"></use>
+						</svg>
+						<svg class="icon" aria-hidden="true">
+							<use href="public/svg/ui_icons.svg#mute"></use>
+						</svg>
+					</button>
+				</div>
+				<video class="overview__video" width="960" height="720" poster="public/video/poster.png" autoplay loop muted
+					preload="auto">
+					<source src="public/video/overview_mp.mp4" type="video/mp4">
+					<source src="public/video/overview_webm.webm" type="video/webm">
+					Your browser does not support the video tag.
+				</video>
+			</div>
 		</section>
 		<section id="features" class="grid">
-			<h2>Features <span>that</span> Improve Workflow</h2>
-			<p>
+			<h2 class="section__title">Features that <span>Improve</span> Workflow</h2>
+			<p class="section__description">
 				In the fast-paced world of modern applications, enhancing workflow efficiency is paramount. Our application,
 				designed with cutting-edge artificial intelligence, incorporates several key features to streamline your work
 				processes and maximize productivity.
 			</p>
 		</section>
-		<section class="grid">
-			<h2><span>Empower</span> Your Business with AI</h2>
-			<p>
+		<!-- <section class="grid">
+			<h2 class="section__title"><span>Empower</span> Your Business with AI</h2>
+			<p class="section__description">
 				With its unique approach, it stands to become the smartest assistant in the construction industry, fostering
 				improved site management and setting a new standard for AI-driven solution in B2B construction.
 			</p>
