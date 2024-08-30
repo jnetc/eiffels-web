@@ -46,7 +46,7 @@ export default async function handlePhoneNumber(pathname) {
     // Проверка, существует ли поле ввода номера телефона
     if (phoneNumberInput) {
         // Немедленно установить фокус на поле ввода номера телефона
-        phoneNumberInput.focus();
+        // phoneNumberInput.focus();
         // Добавляем обработчик события ввода текста
         phoneNumberInput.addEventListener('input', event => {
             const input = event.target.value;

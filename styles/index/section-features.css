@@ -1,0 +1,120 @@
+#features {
+  display: grid;
+}
+
+.feature__item {
+  container-type: inline-size;
+  display: flex;
+  gap: var(--gap-36);
+
+  &:not(:last-of-type) {
+    margin-block-end: var(--gap-192);
+  }
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.feature__item:nth-of-type(even) {
+  flex-flow: row-reverse;
+}
+
+@container (max-width: 640px) {
+  .feature__item,
+  .feature__item:nth-of-type(even) {
+    flex-flow: column;
+  }
+}
+
+.feature__item:nth-of-type(even) .video-container.mobview {
+  justify-content: left;
+}
+
+.video-container.mobview {
+  display: grid;
+  position: relative;
+  justify-content: right;
+
+  & video {
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  & > * {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  & .video-controls {
+    justify-self: flex-end;
+    display: flex;
+    gap: var(--gap-16);
+    margin-block-start: var(--gap-8);
+    margin-inline-end: var(--gap-8);
+    z-index: 5;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    inset-block: 0 50%;
+    opacity: 0;
+    background-image: linear-gradient(
+      to top,
+      hsl(from var(--white) h s l / 0%) 0%,
+      hsl(from var(--white) h s l / 100%) 100%
+    );
+    transition: opacity 0.2s ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+[data-playback='play'] svg:first-child,
+[data-playback='pause'] svg:last-child {
+  display: grid;
+}
+
+[data-playback='pause'] svg:first-child,
+[data-playback='play'] svg:last-child {
+  display: none;
+}
+
+[data-sound='mute'] svg:first-child,
+[data-sound='unmute'] svg:last-child {
+  display: grid;
+}
+
+[data-sound='mute'] svg:first-child,
+[data-sound='unmute'] svg:last-child {
+  display: none;
+}
+
+.feature__video {
+  min-height: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--border-corner-12);
+}
+
+.feature__content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+
+.feature__title {
+  color: var(--black);
+  font-size: clamp(var(--font-24), 6vw, var(--font-48));
+}
+.feature__description {
+  font-size: clamp(var(--font-18), 3vw, var(--font-24));
+  color: var(--grey-400);
+  text-wrap: balance;
+}
