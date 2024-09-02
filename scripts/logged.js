@@ -12,5 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ / FAQ
     const { default: sectionFAQ } = await import('./index/sectionFAQ.js');
     sectionFAQ();
+    // ------------------------------
+    // BACK TO TOP
+    const { default: backToTop } = await import('./components/backToTop.js');
+    backToTop();
 });
 //# sourceMappingURL=logged.js.map

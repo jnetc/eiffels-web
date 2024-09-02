@@ -10,12 +10,13 @@
   display: grid;
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
   column-gap: var(--gap-48);
-}
 
-header,
-main,
-footer {
-  grid-column: 2;
+  & > * {
+    grid-column: 2;
+  }
+  & > #back-to-top {
+    margin-inline: auto;
+  }
 }
 
 .grid {
