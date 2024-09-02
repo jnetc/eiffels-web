@@ -123,6 +123,7 @@ footer {
   display: flex;
   flex-direction: column;
   row-gap: var(--gap-240);
+  padding-block-end: var(--gap-240);
 }
 
 section > :where(.section__title, .section__description) {
