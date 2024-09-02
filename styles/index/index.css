@@ -11,7 +11,7 @@
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
   column-gap: var(--gap-48);
 
-  & > * {
+  & > :where(header, main, footer, button) {
     grid-column: 2;
   }
   & > #back-to-top {
@@ -124,7 +124,7 @@
   display: flex;
   flex-direction: column;
   row-gap: var(--gap-240);
-  padding-block-end: var(--gap-240);
+  padding-block-end: var(--gap-128);
 }
 
 section > :where(.section__title, .section__description) {
