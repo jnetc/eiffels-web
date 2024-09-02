@@ -155,7 +155,7 @@ body > footer {
   flex: 0 1 0;
   margin-inline: auto;
   padding-block: var(--gap-48) var(--gap-18);
-  font-size: var(--font-14);
+  font-size: var(--font-16);
 }
 
 /* Hide navigation from DOM to prevent selection by keyboard after collapsing */

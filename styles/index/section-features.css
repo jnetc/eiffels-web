@@ -114,7 +114,7 @@
   font-size: clamp(var(--font-24), 6vw, var(--font-48));
 }
 .feature__description {
+  max-width: 45ch;
   font-size: clamp(var(--font-18), 3vw, var(--font-24));
   color: var(--grey-400);
-  text-wrap: balance;
 }

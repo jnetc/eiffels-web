@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="styles/index/backdrop.css" />
 	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="styles/dialogs/authentication.css" />
+	<link rel="stylesheet" href="styles/footer/footer.css" />
 	<script src="scripts/global.js" defer></script>
 	<script src="scripts/index.js" defer></script>
 	<script src="scripts/dialogs/dialog.js" defer></script>
@@ -516,7 +517,90 @@
 			</ul>
 		</section>
 	</main>
-	<footer class="landing__footer">Insynergy Oy © 2024</footer>
+	<footer class="landing__footer">
+		<section class="footer-top grid">
+			<address class="footer-top__address footer__rows">
+				<h3>Information</h3>
+				<p>Lapinlahdenkatu 16</p>
+				<p>00180 Helsinki, Maria 01</p>
+				<p><a href="mailto:support@insynergy.com">support@insynergy.com</a></p>
+				<p><a href="tel:+3584578396777">+358 45 78396777</a></p>
+				<p>FI31411419</p>
+			</address>
+			<nav class="footer-top__nav" aria-label="footer navigation">
+
+				<ul class="footer__rows">
+					<li>
+						<h3 class="footer-top__title">Overviews</h3>
+					</li>
+					<li><a href="http://#">Companies</a></li>
+					<li><a href="http://#">Organizations</a></li>
+					<li><a href="http://#">End-Users</a></li>
+					<li><a href="http://#">Self Employers</a></li>
+					<li><a href="http://#">Local Governments</a></li>
+				</ul>
+
+				<ul class="footer__rows">
+					<li>
+						<h3 class="footer-top__title">Features</h3>
+					</li>
+					<li><a href="http://#">AI Marketplace</a></li>
+					<li><a href="http://#">Daily Report</a></li>
+					<li><a href="http://#">Submit Report</a></li>
+					<li><a href="http://#">Approve Report</a></li>
+					<li><a href="http://#">AI Translate</a></li>
+					<li><a href="http://#">Work Overview</a></li>
+				</ul>
+			</nav>
+			<div class="footer-top__partners footer__rows" aria-label="partners">
+				<h3>Official Partners</h3>
+				<div class="footer-top__partners-logos">
+					<img src="./public/svg/logos/meta_com.svg" alt="Meta official partner" />
+					<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
+				</div>
+			</div>
+			<div class="footer-top__social footer__rows">
+				<h3>Follow Us</h3>
+				<div class="footer-top__social-links">
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on Telegram">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on WhatsApp">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on Instagram">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on TikTok">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+						</svg>
+					</a>
+
+				</div>
+			</div>
+		</section>
+		<section class="footer-bottom">
+			© Insynergy Oy
+			<div class="footer-bottom__links">
+				<a href="http://#">Cookies</a>
+				<a href="http://#">Privacy</a>
+				<a href="http://#">Terms of Use</a>
+				<a href="http://#">Accessibility</a>
+				<a href="http://#">Contract terms</a>
+			</div>
+		</section>
+	</footer>
 	<!-- Cookie window  -->
 	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
 		<img src="public/svg/cookie.svg" alt="" aria-hidden="false">
