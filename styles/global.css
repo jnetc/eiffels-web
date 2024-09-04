@@ -47,6 +47,14 @@ body {
   scrollbar-gutter: stable;
 }
 
+/* header,
+footer,
+main,
+section,
+article {
+  container-type: inline-size;
+} */
+
 body,
 input,
 textarea,
@@ -82,7 +90,7 @@ h3,
 h4,
 h5,
 h6 {
-  text-wrap: pretty;
+  text-wrap: balance;
   line-height: 1.2;
 }
 
@@ -96,10 +104,17 @@ input,
 textarea {
   font-weight: 300;
 }
+p,
+li,
+span,
+figcaption {
+  text-wrap: pretty;
+  max-width: 65ch;
+}
 
 p,
 label,
-li:not(:has(h1, h2, h3, h4, h5, h6)),
+li,
 time {
   color: var(--grey-500);
   font-size: var(--font-18);
