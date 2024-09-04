@@ -139,9 +139,7 @@
     -webkit-font-smoothing: antialiased; /* for MacOs */
 
     & option {
-      display: flex;
-      gap: var(--gap-4);
-      font-size: var(--size-20);
+      font-size: large;
     }
   }
 
