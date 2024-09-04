@@ -22,9 +22,9 @@
 </head>
 
 <body class="landing">
-	<header class="header header-landing">
+	<header class="header">
 		<div class="header__left-side">
-			<button type="button" id="header__mob-menu-btn" class="btn-circle-48" aria-label="Open menu">
+			<button type="button" id="header__open-mob-menu" class="btn-circle-48" aria-label="open menu">
 				<svg class="icon" aria-hidden="true">
 					<use href="public/svg/ui_icons.svg#menu"></use>
 				</svg>
@@ -35,6 +35,11 @@
 		</div>
 		<nav class="header__center header__nav">
 			<div class="nav__mob-header">
+				<button type="button" id="header__close-mob-menu" class="btn-circle-48 btn-black" aria-label="close menu">
+					<svg class="icon" aria-hidden="true">
+						<use href="public/svg/ui_icons.svg#close"></use>
+					</svg>
+				</button>
 				<a class="header__rs-href" href="settings.html">
 					<svg class="icon" aria-hidden="true">
 						<use href="./public/svg/ui_icons.svg#settings"></use>
@@ -89,7 +94,6 @@
 				</svg>
 			</li>
 		</ul>
-		<!-- ------- -->
 	</header>
 
 	<main class="landing__main">

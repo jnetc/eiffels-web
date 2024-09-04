@@ -39,7 +39,7 @@
   margin-inline-end: auto;
 }
 
-#header__mob-menu-btn {
+#header__open-mob-menu {
   display: none;
 }
 
@@ -204,10 +204,11 @@ section#faq h2 {
     aspect-ratio: 1;
     border-radius: 50%;
 
-    &:nth-of-type(1) {
+    &:has([href*='marketplace']) {
       background-color: var(--primary);
     }
-    &:nth-of-type(2) {
+
+    &:has([href*='settings']) {
       border: 1.5px solid var(--grey-200);
     }
 
@@ -221,8 +222,18 @@ section#faq h2 {
   }
 }
 @media screen and (max-width: 1200px) {
-  .landing {
-    column-gap: var(--gap-20);
+  /* this class is from header.css */
+  .header {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: '. left-side right-side .';
+  }
+
+  body > header:has(.header__nav.open) {
+    padding-block: 0;
+  }
+
+  body > header:has(.header__nav.open) #header__open-mob-menu {
+    margin-block-start: var(--gap-18);
   }
 
   .grid {
@@ -230,19 +241,18 @@ section#faq h2 {
     --colums-width: 1fr;
     column-gap: var(--gap-16);
   }
-  .bg__lines path {
-    animation: none;
-  }
 
-  #header__mob-menu-btn {
+  #header__open-mob-menu {
     display: grid;
-    position: fixed;
-    z-index: 102;
+  }
+  #header__close-mob-menu {
+    margin-inline: 0 auto;
   }
 
   /* Eneble Language Select on mobile menu */
   .nav__mob-header {
     display: flex;
+    gap: var(--gap-16);
   }
   .nav__mob-header .header__select-lang {
     display: grid;
@@ -253,32 +263,23 @@ section#faq h2 {
 
   .header__nav {
     grid-column: 1 / -1;
-    display: none;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content 1fr;
     min-height: 100dvh;
-    /* min-width: 100vw; */
+    display: none;
+    grid-template-columns: var(--gap-20) 1fr var(--gap-20);
+    grid-template-rows: min-content 1fr;
     position: fixed;
     inset: 0;
+    padding-block-start: var(--gap-18);
     background-color: hsl(from var(--white) h s l / 100%);
     z-index: 101;
 
     &.open {
       display: grid;
     }
-  }
 
-  /* .header__nav.open + ul #settings-button {
-    position: fixed;
-    z-index: 102;
-  }
-  .header__nav.open + ul .header__select-lang {
-    position: fixed;
-    z-index: 102;
-  } */
-
-  .header__logo {
-    padding-inline-start: calc(var(--size-48) + var(--gap-16));
+    & > * {
+      grid-column: 2;
+    }
   }
 
   .nav__links {
@@ -298,12 +299,12 @@ section#faq h2 {
 }
 
 @media screen and (max-width: 640px) {
-  .header__rs-href {
-    &:nth-of-type(2) {
+  /* Disable items on smaller screens */
+  .header__right-side .header__rs-href {
+    &:has([href*='settings']) {
       display: none;
     }
   }
-  /* Disable Language Select on smaller screens */
   .header__select-lang {
     display: none;
   }
