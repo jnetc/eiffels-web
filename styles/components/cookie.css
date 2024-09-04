@@ -1,13 +1,13 @@
 .cookie {
-  justify-self: center;
   max-inline-size: 960px;
   display: grid;
   grid-template-columns: var(--size-48) 1fr min-content;
   gap: var(--gap-24) var(--gap-18);
   padding-block: var(--gap-36);
   padding-inline: var(--gap-36);
-  margin-inline: var(--gap-16);
+  margin-inline: auto;
   position: fixed;
+  inset-inline: 0;
   inset-block-end: var(--gap-16);
   background-color: var(--surface);
   border-radius: var(--border-corner-12);
@@ -17,6 +17,12 @@
     align-self: center;
     display: flex;
     gap: var(--gap-16);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .cookie {
+    margin-inline: var(--gap-16);
   }
 }
 
