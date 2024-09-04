@@ -91,7 +91,7 @@
     grid-row: 1;
   }
 
-  & :where(span, .icon) {
+  & :where(span) {
     pointer-events: none;
   }
 
@@ -100,7 +100,7 @@
     aspect-ratio: 1;
   }
 
-  & .icon-workers {
+  & .icon:has([href*='workers']) {
     grid-column: 2;
     fill: var(--grey-300);
     inset-inline: auto calc(var(--gap-18) + var(--size-24) + var(--gap-8));
@@ -115,10 +115,9 @@
     user-select: none;
   }
 
-  & .icon-chevron {
+  & .icon:has([href*='chevron-down']) {
     grid-column: 5;
     fill: var(--grey-500);
-    rotate: -90deg;
   }
 }
 
@@ -128,7 +127,6 @@
   padding-inline-start: var(--gap-48);
   border: 1px solid var(--grey-300);
   border-radius: var(--border-corner-8);
-  outline-color: var(--black);
   background-color: transparent;
   font-size: var(--font-20);
   color: var(--grey-500);

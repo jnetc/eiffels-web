@@ -1,9 +1,10 @@
 /* BACKGROUND */
 .bg {
-  justify-self: center;
+  /* justify-self: center; */
   width: 100%;
   height: 1080px;
   position: absolute;
+  inset-block: 0;
   inset-inline: 0;
   contain: paint;
   z-index: -10;

@@ -29,12 +29,13 @@
 
 <body class="mp">
   <header class="header">
-    <a href="logged.html" id="btn-back" title="back to home page" class="btn-blue-border btn-circle-48">
+    <a href="logged.html" id="btn-back" title="back to home page"
+      class="btn-blue-border btn-circle-48 header__left-side">
       <svg class="icon" aria-hidden="true">
         <use href="./public/svg/ui_icons.svg#arrow-left"></use>
       </svg>
     </a>
-    <nav class="nav__links" aria-label="desktop navigation">
+    <nav class="header__center nav__links" aria-label="desktop navigation">
       <!-- Desktop Navigation -->
       <a class="active" href="marketplace.html">All</a>
       <a href="marketplace/workers.html">Workers</a>
@@ -43,7 +44,7 @@
       <!-- Mobile Navigation -->
       <div class="links__select">
         <svg class="icon" aria-hidden="true">
-          <use href="./public/svg/ui_icons.svg#chevron-left"></use>
+          <use href="./public/svg/ui_icons.svg#chevron-down"></use>
         </svg>
         <select id="navigation-select" class="nav-select">
           <option value="marketplace.html">All Available</option>
@@ -54,7 +55,7 @@
       </div>
     </nav>
 
-    <div class="header__add-new">
+    <div class="header__right-side header__add-new">
       <span>Add New</span>
       <button type="button" id="button__mp-add-dialog" title="Add new item" class="btn-green btn-circle-48">
         <svg class="icon" aria-hidden="true">
@@ -802,7 +803,9 @@
     </div>
   </main>
 
-  <footer class="mp__footer">Insynergy Oy © 2024</footer>
+  <footer class="mp__footer">
+    <p>Insynergy Oy © 2024</p>
+  </footer>
   <!-- Cookie window  -->
   <div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
     <img src="public/svg/cookie.svg" alt="" aria-hidden="false">
@@ -838,8 +841,8 @@
           <form method="post" class="login__form">
             <fieldset class="login__input-group">
               <legend for="login__phone-number">Your Phone Number <span>*</span></legend>
-              <svg class="icon-chevron" aria-hidden="true">
-                <use href="./public/svg/ui_icons.svg#chevron-left"></use>
+              <svg class="icon" aria-hidden="true">
+                <use href="./public/svg/ui_icons.svg#chevron-down"></use>
               </svg>
               <select name="country-code" id="login__country-code">
               </select>

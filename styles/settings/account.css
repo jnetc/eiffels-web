@@ -65,19 +65,15 @@
 
   & select {
     padding-inline: var(--gap-12) var(--gap-48);
-    outline-color: var(--grey-400);
   }
 
-  & .icon-chevron {
+  & .icon {
     width: var(--size-24);
-    height: var(--size-24);
     aspect-ratio: 1;
     position: absolute;
     inset-inline: auto var(--gap-6);
     inset-block: 0.725rem;
     fill: var(--grey-500);
-    rotate: -90deg;
-    pointer-events: none;
   }
 
   & input {

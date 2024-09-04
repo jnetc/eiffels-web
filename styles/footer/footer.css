@@ -1,3 +1,16 @@
+body > footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: var(--gap-20);
+  margin-inline: auto;
+  padding-block: var(--gap-48) var(--gap-18);
+  font-size: var(--font-16);
+
+  & > * {
+    grid-column: 2;
+  }
+}
+
 .landing__footer {
   width: 100%;
   display: grid;

@@ -6,10 +6,10 @@
 .settings {
   max-width: var(--min-grid-size);
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
+  /* grid-template-rows: min-content 1fr min-content; */
   row-gap: var(--font-64);
   margin-inline: auto;
-  padding-inline: var(--gap-20);
+  /* padding-inline: var(--gap-20); */
 }
 
 .settings__main {

@@ -25,13 +25,13 @@
 
 <body class="settings">
 	<header class="header">
-		<a href="logged.html" id="btn-back" title="back to home page" class="btn-blue-border btn-circle-48"
-			aria-label="Back to home page">
+		<a href="logged.html" id="btn-back" title="back to home page"
+			class="btn-blue-border btn-circle-48 header__left-side" aria-label="Back to home page">
 			<svg class="icon" aria-hidden="true">
 				<use href="./public/svg/ui_icons.svg#arrow-left"></use>
 			</svg>
 		</a>
-		<span>Settings</span>
+		<span class="header__center">Settings</span>
 	</header>
 	<main class="settings__main">
 		<button type="button" id="open__aup-dialog" class="user__picture glass-effect" title="User Profile Picture"
@@ -69,8 +69,8 @@
 						<div class="styled-box__group">
 							<fieldset class="styled-box__fieldset">
 								<legend>Select Language</legend>
-								<svg class="icon-chevron" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#chevron-left"></use>
+								<svg class="icon" aria-hidden="true">
+									<use href="./public/svg/ui_icons.svg#chevron-down"></use>
 								</svg>
 								<select name="language" id="preferences__language">
 									<option value="en">English</option>
@@ -206,8 +206,8 @@
 						<div class="styled-box__group">
 							<fieldset class="styled-box__fieldset">
 								<legend>Select Role</legend>
-								<svg class="icon-chevron" aria-hidden="true">
-									<use href="./public/svg/ui_icons.svg#chevron-left"></use>
+								<svg class="icon" aria-hidden="true">
+									<use href="./public/svg/ui_icons.svg#chevron-down"></use>
 								</svg>
 								<select name="role" id="roles__role">
 									<option value="worker">Worker</option>
@@ -530,7 +530,9 @@
 			</button>
 		</form>
 	</main>
-	<footer class="settings__footer">Insynergy Oy © 2024</footer>
+	<footer class="settings__footer">
+		<p>Insynergy Oy © 2024</p>
+	</footer>
 	<!-- Emulate User Access  -->
 	<div class="user-access">
 		<button id="user-enable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">+ User</button>

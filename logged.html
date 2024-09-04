@@ -22,9 +22,9 @@
 </head>
 
 <body class="landing">
-	<header class="header">
+	<header class="header header-landing">
 		<div class="header__left-side">
-			<button type="button" id="header__mob-menu-btn" class="btn-circle-48 header__menu" aria-label="Open menu">
+			<button type="button" id="header__mob-menu-btn" class="btn-circle-48" aria-label="Open menu">
 				<svg class="icon" aria-hidden="true">
 					<use href="public/svg/ui_icons.svg#menu"></use>
 				</svg>
@@ -33,7 +33,24 @@
 				<img src="public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
 			</a>
 		</div>
-		<nav class="header__nav">
+		<nav class="header__center header__nav">
+			<div class="nav__mob-header">
+				<a class="header__rs-href" href="settings.html">
+					<svg class="icon" aria-hidden="true">
+						<use href="./public/svg/ui_icons.svg#settings"></use>
+					</svg>
+				</a>
+				<li class="header__select-lang">
+					<select name="language" id="site-language">
+						<option value="en">🇺🇸 English</option>
+						<option value="fi">🇫🇮 Suomi</option>
+						<option value="se">🇸🇪 Svenska</option>
+					</select>
+					<svg class="icon" aria-hidden="true">
+						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+					</svg>
+				</li>
+			</div>
 			<ul class="nav__links">
 				<li><a href="#overview">Overview</a></li>
 				<li><a href="#features">Features</a></li>
@@ -43,7 +60,7 @@
 			</ul>
 		</nav>
 		<ul class="header__right-side">
-			<li class="logged__href">
+			<li class="header__rs-href">
 				<a href="marketplace.html">
 					<span>AI Marketplace</span>
 					<svg class="icon" aria-hidden="true">
@@ -52,13 +69,24 @@
 				</a>
 			</li>
 			<!-- Only show when user is logged -->
-			<li class="logged__href">
+			<li class="header__rs-href">
 				<a href="settings.html">
 					<span>Settings</span>
 					<svg class="icon" aria-hidden="true">
 						<use href="./public/svg/ui_icons.svg#settings"></use>
 					</svg>
 				</a>
+			</li>
+			<!--  -->
+			<li class="header__select-lang">
+				<select name="language" id="site-language">
+					<option value="en">🇺🇸 English</option>
+					<option value="fi">🇫🇮 Suomi</option>
+					<option value="se">🇸🇪 Svenska</option>
+				</select>
+				<svg class="icon" aria-hidden="true">
+					<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+				</svg>
 			</li>
 		</ul>
 		<!-- ------- -->
@@ -200,7 +228,7 @@
 					efficiency.</p>
 				<span class="plan__price"><span>€100</span>/ month</span>
 				<div class="plan__team">
-					<svg class="icon icon-workers" aria-hidden="true">
+					<svg class="icon" aria-hidden="true">
 						<use href="./public/svg/ui_icons.svg#workers"></use>
 					</svg>
 					<span>Workers</span>
@@ -211,8 +239,8 @@
 						<option value="31-40">31 - 40</option>
 						<option value="41-50">41 - 50</option>
 					</select>
-					<svg class="icon icon-chevron" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#chevron-left"></use>
+					<svg class="icon" aria-hidden="true">
+						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 				<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan to Standard">upgrade now
@@ -435,7 +463,117 @@
 			</ul>
 		</section>
 	</main>
-	<footer class="landing__footer">Insynergy Oy © 2024</footer>
+	<button type="button" id="back-to-top" class="btn-48 btn-blue-border">Back to Top</button>
+	<footer class="landing__footer">
+		<section class="footer-top">
+			<div class="footer-top__social footer__rows">
+				<a href="/" class="footer-top__logo" aria-label="Eiffels AI">
+					<img src="./public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
+				</a>
+				<div class="footer-top__social-links">
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on Telegram">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#telegram"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on WhatsApp">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on Instagram">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#instagram"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on TikTok">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#tik-tok"></use>
+						</svg>
+					</a>
+					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
+						aria-label="Follow us on Facebook">
+						<svg class="icon" aria-hidden="true">
+							<use href="./public/svg/ui_icons.svg#facebook"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<address class="footer-top__address footer__rows">
+				<h3>Information</h3>
+				<p>Insynergy Oy</p>
+				<p>Street Address: Lapinlahdenkatu 16</p>
+				<p>Postal Address: 00180 Helsinki, Maria 01</p>
+				<p>Email: <a href="mailto:support@insynergy.com">support@insynergy.com</a></p>
+				<p>Phone: <a href="tel:+3584578396777">+358 45 78396777</a></p>
+				<p>Company ID: FI31411419</p>
+			</address>
+			<ul class="footer__rows">
+				<li>
+					<h3 class="footer-top__title">Overviews</h3>
+				</li>
+				<li><a href="http://#">Companies</a></li>
+				<li><a href="http://#">Organizations</a></li>
+				<li><a href="http://#">End-Users</a></li>
+				<li><a href="http://#">Self Employers</a></li>
+				<li><a href="http://#">Local Governments</a></li>
+			</ul>
+			<ul class="footer__rows">
+				<li>
+					<h3 class="footer-top__title">Features</h3>
+				</li>
+				<li><a href="http://#">AI Marketplace</a></li>
+				<li><a href="http://#">Daily Report</a></li>
+				<li><a href="http://#">Submit Report</a></li>
+				<li><a href="http://#">Approve Report</a></li>
+				<li><a href="http://#">AI Translate</a></li>
+				<li><a href="http://#">Work Overview</a></li>
+			</ul>
+			<ul class="footer__rows">
+				<li>
+					<h3 class="footer-top__title">Services</h3>
+				</li>
+				<li><a href="#">Consulting</a></li>
+				<li><a href="#">Maintenance</a></li>
+				<li><a href="#">Custom Services</a></li>
+				<li><a href="#">Project Approval</a></li>
+				<li><a href="#">AI Solutions</a></li>
+				<li><a href="#">Overview of Work</a></li>
+			</ul>
+			<ul class="footer__rows">
+				<li>
+					<h3 class="footer-top__title">Support</h3>
+				</li>
+				<li><a href="#">Customer Support</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Submit a Ticket</a></li>
+				<li><a href="#">Knowledge Base</a></li>
+				<li><a href="#">Live Chat</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+			<!-- <div class="footer-top__partners footer__rows" aria-label="partners">
+					<h3>Official Partners</h3>
+					<div class="footer-top__partners-logos">
+						<img src="./public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
+						<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
+					</div>
+				</div> -->
+		</section>
+		<section class="footer-bottom">
+			<div class="footer-bottom__links">
+				<a href="http://#">Cookies</a>
+				<a href="http://#">Privacy</a>
+				<a href="http://#">Terms of Use</a>
+				<a href="http://#">Accessibility</a>
+				<a href="http://#">Contract terms</a>
+			</div>
+			<span>© Insynergy Oy</span>
+		</section>
+	</footer>
 	<!-- Cookie window  -->
 	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
 		<img src="public/svg/cookie.svg" alt="" aria-hidden="false">

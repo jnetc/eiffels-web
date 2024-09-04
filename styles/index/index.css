@@ -7,13 +7,16 @@
 @import url('section-support.css');
 
 .landing {
-  display: grid;
-  grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
-  column-gap: var(--gap-48);
+  /* display: grid; */
+  max-width: var(--min-grid-size);
+  margin-inline: auto;
+  position: relative;
+  /* grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside); */
+  /* column-gap: var(--gap-48); */
 
-  & > :where(header, main, footer, button) {
+  /* & > :where(header, main, footer, button) {
     grid-column: 2;
-  }
+  } */
   & > #back-to-top {
     margin-inline: auto;
   }
@@ -30,18 +33,13 @@
 }
 
 /* ONLY FOR TOP NAVIGATION*/
-
-.landing__header :where(a, span) {
-  font-size: var(--font-20);
-}
-
 .header__logo {
   max-width: 10rem;
   height: auto;
   margin-inline-end: auto;
 }
 
-.header__menu {
+#header__mob-menu-btn {
   display: none;
 }
 
@@ -55,6 +53,10 @@
 .header__right-side,
 .header__left-side {
   display: flex;
+}
+
+.nav__mob-header {
+  display: none;
 }
 
 .nav__links {
@@ -84,7 +86,7 @@
   justify-self: flex-end;
 }
 
-.logged__href {
+.header__rs-href {
   display: flex;
   align-items: center;
   gap: var(--gap-4);
@@ -104,11 +106,49 @@
   }
 
   & .icon {
+    display: none;
     width: var(--size-28);
     aspect-ratio: 1;
   }
-  &:first-child .icon use {
-    fill: var(--primary);
+
+  & .icon [href*='marketplace'] {
+    fill: var(--white);
+  }
+
+  & .icon [href*='settings'] {
+    fill: var(--black);
+  }
+}
+
+.header__select-lang {
+  display: grid;
+  grid-template-columns: 1fr var(--size-28);
+  align-items: center;
+
+  & > * {
+    grid-row: 1;
+  }
+
+  & select {
+    grid-column: 1 / -1;
+    width: var(--size-72);
+    padding-block: var(--gap-6);
+    padding-inline: var(--gap-6) var(--gap-32);
+    font-size: var(--size-28);
+    font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
+    -webkit-font-smoothing: antialiased; /* for MacOs */
+
+    & option {
+      display: flex;
+      gap: var(--gap-4);
+      font-size: var(--size-20);
+    }
+  }
+
+  & .icon {
+    grid-column: 2;
+    width: var(--size-28);
+    aspect-ratio: 1;
   }
 }
 
@@ -121,8 +161,6 @@
 /* MAIN CONTENT */
 .landing__main {
   container: main / inline-size;
-  display: flex;
-  flex-direction: column;
   row-gap: var(--gap-240);
   padding-block-end: var(--gap-128);
 }
@@ -160,7 +198,7 @@ section#faq h2 {
 }
 
 @media screen and (max-width: 1366px) {
-  .logged__href {
+  .header__rs-href {
     justify-content: center;
     width: var(--size-48);
     aspect-ratio: 1;
@@ -177,12 +215,12 @@ section#faq h2 {
       display: none;
     }
 
-    &:first-child .icon use {
-      fill: var(--white);
+    .icon {
+      display: block;
     }
   }
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
   .landing {
     column-gap: var(--gap-20);
   }
@@ -196,28 +234,48 @@ section#faq h2 {
     animation: none;
   }
 
-  .header {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .header__menu {
+  #header__mob-menu-btn {
     display: grid;
     position: fixed;
     z-index: 102;
   }
 
+  /* Eneble Language Select on mobile menu */
+  .nav__mob-header {
+    display: flex;
+  }
+  .nav__mob-header .header__select-lang {
+    display: grid;
+  }
+  .nav__mob-header .header__rs-href {
+    display: grid;
+  }
+
   .header__nav {
+    grid-column: 1 / -1;
     display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
     min-height: 100dvh;
+    /* min-width: 100vw; */
     position: fixed;
     inset: 0;
     background-color: hsl(from var(--white) h s l / 100%);
     z-index: 101;
 
     &.open {
-      display: flex;
+      display: grid;
     }
   }
+
+  /* .header__nav.open + ul #settings-button {
+    position: fixed;
+    z-index: 102;
+  }
+  .header__nav.open + ul .header__select-lang {
+    position: fixed;
+    z-index: 102;
+  } */
 
   .header__logo {
     padding-inline-start: calc(var(--size-48) + var(--gap-16));
@@ -239,5 +297,14 @@ section#faq h2 {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
+  .header__rs-href {
+    &:nth-of-type(2) {
+      display: none;
+    }
+  }
+  /* Disable Language Select on smaller screens */
+  .header__select-lang {
+    display: none;
+  }
 }

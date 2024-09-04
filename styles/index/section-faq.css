@@ -48,6 +48,7 @@
   align-items: center;
   padding: var(--gap-24) var(--gap-18);
   border-radius: var(--border-corner-8);
+  outline-color: var(--black);
   user-select: none;
   cursor: pointer;
 
