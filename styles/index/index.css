@@ -65,14 +65,6 @@
 
   & a {
     font-size: var(--font-20);
-    text-decoration: underline transparent;
-    text-underline-offset: 2px;
-    transition: all 0.2s ease-in-out;
-  }
-
-  & a:hover {
-    text-underline-offset: 5px;
-    text-decoration: underline var(--grey-500);
   }
 }
 
