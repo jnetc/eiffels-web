@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 
 <head>
 	<meta charset="UTF-8" />
@@ -25,35 +25,35 @@
 		<div class="header__left-side">
 			<button type="button" id="header__open-mob-menu" class="btn-circle-48" aria-label="open menu">
 				<svg class="icon" aria-hidden="true">
-					<use href="public/svg/ui_icons.svg#menu"></use>
+					<use href="../public/svg/ui_icons.svg#menu"></use>
 				</svg>
 			</button>
 			<a href="index.html" title="Eiffels home page" class="header__logo">
-				<img src="public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
+				<img src="../public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
 			</a>
 		</div>
 		<nav class="header__center header__nav" aria-label="main site navigation">
 			<div class="nav__mob-header">
 				<button type="button" id="header__close-mob-menu" class="btn-circle-48 btn-black" aria-label="close menu">
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#close"></use>
+						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<div class="header__select-lang">
-					<select name="language" id="site-language">
+					<select name="language" class="site-language">
 						<option value="en">🇺🇸 In English</option>
-						<option value="fi">🇫🇮 Suomeksi</option>
+						<option value="fi" selected>🇫🇮 Suomeksi</option>
 						<option value="se">🇸🇪 På Svenska</option>
 					</select>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 			</div>
 			<ul class="nav__links">
 				<li><a href="#overview" class="href href-grey">Overview</a></li>
 				<li><a href="#features" class="href href-grey">Features</a></li>
-				<li><a href="/pricing.html" class="href href-grey">Pricing</a></li>
+				<li><a href="./pricing.html" class="href href-grey">Pricing</a></li>
 				<li><a href="#faq" class="href href-grey">FAQ</a></li>
 				<li><a href="#support" class="href href-grey">Support</a></li>
 			</ul>
@@ -62,17 +62,17 @@
 			<a href="marketplace.html" class="header__rs-href href href-grey">
 				<span>AI Marketplace</span>
 				<svg class="icon" aria-hidden="true">
-					<use href="./public/svg/ui_icons.svg#marketplace"></use>
+					<use href="../public/svg/ui_icons.svg#marketplace"></use>
 				</svg>
 			</a>
 			<div class="header__select-lang">
-				<select name="language" id="site-language">
+				<select name="language" class="site-language">
 					<option value="en">🇺🇸 In English</option>
-					<option value="fi">🇫🇮 Suomeksi</option>
+					<option value="fi" selected>🇫🇮 Suomeksi</option>
 					<option value="se">🇸🇪 På Svenska</option>
 				</select>
 				<svg class="icon" aria-hidden="true">
-					<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+					<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 				</svg>
 			</div>
 		</nav>
@@ -92,12 +92,12 @@
 				<fieldset class="login__input-group">
 					<legend for="login__phone-number">Your Phone Number <span>*</span></legend>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 					<select name="country-code" id="login__country-code">
 					</select>
 					<!-- <svg class="icon-phone" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#iphone"></use>
+						<use href="../public/svg/ui_icons.svg#iphone"></use>
 					</svg> -->
 					<span id="login__phone-code"></span>
 					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
@@ -108,14 +108,14 @@
 				<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Access">
 					<span>Access</span>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</button>
 			</form>
 			<div class="official-partners" aria-labelledby="partners-title">
 				<span>Official Partner</span>
-				<img src="./public/svg/logos/meta_com.svg" alt="Meta official partner" />
-				<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
+				<img src="../public/svg/logos/meta_com.svg" alt="Meta official partner" />
+				<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
 				<span>
 					E-SIGNATURES powered by
 					<a href="https://letsencrypt.org/" class="href href-blue" target="_blank" rel="noopener noreferrer">
@@ -137,25 +137,25 @@
 					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
 						aria-label="Play video button">
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#pause"></use>
+							<use href="../public/svg/ui_icons.svg#pause"></use>
 						</svg>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#play"></use>
+							<use href="../public/svg/ui_icons.svg#play"></use>
 						</svg>
 					</button>
 					<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute" aria-label="Mute video button">
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#unmute"></use>
+							<use href="../public/svg/ui_icons.svg#unmute"></use>
 						</svg>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#mute"></use>
+							<use href="../public/svg/ui_icons.svg#mute"></use>
 						</svg>
 					</button>
 				</div>
-				<video class="overview__video" width="960" height="720" poster="public/video/poster.png" autoplay loop muted
+				<video class="overview__video" width="960" height="720" poster="../public/video/poster.png" autoplay loop muted
 					preload="auto">
-					<source src="public/video/overview_mp.mp4" type="video/mp4">
-					<source src="public/video/overview_webm.webm" type="video/webm">
+					<source src="../public/video/overview_mp.mp4" type="video/mp4">
+					<source src="../public/video/overview_webm.webm" type="video/webm">
 					Your browser does not support the video tag.
 				</video>
 			</div>
@@ -174,26 +174,26 @@
 						<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
 							aria-label="Play video button">
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#pause"></use>
+								<use href="../public/svg/ui_icons.svg#pause"></use>
 							</svg>
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#play"></use>
+								<use href="../public/svg/ui_icons.svg#play"></use>
 							</svg>
 						</button>
 						<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute"
 							aria-label="Mute video button">
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#unmute"></use>
+								<use href="../public/svg/ui_icons.svg#unmute"></use>
 							</svg>
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#mute"></use>
+								<use href="../public/svg/ui_icons.svg#mute"></use>
 							</svg>
 						</button>
 					</div>
-					<video class="feature__video" width="640" height="480" poster="public/video/feature_640.jpg" autoplay loop
+					<video class="feature__video" width="640" height="480" poster="../public/video/feature_640.jpg" autoplay loop
 						muted preload="auto">
-						<source src="public/video/feature_640.mp4" type="video/mp4">
-						<source src="public/video/feature_640.webm" type="video/webm">
+						<source src="../public/video/feature_640.mp4" type="video/mp4">
+						<source src="../public/video/feature_640.webm" type="video/webm">
 						Your browser does not support the video tag.
 					</video>
 				</div>
@@ -211,26 +211,26 @@
 						<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
 							aria-label="Play video button">
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#pause"></use>
+								<use href="../public/svg/ui_icons.svg#pause"></use>
 							</svg>
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#play"></use>
+								<use href="../public/svg/ui_icons.svg#play"></use>
 							</svg>
 						</button>
 						<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute"
 							aria-label="Mute video button">
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#unmute"></use>
+								<use href="../public/svg/ui_icons.svg#unmute"></use>
 							</svg>
 							<svg class="icon" aria-hidden="true">
-								<use href="public/svg/ui_icons.svg#mute"></use>
+								<use href="../public/svg/ui_icons.svg#mute"></use>
 							</svg>
 						</button>
 					</div>
-					<video class="feature__video" width="640" height="480" poster="public/video/feature_640.jpg" autoplay loop
+					<video class="feature__video" width="640" height="480" poster="../public/video/feature_640.jpg" autoplay loop
 						muted preload="auto">
-						<source src="public/video/feature_640.mp4" type="video/mp4">
-						<source src="public/video/feature_640.webm" type="video/webm">
+						<source src="../public/video/feature_640.mp4" type="video/mp4">
+						<source src="../public/video/feature_640.webm" type="video/webm">
 						Your browser does not support the video tag.
 					</video>
 				</div>
@@ -263,7 +263,7 @@
 				<span class="plan__price"><span>€20</span>/ month</span>
 				<a href="#" class="btn-48 btn-blue-border" aria-label="Get started with the Individual plan">get started
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -271,31 +271,31 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						25 users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Set up automated replies on WhatsApp
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Improve response times
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Real-time response
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Integrate AI-driven conversations
 					</li>
@@ -308,7 +308,7 @@
 				<span class="plan__price"><span>€100</span>/ month</span>
 				<div class="plan__team">
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#workers"></use>
+						<use href="../public/svg/ui_icons.svg#workers"></use>
 					</svg>
 					<span>Workers</span>
 					<select name="workers" id="plan__select-workers">
@@ -319,12 +319,12 @@
 						<option value="41-50">41 - 50</option>
 					</select>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 				<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan to Standard">upgrade now
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -332,31 +332,31 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						100 users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Forecast trends with AI
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Data-driven insights
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Customer service bots
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Automate tasks
 					</li>
@@ -369,7 +369,7 @@
 				<span class="plan__price"><span>Custom</span>/ month</span>
 				<a href="#" class="btn-48 btn-black" aria-label="Contact Us">contact us
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -377,43 +377,43 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Unlimited users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Deploy custom ML models
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Automate complex tasks
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Connect WhatsApp with CRM systems
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Track customer interactions
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Implement NLP
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Context-aware responses
 					</li>
@@ -547,37 +547,37 @@
 		<section class="footer-top">
 			<div class="footer-top__social footer__rows">
 				<a href="/" class="footer-top__logo" aria-label="Eiffels AI">
-					<img src="./public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
+					<img src="../public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
 				</a>
 				<div class="footer-top__social-links">
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Telegram">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#telegram"></use>
+							<use href="../public/svg/ui_icons.svg#telegram"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on WhatsApp">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+							<use href="../public/svg/ui_icons.svg#whatsapp"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Instagram">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#instagram"></use>
+							<use href="../public/svg/ui_icons.svg#instagram"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on TikTok">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#tik-tok"></use>
+							<use href="../public/svg/ui_icons.svg#tik-tok"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Facebook">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#facebook"></use>
+							<use href="../public/svg/ui_icons.svg#facebook"></use>
 						</svg>
 					</a>
 				</div>
@@ -637,8 +637,8 @@
 			<!-- <div class="footer-top__partners footer__rows" aria-label="partners">
 				<h3>Official Partners</h3>
 				<div class="footer-top__partners-logos">
-					<img src="./public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
-					<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
+					<img src="../public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
+					<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
 				</div>
 			</div> -->
 		</section>
@@ -655,7 +655,7 @@
 	</footer>
 	<!-- Cookie window  -->
 	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
-		<img src="public/svg/cookie.svg" alt="" aria-hidden="false">
+		<img src="../public/svg/cookie.svg" alt="" aria-hidden="false">
 		<p id="cookie-description">We use cookies to collect data to improve your experience on our site. Read our
 			<a href="http://#" class="href href-blue">cookie policy.</a>
 		</p>
@@ -675,7 +675,7 @@
 			<header class="dialog__header" aria-live="polite">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#close"></use>
+						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<h2 id="auth-dialog__title-fill">Fill Fields</h2>
@@ -698,7 +698,7 @@
 						<button type="submit" class="btn-56 btn-blue auth__btn" aria-label="Submit">
 							<span>Submit</span>
 							<svg class="icon" aria-hidden="true">
-								<use href="./public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</button>
 					</form>
@@ -928,7 +928,7 @@
 					</linearGradient>
 				</defs>
 			</svg>
-			<img class="bg__wave" src="./public/svg/backdrops/background.svg" alt="svg">
+			<img class="bg__wave" src="../public/svg/backdrops/background.svg" alt="svg">
 		</div>
 	</div>
 </body>

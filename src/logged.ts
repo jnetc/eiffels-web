@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', async () => {
   // ------------------------------
+  // LANGUAGE
+  const { default: selectLanguage } = await import('./index/selectLanguage.js');
+  selectLanguage();
+  // ------------------------------
   // КНОПКА МОБИЛЬНОГО МЕНЮ И КОНТЕЙНЕР МЕНЮ
   const { default: navigation } = await import('./index/navigation.js');
   navigation();

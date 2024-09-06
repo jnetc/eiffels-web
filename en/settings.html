@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+	<link rel="stylesheet" href="../styles/variable.css" />
+	<link rel="stylesheet" href="../styles/fonts.css" />
+	<link rel="stylesheet" href="../styles/global.css" />
+	<link rel="stylesheet" href="../styles/settings/settings.css" />
+	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
+	<link rel="stylesheet" href="../styles/dialogs/add-user-picture.css" />
+	<link rel="stylesheet" href="../styles/dialogs/delete-account.css" />
+	<script src="../scripts/global.js" defer></script>
+	<script src="../scripts/settings/settings.js" defer></script>
+	<script src="../scripts/settings/account.js" defer></script>
+	<script src="../scripts/dialogs/dialog.js" defer></script>
+	<script src="../scripts/dialogs/deleteAccount.js" defer></script>
+	<script src="../scripts/settings/myEiffels.js" defer></script>
+	<script src="../scripts/dialogs/addUserPicture.js" defer></script>
+	<title>Settings</title>
+	<meta name="description" content="" />
+</head>
+
+<body class="settings">
+	<header class="header">
+		<a href="./logged.html" id="btn-back" title="back to home page"
+			class="btn-blue-border btn-circle-48 header__left-side" aria-label="Back to home page">
+			<svg class="icon" aria-hidden="true">
+				<use href="../public/svg/ui_icons.svg#arrow-left"></use>
+			</svg>
+		</a>
+		<span class="header__center">Settings</span>
+	</header>
+	<main class="settings__main">
+		<button type="button" id="open__aup-dialog" class="user__picture glass-effect" title="User Profile Picture"
+			aria-label="Select Profile Picture">
+			<img src="../public/svg/avatar.svg" id="profile__picture" alt="User Profile Picture" />
+			<div class="picture__recognition" aria-hidden="true" title="The account is protected and encrypted.">
+				<img src="../public/svg/pointer.svg" alt="pointer" />
+				<span>Be Recognizible</span>
+			</div>
+			<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
+				<svg class="icon">
+					<use href="../public/svg/ui_icons.svg#checkmark-shield"></use>
+				</svg>
+			</div>
+		</button>
+		<span>Profile</span>
+		<h1>Jussi Heinola</h1>
+		<ul class="settings__list">
+			<li class="settings__item">
+				<h2 class="settings__name" tabindex="0">
+					<span>Account</span>
+					<div class="title__arrow" aria-hidden="true">
+						<svg class="icon">
+							<use href="../public/svg/ui_icons.svg#chevron-right"></use>
+						</svg>
+					</div>
+				</h2>
+				<div class="settings__container">
+					<form method="post" id="settings__preferences" class="styled-box">
+						<h3>Preferences</h3>
+						<p>
+							Please select your preferred language and place of residence. These fields are optional but will help us
+							personalize your experience and provide relevant job opportunities and content.
+						</p>
+						<div class="styled-box__group">
+							<fieldset class="styled-box__fieldset">
+								<legend>Select Language</legend>
+								<svg class="icon" aria-hidden="true">
+									<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+								</svg>
+								<select name="language" id="preferences__language">
+									<option value="en">English</option>
+									<option value="fi">Finnish</option>
+									<option value="de">German</option>
+									<option value="es">Spanish</option>
+								</select>
+							</fieldset>
+							<fieldset class="styled-box__fieldset">
+								<legend>Postal code</legend>
+								<input type="text" name="postal-code" id="preferences__postal-code" value="01010" placeholder="01010" />
+							</fieldset>
+						</div>
+						<div class="styled-box__footer">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<div class="styled-box__footer-box">
+								<p>Default language is English and location is Finland</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Preferences">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</form>
+
+					<form method="post" id="settings__personal" class="styled-box">
+						<h3>Personal</h3>
+						<p>
+							Please enter your full name. This is a required field and should include your first name and last name.
+							Make sure to use the exact name as it appears on your official documents.
+						</p>
+						<div class="styled-box__group">
+							<fieldset class="styled-box__fieldset">
+								<legend>First Name<span> *</span></legend>
+								<input type="text" name="firstName" id="personal__first-name" value="Jussi" placeholder="Jussi" />
+							</fieldset>
+							<fieldset class="styled-box__fieldset">
+								<legend>Last Name<span> *</span></legend>
+								<input type="text" name="lastName" id="personal__last-name" value="Heinola" placeholder="Heinola" />
+							</fieldset>
+						</div>
+						<div class="styled-box__footer">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<div class="styled-box__footer-box">
+								<p><span>*</span> Required fields</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Personal">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</form>
+
+					<form method="post" id="settings__phone" class="styled-box">
+						<h3>Phone</h3>
+						<p>
+							Please enter your phone number. This is a required field and should include the country your full phone
+							number. Make sure to enter it accurately, as it will be used for account verification and communication
+							purposes.
+						</p>
+						<div class="styled-box__group">
+							<fieldset class="styled-box__fieldset">
+								<legend>Phone Number<span> *</span></legend>
+								<input type="text" name="phoneNumber" id="phone__number" value="+358501234567"
+									placeholder="+358501234567" />
+							</fieldset>
+							<div class="styled-box__verified">
+								<span>Verified</span>
+							</div>
+						</div>
+						<div class="styled-box__footer">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<div class="styled-box__footer-box">
+								<p><span>*</span> Required fields</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Phone Number">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</form>
+
+					<form method="post" id="settings__email" class="styled-box">
+						<h3>Email</h3>
+						<p>
+							Please enter your email address. This is a required field and should be entered accurately, as it will
+							be used for account verification, receiving promotional offers, discounts, and other marketing-related
+							communications.
+						</p>
+						<div class="styled-box__group">
+							<fieldset class="styled-box__fieldset">
+								<legend>Email Address<span> *</span></legend>
+								<input type="text" name="emailAddress" id="email__address" value="jussi.heinola@mail.com"
+									placeholder="example@mail.com" />
+							</fieldset>
+							<div class="styled-box__verified">
+								<span>Verified</span>
+							</div>
+						</div>
+						<div class="styled-box__footer">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<div class="styled-box__footer-box">
+								<div>
+									<p><span>*</span> Required fields</p>
+									<p>Emails must be verified to be able to used as primary email</p>
+								</div>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Email Address">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</form>
+
+					<form method="post" id="settings__roles" class="styled-box">
+						<h3>Role</h3>
+						<p>
+							Please select your role. This is a required field and helps us tailor your experience on the platform to
+							better match your skills and job preferences.
+						</p>
+						<div class="styled-box__group">
+							<fieldset class="styled-box__fieldset">
+								<legend>Select Role</legend>
+								<svg class="icon" aria-hidden="true">
+									<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+								</svg>
+								<select name="role" id="roles__role">
+									<option value="worker">Worker</option>
+									<option value="jobs">Jobs</option>
+									<option value="materials">Materials</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="styled-box__footer">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<div class="styled-box__footer-box">
+								<p>This action will change your functionality and subscription plan</p>
+								<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Save Role">
+									<span class="btn-text">Save</span>
+									<svg class="icon" aria-hidden="true">
+										<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+										<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</form>
+
+					<article id="settings__delete-account" class="styled-box delete-account">
+						<h3>Danger Zone</h3>
+						<p>
+							Once you delete your account, all your personal information, files, and settings will be permanently
+							deleted and cannot be restored. Make sure you really want to delete it before you proceed.
+						</p>
+
+						<button type="button" id="open__da-dialog" class="btn-56 btn-red" aria-label="Delete Account">
+							Delete Account
+							<svg class="icon" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#arrow-right"></use>
+							</svg>
+						</button>
+					</article>
+				</div>
+			</li>
+			<li class="settings__item">
+				<h2 class="settings__name" tabindex="0">
+					<span>Subscribing Plan</span>
+					<div class="title__arrow" aria-hidden="true">
+						<svg class="icon">
+							<use href="../public/svg/ui_icons.svg#chevron-right"></use>
+						</svg>
+					</div>
+				</h2>
+				<div class="settings__container">
+					<article id="settings__plan" class="styled-box">
+						<h3>Current Plan</h3>
+						<h4 class="plan__name">Company</h4>
+						<p>
+							With a Company subscription, you get advanced collaboration tools and enhanced support tailored to your
+							business needs. It also offers greater storage and more user accounts compared to the Individual plan.
+						</p>
+						<div class="plan__info">
+							<span class="plan__price">
+								<span class="price">€5520</span>
+								<sub>/ month</sub>
+							</span>
+							<div class="plan__features" aria-label="Amount of workers" title="Amount of workers">
+								<svg class="icon" aria-hidden="true">
+									<use href="../public/svg/ui_icons.svg#workers"></use>
+								</svg>
+								<span class="plan__workers">11 - 20</span>
+							</div>
+						</div>
+						<div class="styled-box__footer">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<div class="styled-box__footer-box">
+								<p>
+									Explore our <a href="#" class="href href-blue">Subscribing Plans and Pricing</a> to find the perfect
+									option
+									tailored to your needs and budget
+								</p>
+								<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan">
+									<span class="btn-text">Upgrade Plan</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<article id="settings__billing" class="simple-box">
+						<h3>Billing Address</h3>
+						<p>
+							Your invoices will be sent to this address. You can update it at any time in <b>Account</b> settings to
+							ensure you always receive your billing statements at the correct location.<br /><br />If you have any
+							questions regarding payments, please contact us at
+							<a href="mailto:support@eiffels.com" class="href href-blue"
+								title="support@eiffels.com">support@eiffels.com</a>.
+						</p>
+
+						<p class="billing__current-email">
+							Your current email address: <span id="billing__email">jussi.heinola@mail.com</span>
+						</p>
+					</article>
+
+					<article id="settings__payment-method" class="simple-box">
+						<h3>Payment Method</h3>
+						<p>
+							You can update your payment method at any time in <b>Account</b> settings. This information coming soon.
+						</p>
+					</article>
+
+					<article id="settings__payment-history" class="styled-box">
+						<h3>Payment History</h3>
+						<p>
+							History of all your payments, including dates, amounts, and statuses of each transaction. Easily track
+							and manage your financial records. The latest ten transactions are visible in the table, and the rest
+							can be downloaded as a PDF file.
+						</p>
+
+						<div class="payment-history__container">
+							<table class="payment-history__table">
+								<thead class="payment-history__head">
+									<tr>
+										<th>Date</th>
+										<th>Receiver</th>
+										<th>Amount</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody class="payment-history__body">
+									<tr class="payment-history__row">
+										<td>05.05.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Paid</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>01.06.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Paid</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>11.07.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Paid</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>10.08.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Unpaid</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>01.09.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Waiting</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>05.10.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Waiting</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>03.11.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Waiting</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>01.12.2024</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Waiting</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>05.01.2025</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Waiting</td>
+									</tr>
+									<tr class="payment-history__row">
+										<td>11.02.2025</td>
+										<td>jussi.heinola@gmail.com</td>
+										<td>€5520</td>
+										<td>Waiting</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<a href="#" class="href-with-icon payment-history__download">
+							All Payments
+							<svg class="icon" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#download-doc"></use>
+							</svg>
+						</a>
+					</article>
+				</div>
+			</li>
+			<li class="settings__item">
+				<h2 class="settings__name" tabindex="0">
+					<span>My Eiffels</span>
+					<div class="title__arrow" aria-hidden="true">
+						<svg class="icon">
+							<use href="../public/svg/ui_icons.svg#chevron-right"></use>
+						</svg>
+					</div>
+				</h2>
+				<div class="settings__container">
+					<div class="settings__connection">
+						<input type="checkbox" name="onedrive" id="onedrive" class="connection__checkbox" />
+						<label for="onedrive" class="connection" aria-label="Connect One Drive">
+							<img src="../public/svg/settings/onedrive.svg" alt="One Drive Logo" />
+							<div class="connection__name">
+								<h3>One Drive</h3>
+								<p>Eiffels Connected App</p>
+							</div>
+							<span class="connection__status">
+								<span>Disconnected</span>
+								<svg class="icon" aria-hidden="true">
+									<use href="../public/svg/ui_icons.svg#disconnected-cloud" class="icon__disconnected-cloud"></use>
+									<use href="../public/svg/ui_icons.svg#connected-cloud" class="icon__connected-cloud"></use>
+									<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+								</svg>
+							</span>
+						</label>
+					</div>
+
+					<div class="settings__connection">
+						<input type="checkbox" name="ukko" id="ukko" class="connection__checkbox" />
+						<label for="ukko" class="connection" aria-label="Connect One Drive">
+							<!-- ERROR MESSAGE LIVING HERE -->
+							<!-- <div class="error-message" role="alert" aria-live="assertive">
+								<svg class="icon" aria-hidden="true">
+									<use href="public/svg/ui_icons.svg#warning"></use>
+								</svg>
+								<strong>
+									Server error: We encountered an issue while trying to save your changes. Please check your
+									connection and try again. If the problem persists, contact our support team for assistance.
+								</strong>
+							</div> -->
+							<!-- /// -->
+							<img src="../public/svg/settings/ukko.svg" alt="Ukko Logo" />
+							<div class="connection__name">
+								<h3>Ukko</h3>
+								<p>Eiffels Connected App</p>
+							</div>
+							<span class="connection__status">
+								<span>Disconnected</span>
+								<svg class="icon" aria-hidden="true">
+									<use href="../public/svg/ui_icons.svg#disconnected-cloud" class="icon__disconnected-cloud"></use>
+									<use href="../public/svg/ui_icons.svg#connected-cloud" class="icon__connected-cloud"></use>
+									<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+								</svg>
+							</span>
+						</label>
+					</div>
+				</div>
+			</li>
+			<li class="settings__item">
+				<h2 class="settings__name" tabindex="0">
+					<span>Terms of Use, GDPR, DPA</span>
+					<div class="title__arrow" aria-hidden="true">
+						<svg class="icon">
+							<use href="../public/svg/ui_icons.svg#chevron-right"></use>
+						</svg>
+					</div>
+				</h2>
+				<div class="settings__container">
+					<article class="simple-box settings__of-rules">
+						<h3>Data Processing Addendum (DPA)</h3>
+						<p>
+							All construction firms and companies can access and use our DPA as part of their GDPR compliance. This
+							is only to access the document. Please ignore this if you have already sent us the signed
+							document.<br /><br />Please
+							review these details and add client-specific data processing information where required. Sign and return
+							the signed DPA document to
+							<a href="mailto:privacy@eiffels.com" class="href href-blue"
+								title="privacy@eiffels.com">privacy@eiffels.com</a>
+							for the document to be considered executed.
+						</p>
+						<a href="http://eiffels.ai" class="href-with-icon href-of-rules" target="_blank" rel="noopener noreferrer"
+							title="Data Processing Addendum (DPA)" aria-label="View Data Processing Addendum (DPA)">View DPA
+							<svg class="icon" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#external-link"></use>
+							</svg>
+						</a>
+					</article>
+					<article class="simple-box settings__of-rules">
+						<h3>GDPR</h3>
+						<p>
+							All construction firms and companies can access and use our GDPR-compliant data transfer process. This
+							will help ensure that your data is transferred securely and in accordance with legal requirements.
+						</p>
+						<a href="http://eiffels.ai" class="href-with-icon href-of-rules" target="_blank" rel="noopener noreferrer"
+							title="GDPR" aria-label="View GDPR">View GDPR
+							<svg class="icon" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#external-link"></use>
+							</svg>
+						</a>
+					</article>
+					<article class="simple-box settings__of-rules">
+						<h3>Terms of Use</h3>
+						<p>
+							Our Terms of Use are designed for construction firms and companies to ensure clear and fair rules for
+							using our platform.<br /><br />Please review these terms carefully to ensure your company fully complies
+							with our requirements and standards. These terms cover various aspects of interacting with our platform,
+							including data usage, user rights and obligations, and security measures.
+						</p>
+						<a href="http://eiffels.ai" class="href-with-icon href-of-rules" target="_blank" rel="noopener noreferrer"
+							title="Terms of Use" aria-label="View Terms of Use">View Terms
+							<svg class="icon" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#external-link"></use>
+							</svg>
+						</a>
+					</article>
+				</div>
+			</li>
+		</ul>
+		<form action="index.html" method="post" id="settings__sign-out">
+			<button type="submit" class="btn-56 btn-black" aria-label="Sign Out">
+				Sign Out
+				<svg class="icon" aria-hidden="true">
+					<use href="../public/svg/ui_icons.svg#arrow-right"></use>
+				</svg>
+			</button>
+		</form>
+	</main>
+	<footer class="settings__footer">
+		<p>Insynergy Oy © 2024</p>
+	</footer>
+	<!-- Emulate User Access  -->
+	<div class="user-access">
+		<button id="user-enable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">+ User</button>
+		<button id="user-disable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">- User</button>
+	</div>
+	<!-- Modal windows for Add User Picture (aup)  -->
+	<dialog id="aup-dialog" class="dialog glass-dialog">
+		<div class="dialog__wrapper">
+			<header class="dialog__header">
+				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/ui_icons.svg#close"></use>
+					</svg>
+				</button>
+				<h2>Choose Profile Picture</h2>
+				<p>
+					Please select an image file of a smaller size to ensure smooth uploading. Large files may take longer to
+					upload and could result in errors.
+				</p>
+			</header>
+			<main class="dialog__main">
+				<div class="dialog__scroll-area">
+					<form method="post" id="aup__form">
+						<!-- ERROR MESSAGE LIVING HERE -->
+						<div class="aup__picture-upload">
+							<input type="file" id="aup__picture-file" accept="image/*" />
+							<img id="aup__photo-display" src="" alt="" />
+						</div>
+						<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Upload Image">
+							<span class="btn-text">Upload Image</span>
+							<svg class="icon" aria-hidden="true">
+								<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+								<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+							</svg>
+						</button>
+					</form>
+				</div>
+			</main>
+		</div>
+	</dialog>
+	<!-- Modal windows for Delete Account (da) -->
+	<dialog id="da-dialog" class="dialog glass-dialog">
+		<div class="dialog__wrapper">
+			<header class="dialog__header">
+				<button type="button" id="da-dialog__close-btn" class="btn-circle-48 btn-black" data-button="close"
+					aria-label="close dialog">
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/ui_icons.svg#close"></use>
+					</svg>
+				</button>
+				<h2>Are you sure?</h2>
+				<p>What is your reason for deleting your profile?</p>
+			</header>
+			<main class="dialog__main">
+				<div class="dialog__scroll-area">
+					<form method="post" id="da__form">
+						<!-- ERROR MESSAGE LIVING HERE -->
+						<ul class="form__reason-list">
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason1" />
+								<label for="reason1">I no longer need the services provided by this platform.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason2" />
+								<label for="reason2">I found an alternative service that better suits my needs.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason3" />
+								<label for="reason3">I am closing my account due to inactivity.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason4" />
+								<label for="reason4">I had a negative experience with another user on this platform.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason5" />
+								<label for="reason5">I am dissatisfied with the user experience and support.</label>
+							</li>
+							<li class="form__reason-delete">
+								<input type="radio" name="reason" id="reason6" />
+								<label for="reason6">Just delete it</label>
+							</li>
+						</ul>
+						<button type="button" id="da-dialog__cancel" class="btn-48 btn-blue-border"
+							aria-label="Cancel and close dialog">
+							Cancel
+						</button>
+						<button type="submit" class="btn-48 btn-red" aria-label="Delete Account">Delete Account</button>
+					</form>
+				</div>
+			</main>
+		</div>
+	</dialog>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 // Получаем элементы управления по их идентификаторам
-const userEnable = document.getElementById('user-enable')!;
-const userDisable = document.getElementById('user-disable')!;
+const userEnable = document.getElementById('user-enable') as HTMLButtonElement;
+const userDisable = document.getElementById('user-disable') as HTMLButtonElement;
 
 // Главная функция для эмуляции состояния пользователя
 export default function emulate() {

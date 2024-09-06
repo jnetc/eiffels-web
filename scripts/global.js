@@ -1,8 +1,11 @@
 "use strict";
+var _a;
+const lang = ((_a = document.querySelector('html')) === null || _a === void 0 ? void 0 : _a.getAttribute('lang')) || 'en';
+console.log('global lang', lang);
 // Определяем начальные значения для путей
-const INDEX = '/index';
-const LOGGED = '/logged';
-const MARKETPLACE = '/marketplace';
+const INDEX = `/${lang}/index`;
+const LOGGED = `/${lang}/logged`;
+const MARKETPLACE = `/${lang}/marketplace`;
 // Инициализируем переменные путей с начальными значениями
 // http://127.0.0.1:5500/
 let ROOT_PATH = '/';

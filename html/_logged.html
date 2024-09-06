@@ -4,18 +4,19 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
-	<link rel="stylesheet" href="../styles/variable.css" />
-	<link rel="stylesheet" href="../styles/fonts.css" />
-	<link rel="stylesheet" href="../styles/global.css" />
-	<link rel="stylesheet" href="../styles/index/index.css" />
-	<link rel="stylesheet" href="../styles/index/backdrop.css" />
-	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
-	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
-	<script src="../scripts/global.js" defer></script>
-	<script src="../scripts/index.js" defer></script>
-	<script src="../scripts/dialogs/dialog.js" defer></script>
-	<script src="../scripts/cookie/cookie.js" defer></script>
+	<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+	<link rel="stylesheet" href="styles/variable.css" />
+	<link rel="stylesheet" href="styles/fonts.css" />
+	<link rel="stylesheet" href="styles/global.css" />
+	<link rel="stylesheet" href="styles/index/index.css" />
+	<link rel="stylesheet" href="styles/index/backdrop.css" />
+	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
+	<link rel="stylesheet" href="styles/dialogs/add-user-picture.css" />
+	<script src="scripts/global.js" defer></script>
+	<script src="scripts/logged.js" defer></script>
+	<script src="scripts/dialogs/dialog.js" defer></script>
+	<script src="scripts/dialogs/addUserPicture.js" defer></script>
+	<script src="scripts/cookie/cookie.js" defer></script>
 	<title>Document</title>
 	<meta name="description" content="" />
 </head>
@@ -25,35 +26,40 @@
 		<div class="header__left-side">
 			<button type="button" id="header__open-mob-menu" class="btn-circle-48" aria-label="open menu">
 				<svg class="icon" aria-hidden="true">
-					<use href="../public/svg/ui_icons.svg#menu"></use>
+					<use href="public/svg/ui_icons.svg#menu"></use>
 				</svg>
 			</button>
 			<a href="index.html" title="Eiffels home page" class="header__logo">
-				<img src="../public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
+				<img src="public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
 			</a>
 		</div>
 		<nav class="header__center header__nav" aria-label="main site navigation">
 			<div class="nav__mob-header">
 				<button type="button" id="header__close-mob-menu" class="btn-circle-48 btn-black" aria-label="close menu">
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#close"></use>
+						<use href="public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
+				<a class="header__rs-href" href="settings.html">
+					<svg class="icon" aria-hidden="true">
+						<use href="./public/svg/ui_icons.svg#settings"></use>
+					</svg>
+				</a>
 				<div class="header__select-lang">
 					<select name="language" class="site-language">
-						<option value="en" selected>🇺🇸 In English</option>
+						<option value="en">🇺🇸 In English</option>
 						<option value="fi">🇫🇮 Suomeksi</option>
 						<option value="se">🇸🇪 På Svenska</option>
 					</select>
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 			</div>
 			<ul class="nav__links">
 				<li><a href="#overview" class="href href-grey">Overview</a></li>
 				<li><a href="#features" class="href href-grey">Features</a></li>
-				<li><a href="./pricing.html" class="href href-grey">Pricing</a></li>
+				<li><a href="#pricing" class="href href-grey">Pricing</a></li>
 				<li><a href="#faq" class="href href-grey">FAQ</a></li>
 				<li><a href="#support" class="href href-grey">Support</a></li>
 			</ul>
@@ -62,60 +68,79 @@
 			<a href="marketplace.html" class="header__rs-href href href-grey">
 				<span>AI Marketplace</span>
 				<svg class="icon" aria-hidden="true">
-					<use href="../public/svg/ui_icons.svg#marketplace"></use>
+					<use href="./public/svg/ui_icons.svg#marketplace"></use>
 				</svg>
 			</a>
+			<!-- Only show when user is logged -->
+			<a href="settings.html" class="header__rs-href href href-grey">
+				<span>Settings</span>
+				<svg class="icon" aria-hidden="true">
+					<use href="./public/svg/ui_icons.svg#settings"></use>
+				</svg>
+			</a>
+			<!--  -->
 			<div class="header__select-lang">
 				<select name="language" class="site-language">
-					<option value="en" selected>🇺🇸 In English</option>
+					<option value="en">🇺🇸 In English</option>
 					<option value="fi">🇫🇮 Suomeksi</option>
 					<option value="se">🇸🇪 På Svenska</option>
 				</select>
 				<svg class="icon" aria-hidden="true">
-					<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+					<use href="./public/svg/ui_icons.svg#chevron-down"></use>
 				</svg>
 			</div>
 		</nav>
 	</header>
 
 	<main class="landing__main">
-		<section id="unlogged">
-			<h1>A Smart Assistant for Every Day</h1>
+		<section id="logged">
+			<!-- <div class="whatsapp__users" aria-hidden="true">
+				<div class="whatsapp__user glass-effect">
+					<img src="./public/image/matti.png" alt="Whatsapp" />
+					<h4>Matti Freeman</h4>
+					<p>Hey there! I am using Eiffels.</p>
+				</div>
+				<div class="whatsapp__user glass-effect">
+					<img src="./public/image/juhanna.png" alt="Whatsapp" />
+					<h4>Juhanna Joukinen</h4>
+					<p>Hey there! I am using Eiffels.</p>
+				</div>
+				<div class="whatsapp__user glass-effect">
+					<img src="./public/svg/avatar.svg" alt="Whatsapp" />
+					<h4>Be Recognizible</h4>
+					<p>Add picture to your profile.</p>
+				</div>
+			</div> -->
+			<button type="button" id="open__aup-dialog" class="user__picture glass-effect" title="User Profile Picture"
+				aria-label="Select Profile Picture">
+				<img src="./public/svg/avatar.svg" id="profile__picture" alt="User Profile Picture" />
+				<div class="picture__recognition" aria-hidden="true" title="The account is protected and encrypted.">
+					<img src="./public/svg/pointer.svg" alt="pointer" />
+					<span>Be Recognizible</span>
+				</div>
+				<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
+					<svg class="icon">
+						<use href="./public/svg/ui_icons.svg#checkmark-shield"></use>
+					</svg>
+				</div>
+			</button>
+			<span>Hello</span>
+			<h1>Jussi Heinola</h1>
 			<p>
-				<strong>Eiffels</strong> is not just another app but a transformative solution that integrates deeply into the
-				industry’s existing communication channels.
+				Now you can securely work with your files through your personal account, accessing all the features and tools
+				for managing documents and sharing with colleagues.
 			</p>
-			<p>Please. Enter your phone number, and we will send a <span>6-digit</span> authorization code to
-				your <strong>WhatsApp</strong>.</p>
-			<form method="post" class="login__form">
-				<!-- ERROR MESSAGE LIVING HERE -->
-				<fieldset class="login__input-group">
-					<legend for="login__phone-number">Your Phone Number <span>*</span></legend>
-					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
-					</svg>
-					<select name="country-code" id="login__country-code">
-					</select>
-					<!-- <svg class="icon-phone" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#iphone"></use>
-					</svg> -->
-					<span id="login__phone-code"></span>
-					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
-						pattern="^[0-9]{6,}$"
-						title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
-						aria-describedby="phone-number-description" required />
-				</fieldset>
-				<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Access">
-					<span>Access</span>
-					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
-					</svg>
-				</button>
-			</form>
+			<a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage"
+				class="btn-56 btn-blue logged__btn" aria-label="Open OneDrive" target="_blank" rel="noopener noreferrer">
+				<span>Open OneDrive</span>
+				<svg class="icon" aria-hidden="true">
+					<use href="./public/svg/ui_icons.svg#onedrive"></use>
+				</svg>
+			</a>
 			<div class="official-partners" aria-labelledby="partners-title">
 				<span>Official Partner</span>
-				<img src="../public/svg/logos/meta_com.svg" alt="Meta official partner" />
-				<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
+				<img src="./public/svg/logos/meta_com.svg" alt="Meta official partner" />
+				<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
 				<span>
 					E-SIGNATURES powered by
 					<a href="https://letsencrypt.org/" class="href href-blue" target="_blank" rel="noopener noreferrer">
@@ -124,126 +149,22 @@
 				</span>
 			</div>
 		</section>
-		<section id="overview">
-			<h2 class="section__title">Eiffels Overview <span>Workflow</span></h2>
+		<!-- <section id="overview" class="grid">
+			<h2 class="section__title">Step <span>by</span> Step</h2>
 			<p class="section__description">
-				The Eiffels Overview Workflow provides a clear guide on how to efficiently navigate and utilize our platform. It
-				helps
-				you understand the key features and tools available, ensuring a smooth experience as you manage tasks and
-				projects.
+				Explore an Overview of our integrated WhatsApp-based application, offering streamlined functionality and
+				seamless user interaction within your chats.
 			</p>
-			<div class="video-container fullview">
-				<div class="video-controls">
-					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
-						aria-label="Play video button">
-						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#pause"></use>
-						</svg>
-						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#play"></use>
-						</svg>
-					</button>
-					<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute" aria-label="Mute video button">
-						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#unmute"></use>
-						</svg>
-						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#mute"></use>
-						</svg>
-					</button>
-				</div>
-				<video class="overview__video" width="960" height="720" poster="../public/video/poster.png" autoplay loop muted
-					preload="auto">
-					<source src="../public/video/overview_mp.mp4" type="video/mp4">
-					<source src="../public/video/overview_webm.webm" type="video/webm">
-					Your browser does not support the video tag.
-				</video>
-			</div>
 		</section>
-		<section id="features">
-			<h2 class="section__title">Features that <span>Improve</span> Workflow</h2>
+		<section id="features" class="grid">
+			<h2 class="section__title">Features <span>that</span> Improve Workflow</h2>
 			<p class="section__description">
 				In the fast-paced world of modern applications, enhancing workflow efficiency is paramount. Our application,
 				designed with cutting-edge artificial intelligence, incorporates several key features to streamline your work
 				processes and maximize productivity.
 			</p>
-
-			<article class="feature__item">
-				<div class="video-container mobview">
-					<div class="video-controls">
-						<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
-							aria-label="Play video button">
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#pause"></use>
-							</svg>
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#play"></use>
-							</svg>
-						</button>
-						<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute"
-							aria-label="Mute video button">
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#unmute"></use>
-							</svg>
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#mute"></use>
-							</svg>
-						</button>
-					</div>
-					<video class="feature__video" width="640" height="480" poster="../public/video/feature_640.jpg" autoplay loop
-						muted preload="auto">
-						<source src="../public/video/feature_640.mp4" type="video/mp4">
-						<source src="../public/video/feature_640.webm" type="video/webm">
-						Your browser does not support the video tag.
-					</video>
-				</div>
-				<div class="feature__content">
-					<h3 class="feature__title">Chat with AI</h3>
-					<p class="feature__description">
-						Our intelligent chat system understands context, suggests relevant information, and automates routine tasks.
-						Whether you need quick answers or detailed explanations, the AI chat is your reliable assistant.
-					</p>
-				</div>
-			</article>
-			<article class="feature__item">
-				<div class="video-container mobview">
-					<div class="video-controls">
-						<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
-							aria-label="Play video button">
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#pause"></use>
-							</svg>
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#play"></use>
-							</svg>
-						</button>
-						<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute"
-							aria-label="Mute video button">
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#unmute"></use>
-							</svg>
-							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#mute"></use>
-							</svg>
-						</button>
-					</div>
-					<video class="feature__video" width="640" height="480" poster="../public/video/feature_640.jpg" autoplay loop
-						muted preload="auto">
-						<source src="../public/video/feature_640.mp4" type="video/mp4">
-						<source src="../public/video/feature_640.webm" type="video/webm">
-						Your browser does not support the video tag.
-					</video>
-				</div>
-				<div class="feature__content">
-					<h3 class="feature__title">Marketplace</h3>
-					<p class="feature__description">
-						Discover, purchase, and integrate new tools and services directly within the application. Our marketplace
-						provides a curated hub of seamless search tools, workers, and jobs to enhance your workflow.
-					</p>
-				</div>
-			</article>
 		</section>
-		<!-- <section class="grid">
+		<section class="grid">
 			<h2 class="section__title"><span>Empower</span> Your Business with AI</h2>
 			<p class="section__description">
 				With its unique approach, it stands to become the smartest assistant in the construction industry, fostering
@@ -263,7 +184,7 @@
 				<span class="plan__price"><span>€20</span>/ month</span>
 				<a href="#" class="btn-48 btn-blue-border" aria-label="Get started with the Individual plan">get started
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -271,31 +192,31 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						25 users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Set up automated replies on WhatsApp
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Improve response times
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Real-time response
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Integrate AI-driven conversations
 					</li>
@@ -308,7 +229,7 @@
 				<span class="plan__price"><span>€100</span>/ month</span>
 				<div class="plan__team">
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#workers"></use>
+						<use href="./public/svg/ui_icons.svg#workers"></use>
 					</svg>
 					<span>Workers</span>
 					<select name="workers" id="plan__select-workers">
@@ -319,12 +240,12 @@
 						<option value="41-50">41 - 50</option>
 					</select>
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 				<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan to Standard">upgrade now
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -332,31 +253,31 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						100 users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Forecast trends with AI
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Data-driven insights
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Customer service bots
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Automate tasks
 					</li>
@@ -369,7 +290,7 @@
 				<span class="plan__price"><span>Custom</span>/ month</span>
 				<a href="#" class="btn-48 btn-black" aria-label="Contact Us">contact us
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -377,43 +298,43 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Unlimited users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Deploy custom ML models
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Automate complex tasks
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Connect WhatsApp with CRM systems
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Track customer interactions
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Implement NLP
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#checkmark"></use>
+							<use href="public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Context-aware responses
 					</li>
@@ -463,16 +384,16 @@
 						<p>
 							We accept a wide range of payment methods to accommodate different needs:
 						</p>
-						<ul>
-							<li><strong>For Individuals: </strong>Payments can be made using major credit and debit cards, digital
-								wallets like PayPal or Apple Pay, and bank transfers.</li>
-							<li><strong>For Companies: </strong>We offer options for corporate billing, including invoicing with
-								payment terms, wire transfers, and credit card
-								payments.</li>
-							<li><strong>For Enterprise Clients: </strong>Custom payment solutions are available, including bulk
-								invoicing, ACH transfers, and dedicated account management for
-								large-scale transactions.</li>
-						</ul>
+
+						<p><strong>For Individuals: </strong>Payments can be made using major credit and debit cards, digital
+							wallets like PayPal or Apple Pay, and bank transfers.</p>
+						<p><strong>For Companies: </strong>We offer options for corporate billing, including invoicing with
+							payment terms, wire transfers, and credit card
+							payments.</p>
+						<p><strong>For Enterprise Clients: </strong>Custom payment solutions are available, including bulk
+							invoicing, ACH transfers, and dedicated account management for
+							large-scale transactions.</p>
+
 						<p>
 							If you have specific payment requirements or need further assistance, please contact our support team at
 							<a href="mailto:support@eiffels.com" class="href href-blue" title="support@eiffels.com"
@@ -547,37 +468,37 @@
 		<section class="footer-top">
 			<div class="footer-top__social footer__rows">
 				<a href="/" class="footer-top__logo" aria-label="Eiffels AI">
-					<img src="../public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
+					<img src="./public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
 				</a>
 				<div class="footer-top__social-links">
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Telegram">
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#telegram"></use>
+							<use href="./public/svg/ui_icons.svg#telegram"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on WhatsApp">
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#whatsapp"></use>
+							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Instagram">
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#instagram"></use>
+							<use href="./public/svg/ui_icons.svg#instagram"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on TikTok">
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#tik-tok"></use>
+							<use href="./public/svg/ui_icons.svg#tik-tok"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Facebook">
 						<svg class="icon" aria-hidden="true">
-							<use href="../public/svg/ui_icons.svg#facebook"></use>
+							<use href="./public/svg/ui_icons.svg#facebook"></use>
 						</svg>
 					</a>
 				</div>
@@ -635,12 +556,12 @@
 				<li><a href="#" class="href href-grey">FAQ</a></li>
 			</ul>
 			<!-- <div class="footer-top__partners footer__rows" aria-label="partners">
-				<h3>Official Partners</h3>
-				<div class="footer-top__partners-logos">
-					<img src="../public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
-					<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
-				</div>
-			</div> -->
+					<h3>Official Partners</h3>
+					<div class="footer-top__partners-logos">
+						<img src="./public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
+						<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
+					</div>
+				</div> -->
 		</section>
 		<section class="footer-bottom">
 			<div class="footer-bottom__links">
@@ -655,7 +576,7 @@
 	</footer>
 	<!-- Cookie window  -->
 	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
-		<img src="../public/svg/cookie.svg" alt="" aria-hidden="false">
+		<img src="public/svg/cookie.svg" alt="" aria-hidden="false">
 		<p id="cookie-description">We use cookies to collect data to improve your experience on our site. Read our
 			<a href="http://#" class="href href-blue">cookie policy.</a>
 		</p>
@@ -669,36 +590,35 @@
 		<button id="user-enable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">+ User</button>
 		<button id="user-disable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">- User</button>
 	</div>
-	<!-- Modal windows for HeroSection Auth (hs-auth)  -->
-	<dialog id="hs-auth-dialog" class="dialog glass-dialog">
+	<!-- Modal windows for Add User Picture (aup)  -->
+	<dialog id="aup-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
-			<header class="dialog__header" aria-live="polite">
+			<header class="dialog__header">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#close"></use>
+						<use href="public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
-				<h2 id="auth-dialog__title-fill">Fill Fields</h2>
-				<h2 id="auth-dialog__title-wait" aria-hidden="true">Waiting<span>.</span><span>.</span><span>.</span></h2>
-				<p>Please. Check your <strong>WhatsApp</strong> for a <span>6-digit</span> code and enter it here to proceed
-					with authorization.</p>
+				<h2>Choose Profile Picture</h2>
+				<p>
+					Please select an image file of a smaller size to ensure smooth uploading. Large files may take longer to
+					upload and could result in errors.
+				</p>
 			</header>
+			<!-- Bottom bar for action buttons -->
 			<main class="dialog__main">
 				<div class="dialog__scroll-area">
-					<form method="post" class="auth__form">
+					<form method="post" id="aup__form">
 						<!-- ERROR MESSAGE LIVING HERE -->
-						<div class="auth__input-group">
-							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
-							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
-							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
-							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
-							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
-							<input type="text" placeholder="0" inputmode="numeric" pattern="[0-9]{1}" title="only 1 digit" required />
+						<div class="aup__picture-upload">
+							<input type="file" id="aup__picture-file" accept="image/*" />
+							<img id="aup__photo-display" src="" alt="" />
 						</div>
-						<button type="submit" class="btn-56 btn-blue auth__btn" aria-label="Submit">
-							<span>Submit</span>
+						<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Upload Image">
+							<span class="btn-text">Upload Image</span>
 							<svg class="icon" aria-hidden="true">
-								<use href="../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
+								<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
 							</svg>
 						</button>
 					</form>
@@ -928,7 +848,7 @@
 					</linearGradient>
 				</defs>
 			</svg>
-			<img class="bg__wave" src="../public/svg/backdrops/background.svg" alt="svg">
+			<img class="bg__wave" src="./public/svg/backdrops/background.svg" alt="svg">
 		</div>
 	</div>
 </body>

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="se">
 
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
-	<link rel="stylesheet" href="styles/variable.css" />
-	<link rel="stylesheet" href="styles/fonts.css" />
-	<link rel="stylesheet" href="styles/global.css" />
-	<link rel="stylesheet" href="styles/index/index.css" />
-	<link rel="stylesheet" href="styles/index/backdrop.css" />
-	<link rel="stylesheet" href="styles/dialogs/dialogs.css" />
-	<link rel="stylesheet" href="styles/dialogs/add-user-picture.css" />
-	<script src="scripts/global.js" defer></script>
-	<script src="scripts/logged.js" defer></script>
-	<script src="scripts/dialogs/dialog.js" defer></script>
-	<script src="scripts/dialogs/addUserPicture.js" defer></script>
-	<script src="scripts/cookie/cookie.js" defer></script>
+	<link rel="icon" type="image/svg+xml" href=".../public/favicon.svg" />
+	<link rel="stylesheet" href="../styles/variable.css" />
+	<link rel="stylesheet" href="../styles/fonts.css" />
+	<link rel="stylesheet" href="../styles/global.css" />
+	<link rel="stylesheet" href="../styles/index/index.css" />
+	<link rel="stylesheet" href="../styles/index/backdrop.css" />
+	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
+	<link rel="stylesheet" href="../styles/dialogs/add-user-picture.css" />
+	<script src="../scripts/global.js" defer></script>
+	<script src="../scripts/logged.js" defer></script>
+	<script src="../scripts/dialogs/dialog.js" defer></script>
+	<script src="../scripts/dialogs/addUserPicture.js" defer></script>
+	<script src="../scripts/cookie/cookie.js" defer></script>
 	<title>Document</title>
 	<meta name="description" content="" />
 </head>
@@ -26,40 +26,40 @@
 		<div class="header__left-side">
 			<button type="button" id="header__open-mob-menu" class="btn-circle-48" aria-label="open menu">
 				<svg class="icon" aria-hidden="true">
-					<use href="public/svg/ui_icons.svg#menu"></use>
+					<use href="../public/svg/ui_icons.svg#menu"></use>
 				</svg>
 			</button>
-			<a href="index.html" title="Eiffels home page" class="header__logo">
-				<img src="public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
+			<a href="./index.html" title="Eiffels home page" class="header__logo">
+				<img src="../public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
 			</a>
 		</div>
 		<nav class="header__center header__nav" aria-label="main site navigation">
 			<div class="nav__mob-header">
 				<button type="button" id="header__close-mob-menu" class="btn-circle-48 btn-black" aria-label="close menu">
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#close"></use>
+						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<a class="header__rs-href" href="settings.html">
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#settings"></use>
+						<use href="../public/svg/ui_icons.svg#settings"></use>
 					</svg>
 				</a>
 				<div class="header__select-lang">
-					<select name="language" id="site-language">
+					<select name="language" class="site-language">
 						<option value="en">🇺🇸 In English</option>
 						<option value="fi">🇫🇮 Suomeksi</option>
-						<option value="se">🇸🇪 På Svenska</option>
+						<option value="se" selected>🇸🇪 På Svenska</option>
 					</select>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 			</div>
 			<ul class="nav__links">
 				<li><a href="#overview" class="href href-grey">Overview</a></li>
 				<li><a href="#features" class="href href-grey">Features</a></li>
-				<li><a href="#pricing" class="href href-grey">Pricing</a></li>
+				<li><a href="./pricing.html" class="href href-grey">Pricing</a></li>
 				<li><a href="#faq" class="href href-grey">FAQ</a></li>
 				<li><a href="#support" class="href href-grey">Support</a></li>
 			</ul>
@@ -68,25 +68,25 @@
 			<a href="marketplace.html" class="header__rs-href href href-grey">
 				<span>AI Marketplace</span>
 				<svg class="icon" aria-hidden="true">
-					<use href="./public/svg/ui_icons.svg#marketplace"></use>
+					<use href="../public/svg/ui_icons.svg#marketplace"></use>
 				</svg>
 			</a>
 			<!-- Only show when user is logged -->
 			<a href="settings.html" class="header__rs-href href href-grey">
 				<span>Settings</span>
 				<svg class="icon" aria-hidden="true">
-					<use href="./public/svg/ui_icons.svg#settings"></use>
+					<use href="../public/svg/ui_icons.svg#settings"></use>
 				</svg>
 			</a>
 			<!--  -->
 			<div class="header__select-lang">
-				<select name="language" id="site-language">
+				<select name="language" class="site-language">
 					<option value="en">🇺🇸 In English</option>
 					<option value="fi">🇫🇮 Suomeksi</option>
-					<option value="se">🇸🇪 På Svenska</option>
+					<option value="se" selected>🇸🇪 På Svenska</option>
 				</select>
 				<svg class="icon" aria-hidden="true">
-					<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+					<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 				</svg>
 			</div>
 		</nav>
@@ -96,31 +96,31 @@
 		<section id="logged">
 			<!-- <div class="whatsapp__users" aria-hidden="true">
 				<div class="whatsapp__user glass-effect">
-					<img src="./public/image/matti.png" alt="Whatsapp" />
+					<img src="../public/image/matti.png" alt="Whatsapp" />
 					<h4>Matti Freeman</h4>
 					<p>Hey there! I am using Eiffels.</p>
 				</div>
 				<div class="whatsapp__user glass-effect">
-					<img src="./public/image/juhanna.png" alt="Whatsapp" />
+					<img src="../public/image/juhanna.png" alt="Whatsapp" />
 					<h4>Juhanna Joukinen</h4>
 					<p>Hey there! I am using Eiffels.</p>
 				</div>
 				<div class="whatsapp__user glass-effect">
-					<img src="./public/svg/avatar.svg" alt="Whatsapp" />
+					<img src="../public/svg/avatar.svg" alt="Whatsapp" />
 					<h4>Be Recognizible</h4>
 					<p>Add picture to your profile.</p>
 				</div>
 			</div> -->
 			<button type="button" id="open__aup-dialog" class="user__picture glass-effect" title="User Profile Picture"
 				aria-label="Select Profile Picture">
-				<img src="./public/svg/avatar.svg" id="profile__picture" alt="User Profile Picture" />
+				<img src="../public/svg/avatar.svg" id="profile__picture" alt="User Profile Picture" />
 				<div class="picture__recognition" aria-hidden="true" title="The account is protected and encrypted.">
-					<img src="./public/svg/pointer.svg" alt="pointer" />
+					<img src="../public/svg/pointer.svg" alt="pointer" />
 					<span>Be Recognizible</span>
 				</div>
 				<div class="picture__checkmark" aria-hidden="true" title="The account is protected and encrypted.">
 					<svg class="icon">
-						<use href="./public/svg/ui_icons.svg#checkmark-shield"></use>
+						<use href="../public/svg/ui_icons.svg#checkmark-shield"></use>
 					</svg>
 				</div>
 			</button>
@@ -134,13 +134,13 @@
 				class="btn-56 btn-blue logged__btn" aria-label="Open OneDrive" target="_blank" rel="noopener noreferrer">
 				<span>Open OneDrive</span>
 				<svg class="icon" aria-hidden="true">
-					<use href="./public/svg/ui_icons.svg#onedrive"></use>
+					<use href="../public/svg/ui_icons.svg#onedrive"></use>
 				</svg>
 			</a>
 			<div class="official-partners" aria-labelledby="partners-title">
 				<span>Official Partner</span>
-				<img src="./public/svg/logos/meta_com.svg" alt="Meta official partner" />
-				<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
+				<img src="../public/svg/logos/meta_com.svg" alt="Meta official partner" />
+				<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft official partner" />
 				<span>
 					E-SIGNATURES powered by
 					<a href="https://letsencrypt.org/" class="href href-blue" target="_blank" rel="noopener noreferrer">
@@ -184,7 +184,7 @@
 				<span class="plan__price"><span>€20</span>/ month</span>
 				<a href="#" class="btn-48 btn-blue-border" aria-label="Get started with the Individual plan">get started
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -192,31 +192,31 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						25 users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Set up automated replies on WhatsApp
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Improve response times
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Real-time response
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Integrate AI-driven conversations
 					</li>
@@ -229,7 +229,7 @@
 				<span class="plan__price"><span>€100</span>/ month</span>
 				<div class="plan__team">
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#workers"></use>
+						<use href="../public/svg/ui_icons.svg#workers"></use>
 					</svg>
 					<span>Workers</span>
 					<select name="workers" id="plan__select-workers">
@@ -240,12 +240,12 @@
 						<option value="41-50">41 - 50</option>
 					</select>
 					<svg class="icon" aria-hidden="true">
-						<use href="./public/svg/ui_icons.svg#chevron-down"></use>
+						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
 				</div>
 				<a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan to Standard">upgrade now
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -253,31 +253,31 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						100 users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Forecast trends with AI
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Data-driven insights
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Customer service bots
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Automate tasks
 					</li>
@@ -290,7 +290,7 @@
 				<span class="plan__price"><span>Custom</span>/ month</span>
 				<a href="#" class="btn-48 btn-black" aria-label="Contact Us">contact us
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#arrow-right"></use>
+						<use href="../public/svg/ui_icons.svg#arrow-right"></use>
 					</svg>
 				</a>
 				<span class="plan__divider" aria-hidden="true"></span>
@@ -298,43 +298,43 @@
 				<ul class="plan__features">
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Unlimited users
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Deploy custom ML models
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Automate complex tasks
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Connect WhatsApp with CRM systems
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Track customer interactions
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Implement NLP
 					</li>
 					<li>
 						<svg class="icon" aria-hidden="true">
-							<use href="public/svg/ui_icons.svg#checkmark"></use>
+							<use href="../public/svg/ui_icons.svg#checkmark"></use>
 						</svg>
 						Context-aware responses
 					</li>
@@ -468,37 +468,37 @@
 		<section class="footer-top">
 			<div class="footer-top__social footer__rows">
 				<a href="/" class="footer-top__logo" aria-label="Eiffels AI">
-					<img src="./public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
+					<img src="../public/svg/logos/eiffels_ai.svg" alt="Eiffels AI Logo" />
 				</a>
 				<div class="footer-top__social-links">
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Telegram">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#telegram"></use>
+							<use href="../public/svg/ui_icons.svg#telegram"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on WhatsApp">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#whatsapp"></use>
+							<use href="../public/svg/ui_icons.svg#whatsapp"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Instagram">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#instagram"></use>
+							<use href="../public/svg/ui_icons.svg#instagram"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on TikTok">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#tik-tok"></use>
+							<use href="../public/svg/ui_icons.svg#tik-tok"></use>
 						</svg>
 					</a>
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Facebook">
 						<svg class="icon" aria-hidden="true">
-							<use href="./public/svg/ui_icons.svg#facebook"></use>
+							<use href="../public/svg/ui_icons.svg#facebook"></use>
 						</svg>
 					</a>
 				</div>
@@ -558,8 +558,8 @@
 			<!-- <div class="footer-top__partners footer__rows" aria-label="partners">
 					<h3>Official Partners</h3>
 					<div class="footer-top__partners-logos">
-						<img src="./public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
-						<img src="./public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
+						<img src="../public/svg/logos/meta_com.svg" alt="Meta - Official Partner" />
+						<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft - Official Partner" />
 					</div>
 				</div> -->
 		</section>
@@ -576,7 +576,7 @@
 	</footer>
 	<!-- Cookie window  -->
 	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
-		<img src="public/svg/cookie.svg" alt="" aria-hidden="false">
+		<img src="../public/svg/cookie.svg" alt="" aria-hidden="false">
 		<p id="cookie-description">We use cookies to collect data to improve your experience on our site. Read our
 			<a href="http://#" class="href href-blue">cookie policy.</a>
 		</p>
@@ -596,7 +596,7 @@
 			<header class="dialog__header">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="public/svg/ui_icons.svg#close"></use>
+						<use href="../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<h2>Choose Profile Picture</h2>
@@ -617,8 +617,8 @@
 						<button type="submit" class="btn-48 btn-blue btn-short" aria-label="Upload Image">
 							<span class="btn-text">Upload Image</span>
 							<svg class="icon" aria-hidden="true">
-								<use href="./public/svg/ui_icons.svg#save" class="icon__save"></use>
-								<use href="./public/svg/ui_icons.svg#updating" class="icon__updating"></use>
+								<use href="../public/svg/ui_icons.svg#save" class="icon__save"></use>
+								<use href="../public/svg/ui_icons.svg#updating" class="icon__updating"></use>
 							</svg>
 						</button>
 					</form>
@@ -848,7 +848,7 @@
 					</linearGradient>
 				</defs>
 			</svg>
-			<img class="bg__wave" src="./public/svg/backdrops/background.svg" alt="svg">
+			<img class="bg__wave" src="../public/svg/backdrops/background.svg" alt="svg">
 		</div>
 	</div>
 </body>

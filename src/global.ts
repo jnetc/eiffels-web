@@ -1,7 +1,11 @@
+const lang = document.querySelector('html')?.getAttribute('lang') || 'en';
+
+console.log('global lang', lang);
+
 // Определяем начальные значения для путей
-const INDEX = '/index';
-const LOGGED = '/logged';
-const MARKETPLACE = '/marketplace';
+const INDEX = `/${lang}/index`;
+const LOGGED = `/${lang}/logged`;
+const MARKETPLACE = `/${lang}/marketplace`;
 
 // Инициализируем переменные путей с начальными значениями
 // http://127.0.0.1:5500/
