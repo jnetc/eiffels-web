@@ -19,9 +19,9 @@ const url = new URL(window.location.href);
 if (url.protocol === 'https:') {
     // Если протокол HTTPS, обновляем пути к ресурсам
     ROOT_PATH = '/eiffels-web/';
-    INDEX_PATH = '/eiffels-web/index';
-    LOGGED_PATH = '/eiffels-web/logged';
-    MARKETPLACE_PATH = '/eiffels-web/marketplace';
+    INDEX_PATH = `/eiffels-web/${lang}`;
+    LOGGED_PATH = `/eiffels-web/${lang}/logged`;
+    MARKETPLACE_PATH = `/eiffels-web/${lang}/marketplace`;
 }
 // Добавляем обработчик события, который сработает после полной загрузки документа
 document.addEventListener('DOMContentLoaded', async () => {
