@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Redirecting...</title>
 	<script>
+
+		const IP = null;
 		// Список сайтов для опубликованной версии
 		const publishedSites = {
 			"en": "https://jnetc.github.io/eiffels-web/en/",
@@ -16,16 +18,20 @@
 
 		// Список сайтов для локальной версии
 		const localSites = {
-			"en": "http://localhost:5500/en/",
-			"fi": "http://localhost:5500/fi/",
-			"se": "http://localhost:5500/se/"
+			"en": `http://${IP ?? 'localhost'}:5500/en/`,
+			"fi": `http://${IP ?? 'localhost'}:5500/fi/`,
+			"se": `http://${IP ?? 'localhost'}:5500/se/`
 		};
 
 		// Определяем текущий хост
 		const currentHost = window.location.hostname;
 
 		// Проверяем, локальная среда или опубликованная
-		const isLocal = currentHost === 'localhost';
+		const isLocal = currentHost === 'localhost' ? 'localhost' : IP;
+
+		console.log('isLocal', isLocal);
+
+		// const isLocal = currentHost === IP
 
 		// Выбираем нужный список сайтов
 		const sites = isLocal ? localSites : publishedSites;

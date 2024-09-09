@@ -26,7 +26,6 @@ header a {
   text-decoration: none;
   text-transform: capitalize;
   white-space: nowrap;
-  user-select: none;
 
   & .icon {
     width: var(--size-24);

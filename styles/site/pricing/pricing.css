@@ -1,10 +1,6 @@
-@import url('section-hero.css');
-@import url('section-overview.css');
-@import url('section-features.css');
+@import url('../header/header.css');
 @import url('section-pricing.css');
-@import url('section-customers.css');
-@import url('section-faq.css');
-@import url('section-support.css');
+@import url('../FAQ/section-faq.css');
 
 .landing {
   /* display: grid; */

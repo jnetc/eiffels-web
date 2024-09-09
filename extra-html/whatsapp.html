@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    body {
+      display: grid;
+      place-content: center;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f7;
+    }
+
+    .container {
+      display: grid;
+      justify-items: center;
+      padding-inline: 2rem;
+      padding-block: 3rem;
+      margin-inline: 1.25rem;
+      text-align: center;
+
+      & h1 {
+        padding-block: 2.5rem 1rem;
+        font-size: 2rem;
+        color: #282829;
+        line-height: 1;
+      }
+
+      & p {
+        font-size: 1.125rem;
+        color: #3b4b6d;
+      }
+
+      & p:last-of-type {
+        padding-block-start: .5rem;
+      }
+    }
+
+    .success-icon {
+      width: 8rem;
+      aspect-ratio: 1;
+      stroke: #1dc73f;
+      transform-box: view-box;
+      opacity: 0;
+      scale: .1;
+      animation: anim-circle .3s ease-in-out forwards;
+      animation-delay: .1s;
+
+
+      & path {
+        stroke-dashoffset: 95;
+        stroke-dasharray: 95;
+        animation: anim-path .3s ease-in-out forwards;
+        animation-delay: .3s;
+      }
+    }
+
+    @keyframes anim-circle {
+      to {
+        opacity: 1;
+        scale: 1;
+      }
+    }
+
+    @keyframes anim-path {
+      to {
+        stroke-dashoffset: -22;
+        stroke-dasharray: 95
+      }
+    }
+
+    .btn-48 {
+      height: 3rem;
+      min-width: fit-content;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-block-start: 2.5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 50vw;
+      border: none;
+      background-color: #0073e6;
+      outline-color: #282829;
+      outline-offset: 2px;
+      color: #f5f5f7;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+      white-space: nowrap;
+      user-select: none;
+      cursor: pointer;
+
+      &:where(:active, :hover) {
+        background-color: hsl(from #0073e6 h s 55% / 1);
+      }
+    }
+
+    .glass-effect {
+      background-image: linear-gradient(var(--rotation, 160deg),
+          hsl(from #edeff6 h s l / 100%) 0%,
+          hsl(from #f1f2f6 h s l / 100%) 100%),
+        linear-gradient(var(--rotation, 160deg),
+          hsl(from #0073e6 h s l / 20%) 0%,
+          hsl(from #fff h s l / 100%) 35%,
+          hsl(from #fff h s l / 100%) 75%,
+          hsl(from #0073e6 h s l / 15%) 100%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      backdrop-filter: blur(15px);
+      border: 1.5px solid transparent;
+      border-radius: 0.75rem;
+      box-shadow: 0 30px 50px hsl(from #0073e6 h s l / 7%);
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function getWhatsAppLink(phoneNumber, message) {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        const encodedMessage = encodeURIComponent(message);
+
+        // Проверяем, что устройство на iOS
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          // Используем URL-схему для iOS
+          return `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+        }
+        // В остальных случаях (десктоп, андройд или нераспознанная платформа)
+        else {
+          // Используем веб-версию WhatsApp как fallback
+          return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        }
+      }
+      // Задаем номер телефона и сообщение, которые будут отправлены в WhatsApp
+      const phoneNumber = '358452466600'; // Замените на нужный номер
+      const message = 'Привет, я хочу узнать больше о вашем продукте!';
+      const countdownElement = document.getElementById('countdown');
+
+      let countdown = 5; // Время до переадресации (в секундах)
+
+      // Запускаем таймер обратного отсчета
+      const interval = setInterval(() => {
+        countdown -= 1; // Уменьшаем счетчик
+        countdownElement.textContent = countdown;
+
+        // Если время истекло, выполняем переадресацию
+        if (countdown === 0) {
+          clearInterval(interval); // Очищаем таймер
+          window.location.href = getWhatsAppLink(phoneNumber, message); // Переадресация на WhatsApp
+        }
+      }, 1000); // Таймер обновляется каждую секунду
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container glass-effect">
+    <svg viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg" class="success-icon">
+      <circle cx="40.7559" cy="40.9747" r="37.5" stroke="#1DC73F" stroke-width="5" />
+      <path d="M6.26406 26.9173L33.6405 56.3384L63.2849 26.9173" stroke="#1DC73F" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <h1>Success!</h1>
+    <p>Your token has been securely saved to the database.</p>
+    <p>You will be redirected to WhatsApp in <b id="countdown">5</b> seconds...</p>
+    <a href="https://wa.me/358452466600?text=Привет, я хочу узнать больше о вашем продукте!" id="back-to-whatsapp"
+      class="btn-48" rel="noreferrer noopener">Back to WhatsApp</a>
+  </div>
+</body>
+
+</html>

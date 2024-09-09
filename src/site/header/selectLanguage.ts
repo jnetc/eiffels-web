@@ -8,7 +8,6 @@ export default function selectLanguage() {
     return;
   }
 
-  console.log('fsdffsff', docLang);
   for (const select of selects) {
     select.addEventListener('change', () => {
       const optionLangValue = select.options[select.selectedIndex].value;
