@@ -61,6 +61,7 @@ section#faq h2 {
   font-size: clamp(var(--font-32), 7vw, var(--font-64));
 
   & span {
+    word-spacing: 4rem;
     color: var(--black);
   }
 }
@@ -77,5 +78,8 @@ section#faq h2 {
     --colums: 3;
     --colums-width: 1fr;
     column-gap: var(--gap-16);
+  }
+  section#faq h2 span {
+    word-spacing: normal;
   }
 }
