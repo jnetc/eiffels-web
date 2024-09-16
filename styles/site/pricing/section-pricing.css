@@ -1,6 +1,59 @@
 #pricing {
   padding-block-start: clamp(var(--gap-64), 6vw, var(--gap-192));
 }
+
+.pricing__options {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: fit-content;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+  column-gap: var(--gap-24);
+  align-items: center;
+  margin-block-end: var(--gap-64);
+  position: relative;
+  padding: var(--gap-18);
+  border-radius: 50vw;
+
+  & * {
+    white-space: nowrap;
+  }
+
+  label {
+    color: var(--grey-500);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  [type='radio'] {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  & #yaerly {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  & #monthly {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .yearly-discount {
+    color: var(--warning-error);
+  }
+}
+
+.option-selected {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+}
+
 .pricing__plan {
   display: grid;
   grid-auto-rows: min-content;
@@ -11,7 +64,7 @@
 
   & h3 {
     color: var(--black);
-    font-size: var(--font-32);
+    font-size: var(--font-28);
   }
 
   p {
@@ -32,19 +85,24 @@
   }
 }
 
-.plan-individual {
+.plan-individuals {
   grid-column: 1 / 4 span;
 }
-.plan-standard {
+.plan-company {
   --border-r: var(--border-corner-16);
   --rotation: 115deg;
   grid-column: 5 / 4 span;
+  grid-template-columns: 1fr min-content;
+
+  & > :not(.plan__price, .plan__workers-amount) {
+    grid-column: 1 / -1;
+  }
 }
-.plan-enterprise {
+.plan-custom {
   grid-column: 9 / 4 span;
 }
-.plan-individual,
-.plan-enterprise {
+.plan-individuals,
+.plan-custom {
   border-radius: var(--border-corner-16);
   border: 1px solid var(--surface);
 }
@@ -56,9 +114,9 @@
   padding-block: var(--gap-8) var(--gap-20);
   flex-wrap: nowrap;
 
-  & span {
+  & .price {
     color: var(--black);
-    font-size: var(--font-48);
+    font-size: var(--font-36);
     font-weight: bold;
     line-height: 0.8;
   }
@@ -82,51 +140,37 @@
     }
   }
 }
-.plan__team {
+.plan__workers-amount {
   height: var(--size-48);
+  min-width: var(--size-96);
   display: grid;
-  grid-template-columns: var(--gap-8) var(--size-24) 1fr min-content var(--size-24) var(--gap-8);
+  /* grid-template-columns: var(--gap-8) var(--size-24) 1fr var(--gap-8);
   column-gap: var(--gap-8);
   align-items: center;
-  margin-block-end: var(--gap-20);
+  margin-block-end: var(--gap-20); */
+  position: relative;
 
   & > * {
     grid-row: 1;
   }
 
-  & :where(span) {
-    pointer-events: none;
-  }
-
   & .icon {
+    position: absolute;
+    inset-block: 0.725rem;
+    inset-inline-start: var(--gap-12);
     width: var(--size-24);
     aspect-ratio: 1;
   }
 
   & .icon:has([href*='workers']) {
-    grid-column: 2;
+    /* grid-column: 2; */
     fill: var(--grey-300);
-    inset-inline: auto calc(var(--gap-18) + var(--size-24) + var(--gap-8));
-  }
-
-  & span {
-    grid-column: 4;
-    /* inset-inline-start: calc(var(--gap-18) + var(--size-24) + var(--gap-8)); */
-    inset-inline: auto var(--gap-48);
-    color: var(--grey-300);
-    font-weight: bold;
-    user-select: none;
-  }
-
-  & .icon:has([href*='chevron-down']) {
-    grid-column: 5;
-    fill: var(--grey-500);
+    /* inset-inline: auto calc(var(--gap-18) + var(--size-24) + var(--gap-8)); */
   }
 }
 
 #plan__select-workers {
-  grid-column: 1 / -1;
-  height: var(--size-48);
+  width: 100%;
   padding-inline-start: var(--gap-48);
   border: 1px solid var(--grey-300);
   border-radius: var(--border-corner-8);
@@ -134,23 +178,31 @@
   font-size: var(--font-20);
   color: var(--grey-500);
 
-  &:nth-of-type(1) {
-    font-weight: bold;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 
+#plan__select-workers:focus-within {
+  outline: 1.5px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--border-corner-8);
+}
+
 @media screen and (max-width: 1200px) {
-  .plan-individual {
+  .plan-individuals {
     --border-r: var(--border-corner-16);
     --rotation: 115deg;
     grid-column: 1 / -1;
   }
-  .plan-standard {
+  .plan-company {
     --border-r: var(--border-corner-16);
     --rotation: 115deg;
     grid-column: 1 / -1;
   }
-  .plan-enterprise {
+  .plan-custom {
     grid-column: 1 / -1;
   }
 }

@@ -220,3 +220,10 @@ main {
   font-size: var(--font-16);
   z-index: 99999;
 }
+
+.green-color {
+  color: var(--whatsapp-dark-green);
+}
+.blue-color {
+  color: var(--primary);
+}

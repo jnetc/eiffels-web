@@ -29,19 +29,19 @@
   }
 }
 
-.plan-individual {
+.plan-individuals {
   grid-column: 1 / 4 span;
 }
-.plan-standard {
+.plan-company {
   --border-r: var(--border-corner-16);
   --rotation: 115deg;
   grid-column: 5 / 4 span;
 }
-.plan-enterprise {
+.plan-custom {
   grid-column: 9 / 4 span;
 }
-.plan-individual,
-.plan-enterprise {
+.plan-individuals,
+.plan-custom {
   border-radius: var(--border-corner-16);
   border: 1px solid var(--surface);
 }
@@ -79,7 +79,7 @@
     }
   }
 }
-.plan__team {
+.plan__workers-amount {
   height: var(--size-48);
   display: grid;
   grid-template-columns: var(--gap-8) var(--size-24) 1fr min-content var(--size-24) var(--gap-8);
@@ -137,17 +137,17 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .plan-individual {
+  .plan-individuals {
     --border-r: var(--border-corner-16);
     --rotation: 115deg;
     grid-column: 1 / -1;
   }
-  .plan-standard {
+  .plan-company {
     --border-r: var(--border-corner-16);
     --rotation: 115deg;
     grid-column: 1 / -1;
   }
-  .plan-enterprise {
+  .plan-custom {
     grid-column: 1 / -1;
   }
 }
