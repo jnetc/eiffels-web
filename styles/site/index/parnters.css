@@ -1,0 +1,17 @@
+.partners__title {
+  color: var(--black);
+  font-size: clamp(var(--font-24), 5vw, var(--font-48));
+  text-align: center;
+  padding-block-end: var(--gap-64);
+}
+
+.partners__logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-48);
+
+  & img {
+    height: var(--size-64);
+  }
+}

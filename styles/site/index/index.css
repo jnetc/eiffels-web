@@ -1,6 +1,7 @@
 @import url('../header/header.css');
 @import url('section-hero.css');
 @import url('section-overview.css');
+@import url('parnters.css');
 @import url('section-features.css');
 @import url('section-pricing.css');
 @import url('section-customers.css');
@@ -47,7 +48,7 @@ section > :where(.section__title, .section__description) {
   justify-self: center;
 }
 
-section:not(#faq) h2 {
+section:not(#faq):not(#partners) h2 {
   color: var(--black);
   font-size: clamp(var(--font-32), 7vw, var(--font-64));
 
