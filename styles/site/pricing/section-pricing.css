@@ -5,15 +5,15 @@
 .pricing__options {
   grid-column: 1 / -1;
   justify-self: center;
-  width: fit-content;
+  max-width: 100%;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: min-content;
+  grid-template-columns: calc(60% - 12px) calc(40% - 12px);
   column-gap: var(--gap-24);
   align-items: center;
   margin-block-end: var(--gap-64);
   position: relative;
-  padding: var(--gap-18);
+  padding: var(--gap-12);
   border-radius: 50vw;
 
   & * {
@@ -23,6 +23,7 @@
   label {
     color: var(--grey-500);
     font-weight: bold;
+    user-select: none;
     cursor: pointer;
   }
 
@@ -32,26 +33,51 @@
     visibility: hidden;
   }
 
-  & #yaerly {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  & #monthly {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
   .yearly-discount {
     color: var(--warning-error);
   }
 }
 
+.yearly {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 2;
+}
+
+.monthly {
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 2;
+  text-align: center;
+}
+.pricing__options:has(#yearly:checked) .option-selected {
+  grid-column: 1;
+  /* width: calc(60% - 12px); */
+}
+.pricing__options:has(#monthly:checked) .option-selected {
+  grid-column: 2;
+  /* width: calc(40% - 12px);
+  translate: 140% 0; */
+}
+.yearly,
+.monthly {
+  padding-inline: var(--gap-18);
+  padding-block: var(--gap-16);
+}
+
 .option-selected {
   grid-column: 1;
   grid-row: 1;
-  background-color: aqua;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  background-color: hsl(from var(--white) h s l / 5%);
+  border: hsl(255 100% 100% / 50%) 2px solid;
+  /* border: red 2px solid; */
+  border-radius: 50vw;
+  box-shadow: inset 0 0 10px 10px hsl(from var(--white) h s l / 30%), 0 15px 15px hsl(from var(--primary) h s l / 5%);
+  /* transition: all 0.2s linear; */
+  /* position: absolute; */
+  z-index: 1;
 }
 
 .pricing__plan {
