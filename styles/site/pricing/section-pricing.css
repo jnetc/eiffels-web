@@ -13,7 +13,7 @@
   align-items: center;
   margin-block-end: var(--gap-64);
   position: relative;
-  padding: var(--gap-12);
+  padding: var(--gap-16);
   border-radius: 50vw;
 
   & * {
@@ -62,7 +62,7 @@
 .yearly,
 .monthly {
   padding-inline: var(--gap-18);
-  padding-block: var(--gap-16);
+  padding-block: var(--gap-12);
 }
 
 .option-selected {
@@ -70,13 +70,14 @@
   grid-row: 1;
   height: 100%;
   width: 100%;
-  background-color: hsl(from var(--white) h s l / 5%);
-  border: hsl(255 100% 100% / 50%) 2px solid;
+  background-color: hsl(255 100% 100% / 70%);
+  border: hsl(255 100% 100% / 70%) 2px solid;
   /* border: red 2px solid; */
   border-radius: 50vw;
-  box-shadow: inset 0 0 10px 10px hsl(from var(--white) h s l / 30%), 0 15px 15px hsl(from var(--primary) h s l / 5%);
+  box-shadow: inset 0 0 1rem 1rem hsl(from var(--white) h s l / 30%), 0 15px 15px hsl(from var(--primary) h s l / 5%);
   /* transition: all 0.2s linear; */
   /* position: absolute; */
+  /* backdrop-filter: blur(50px); */
   z-index: 1;
 }
 
@@ -96,6 +97,10 @@
   p {
     color: var(--grey-400);
     font-size: var(--font-16);
+  }
+
+  & [type='button'] {
+    margin-block-start: var(--gap-20);
   }
 
   & .plan__divider {
@@ -134,10 +139,10 @@
 }
 
 .plan__price {
+  min-height: var(--size-48);
   display: flex;
+  align-items: center;
   column-gap: var(--gap-8);
-  align-items: flex-end;
-  padding-block: var(--gap-8) var(--gap-20);
   flex-wrap: nowrap;
 
   & .price {
@@ -170,6 +175,7 @@
   height: var(--size-48);
   min-width: var(--size-96);
   display: grid;
+  /* margin-block: var(--gap-8) var(--gap-20); */
   /* grid-template-columns: var(--gap-8) var(--size-24) 1fr var(--gap-8);
   column-gap: var(--gap-8);
   align-items: center;
@@ -230,5 +236,21 @@
   }
   .plan-custom {
     grid-column: 1 / -1;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .plan-company {
+    & > * {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .plan-company {
+    & > :not(.plan__price, .plan__workers-amount) {
+      grid-column: 1 / -1;
+    }
   }
 }
