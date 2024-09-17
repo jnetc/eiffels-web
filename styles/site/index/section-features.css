@@ -202,3 +202,29 @@
     line-height: 1.4;
   }
 }
+
+@media screen and (max-width: 640px) {
+  #features {
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+
+    & > :not(.feature__item) {
+      grid-column: 2;
+    }
+  }
+
+  .feature__item {
+    grid-column: 1 / -1;
+    background-color: var(--grey-100);
+  }
+
+  .feature__video {
+    border-radius: 0;
+  }
+
+  .feature__content {
+    padding-block-end: var(--gap-56);
+    padding-inline: var(--gap-20);
+    /* box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%); */
+  }
+}
