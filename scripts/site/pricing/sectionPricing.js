@@ -1,54 +1,94 @@
 export default function sectionPricing() {
     // Элементы для выбора стандартного плана по количеству работников
-    const standardPlan = document.querySelector('.plan-company');
-    const workerAmounts = document.getElementById('plan__select-workers');
-    const plansButtons = document.querySelectorAll('.plan__button');
-    // ------------------------------
-    // ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
-    workerAmounts.addEventListener('change', event => {
-        var _a;
-        const workerAmount = +event.target.value;
-        if (workerAmount < 1 || workerAmount > 50) {
-            workerAmounts.setCustomValidity(workerAmounts.title);
-        }
-        else {
-            // Очищаем сообщение об ошибке
-            workerAmounts.setCustomValidity('');
-        }
-        // Показываем сообщение об ошибке
-        workerAmounts.reportValidity();
-        const price = (_a = standardPlan.querySelector('.plan__price')) === null || _a === void 0 ? void 0 : _a.firstElementChild;
-        if (!price)
-            return;
-        // Обновляем цену в зависимости от выбранного количества работников
-        // switch (workerAmount) {
-        //   case '11-20':
-        //     price.textContent = '€350';
-        //     break;
-        //   case '21-30':
-        //     price.textContent = '€750';
-        //     break;
-        //   case '31-40':
-        //     price.textContent = '€1100';
-        //     break;
-        //   case '41-50':
-        //     price.textContent = '€1700';
-        //     break;
-        //   default:
-        //     price.textContent = '€100';
-        //     break;
-        // }
-    });
+    // const standardPlan = document.querySelector('.plan-company') as HTMLElement;
+    // const workerAmounts = document.getElementById('plan__select-workers') as HTMLSelectElement;
+    // const plansButtons = document.querySelectorAll('.plan__button') as NodeListOf<HTMLButtonElement>;
+    // // ------------------------------
+    // // ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
+    // workerAmounts.addEventListener('change', event => {
+    //   const workerAmount = +(event.target as HTMLInputElement).value;
+    //   if (workerAmount < 1 || workerAmount > 50) {
+    //     workerAmounts.setCustomValidity(workerAmounts.title);
+    //   } else {
+    //     // Очищаем сообщение об ошибке
+    //     workerAmounts.setCustomValidity('');
+    //   }
+    //   // Показываем сообщение об ошибке
+    //   workerAmounts.reportValidity();
+    //   const price = (standardPlan.querySelector('.plan__price') as HTMLSpanElement)?.firstElementChild;
+    //   if (!price) return;
+    // });
     // ------------------------------
     // ОТКРЫВАЕМ ДИАЛОГОВОЕ ОКНО С ВЫБРАННЫМ ПЛАНОМ
-    for (const button of plansButtons) {
-        button.addEventListener('click', () => {
-            var _a, _b, _c;
-            const plan = button.closest('.pricing__plan');
-            const planName = (_a = plan === null || plan === void 0 ? void 0 : plan.querySelector('.plan__title')) === null || _a === void 0 ? void 0 : _a.textContent;
-            const planPrice = (_c = (_b = plan === null || plan === void 0 ? void 0 : plan.querySelector('.plan__price')) === null || _b === void 0 ? void 0 : _b.firstElementChild) === null || _c === void 0 ? void 0 : _c.textContent;
-            console.log(planName, planPrice, workerAmounts.value);
-        });
+    // for (const button of plansButtons) {
+    //   button.addEventListener('click', () => {
+    //     const plan = button.closest('.pricing__plan');
+    //     const planName = plan?.querySelector('.plan__title')?.textContent;
+    //     const planPrice = plan?.querySelector('.plan__price')?.firstElementChild?.textContent;
+    //     console.log(planName, planPrice, workerAmounts.value);
+    //   });
+    // }
+    // Селекторы элементов
+    // const pricingOptions = document.querySelector('.pricing__options') as HTMLElement;
+    const yearlyOption = document.getElementById('yearly');
+    const monthlyOption = document.getElementById('monthly');
+    const individualPrice = document.querySelector('.plan-individuals .price');
+    const individualTimeUnit = document.querySelector('.plan-individuals .time-unit');
+    const companyPrice = document.querySelector('.plan-company .price');
+    const companyTimeUnit = document.querySelector('.plan-company .time-unit');
+    const workersInput = document.getElementById('plan__select-workers');
+    // Начальные цены
+    const individualYearlyPrice = 27.3;
+    const individualMonthlyPrice = 39; // Примерная цена при ежемесячной оплате
+    const companyYearlyPrice = 47.2;
+    const companyMonthlyPrice = 59.0; // Примерная цена при ежемесячной оплате
+    const additionalCostPerWorker = 6.9;
+    // Функция обновления цен
+    function updatePrices() {
+        // Если выбран yearly, устанавливаем годовые цены
+        if (yearlyOption.checked) {
+            individualPrice.textContent = `€${individualYearlyPrice.toFixed(2)}`;
+            individualTimeUnit.textContent = '/ annual';
+            companyPrice.textContent = `€${(companyYearlyPrice + getWorkersAdditionalCost()).toFixed(2)}`;
+            companyTimeUnit.textContent = '/ annual';
+        }
+        // Если выбран monthly, устанавливаем месячные цены
+        else if (monthlyOption.checked) {
+            individualPrice.textContent = `€${individualMonthlyPrice.toFixed(2)}`;
+            individualTimeUnit.textContent = '/ monthly';
+            companyPrice.textContent = `€${(companyMonthlyPrice + getWorkersAdditionalCost()).toFixed(2)}`;
+            companyTimeUnit.textContent = '/ monthly';
+        }
     }
+    // Функция для расчета дополнительной стоимости работников
+    function getWorkersAdditionalCost() {
+        const workersCount = Number(workersInput.value) || 0;
+        return (workersCount - 0) * additionalCostPerWorker;
+    }
+    // Валидация и корректировка значения работников
+    function validateWorkersInput() {
+        let workersCount = Number(workersInput.value);
+        // Если введено число меньше 1, устанавливаем 1
+        if (Number.isNaN(workersCount) || workersCount < 1) {
+            workersCount = 1;
+        }
+        // Если введено число больше 50, устанавливаем 50
+        if (workersCount > 50) {
+            workersCount = 50;
+        }
+        // Обновляем значение input
+        workersInput.value = workersCount.toString();
+    }
+    // Обработчик изменений в input работников
+    workersInput.addEventListener('input', () => {
+        validateWorkersInput(); // Валидация введенного значения
+        // Обновляем цену для плана компании при изменении числа работников
+        updatePrices();
+    });
+    // Обработчики переключения между yearly и monthly
+    yearlyOption.addEventListener('change', updatePrices);
+    monthlyOption.addEventListener('change', updatePrices);
+    // Инициализация цен при загрузке
+    updatePrices();
 }
 //# sourceMappingURL=sectionPricing.js.map

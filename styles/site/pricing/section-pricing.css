@@ -182,6 +182,19 @@
   margin-block-end: var(--gap-20); */
   position: relative;
 
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--grey-300);
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    pointer-events: none;
+    z-index: 5;
+  }
+
   & > * {
     grid-row: 1;
   }
@@ -209,6 +222,8 @@
   background-color: transparent;
   font-size: var(--font-20);
   color: var(--grey-500);
+  font-weight: bold;
+  text-align: center;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -223,22 +238,6 @@
   border-radius: var(--border-corner-8);
 }
 
-@media screen and (max-width: 1200px) {
-  .plan-individuals {
-    --border-r: var(--border-corner-16);
-    --rotation: 115deg;
-    grid-column: 1 / -1;
-  }
-  .plan-company {
-    --border-r: var(--border-corner-16);
-    --rotation: 115deg;
-    grid-column: 1 / -1;
-  }
-  .plan-custom {
-    grid-column: 1 / -1;
-  }
-}
-
 @media screen and (max-width: 1400px) {
   .plan-company {
     & > * {
@@ -248,9 +247,25 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .plan-individuals {
+    --border-r: var(--border-corner-16);
+    --rotation: 115deg;
+    grid-column: 1 / -1;
+  }
   .plan-company {
+    --border-r: var(--border-corner-16);
+    --rotation: 115deg;
     & > :not(.plan__price, .plan__workers-amount) {
       grid-column: 1 / -1;
     }
+  }
+  .plan-custom {
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .plan-company {
+    grid-column: 1 / -1;
   }
 }
