@@ -8,12 +8,12 @@
   max-width: 100%;
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: calc(60% - 12px) calc(40% - 12px);
-  column-gap: var(--gap-24);
+  grid-template-columns: 1fr min-content;
+  column-gap: var(--gap-16);
   align-items: center;
   margin-block-end: var(--gap-64);
   position: relative;
-  padding: var(--gap-16);
+  padding: var(--gap-12);
   border-radius: 50vw;
 
   & * {
@@ -21,7 +21,9 @@
   }
 
   label {
+    justify-self: center;
     color: var(--grey-500);
+    font-size: clamp(var(--font-14), 3vw, var(--font-18));
     font-weight: bold;
     user-select: none;
     cursor: pointer;
@@ -172,6 +174,7 @@
   }
 }
 .plan__workers-amount {
+  justify-self: left;
   height: var(--size-48);
   min-width: var(--size-96);
   display: grid;
@@ -255,9 +258,10 @@
   .plan-company {
     --border-r: var(--border-corner-16);
     --rotation: 115deg;
-    & > :not(.plan__price, .plan__workers-amount) {
+    grid-column: 1 / -1;
+    /* & > :not(.plan__price, .plan__workers-amount) {
       grid-column: 1 / -1;
-    }
+    } */
   }
   .plan-custom {
     grid-column: 1 / -1;
