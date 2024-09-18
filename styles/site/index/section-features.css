@@ -146,6 +146,17 @@
     text-wrap: balance;
     line-height: 1.4;
   }
+
+  & b {
+    display: flex;
+    gap: var(--gap-4);
+  }
+
+  & .icon {
+    width: var(--size-32);
+    aspect-ratio: 1;
+    fill: var(--primary);
+  }
 }
 
 .feature__button {

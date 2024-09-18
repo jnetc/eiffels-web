@@ -46,6 +46,8 @@ export default function sectionPricing() {
   const companyPrice = document.querySelector('.plan-company .price') as HTMLElement;
   const companyTimeUnit = document.querySelector('.plan-company .time-unit') as HTMLElement;
   const workersInput = document.getElementById('plan__select-workers') as HTMLInputElement;
+  const whatsappLinkIndividual = document.querySelector('.plan-individuals .plan__button') as HTMLAnchorElement;
+  const whatsappLinkCompany = document.querySelector('.plan-company .plan__button') as HTMLAnchorElement;
 
   // Начальные цены
   const individualYearlyPrice = 27.3;
@@ -54,22 +56,33 @@ export default function sectionPricing() {
   const companyMonthlyPrice = 59.0; // Примерная цена при ежемесячной оплате
   const additionalCostPerWorker = 6.9;
 
+  let individualSelectedPrice: number;
+  let companySelectedPrice: number;
   // Функция обновления цен
   function updatePrices() {
     // Если выбран yearly, устанавливаем годовые цены
     if (yearlyOption.checked) {
-      individualPrice.textContent = `€${individualYearlyPrice.toFixed(2)}`;
+      individualSelectedPrice = individualYearlyPrice;
+      individualPrice.textContent = `€${individualSelectedPrice.toFixed(2)}`;
       individualTimeUnit.textContent = '/ annual';
-      companyPrice.textContent = `€${(companyYearlyPrice + getWorkersAdditionalCost()).toFixed(2)}`;
+
+      companySelectedPrice = companyYearlyPrice + getWorkersAdditionalCost();
+      companyPrice.textContent = `€${companySelectedPrice.toFixed(2)}`;
       companyTimeUnit.textContent = '/ annual';
     }
     // Если выбран monthly, устанавливаем месячные цены
     else if (monthlyOption.checked) {
-      individualPrice.textContent = `€${individualMonthlyPrice.toFixed(2)}`;
+      individualSelectedPrice = individualMonthlyPrice;
+      individualPrice.textContent = `€${individualSelectedPrice.toFixed(2)}`;
       individualTimeUnit.textContent = '/ monthly';
-      companyPrice.textContent = `€${(companyMonthlyPrice + getWorkersAdditionalCost()).toFixed(2)}`;
+
+      companySelectedPrice = companyMonthlyPrice + getWorkersAdditionalCost();
+      companyPrice.textContent = `€${companySelectedPrice.toFixed(2)}`;
       companyTimeUnit.textContent = '/ monthly';
     }
+
+    // Обновляем ссылки WhatsApp
+    updateWhatsAppLinks(individualSelectedPrice, companySelectedPrice);
   }
 
   // Функция для расчета дополнительной стоимости работников
@@ -95,6 +108,25 @@ export default function sectionPricing() {
     // Обновляем значение input
     workersInput.value = workersCount.toString();
   }
+
+  // Функция обновления ссылки WhatsApp
+  function updateWhatsAppLinks(individualPrice: number, companyPrice: number) {
+    // Формирование текста для Individual
+    const individualMessage = `The Individual plan for €${individualPrice.toFixed(2)}.`;
+    const individualHref = `https://wa.me/3584578396777?text=${encodeURIComponent(individualMessage)}`;
+    whatsappLinkIndividual.href = individualHref;
+
+    // Формирование текста для Company
+    const workersCount = workersInput.value || '0';
+    if (workersCount === '0') {
+      whatsappLinkCompany.href = '#';
+      return;
+    }
+    const companyMessage = `The Company plan for €${companyPrice.toFixed(2)} with ${workersCount} workers.`;
+    const companyHref = `https://wa.me/3584578396777?text=${encodeURIComponent(companyMessage)}`;
+    whatsappLinkCompany.href = companyHref;
+  }
+
   // Обработчик изменений в input работников
   workersInput.addEventListener('input', () => {
     validateWorkersInput(); // Валидация введенного значения
