@@ -83,8 +83,8 @@ export default function sectionPricing() {
     let workersCount = Number(workersInput.value);
 
     // Если введено число меньше 1, устанавливаем 1
-    if (Number.isNaN(workersCount) || workersCount < 1) {
-      workersCount = 1;
+    if (Number.isNaN(workersCount) || workersCount < 0) {
+      workersCount = 0;
     }
 
     // Если введено число больше 50, устанавливаем 50
