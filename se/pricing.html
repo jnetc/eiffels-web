@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="se">
 
 <head>
   <meta charset="UTF-8" />
@@ -28,6 +28,7 @@
       </button>
       <a href="index.html" title="Eiffels home page" class="header__logo">
         <img src="../public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
+        <div class="logo__beta">Beta</div>
       </a>
     </div>
     <nav class="header__center header__nav" aria-label="main site navigation">
@@ -51,7 +52,7 @@
       <ul class="nav__links">
         <li><a href="#overview" class="href href-grey">Översikt</a></li>
         <li><a href="#features" class="href href-grey">Funktioner</a></li>
-        <li><a href="pricing.html" class="href href-grey onpage">Prissättning</a></li>
+        <li><a href="pricing.html" class="href href-grey active">Prissättning</a></li>
         <li><a href="#faq" class="href href-grey">FAQ</a></li>
         <li><a href="#support" class="href href-grey">Support</a></li>
       </ul>
@@ -83,12 +84,28 @@
         Our pricing model is designed to grow with your needs, offering three distinct tiers to ensure you get the
         best value.
       </p>
+
+      <div class="pricing__options glass-effect">
+        <div class="yearly">
+          <input type="radio" id="yearly" name="option" value="yearly" checked />
+          <label for="yearly">Pay yearly (<span class="yearly-discount">save 20%</span>)</label>
+        </div>
+        <div class="monthly">
+          <input type="radio" id="monthly" name="option" value="monthly" />
+          <label for="monthly">Pay monthly</label>
+        </div>
+        <div class="option-selected"></div>
+      </div>
+
       <article class="pricing__plan plan-individuals">
-        <h3 class="plan__title">Individual</h3>
-        <p class="plan__description">Designed for small businesses or self-employed. Provides essential features to get
-          started.</p>
-        <span class="plan__price"><span>€20</span>/ month</span>
-        <a href="#" class="btn-48 btn-blue-border" aria-label="Get started with the Individual plan">get started
+        <h3 class="plan__title">Individuals</h3>
+        <p class="plan__description">Designed for light entrepreneurs, this plan offers all the essential features
+          needed to get started and efficiently grow
+          your operations.</p>
+        <div class="plan__price"><span class="price">€27.30</span><span class="time-unit">/ annual</span></div>
+        <a href="https://wa.me/3584578396777" class="btn-48 btn-blue-border plan__button"
+          aria-label="Get started with the Individual plan">get
+          started
           <svg class="icon" aria-hidden="true">
             <use href="../public/svg/ui_icons.svg#arrow-right"></use>
           </svg>
@@ -129,27 +146,23 @@
         </ul>
       </article>
       <article class="pricing__plan plan-company glass-effect">
-        <h3 class="plan__title">Standard</h3>
-        <p class="plan__description">Suited for growing businesses. Balanced pricing to enhance productivity and
-          efficiency.</p>
-        <span class="plan__price"><span>€100</span>/ month</span>
+        <h3 class="plan__title">Company</h3>
+        <p class="plan__description">Ideal for businesses, with pricing structured to save more as you add workers—plans
+          support anywhere from <b>1</b> to <b>50</b> employees.</p>
+        <div class="plan__price">
+          <span class="price">€54.10</span>
+          <span class="time-unit">/ annual</span>
+        </div>
         <div class="plan__workers-amount">
           <svg class="icon" aria-hidden="true">
             <use href="../public/svg/ui_icons.svg#workers"></use>
           </svg>
-          <span>Workers</span>
-          <select name="workers" id="plan__select-workers">
-            <option value="1-10">1 - 10</option>
-            <option value="11-20">11 - 20</option>
-            <option value="21-30">21 - 30</option>
-            <option value="31-40">31 - 40</option>
-            <option value="41-50">41 - 50</option>
-          </select>
-          <svg class="icon" aria-hidden="true">
-            <use href="../public/svg/ui_icons.svg#chevron-down"></use>
-          </svg>
+          <input type="number" name="workers" id="plan__select-workers" placeholder="0"
+            title="Please enter a number between 1 and 50" inputmode="numeric" pattern="^([1-9]|[1-4][0-9]|50)$"
+            required />
         </div>
-        <a href="#" class="btn-48 btn-blue" aria-label="Upgrade Plan to Standard">upgrade now
+        <a href="https://wa.me/3584578396777" class="btn-48 btn-blue plan__button"
+          aria-label="Upgrade Plan to Standard">upgrade now
           <svg class="icon" aria-hidden="true">
             <use href="../public/svg/ui_icons.svg#arrow-right"></use>
           </svg>
@@ -190,11 +203,12 @@
         </ul>
       </article>
       <article class="pricing__plan plan-custom">
-        <h3 class="plan__title">Enterprise</h3>
-        <p class="plan__description">Suited for growing businesses. Balanced pricing to enhance productivity and
-          efficiency.</p>
-        <span class="plan__price"><span>Custom</span>/ month</span>
-        <a href="#" class="btn-48 btn-black" aria-label="Contact Us">contact us
+        <h3 class="plan__title">Custom</h3>
+        <p class="plan__description">Designed for businesses with unique needs, the Custom Plan provides tailored
+          solutions to fit your specific
+          requirements.</p>
+        <div class="plan__price"><span class="price">Agreed</span><span class="time-unit">/ annual</span></div>
+        <a href="mailto:igor@eiffels.ai" class="btn-48 btn-black" aria-label="Contact Us">contact us
           <svg class="icon" aria-hidden="true">
             <use href="../public/svg/ui_icons.svg#arrow-right"></use>
           </svg>
@@ -246,10 +260,26 @@
           </li>
         </ul>
       </article>
+
+      <article class="pricing__plan plan-manager">
+        <h3 class="plan__title">Manager</h3>
+        <p class="plan__description">This plan is for companies or managers purchasing services for workers starting on
+          a project, whether they're employees,
+          contractors, or self-employed. It provides flexibility for different employment types while offering full
+          control over
+          service access and project management.</p>
+        <a href="https://wa.me/3584578396777?text=The Manager plan" class="btn-48 btn-blue-border plan__button"
+          aria-label="Get started with the Manager plan">get
+          started
+          <svg class="icon" aria-hidden="true">
+            <use href="../public/svg/ui_icons.svg#arrow-right"></use>
+          </svg>
+        </a>
+      </article>
     </section>
+
     <section id="faq" class="grid">
       <h2>F<span>requently </span>A<span>sked </span>Q<span>uestions</span></h2>
-
       <ul class="faq__list">
         <li class="faq__item">
           <h3 class="faq__question" tabindex="0">

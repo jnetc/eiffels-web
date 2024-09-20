@@ -3,6 +3,21 @@
   max-width: 10rem;
   height: auto;
   margin-inline-end: auto;
+  position: relative;
+
+  & .logo__beta {
+    position: absolute;
+    top: -0.725rem;
+    inset-inline-start: -2.25rem;
+    padding: var(--gap-6);
+    background-color: var(--primary);
+    border-radius: var(--border-corner-6);
+    color: var(--white);
+    font-size: var(--font-12);
+    font-weight: bold;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
 }
 
 #header__open-mob-menu {

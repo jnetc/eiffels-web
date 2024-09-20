@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 
 <head>
 	<meta charset="UTF-8" />
@@ -19,10 +19,10 @@
 	<script src="../../scripts/marketplace/mpSearch.js" defer></script>
 	<script src="../../scripts/dialogs/dialog.js" defer></script>
 	<script src="../../scripts/dialogs/mpAdd.js" defer></script>
-	<script src="../../scripts/dialogs/mpMaterialItem.js" defer></script>
+	<script src="../../scripts/dialogs/mpJobItem.js" defer></script>
 	<script src="../../scripts/dialogs/mpLogin.js" defer></script>
 	<script src="../../scripts/cookie/cookie.js" defer></script>
-	<title>Materials</title>
+	<title>Jobs</title>
 	<meta name="description" content="" />
 </head>
 
@@ -38,18 +38,18 @@
 			<!-- Desktop Navigation -->
 			<a class="href href-grey" href="../marketplace.html">All</a>
 			<a class="href href-grey" href="workers.html">Workers</a>
-			<a class="href href-grey active" href="materials.html">Materials</a>
-			<a class="href href-grey" href="jobs.html">Jobs</a>
+			<a class="href href-grey" href="materials.html">Materials</a>
+			<a class="href href-grey active" href="jobs.html">Jobs</a>
 			<!-- Mobile Navigation -->
 			<div class="links__select">
 				<svg class="icon" aria-hidden="true">
 					<use href="../../public/svg/ui_icons.svg#chevron-down"></use>
 				</svg>
 				<select id="navigation-select" class="nav-select">
-					<option value="materials.html">Materials</option>
+					<option value="jobs.html">Jobs</option>
 					<option value="../marketplace.html">All Available</option>
 					<option value="workers.html">Workers</option>
-					<option value="jobs.html">Jobs</option>
+					<option value="materials.html">Materials</option>
 				</select>
 			</div>
 		</nav>
@@ -72,7 +72,7 @@
 				</svg>
 				<label for="search__input" class="glass-effect"></label>
 				<input type="search" name="search" id="search__input" class="search__input"
-					placeholder="Describe what you are looking for, including details such as price range, item description, and other specifics." />
+					placeholder="Describe what you are looking for, including details such as profession, qualifications, and other specifics." />
 				<button type="submit" id="search__submit" class="btn-circle-48 btn-blue" title="Search">
 					<svg class="icon" aria-hidden="true">
 						<use href="../../public/svg/ui_icons.svg#send"></use>
@@ -82,18 +82,17 @@
 		</section>
 
 		<div class="main__list">
-			<article class="card material">
+			<article class="card job">
 				<header class="card__header">
-					<img src="../../public/image/jussi.png" alt="Jussi Heinola" />
-					<h2 class="card__title">Jussi Heinola</h2>
-					<p class="card__name">Rakennus Oy</p>
+					<img src="../../public/image/juhanna.png" alt="Juhanna Keilaniemi" />
+					<h2 class="card__title">Juhanna Keilaniemi</h2>
 					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
 							</svg>
-							<span>Jussi Heinola</span>
+							<span>Firsu Kissu</span>
 						</a>
 						<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
 							target="_blank" rel="noopener noreferrer">
@@ -102,70 +101,36 @@
 							</svg>
 						</a>
 						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
-							title="Email Jussi Heinola">
+							title="Email Juhanna Keilaniemi">
 							<svg class="icon" aria-hidden="true">
 								<use href="../../public/svg/ui_icons.svg#email"></use>
 							</svg>
 						</a>
 					</nav>
 				</header>
-				<div class="mp-card__description">
-					<p class="mp-card__text">
-						I’m selling a DeWalt rotary saw that's in excellent condition, having been used only a few times for light
-						tasks. This powerful and reliable tool is perfect for both professional and DIY projects. Along with the
-						saw, I'm including four brand-new cutting discs, so you're fully equipped for a variety of cutting needs
-						right from the start.<br /><br /> Additionally, protective goggles are included to ensure your safety while
-						working.
-						Whether you're cutting through metal, wood, or other materials, this set has everything you need to get the
-						job done efficiently and safely.
+				<div class="article__description">
+					<p class="article__text">
+						Professional painter with over five years of experience seeking new opportunities for painting walls and
+						ceilings. I ensure high-quality work, attention to detail, and adherence to deadlines.
 					</p>
-					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
-						title="See all details">Open</button>
 				</div>
 				<footer class="mp-card__footer">
-					<div class="card__carusel">
-						<div class="images__scroll-area">
-							<img src="../../public/image/main-item.png" alt="main-item" />
-							<img src="../../public/image/item1.png" alt="item 1" />
-							<img src="../../public/image/item2.png" alt="item 2" />
-							<img src="../../public/image/item3.png" alt="item 3" />
-							<img src="../../public/image/item4.png" alt="item 4" />
-							<img src="../../public/image/item5.png" alt="item 5" />
-							<img src="../../public/image/item6.png" alt="item 6" />
-							<img src="../../public/image/item7.png" alt="item 7" />
-						</div>
-					</div>
-					<div class="mp-card__price">
-						<span class="mp-card__label">Full Price</span>
-						<span class="mp-card__amount">€175</span>
-					</div>
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">2</span>
 				</footer>
 			</article>
 
-			<article class="card material">
+			<article class="card job">
 				<header class="card__header">
-					<img src="../../public/image/alibaba.png" alt="Josef-Muhammad Alibabaivich" />
-					<h2 class="card__title">Josef-Muhammad Alibabaivich</h2>
-					<p class="card__name">Helsingin Moniprofiliset Muuraustyöt Oy</p>
+					<img src="../../public/image/jouni.png" alt="Jouni Savugrilli" />
+					<h2 class="card__title">Jouni Savugrilli</h2>
 					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
 								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
 							</svg>
-							<span>Josef-Muhammad Alibabaivich</span>
-						</a>
-						<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
-							target="_blank" rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#link"></use>
-							</svg>
-						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
-							title="Email Josef-Muhammad Alibabaivich">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#email"></use>
-							</svg>
+							<span>Jouni Savugrilli</span>
 						</a>
 					</nav>
 				</header>
@@ -179,209 +144,10 @@
 						their construction projects. Join our community today and turn your unused equipment into cash
 						effortlessly!
 					</p>
-					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
-						title="See all details">Open</button>
 				</div>
 				<footer class="mp-card__footer">
-					<div class="card__carusel">
-						<div class="images__scroll-area">
-							<img src="../../public/image/gazon1.png" alt="gazon 1" />
-							<img src="../../public/image/gazon1.png" alt="gazon 1" />
-						</div>
-					</div>
-					<div class="mp-card__price">
-						<span class="mp-card__label">Full Price</span>
-						<span class="mp-card__amount">€399</span>
-					</div>
-				</footer>
-			</article>
-
-			<article class="card material">
-				<header class="card__header">
-					<img src="../../public/image/mikael.png" alt="Mikael Rosenberg" />
-					<h2 class="card__title">Mikael Rosenberg</h2>
-					<p class="card__name">Suvin Maalamo Oy</p>
-					<nav class="card__contact" aria-label="contact with person">
-						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
-							rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
-							</svg>
-							<span>I'm Batman</span>
-						</a>
-						<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
-							target="_blank" rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#link"></use>
-							</svg>
-						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
-							title="Email Mikael Rosenberg">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#email"></use>
-							</svg>
-						</a>
-					</nav>
-				</header>
-				<div class="mp-card__description">
-					<p class="mp-card__text">
-						Selling a Makita electric drill in excellent condition. Includes four batteries and a charger for
-						continuous operation.
-					</p>
-					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
-						title="See all details">Open</button>
-				</div>
-				<footer class="mp-card__footer">
-					<div class="card__carusel">
-						<div class="images__scroll-area">
-							<img src="../../public/image/drill1.png" alt="drill 1" />
-						</div>
-					</div>
-					<div class="mp-card__price">
-						<span class="mp-card__label">Full Price</span>
-						<span class="mp-card__amount">€295</span>
-					</div>
-				</footer>
-			</article>
-
-			<article class="card material">
-				<header class="card__header">
-					<img src="../../public/image/matti.png" alt="Matti Hyvilainen" />
-					<h2 class="card__title">Matti Hyvilainen</h2>
-					<p class="card__name">Myllyn Muuraus Oy</p>
-					<nav class="card__contact" aria-label="contact with person">
-						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
-							rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
-							</svg>
-							<span>Matti Hyvilainen</span>
-						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
-							title="Email Matti Hyvilainen">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#email"></use>
-							</svg>
-						</a>
-					</nav>
-				</header>
-				<div class="mp-card__description">
-					<p class="mp-card__text">
-						Selling a Dewalt angle grinder used for only one project and in excellent condition. This powerful tool
-						comes with its original accessories and is perfect for cutting, grinding, and polishing various materials.
-					</p>
-					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
-						title="See all details">Open</button>
-				</div>
-				<footer class="mp-card__footer">
-					<div class="card__carusel">
-						<div class="images__scroll-area">
-							<img src="../../public/image/cutter.png" alt="cutter" />
-							<img src="../../public/image/cutter.png" alt="cutter" />
-							<img src="../../public/image/cutter.png" alt="cutter" />
-							<img src="../../public/image/cutter.png" alt="cutter" />
-						</div>
-					</div>
-					<div class="mp-card__price">
-						<span class="mp-card__label">Full Price</span>
-						<span class="mp-card__amount">€95</span>
-					</div>
-				</footer>
-			</article>
-			<article class="card material">
-				<header class="card__header">
-					<img src="../../public/image/alibaba.png" alt="Pekka Vistola" />
-					<h2 class="card__title">Pekka Vistola</h2>
-					<p class="card__name">Roco Oy</p>
-					<nav class="card__contact" aria-label="contact with person">
-						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
-							rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
-							</svg>
-							<span>Just Pekka</span>
-						</a>
-						<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
-							target="_blank" rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#link"></use>
-							</svg>
-						</a>
-					</nav>
-				</header>
-				<div class="mp-card__description">
-					<p class="mp-card__text">
-						With easy-care Roso interior panels, you can make your home uniquely yours. These specially
-						surface-treated interior panels captivate with their embossed textures and are durable in use.
-					</p>
-					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
-						title="See all details">Open</button>
-				</div>
-				<footer class="mp-card__footer">
-					<div class="card__carusel">
-						<div class="images__scroll-area">
-							<img src="../../public/image/dos1.png" alt="dos 1" />
-							<img src="../../public/image/dos1.png" alt="dos 1" />
-							<img src="../../public/image/dos1.png" alt="dos 1" />
-						</div>
-					</div>
-					<div class="mp-card__price">
-						<span class="mp-card__label">Per Package</span>
-						<span class="mp-card__amount">€39</span>
-					</div>
-				</footer>
-			</article>
-
-			<article class="card material">
-				<header class="card__header">
-					<img src="../../public/image/maja.png" alt="Maja Koskinen" />
-					<h2 class="card__title">Maja Koskinen</h2>
-					<p class="card__name">Logoclic Oy</p>
-					<nav class="card__contact" aria-label="contact with person">
-						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
-							rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
-							</svg>
-							<span>Maisku</span>
-						</a>
-						<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
-							target="_blank" rel="noopener noreferrer">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#link"></use>
-							</svg>
-						</a>
-						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
-							title="Email Maja Koskinen">
-							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#email"></use>
-							</svg>
-						</a>
-					</nav>
-				</header>
-				<div class="mp-card__description">
-					<p class="mp-card__text">
-						Logoclic Silentos Oak Fondi Laminate offers a durable and stylish flooring solution, featuring an elegant
-						oak finish that enhances any interior space. Easy to install and maintain, it's perfect for both
-						residential and commercial use.
-					</p>
-					<button class="btn-blue-border card__open-btn mp-item-dialog" aria-label="See all details"
-						title="See all details">Open</button>
-				</div>
-				<footer class="mp-card__footer">
-					<div class="card__carusel">
-						<div class="images__scroll-area">
-							<img src="../../public/image/vinil1.png" alt="vinil 1" />
-							<img src="../../public/image/vinil1.png" alt="vinil 1" />
-							<img src="../../public/image/vinil1.png" alt="vinil 1" />
-							<img src="../../public/image/vinil1.png" alt="vinil 1" />
-							<img src="../../public/image/vinil1.png" alt="vinil 1" />
-						</div>
-					</div>
-					<div class="mp-card__price">
-						<span class="mp-card__label">Per Package</span>
-						<span class="mp-card__amount">€76</span>
-					</div>
+					<span class="mp-card__label">Amount of Workers</span>
+					<span class="mp-card__amount">21</span>
 				</footer>
 			</article>
 		</div>
@@ -592,15 +358,10 @@
 			</div>
 		</div>
 	</dialog>
-	<!-- Modal windows for MarketPlace Item (mp-item material)  -->
+	<!-- Modal windows for MarketPlace Item (mp-item)  -->
 	<dialog id="mp-item-dialog" class="dialog glass-dialog">
 		<div class="dialog__wrapper">
 			<header class="dialog__header">
-				<button type="button" class="btn-circle-48 btn-blue" data-button="share" aria-label="share card">
-					<svg class="icon" aria-hidden="true">
-						<use href="../../public/svg/ui_icons.svg#share"></use>
-					</svg>
-				</button>
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
 						<use href="../../public/svg/ui_icons.svg#close"></use>
@@ -609,84 +370,6 @@
 			</header>
 			<div class="dialog__main">
 				<div class="dialog__scroll-area">
-					<article class="card-material">
-						<!-- Card carousel -->
-						<div class="card-material__id">
-							Item ID: <b>84503121578</b>
-						</div>
-						<div class="card-material__gallery">
-							<picture class="card-material__preview-image">
-								<img src="../../public/image/main-item.png" id="preview-image" alt="item 1" />
-							</picture>
-							<div class="card__carusel">
-								<div class="images__scroll-area">
-									<img src="../../public/image/main-item.png" class="mp-card__image" alt="main-item" />
-									<img src="../../public/image/item1.png" class="mp-card__image" alt="item 1" />
-									<img src="../../public/image/item2.png" class="mp-card__image" alt="item 2" />
-									<img src="../../public/image/item3.png" class="mp-card__image" alt="item 3" />
-									<img src="../../public/image/item4.png" class="mp-card__image" alt="item 4" />
-									<img src="../../public/image/item5.png" class="mp-card__image" alt="item 5" />
-									<img src="../../public/image/item6.png" class="mp-card__image" alt="item 6" />
-									<img src="../../public/image/item7.png" class="mp-card__image" alt="item 7" />
-								</div>
-							</div>
-
-						</div>
-						<!-- Card header -->
-						<header class="card__header">
-							<img src="../../public/image/jussi.png" alt="Jussi Heinola" />
-							<h2 class="card__title">Jussi Heinola</h2>
-							<p class="card__name">Rakennus Oy</p>
-							<nav class="card__contact" aria-label="contact with person">
-								<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
-									rel="noopener noreferrer">
-									<svg class="icon" aria-hidden="true">
-										<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
-									</svg>
-									<span>Jussi Heinola</span>
-								</a>
-								<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
-									target="_blank" rel="noopener noreferrer">
-									<svg class="icon" aria-hidden="true">
-										<use href="../../public/svg/ui_icons.svg#link"></use>
-									</svg>
-								</a>
-								<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
-									title="Email Jussi Heinola">
-									<svg class="icon" aria-hidden="true">
-										<use href="../../public/svg/ui_icons.svg#email"></use>
-									</svg>
-								</a>
-								<a href="mailto:support@eiffels.ai" class="btn-circle-40 btn-red-200-border"
-									title="Complain about Jussi Heinola">
-									<svg class="icon" aria-hidden="true">
-										<use href="../../public/svg/ui_icons.svg#complain"></use>
-									</svg>
-								</a>
-							</nav>
-							<div class="card-material__info">
-								<span>Location</span>
-								<b class="card-material__geo">Helsinki</b>
-								<span>Full Price</span>
-								<b class="card-material__amount">€175</b>
-							</div>
-						</header>
-						<p class="mp-card__text">
-							I’m selling a DeWalt rotary saw that's in excellent condition, having been used only a few times for
-							light
-							tasks. This powerful and reliable tool is perfect for both professional and DIY projects. Along with the
-							saw, I'm including four brand-new cutting discs, so you're fully equipped for a variety of cutting needs
-							right from the start.<br /><br /> Additionally, protective goggles are included to ensure your safety
-							while
-							working.
-							Whether you're cutting through metal, wood, or other materials, this set has everything you need to get
-							the
-							job done efficiently and safely.
-						</p>
-						<footer class="card-material__footer">
-							Published <time id="card-material-date" datetime="2025-12-25">25.12.25</time>
-						</footer>
-					</article>
 				</div>
 			</div>
 		</div>

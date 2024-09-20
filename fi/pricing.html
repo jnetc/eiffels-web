@@ -28,6 +28,7 @@
       </button>
       <a href="index.html" title="Eiffels home page" class="header__logo">
         <img src="../public/svg/logos/eiffels_ai.svg" class="logo" alt="Eiffels" title="Eiffels" />
+        <div class="logo__beta">Beta</div>
       </a>
     </div>
     <nav class="header__center header__nav" aria-label="main site navigation">
@@ -51,7 +52,7 @@
       <ul class="nav__links">
         <li><a href="#overview" class="href href-grey">Yleiskatsaus</a></li>
         <li><a href="#features" class="href href-grey">Ominaisuudet</a></li>
-        <li><a href="pricing.html" class="href href-grey onpage">Hinnoittelu</a></li>
+        <li><a href="pricing.html" class="href href-grey active">Hinnoittelu</a></li>
         <li><a href="#faq" class="href href-grey">UKK</a></li>
         <li><a href="#support" class="href href-grey">Tuki</a></li>
       </ul>
@@ -87,11 +88,11 @@
       <div class="pricing__options glass-effect">
         <div class="yearly">
           <input type="radio" id="yearly" name="option" value="yearly" checked />
-          <label for="yearly">Pay yearly (<span class="yearly-discount">save 20%</span>)</label>
+          <label for="yearly">Vuosi (<span class="yearly-discount">säästä 20%</span>)</label>
         </div>
         <div class="monthly">
           <input type="radio" id="monthly" name="option" value="monthly" />
-          <label for="monthly">Pay monthly</label>
+          <label for="monthly">Kuukausi</label>
         </div>
         <div class="option-selected"></div>
       </div>
@@ -259,10 +260,26 @@
           </li>
         </ul>
       </article>
+
+      <article class="pricing__plan plan-manager">
+        <h3 class="plan__title">Manager</h3>
+        <p class="plan__description">This plan is for companies or managers purchasing services for workers starting on
+          a project, whether they're employees,
+          contractors, or self-employed. It provides flexibility for different employment types while offering full
+          control over
+          service access and project management.</p>
+        <a href="https://wa.me/3584578396777?text=The Manager plan" class="btn-48 btn-blue-border plan__button"
+          aria-label="Get started with the Manager plan">get
+          started
+          <svg class="icon" aria-hidden="true">
+            <use href="../public/svg/ui_icons.svg#arrow-right"></use>
+          </svg>
+        </a>
+      </article>
     </section>
+
     <section id="faq" class="grid">
       <h2>F<span>requently </span>A<span>sked </span>Q<span>uestions</span></h2>
-
       <ul class="faq__list">
         <li class="faq__item">
           <h3 class="faq__question" tabindex="0">

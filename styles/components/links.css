@@ -25,6 +25,10 @@
 .href-grey:hover {
   text-decoration: underline var(--grey-500);
 }
+.href-grey.active {
+  font-weight: bold;
+  text-decoration: underline var(--grey-500);
+}
 /* Only for marketplace links */
 [href*='marketplace'].href-grey:hover {
   text-decoration: underline var(--primary);

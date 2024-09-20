@@ -140,6 +140,25 @@
   border: 1px solid var(--surface);
 }
 
+.plan-manager {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 768px;
+  margin-block-start: var(--gap-96);
+  background-image: linear-gradient(var(--white), var(--white)),
+    linear-gradient(
+      160deg,
+      hsl(from var(--primary) h s l / 20%) 0%,
+      hsl(from var(--surface) h s l / 100%) 35%,
+      hsl(from #fff h s l / 100%) 75%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: var(--border, 1.5px) solid transparent;
+  border-radius: var(--border-r, var(--border-corner-12));
+  box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 2%);
+}
+
 .plan__price {
   min-height: var(--size-48);
   display: flex;
