@@ -29,9 +29,10 @@
 }
 
 html {
-  background-color: var(--white);
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -44,6 +45,9 @@ body {
   min-height: 100dvh;
   color: var(--black);
   position: relative;
+  background-color: var(--white);
+  font-family: 'SF Pro Text', sans-serif;
+  text-rendering: optimizeSpeed;
   scrollbar-gutter: stable;
 }
 
@@ -55,13 +59,11 @@ article {
   container-type: inline-size;
 } */
 
-body,
 input,
 textarea,
 button,
 select {
-  font-family: 'SF Pro Text', sans-serif;
-  -webkit-font-smoothing: antialiased; /* for MacOs */
+  font: inherit;
 }
 
 /* GLOBAL MEDIA */
@@ -104,6 +106,7 @@ input,
 textarea {
   font-weight: 300;
 }
+
 p,
 span,
 figcaption {
@@ -119,10 +122,10 @@ time {
   font-size: var(--font-18);
 }
 
-input,
+/* input,
 textarea {
   outline: none;
-}
+} */
 
 input,
 textarea,

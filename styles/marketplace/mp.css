@@ -8,7 +8,7 @@
   grid-template-rows: min-content min-content 1fr min-content;
   column-gap: var(--gap-20);
   margin-inline: auto;
-  padding-inline: var(--gap-20);
+  /* padding-inline: var(--gap-20); */
 }
 
 /* HEADER & NAVIGATION */
@@ -97,23 +97,15 @@
 /* MAIN LIST OF CARDS */
 .main__list {
   display: grid;
-  gap: var(--gap-18);
+  flex-wrap: wrap;
+  gap: var(--gap-16);
   padding-block-start: var(--gap-48);
-
-  &:has(:not(:nth-child(3))) {
-    grid-template-columns: repeat(auto-fit, minmax(320px, calc(100% / 4)));
-    justify-content: flex-start;
-  }
-
-  &:has(:nth-child(4)) {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fit, minmax(320px, 0.25fr));
 }
 
-@container (max-width: 1200px) {
-  .main__list:has(:not(:nth-child(3))) {
+@container (max-width: 1400px) {
+  .main__list {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    justify-content: center;
   }
 }
 

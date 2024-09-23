@@ -1,0 +1,202 @@
+.mini-card {
+  /* flex: 1 1 calc(25% - 12px); */
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-16);
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.mini-card__header {
+  display: grid;
+  grid-template-columns: var(--size-48) minmax(200px, 1fr);
+  column-gap: var(--gap-16);
+  row-gap: var(--gap-4);
+
+  & img {
+    grid-column: 1;
+    grid-row: 1 / 2 span;
+    width: var(--size-48);
+    height: var(--size-48);
+    border-radius: 50vw;
+    object-fit: contain;
+  }
+
+  & :is(h2, p) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Center heading without company name */
+  &:not(:has(.mini-card__name, .mini-card__logo)) .mini-card__title {
+    grid-row: 1 / 2 span;
+    align-self: center;
+  }
+
+  & .mini-card__title {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: flex-end;
+    color: var(--black);
+    font-size: var(--font-20);
+  }
+
+  & .mini-card__name {
+    grid-column: 2;
+    grid-row: 2;
+    color: var(--grey-400);
+    font-size: var(--font-14);
+    font-weight: bold;
+  }
+
+  & > a {
+    position: absolute;
+    z-index: 5;
+  }
+}
+
+.mini-card__contact {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--gap-8);
+  padding-block-start: var(--gap-8);
+
+  & .icon {
+    width: var(--size-28);
+    height: var(--size-28);
+    aspect-ratio: 1;
+  }
+}
+
+.mini-card__whatsapp-btn {
+  display: flex;
+  height: var(--size-40);
+  align-items: center;
+  gap: var(--gap-4);
+  margin-inline-end: auto;
+  padding-inline: var(--gap-16);
+  background-color: var(--whatsapp-dark-green);
+  border-radius: var(--border-corner-32);
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+  user-select: none;
+
+  &:hover {
+    background-color: hsl(from var(--whatsapp-dark-green) h s 35% / 1);
+  }
+
+  & .icon {
+    flex: 1 0 auto;
+    fill: var(--white);
+  }
+
+  & span {
+    flex-grow: 1;
+    color: var(--white);
+    font-size: var(--font-14);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.mini-card__open-btn {
+  height: var(--size-40);
+  width: 100%;
+  display: grid;
+  place-content: center;
+  border-radius: 3rem;
+  font-weight: bold;
+  font-size: var(--font-14);
+  text-decoration: none;
+}
+
+.mini-card__carusel {
+  contain: content;
+  overflow: hidden;
+}
+
+.images__scroll-area {
+  display: flex;
+  gap: var(--gap-8);
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-300) var(--grey-100);
+  scroll-snap-type: x mandatory;
+
+  & img {
+    height: var(--size-64);
+    aspect-ratio: 1;
+    border-radius: var(--border-corner-8);
+    scroll-snap-align: start;
+    object-fit: cover;
+  }
+}
+
+.mini-card {
+  padding: var(--gap-24);
+  background-color: var(--surface);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--border-corner-16);
+}
+
+.mini-card__header-name-logo {
+  border-radius: var(--border-corner-8);
+}
+
+.mini-card__description {
+  /* flex: 1 0 auto; */
+  display: grid;
+  grid-auto-rows: 1fr min-content;
+  row-gap: var(--gap-12);
+}
+
+.mini-card__text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+}
+
+.mini-card__footer {
+  max-height: 100%;
+  height: 82px;
+  display: flex;
+  column-gap: var(--gap-16);
+  justify-content: space-between;
+  padding-block-start: var(--gap-16);
+  border-top: 1px solid var(--grey-200);
+  align-items: center;
+
+  & * {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  & .mini-card__label {
+    color: var(--grey-300);
+    font-size: var(--font-14);
+  }
+
+  & .mini-card__amount {
+    color: var(--black);
+    font-size: var(--font-36);
+  }
+
+  & .ukko-logo {
+    height: var(--size-28);
+    border-radius: var(--border-corner-8);
+  }
+
+  & :where(.ukko-link, .mini-card__price) {
+    height: min-content;
+    display: grid;
+    row-gap: var(--gap-4);
+  }
+}

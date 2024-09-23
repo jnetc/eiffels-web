@@ -1,4 +1,5 @@
 @import url('../components/marketplace-card.css');
+@import url('../components/marketplace-mini-card.css');
 
 :where(.worker, .material, .job) {
   padding: var(--gap-24);

@@ -4,39 +4,43 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
     const { closeDialog, openDialog } = await import('./dialogUtils.js');
     // Выбираем все элементы с классом ".mp-card__description"
-    const workers = document.querySelectorAll('.job');
+    const cards = document.querySelectorAll('.mini-card');
     // const textBox = document.querySelectorAll('.mp-card__description') as NodeListOf<HTMLElement>;
     // Находим элемент, который будет использоваться в качестве диалога
     const dialogMPI = document.getElementById('mp-item-dialog');
     // ------------------------------
     // Функция для обрезки текста в карточке и отображения кнопки "Читать далее", если текст превышает высоту
-    function getLineCount(element) {
-        // Находим элемент с классом ".mp-card__text" внутри текущего элемента
-        const cardText = element.querySelector('.mp-card__text');
-        // Получаем высоту элемента с текстом
-        const cardTextHeight = Math.round(cardText.getBoundingClientRect().height);
-        // Получаем полную высоту текста, включая скрытые части
-        const cardTextscrollHeight = cardText.scrollHeight;
-        // Создаем кнопку "Читать далее"
-        const button = document.createElement('button');
-        button.className = 'btn-blue-border card__open-btn mp-item-dialog';
-        button.setAttribute('aria-label', 'Read all text');
-        button.setAttribute('title', 'Read all text');
-        button.textContent = 'Open';
-        // Добавляем обработчик клика для открытия диалога
-        button.addEventListener('click', openDialogAndCloneCard);
-        // Если высота текста превышает высоту видимой части, добавляем кнопку
-        if (cardTextscrollHeight > cardTextHeight) {
-            cardText.classList.add('mp-card__text-clamp'); // Добавляем класс для обрезки текста
-            element.appendChild(button); // Добавляем кнопку к элементу
-        }
-    }
+    // function getLineCount(element: HTMLElement) {
+    //   // Находим элемент с классом ".mp-card__text" внутри текущего элемента
+    //   const cardText = element.querySelector('.mp-card__text') as HTMLParagraphElement;
+    //   // Получаем высоту элемента с текстом
+    //   const cardTextHeight = Math.round(cardText.getBoundingClientRect().height);
+    //   // Получаем полную высоту текста, включая скрытые части
+    //   const cardTextscrollHeight = cardText.scrollHeight;
+    //   // Создаем кнопку "Читать далее"
+    //   const button = document.createElement('button');
+    //   button.className = 'btn-blue-border card__open-btn mp-item-dialog';
+    //   button.setAttribute('aria-label', 'Read all text');
+    //   button.setAttribute('title', 'Read all text');
+    //   button.textContent = 'Open';
+    //   // Добавляем обработчик клика для открытия диалога
+    //   button.addEventListener('click', openDialogAndCloneCard);
+    //   // Если высота текста превышает высоту видимой части, добавляем кнопку
+    //   if (cardTextscrollHeight > cardTextHeight) {
+    //     cardText.classList.add('mp-card__text-clamp'); // Добавляем класс для обрезки текста
+    //     element.appendChild(button); // Добавляем кнопку к элементу
+    //   }
+    // }
     // Проходим по всем найденным элементам и применяем функцию для обработки текста
-    for (const worker of workers) {
-        const cardText = worker.querySelectorAll('.mp-card__description');
-        for (const element of cardText) {
-            getLineCount(element);
+    for (const card of cards) {
+        // Остановить всплытие события для ссылок внутри карточки
+        const links = card.querySelectorAll('a');
+        for (const link of links) {
+            link.addEventListener('click', event => {
+                event.stopImmediatePropagation(); // Останавливаем всплытие события клика
+            });
         }
+        card.addEventListener('click', openDialogAndCloneCard);
     }
     // ------------------------------
     // Функция для открытия диалога и отображения полного текста
