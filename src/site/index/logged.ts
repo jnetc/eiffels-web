@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ------------------------------
   // ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
-  const { default: sectionPricing } = await import('../pricing/sectionPricing.js');
-  sectionPricing();
+  // const { default: sectionPricing } = await import('../pricing/sectionPricing.js');
+  // sectionPricing();
 
   // ------------------------------
   // ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ / FAQ

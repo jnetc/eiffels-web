@@ -68,3 +68,18 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--border-corner-12);
 }
+
+@media screen and (max-width: 640px) {
+  #overview {
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+
+    & > :not(.video-container) {
+      grid-column: 2;
+    }
+  }
+
+  .overview__video {
+    border-radius: 0;
+  }
+}

@@ -9,16 +9,13 @@
 @import url('section-support.css');
 
 .landing {
-  /* display: grid; */
-  max-width: var(--min-grid-size);
-  margin-inline: auto;
+  display: grid;
   position: relative;
-  /* grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside); */
-  /* column-gap: var(--gap-48); */
+  grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
 
-  /* & > :where(header, main, footer, button) {
+  & > :where(header, main, footer, button) {
     grid-column: 2;
-  } */
+  }
   & > #back-to-top {
     margin-inline: auto;
   }
