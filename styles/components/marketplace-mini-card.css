@@ -1,11 +1,23 @@
 .mini-card {
-  /* flex: 1 1 calc(25% - 12px); */
   display: flex;
   flex-direction: column;
   row-gap: var(--gap-16);
   position: relative;
+  padding: var(--gap-24);
+  background-color: var(--surface);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--border-corner-16);
+  transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
   z-index: 1;
+
+  &:hover {
+    box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
+  }
+
+  @media (hover: none) {
+    box-shadow: none;
+  }
 }
 
 .mini-card__header {
@@ -72,7 +84,7 @@
 
 .mini-card__whatsapp-btn {
   display: flex;
-  height: var(--size-40);
+  height: var(--size-48);
   align-items: center;
   gap: var(--gap-4);
   margin-inline-end: auto;
@@ -135,13 +147,6 @@
     scroll-snap-align: start;
     object-fit: cover;
   }
-}
-
-.mini-card {
-  padding: var(--gap-24);
-  background-color: var(--surface);
-  border: 1px solid var(--grey-200);
-  border-radius: var(--border-corner-16);
 }
 
 .mini-card__header-name-logo {

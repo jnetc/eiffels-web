@@ -1,5 +1,6 @@
 #overview {
   display: grid;
+  scroll-margin-block-start: var(--gap-72);
 }
 
 .video-container {
