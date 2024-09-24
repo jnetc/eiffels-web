@@ -1,20 +1,20 @@
 :root {
-  --primary: #0073e6;
-  --surface: #f9f9fa;
-  --white: #f5f5f7;
-  --grey-100: #eff2f7;
-  --grey-150: #e1e5ec;
-  --grey-200: #d2d9e7;
-  --grey-300: #7488af;
-  --grey-400: #5c6c8b;
-  --grey-500: #3b4b6d;
-  --black: #282829;
-  --red: #fd7474;
-  --blue-grey: #657ffe;
-  --purpur: #a52bd0;
-  --warning-error: #ff006b;
-  --whatsapp-light-green: #44eb61;
-  --whatsapp-dark-green: #1dc73f;
+  --primary: hsl(210, 100%, 45%);
+  --surface: hsl(240, 9%, 98%);
+  --white: hsl(240, 11%, 96%);
+  --grey-100: hsl(218, 33%, 95%);
+  --grey-150: hsl(218, 22%, 90%);
+  --grey-200: hsl(220, 30%, 86%);
+  --grey-300: hsl(220, 27%, 57%);
+  --grey-400: hsl(220, 20%, 45%);
+  --grey-500: hsl(221, 30%, 33%);
+  --black: hsl(240, 1%, 16%);
+  --red: hsl(0, 97%, 72%);
+  --blue-grey: hsl(230, 99%, 70%);
+  --purpur: hsl(284, 66%, 49%);
+  --warning-error: hsl(335, 100%, 50%);
+  --whatsapp-light-green: hsl(130, 81%, 59%);
+  --whatsapp-dark-green: hsl(132, 75%, 45%);
 
   --inset-val: -1.5px; /* for glass effect */
 
