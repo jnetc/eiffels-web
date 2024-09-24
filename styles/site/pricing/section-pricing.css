@@ -76,7 +76,7 @@
   border: hsl(255 100% 100% / 70%) 2px solid;
   /* border: red 2px solid; */
   border-radius: 50vw;
-  box-shadow: inset 0 0 1rem 1rem hsl(from var(--white) h s l / 30%), 0 15px 15px hsl(from var(--primary) h s l / 5%);
+  box-shadow: inset 0 0 1rem 1rem hsl(from var(--grey-50) h s l / 30%), 0 15px 15px hsl(from var(--primary) h s l / 5%);
   /* transition: all 0.2s linear; */
   /* position: absolute; */
   /* backdrop-filter: blur(50px); */
@@ -145,7 +145,7 @@
   justify-self: center;
   max-width: 768px;
   margin-block-start: var(--gap-96);
-  background-image: linear-gradient(var(--white), var(--white)),
+  background-image: linear-gradient(var(--grey-50), var(--grey-50)),
     linear-gradient(
       160deg,
       hsl(from var(--primary) h s l / 20%) 0%,

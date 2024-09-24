@@ -220,7 +220,7 @@ header a {
 } */
 
 .btn-secondary {
-  background-color: var(--white);
+  background-color: var(--grey-50);
   border: 1.5px solid var(--grey-200);
   color: var(--grey-500);
 }

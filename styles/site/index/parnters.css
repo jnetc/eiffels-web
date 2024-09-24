@@ -10,8 +10,4 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--gap-48);
-
-  & img {
-    height: var(--size-64);
-  }
 }

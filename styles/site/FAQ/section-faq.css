@@ -78,7 +78,7 @@
       position: absolute;
       inset-block-start: 50%;
       inset-inline-start: 50%;
-      background-color: var(--white);
+      background-color: var(--grey-50);
       border-radius: 50vw;
       translate: -50% -50%;
       transition: rotate 0.2s ease-in-out;

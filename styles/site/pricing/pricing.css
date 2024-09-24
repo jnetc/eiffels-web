@@ -94,7 +94,7 @@
   }
 
   & .icon [href*='marketplace'] {
-    fill: var(--white);
+    fill: var(--grey-50);
   }
 
   & .icon [href*='settings'] {
@@ -255,7 +255,7 @@ section#faq h2 {
     position: fixed;
     inset: 0;
     padding-block-start: var(--gap-18);
-    background-color: hsl(from var(--white) h s l / 100%);
+    background-color: hsl(from var(--grey-50) h s l / 100%);
     z-index: 101;
 
     &.open {

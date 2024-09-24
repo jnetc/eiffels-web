@@ -64,8 +64,8 @@
     opacity: 0;
     background-image: linear-gradient(
       to top,
-      hsl(from var(--white) h s l / 0%) 0%,
-      hsl(from var(--white) h s l / 100%) 100%
+      hsl(from var(--grey-50) h s l / 0%) 0%,
+      hsl(from var(--grey-50) h s l / 100%) 100%
     );
     transition: opacity 0.2s ease-in-out;
     user-select: none;
@@ -181,6 +181,7 @@
 
   & > img {
     grid-area: img;
+    height: var(--size-96);
     border-radius: 50vw;
   }
 

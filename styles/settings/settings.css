@@ -188,7 +188,7 @@
     & .icon {
       width: var(--size-24);
       aspect-ratio: 1;
-      fill: var(--white);
+      fill: var(--grey-50);
     }
   }
 }

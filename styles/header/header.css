@@ -11,7 +11,7 @@ body > header {
   column-gap: var(--gap-20);
   position: sticky;
   inset-block-start: 0;
-  background-color: hsl(from var(--white) h s l / 90%);
+  background-color: hsl(from var(--grey-50) h s l / 90%);
   backdrop-filter: blur(5px);
   z-index: 99;
 }

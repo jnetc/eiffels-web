@@ -45,7 +45,7 @@ body {
   min-height: 100dvh;
   color: var(--black);
   position: relative;
-  background-color: var(--white);
+  background-color: var(--grey-50);
   font-family: 'SF Pro Text', sans-serif;
   text-rendering: optimizeSpeed;
   scrollbar-gutter: stable;

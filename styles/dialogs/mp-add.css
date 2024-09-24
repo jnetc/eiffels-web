@@ -51,7 +51,7 @@
       width: var(--size-32);
       height: var(--size-32);
       aspect-ratio: 1;
-      fill: var(--white);
+      fill: var(--grey-50);
     }
   }
 }

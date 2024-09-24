@@ -80,12 +80,12 @@
 
   & .icon {
     flex: 1 0 auto;
-    fill: var(--white);
+    fill: var(--grey-50);
   }
 
   & span {
     flex-grow: 1;
-    color: var(--white);
+    color: var(--grey-50);
     font-size: var(--font-14);
     font-weight: bold;
     overflow: hidden;
