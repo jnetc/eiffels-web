@@ -12,11 +12,6 @@
 	<link rel="stylesheet" href="../styles/site/index/backdrop.css" />
 	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
-	<link rel="preload" href="../public/fonts/SF-Pro-Text-Light.woff2" as="font" type="font/woff2"
-		crossorigin="anonymous">
-	<link rel="preload" href="../public/fonts/SF-Pro-Text-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="../public/fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2"
-		crossorigin="anonymous">
 	<script src="../scripts/global.js" defer></script>
 	<script src="../scripts/site/index/index.js" defer></script>
 	<script src="../scripts/dialogs/dialog.js" defer></script>
@@ -142,7 +137,7 @@
 				saamiseen, kaikki tapahtuu tutussa chat-käyttöliittymässä, jonka jo tunnet ja rakastat. Eiffels AI on valmis
 				mullistamaan työskentelytapasi.
 			</p>
-			<div class="video-container fullview">
+			<div class="video-container fullview pc-version">
 				<div class="video-controls">
 					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
 						aria-label="Play video button">
@@ -156,13 +151,35 @@
 						</svg>
 					</button>
 				</div>
-				<video class="overview__video" width="960" height="720" poster="../public/video/poster.png" playsinline autoplay
-					loop muted preload="auto">
-					<source src="../public/video/overview_mp.mp4" type="video/mp4">
-					<source src="../public/video/overview_webm.webm" type="video/webm">
+				<video class="overview__video overview__source-pc" width="960" height="720"
+					poster="../public/video/overview_960_poster.webp" playsinline autoplay loop muted preload="metadata">
+					<source src="../public/video/overview_960.mp4" type="video/mp4">
+					<source src="../public/video/overview_960.webm" type="video/webm">
 					Selaimesi ei tue video-tunnistetta.
 				</video>
 			</div>
+			<div class="video-container fullview mob-version">
+				<div class="video-controls">
+					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
+						aria-label="Play video button">
+						<svg class="icon" aria-hidden="true">
+							<use href="../public/svg/ui_icons.svg#pause"></use>
+						</svg>
+					</button>
+					<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute" aria-label="Mute video button">
+						<svg class="icon" aria-hidden="true">
+							<use href="../public/svg/ui_icons.svg#mute"></use>
+						</svg>
+					</button>
+				</div>
+				<video class="overview__video overview__source-mob" width="1280" height="720"
+					poster="../public/video/overview_mobile_poster.webp" playsinline autoplay loop muted preload="metadata">
+					<source src="../public/video/overview_mobile.mp4" type="video/mp4">
+					<source src="../public/video/overview_mobile.webm" type="video/webm">
+					Selaimesi ei tue video-tunnistetta.
+				</video>
+			</div>
+		</section>
 		</section>
 		<section id="partners">
 			<h2 class="partners__title">Startup-kumppanit</h2>
@@ -210,29 +227,32 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Vaivaton raportointi
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Vaivaton raportointi:
-							</b> Luo kattavat päivittäiset raportit automaattisesti äänellä tai tekstillä.
+							</b>
+							Luo kattavat päivittäiset raportit automaattisesti äänellä tai tekstillä.
 							Eiffelin AI kerää olennaiset tiedot, järjestää ne ja valmistelee viimeistellyt raportit, jotka ovat
 							valmiita lähettämistä ja hyväksyntää varten.
 						</li>
 						<li>
 							<b>
+								Välitön tiedonkeruu
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Välitön tiedonkeruu:
-							</b> Kirjaa toiminnot ja materiaalit liikkeellä ollessasi.
+							</b>
+							Kirjaa toiminnot ja materiaalit liikkeellä ollessasi.
 						</li>
 						<li>
 							<b>
+								Sujuva lähetys
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Sujuva lähetys:
-							</b> Lähetä raportit suoraan esimiehille nopeaa hyväksyntää varten WhatsAppin kautta.
+							</b>
+							Lähetä raportit suoraan esimiehille nopeaa hyväksyntää varten WhatsAppin kautta.
 						</li>
 					</ul>
 				</div>
@@ -265,28 +285,31 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Parannettu turvallisuus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Parannettu turvallisuus:
-							</b> Varmista asiakirjojesi eheys lohkoketjuteknologian avulla. Jokainen
+							</b>
+							Varmista asiakirjojesi eheys lohkoketjuteknologian avulla. Jokainen
 							hyväksyntä on jäljitettävissä ja väärentämätön, mikä tuo mielenrauhaa ja luotettavuutta.
 						</li>
 						<li>
 							<b>
+								Todennettavat tapahtumat
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Todennettavat tapahtumat:
-							</b> Suojaa tietosi lohkoketjun muuttumattoman kirjanpidon avulla.
+							</b>
+							Suojaa tietosi lohkoketjun muuttumattoman kirjanpidon avulla.
 						</li>
 						<li>
 							<b>
+								Nopea käsittely
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Nopea käsittely:
-							</b> Nopeuta hyväksyntäprosessia vaarantamatta turvallisuutta.
+							</b>
+							Nopeuta hyväksyntäprosessia vaarantamatta turvallisuutta.
 						</li>
 					</ul>
 				</div>
@@ -319,35 +342,38 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Riko kielimuurit
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Riko kielimuurit:
-							</b> Viesti tehokkaasti useilla kielillä monimuotoisessa tiimissäsi. Saat
+							</b>
+							Viesti tehokkaasti useilla kielillä monimuotoisessa tiimissäsi. Saat
 							reaaliaikaisia ja tarkkoja käännöksiä, jotta kaikki pysyvät ajan tasalla.
 						</li>
 						<li>
 							<b>
+								Välitön käännös
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Välitön käännös:
-							</b> Käännä asiakirjat ja viestit välittömästi käyttämällä ääntäsi.
+							</b>
+							Käännä asiakirjat ja viestit välittömästi käyttämällä ääntäsi.
 						</li>
 						<li>
 							<b>
+								Parannettu yhteistyö
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Parannettu yhteistyö:
-							</b> Helpota sujuvampaa viestintää globaalien tiimien välillä.
+							</b>
+							Helpota sujuvampaa viestintää globaalien tiimien välillä.
 						</li>
 					</ul>
 				</div>
 			</article>
 			<!-- Sampo Kurttila -->
 			<div class="feature__qoute glass-effect">
-				<img src="../public/image/sampo_kurttila.png" alt="Sampo Kurttila Kumppanuusjohtaja">
+				<img src="../public/image/sampo_kurttila.webp" alt="Sampo Kurttila Kumppanuusjohtaja">
 				<h3>Sampo Kurttila</h3>
 				<p>Kumppanuusjohtaja <a href="http://www.ukko.fi" title="move to ukko.fi website"
 						aria-label="move to ukko.fi website" rel="noopener noreferrer" target="_blank">
@@ -399,28 +425,31 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Automatisoi laskutus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Automatisoi laskutus:
-							</b> Luo ja seuraa laskuja suoraan WhatsAppin kautta UKKO.fi-integraation
+							</b>
+							Luo ja seuraa laskuja suoraan WhatsAppin kautta UKKO.fi-integraation
 							avulla. Vähennä manuaalista tietojen syöttöä ja keskity enemmän projektitehtäviisi.
 						</li>
 						<li>
 							<b>
+								Tehokas laskutus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Tehokas laskutus:
-							</b> Tehosta maksuprosesseja automatisoiduilla ratkaisuilla.
+							</b>
+							Tehosta maksuprosesseja automatisoiduilla ratkaisuilla.
 						</li>
 						<li>
 							<b>
+								Talouden valvonta
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Talouden valvonta:
-							</b> Seuraa maksuja ja taloudellista tilannetta vaivattomasti.
+							</b>
+							Seuraa maksuja ja taloudellista tilannetta vaivattomasti.
 						</li>
 					</ul>
 				</div>
@@ -457,29 +486,32 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Tarkka vastaavuus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Tarkka vastaavuus:
-							</b> Käytä tekoälyn ohjaamia kehotteita löytääksesi palvelut, jotka on räätälöity
+							</b>
+							Käytä tekoälyn ohjaamia kehotteita löytääksesi palvelut, jotka on räätälöity
 							juuri sinun tarpeisiisi. Tekoälyalgoritmimme varmistavat, että yhdistyt oikeisiin toimittajiin.
 						</li>
 						<li>
 							<b>
+								Välittömät yhteydet
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Välittömät yhteydet:
-							</b> Saat nopeasti toimittajien tiedot ja ota heihin yhteyttä suoraan WhatsAppin
+							</b>
+							Saat nopeasti toimittajien tiedot ja ota heihin yhteyttä suoraan WhatsAppin
 							kautta, tehostaen viestintää ja hankintaprosessia.
 						</li>
 						<li>
 							<b>
+								Laajenna tarjontaasi
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Laajenna tarjontaasi:
-							</b> Listaa palvelusi AI-markkinapaikkaan tavoittaaksesi enemmän potentiaalisia
+							</b>
+							Listaa palvelusi AI-markkinapaikkaan tavoittaaksesi enemmän potentiaalisia
 							asiakkaita ja välttääksesi henkilöstön irtisanomisia. Lisää liiketoimintasi liikevaihtoa ja kasvata
 							asiakaskuntaasi esittelemällä palvelusi kohdennetulle yleisölle.
 						</li>
@@ -520,28 +552,31 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Visuaaliset oivallukset
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Visuaaliset oivallukset:
-							</b> Käytä tekoälyä rakennustyömaan kuvien analysointiin saadaksesi
+							</b>
+							Käytä tekoälyä rakennustyömaan kuvien analysointiin saadaksesi
 							välittömiä arvioita ja laadun tarkistuksia. Tee tietoon perustuvia päätöksiä nopeasti ja tarkasti.
 						</li>
 						<li>
 							<b>
+								Virheiden tunnistus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Virheiden tunnistus:
-							</b> Havaitse ongelmat ajoissa riskien vähentämiseksi.
+							</b>
+							Havaitse ongelmat ajoissa riskien vähentämiseksi.
 						</li>
 						<li>
 							<b>
+								Edistymisen seuranta
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Edistymisen seuranta:
-							</b> Seuraa rakennustöiden etenemistä visuaalisesti varmistaaksesi
+							</b>
+							Seuraa rakennustöiden etenemistä visuaalisesti varmistaaksesi
 							vaatimustenmukaisuuden.
 						</li>
 					</ul>
@@ -549,7 +584,7 @@
 			</article>
 			<!-- Pavel Durov -->
 			<div class="feature__qoute glass-effect">
-				<img src="../public/image/pavel_durov.png" alt="Pavel Durov Telegram toimitusjohtaja">
+				<img src="../public/image/pavel_durov.webp" alt="Pavel Durov Telegram toimitusjohtaja">
 				<h3>Pavel Durov</h3>
 				<p>Toimitusjohtaja
 					<a href="http://telegram.org" class="href href-blue" title="move to telegram.org website"
@@ -589,28 +624,31 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Pilvipalvelun mukavuus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Pilvipalvelun mukavuus:
-							</b> Tallenna kaikki raporttisi ja asiakirjasi automaattisesti turvallisesti
+							</b>
+							Tallenna kaikki raporttisi ja asiakirjasi automaattisesti turvallisesti
 							pilveen. Pääse niihin käsiksi missä ja milloin tahansa ilman vaivaa.
 						</li>
 						<li>
 							<b>
+								Helppo pääsy
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Helppo pääsy:
-							</b> Hae ja tarkastele asiakirjoja millä tahansa laitteella.
+							</b>
+							Hae ja tarkastele asiakirjoja millä tahansa laitteella.
 						</li>
 						<li>
 							<b>
+								Turvallinen tallennus
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Turvallinen tallennus:
-							</b> Suojaa tietosi vahvoilla pilviturvatoimilla.
+							</b>
+							Suojaa tietosi vahvoilla pilviturvatoimilla.
 						</li>
 					</ul>
 				</div>

@@ -12,11 +12,6 @@
 	<link rel="stylesheet" href="../styles/site/index/backdrop.css" />
 	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
 	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
-	<link rel="preload" href="../public/fonts/SF-Pro-Text-Light.woff2" as="font" type="font/woff2"
-		crossorigin="anonymous">
-	<link rel="preload" href="../public/fonts/SF-Pro-Text-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="../public/fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2"
-		crossorigin="anonymous">
 	<script src="../scripts/global.js" defer></script>
 	<script src="../scripts/site/index/index.js" defer></script>
 	<script src="../scripts/dialogs/dialog.js" defer></script>
@@ -137,7 +132,7 @@
 				generating daily reports to securing approvals, all within the chat interface you already know and love, Eiffels
 				AI is set to revolutionize how you work.
 			</p>
-			<div class="video-container fullview">
+			<div class="video-container fullview pc-version">
 				<div class="video-controls">
 					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
 						aria-label="Play video button">
@@ -151,10 +146,32 @@
 						</svg>
 					</button>
 				</div>
-				<video class="overview__video" width="960" height="720" poster="../public/video/poster.png" playsinline autoplay
-					loop muted preload="auto">
-					<source src="../public/video/overview_mp.mp4" type="video/mp4">
-					<source src="../public/video/overview_webm.webm" type="video/webm">
+				<video class="overview__video overview__source-pc" width="960" height="720"
+					poster="../public/video/overview_960_poster.webp" playsinline autoplay loop muted preload="metadata"
+					loading="lazy">
+					<source src="../public/video/overview_960.mp4" type="video/mp4">
+					<source src="../public/video/overview_960.webm" type="video/webm">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<div class="video-container fullview mob-version">
+				<div class="video-controls">
+					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
+						aria-label="Play video button">
+						<svg class="icon" aria-hidden="true">
+							<use href="../public/svg/ui_icons.svg#pause"></use>
+						</svg>
+					</button>
+					<button type="button" class="btn-circle-40 btn-blue-border" data-sound="mute" aria-label="Mute video button">
+						<svg class="icon" aria-hidden="true">
+							<use href="../public/svg/ui_icons.svg#mute"></use>
+						</svg>
+					</button>
+				</div>
+				<video class="overview__video overview__source-mob" width="1280" height="720"
+					poster="../public/video/overview_mobile_poster.webp" playsinline autoplay loop muted preload="metadata">
+					<source src="../public/video/overview_mobile.mp4" type="video/mp4">
+					<source src="../public/video/overview_mobile.webm" type="video/webm">
 					Your browser does not support the video tag.
 				</video>
 			</div>
@@ -205,28 +222,27 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Effortless Reporting
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Effortless Reporting:
 							</b>
 							Automatically generate comprehensive daily reports using voice or text
 							inputs. Eiffels AI captures essential data, organizes it, and prepares polished reports ready for
 							submission and approval.
 						</li>
 						<li>
-							<b>
+							<b>Instant Data Capture
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Instant Data Capture:
 							</b> Log activities and materials on-the-go.
 						</li>
 						<li>
-							<b>
+							<b>Streamlined Submission
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
-								</svg>Streamlined Submission:
+								</svg>
 							</b> Send reports directly to managers for fast approval from WhatsApp to
 							WhatsApp.
 						</li>
@@ -261,27 +277,27 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Enhanced Security
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Enhanced Security:
 							</b> Ensure the integrity of your documents with blockchain technology. Every
 							approval is traceable and tamper-proof, providing peace of mind and reliability.
 						</li>
 						<li>
 							<b>
+								Verifiable Transactions
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Verifiable Transactions:
 							</b> Secure your data with blockchain's immutable ledger.
 						</li>
 						<li>
 							<b>
+								Quick Turnaround
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Quick Turnaround:
 							</b> Speed up the approval process without compromising security.
 						</li>
 					</ul>
@@ -315,27 +331,27 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Break Language Barriers
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Break Language Barriers:
 							</b> Communicate effectively in multiple languages within your diverse team.
 							Get real-time, accurate translations to keep everyone on the same page.
 						</li>
 						<li>
 							<b>
+								Immediate Translation
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Immediate Translation:
 							</b> Translate documents and messages instantly using your voice.
 						</li>
 						<li>
 							<b>
+								Enhanced Collaboration
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Enhanced Collaboration:
 							</b> Facilitate smoother communication across global teams.
 						</li>
 					</ul>
@@ -343,7 +359,7 @@
 			</article>
 			<!-- Sampo Kurttila -->
 			<div class="feature__qoute glass-effect">
-				<img src="../public/image/sampo_kurttila.png" alt="Sampo Kurttila Partnership Director">
+				<img src="../public/image/sampo_kurttila.webp" alt="Sampo Kurttila Partnership Director">
 				<h3>Sampo Kurttila</h3>
 				<p>Partnership Director <a href="http://www.ukko.fi" title="move to ukko.fi website"
 						aria-label="move to ukko.fi website" rel="noopener noreferrer" target="_blank">
@@ -392,27 +408,33 @@
 						</p>
 					</div>
 					<ul class="feature__description">
-						<li><b><svg class="icon" aria-hidden="true">
-									<use href="../public/svg/ui_icons.svg#checkmark"></use>
-								</svg>
-								Automate Billing:
-							</b> Generate and track invoices directly through WhatsApp with UKKO.fi integration.
-							Reduce manual entry and focus more on your project tasks.</li>
 						<li>
 							<b>
+								Automate Billing
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Efficient Invoicing:
+							</b> Generate and track invoices directly through WhatsApp with UKKO.fi integration.
+							Reduce manual entry and focus more on your project tasks.
+						</li>
+						<li>
+							<b>
+								Efficient Invoicing
+								<svg class="icon" aria-hidden="true">
+									<use href="../public/svg/ui_icons.svg#checkmark"></use>
+								</svg>
 							</b>
 							Streamline payment processes with automated solutions.
 						</li>
-						<li><b><svg class="icon" aria-hidden="true">
+						<li>
+							<b>
+								Financial Oversight
+								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Financial Oversight:
 							</b>
-							Keep track of payments and financial status effortlessly.</li>
+							Keep track of payments and financial status effortlessly.
+						</li>
 					</ul>
 				</div>
 			</article>
@@ -448,28 +470,28 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Precise Matching
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Precise Matching:
 							</b> Use AI-driven prompts to accurately find services tailored to your specific
 							needs. Our AI algorithms ensure you connect with the right suppliers.
 						</li>
 						<li>
 							<b>
+								Instant Connections
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Instant Connections:
 							</b> Quickly get supplier details and contact them directly on WhatsApp,
 							streamlining your communication and procurement process.
 						</li>
 						<li>
 							<b>
+								Expand Your Offerings
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Expand Your Offerings:
 							</b> List your services in the AI Marketplace to reach more potential customers
 							and avoid workforce layoffs. Increase your business turnover and grow your customer base by showcasing
 							your services to a targeted audience.
@@ -511,27 +533,27 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Visual Insights
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Visual Insights:
 							</b> Use AI to analyze construction site images for instant assessments and quality
 							checks. Make informed decisions quickly and accurately.
 						</li>
 						<li>
 							<b>
+								Error Detection
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Error Detection:
 							</b> Identify issues early to mitigate risks.
 						</li>
 						<li>
 							<b>
+								Progress Tracking
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Progress Tracking:
 							</b> Monitor construction progress visually to ensure compliance.
 						</li>
 					</ul>
@@ -539,7 +561,7 @@
 			</article>
 			<!-- Pavel Durov -->
 			<div class="feature__qoute glass-effect">
-				<img src="../public/image/pavel_durov.png" alt="Pavel Durov CEO of Telegram">
+				<img src="../public/image/pavel_durov.webp" alt="Pavel Durov CEO of Telegram">
 				<h3>Pavel Durov</h3>
 				<p>CEO of
 					<a href="http://telegram.org" class="href href-blue" title="move to telegram.org website"
@@ -579,29 +601,31 @@
 					<ul class="feature__description">
 						<li>
 							<b>
+								Cloud Convenience
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Cloud Convenience:
-							</b> Automatically store all your reports and documents securely in the cloud.
-							Access
-							them anywhere, anytime, without hassle.
+							</b>
+							Automatically store all your reports and documents securely in the cloud.
+							Access them anywhere, anytime, without hassle.
 						</li>
 						<li>
 							<b>
+								Easy Access
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Easy Access:
-							</b> Retrieve and review documents on any device.
+							</b>
+							Retrieve and review documents on any device.
 						</li>
 						<li>
 							<b>
+								Safe Storage
 								<svg class="icon" aria-hidden="true">
 									<use href="../public/svg/ui_icons.svg#checkmark"></use>
 								</svg>
-								Safe Storage:
-							</b> Protect your data with robust cloud security measures.
+							</b>
+							Protect your data with robust cloud security measures.
 						</li>
 					</ul>
 				</div>

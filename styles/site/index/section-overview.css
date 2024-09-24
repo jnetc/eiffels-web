@@ -2,11 +2,16 @@
   display: grid;
 }
 
-.video-container.fullview {
+.video-container {
   grid-column: 1 / -1;
   justify-self: center;
   display: grid;
   position: relative;
+
+  & video {
+    max-height: 100%;
+    object-fit: cover;
+  }
 
   & > * {
     grid-column: 1 / -1;
@@ -67,6 +72,19 @@
   min-height: 100%;
   aspect-ratio: 4 / 3;
   border-radius: var(--border-corner-12);
+}
+
+.mob-version {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .mob-version {
+    display: grid;
+  }
+  .pc-version {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 640px) {
