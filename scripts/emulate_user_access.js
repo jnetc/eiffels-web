@@ -61,8 +61,10 @@ export function setTokken(name, value, days) {
     userDisable.className = 'btn-40 btn-blue-border';
     // Если (незарегистрированный) пользователь находится на странице "MARKETPLACE",
     // то оставляем его на ней после подтверждения входа
+    console.log('glabal value', MARKETPLACE);
     if (window.location.pathname.includes(MARKETPLACE)) {
         url.pathname = MARKETPLACE_PATH;
+        console.log('path', MARKETPLACE_PATH);
         window.location.href = url.toString();
         return;
     }
