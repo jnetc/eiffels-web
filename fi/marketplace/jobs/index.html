@@ -4,52 +4,52 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
-	<link rel="stylesheet" href="../../styles/variable.css" />
-	<link rel="stylesheet" href="../../styles/fonts.css" />
-	<link rel="stylesheet" href="../../styles/global.css" />
-	<link rel="stylesheet" href="../../styles/marketplace/mp.css" />
-	<link rel="stylesheet" href="../../styles/dialogs/dialogs.css" />
-	<link rel="stylesheet" href="../../styles/dialogs/mp-add.css" />
-	<link rel="stylesheet" href="../../styles/dialogs/mp-item.css" />
-	<link rel="stylesheet" href="../../styles/dialogs/mp-login.css" />
-	<link rel="stylesheet" href="../../styles/dialogs/authentication.css" />
-	<script src="../../scripts/global.js" defer></script>
-	<script src="../../scripts/marketplace/mp.js" defer></script>
-	<script src="../../scripts/marketplace/mpSearch.js" defer></script>
-	<script src="../../scripts/dialogs/dialog.js" defer></script>
-	<script src="../../scripts/dialogs/mpAdd.js" defer></script>
-	<script src="../../scripts/dialogs/mpJobItem.js" defer></script>
-	<script src="../../scripts/dialogs/mpLogin.js" defer></script>
-	<script src="../../scripts/cookie/cookie.js" defer></script>
+	<link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
+	<link rel="stylesheet" href="../../../styles/variable.css" />
+	<link rel="stylesheet" href="../../../styles/fonts.css" />
+	<link rel="stylesheet" href="../../../styles/global.css" />
+	<link rel="stylesheet" href="../../../styles/marketplace/mp.css" />
+	<link rel="stylesheet" href="../../../styles/dialogs/dialogs.css" />
+	<link rel="stylesheet" href="../../../styles/dialogs/mp-add.css" />
+	<link rel="stylesheet" href="../../../styles/dialogs/mp-item.css" />
+	<link rel="stylesheet" href="../../../styles/dialogs/mp-login.css" />
+	<link rel="stylesheet" href="../../../styles/dialogs/authentication.css" />
+	<script src="../../../scripts/global.js" defer></script>
+	<script src="../../../scripts/marketplace/mp.js" defer></script>
+	<script src="../../../scripts/marketplace/mpSearch.js" defer></script>
+	<script src="../../../scripts/dialogs/dialog.js" defer></script>
+	<script src="../../../scripts/dialogs/mpAdd.js" defer></script>
+	<script src="../../../scripts/dialogs/mpJobItem.js" defer></script>
+	<script src="../../../scripts/dialogs/mpLogin.js" defer></script>
+	<script src="../../../scripts/cookie/cookie.js" defer></script>
 	<title>Jobs</title>
 	<meta name="description" content="" />
 </head>
 
 <body class="mp">
 	<header class="header">
-		<a href="../logged.html" id="btn-back" title="back to home page"
+		<a href="../../logged.html" id="btn-back" title="back to home page"
 			class="btn-blue-border btn-circle-48 header__left-side">
 			<svg class="icon" aria-hidden="true">
-				<use href="../../public/svg/ui_icons.svg#arrow-left"></use>
+				<use href="../../../public/svg/ui_icons.svg#arrow-left"></use>
 			</svg>
 		</a>
 		<nav class="header__center nav__links" aria-label="desktop navigation">
 			<!-- Desktop Navigation -->
-			<a class="href href-grey" href="../marketplace.html">All</a>
-			<a class="href href-grey" href="workers.html">Workers</a>
-			<a class="href href-grey" href="materials.html">Materials</a>
-			<a class="href href-grey active" href="jobs.html">Jobs</a>
+			<a class="href href-grey" href="./../">All</a>
+			<a class="href href-grey" href="./../workers/">Workers</a>
+			<a class="href href-grey" href="./../materials/">Materials</a>
+			<a class="href href-grey active" href="./">Jobs</a>
 			<!-- Mobile Navigation -->
 			<div class="links__select">
 				<svg class="icon" aria-hidden="true">
-					<use href="../../public/svg/ui_icons.svg#chevron-down"></use>
+					<use href="../../../public/svg/ui_icons.svg#chevron-down"></use>
 				</svg>
 				<select id="navigation-select" class="nav-select">
-					<option value="jobs.html">Jobs</option>
-					<option value="../marketplace.html">All Available</option>
-					<option value="workers.html">Workers</option>
-					<option value="materials.html">Materials</option>
+					<option value="./">Jobs</option>
+					<option value="./../">All Available</option>
+					<option value="./../workers/">Workers</option>
+					<option value="./../materials/">Materials</option>
 				</select>
 			</div>
 		</nav>
@@ -58,7 +58,7 @@
 			<span>Add New</span>
 			<button type="button" id="button__mp-add-dialog" title="Add new item" class="btn-green btn-circle-48">
 				<svg class="icon" aria-hidden="true">
-					<use href="../../public/svg/ui_icons.svg#add"></use>
+					<use href="../../../public/svg/ui_icons.svg#add"></use>
 				</svg>
 			</button>
 		</div>
@@ -68,14 +68,14 @@
 		<section class="main__search">
 			<form action="" method="post" id="search__form" class="search__form">
 				<svg class="icon" aria-hidden="true">
-					<use href="../../public/svg/ui_icons.svg#search"></use>
+					<use href="../../../public/svg/ui_icons.svg#search"></use>
 				</svg>
 				<label for="search__input" class="glass-effect"></label>
 				<input type="search" name="search" id="search__input" class="search__input"
 					placeholder="Describe what you are looking for, including details such as profession, qualifications, and other specifics." />
 				<button type="submit" id="search__submit" class="btn-circle-48 btn-blue" title="Search">
 					<svg class="icon" aria-hidden="true">
-						<use href="../../public/svg/ui_icons.svg#send"></use>
+						<use href="../../../public/svg/ui_icons.svg#send"></use>
 					</svg>
 				</button>
 			</form>
@@ -84,26 +84,26 @@
 		<div class="main__list">
 			<article class="card job">
 				<header class="card__header">
-					<img src="../../public/image/juhanna.png" alt="Juhanna Keilaniemi" />
+					<img src="../../../public/image/juhanna.png" alt="Juhanna Keilaniemi" />
 					<h2 class="card__title">Juhanna Keilaniemi</h2>
 					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
+								<use href="../../../public/svg/ui_icons.svg#whatsapp"></use>
 							</svg>
 							<span>Firsu Kissu</span>
 						</a>
 						<a href="https://google.com" class="btn-circle-40 btn-grey-200-border" title="Open external link"
 							target="_blank" rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#link"></use>
+								<use href="../../../public/svg/ui_icons.svg#link"></use>
 							</svg>
 						</a>
 						<a href="mailto:jussi.heinola@mail.fi" class="btn-circle-40 btn-grey-200-border"
 							title="Email Juhanna Keilaniemi">
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#email"></use>
+								<use href="../../../public/svg/ui_icons.svg#email"></use>
 							</svg>
 						</a>
 					</nav>
@@ -122,13 +122,13 @@
 
 			<article class="card job">
 				<header class="card__header">
-					<img src="../../public/image/jouni.png" alt="Jouni Savugrilli" />
+					<img src="../../../public/image/jouni.png" alt="Jouni Savugrilli" />
 					<h2 class="card__title">Jouni Savugrilli</h2>
 					<nav class="card__contact" aria-label="contact with person">
 						<a href="https://wa.me/0501234567" class="card__whatsapp-btn" title="Open in WhatsApp" target="_blank"
 							rel="noopener noreferrer">
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#whatsapp"></use>
+								<use href="../../../public/svg/ui_icons.svg#whatsapp"></use>
 							</svg>
 							<span>Jouni Savugrilli</span>
 						</a>
@@ -158,7 +158,7 @@
 	</footer>
 	<!-- Cookie window  -->
 	<div class="cookie" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
-		<img src="../../public/svg/cookie.svg" alt="" aria-hidden="false">
+		<img src="../../../public/svg/cookie.svg" alt="" aria-hidden="false">
 		<p id="cookie-description">We use cookies to collect data to improve your experience on our site. Read our
 			<a href="http://#" class="href href-blue">cookie policy.</a>
 		</p>
@@ -178,7 +178,7 @@
 			<header class="dialog__header" aria-live="polite">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="../../public/svg/ui_icons.svg#close"></use>
+						<use href="../../../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<h2>Log In</h2>
@@ -192,12 +192,12 @@
 						<fieldset class="login__input-group">
 							<legend for="login__phone-number">Your Phone Number <span>*</span></legend>
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#chevron-down"></use>
+								<use href="../../../public/svg/ui_icons.svg#chevron-down"></use>
 							</svg>
 							<select name="country-code" id="login__country-code">
 							</select>
 							<!-- <svg class="icon-phone" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#iphone"></use>
+								<use href="../../../public/svg/ui_icons.svg#iphone"></use>
 							</svg> -->
 							<span id="login__phone-code"></span>
 							<input type="tel" name="phone-number" id="login__phone-number" placeholder="401234567" inputmode="tel"
@@ -208,7 +208,7 @@
 						<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Access">
 							<span>Access</span>
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</button>
 					</form>
@@ -222,7 +222,7 @@
 			<header class="dialog__header" aria-live="polite">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="../../public/svg/ui_icons.svg#close"></use>
+						<use href="../../../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<h2 id="auth-dialog__title-fill">Fill Fields</h2>
@@ -245,7 +245,7 @@
 						<button type="submit" class="btn-56 btn-blue auth__btn" aria-label="Submit">
 							<span>Submit</span>
 							<svg class="icon" aria-hidden="true">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</button>
 					</form>
@@ -260,7 +260,7 @@
 			<header class="dialog__header" aria-live="polite">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="../../public/svg/ui_icons.svg#close"></use>
+						<use href="../../../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 				<h2>Choose Your Proposal</h2>
@@ -271,7 +271,7 @@
 				<div class="dialog__scroll-area">
 					<!-- FOR DESKTOP VERSION -->
 					<button type="button" id="list_vacancies" class="dialog__select">
-						<img src="../../public/image/list_vacancies.webp" alt="List Vacancies" />
+						<img src="../../../public/image/list_vacancies.webp" alt="List Vacancies" />
 						<span class="button-title">List Vacancies</span>
 						<p class="button-description">
 							Click to view a comprehensive list of all current job openings. This feature allows you to explore
@@ -280,12 +280,12 @@
 						</p>
 						<span class="button-arrow" aria-hidden="true">
 							<svg class="icon">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</span>
 					</button>
 					<button type="button" id="supply_services" class="dialog__select">
-						<img src="../../public/image/supply_services.webp" alt="Supply Services" />
+						<img src="../../../public/image/supply_services.webp" alt="Supply Services" />
 						<span class="button-title">Supply Services</span>
 						<p class="button-description">
 							Click to access a detailed list of available supply services. This feature helps you explore different
@@ -293,12 +293,12 @@
 						</p>
 						<span class="button-arrow" aria-hidden="true">
 							<svg class="icon">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</span>
 					</button>
 					<button type="button" id="sell_materials" class="dialog__select">
-						<img src="../../public/image/sell_materials.webp" alt="Sell Materials" />
+						<img src="../../../public/image/sell_materials.webp" alt="Sell Materials" />
 						<span class="button-title">Sell Materials</span>
 						<p class="button-description">
 							Click to list and manage your materials for sale. This feature allows you to showcase your inventory,
@@ -306,14 +306,14 @@
 						</p>
 						<span class="button-arrow" aria-hidden="true">
 							<svg class="icon">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</span>
 					</button>
 					<!-- FOR MOBILE VERSION -->
 					<a href="https://wa.me/71234567890" id="list_vacancies" class="dialog__select" target="_blank"
 						rel="noopener noreferrer">
-						<img src="../../public/image/list_vacancies.webp" alt="List Vacancies" />
+						<img src="../../../public/image/list_vacancies.webp" alt="List Vacancies" />
 						<span class="button-title">List Vacancies</span>
 						<p class="button-description">
 							Click to view a comprehensive list of all current job openings. This feature allows you to explore
@@ -322,13 +322,13 @@
 						</p>
 						<span class="button-arrow" aria-hidden="true">
 							<svg class="icon">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</span>
 					</a>
 					<a href="https://wa.me/71234567890" id="supply_services" class="dialog__select" target="_blank"
 						rel="noopener noreferrer">
-						<img src="../../public/image/supply_services.webp" alt="Supply Services" />
+						<img src="../../../public/image/supply_services.webp" alt="Supply Services" />
 						<span class="button-title">Supply Services</span>
 						<p class="button-description">
 							Click to access a detailed list of available supply services. This feature helps you explore different
@@ -336,13 +336,13 @@
 						</p>
 						<span class="button-arrow" aria-hidden="true">
 							<svg class="icon">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</span>
 					</a>
 					<a href="https://wa.me/71234567890" id="sell_materials" class="dialog__select" target="_blank"
 						rel="noopener noreferrer">
-						<img src="../../public/image/sell_materials.webp" alt="Sell Materials" />
+						<img src="../../../public/image/sell_materials.webp" alt="Sell Materials" />
 						<span class="button-title">Sell Materials</span>
 						<p class="button-description">
 							Click to list and manage your materials for sale. This feature allows you to showcase your inventory,
@@ -350,7 +350,7 @@
 						</p>
 						<span class="button-arrow" aria-hidden="true">
 							<svg class="icon">
-								<use href="../../public/svg/ui_icons.svg#arrow-right"></use>
+								<use href="../../../public/svg/ui_icons.svg#arrow-right"></use>
 							</svg>
 						</span>
 					</a>
@@ -364,7 +364,7 @@
 			<header class="dialog__header">
 				<button type="button" class="btn-circle-48 btn-black" data-button="close" aria-label="close dialog">
 					<svg class="icon" aria-hidden="true">
-						<use href="../../public/svg/ui_icons.svg#close"></use>
+						<use href="../../../public/svg/ui_icons.svg#close"></use>
 					</svg>
 				</button>
 			</header>
