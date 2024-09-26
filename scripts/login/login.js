@@ -20,10 +20,8 @@ export default async function handlePhoneNumber(pathname) {
             const { openDialog } = await import('../dialogs/dialogUtils.js');
             // Собираем номер телефона код страны и номер из поля ввода
             const fullPhoneNumber = `${phoneNumberCode.innerText}${phoneNumber}`;
-            console.log('phone number', fullPhoneNumber);
             // Проверка, если pathname содержит MARKERPLACE
             if (pathname.includes(MARKETPLACE)) {
-                console.log('marketplace', fullPhoneNumber);
                 // Открыть диалоговое окно для аутентификации на маркетплейсе
                 openDialog(document.getElementById('mp-auth-dialog'));
                 // Вызов функции аутентификации для маркетплейса
