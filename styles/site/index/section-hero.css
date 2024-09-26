@@ -203,8 +203,8 @@
 
     & > span {
       position: absolute;
-      inset-inline-end: -5rem;
-      inset-block-end: -2.5rem;
+      inset-inline-end: -5.1rem;
+      inset-block-end: -3.2rem;
       color: var(--grey-300);
       rotate: 45deg;
       white-space: nowrap;
