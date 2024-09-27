@@ -1,72 +1,68 @@
 export default function loadPhoneCodes() {
-  interface ICountryPhoneCodes {
-    name: string;
-    code: string;
-    emoji: string;
-    unicode: string;
-    dial_code: string;
-  }
-
-  const country = {
-    name: 'Finland',
-    code: 'FI',
-    emoji: '🇫🇮',
-    unicode: 'U+1F1EB U+1F1EE',
-    dial_code: '+358',
-  };
-
-  const countryCode = document.getElementById('login__country-code') as HTMLSelectElement;
+  const selectBox = document.querySelector('.select-box') as HTMLElement;
+  const optionElements = document.querySelectorAll('.option') as NodeListOf<HTMLElement>;
   const phoneCode = document.getElementById('login__phone-code') as HTMLSpanElement;
 
-  async function loadPhoneCodes() {
-    // const country = navigator.geolocation.getCurrentPosition(pos => {
-    //   console.log('country', pos.coords);
-    // });
-    async function getJson() {
-      try {
-        const response = await fetch(`${ROOT_PATH}public/json/phone_code.json`);
+  selectBox.addEventListener('click', () => {
+    console.log('click');
 
-        // Проверяем, что запрос был успешным (статус 200-299)
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status} _ ${ROOT_PATH}`);
-        }
+    document.querySelector('.options-wrapper')?.classList.toggle('show');
+  });
 
-        const data = (await response.json()) as ICountryPhoneCodes[];
-        return data;
-      } catch (error) {
-        console.error('Failed to fetch phone codes:', error);
-        return [country];
-      }
-    }
+  // document.querySelectorAll('.option').forEach(option => {
+  //   option.addEventListener('click', function () {
+  //     document.querySelector('.select-box').textContent = this.textContent;
+  //     document.querySelector('.options').classList.remove('show');
+  //   });
+  // });
 
-    const data = (await getJson()) || [];
+  for (const option of optionElements) {
+    option.addEventListener('click', () => {
+      const countryShortName = option.querySelector('.short')?.textContent || 'FI';
+      const countryPhoneCode = option.querySelector('.code')?.textContent || '+358';
 
-    for (const country of data) {
-      const option = document.createElement('option');
+      selectBox.textContent = countryShortName;
+      phoneCode.textContent = countryPhoneCode;
 
-      option.value = country.dial_code;
-      option.textContent = `${country.emoji} ${country.name} (${country.dial_code})`;
+      console.log(selectBox.textContent, countryShortName);
 
-      if (country.code === 'FI') {
-        option.selected = true; // Устанавливаем выбранный элемент
-        // Вставляем элемент с кодом 'FI' в начало списка
-        countryCode.insertAdjacentElement('afterbegin', option);
-        phoneCode.textContent = country.dial_code;
-      } else {
-        // Вставляем все остальные элементы в конец списка
-        countryCode.insertAdjacentElement('beforeend', option);
-      }
-    }
+      document.querySelector('.options-wrapper')?.classList.remove('show');
+    });
   }
 
-  loadPhoneCodes();
+  // const countryCodeSelect = document.getElementById('login__country-code') as HTMLSelectElement;
+  // const phoneCodeSpan = document.getElementById('login__phone-code') as HTMLSpanElement;
+  // const phoneNumberInput = document.getElementById('login__phone-number') as HTMLInputElement;
+  // const countryCode = document.getElementById('login__country-code') as HTMLSelectElement;
 
-  countryCode.addEventListener('change', event => {
-    const selectElem = (event.target as HTMLSelectElement).value;
+  // Функция для обновления отображения выбранной опции
+  // function updateSelectedOption() {
+  //   const selectedOption = countryCodeSelect.options[countryCodeSelect.selectedIndex];
+  //   // const shortCode = selectedOption.getAttribute('data-short');
+  //   // countryCodeSelect.options[countryCodeSelect.selectedIndex].text = shortCode || 'FI';
+  //   phoneCodeSpan.textContent = selectedOption.value.split('-')[0];
+  // }
 
-    if (selectElem) {
-      (document.getElementById('login__phone-number') as HTMLInputElement).focus();
-      phoneCode.textContent = selectElem;
-    }
-  });
+  // // Функция для восстановления текста невыбранных опций
+  // function restoreOptionText() {
+  //   for (const option of countryCodeSelect.options) {
+  //     if (option.selected) return;
+  //     const country = option.getAttribute('data-country');
+  //     option.text = country || '(+358) Finland';
+  //   }
+  //   // Array.from(countryCodeSelect.options).forEach(option => {
+  //   //   if (option.selected) return;
+  //   //   const country = option.getAttribute('data-country');
+  //   //   option.text = country;
+  //   // });
+  // }
+
+  // Инициализация при загрузке страницы
+  // updateSelectedOption();
+
+  // Обработчик изменения выбора
+  // countryCodeSelect.addEventListener('change', () => {
+  //   // restoreOptionText();
+  //   updateSelectedOption();
+  // });
 }

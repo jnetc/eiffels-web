@@ -95,12 +95,48 @@
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
 					</svg>
-					<select name="country-code" id="login__country-code">
-					</select>
+
+					<div class="select-box" id="login__country-code">FI</div>
+					<div class="options-wrapper">
+						<div class="options">
+							<div class="option"><b class="short">AL</b><span class="code">+355</span>
+								<spanclass="name">Albania</span>
+							</div>
+							<div class="option"><b class="short">AM</b><span class="code">+374</span class="name">
+								Armenia</div>
+							<div class="option"><b class="short">AU</b><span class="code">+61</span class="name">
+								Australia</div>
+							<div class="option"><b class="short">AT</b><span class="code">+43</span class="name">
+								Austria</div>
+							<div class="option"><b class="short">AZ</b><span class="code">+994</span class="name">
+								Azerbaijan</div>
+							<div class="option"><b class="short">BY</b><span class="code">+375</span class="name">
+								Belarus</div>
+							<div class="option"><b class="short">BE</b><span class="code">+32</span class="name">
+								Belgium</div>
+							<div class="option"><b class="short">BA</b><span class="code">+387</span class="name">
+								Bosnia & Herzegovina</div>
+							<div class="option"><b class="short">BR</b><span class="code">+55</span class="name">
+								Brazil</div>
+							<div class="option"><b class="short">BG</b><span class="code">+359</span class="name">
+								Bulgaria</div>
+							<div class="option"><b class="short">CA</b><span class="code">+1</span class="name">
+								Canada</div>
+							<div class="option"><b class="short">CL</b><span class="code">+56</span class="name">
+								Chile</div>
+						</div>
+					</div>
+
+					<!-- <select name="country-code" id="login__country-code">
+						<option value="+355">🇦🇱 - Albania (+355)</option>
+						<option value="+374">🇦🇲 - Armenia (+374) </option>
+						<option value="+61" selected>🇦🇺 - Australia (+61) </option>
+						<option value="+43">🇦🇹 - Austria (+43) </option>
+					</select> -->
 					<!-- <svg class="icon-phone" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#iphone"></use>
 					</svg> -->
-					<span id="login__phone-code"></span>
+					<span id="login__phone-code">+358</span>
 					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
 						pattern="^[0-9]{6,}$"
 						title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
@@ -134,7 +170,7 @@
 				generating daily reports to securing approvals, all within the chat interface you already know and love, Eiffels
 				AI is set to revolutionize how you work.
 			</p>
-			<div class="video-container fullview pc-version">
+			<!-- <div class="video-container fullview pc-version">
 				<div class="video-controls">
 					<button type="button" class="btn-circle-40 btn-blue-border" data-playback="play"
 						aria-label="Play video button">
@@ -151,7 +187,6 @@
 				<video class="overview__video overview__source-pc" width="960" height="720"
 					poster="../public/video/overview_960_poster.webp" playsinline autoplay loop muted preload="auto"
 					loading="lazy">
-					<!-- <source src="../public/video/overview_960.mp4" type="video/mp4"> -->
 					<source src="../public/video/overview_960.webm" type="video/webm">
 					Your browser does not support the video tag.
 				</video>
@@ -172,11 +207,10 @@
 				</div>
 				<video class="overview__video overview__source-mob" width="1088" height="612"
 					poster="../public/video/overview_mobile_poster.webp" playsinline autoplay loop muted preload="auto">
-					<source src="../public/video/overview_mobile.mp4" type="video/mp4">
 					<source src="../public/video/overview_mobile.webm" type="video/webm">
 					Your browser does not support the video tag.
 				</video>
-			</div>
+			</div> -->
 		</section>
 		<section id="partners">
 			<h2 class="partners__title">StartUp Partners</h2>

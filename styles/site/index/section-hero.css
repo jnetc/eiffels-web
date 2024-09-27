@@ -124,9 +124,10 @@
   width: var(--size-80);
   padding-block: var(--gap-6);
   padding-inline: var(--gap-8);
+  position: relative;
   color: var(--grey-400);
   border-right: 1.5px solid var(--grey-200);
-  font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
+  /* font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif; */
   -webkit-font-smoothing: antialiased; /* for MacOs */
   font-size: var(--input-font-size);
   font-weight: bold;
@@ -373,4 +374,49 @@
   #login__phone-code {
     padding-inline-start: var(--gap-8);
   }
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+}
+
+.select-box {
+  /* background-color: lightgray; */
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  cursor: pointer;
+}
+
+.options {
+  height: 260px;
+  background-color: white;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+.options-wrapper {
+  width: max-content;
+  display: none;
+  position: absolute;
+  inset-block-start: var(--gap-56);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: 1.5rem 2.5rem 1fr;
+  column-gap: var(--gap-12);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.options-wrapper.show {
+  display: grid;
+}
+
+.option:hover {
+  background-color: lightblue;
 }
