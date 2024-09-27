@@ -103,17 +103,11 @@
     }
   }
 
-  & .icon-phone {
-    width: var(--size-40);
-    aspect-ratio: 1;
-    fill: var(--grey-500);
-  }
-
   & .icon {
     width: var(--size-24);
     aspect-ratio: 1;
     position: absolute;
-    inset-inline-start: var(--gap-48);
+    inset-inline-start: var(--gap-56);
     inset-block: 1.175rem;
     fill: var(--grey-500);
     z-index: 100;
@@ -121,21 +115,21 @@
 }
 
 #login__country-code {
-  width: var(--size-80);
+  width: var(--size-88);
   padding-block: var(--gap-6);
   padding-inline: var(--gap-8);
   position: relative;
   color: var(--grey-400);
   border-right: 1.5px solid var(--grey-200);
   /* font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif; */
-  -webkit-font-smoothing: antialiased; /* for MacOs */
+  /* -webkit-font-smoothing: antialiased;  */
   font-size: var(--input-font-size);
   font-weight: bold;
   word-spacing: 5rem;
 
-  & option {
+  /* & option {
     font-size: large;
-  }
+  } */
 }
 
 #login__phone-code {
