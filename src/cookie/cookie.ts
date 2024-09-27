@@ -9,10 +9,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   const declineCookieBtn = document.getElementById('cookie-decline');
   const acceptCookieBtn = document.getElementById('cookie-accept');
 
+  // Функция для получения куки по имени
+  function getCookie(name: string) {
+    // const match = document.cookie.match(new RegExp(`(^| )' ${name} '=([^;]+)`));
+    const c = document.cookie.match(name)?.[0] || null;
+    console.log(c);
+    return document.cookie.match(name)?.[0] || null;
+  }
+
+  // Проверяем наличие куки 'accepted' или 'declined'
+  const isAccepted = getCookie('accepted');
+  const isDeclined = getCookie('declined');
+
+  console.log(isAccepted || isDeclined);
+
   // Проверяем, есть ли в документе уже установленные cookies
-  if (document.cookie) {
+  if (isAccepted || isDeclined) {
     // Если cookie существует, удаляем элемент с информацией о cookie из DOM
     cookieElement.remove();
+    return;
   }
 
   // Добавляем обработчик событий для кнопки принятия cookies

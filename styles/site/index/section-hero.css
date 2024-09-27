@@ -110,7 +110,7 @@
     inset-inline-start: var(--gap-56);
     inset-block: 1.175rem;
     fill: var(--grey-500);
-    z-index: 100;
+    z-index: 5;
   }
 }
 
