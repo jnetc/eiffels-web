@@ -92,72 +92,50 @@
 				<!-- ERROR MESSAGE LIVING HERE -->
 				<fieldset class="login__input-group">
 					<legend>Your Phone Number <span>*</span></legend>
-					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
-					</svg>
-					<div class="select-box" id="login__country-code" tabindex="0" aria-labelledby="selected-country"
-						aria-expanded="false">FI</div>
-					<div class="options-wrapper" role="listbox" tabindex="-1" aria-labelledby="selected-country">
+					<div role="button" class="login__country-button" id="login__country-code" aria-haspopup="listbox"
+						aria-expanded="false" aria-controls="country-list" tabindex="0">
+						<span>FI</span>
+						<svg class="icon" aria-hidden="true">
+							<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+						</svg>
+					</div>
+					<div class="options-wrapper" role="listbox" aria-labelledby="login__country-code" tabindex="0" hidden>
 						<div class="options">
-							<div class="option">
-								<b class="short">AL</b>
-								<span class="code">+355</span>
-								<span class="name">Albania</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">AL</b><span class="code">+355</span><span class="name">Albania</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">AM</b>
-								<span class="code">+374</span>
-								<span class="name">Armenia</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">AM</b><span class="code">+374</span><span class="name">Armenia</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">AU</b>
-								<span class="code">+61</span>
-								<span class="name">Australia</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">AU</b><span class="code">+61</span><span class="name">Australia</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">AT</b>
-								<span class="code">+43</span>
-								<span class="name">Austria</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">AT</b><span class="code">+43</span><span class="name">Austria</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">AZ</b>
-								<span class="code">+994</span>
-								<span class="name">Azerbaijan</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">AZ</b><span class="code">+994</span><span class="name">Azerbaijan</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">BY</b>
-								<span class="code">+375</span>
-								<span class="name">Belarus</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">BY</b><span class="code">+375</span><span class="name">Belarus</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">BE</b>
-								<span class="code">+32</span>
-								<span class="name">Belgium</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">BE</b><span class="code">+32</span><span class="name">Belgium</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">BA</b>
-								<span class="code">+387</span>
-								<span class="name">Bosnia & Herzegovina</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">BA</b><span class="code">+387</span><span class="name">Bosnia & Herzegovina</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">BR</b>
-								<span class="code">+55</span>
-								<span class="name">Brazil</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">BR</b><span class="code">+55</span><span class="name">Brazil</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">BG</b>
-								<span class="code">+359</span>
-								<span class="name">Bulgaria</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">BG</b><span class="code">+359</span><span class="name">Bulgaria</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">CA</b>
-								<span class="code">+1</span>
-								<span class="name">Canada</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">CA</b><span class="code">+1</span><span class="name">Canada</span>
 							</div>
-							<div class="option" role="option" aria-selected="false">
-								<b class="short">CL</b>
-								<span class="code">+56</span>
-								<span class="name">Chile</span>
+							<div class="option" role="option" tabindex="-1">
+								<b class="short">CL</b><span class="code">+56</span><span class="name">Chile</span>
 							</div>
 						</div>
 					</div>
@@ -171,7 +149,7 @@
 					<!-- <svg class="icon-phone" aria-hidden="true">
 						<use href="../public/svg/ui_icons.svg#iphone"></use>
 					</svg> -->
-					<span id="login__phone-code">+358</span>
+					<span id="login__phone-code" aria-live="polite">+358</span>
 					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
 						pattern="^[0-9]{6,}$"
 						title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."

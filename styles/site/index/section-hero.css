@@ -376,7 +376,7 @@
   width: 3rem;
 }
 
-.select-box {
+.login__country-button {
   /* background-color: lightgray; */
   padding: 10px;
   /* border: 1px solid #ccc; */
@@ -384,14 +384,14 @@
 }
 
 .options {
-  height: 260px;
+  height: 280px;
   background-color: white;
   border: 1px solid #ccc;
   overflow: auto;
 }
 
 .options-wrapper {
-  width: max-content;
+  width: 100%;
   display: none;
   position: absolute;
   inset-block-start: var(--gap-56);
@@ -407,7 +407,7 @@
   cursor: pointer;
 }
 
-.options-wrapper.show {
+.options-wrapper:not([hidden]) {
   display: grid;
 }
 
