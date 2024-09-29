@@ -2,11 +2,8 @@
   max-width: 768px;
   padding-block-end: var(--gap-36);
 }
-
-.auth__main {
-  display: grid;
-  place-content: center;
-  row-gap: var(--gap-12);
+[id*='login-dialog'] :is(.dialog__main, .dialog__scroll-area) {
+  overflow: unset;
 }
 
 /* If intered value is not number */
@@ -114,9 +111,9 @@
   position: absolute;
   inset-block-start: var(--gap-56);
   white-space: nowrap;
-  /* z-index: 10; */
-  z-index: 99999;
-  inset: 0;
+  z-index: 10;
+  /* z-index: 99999; */
+  /* inset: 0; */
 }
 
 .option {

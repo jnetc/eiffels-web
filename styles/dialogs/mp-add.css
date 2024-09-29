@@ -71,10 +71,10 @@ a.dialog__select {
     max-height: 95dvh;
   }
 
-  .dialog__main {
+  /* .dialog__main {
     overflow: hidden;
     scrollbar-gutter: stable;
-  }
+  } */
 
   #mp-add-dialog .dialog__scroll-area {
     grid-auto-flow: row;
