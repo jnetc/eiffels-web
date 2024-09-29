@@ -54,12 +54,9 @@
 }
 .pricing__options:has(#yearly:checked) .option-selected {
   grid-column: 1;
-  /* width: calc(60% - 12px); */
 }
 .pricing__options:has(#monthly:checked) .option-selected {
   grid-column: 2;
-  /* width: calc(40% - 12px);
-  translate: 140% 0; */
 }
 .yearly,
 .monthly {
@@ -74,12 +71,8 @@
   width: 100%;
   background-color: hsl(255 100% 100% / 70%);
   border: hsl(255 100% 100% / 70%) 2px solid;
-  /* border: red 2px solid; */
   border-radius: 50vw;
   box-shadow: inset 0 0 1rem 1rem hsl(from var(--grey-50) h s l / 30%), 0 15px 15px hsl(from var(--primary) h s l / 5%);
-  /* transition: all 0.2s linear; */
-  /* position: absolute; */
-  /* backdrop-filter: blur(50px); */
   z-index: 1;
 }
 
@@ -88,7 +81,7 @@
   grid-auto-rows: min-content;
   row-gap: var(--gap-16);
   padding-block: var(--gap-48);
-  padding-inline: var(--gap-48);
+  padding-inline: clamp(var(--gap-24), 5vw, var(--gap-48));
   position: relative;
 
   & h3 {
@@ -182,35 +175,23 @@
     align-items: center;
 
     & .icon {
-      flex: 0 1 var(--size-32);
       min-width: var(--size-32);
+      max-height: var(--size-32);
       aspect-ratio: 1;
       fill: var(--grey-500);
     }
   }
-}
 
-/* .plan__features:has(:not(svg)) {
-  display: grid;
-  row-gap: var(--gap-8);
-
-  & li {
-    column-gap: var(--gap-8);
-    align-items: center;
-    color: var(--black);
+  & li:not(:has(.icon)):not(:last-of-type) {
+    padding-block-end: var(--gap-8);
   }
-} */
+}
 
 .plan__workers-amount {
   justify-self: left;
   height: var(--size-48);
   min-width: var(--size-96);
   display: grid;
-  /* margin-block: var(--gap-8) var(--gap-20); */
-  /* grid-template-columns: var(--gap-8) var(--size-24) 1fr var(--gap-8);
-  column-gap: var(--gap-8);
-  align-items: center;
-  margin-block-end: var(--gap-20); */
   position: relative;
 
   &::before {
@@ -239,9 +220,7 @@
   }
 
   & .icon:has([href*='workers']) {
-    /* grid-column: 2; */
     fill: var(--grey-300);
-    /* inset-inline: auto calc(var(--gap-18) + var(--size-24) + var(--gap-8)); */
   }
 }
 
@@ -287,17 +266,8 @@
     --border-r: var(--border-corner-16);
     --rotation: 115deg;
     grid-column: 1 / -1;
-    /* & > :not(.plan__price, .plan__workers-amount) {
-      grid-column: 1 / -1;
-    } */
   }
   .plan-custom {
-    grid-column: 1 / -1;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .plan-company {
     grid-column: 1 / -1;
   }
 }
