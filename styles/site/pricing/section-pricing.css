@@ -105,11 +105,9 @@
     margin-block-start: var(--gap-20);
   }
 
-  & .plan__divider {
-    height: 1px;
-    width: 100%;
-    background-color: var(--grey-200);
+  & hr {
     margin-block: var(--gap-18);
+    border-top: 1px solid var(--grey-200);
   }
 
   & h4 {
@@ -178,11 +176,10 @@
   display: grid;
   row-gap: var(--gap-8);
 
-  & li {
+  & li:has(.icon) {
     display: flex;
     column-gap: var(--gap-8);
     align-items: center;
-    color: var(--black);
 
     & .icon {
       flex: 0 1 var(--size-32);
@@ -192,6 +189,18 @@
     }
   }
 }
+
+/* .plan__features:has(:not(svg)) {
+  display: grid;
+  row-gap: var(--gap-8);
+
+  & li {
+    column-gap: var(--gap-8);
+    align-items: center;
+    color: var(--black);
+  }
+} */
+
 .plan__workers-amount {
   justify-self: left;
   height: var(--size-48);
