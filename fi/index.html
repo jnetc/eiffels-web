@@ -94,18 +94,257 @@
 				<!-- ERROR MESSAGE LIVING HERE -->
 				<fieldset class="login__input-group">
 					<legend for="login__phone-number">Puhelinnumerosi <span>*</span></legend>
-					<svg class="icon" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#chevron-down"></use>
-					</svg>
-					<select name="country-code" id="login__country-code">
-					</select>
-					<!-- <svg class="icon-phone" aria-hidden="true">
-						<use href="../public/svg/ui_icons.svg#iphone"></use>
-					</svg> -->
-					<span id="login__phone-code"></span>
+					<div role="button" id="login__select-code" aria-haspopup="listbox" aria-expanded="false"
+						aria-controls="country-list" tabindex="0">
+						<span>FI</span>
+						<svg class="icon" aria-hidden="true">
+							<use href="../public/svg/ui_icons.svg#chevron-down"></use>
+						</svg>
+					</div>
+					<div class="options-wrapper" role="listbox" aria-labelledby="login__select-code" tabindex="0" hidden>
+						<ul class="options">
+							<li class="option" role="option" data-short="AL" data-code="+355" tabindex="-1">
+								<b class="short">AL</b><span class="name" data-code="+355">Albania (+355)</span>
+							</li>
+							<li class="option" role="option" data-short="AM" data-code="+374" tabindex="-1">
+								<b class="short">AM</b><span class="name" data-code="+374">Armenia (+374)</span>
+							</li>
+							<li class="option" role="option" data-short="AU" data-code="+61" tabindex="-1">
+								<b class="short">AU</b><span class="name" data-code="+61">Australia (+61)</span>
+							</li>
+							<li class="option" role="option" data-short="AT" data-code="+43" tabindex="-1">
+								<b class="short">AT</b><span class="name" data-code="+43">Austria (+43)</span>
+							</li>
+							<li class="option" role="option" data-short="AZ" data-code="+994" tabindex="-1">
+								<b class="short">AZ</b><span class="name" data-code="+994">Azerbaijan (+994)</span>
+							</li>
+							<li class="option" role="option" data-short="BY" data-code="+375" tabindex="-1">
+								<b class="short">BY</b><span class="name" data-code="+375">Belarus (+375)</span>
+							</li>
+							<li class="option" role="option" data-short="BE" data-code="+32" tabindex="-1">
+								<b class="short">BE</b><span class="name" data-code="+32">Belgium (+32)</span>
+							</li>
+							<li class="option" role="option" data-short="BA" data-code="+387" tabindex="-1">
+								<b class="short">BA</b><span class="name" data-code="+387">Bosnia & Herzegovina (+387)</span>
+							</li>
+							<li class="option" role="option" data-short="BR" data-code="+55" tabindex="-1">
+								<b class="short">BR</b><span class="name" data-code="+55">Brazil (+55)</span>
+							</li>
+							<li class="option" role="option" data-short="BG" data-code="+359" tabindex="-1">
+								<b class="short">BG</b><span class="name" data-code="+359">Bulgaria (+359)</span>
+							</li>
+							<li class="option" role="option" data-short="CA" data-code="+1" tabindex="-1">
+								<b class="short">CA</b><span class="name" data-code="+1">Canada (+1)</span>
+							</li>
+							<li class="option" role="option" data-short="CL" data-code="+56" tabindex="-1">
+								<b class="short">CL</b><span class="name" data-code="+56">Chile (+56)</span>
+							</li>
+							<li class="option" role="option" data-short="CN" data-code="+86" tabindex="-1">
+								<b class="short">CN</b><span class="name" data-code="+86">China (+86)</span>
+							</li>
+							<li class="option" role="option" data-short="HR" data-code="+385" tabindex="-1">
+								<b class="short">HR</b><span class="name" data-code="+385">Croatia (+385)</span>
+							</li>
+							<li class="option" role="option" data-short="CY" data-code="+357" tabindex="-1">
+								<b class="short">CY</b><span class="name" data-code="+357">Cyprus (+357)</span>
+							</li>
+							<li class="option" role="option" data-short="CZ" data-code="+420" tabindex="-1">
+								<b class="short">CZ</b><span class="name" data-code="+420">Czechia (+420)</span>
+							</li>
+							<li class="option" role="option" data-short="DK" data-code="+45" tabindex="-1">
+								<b class="short">DK</b><span class="name" data-code="+45">Denmark (+45)</span>
+							</li>
+							<li class="option" role="option" data-short="EE" data-code="+372" tabindex="-1">
+								<b class="short">EE</b><span class="name" data-code="+372">Estonia (+372)</span>
+							</li>
+							<li class="option" role="option" data-short="FI" data-code="+358" tabindex="-1">
+								<b class="short">FI</b><span class="name" data-code="+358">Finland (+358)</span>
+							</li>
+							<li class="option" role="option" data-short="FR" data-code="+33" tabindex="-1">
+								<b class="short">FR</b><span class="name" data-code="+33">France (+33)</span>
+							</li>
+							<li class="option" role="option" data-short="GE" data-code="+995" tabindex="-1">
+								<b class="short">GE</b><span class="name" data-code="+995">Georgia (+995)</span>
+							</li>
+							<li class="option" role="option" data-short="DE" data-code="+49" tabindex="-1">
+								<b class="short">DE</b><span class="name" data-code="+49">Germany (+49)</span>
+							</li>
+							<li class="option" role="option" data-short="GR" data-code="+30" tabindex="-1">
+								<b class="short">GR</b><span class="name" data-code="+30">Greece (+30)</span>
+							</li>
+							<li class="option" role="option" data-short="HK" data-code="+852" tabindex="-1">
+								<b class="short">HK</b><span class="name" data-code="+852">Hong Kong SAR China (+852)</span>
+							</li>
+							<li class="option" role="option" data-short="HU" data-code="+36" tabindex="-1">
+								<b class="short">HU</b><span class="name" data-code="+36">Hungary (+36)</span>
+							</li>
+							<li class="option" role="option" data-short="IS" data-code="+354" tabindex="-1">
+								<b class="short">IS</b><span class="name" data-code="+354">Iceland (+354)</span>
+							</li>
+							<li class="option" role="option" data-short="IN" data-code="+91" tabindex="-1">
+								<b class="short">IN</b><span class="name" data-code="+91">India (+91)</span>
+							</li>
+							<li class="option" role="option" data-short="IE" data-code="+353" tabindex="-1">
+								<b class="short">IE</b><span class="name" data-code="+353">Ireland (+353)</span>
+							</li>
+							<li class="option" role="option" data-short="IL" data-code="+972" tabindex="-1">
+								<b class="short">IL</b><span class="name" data-code="+972">Israel (+972)</span>
+							</li>
+							<li class="option" role="option" data-short="IT" data-code="+39" tabindex="-1">
+								<b class="short">IT</b><span class="name" data-code="+39">Italy (+39)</span>
+							</li>
+							<li class="option" role="option" data-short="JP" data-code="+81" tabindex="-1">
+								<b class="short">JP</b><span class="name" data-code="+81">Japan (+81)</span>
+							</li>
+							<li class="option" role="option" data-short="KZ" data-code="+7" tabindex="-1">
+								<b class="short">KZ</b><span class="name" data-code="+7">Kazakhstan (+7)</span>
+							</li>
+							<li class="option" role="option" data-short="XK" data-code="+383" tabindex="-1">
+								<b class="short">XK</b><span class="name" data-code="+383">Kosovo (+383)</span>
+							</li>
+							<li class="option" role="option" data-short="KG" data-code="+996" tabindex="-1">
+								<b class="short">KG</b><span class="name" data-code="+996">Kyrgyzstan (+996)</span>
+							</li>
+							<li class="option" role="option" data-short="LV" data-code="+371" tabindex="-1">
+								<b class="short">LV</b><span class="name" data-code="+371">Latvia (+371)</span>
+							</li>
+							<li class="option" role="option" data-short="LI" data-code="+423" tabindex="-1">
+								<b class="short">LI</b><span class="name" data-code="+423">Liechtenstein (+423)</span>
+							</li>
+							<li class="option" role="option" data-short="LT" data-code="+370" tabindex="-1">
+								<b class="short">LT</b><span class="name" data-code="+370">Lithuania (+370)</span>
+							</li>
+							<li class="option" role="option" data-short="LU" data-code="+352" tabindex="-1">
+								<b class="short">LU</b><span class="name" data-code="+352">Luxembourg (+352)</span>
+							</li>
+							<li class="option" role="option" data-short="MO" data-code="+853" tabindex="-1">
+								<b class="short">MO</b><span class="name" data-code="+853">Macao SAR China (+853)</span>
+							</li>
+							<li class="option" role="option" data-short="MY" data-code="+60" tabindex="-1">
+								<b class="short">MY</b><span class="name" data-code="+60">Malaysia (+60)</span>
+							</li>
+							<li class="option" role="option" data-short="MT" data-code="+356" tabindex="-1">
+								<b class="short">MT</b><span class="name" data-code="+356">Malta (+356)</span>
+							</li>
+							<li class="option" role="option" data-short="MX" data-code="+52" tabindex="-1">
+								<b class="short">MX</b><span class="name" data-code="+52">Mexico (+52)</span>
+							</li>
+							<li class="option" role="option" data-short="MD" data-code="+373" tabindex="-1">
+								<b class="short">MD</b><span class="name" data-code="+373">Moldova (+373)</span>
+							</li>
+							<li class="option" role="option" data-short="MC" data-code="+377" tabindex="-1">
+								<b class="short">MC</b><span class="name" data-code="+377">Monaco (+377)</span>
+							</li>
+							<li class="option" role="option" data-short="MN" data-code="+976" tabindex="-1">
+								<b class="short">MN</b><span class="name" data-code="+976">Mongolia (+976)</span>
+							</li>
+							<li class="option" role="option" data-short="ME" data-code="+382" tabindex="-1">
+								<b class="short">ME</b><span class="name" data-code="+382">Montenegro (+382)</span>
+							</li>
+							<li class="option" role="option" data-short="NL" data-code="+31" tabindex="-1">
+								<b class="short">NL</b><span class="name" data-code="+31">Netherlands (+31)</span>
+							</li>
+							<li class="option" role="option" data-short="NZ" data-code="+64" tabindex="-1">
+								<b class="short">NZ</b><span class="name" data-code="+64">New Zealand (+64)</span>
+							</li>
+							<li class="option" role="option" data-short="NO" data-code="+47" tabindex="-1">
+								<b class="short">NO</b><span class="name" data-code="+47">Norway (+47)</span>
+							</li>
+							<li class="option" role="option" data-short="PK" data-code="+92" tabindex="-1">
+								<b class="short">PK</b><span class="name" data-code="+92">Pakistan (+92)</span>
+							</li>
+							<li class="option" role="option" data-short="PE" data-code="+51" tabindex="-1">
+								<b class="short">PE</b><span class="name" data-code="+51">Peru (+51)</span>
+							</li>
+							<li class="option" role="option" data-short="PH" data-code="+63" tabindex="-1">
+								<b class="short">PH</b><span class="name" data-code="+63">Philippines (+63)</span>
+							</li>
+							<li class="option" role="option" data-short="PL" data-code="+48" tabindex="-1">
+								<b class="short">PL</b><span class="name" data-code="+48">Poland (+48)</span>
+							</li>
+							<li class="option" role="option" data-short="PT" data-code="+351" tabindex="-1">
+								<b class="short">PT</b><span class="name" data-code="+351">Portugal (+351)</span>
+							</li>
+							<li class="option" role="option" data-short="QA" data-code="+974" tabindex="-1">
+								<b class="short">QA</b><span class="name" data-code="+974">Qatar (+974)</span>
+							</li>
+							<li class="option" role="option" data-short="RO" data-code="+40" tabindex="-1">
+								<b class="short">RO</b><span class="name" data-code="+40">Romania (+40)</span>
+							</li>
+							<li class="option" role="option" data-short="RU" data-code="+7" tabindex="-1">
+								<b class="short">RU</b><span class="name" data-code="+7">Russia (+7)</span>
+							</li>
+							<li class="option" role="option" data-short="SA" data-code="+966" tabindex="-1">
+								<b class="short">SA</b><span class="name" data-code="+966">Saudi Arabia (+966)</span>
+							</li>
+							<li class="option" role="option" data-short="RS" data-code="+381" tabindex="-1">
+								<b class="short">RS</b><span class="name" data-code="+381">Serbia (+381)</span>
+							</li>
+							<li class="option" role="option" data-short="SG" data-code="+65" tabindex="-1">
+								<b class="short">SG</b><span class="name" data-code="+65">Singapore (+65)</span>
+							</li>
+							<li class="option" role="option" data-short="SK" data-code="+421" tabindex="-1">
+								<b class="short">SK</b><span class="name" data-code="+421">Slovakia (+421)</span>
+							</li>
+							<li class="option" role="option" data-short="SI" data-code="+386" tabindex="-1">
+								<b class="short">SI</b><span class="name" data-code="+386">Slovenia (+386)</span>
+							</li>
+							<li class="option" role="option" data-short="KR" data-code="+82" tabindex="-1">
+								<b class="short">KR</b><span class="name" data-code="+82">South Korea (+82)</span>
+							</li>
+							<li class="option" role="option" data-short="ES" data-code="+34" tabindex="-1">
+								<b class="short">ES</b><span class="name" data-code="+34">Spain (+34)</span>
+							</li>
+							<li class="option" role="option" data-short="SE" data-code="+46" tabindex="-1">
+								<b class="short">SE</b><span class="name" data-code="+46">Sweden (+46)</span>
+							</li>
+							<li class="option" role="option" data-short="CH" data-code="+41" tabindex="-1">
+								<b class="short">CH</b><span class="name" data-code="+41">Switzerland (+41)</span>
+							</li>
+							<li class="option" role="option" data-short="TW" data-code="+886" tabindex="-1">
+								<b class="short">TW</b><span class="name" data-code="+886">Taiwan (+886)</span>
+							</li>
+							<li class="option" role="option" data-short="TJ" data-code="+992" tabindex="-1">
+								<b class="short">TJ</b><span class="name" data-code="+992">Tajikistan (+992)</span>
+							</li>
+							<li class="option" role="option" data-short="TH" data-code="+66" tabindex="-1">
+								<b class="short">TH</b><span class="name" data-code="+66">Thailand (+66)</span>
+							</li>
+							<li class="option" role="option" data-short="TR" data-code="+90" tabindex="-1">
+								<b class="short">TR</b><span class="name" data-code="+90">Turkey (+90)</span>
+							</li>
+							<li class="option" role="option" data-short="TM" data-code="+993" tabindex="-1">
+								<b class="short">TM</b><span class="name" data-code="+993">Turkmenistan (+993)</span>
+							</li>
+							<li class="option" role="option" data-short="UA" data-code="+380" tabindex="-1">
+								<b class="short">UA</b><span class="name" data-code="+380">Ukraine (+380)</span>
+							</li>
+							<li class="option" role="option" data-short="AE" data-code="+971" tabindex="-1">
+								<b class="short">AE</b><span class="name" data-code="+971">United Arab Emirates (+971)</span>
+							</li>
+							<li class="option" role="option" data-short="GB" data-code="+44" tabindex="-1">
+								<b class="short">GB</b><span class="name" data-code="+44">United Kingdom (+44)</span>
+							</li>
+							<li class="option" role="option" data-short="US" data-code="+1" tabindex="-1">
+								<b class="short">US</b><span class="name" data-code="+1">United States (+1)</span>
+							</li>
+							<li class="option" role="option" data-short="UZ" data-code="+998" tabindex="-1">
+								<b class="short">UZ</b><span class="name" data-code="+998">Uzbekistan (+998)</span>
+							</li>
+							<li class="option" role="option" data-short="VA" data-code="+379" tabindex="-1">
+								<b class="short">VA</b><span class="name" data-code="+379">Vatican City (+379)</span>
+							</li>
+							<li class="option" role="option" data-short="VE" data-code="+58" tabindex="-1">
+								<b class="short">VE</b><span class="name" data-code="+58">Venezuela (+58)</span>
+							</li>
+							<li class="option" role="option" data-short="VN" data-code="+84" tabindex="-1">
+								<b class="short">VN</b><span class="name" data-code="+84">Vietnam (+84)</span>
+							</li>
+						</ul>
+					</div>
+					<span id="login__phone-code">+358</span>
 					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
-						pattern="^[0-9]{6,}$"
-						title="Please enter a minimum of 6 numbers without spaces. Ensure the number starts with a plus sign (+) followed by the country code and the phone number."
+						pattern="^[0-9]{6,}$" title="Ole hyvä ja syötä vähintään 6 numeroa ilman välilyöntejä."
 						aria-describedby="phone-number-description" required />
 				</fieldset>
 				<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Pääsy">

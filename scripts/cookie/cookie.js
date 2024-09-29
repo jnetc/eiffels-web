@@ -9,11 +9,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const acceptCookieBtn = document.getElementById('cookie-accept');
     // Функция для получения куки по имени
     function getCookie(name) {
-        var _a, _b;
-        // const match = document.cookie.match(new RegExp(`(^| )' ${name} '=([^;]+)`));
-        const c = ((_a = document.cookie.match(name)) === null || _a === void 0 ? void 0 : _a[0]) || null;
-        console.log(c);
-        return ((_b = document.cookie.match(name)) === null || _b === void 0 ? void 0 : _b[0]) || null;
+        var _a;
+        return ((_a = document.cookie.match(name)) === null || _a === void 0 ? void 0 : _a[0]) || null;
     }
     // Проверяем наличие куки 'accepted' или 'declined'
     const isAccepted = getCookie('accepted');

@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Функция для получения куки по имени
   function getCookie(name: string) {
-    // const match = document.cookie.match(new RegExp(`(^| )' ${name} '=([^;]+)`));
-    const c = document.cookie.match(name)?.[0] || null;
-    console.log(c);
     return document.cookie.match(name)?.[0] || null;
   }
 

@@ -1,30 +1,31 @@
 export default function loadPhoneCodes() {
-  // const selectBox = document.querySelector('.login__country-button') as HTMLElement;
+  // const buttonCountryCode = document.querySelector('.login__country-button') as HTMLElement;
   // const optionElements = document.querySelectorAll('.option') as NodeListOf<HTMLElement>;
   // const phoneCode = document.getElementById('login__phone-code') as HTMLSpanElement;
   // const wrapper = document.querySelector('.options-wrapper') as HTMLDivElement;
-  // selectBox.addEventListener('click', () => {
+  // buttonCountryCode.addEventListener('click', () => {
   //   wrapper.hidden = false;
   // });
   // for (const option of optionElements) {
   //   option.addEventListener('click', () => {
   //     const countryShortName = option.querySelector('.short')?.textContent || 'FI';
   //     const countryPhoneCode = option.querySelector('.code')?.textContent || '+358';
-  //     (selectBox.querySelector('span') as HTMLSpanElement).textContent = countryShortName;
+  //     (buttonCountryCode.querySelector('span') as HTMLSpanElement).textContent = countryShortName;
   //     phoneCode.textContent = countryPhoneCode;
   //     wrapper.hidden = true;
   //   });
   // }
 
-  const selectBox = document.querySelector('#login__country-code') as HTMLButtonElement;
+  const buttonCountryCode = document.getElementById('login__select-code') as HTMLButtonElement;
   const optionsWrapper = document.querySelector('.options-wrapper') as HTMLDivElement;
   const options = document.querySelectorAll('.option') as NodeListOf<HTMLDivElement>;
   const phoneCodeElement = document.getElementById('login__phone-code') as HTMLSpanElement;
+  // const inputPhoneField = document.getElementById('login__phone-number') as HTMLInputElement;
   let currentIndex = -1;
   // Открытие/закрытие выпадающего списка
   // Открытие/закрытие выпадающего списка при клике и нажатии клавиш
-  selectBox.addEventListener('click', toggleDropdown);
-  selectBox.addEventListener('keydown', e => {
+  buttonCountryCode.addEventListener('click', toggleDropdown);
+  buttonCountryCode.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       toggleDropdown();
@@ -61,38 +62,46 @@ export default function loadPhoneCodes() {
   }
 
   function toggleDropdown() {
-    const isExpanded = selectBox.getAttribute('aria-expanded') === 'true';
-    selectBox.setAttribute('aria-expanded', `${!isExpanded}`);
+    const isExpanded = buttonCountryCode.getAttribute('aria-expanded') === 'true';
+    buttonCountryCode.setAttribute('aria-expanded', `${!isExpanded}`);
     optionsWrapper.hidden = isExpanded;
 
     if (!isExpanded) {
       currentIndex = 0;
       options[currentIndex].focus();
     } else {
-      selectBox.focus();
+      buttonCountryCode.focus();
     }
   }
+
+  // Закрытие списка при клике за его пределами
+  document.addEventListener('click', event => {
+    const el = event.target as HTMLElement;
+    // Проверяем, был ли клик вне selectBox или optionsWrapper
+    if (!buttonCountryCode.contains(el) && !optionsWrapper.contains(el)) {
+      closeDropdown();
+      document.removeEventListener('click', () => {});
+    }
+  });
   // Закрытие выпадающего списка
   function closeDropdown() {
     optionsWrapper.hidden = true;
-    selectBox.setAttribute('aria-expanded', 'false');
-    selectBox.focus();
+    buttonCountryCode.setAttribute('aria-expanded', 'false');
   }
   // Функция выбора опции
   function selectOption(option: HTMLDivElement) {
-    const shortCode = option.querySelector('.short')?.textContent;
-    const phoneCode = option.querySelector('.code')?.textContent;
-    (selectBox.querySelector('span') as HTMLSpanElement).textContent = shortCode || 'FI';
-    console.log();
+    const shortCode = option.dataset.short;
+    const phoneCode = option.dataset.code;
+    (buttonCountryCode.querySelector('span') as HTMLSpanElement).textContent = shortCode || 'FI';
 
     phoneCodeElement.textContent = phoneCode || '+358';
     currentIndex = Array.from(options).indexOf(option);
   }
   ////////////////////////////////////
-  // const countryCodeSelect = document.getElementById('login__country-code') as HTMLSelectElement;
+  // const countryCodeSelect = document.getElementById('login__select-code') as HTMLSelectElement;
   // const phoneCodeSpan = document.getElementById('login__phone-code') as HTMLSpanElement;
   // const phoneNumberInput = document.getElementById('login__phone-number') as HTMLInputElement;
-  // const countryCode = document.getElementById('login__country-code') as HTMLSelectElement;
+  // const countryCode = document.getElementById('login__select-code') as HTMLSelectElement;
   // Функция для обновления отображения выбранной опции
   // function updateSelectedOption() {
   //   const selectedOption = countryCodeSelect.options[countryCodeSelect.selectedIndex];

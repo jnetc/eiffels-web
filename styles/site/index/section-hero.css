@@ -102,35 +102,64 @@
       color: var(--warning-error);
     }
   }
-
-  & .icon {
-    width: var(--size-24);
-    aspect-ratio: 1;
-    position: absolute;
-    inset-inline-start: var(--gap-56);
-    inset-block: 1.175rem;
-    fill: var(--grey-500);
-    z-index: 5;
-  }
 }
 
-#login__country-code {
-  width: var(--size-88);
-  padding-block: var(--gap-6);
+#login__select-code {
+  display: flex;
+  gap: var(--gap-6);
+  padding-block: var(--gap-12);
   padding-inline: var(--gap-8);
   position: relative;
   color: var(--grey-400);
   border-right: 1.5px solid var(--grey-200);
-  /* font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif; */
-  /* -webkit-font-smoothing: antialiased;  */
   font-size: var(--input-font-size);
   font-weight: bold;
   word-spacing: 5rem;
+  cursor: default;
+  user-select: none;
 
-  /* & option {
-    font-size: large;
-  } */
+  & .icon {
+    width: var(--size-24);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
 }
+
+/* CUSTOM SELECT */
+.options {
+  height: 280px;
+  background-color: white;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+.options-wrapper {
+  width: 100%;
+  display: none;
+  position: absolute;
+  inset-block-start: var(--gap-56);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  column-gap: var(--gap-12);
+  padding: var(--gap-12);
+  cursor: default;
+  user-select: none;
+}
+
+.options-wrapper:not([hidden]) {
+  display: grid;
+}
+
+.option:hover {
+  background-color: var(--grey-100);
+}
+
+/* */
 
 #login__phone-code {
   padding-inline-start: var(--gap-8);
@@ -361,56 +390,11 @@
     }
   }
 
-  #login__country-code {
+  #login__select-code {
     width: var(--size-64);
   }
 
   #login__phone-code {
     padding-inline-start: var(--gap-8);
   }
-}
-
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: 3rem;
-}
-
-.login__country-button {
-  /* background-color: lightgray; */
-  padding: 10px;
-  /* border: 1px solid #ccc; */
-  cursor: pointer;
-}
-
-.options {
-  height: 280px;
-  background-color: white;
-  border: 1px solid #ccc;
-  overflow: auto;
-}
-
-.options-wrapper {
-  width: 100%;
-  display: none;
-  position: absolute;
-  inset-block-start: var(--gap-56);
-  white-space: nowrap;
-  z-index: 10;
-}
-
-.option {
-  display: grid;
-  grid-template-columns: 1.5rem 2.5rem 1fr;
-  column-gap: var(--gap-12);
-  padding: 10px;
-  cursor: pointer;
-}
-
-.options-wrapper:not([hidden]) {
-  display: grid;
-}
-
-.option:hover {
-  background-color: lightblue;
 }
