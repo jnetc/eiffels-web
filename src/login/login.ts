@@ -3,7 +3,7 @@ export default async function handlePhoneNumber(pathname: string) {
   const loginForm = document.querySelector('.login__form') as HTMLFormElement;
 
   // Найти поле ввода номера телефона
-  const phoneNumberCode = document.getElementById('login__phone-code') as HTMLSpanElement;
+  const phoneNumberCode = document.getElementById('login__country-code') as HTMLSpanElement;
   const phoneNumberInput = document.getElementById('login__phone-number') as HTMLInputElement;
 
   // Сообщение об ошибке

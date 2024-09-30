@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const isAccepted = getCookie('accepted');
   const isDeclined = getCookie('declined');
 
-  console.log(isAccepted || isDeclined);
-
   // Проверяем, есть ли в документе уже установленные cookies
   if (isAccepted || isDeclined) {
     // Если cookie существует, удаляем элемент с информацией о cookie из DOM

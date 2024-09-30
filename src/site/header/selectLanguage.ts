@@ -1,5 +1,5 @@
 export default function selectLanguage() {
-  const selects = document.querySelectorAll('.site-language') as NodeListOf<HTMLSelectElement>;
+  const selects = document.querySelectorAll('.header__language') as NodeListOf<HTMLSelectElement>;
   const checkCookieLang = document.cookie.match('lang');
   const docLang = document.documentElement.lang;
 

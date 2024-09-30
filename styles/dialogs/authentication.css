@@ -63,7 +63,7 @@
 [id*='auth-dialog']:has(.error-message.show) #login__phone-number {
   color: var(--warning-error);
 }
-[id*='auth-dialog']:has(.error-message.show) .login__input-group svg {
+[id*='auth-dialog']:has(.error-message.show) .login__fieldset svg {
   fill: var(--warning-error);
 }
 

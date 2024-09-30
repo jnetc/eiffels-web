@@ -89,6 +89,62 @@
 }
 
 .header__select-lang {
+  --input-font-size: var(--font-18);
+  display: grid;
+  grid-template-columns: var(--size-72);
+  grid-template-areas: 'select';
+  align-items: center;
+  grid-auto-flow: column;
+  position: relative;
+  /* border-bottom: 1px solid var(--black); */
+  background-color: hsl(from var(--grey-50) h s l / 0.5);
+  padding-inline-end: var(--gap-12);
+}
+
+.header__lang-short {
+  grid-area: select;
+  display: grid;
+  grid-template-columns: 1fr var(--size-24);
+  align-items: center;
+  gap: var(--gap-6);
+  margin-inline: var(--gap-8);
+  position: relative;
+  background-color: var(--grey-50);
+  color: var(--grey-400);
+  font-size: var(--input-font-size);
+  font-weight: bold;
+  user-select: none;
+  pointer-events: none;
+
+  & span {
+    justify-self: center;
+  }
+
+  & .icon {
+    width: var(--size-24);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
+}
+
+.header__language {
+  grid-area: select;
+  padding-block: var(--gap-6);
+  padding-inline: var(--gap-8);
+  color: var(--grey-400);
+  font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
+  -webkit-font-smoothing: antialiased; /* for MacOs */
+  font-size: var(--input-font-size);
+  /* font-weight: bold; */
+  /* word-spacing: 5rem; */
+  /* outline-offset: 2px; */
+
+  & option {
+    font-size: large;
+  }
+}
+
+/* .header__select-lang {
   display: grid;
   grid-template-columns: 1fr var(--size-28);
   align-items: center;
@@ -104,7 +160,7 @@
     padding-inline: var(--gap-6) var(--gap-32);
     font-size: var(--size-28);
     font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
-    -webkit-font-smoothing: antialiased; /* for MacOs */
+    -webkit-font-smoothing: antialiased;
 
     & option {
       font-size: large;
@@ -117,7 +173,7 @@
     width: var(--size-28);
     aspect-ratio: 1;
   }
-}
+} */
 
 .auth-links__signup {
   padding: var(--gap-12) var(--gap-24);

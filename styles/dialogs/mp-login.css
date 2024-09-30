@@ -12,7 +12,7 @@
   color: var(--warning-error);
 }
 
-[id*='login-dialog']:has(.error-message.show) .login__input-group {
+[id*='login-dialog']:has(.error-message.show) .login__fieldset {
   border-bottom-color: var(--warning-error);
   margin-block-start: var(--gap-20);
 }
@@ -39,7 +39,7 @@
   }
 }
 
-.login__input-group {
+.login__fieldset {
   --input-font-size: var(--font-28);
   display: grid;
   align-items: center;
@@ -76,19 +76,49 @@
   } */
 }
 
-#login__select-code {
-  display: flex;
+.login__fieldset {
+  --input-font-size: var(--font-28);
+  display: grid;
+  grid-template-columns: var(--size-88) auto 1fr;
+  grid-template-areas: 'select code number';
+  align-items: center;
+  grid-auto-flow: column;
+  position: relative;
+  border-bottom: 1px solid var(--black);
+  background-color: hsl(from var(--grey-50) h s l / 0.5);
+  padding-inline-end: var(--gap-12);
+  transition: margin-block-start 0.3s linear;
+
+  & legend {
+    padding-inline-end: var(--gap-6);
+    font-size: var(--font-14);
+    font-weight: bold;
+    white-space: nowrap;
+
+    & span {
+      color: var(--warning-error);
+    }
+  }
+}
+
+.login__country-short {
+  grid-area: select;
+  display: grid;
+  grid-template-columns: 1fr var(--size-24);
+  align-items: center;
   gap: var(--gap-6);
-  padding-block: var(--gap-12);
-  padding-inline: var(--gap-8);
-  /* position: relative; */
+  margin-inline: var(--gap-8);
+  position: relative;
+  background-color: var(--grey-50);
   color: var(--grey-400);
-  border-right: 1.5px solid var(--grey-200);
   font-size: var(--input-font-size);
   font-weight: bold;
-  word-spacing: 5rem;
-  cursor: default;
   user-select: none;
+  pointer-events: none;
+
+  & span {
+    justify-self: center;
+  }
 
   & .icon {
     width: var(--size-24);
@@ -97,8 +127,26 @@
   }
 }
 
+#login__country-select {
+  grid-area: select;
+  padding-block: var(--gap-12);
+  padding-inline: var(--gap-8);
+  color: var(--grey-400);
+  border-right: 1.5px solid var(--grey-200);
+  font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
+  -webkit-font-smoothing: antialiased; /* for MacOs */
+  font-size: var(--input-font-size);
+  font-weight: bold;
+  word-spacing: 5rem;
+  outline-offset: 2px;
+
+  & option {
+    font-size: large;
+  }
+}
+
 /* CUSTOM SELECT */
-.options {
+/* .options {
   height: 145px;
   background-color: white;
   border: 1px solid #ccc;
@@ -112,8 +160,6 @@
   inset-block-start: var(--gap-56);
   white-space: nowrap;
   z-index: 10;
-  /* z-index: 99999; */
-  /* inset: 0; */
 }
 
 .option {
@@ -131,9 +177,9 @@
 
 .option:hover {
   background-color: var(--grey-100);
-}
+} */
 
-#login__phone-code {
+#login__country-code {
   padding-inline-start: var(--gap-8);
   color: hsl(from var(--primary) h s l / 50%);
   font-size: var(--input-font-size);
@@ -161,7 +207,7 @@
 }
 
 @media screen and (max-width: 480px) {
-  .login__input-group {
+  .login__fieldset {
     --input-font-size: var(--font-20);
 
     & legend {
@@ -179,11 +225,11 @@
     }
   }
 
-  #login__select-code {
+  #login__country-short {
     width: var(--size-64);
   }
 
-  #login__phone-code {
+  #login__country-code {
     padding-inline-start: var(--gap-8);
   }
 }

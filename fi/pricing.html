@@ -40,13 +40,16 @@
           </svg>
         </button>
         <div class="header__select-lang">
-          <select name="language" class="site-language">
+          <div class="header__lang-short">
+            <span id="header__lang-name" aria-live="polite">FI</span>
+            <svg class="icon" aria-hidden="true">
+              <use href="../public/svg/ui_icons.svg#chevron-down"></use>
+            </svg>
+          </div>
+          <select class="header__language" name="language">
             <option value="en">🇺🇸 In English</option>
             <option value="fi" selected>🇫🇮 Suomeksi</option>
           </select>
-          <svg class="icon" aria-hidden="true">
-            <use href="../public/svg/ui_icons.svg#chevron-down"></use>
-          </svg>
         </div>
       </div>
       <ul class="nav__links">
@@ -66,13 +69,16 @@
         </svg>
       </a>
       <div class="header__select-lang">
-        <select name="language" class="site-language">
+        <div class="header__lang-short">
+          <span id="header__lang-name" aria-live="polite">FI</span>
+          <svg class="icon" aria-hidden="true">
+            <use href="../public/svg/ui_icons.svg#chevron-down"></use>
+          </svg>
+        </div>
+        <select class="header__language" name="language">
           <option value="en">🇺🇸 In English</option>
           <option value="fi" selected>🇫🇮 Suomeksi</option>
         </select>
-        <svg class="icon" aria-hidden="true">
-          <use href="../public/svg/ui_icons.svg#chevron-down"></use>
-        </svg>
       </div>
     </nav>
   </header>

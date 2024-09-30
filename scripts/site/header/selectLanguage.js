@@ -1,5 +1,5 @@
 export default function selectLanguage() {
-    const selects = document.querySelectorAll('.site-language');
+    const selects = document.querySelectorAll('.header__language');
     const checkCookieLang = document.cookie.match('lang');
     const docLang = document.documentElement.lang;
     if (!checkCookieLang) {

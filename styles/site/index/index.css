@@ -33,7 +33,7 @@
 
 /* MAIN CONTENT */
 .landing__main {
-  /* container: main / inline-size; */
+  container: main / inline-size;
   row-gap: var(--gap-240);
   padding-block-end: var(--gap-128);
 }
