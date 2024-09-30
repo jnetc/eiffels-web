@@ -5,8 +5,8 @@
 /* @import url('section-features.css'); */
 /* @import url('section-pricing.css'); */
 /* @import url('section-customers.css'); */
-@import url('../FAQ/section-faq.css');
-@import url('section-support.css');
+/* @import url('../FAQ/section-faq.css'); */
+/* @import url('section-support.css'); */
 
 .landing {
   display: grid;
