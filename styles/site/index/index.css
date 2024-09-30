@@ -8,7 +8,7 @@
 @import url('../FAQ/section-faq.css');
 @import url('section-support.css');
 
-.landing {
+/* .landing {
   display: grid;
   position: relative;
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: repeat(var(--colums), minmax(0, var(--colums-width)));
   column-gap: var(--gap-36);
-}
+} */
 
 /* MAIN CONTENT */
 /* .landing__main {
