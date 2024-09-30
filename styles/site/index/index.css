@@ -8,7 +8,7 @@
 @import url('../FAQ/section-faq.css');
 @import url('section-support.css');
 
-/* .landing {
+.landing {
   display: grid;
   position: relative;
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
@@ -29,11 +29,11 @@
   display: grid;
   grid-template-columns: repeat(var(--colums), minmax(0, var(--colums-width)));
   column-gap: var(--gap-36);
-} */
+}
 
 /* MAIN CONTENT */
-/* .landing__main {
-  container: main / inline-size;
+.landing__main {
+  /* container: main / inline-size; */
   row-gap: var(--gap-240);
   padding-block-end: var(--gap-128);
 }
@@ -80,4 +80,4 @@ section#faq h2 {
   section#faq h2 span {
     word-spacing: normal;
   }
-} */
+}
