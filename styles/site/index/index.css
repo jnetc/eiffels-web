@@ -1,12 +1,12 @@
 @import url('../header/header.css');
-/* @import url('section-hero.css'); */
-/* @import url('section-overview.css'); */
-/* @import url('parnters.css'); */
-/* @import url('section-features.css'); */
-/* @import url('section-pricing.css'); */
-/* @import url('section-customers.css'); */
-/* @import url('../FAQ/section-faq.css'); */
-/* @import url('section-support.css'); */
+@import url('section-hero.css');
+@import url('section-overview.css');
+@import url('parnters.css');
+@import url('section-features.css');
+@import url('section-pricing.css');
+@import url('section-customers.css');
+@import url('../FAQ/section-faq.css');
+@import url('section-support.css');
 
 .landing {
   display: grid;
@@ -32,7 +32,7 @@
 }
 
 /* MAIN CONTENT */
-.landing__main {
+/* .landing__main {
   container: main / inline-size;
   row-gap: var(--gap-240);
   padding-block-end: var(--gap-128);
@@ -80,4 +80,4 @@ section#faq h2 {
   section#faq h2 span {
     word-spacing: normal;
   }
-}
+} */
