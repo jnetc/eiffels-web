@@ -210,7 +210,8 @@ main {
 @media (max-width: 559px) {
 }
 
-/* .user-access {
+/* EMULATE USER SIGN IN OR NOT */
+.user-access {
   display: grid;
   align-items: center;
   gap: var(--gap-8);
@@ -222,7 +223,7 @@ main {
   color: var(--black);
   font-size: var(--font-16);
   z-index: 99999;
-} */
+}
 
 .green-color {
   color: var(--whatsapp-dark-green);
