@@ -125,7 +125,7 @@
   row-gap: var(--gap-6);
   /* padding-inline-start: var(--gap-32); */
   padding-block-end: var(--gap-18);
-  font-size: var(--font-20);
+  font-size: clamp(var(--font-18), 3vw, var(--font-20));
 
   & p {
     display: flex;
