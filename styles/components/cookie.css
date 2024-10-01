@@ -12,6 +12,7 @@
   background-color: var(--surface);
   border-radius: var(--border-corner-12);
   box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 7%);
+  z-index: 999;
 
   & .cookie-btns {
     align-self: center;
@@ -38,6 +39,7 @@
     & .cookie-btns {
       grid-column: 2;
       justify-self: flex-end;
+      flex-wrap: wrap;
     }
   }
 }

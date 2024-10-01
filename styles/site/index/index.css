@@ -36,6 +36,7 @@
   container: main / inline-size;
   row-gap: var(--gap-240);
   padding-block-end: var(--gap-128);
+  column-gap: clamp(var(--gap-20), 8vw, var(--gap-128));
 }
 
 section > :where(.section__title, .section__description) {

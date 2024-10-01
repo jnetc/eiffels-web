@@ -54,20 +54,20 @@
   display: grid;
 }
 
-[data-playback='pause'] svg:first-child,
+/* [data-playback='pause'] svg:first-child,
 [data-playback='play'] svg:last-child {
   display: none;
-}
+} */
 
 [data-sound='mute'] svg:first-child,
 [data-sound='unmute'] svg:last-child {
   display: grid;
 }
 
-[data-sound='mute'] svg:first-child,
+/* [data-sound='mute'] svg:first-child,
 [data-sound='unmute'] svg:last-child {
   display: none;
-}
+} */
 
 .overview__video {
   min-height: 100%;

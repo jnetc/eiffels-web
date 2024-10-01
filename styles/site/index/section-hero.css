@@ -114,7 +114,7 @@
   gap: var(--gap-6);
   margin-inline: var(--gap-8);
   position: relative;
-  background-color: var(--grey-50);
+  background-color: hsl(from var(--grey-50) h s l / 1);
   color: var(--grey-400);
   font-size: var(--input-font-size);
   font-weight: bold;
@@ -137,16 +137,19 @@
   padding-block: var(--gap-6);
   padding-inline: var(--gap-8);
   color: var(--grey-400);
+  background-color: hsl(from var(--grey-50) h s l / 1);
   border-right: 1.5px solid var(--grey-200);
   font-family: 'Twemoji Country Flags', 'SF Pro Text', sans-serif;
   -webkit-font-smoothing: antialiased; /* for MacOs */
   font-size: var(--input-font-size);
   font-weight: bold;
   word-spacing: 5rem;
-  /* outline-offset: 2px; */
 
   & option {
     font-size: large;
+  }
+  & option:checked {
+    background-color: var(--grey-200);
   }
 }
 /* CUSTOM SELECT */
