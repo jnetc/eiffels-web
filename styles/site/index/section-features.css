@@ -21,7 +21,7 @@
   flex-flow: row-reverse;
 }
 
-@container (max-width: 640px) {
+@container (max-width: 960px) {
   .feature__item,
   .feature__item:nth-of-type(odd) {
     flex-flow: column;
@@ -151,9 +151,13 @@
   & strong {
     display: flex;
     gap: var(--gap-4);
+    padding-block-end: var(--gap-8);
+    position: relative;
   }
 
   & .icon {
+    position: absolute;
+    inset-inline-start: -2rem;
     width: var(--size-32);
     aspect-ratio: 1;
     fill: var(--primary);
