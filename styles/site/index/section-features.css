@@ -115,7 +115,7 @@
 }
 
 .feature__title {
-  padding-inline-start: var(--gap-32);
+  /* padding-inline-start: var(--gap-32); */
   color: var(--black);
   font-size: clamp(var(--font-24), 6vw, var(--font-48));
 }
@@ -123,7 +123,7 @@
 .feaure__subtitle {
   display: grid;
   row-gap: var(--gap-6);
-  padding-inline-start: var(--gap-32);
+  /* padding-inline-start: var(--gap-32); */
   padding-block-end: var(--gap-18);
   font-size: var(--font-20);
 
@@ -160,7 +160,7 @@
 
   & .icon {
     position: absolute;
-    inset-inline-start: -2rem;
+    inset-inline-start: -2.225rem;
     width: var(--size-32);
     aspect-ratio: 1;
     fill: var(--primary);
