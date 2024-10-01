@@ -123,6 +123,7 @@
 .feaure__subtitle {
   display: grid;
   row-gap: var(--gap-6);
+  padding-inline-start: var(--gap-32);
   padding-block-end: var(--gap-18);
   font-size: var(--font-20);
 
