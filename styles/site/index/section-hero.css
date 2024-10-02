@@ -145,6 +145,11 @@
   font-weight: bold;
   word-spacing: 5rem;
 
+  & optgroup {
+    font-style: italic;
+    font-size: var(--font-18);
+  }
+
   & option {
     font-size: large;
   }
