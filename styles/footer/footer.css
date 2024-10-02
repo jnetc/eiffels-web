@@ -23,12 +23,6 @@ body > footer {
     font-weight: 300;
   }
 
-  & a {
-    color: var(--black);
-    text-decoration: none;
-    font-weight: 300;
-  }
-
   & :where(p, a) {
     font-size: var(--font-16);
   }
@@ -37,6 +31,7 @@ body > footer {
 .footer-top {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   column-gap: var(--gap-56);
   row-gap: var(--gap-36);
   padding-block: var(--gap-48);
@@ -73,9 +68,9 @@ body > footer {
   gap: var(--gap-36);
 }
 
-.footer-top__partners {
+/* .footer-top__partners {
   flex: 1 0 auto;
-}
+} */
 
 .footer-top__partners-logos {
   display: grid;

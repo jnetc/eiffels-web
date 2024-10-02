@@ -123,6 +123,11 @@ time {
   font-size: var(--font-18);
 }
 
+/* Margin top to make gap as 80px down */
+:target {
+  scroll-margin-top: var(--gap-80);
+}
+
 /* input,
 textarea {
   outline: none;

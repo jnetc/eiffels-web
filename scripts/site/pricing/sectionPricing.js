@@ -40,7 +40,7 @@ export default function sectionPricing() {
     const whatsappLinkIndividual = document.querySelector('.plan-individuals .plan__button');
     const whatsappLinkCompany = document.querySelector('.plan-company .plan__button');
     // Начальные цены
-    const individualYearlyPrice = 27.3;
+    const individualYearlyPrice = 31.2;
     const individualMonthlyPrice = 39; // Примерная цена при ежемесячной оплате
     const companyYearlyPrice = 47.2;
     const companyMonthlyPrice = 59.0; // Примерная цена при ежемесячной оплате
