@@ -13,6 +13,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* overscroll-behavior: contain; */
 }
 
 /* DEBUG */
@@ -31,7 +32,7 @@
 html {
   /* scroll-behavior: smooth; */
   scrollbar-gutter: stable;
-  text-size-adjust: 100%;
+  text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -198,16 +199,11 @@ main {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1200px) {
-}
 
 @media (max-width: 959px) {
   :root {
     --body-padding: 1rem;
   }
-}
-
-@media (max-width: 559px) {
 }
 
 /* EMULATE USER SIGN IN OR NOT */
