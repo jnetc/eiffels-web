@@ -147,7 +147,7 @@
 
   & optgroup {
     font-style: italic;
-    font-size: var(--font-18);
+    font-size: var(--font-20);
   }
 
   & option {
