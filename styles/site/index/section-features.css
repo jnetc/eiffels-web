@@ -181,6 +181,7 @@
     'img job'
     'quote quote';
   column-gap: var(--gap-16);
+  position: relative;
   padding: var(--gap-36);
   margin-block-end: var(--gap-192);
   border-radius: var(--border-corner-16);
