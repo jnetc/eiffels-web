@@ -91,7 +91,7 @@
   grid-auto-flow: column;
   position: relative;
   border-bottom: 1px solid var(--black);
-  background-color: var(--color-exeption);
+  background-color: hsl(from var(--color-exeption) h s l / 0.5);
   padding-inline-end: var(--gap-12);
   transition: margin-block-start 0.3s linear;
 
