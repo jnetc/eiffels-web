@@ -1,3 +1,13 @@
+section#faq h2 {
+  color: var(--primary);
+  font-size: clamp(var(--font-36), 4.8vw, var(--font-64));
+
+  & span {
+    word-spacing: 4rem;
+    color: var(--black);
+  }
+}
+
 #faq {
   scroll-margin-block-start: var(--gap-72);
   & h2 {

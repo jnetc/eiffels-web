@@ -48,20 +48,10 @@ section > :where(.section__title, .section__description) {
 
 section:not(#faq):not(#partners) h2 {
   color: var(--black);
-  font-size: clamp(var(--font-32), 7vw, var(--font-64));
+  font-size: clamp(var(--font-36), 7vw, var(--font-64));
 
   & span {
     color: var(--primary);
-  }
-}
-
-section#faq h2 {
-  color: var(--primary);
-  font-size: clamp(var(--font-32), 7vw, var(--font-64));
-
-  & span {
-    word-spacing: 4rem;
-    color: var(--black);
   }
 }
 
