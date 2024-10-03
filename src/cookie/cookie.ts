@@ -1,35 +1,35 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // Динамически импортируем функцию setCookie из файла setCookie.js
+  // Dynamically import the setCookie function from setCookie.js
   const { default: setCookie } = await import('./setCookie.js');
 
-  // Получаем элемент с классом "cookie" из DOM
+  // Get the element with the class "cookie" from the DOM
   const cookieElement = document.querySelector('.cookie') as HTMLDivElement;
 
-  // Получаем кнопки для принятия и отклонения cookies по их ID
+  // Get the buttons for accepting and declining cookies by their ID
   const declineCookieBtn = document.getElementById('cookie-decline');
   const acceptCookieBtn = document.getElementById('cookie-accept');
 
-  // Функция для получения куки по имени
+  // Function to get a cookie by its name
   function getCookie(name: string) {
     return document.cookie.match(name)?.[0] || null;
   }
 
-  // Проверяем наличие куки 'accepted' или 'declined'
+  // Check for the presence of 'accepted' or 'declined' cookies
   const isAccepted = getCookie('accepted');
   const isDeclined = getCookie('declined');
 
-  // Проверяем, есть ли в документе уже установленные cookies
+  // Check if any cookies are already set in the document
   if (isAccepted || isDeclined) {
-    // Если cookie существует, удаляем элемент с информацией о cookie из DOM
+    // If a cookie exists, remove the cookie information element from the DOM
     cookieElement.remove();
     return;
   }
 
-  // Добавляем обработчик событий для кнопки принятия cookies
-  // Устанавливаем cookie "accepted" с значением "1" на 1 день
+  // Add event listener for the accept cookies button
+  // Set the "accepted" cookie with a value of "1" for 1 day
   acceptCookieBtn?.addEventListener('click', () => setCookie('accepted', '1', 1));
 
-  // Добавляем обработчик событий для кнопки отклонения cookies
-  // Устанавливаем cookie "declined" с значением "1" на очень короткий срок (около 1.44 минут)
+  // Add event listener for the decline cookies button
+  // Set the "declined" cookie with a value of "1" for a very short duration (about 1.44 minutes)
   declineCookieBtn?.addEventListener('click', () => setCookie('declined', '1', 0.001));
 });

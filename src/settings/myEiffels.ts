@@ -1,67 +1,69 @@
+// Add an event listener that triggers when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', async () => {
+  // Define types for connection status
   type TypeStatus = 'connected' | 'disconnected';
-  // Найдите элемент с классом 'error-message'
-  // const errorMessage = document.querySelector('.error-message') as HTMLDivElement;
 
-  // Выберите все элементы с классом 'settings__connection'
+  // Select all elements with the class 'settings__connection'
   const connections = document.querySelectorAll('.settings__connection') as NodeListOf<HTMLDivElement>;
 
-  // Найти элемент для отображения сообщения об ошибке
+  // Dynamically import the error message component
   const { default: errorMessage } = await import('../components/errorMessage.js');
 
-  // Функция, вызываемая при клике на элемент подключения
+  // Function called when a connection element is clicked
   function connectCloud(event: Event) {
-    // Получаем элемент подключения, на который кликнули
+    // Get the connection element that was clicked
     const connectionElem = event.currentTarget as HTMLDivElement;
 
-    // Получаем первый дочерний элемент (предполагается, что это чекбокс)
+    // Get the first child element (assumed to be the checkbox)
     const checkbox = connectionElem.firstElementChild as HTMLInputElement;
 
-    // Находим элемент с классом 'connection__status' внутри подключения
+    // Find the element with the class 'connection__status' within the connection element
     const statusElem = connectionElem.querySelector('.connection__status') as HTMLSpanElement;
 
-    // Переключаем состояние подключения на основе состояния чекбокса
+    // Toggle the connection status based on the checkbox state
     if (checkbox.checked) {
-      // Если чекбокс выбран, вызываем функцию для подключения
+      // If the checkbox is checked, call the function to connect
       emulateServerConnection(statusElem, connectionElem, 'connected');
     } else {
-      // Если чекбокс не выбран, вызываем функцию для отключения
+      // If the checkbox is not checked, call the function to disconnect
       emulateServerConnection(statusElem, connectionElem, 'disconnected');
     }
   }
 
-  // Асинхронная функция для имитации подключения к серверу
+  // Asynchronous function to simulate connecting to the server
   async function emulateServerConnection(
     statusElem: HTMLSpanElement,
     connectionElem: HTMLDivElement,
     status: TypeStatus
   ) {
-    // Если отображается сообщение об ошибке, скрываем его
+    // Hide the error message if it is displayed
     errorMessage(null);
 
+    const statusName = statusElem.querySelector('span') as HTMLSpanElement;
+
     try {
-      // Изменяем текст состояния на "Connecting" и добавляем класс 'disabled'
-      statusElem.querySelector('span')!.textContent = status.replace('ed', 'ing');
+      // Change the status text to "Connecting" and add the 'disabled' class
+      statusName.textContent = status.replace('ed', 'ing');
       connectionElem.classList.add('disabled');
       console.log('Connecting...');
 
-      // Имитация задержки при подключении к серверу
+      // Simulate a delay while connecting to the server
       const timeout = setTimeout(() => {
-        // Убираем класс 'disabled' и меняем текст состояния на "Connected"
+        // Remove the 'disabled' class and change the status text to "Connected"
         connectionElem.classList.remove('disabled');
-        statusElem.firstElementChild!.textContent = status;
+        statusName.textContent = status;
 
         console.log(status);
-        clearTimeout(timeout); // Очищаем таймер
+        clearTimeout(timeout); // Clear the timer
       }, 3000);
     } catch (error) {
-      // В случае ошибки показываем сообщение об ошибке
+      // If an error occurs, show the error message
       console.log(error);
       errorMessage(null);
     }
   }
 
-  // Добавляем обработчик события 'click' ко всем элементам подключения
+  // Add a 'click' event handler to all connection elements
   for (const connection of connections) {
     connection.addEventListener('click', connectCloud);
   }

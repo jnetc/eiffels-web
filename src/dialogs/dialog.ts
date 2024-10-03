@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // Получаем все элементы <dialog> на странице
+  // Get all <dialog> elements on the page
   const dialogs = document.querySelectorAll('dialog') as NodeListOf<HTMLDialogElement>;
 
-  // Динамически импортируем модуль, содержащий функцию closeDialog
+  // Dynamically import the module containing the closeDialog function
   const { closeDialog } = await import('./dialogUtils.js');
 
-  // Проходимся по каждому найденному элементу <dialog>
+  // Iterate over each found <dialog> element
   for (const dialog of dialogs) {
-    // Ищем элемент внутри <dialog>, который имеет атрибут [data-button="close"]
-    // и добавляем обработчик события клика
+    // Find the element inside <dialog> that has the attribute [data-button="close"]
+    // and add a click event listener
     const closeBtn = dialog.querySelector('[data-button="close"]') as HTMLButtonElement;
     if (!closeBtn) throw new Error('Close button not found');
     closeBtn.addEventListener('click', () => {
-      // При клике вызываем функцию closeDialog, передавая ей текущий <dialog>
+      // On click, call the closeDialog function, passing the current <dialog>
       closeDialog(dialog);
     });
   }

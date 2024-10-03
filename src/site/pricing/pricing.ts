@@ -1,26 +1,27 @@
+// Add an event listener that triggers when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', async () => {
   // ------------------------------
   // LANGUAGE
   const { default: selectLanguage } = await import('../header/selectLanguage.js');
-  selectLanguage();
+  selectLanguage(); // Call the function to handle language selection
 
   // ------------------------------
-  // КНОПКА МОБИЛЬНОГО МЕНЮ И КОНТЕЙНЕР МЕНЮ
+  // MOBILE MENU BUTTON AND MENU CONTAINER
   const { default: navigation } = await import('../header/navigation.js');
-  navigation();
+  navigation(); // Call the function to initialize navigation components
 
   // ------------------------------
-  // ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
+  // DEFAULT PRICING PLAN SELECTION BASED ON NUMBER OF EMPLOYEES
   const { default: sectionPricing } = await import('./sectionPricing.js');
-  sectionPricing();
+  sectionPricing(); // Call the function to set up pricing section
 
   // ------------------------------
-  // ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ / FAQ
+  // FREQUENTLY ASKED QUESTIONS / FAQ
   const { default: sectionFAQ } = await import('../FAQ/sectionFAQ.js');
-  sectionFAQ();
+  sectionFAQ(); // Call the function to initialize FAQ section
 
   // ------------------------------
-  // BACK TO TOP
+  // BACK TO TOP BUTTON
   const { default: backToTop } = await import('../../components/backToTop.js');
-  backToTop();
+  backToTop(); // Call the function to set up the back-to-top button
 });

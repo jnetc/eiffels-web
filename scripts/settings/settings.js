@@ -1,44 +1,45 @@
 "use strict";
+// Add an event listener that triggers when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', async () => {
-    // Динамически импортируем функцию revokeTokken из модуля emulate_user_access.js
+    // Dynamically import the revokeTokken function from the emulate_user_access.js module
     const { revokeTokken } = await import('../emulate_user_access.js');
-    // Получаем элемент кнопки выхода из настроек по его ID
+    // Get the sign-out button element by its ID
     const signOut = document.getElementById('settings__sign-out');
-    // Получаем все элементы списка настроек по классу
+    // Get all setting list items by their class name
     const listItems = document.querySelectorAll('.settings__name');
-    // Найти элемент для отображения сообщения об ошибке
+    // Dynamically import the error message component
     const { default: errorMessage } = await import('../components/errorMessage.js');
-    // Функция для обработки клика на элемент списка настроек
+    // Function to handle clicks on the settings list item
     function collapseList(event) {
-        // Получаем элемент, на который был произведен клик
+        // Get the clicked item
         const item = event.currentTarget;
-        // Если кликнутый элемент уже открыт, то просто закрываем его
+        // If the clicked item is already open, close it
         if (item.classList.contains('open-settings')) {
             item.classList.remove('open-settings');
             errorMessage(null);
             return;
         }
-        // Если элемент не открыт, закрываем все открытые элементы в списке
+        // If the item is not open, close all other open items in the list
         for (const el of listItems) {
             if (el.classList.contains('open-settings')) {
                 el.classList.remove('open-settings');
             }
         }
-        // Открываем кликнутый элемент
+        // Open the clicked item
         item.classList.add('open-settings');
     }
-    // Добавляем обработчик клика для каждого элемента списка настроек
+    // Add click event handlers for each settings list item
     for (const item of listItems) {
         item.addEventListener('click', collapseList);
     }
-    // Добавляем обработчик отправки формы для кнопки выхода из настроек
+    // Add a form submit event handler for the sign-out button
     signOut.addEventListener('submit', event => {
-        // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+        // Prevent the default form behavior (page reload)
         event.preventDefault();
-        // Перенаправляем пользователя на главную страницу
-        url.pathname = INDEX_PATH;
+        // Redirect the user to the main page
+        url.pathname = INDEX_PATH; // Assuming INDEX_PATH is defined elsewhere in your code
         window.location.href = url.toString();
-        // Вызываем функцию revokeTokken для завершения сеанса
+        // Call the revokeTokken function to end the session
         revokeTokken();
     });
 });

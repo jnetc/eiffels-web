@@ -1,26 +1,26 @@
 export default function playAndPauseVideo() {
-  // Находим все элементы видео на странице
+  // Find all video elements on the page
   const allVideoContainers = document.querySelectorAll('.video-container') as NodeListOf<HTMLDivElement>;
 
-  // Настройки для IntersectionObserver
+  // Settings for IntersectionObserver
   const options = {
-    root: null, // Отслеживание происходит относительно viewport
-    rootMargin: '0px', // Нет дополнительного отступа для отслеживания
-    threshold: 0.5, // Видео будет считаться видимым, когда оно полностью в viewport
+    root: null, // Tracking occurs relative to the viewport
+    rootMargin: '0px', // No additional margin for tracking
+    threshold: 0.5, // Video will be considered visible when it is fully in the viewport
   };
 
-  // Колбэк-функция, которая будет вызываться при пересечении видео с видимой областью (viewport)
+  // Callback function that will be called when the video intersects with the visible area (viewport)
   const callback = (entries: IntersectionObserverEntry[]) => {
-    // Перебираем все записи пересечений
+    // Iterate over all intersection entries
     for (const entry of entries) {
-      const video = entry.target.querySelector('video') as HTMLVideoElement; // Получаем элемент видео, для которого было срабатывание
+      const video = entry.target.querySelector('video') as HTMLVideoElement; // Get the video element for which the intersection occurred
 
-      // Если видео полностью в зоне видимости
+      // If the video is fully visible
       if (entry.isIntersecting) {
-        // Попытка воспроизведения видео
-        video.play().catch(error => console.error('Ошибка при воспроизведении видео:', error));
+        // Try to play the video
+        video.play().catch(error => console.error('Error playing video:', error));
       } else {
-        // Остановка видео, если оно больше не в зоне видимости
+        // Pause the video if it is no longer visible
         video.pause();
       }
     }
@@ -28,41 +28,42 @@ export default function playAndPauseVideo() {
 
   function playAndPauseVideo(container: HTMLDivElement) {
     const playPauseBtn = container.querySelector('[data-playback]') as HTMLButtonElement;
-    const video = container.querySelector('video') as HTMLVideoElement; // Получаем элемент видео, для которого было срабатывание
+    const video = container.querySelector('video') as HTMLVideoElement; // Get the video element for which the intersection occurred
 
     playPauseBtn.addEventListener('click', () => {
       const icon = playPauseBtn.querySelector('use') as SVGUseElement;
       const href = icon.getAttribute('href')?.split('#') || '';
 
       if (video.paused) {
-        // Если видео не воспроизводится
-        video.play().catch(error => console.error('Ошибка при воспроизведении видео:', error));
+        // If the video is not playing
+        video.play().catch(error => console.error('Error playing video:', error));
         playPauseBtn.setAttribute('data-playback', 'play');
         icon.setAttribute('href', `${href[0]}#pause`);
       } else {
-        // Если видео воспроизводится
+        // If the video is playing
         video.pause();
         playPauseBtn.setAttribute('data-playback', 'pause');
         icon.setAttribute('href', `${href[0]}#play`);
       }
     });
   }
+
   function unmuteAndMuteVideo(container: HTMLDivElement) {
     const soundBtn = container.querySelector('[data-sound]') as HTMLButtonElement;
-    const video = container.querySelector('video') as HTMLVideoElement; // Получаем элемент видео, для которого было срабатывание
+    const video = container.querySelector('video') as HTMLVideoElement; // Get the video element for which the intersection occurred
 
     soundBtn.addEventListener('click', () => {
       const icon = soundBtn.querySelector('use') as SVGUseElement;
       const href = icon.getAttribute('href')?.split('#') || '';
 
       if (video.muted) {
-        // Если видео не воспроизводится
+        // If the video is muted
         video.muted = false;
-        video.volume = 0.5;
+        video.volume = 0.5; // Set volume to 50%
         soundBtn.setAttribute('data-sound', 'unmute');
         icon.setAttribute('href', `${href[0]}#unmute`);
       } else {
-        // Если видео воспроизводится
+        // If the video is not muted
         video.muted = true;
         soundBtn.setAttribute('data-sound', 'mute');
         icon.setAttribute('href', `${href[0]}#mute`);
@@ -70,10 +71,10 @@ export default function playAndPauseVideo() {
     });
   }
 
-  // Для каждого видео элемента на странице создаем новый наблюдатель (observer)
+  // For each video element on the page, create a new observer
   for (const video of allVideoContainers) {
     const observer = new IntersectionObserver(callback, options);
-    observer.observe(video); // Наблюдаем за текущим видео элементом
+    observer.observe(video); // Observe the current video element
 
     playAndPauseVideo(video);
     unmuteAndMuteVideo(video);

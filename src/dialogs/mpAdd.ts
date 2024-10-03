@@ -1,55 +1,55 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // Динамически импортируем функцию openDialog из модуля "dialogUtils.js"
+  // Dynamically import the openDialog function from the "dialogUtils.js" module
   const { openDialog } = await import('./dialogUtils.js');
 
-  // Получаем элементы кнопок и диалоговых окон по их ID
+  // Get button and dialog elements by their IDs
   const buttonMPAddDialog = document.getElementById('button__mp-add-dialog') as HTMLButtonElement;
   const dialogMPAdd = document.getElementById('mp-add-dialog') as HTMLDialogElement;
   const dialogMPLogin = document.getElementById('mp-login-dialog') as HTMLDialogElement;
 
-  // Получаем элементы категорий по их ID
+  // Get category elements by their IDs
   const btnListVacancies = document.getElementById('list_vacancies') as HTMLButtonElement;
   const btnSupplyServices = document.getElementById('supply_services') as HTMLButtonElement;
   const btnSellMaterials = document.getElementById('sell_materials') as HTMLButtonElement;
 
-  // Проверяем, авторизован ли пользователь, проверяя наличие cookie с именем "tokken"
+  // Check if the user is logged in by checking for a "tokken" cookie
   if (document.cookie.match('tokken')) {
-    // Если пользователь авторизован, открываем диалоговое окно добавления материала/услуги при нажатии на кнопку
+    // If the user is logged in, open the add material/service dialog when clicking the button
     buttonMPAddDialog.addEventListener('click', () => {
       openDialog(dialogMPAdd);
     });
   } else {
-    // Если пользователь не авторизован, открываем диалоговое окно входа при нажатии на кнопку
+    // If the user is not logged in, open the login dialog when clicking the button
     buttonMPAddDialog.addEventListener('click', async () => {
       openDialog(dialogMPLogin);
 
       // ------------------------------
-      // Динамически импортируем функцию loadPhoneCodes из модуля "phone_codes.js"
+      // Dynamically import the loadPhoneCodes function from the "phone_codes.js" module
       const { default: loadPhoneCodes } = await import('../login/phoneCodes.js');
       loadPhoneCodes();
 
-      // Динамически импортируем функцию handlePhoneNumber из модуля "login.js"
+      // Dynamically import the handlePhoneNumber function from the "login.js" module
       const { default: handlePhoneNumber } = await import('../login/login.js');
 
-      // Выполняем функцию handlePhoneNumber, передавая в нее константу MARKETPLACE
+      // Execute the handlePhoneNumber function, passing the MARKETPLACE constant
       handlePhoneNumber(MARKETPLACE);
     });
   }
 
   // ------------------------------
-  // Обработчики для открытия диалогов в зависимости от выбранной категории
+  // Handlers for opening dialogs depending on the selected category
 
-  // При нажатии на кнопку списка вакансий выводим сообщение в консоль
+  // When clicking the vacancies list button, log a message to the console
   btnListVacancies.addEventListener('click', () => {
     console.log('handle vacancies');
   });
 
-  // При нажатии на кнопку услуг выводим сообщение в консоль
+  // When clicking the services button, log a message to the console
   btnSupplyServices.addEventListener('click', () => {
     console.log('handle services');
   });
 
-  // При нажатии на кнопку материалов выводим сообщение в консоль
+  // When clicking the materials button, log a message to the console
   btnSellMaterials.addEventListener('click', () => {
     console.log('handle materials');
   });

@@ -1,61 +1,63 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  // Динамический импорт утилит для работы с диалоговыми окнами и функций для отзыва токена
+  // Dynamic import of utilities for working with dialogs and functions for token revocation
   const { closeDialog, openDialog } = await import('../dialogs/dialogUtils.js');
   const { revokeTokken } = await import('../emulate_user_access.js');
 
-  // Элементы для взаимодействия с формой удаления аккаунта
+  // Elements for interacting with the account deletion form
   const openDialogDA = document.getElementById('open__da-dialog') as HTMLButtonElement;
   const dialogDA = document.getElementById('da-dialog') as HTMLDialogElement;
   const formDA = document.getElementById('da__form') as HTMLFormElement;
 
-  // Находим все элементы с классом "form__reason-delete"
+  const cancelDialog = dialogDA.querySelector('#da-dialog__cancel') as HTMLDialogElement;
+
+  // Find all elements with the class "form__reason-delete"
   const inputs = [...dialogDA.querySelectorAll('.form__reason-delete')] as HTMLDivElement[];
 
-  // Сообщение об ошибке
+  // Error message
   const { default: errorMessage } = await import('../components/errorMessage.js');
 
-  // Обработчик события для открытия диалогового окна при клике на кнопку
+  // Event handler for opening the dialog when clicking the button
   openDialogDA.addEventListener('click', () => {
-    // Вызов функции открытия диалога
+    // Call the function to open the dialog
     openDialog(dialogDA);
   });
 
-  // Функция для закрытия диалогового окна при отмене или закрытии
+  // Function to close the dialog when canceled or closed
   function cancelOrCloseDialogDA() {
-    // Находим элемент для отображения ошибки
+    // Find the element for displaying an error
 
-    // Снимаем отметку со всех чекбоксов
+    // Uncheck all checkboxes
     for (const el of inputs) {
       const radioBtn = el.querySelector('input') as HTMLInputElement;
       radioBtn.checked = false;
     }
 
-    // Скрываем сообщение об ошибке
+    // Hide the error message
     errorMessage(null);
 
-    // Закрываем диалоговое окно
+    // Close the dialog
     closeDialog(dialogDA);
   }
 
-  // Добавляем обработчики событий для кнопок закрытия и отмены в диалоговом окне
-  dialogDA.querySelector('#da-dialog__cancel')!.addEventListener('click', cancelOrCloseDialogDA);
+  // Add event handlers for the close and cancel buttons in the dialog
+  cancelDialog.addEventListener('click', cancelOrCloseDialogDA);
 
-  // Функция для обработки отправки формы удаления аккаунта
+  // Function to handle account deletion form submission
   function deleteThisAccount(event: Event) {
-    // Отменяем стандартное поведение формы
+    // Prevent default form behavior
     event.preventDefault();
 
-    // Поиск выбранного чекбокса с причиной удаления аккаунта
+    // Find the selected checkbox with the reason for account deletion
     const selectedElement = inputs.find(el => {
       const radioBtn = el.querySelector('input') as HTMLInputElement;
       if (radioBtn.checked) return el;
     });
 
-    // Скрываем сообщение об ошибке
+    // Hide the error message
     if (selectedElement) {
       errorMessage(null);
     }
-    // Если причина не выбрана, показываем сообщение об ошибке
+    // If no reason is selected, display an error message
     if (!selectedElement) {
       errorMessage(
         formDA,
@@ -64,28 +66,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // Получаем текст выбранной причины
+    // Get the text of the selected reason
     const reason = selectedElement.querySelector('label')?.textContent || '';
 
-    // Логируем выбранную причину (можно удалить этот лог после проверки)
+    // Log the selected reason (this log can be removed after verification)
     console.log(reason);
 
-    // Перенаправляем пользователя на главную страницу после удаления аккаунта
+    // Redirect the user to the main page after account deletion
     url.pathname = INDEX_PATH;
     window.location.href = url.toString();
 
-    // Отзываем токен пользователя (реализация функции в другом модуле)
+    // Revoke the user's token (implementation of the function in another module)
     revokeTokken();
   }
 
-  // Добавляем обработчик события для отправки формы удаления аккаунта
+  // Add event handler for account deletion form submission
   formDA.addEventListener('submit', deleteThisAccount);
 
-  // Добавляем обработчики событий для изменения состояния чекбоксов
+  // Add event handlers for changing the state of the checkboxes
   for (const input of inputs) {
     input.addEventListener('change', event => {
       const radioBtn = event.target as HTMLInputElement;
-      // Скрываем сообщение об ошибке при изменении состояния чекбокса
+      // Hide the error message when the state of the checkbox changes
       if (radioBtn.checked) {
         errorMessage(null);
       }

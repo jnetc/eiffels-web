@@ -1,102 +1,102 @@
 export default async function authentication(pathname: string) {
-  // Импортируем функцию setTokken из другого модуля
+  // Import the setTokken function from another module
   const { setTokken } = await import('../emulate_user_access.js');
-  // Сообщение об ошибке
+  // Error message
   const { default: errorMessage } = await import('../components/errorMessage.js');
 
-  // Получаем элементы формы, ввода цифр, кнопки отправки и сообщения об ошибке
+  // Get form, numeric input fields, submit button, and error message elements
   const authForm = document.querySelector('.auth__form') as HTMLFormElement;
   const digits = document.querySelectorAll('[inputmode="numeric"]') as NodeListOf<HTMLInputElement>;
   const submitButton = document.querySelector('.auth__btn') as HTMLButtonElement;
 
-  // Устанавливаем фокус на первое поле ввода цифры
-  // Ожидание 300 миллисекунд (анимация всплытия 200 миллисекунд)
+  // Set focus on the first numeric input field
+  // Wait for 300 milliseconds (200 milliseconds for the pop-up animation)
   const timeout = setTimeout(() => {
     digits[0].focus();
     clearTimeout(timeout);
   }, 300);
 
-  // Для каждого поля ввода цифры добавляем обработчики событий
+  // Add event listeners to each numeric input field
   digits.forEach((input, index) => {
-    // Обработка события ввода
+    // Handle input event
     input.addEventListener('input', () => {
-      // Убираем сообщение об ошибке
+      // Remove the error message
       errorMessage(null);
-      // Оставляем только последний введённый символ и убираем все нецифровые символы
+      // Keep only the last entered character and remove any non-numeric characters
       input.value = input.value.replace(/[^0-9]/g, '').slice(-1);
 
-      // Если цифра введена, переводим фокус на следующее поле ввода, если оно существует
+      // If a digit is entered, move focus to the next input field, if it exists
       if (input.value.length === 1 && index < digits.length - 1) {
         digits[index + 1].focus();
       }
     });
 
-    // Запрещаем вставку недопустимых символов
+    // Prevent pasting invalid characters
     input.addEventListener('paste', (event: ClipboardEvent) => {
-      // Получаем данные из буфера обмена
+      // Get the clipboard data
       const paste = event.clipboardData?.getData('text') || '';
       event.preventDefault();
 
-      // Проверяем, что вставленное значение содержит ровно 6 цифр
+      // Check if the pasted value contains exactly 6 digits
       if (!/^[0-9]{6}$/.test(paste)) {
         errorMessage(
           authForm,
           'Please enter exactly 6 digits. Only numerical values are allowed in this field. Ensure your entry is neither more nor less than 6 digits.'
-        ); // Показываем сообщение об ошибке
+        ); // Show the error message
         return;
       }
 
-      // Убираем сообщение об ошибке
+      // Remove the error message
       errorMessage(null);
 
-      // Заполняем каждое поле ввода соответствующей цифрой из вставленного значения
+      // Fill each input field with the corresponding digit from the pasted value
       digits.forEach((input, index) => {
         input.value = paste[index];
       });
 
-      // После вставки переводим фокус на кнопку отправки
+      // After pasting, move focus to the submit button
       const breakPasteActivity = setTimeout(() => {
         submitButton.focus();
         clearTimeout(breakPasteActivity);
       }, 0);
     });
 
-    // Запрещаем ввод недопустимых символов с клавиатуры
+    // Prevent typing invalid characters from the keyboard
     input.addEventListener('keypress', event => {
       if (!/^[0-9]$/.test(event.key)) {
         event.preventDefault();
       }
     });
 
-    // Предотвращаем перемещение каретки в конец поля при клике
+    // Prevent the cursor from moving to the end of the input field on click
     input.addEventListener('focus', () => {
-      setTimeout(() => input.setSelectionRange(0, 1), 0); // Устанавливаем выделение на первый символ
+      setTimeout(() => input.setSelectionRange(0, 1), 0); // Set selection to the first character
     });
   });
 
-  // Обработка отправки формы
+  // Handle form submission
   authForm.addEventListener('submit', event => {
-    event.preventDefault(); // Предотвращаем стандартное поведение формы
+    event.preventDefault(); // Prevent the default form submission behavior
     const title = document.querySelector('#auth-dialog__title-fill') as HTMLHeadingElement;
     title.classList.add('status-changed');
 
-    // Эмулируем задержку на сервере
-    // И показываем сообщение об ошибке если не удалось авторизоваться
+    // Simulate a server delay
+    // And show an error message if authentication fails
     const serverTimeoutEmulator = setTimeout(() => {
       title.classList.remove('status-changed');
       // errorMessage.classList.add("show");
 
       if (pathname.includes(MARKETPLACE)) {
-        // Устанавливаем cookie, чтобы указать, что пользователь принял условия использования
+        // Set a cookie to indicate that the user has accepted the terms of use
         setTokken('tokken', '1', 1);
       }
       clearTimeout(serverTimeoutEmulator);
     }, 2000);
 
-    // // Проверяем, авторизован ли пользователь
+    // // Check if the user is authenticated
     // if (pathname.includes(LOGGED)) {
     // 	setTokken("tokken", "1", 1);
-    // 	url.pathname = LOGGED_PATH; // Перенаправляем на страницу после авторизации
+    // 	url.pathname = LOGGED_PATH; // Redirect to the page after authentication
     // 	window.location.href = url.toString();
     // 	return;
     // }

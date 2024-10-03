@@ -1,87 +1,88 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', async () => {
-    // Динамический импорт модулей, чтобы использовать функции для открытия и закрытия диалогов
+    // Dynamic import of modules to use functions for opening and closing dialogs
     const { openDialog, closeDialog } = await import('./dialogUtils.js');
-    // Получение элементов интерфейса по их ID
-    const openDialogAUP = document.getElementById('open__aup-dialog'); // Кнопка для открытия диалога
-    const dialogAUP = document.getElementById('aup-dialog'); // Сам диалог
-    const formAUP = document.getElementById('aup__form'); // Форма внутри диалога
-    // Изображение для предварительного просмотра в диалоге
+    // Getting UI elements by their ID
+    const openDialogAUP = document.getElementById('open__aup-dialog'); // Button to open the dialog
+    const dialogAUP = document.getElementById('aup-dialog'); // The dialog itself
+    const formAUP = document.getElementById('aup__form'); // Form inside the dialog
+    // Image for preview in the dialog
     const imageUrl = document.getElementById('aup__photo-display');
-    // Основное изображение профиля
+    // Main profile picture
     const profilePicture = document.getElementById('profile__picture');
-    // Поле ввода для выбора файла
+    // Input field for file selection
     const file = document.querySelector('#aup__picture-file');
-    // Сообщение об ошибке
+    // Error message
     const { default: errorMessage } = await import('../components/errorMessage.js');
-    // Обработчик для открытия диалога при нажатии на кнопку
+    // Event handler for opening the dialog when clicking the button
     openDialogAUP.addEventListener('click', () => {
-        // Копируем изображение профиля из основного UI и отображаем его в диалоге
+        // Copy the profile picture from the main UI and display it in the dialog
         imageUrl.src = profilePicture.src;
-        // Открываем диалог
+        // Open the dialog
         openDialog(dialogAUP);
     });
-    // Функция для закрытия диалога при нажатии на кнопку "Cancel" или "Close"
+    // Function to close the dialog when clicking the "Cancel" or "Close" button
     function cancelOrCloseDialogAUP() {
-        // Очищаем выбранный файл и изображение
+        // Clear the selected file and image
         file.value = '';
         imageUrl.src = '';
-        // Скрываем сообщение об ошибке, если оно отображается
+        // Hide the error message if it is displayed
         errorMessage(null);
-        // Закрываем диалог
+        // Close the dialog
         closeDialog(dialogAUP);
     }
-    // Асинхронная функция для обработки изменений файла изображения
+    // Asynchronous function to handle image file changes
     async function getImageData() {
-        // Добавляем обработчик события "change" на документ
+        // Add a "change" event listener to the document
         document.addEventListener('change', (event) => {
             var _a;
-            // Получаем выбранный файл из инпута
+            // Get the selected file from the input
             const file = (_a = event.target.files) === null || _a === void 0 ? void 0 : _a[0];
-            // Если файл выбран
+            // If a file is selected
             if (file) {
-                const reader = new FileReader(); // Создаем объект FileReader для чтения файла
-                // Когда файл прочитан, устанавливаем его как источник для превью изображения
+                const reader = new FileReader(); // Create a FileReader object to read the file
+                // When the file is read, set it as the source for the image preview
                 reader.onload = (e) => {
                     var _a;
-                    // Проверяем, что результат чтения файла не null или undefined
+                    // Check that the file read result is not null or undefined
                     if ((_a = e.target) === null || _a === void 0 ? void 0 : _a.result) {
-                        imageUrl.src = e.target.result; // Устанавливаем источник изображения для превью
+                        imageUrl.src = e.target.result; // Set the image source for preview
                     }
                 };
-                // Читаем выбранный файл как Data URL (base64)
+                // Read the selected file as a Data URL (base64)
                 reader.readAsDataURL(file);
             }
             else {
-                // Показываем сообщение об ошибке
+                // Show an error message
                 errorMessage(formAUP, 'The file you uploaded is either invalid or exceeds the maximum allowed size. Please upload a valid file that meets the size requirements.');
             }
         });
     }
-    // Добавляем обработчик события для выбора файла и предварительного просмотра изображения
+    // Add an event handler for file selection and image preview
     file.addEventListener('click', getImageData);
-    // Обработчик события для отправки формы
+    // Event handler for form submission
     formAUP.addEventListener('submit', (event) => {
-        event.preventDefault(); // Отменяем стандартное поведение формы
+        event.preventDefault(); // Prevent default form behavior
         const button = event.target.querySelector('button');
-        // Блокируем инпут и кнопку, и изменяем текст на кнопке для индикации загрузки
+        const buttonName = button.querySelector('.btn-text');
+        // Disable the input and button, and change the button text to indicate the upload is in progress
         file.disabled = true;
         button.disabled = true;
-        button.querySelector('.btn-text').textContent = 'Uploading Image';
-        // Эмуляция загрузки изображения на сервер с задержкой в 3 секунды
+        buttonName.textContent = 'Uploading Image';
+        // Simulate image upload to the server with a 3-second delay
         const timeout = setTimeout(() => {
-            // Если изображение успешно загружено, обновляем изображение профиля
+            // If the image is successfully uploaded, update the profile picture
             if (imageUrl.src) {
-                profilePicture.src = imageUrl.src; // Обновляем основное изображение профиля
+                profilePicture.src = imageUrl.src; // Update the main profile image
             }
-            // Закрываем диалог и сбрасываем форму
+            // Close the dialog and reset the form
             cancelOrCloseDialogAUP();
-            // Восстанавливаем исходное состояние кнопки и инпута
-            button.querySelector('.btn-text').textContent = 'Upload Image';
+            // Restore the original state of the button and input
+            buttonName.textContent = 'Upload Image';
             file.disabled = false;
             button.disabled = false;
             clearTimeout(timeout);
-        }, 3000); // Задержка в 3 секунды
+        }, 3000); // 3-second delay
     });
 });
 //# sourceMappingURL=addUserPicture.js.map

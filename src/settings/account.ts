@@ -1,8 +1,10 @@
+// Add an event listener that triggers when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', async () => {
+  // Define types for selections and user data
   type TypeSelection = 'preferences' | 'personal' | 'phone' | 'email' | 'role';
   type User = typeof user;
 
-  // Имитированные данные пользователя
+  // Simulated user data
   const user = {
     id: 1,
     language: 'fi',
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     role: 'jobs',
   };
 
-  // Получаем ссылки на формы по их ID
+  // Get form references by their IDs
   const preferencesForm = document.getElementById('settings__preferences') as HTMLFormElement;
   const personalForm = document.getElementById('settings__personal') as HTMLFormElement;
   const phoneForm = document.getElementById('settings__phone') as HTMLFormElement;
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const rolesForm = document.getElementById('settings__roles') as HTMLFormElement;
   const deleteAccountForm = document.getElementById('settings__delete-account') as HTMLFormElement;
 
-  // Получаем ссылки на элементы ввода по их ID
+  // Get input element references by their IDs
   const language = document.getElementById('preferences__language') as HTMLSelectElement;
   const postalCode = document.getElementById('preferences__postal-code') as HTMLInputElement;
   const firstName = document.getElementById('personal__first-name') as HTMLInputElement;
@@ -31,10 +33,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const emailAddress = document.getElementById('email__address') as HTMLInputElement;
   const role = document.getElementById('roles__role') as HTMLSelectElement;
 
-  // Найти элемент для отображения сообщения об ошибке
+  // Dynamically import the error message component
   const { default: errorMessage } = await import('../components/errorMessage.js');
 
-  // Заполняем поля формы данными пользователя
+  // Populate the form fields with user data
   language.value = user.language;
   postalCode.value = user.postalCode;
   firstName.value = user.firstName;
@@ -43,60 +45,63 @@ document.addEventListener('DOMContentLoaded', async () => {
   emailAddress.value = user.emailAddress;
   role.value = user.role;
 
-  // Функция для обработки отправки формы
+  // Function to handle form submission and update the account information
   function updateAccount(event: Event, section: TypeSelection) {
-    event.preventDefault(); // Предотвращаем стандартное действие формы
-    const button = (event.target as HTMLFormElement).querySelector('[type="submit"]') as HTMLButtonElement; // Находим кнопку в форме
+    event.preventDefault(); // Prevent the default form action
+    const button = (event.target as HTMLFormElement).querySelector('[type="submit"]') as HTMLButtonElement; // Find the submit button in the form
+    const buttonName = button.firstElementChild as HTMLSpanElement; // Get the text element of the button
 
     if (!button) throw new Error('No button found in form');
 
-    button.disabled = true; // Отключаем кнопку
-    button.firstElementChild!.textContent = 'Saving'; // Меняем текст на кнопке
+    button.disabled = true; // Disable the button
+    buttonName.textContent = 'Saving'; // Change the button text to "Saving"
 
-    // Обновляем данные пользователя в зависимости от раздела формы
+    // Update user data based on the section of the form being submitted
     switch (section) {
       case 'preferences':
-        emulateSaveOnServer(button, null);
+        emulateSaveOnServer(button, null); // Call function to emulate saving preferences
         return;
       case 'personal':
         emulateSaveOnServer(button, {
           ...user,
           firstName: firstName.value,
           lastName: lastName.value,
-        });
+        }); // Update personal details
         return;
       case 'phone':
         emulateSaveOnServer(button, {
           ...user,
           phoneNumber: phoneNumber.value,
-        });
+        }); // Update phone number
         return;
       case 'email':
         emulateSaveOnServer(button, {
           ...user,
           emailAddress: emailAddress.value,
-        });
+        }); // Update email address
         return;
       case 'role':
-        emulateSaveOnServer(button, { ...user, role: role.value });
+        emulateSaveOnServer(button, { ...user, role: role.value }); // Update user role
         return;
       default:
-        user;
+        user; // If no valid section is found, return the user data
     }
   }
 
-  // Функция для имитации сохранения данных на сервере
+  // Function to emulate saving data to the server
   async function emulateSaveOnServer(button: HTMLButtonElement, user: User | null) {
-    // Скрываем сообщение об ошибке, если оно отображается
+    // Hide the error message if it is displayed
     errorMessage(null);
 
-    const parentElement = button.closest('.styled-box__footer') as HTMLDivElement; // Находим родительский элемент кнопки
+    const parentElement = button.closest('.styled-box__footer') as HTMLDivElement; // Find the parent element of the button
+    const buttonName = button.firstElementChild as HTMLSpanElement;
+
     try {
-      // Искусственно выбрасываем ошибку для тестирования
+      // Artificially throw an error for testing purposes
       if (!user) {
         await new Promise((_, reject) => {
           setTimeout(() => {
-            button.firstElementChild!.textContent = 'Save';
+            buttonName.textContent = 'Save';
             button.disabled = false;
             reject(
               new Error(
@@ -106,42 +111,44 @@ document.addEventListener('DOMContentLoaded', async () => {
           }, 1000);
         });
       }
-      // Имитация задержки при сохранении данных
+
+      // Simulate a delay in saving data
       const timeout = setTimeout(() => {
-        button.firstElementChild!.textContent = 'Save';
+        buttonName.textContent = 'Save';
         button.disabled = false;
         console.log('updated');
         clearTimeout(timeout);
       }, 1000);
       console.log('get preferences', user, parentElement);
     } catch (error) {
-      // Приведение ошибки к типу Error для работы с message
+      // Cast error to Error type for message handling
       const errorMessageText = error instanceof Error ? error.message : 'An unknown error occurred';
-      // Показываем сообщение об ошибке
+      // Show the error message
       errorMessage(parentElement, errorMessageText);
     }
   }
 
-  // Добавляем обработчики событий для отправки форм
+  // Add event listeners for form submissions
   preferencesForm.addEventListener('submit', event => updateAccount(event, 'preferences'));
   personalForm.addEventListener('submit', event => updateAccount(event, 'personal'));
   phoneForm.addEventListener('submit', event => updateAccount(event, 'phone'));
   emailForm.addEventListener('submit', event => updateAccount(event, 'email'));
   rolesForm.addEventListener('submit', event => updateAccount(event, 'role'));
 
-  // Функция для удаления аккаунта
+  // Function to handle account deletion
   async function deleteAccount(event: Event) {
-    // Предотвращаем стандартное действие формы
+    // Prevent the default form action
     event.preventDefault();
 
     try {
-      // Логируем сообщение о удалении аккаунта
+      // Log the message regarding account deletion
       console.log('delete account');
     } catch (error) {
-      // Логируем ошибку в консоль
+      // Log any error to the console
       console.log(error);
     }
   }
-  // Добавляем обработчик события для удаления аккаунта
+
+  // Add event listener for account deletion
   deleteAccountForm.addEventListener('submit', deleteAccount);
 });

@@ -3,14 +3,15 @@ export default function loadPhoneCodes() {
     const countrySelect = document.getElementById('login__country-select');
     const countryCode = document.getElementById('login__country-code');
     const inputPhoneNumber = document.getElementById('login__phone-number');
+    // Add an event listener for when the user selects a different country from the dropdown
     countrySelect.addEventListener('change', () => {
-        // Получаем выбранную опцию напрямую через value и dataset
+        // Get the selected option directly via value and dataset
         const option = countrySelect.options[countrySelect.selectedIndex];
-        // Обновляем текст countryCode с fallback значением '+358', если option.value пустой
+        // Update the text of countryCode with a fallback value of '+358' if option.value is empty
         countryCode.textContent = option.value || '+358';
-        // Обновляем текст countryShortName с fallback значением 'FI', если dataset.short отсутствует
+        // Update the text of countryShortName with a fallback value of 'FI' if dataset.short is missing
         countryShortName.textContent = option.dataset.short || 'FI';
-        // Если поле ввода inputPhoneNumber существует, ставим на него фокус
+        // If inputPhoneNumber exists, set focus on it
         inputPhoneNumber.focus();
     });
 }

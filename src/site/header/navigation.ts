@@ -1,37 +1,39 @@
+// Exporting the navigation function as the default export
 export default function navigation() {
-  // Кнопка мобильного меню и контейнер меню
+  // Mobile menu button and menu container
   const openMenuButton = document.getElementById('header__open-mob-menu') as HTMLButtonElement;
   const closeMenuButton = document.getElementById('header__close-mob-menu') as HTMLButtonElement;
   const mobNavigation = document.querySelector('.header__nav') as HTMLElement;
 
   // ------------------------------
-  // МОБИЛЬНОЕ МЕНЮ
+  // MOBILE MENU
 
-  // Обработка клика по кнопке мобильного меню
+  // Handling click on the mobile menu open button
   openMenuButton.addEventListener('click', () => {
     mobNavigation.classList.add('open');
+    // If the menu is open, add click events to links, otherwise remove them
     mobNavigation.classList.contains('open')
-      ? addEventsToLinks(true) // Если меню открыто, добавляем события клика
-      : addEventsToLinks(false); // Если меню закрыто, убираем события клика
+      ? addEventsToLinks(true) // If the menu is open, add click events
+      : addEventsToLinks(false); // If the menu is closed, remove click events
   });
-  // Обработка клика по кнопке мобильного меню
+
+  // Handling click on the mobile menu close button
   closeMenuButton.addEventListener('click', () => {
-    console.log('close');
-
-    mobNavigation.classList.remove('open');
+    console.log('close'); // Log when closing the menu
+    mobNavigation.classList.remove('open'); // Remove the 'open' class to close the menu
   });
 
-  // Функция для добавления или удаления событий клика на ссылки
+  // Function to add or remove click events on links
   function addEventsToLinks(boolean: boolean) {
     for (const element of mobNavigation.querySelectorAll('a')) {
       if (boolean) {
-        // Добавляем обработчик клика для закрытия меню
+        // Adding click handler to close the menu when a link is clicked
         element.addEventListener('click', () => {
-          mobNavigation.classList.remove('open');
+          mobNavigation.classList.remove('open'); // Close the menu
         });
       } else {
-        // Удаляем обработчик клика
-        element.removeEventListener('click', () => {});
+        // Remove the click handler
+        element.removeEventListener('click', () => {}); // This will not work as intended
       }
     }
   }

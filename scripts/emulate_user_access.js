@@ -1,45 +1,45 @@
-// Получаем элементы управления по их идентификаторам
+// Get control elements by their IDs
 const userEnable = document.getElementById('user-enable');
 const userDisable = document.getElementById('user-disable');
-// Главная функция для эмуляции состояния пользователя
+// Main function to simulate user state
 export default function emulate() {
-    // Получаем элемент кнопки "Назад" по его идентификатору
+    // Get the "Back" button element by its ID
     const backButton = document.getElementById('btn-back');
-    // Проверяем, есть ли токен в куках
+    // Check if there is a token in cookies
     if (document.cookie.match('tokken')) {
-        // Если токен существует, то активируем кнопки для включенного состояния пользователя
+        // If the token exists, activate buttons for the enabled user state
         userEnable.className = 'btn-40 btn-blue';
         userDisable.className = 'btn-40 btn-blue-border';
-        // Если есть кнопка "Назад", меняем её ссылку на страницу для авторизованных пользователей
+        // If there is a "Back" button, change its link to the authorized users page
         if (backButton) {
             url.pathname = LOGGED_PATH;
             backButton.href = url.toString();
         }
     }
     else {
-        // Если токена нет, то активируем кнопки для выключенного состояния пользователя
+        // If there is no token, activate buttons for the disabled user state
         userDisable.className = 'btn-40 btn-blue';
         userEnable.className = 'btn-40 btn-blue-border';
-        // Если есть кнопка "Назад", меняем её ссылку на главную страницу
+        // If there is a "Back" button, change its link to the main page
         if (backButton) {
             url.pathname = INDEX_PATH;
             backButton.href = url.toString();
         }
     }
-    // Добавляем обработчики событий на кнопки для установки и удаления токена
+    // Add event listeners to buttons for setting and revoking the token
     userEnable === null || userEnable === void 0 ? void 0 : userEnable.addEventListener('click', () => setTokken('tokken', '1', 1));
     userDisable === null || userDisable === void 0 ? void 0 : userDisable.addEventListener('click', () => revokeTokken());
 }
-// Функция для удаления токена
+// Function to revoke the token
 export function revokeTokken() {
-    // Проверяем, есть ли токен в куках
+    // Check if there is a token in cookies
     if (document.cookie.match('tokken')) {
-        // Если токен существует, удаляем его путем установки даты истечения в прошлое
+        // If the token exists, remove it by setting its expiration date in the past
         document.cookie = 'tokken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        // Меняем стили кнопок на состояние "выключен"
+        // Change button styles to the "disabled" state
         userDisable.className = 'btn-40 btn-blue';
         userEnable.className = 'btn-40 btn-blue-border';
-        // Если пользователь не на главной странице, перенаправляем его на главную
+        // If the user is not on the main page, redirect them to the main page
         if (window.location.pathname !== INDEX) {
             url.pathname = INDEX_PATH;
             window.location.href = url.toString();
@@ -47,29 +47,29 @@ export function revokeTokken() {
         }
     }
 }
-// Функция для установки токена
+// Function to set the token
 export function setTokken(name, value, days) {
     console.log('set tokken', name, value, days);
-    // Устанавливаем срок действия токена, добавляя количество дней к текущей дате
+    // Set the token expiration by adding the number of days to the current date
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = `expires=${date.toUTCString()}`;
-    // Устанавливаем cookie с именем, значением и сроком действия, а также параметрами безопасности
+    // Set the cookie with the name, value, expiration, and security parameters
     document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure`;
-    // Меняем стили кнопок на состояние "включен"
+    // Change button styles to the "enabled" state
     userEnable.className = 'btn-40 btn-blue';
     userDisable.className = 'btn-40 btn-blue-border';
-    // Если (незарегистрированный) пользователь находится на странице "MARKETPLACE",
-    // то оставляем его на ней после подтверждения входа
-    console.log('glabal value', MARKETPLACE);
+    // If (unauthorized) the user is on the "MARKETPLACE" page,
+    // keep them on it after confirming login
+    console.log('global value', MARKETPLACE);
     if (window.location.pathname.includes(MARKETPLACE)) {
         url.pathname = MARKETPLACE_PATH;
         console.log('path', MARKETPLACE_PATH);
         window.location.href = url.toString();
         return;
     }
-    // Если (незарегистрированный) пользователь находится на странице "INDEX",
-    // то перенаправляем его на страницу "MARKETPLACE" (надо уточнить)
+    // If (unauthorized) the user is on the "INDEX" page,
+    // redirect them to the "MARKETPLACE" page (needs clarification)
     if (window.location.pathname !== LOGGED) {
         url.pathname = LOGGED_PATH;
         // url.pathname = MARKETPLACE_PATH;

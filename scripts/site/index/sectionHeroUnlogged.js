@@ -1,23 +1,23 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', async () => {
     // ------------------------------
-    // КНОПКА МОБИЛЬНОГО МЕНЮ И КОНТЕЙНЕР МЕНЮ
+    // MOBILE MENU BUTTON AND MENU CONTAINER
     const { default: navigation } = await import('../header/navigation.js');
     navigation();
     // ------------------------------
-    // ВЫПАДАЮЩЕЕ МЕНЮ ВЫБОРА КОДА СТРАНЫ РАЗДЕЛЕ HERO
+    // DROPDOWN MENU FOR COUNTRY CODE SELECTION IN THE HERO SECTION
     const { default: loadPhoneCodes } = await import('../../login/phoneCodes.js');
     loadPhoneCodes();
     // ------------------------------
-    // ПОЛЕ ДЛЯ ВВОДА НОМЕРА ТЕЛЕФОНА В РАЗДЕЛЕ HERO
+    // PHONE NUMBER INPUT FIELD IN THE HERO SECTION
     const { default: handlePhoneNumber } = await import('../../login/login.js');
-    handlePhoneNumber(INDEX);
+    handlePhoneNumber(INDEX); // Assuming INDEX is defined somewhere in your code
     // ------------------------------
-    // ВЫБОР СТАНДАРТНОГО ПЛАНА ПО КОЛИЧЕСТВУ РАБОТНИКОВ
+    // STANDARD PLAN SELECTION BY NUMBER OF EMPLOYEES
     const { default: sectionPricing } = await import('../pricing/sectionPricing.js');
     sectionPricing();
     // ------------------------------
-    // ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ / FAQ
+    // FREQUENTLY ASKED QUESTIONS / FAQ
     const { default: sectionFAQ } = await import('../FAQ/sectionFAQ.js');
     sectionFAQ();
 });

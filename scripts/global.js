@@ -2,37 +2,37 @@
 var _a;
 const lang = ((_a = document.querySelector('html')) === null || _a === void 0 ? void 0 : _a.getAttribute('lang')) || 'en';
 console.log('global lang', lang);
-// Определяем начальные значения для путей
+// Define initial values for paths
 const INDEX = `/${lang}/index`;
 const LOGGED = `/${lang}/logged`;
 const MARKETPLACE = `/${lang}/marketplace/`;
-// Инициализируем переменные путей с начальными значениями
+// Initialize path variables with initial values
 // http://127.0.0.1:5500/
 let ROOT_PATH = '/';
 let INDEX_PATH = INDEX;
 let LOGGED_PATH = LOGGED;
 let MARKETPLACE_PATH = MARKETPLACE;
-// Создаем объект URL из текущего URL-адреса окна
+// Create a URL object from the current window's URL
 const url = new URL(window.location.href);
-// Проверяем, использует ли текущий URL протокол HTTPS
+// Check if the current URL uses HTTPS protocol
 // https://jnetc.github.io/eiffels-web
 if (url.protocol === 'https:') {
-    // Если протокол HTTPS, обновляем пути к ресурсам
+    // If HTTPS protocol, update resource paths
     ROOT_PATH = '/eiffels-web/';
     INDEX_PATH = `/eiffels-web/${lang}`;
     LOGGED_PATH = `/eiffels-web/${lang}/logged`;
     MARKETPLACE_PATH = `/eiffels-web/${lang}/marketplace/`;
 }
-// Добавляем обработчик события, который сработает после полной загрузки документа
+// Add an event listener that will trigger after the document is fully loaded
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Асинхронно импортируем модуль emulate_user_access.js
+        // Asynchronously import the emulate_user_access.js module
         const { default: emulate } = await import('./emulate_user_access.js');
-        // Вызываем функцию emulate из импортированного модуля
+        // Call the emulate function from the imported module
         emulate();
     }
     catch (error) {
-        // Ловим и выводим ошибки, если импорт модуля или вызов функции завершился неудачно
+        // Catch and log errors if module import or function call fails
         console.log(error);
     }
 });

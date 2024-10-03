@@ -1,14 +1,15 @@
 "use strict";
+// Add an event listener that triggers when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Получаем элемент <select> с идентификатором "navigation-select"
+    // Get the <select> element with the ID "navigation-select"
     const navigationSelect = document.getElementById('navigation-select');
-    // Проверяем, что элемент существует
+    // Check if the <select> element exists
     if (navigationSelect) {
-        // Добавляем обработчик события "change" на элемент <select>
+        // Add a "change" event listener to the <select> element
         navigationSelect.addEventListener('change', function () {
-            // Если значение элемента не пустое
+            // If the selected value is not empty
             if (this.value) {
-                // Перенаправляем пользователя на URL, указанный в значении <select>
+                // Redirect the user to the URL specified in the <select> value
                 window.location.href = this.value;
             }
         });

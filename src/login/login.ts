@@ -1,93 +1,93 @@
 export default async function handlePhoneNumber(pathname: string) {
-  // Найти форму для логина на странице
+  // Find the login form on the page
   const loginForm = document.querySelector('.login__form') as HTMLFormElement;
 
-  // Найти поле ввода номера телефона
+  // Find the phone number input field
   const phoneNumberCode = document.getElementById('login__country-code') as HTMLSpanElement;
   const phoneNumberInput = document.getElementById('login__phone-number') as HTMLInputElement;
 
-  // Сообщение об ошибке
+  // Error message
   const { default: errorMessage } = await import('../components/errorMessage.js');
 
-  // Переменная для хранения введенного номера телефона
+  // Variable to store the entered phone number
   let phoneNumber = '';
 
-  // Проверка, существует ли форма для логина
+  // Check if the login form exists
   if (loginForm) {
-    // Добавляем обработчик события отправки формы
+    // Add an event listener for form submission
     loginForm.addEventListener('submit', async event => {
-      // Отменить стандартное действие браузера при отправке формы
+      // Prevent the browser's default behavior for form submission
       event.preventDefault();
 
       phoneNumberInput.disabled = true;
 
-      // Динамический импорт модулей для ленивой загрузки
+      // Dynamic import of modules for lazy loading
       const { default: authentication } = await import('./authentication.js');
       const { openDialog } = await import('../dialogs/dialogUtils.js');
 
-      // Собираем номер телефона код страны и номер из поля ввода
+      // Collect the phone number by concatenating the country code and the number from the input field
       const fullPhoneNumber = `${phoneNumberCode.innerText}${phoneNumber}`;
 
-      // Проверка, если pathname содержит MARKERPLACE
+      // Check if pathname contains MARKETPLACE
       if (pathname.includes(MARKETPLACE)) {
-        // Открыть диалоговое окно для аутентификации на маркетплейсе
+        // Open the authentication dialog for the marketplace
         openDialog(document.getElementById('mp-auth-dialog') as HTMLDialogElement);
 
-        // Вызов функции аутентификации для маркетплейса
+        // Call the authentication function for the marketplace
         authentication(MARKETPLACE);
         return;
       }
 
-      // Проверка, если pathname содержит INDEX
+      // Check if pathname contains INDEX
       if (pathname.includes(INDEX)) {
         console.log('index', fullPhoneNumber);
 
-        // Открыть диалоговое окно для аутентификации на главной странице
+        // Open the authentication dialog for the homepage
         openDialog(document.getElementById('hs-auth-dialog') as HTMLDialogElement);
 
-        // Вызов функции аутентификации для маркетплейса
+        // Call the authentication function for the marketplace
         authentication(MARKETPLACE);
 
-        // Вызов функции аутентификации для главной страницы
+        // Call the authentication function for the homepage
         // authentication(LOGGED);
         return;
       }
     });
   }
 
-  // Проверка, существует ли поле ввода номера телефона
+  // Check if the phone number input field exists
   if (phoneNumberInput) {
-    // Немедленно установить фокус на поле ввода номера телефона
+    // Immediately set focus on the phone number input field
     // phoneNumberInput.focus();
 
-    // Добавляем обработчик события ввода текста
+    // Add an event listener for input text
     phoneNumberInput.addEventListener('input', event => {
       const input = (event.target as HTMLInputElement).value;
 
-      // Если поле ввода пустое
+      // If the input field is empty
       if (input === '') {
-        // Убрать сообщение об ошибке
+        // Remove the error message
         errorMessage(null);
         return;
       }
 
-      // Если введенное значение не является числом
+      // If the entered value is not a number
       if (!/^[0-9]{0,}$/.test(input)) {
-        console.log('input_errror', input);
+        console.log('input_error', input);
 
-        // Показать сообщение об ошибке
+        // Show the error message
         errorMessage(
           loginForm,
-          'Invalid input. The phone number must start with a plus sign (+) and contain only numerical values.	Please correct your entry.'
+          'Invalid input. The phone number must start with a plus sign (+) and contain only numerical values. Please correct your entry.'
         );
 
         return;
       }
 
-      // Убрать сообщение об ошибке, если введенное значение корректно
+      // Remove the error message if the entered value is valid
       errorMessage(null);
 
-      // Обновить переменную с номером телефона
+      // Update the phone number variable
       phoneNumber = input;
     });
   }

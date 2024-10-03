@@ -1,30 +1,37 @@
 export default function selectLanguage() {
+  // Select all language dropdowns with the class 'header__language'
   const selects = document.querySelectorAll('.header__language') as NodeListOf<HTMLSelectElement>;
+
+  // Check if a language cookie exists
   const checkCookieLang = document.cookie.match('lang');
+
+  // Get the current document language from the <html> element
   const docLang = document.documentElement.lang;
 
+  // If the cookie does not exist, set it to the document language
   if (!checkCookieLang) {
     document.cookie = `lang=${docLang};path=/;samesite=strict;secure`;
     return;
   }
 
+  // Add a change event listener to each language select element
   for (const select of selects) {
     select.addEventListener('change', () => {
-      // Получаем выбранное значение языка из options
+      // Get the selected value of the language option
       const optionLangValue = select.options[select.selectedIndex].value;
 
-      // Проверяем, есть ли новое значение и отличается ли оно от текущего языка
+      // Check if the new value is different from the current document language
       if (optionLangValue && optionLangValue !== docLang) {
-        // Создаем объект URL для безопасного обновления текущего URL
+        // Create a URL object for safely updating the current URL
         const url = new URL(window.location.href);
 
-        // Заменяем текущий язык в URL на выбранный
+        // Replace the current language in the URL with the selected language
         const currentUrl = url.href.replace(docLang, optionLangValue);
 
-        // Обновляем cookie с новым языковым параметром
+        // Update the cookie with the new language parameter
         document.cookie = `lang=${optionLangValue};path=/;samesite=strict;secure`;
 
-        // Перенаправляем пользователя на новый URL
+        // Redirect the user to the new URL
         window.location.href = currentUrl;
       }
     });

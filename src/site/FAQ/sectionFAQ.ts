@@ -1,28 +1,30 @@
 export default function sectionFAQ() {
-  // Выбор всех элементов с классом 'faq__question'
+  // Select all elements with the class 'faq__question'
   const faqItems = document.querySelectorAll('.faq__question') as NodeListOf<HTMLHeadingElement>;
+
+  // Function to collapse or expand the FAQ list
   function collapseList(event: Event) {
-    // Получаем кликнутый элемент
+    // Get the clicked element
     const item = event.target as HTMLHeadingElement;
 
-    // Закрываем элемент, если он открыт
+    // Close the element if it's already open
     if (item.classList.contains('open-answer')) {
       item.classList.remove('open-answer');
       return;
     }
 
-    // Закрываем все элементы, кроме кликнутого
+    // Close all elements except the clicked one
     for (const el of faqItems) {
       if (el.classList.contains('open-answer')) {
         el.classList.remove('open-answer');
       }
     }
 
-    // Открываем кликнутый элемент
+    // Open the clicked element
     item.classList.add('open-answer');
   }
 
-  // Добавляем обработчик клика к каждому элементу FAQ
+  // Add click event handler to each FAQ item
   for (const item of faqItems) {
     item.addEventListener('click', collapseList);
   }

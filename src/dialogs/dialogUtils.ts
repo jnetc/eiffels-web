@@ -1,25 +1,25 @@
 /**
- * Закрывает диалоговое окно и возвращает возможность прокрутки страницы.
+ * Closes the dialog and restores the ability to scroll the page.
  *
- * @param {HTMLDialogElement} dialog - Элемент диалогового окна, который нужно закрыть.
+ * @param {HTMLDialogElement} dialog - The dialog element that needs to be closed.
  */
 export function closeDialog(dialog: HTMLDialogElement) {
-  // Удаляем стиль overflow, чтобы вернуть возможность прокрутки страницы
+  // Remove the overflow style to restore page scrolling
   document.body.removeAttribute('style');
 
-  // Закрываем диалоговое окно
+  // Close the dialog
   dialog.close();
 }
 
 /**
- * Открывает диалоговое окно и блокирует прокрутку страницы.
+ * Opens the dialog and disables page scrolling.
  *
- * @param {HTMLDialogElement} dialog - Элемент диалогового окна, который нужно открыть.
+ * @param {HTMLDialogElement} dialog - The dialog element that needs to be opened.
  */
 export function openDialog(dialog: HTMLDialogElement) {
-  // Блокируем прокрутку страницы, добавляя стиль overflow: hidden
+  // Disable page scrolling by adding the overflow: hidden style
   document.body.style.overflow = 'hidden';
 
-  // Открываем диалоговое окно в модальном режиме
+  // Open the dialog in modal mode
   dialog.showModal();
 }

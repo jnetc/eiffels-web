@@ -1,40 +1,40 @@
-// Экспортируемая функция для установки cookies
+// Exported function to set cookies
 export default function setCookie(name: string, value: string, days: number) {
-  // Находим элемент на странице с классом "cookie", который, вероятно, является баннером cookies
+  // Find the element on the page with the class "cookie," which is likely the cookie banner
   const cookieElement = document.querySelector('.cookie') as HTMLDivElement;
 
-  // Логируем параметры вызова функции в консоль для отладки
+  // Log the function call parameters to the console for debugging
   console.log('accept cookie', name, value, days);
 
-  // Создаем новый объект даты
+  // Create a new Date object
   const date = new Date();
 
-  // Устанавливаем срок действия cookie, добавляя указанное количество дней к текущей дате
+  // Set the expiration time of the cookie by adding the specified number of days to the current date
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
 
-  // Формируем строку для параметра 'expires', используя метод toUTCString()
+  // Format the expires string using the toUTCString() method
   const expires = `expires=${date.toUTCString()}`;
 
-  // Устанавливаем cookie с указанным именем, значением, сроком действия, путем и параметрами безопасности
+  // Set the cookie with the specified name, value, expiration time, path, and security parameters
   document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure`;
 
-  // Удаляем элемент с классом "cookie" со страницы, вероятно, после принятия cookies пользователем
+  // Remove the element with the class "cookie" from the page, likely after the user has accepted cookies
   cookieElement.remove();
 }
 
-// 1) Функция setCookie: Экспортируемая функция устанавливает cookie в браузере.
-// 2) cookieElement: Используется для нахождения элемента с классом .cookie, который, возможно, представляет баннер с информацией о cookies.
-// 3) console.log("accept cookie", name, value, days): Логирование параметров функции, чтобы видеть, что именно передается при установке cookie.
-// 4) const date = new Date();: Создание нового объекта Date, который будет использоваться для установки срока действия cookie.
-// 5) date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);: Устанавливает дату истечения cookie, добавляя указанное количество дней к текущему времени.
-// 6) const expires = expires=${date.toUTCString()};: Формирование строки expires, которая задает срок действия cookie в формате UTC.
-// 7) document.cookie = ${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure;: Устанавливает cookie с:
+// 1) Function setCookie: This exported function sets a cookie in the browser.
+// 2) cookieElement: Used to find the element with the class .cookie, which likely represents the cookie information banner.
+// 3) console.log("accept cookie", name, value, days): Logging the function parameters to see what is being passed when setting the cookie.
+// 4) const date = new Date();: Creates a new Date object that will be used to set the cookie expiration date.
+// 5) date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);: Sets the cookie expiration date by adding the specified number of days to the current time.
+// 6) const expires = expires=${date.toUTCString()};: Formats the expires string that sets the cookie expiration date in UTC format.
+// 7) document.cookie = ${name}=${encodeURIComponent(value)};${expires};path=/;samesite=strict;secure;: Sets the cookie with:
 
-//     Именем (name),
-//     Значением (value, кодированным для использования в URL),
-//     Сроком действия (expires),
-//     Доступностью на всем сайте (path=/),
-//     Защищенностью (secure — только через HTTPS),
-//     Политикой SameSite (samesite=strict — cookie отправляется только с запросами из того же сайта).
+//     Name (name),
+//     Value (value, encoded for use in a URL),
+//     Expiration time (expires),
+//     Availability across the entire site (path=/),
+//     Security (secure — only through HTTPS),
+//     SameSite policy (samesite=strict — cookie is sent only with requests from the same site).
 
-//8) cookieElement.remove();: Удаляет элемент .cookie из DOM, что, вероятно, скрывает баннер cookies после того, как пользователь согласился на их использование.
+// 8) cookieElement.remove();: Removes the .cookie element from the DOM, which likely hides the cookie banner after the user has agreed to their use.
