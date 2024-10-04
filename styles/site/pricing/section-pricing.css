@@ -148,6 +148,10 @@
   border: var(--border, 1.5px) solid transparent;
   border-radius: var(--border-r, var(--border-corner-12));
   box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 2%);
+
+  & a {
+    margin-block-start: var(--gap-16);
+  }
 }
 
 .plan__price {

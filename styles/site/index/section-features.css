@@ -38,6 +38,7 @@
     height: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+    border-radius: var(--border-corner-16);
   }
 }
 /* .video-container.mobview {
@@ -145,7 +146,7 @@
 
   & li {
     padding-inline-start: var(--gap-32);
-    font-size: clamp(var(--font-18), 3vw, var(--font-24));
+    font-size: clamp(var(--font-18), 3vw, var(--font-20));
     color: var(--grey-400);
     line-height: 1.4;
   }

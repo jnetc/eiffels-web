@@ -10,8 +10,8 @@
     inset-block-start: -1rem;
     inset-inline-end: 1.5rem;
     padding: 4px var(--gap-6);
-    background-color: var(--primary);
-    border-radius: var(--border-corner-6);
+    background-color: var(--grey-500);
+    border-radius: var(--border-corner-4);
     color: var(--white);
     font-size: 9px;
     letter-spacing: 1px;
@@ -64,13 +64,28 @@
   display: grid;
   align-items: center;
   place-content: center;
+  position: relative;
+  pointer-events: none;
 
   & span {
     white-space: nowrap;
     font-weight: bold;
   }
+
   &:first-child span {
     color: var(--primary);
+  }
+
+  span.coming-soon {
+    position: absolute;
+    inset-block-start: -1rem;
+    inset-inline-start: 0;
+    padding: var(--gap-4) var(--gap-12);
+    border-radius: var(--border-corner-4);
+    color: var(--white);
+    font-size: 10px;
+    background-color: var(--grey-500);
+    letter-spacing: 1px;
   }
 
   & .icon {
@@ -200,8 +215,15 @@
       border: 1.5px solid var(--grey-200);
     }
 
-    & span {
+    & span:not(.coming-soon) {
       display: none;
+    }
+
+    span.coming-soon {
+      inset-block-start: var(--gap-36);
+      inset-inline-start: 50%;
+      translate: -50% 0;
+      z-index: 2;
     }
 
     .icon {
