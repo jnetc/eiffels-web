@@ -7,7 +7,7 @@
 
   & .logo__beta {
     position: absolute;
-    inset-block-start: -1rem;
+    inset-block-start: 1.75rem;
     inset-inline-end: 1.5rem;
     padding: 4px var(--gap-6);
     background-color: var(--grey-500);
@@ -78,11 +78,12 @@
 
   span.coming-soon {
     position: absolute;
-    inset-block-start: -1rem;
-    inset-inline-start: 0;
+    inset-block-start: 1.75rem;
+    inset-inline: 0;
     padding: var(--gap-4) var(--gap-12);
     border-radius: var(--border-corner-4);
     color: var(--white);
+    text-align: center;
     font-size: 10px;
     background-color: var(--grey-500);
     letter-spacing: 1px;
