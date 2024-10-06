@@ -5,13 +5,17 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+	<!-- Preload for critical styles and fonts -->
+	<link rel="preload" href="../styles/fonts.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="preload" href="../styles/global.css" as="style" onload="this.rel='stylesheet'">
+	<!-- Main styles -->
 	<link rel="stylesheet" href="../styles/variable.css" />
-	<link rel="stylesheet" href="../styles/fonts.css" />
-	<link rel="stylesheet" href="../styles/global.css" />
 	<link rel="stylesheet" href="../styles/settings/settings.css" />
-	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
-	<link rel="stylesheet" href="../styles/dialogs/add-user-picture.css" />
-	<link rel="stylesheet" href="../styles/dialogs/delete-account.css" />
+	<!-- Delayed loading of dialogs -->
+	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="../styles/dialogs/add-user-picture.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="../styles/dialogs/delete-account.css" media="print" onload="this.media='all'" />
+	<!-- Scripts with defer -->
 	<script src="../scripts/global.js" defer></script>
 	<script src="../scripts/settings/settings.js" defer></script>
 	<script src="../scripts/settings/account.js" defer></script>
@@ -19,6 +23,7 @@
 	<script src="../scripts/dialogs/deleteAccount.js" defer></script>
 	<script src="../scripts/settings/myEiffels.js" defer></script>
 	<script src="../scripts/dialogs/addUserPicture.js" defer></script>
+
 	<title>Settings</title>
 	<meta name="description" content="" />
 </head>

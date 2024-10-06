@@ -10,16 +10,12 @@
   --grey-400: hsl(220, 20%, 45%);
   --grey-500: hsl(221, 30%, 33%);
   --black: hsl(240, 1%, 16%);
-  --red: hsl(0, 97%, 72%);
-  --blue-grey: hsl(230, 99%, 70%);
-  --purpur: hsl(284, 66%, 49%);
   --warning-error: hsl(335, 100%, 50%);
-  --whatsapp-light-green: hsl(130, 81%, 59%);
   --whatsapp-dark-green: hsl(132, 75%, 45%);
 
   --inset-val: -1.5px; /* for glass effect */
 
-  --gradient: linear-gradient(
+  /* --gradient: linear-gradient(
     to right,
     hsl(155 54% 47% / 1),
     hsl(210 100% 45% / 1),
@@ -39,16 +35,16 @@
     hsl(210 100% 45% / 0.2),
     hsl(197 87% 30% / 0.2),
     hsl(197 87% 30% / 0.2)
-  );
-  --gradient-30: linear-gradient(to right, #37b882, #0071e3, #0a688e, #003d9d);
-  --reflection: linear-gradient(to top, hsl(0 0% 100% / 0), hsl(213 73% 97% / 0.7));
+  ); */
+  /* --gradient-30: linear-gradient(to right, #37b882, #0071e3, #0a688e, #003d9d); */
+  /* --reflection: linear-gradient(to top, hsl(0 0% 100% / 0), hsl(213 73% 97% / 0.7)); */
 
-  --opacity-3: hsl(253 75% 61% / 0.03);
+  /* --opacity-3: hsl(253 75% 61% / 0.03);
   --opacity-5: hsl(253 75% 61% / 0.05);
   --opacity-8: hsl(253 75% 61% / 0.08);
   --opacity-10: hsl(253 75% 61% / 0.1);
   --opacity-20: hsl(253 75% 61% / 0.2);
-  --opacity-30: hsl(253 75% 61% / 0.3);
+  --opacity-30: hsl(253 75% 61% / 0.3); */
 
   /* CORNER SIZES */
   --border-corner-4: 0.25rem;

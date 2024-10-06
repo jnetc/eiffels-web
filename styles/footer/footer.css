@@ -17,10 +17,9 @@ body > footer {
   padding-block: var(--gap-48) var(--gap-18);
 
   & h3 {
-    padding-block-end: var(--gap-12);
+    padding-block-end: var(--gap-8);
     color: var(--grey-400);
     font-size: var(--font-20);
-    font-weight: 300;
   }
 
   & :where(p, a) {
@@ -41,7 +40,11 @@ body > footer {
 .footer__rows {
   display: grid;
   grid-auto-rows: min-content;
-  gap: var(--gap-4);
+  gap: var(--gap-10);
+}
+.footer__cols {
+  display: grid;
+  gap: var(--gap-24);
 }
 
 .footer-top__logo {
@@ -53,13 +56,27 @@ body > footer {
 }
 
 .footer-top__social-links {
+  max-width: 156px;
   display: flex;
   gap: var(--gap-12);
+  flex-wrap: wrap;
 }
 
 .footer-top__address {
   font-size: var(--font-16);
   font-style: normal;
+
+  & p {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-8);
+  }
+
+  & .icon {
+    width: var(--size-18);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
 }
 
 .footer-top__nav {

@@ -5,17 +5,22 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+	<!-- Preload for critical styles and fonts -->
+	<link rel="preload" href="../styles/fonts.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="preload" href="../styles/global.css" as="style" onload="this.rel='stylesheet'">
+	<!-- Main styles -->
 	<link rel="stylesheet" href="../styles/variable.css" />
-	<link rel="stylesheet" href="../styles/fonts.css" />
-	<link rel="stylesheet" href="../styles/global.css" />
 	<link rel="stylesheet" href="../styles/site/index/index.css" />
 	<link rel="stylesheet" href="../styles/site/index/backdrop.css" />
-	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" />
-	<link rel="stylesheet" href="../styles/dialogs/authentication.css" />
+	<!-- Delayed loading of dialogs -->
+	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="../styles/dialogs/authentication.css" media="print" onload="this.media='all'">
+	<!-- Scripts with defer -->
 	<script src="../scripts/global.js" defer></script>
 	<script src="../scripts/site/index/index.js" defer></script>
 	<script src="../scripts/dialogs/dialog.js" defer></script>
 	<script src="../scripts/cookie/cookie.js" defer></script>
+
 	<title>Eiffels AI</title>
 	<meta name="description" content="Some description" />
 </head>
@@ -766,6 +771,77 @@
 				<a href="/" class="footer-top__logo" aria-label="Eiffels AI">
 					<img src="../public/svg/logos/eiffels_ai.svg" width="101" height="30" alt="Eiffels AI Logo" />
 				</a>
+
+			</div>
+			<address class="footer-top__address footer__rows">
+				<h3>Information</h3>
+				<p>
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/footer_icons.svg#company"></use>
+					</svg>
+					Insynergi Oy
+				</p>
+				<p>
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/footer_icons.svg#street"></use>
+					</svg>
+					Lapinlahdenkatu 16
+				</p>
+				<p>
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/footer_icons.svg#post"></use>
+					</svg>
+					00180 Helsinki, Maria 01
+				</p>
+				<p>
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/footer_icons.svg#email"></use>
+					</svg>
+					<a href="mailto:support@insynergi.com" class="href href-black">support@insynergi.com</a>
+				</p>
+				<p>
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/footer_icons.svg#phone"></use>
+					</svg>
+					<a href="tel:+3584578396777" class="href href-black">+358 45 78396777</a>
+				</p>
+				<p>
+					<svg class="icon" aria-hidden="true">
+						<use href="../public/svg/footer_icons.svg#id"></use>
+					</svg>
+					FI31411419
+				</p>
+			</address>
+			<ul class="footer__rows">
+				<li>
+					<h3 class="footer-top__title">Features</h3>
+				</li>
+				<li><a href="#ai-daily-reports" class="href href-black">AI Daily Reports</a></li>
+				<li><a href="#blockchain-secured-approvals" class="href href-black">Blockchain Secured Approvals</a></li>
+				<li><a href="#ai-powered-translations" class="href href-black">AI-Powered Translations</a></li>
+				<li><a href="#smart-invoicing" class="href href-black">Smart Invoicing</a></li>
+				<li><a href="#ai-marketplace" class="href href-black">AI Marketplace</a></li>
+				<li><a href="#dynamic-image-analysis" class="href href-black">Dynamic Image Analysis</a></li>
+				<li><a href="#onedrive-integration" class="href href-black">OneDrive Integration</a></li>
+			</ul>
+			<div class="footer__cols">
+				<ul class="footer__rows">
+					<li>
+						<h3 class="footer-top__title">Services & Plans</h3>
+					</li>
+					<li><a href="./pricing.html" class="href href-black">Pricing</a></li>
+					<li><a href="./marketplace/" class="href href-black">AI Marketplace</a></li>
+				</ul>
+				<ul class="footer__rows">
+					<li>
+						<h3 class="footer-top__title">Resources & Help</h3>
+					</li>
+					<li><a href="#faq" class="href href-black">FAQ</a></li>
+					<li><a href="#support" class="href href-black">Suport</a></li>
+				</ul>
+			</div>
+			<div class="footer__rows">
+				<h3>Social Media</h3>
 				<div class="footer-top__social-links">
 					<a href="http://#" class="btn-circle-40 btn-grey-200-border" target="_blank" rel="noopener noreferrer"
 						aria-label="Follow us on Telegram">
@@ -798,51 +874,19 @@
 						</svg>
 					</a>
 				</div>
-			</div>
-			<address class="footer-top__address footer__rows">
-				<h3>Information</h3>
-				<p><b>Company Name:</b> Insynergi Oy</p>
-				<p><b>Street Address:</b> Lapinlahdenkatu 16</p>
-				<p><b>Postal Address:</b> 00180 Helsinki, Maria 01</p>
-				<p><b>Email:</b> <a href="mailto:support@insynergi.com" class="href href-grey">support@insynergi.com</a></p>
-				<p><b>Phone:</b> <a href="tel:+3584578396777" class="href href-grey">+358 45 78396777</a></p>
-				<p><b>Company ID:</b> FI31411419</p>
-			</address>
-			<ul class="footer__rows">
-				<li>
-					<h3 class="footer-top__title">Features</h3>
-				</li>
-				<li><a href="#ai-daily-reports" class="href href-grey">AI Daily Reports</a></li>
-				<li><a href="#blockchain-secured-approvals" class="href href-grey">Blockchain Secured Approvals</a></li>
-				<li><a href="#ai-powered-translations" class="href href-grey">AI-Powered Translations</a></li>
-				<li><a href="#smart-invoicing" class="href href-grey">Smart Invoicing</a></li>
-				<li><a href="#ai-marketplace" class="href href-grey">AI Marketplace</a></li>
-				<li><a href="#dynamic-image-analysis" class="href href-grey">Dynamic Image Analysis</a></li>
-				<li><a href="#onedrive-integration" class="href href-grey">OneDrive Integration</a></li>
-			</ul>
-			<ul class="footer__rows">
-				<li>
-					<h3 class="footer-top__title">Site Links</h3>
-				</li>
-				<li><a href="./pricing.html" class="href href-grey">Pricing</a></li>
-				<li><a href="./marketplace/" class="href href-blue">AI Marketplace</a></li>
-				<li><a href="#faq" class="href href-grey">FAQ</a></li>
-			</ul>
-			<div class="footer-top__partners footer__rows" aria-label="partners">
-				<h3>Startup Partner</h3>
-				<div class="footer-top__partners-logos">
+				<!-- <div class="footer-top__partners-logos">
 					<img src="../public/svg/logos/meta_com.svg" alt="Meta Startup Partner" />
 					<img src="../public/svg/logos/microsoft_com.svg" alt="Microsoft Startup Partner" />
-				</div>
+				</div> -->
 			</div>
 		</section>
 		<section class="footer-bottom">
+			<span>2024 © Insynergi Oy</span>
 			<div class="footer-bottom__links">
 				<!-- <a href="http://#" class="href href-grey">Cookies</a> -->
 				<a href="http://#" class="href href-grey">Privacy</a>
 				<a href="http://#" class="href href-grey">Terms of Use</a>
 			</div>
-			<span>2024 © Insynergi Oy</span>
 		</section>
 	</footer>
 	<!-- Cookie window  -->

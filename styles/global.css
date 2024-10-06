@@ -180,11 +180,7 @@ main {
     grid-column: 2;
   }
 }
-/* HEADER GLOBAL */
 
-/* body > :where(main, footer) {
-  padding-inline: var(--gap-20);
-} */
 /* FOOTER GLOBAL */
 
 [class*='icon'] {

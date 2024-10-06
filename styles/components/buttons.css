@@ -233,7 +233,7 @@ header a {
 }
 
 /* GLASS BUTTON STYLE WHEN SELECTED */
-.btn-selected {
+/* .btn-selected {
   position: relative;
   background-image: var(--gradient-10);
   box-shadow: inset 0 -5px 10px hsl(0 0% 100% / 0.6), inset 0 5px 10px #e0e8f2, inset 0 0 10px 7px #e0e8f2,
@@ -249,7 +249,7 @@ header a {
     border-radius: 5rem;
     filter: blur(0.5px);
   }
-}
+} */
 
 @media screen and (max-width: 480px) {
   #btn-back {
