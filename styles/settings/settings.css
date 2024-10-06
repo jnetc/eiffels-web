@@ -4,7 +4,7 @@
 @import url('terms-of-use.css');
 
 .settings {
-  max-width: var(--min-grid-size);
+  max-inline-size: var(--min-grid-size);
   display: grid;
   /* grid-template-rows: min-content 1fr min-content; */
   row-gap: var(--font-64);
@@ -13,7 +13,7 @@
 }
 
 .settings__main {
-  width: min(768px, 100%);
+  inline-size: min(768px, 100%);
   display: grid;
   grid-auto-rows: min-content;
   row-gap: var(--gap-12);
@@ -37,7 +37,7 @@
 
 .user__picture {
   --border-r: 50vw;
-  width: var(--size-152);
+  inline-size: var(--size-152);
   justify-self: center;
   padding: var(--gap-12);
   position: relative;
@@ -47,7 +47,7 @@
   }
 
   & > img {
-    width: var(--size-128);
+    inline-size: var(--size-128);
     aspect-ratio: 1;
     border-radius: var(--border-r);
   }
@@ -72,7 +72,7 @@
   }
 
   .picture__checkmark {
-    width: var(--size-48);
+    inline-size: var(--size-48);
     aspect-ratio: 1;
     display: grid;
     place-content: center;
@@ -84,8 +84,8 @@
     box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%);
 
     & .icon {
-      width: var(--size-36);
-      height: var(--size-36);
+      inline-size: var(--size-36);
+      block-size: var(--size-36);
       aspect-ratio: 1;
       & use {
         fill: var(--whatsapp-dark-green);
@@ -177,7 +177,7 @@
   }
 
   & .title__arrow {
-    min-width: var(--size-32);
+    min-inline-size: var(--size-32);
     aspect-ratio: 1;
     display: grid;
     place-content: center;
@@ -186,7 +186,7 @@
     transition: rotate 0.2s ease-in-out;
 
     & .icon {
-      width: var(--size-24);
+      inline-size: var(--size-24);
       aspect-ratio: 1;
       fill: var(--grey-50);
     }

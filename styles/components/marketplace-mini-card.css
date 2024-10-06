@@ -44,8 +44,8 @@
   & img {
     grid-column: 1;
     grid-row: 1 / 2 span;
-    width: var(--size-48);
-    height: var(--size-48);
+    inline-size: var(--size-48);
+    block-size: var(--size-48);
     border-radius: 50vw;
     object-fit: contain;
   }
@@ -95,8 +95,8 @@
   padding-block-start: var(--gap-8);
 
   & .icon {
-    width: var(--size-28);
-    height: var(--size-28);
+    inline-size: var(--size-28);
+    block-size: var(--size-28);
     aspect-ratio: 1;
   }
 }
@@ -134,8 +134,8 @@
 }
 
 .mini-card__open-btn {
-  height: var(--size-40);
-  width: 100%;
+  block-size: var(--size-40);
+  inline-size: 100%;
   display: grid;
   place-content: center;
   border-radius: 3rem;
@@ -159,7 +159,7 @@
   scroll-snap-type: x mandatory;
 
   & img {
-    height: var(--size-64);
+    block-size: var(--size-64);
     aspect-ratio: 1;
     border-radius: var(--border-corner-8);
     scroll-snap-align: start;
@@ -190,8 +190,8 @@
 
 .mini-card__footer {
   grid-area: footer;
-  max-height: 100%;
-  height: 82px;
+  max-block-size: 100%;
+  block-size: 82px;
   display: flex;
   column-gap: var(--gap-16);
   justify-content: space-between;
@@ -215,12 +215,12 @@
   }
 
   & .ukko-logo {
-    height: var(--size-28);
+    block-size: var(--size-28);
     border-radius: var(--border-corner-8);
   }
 
   & :where(.ukko-link, .mini-card__price) {
-    height: min-content;
+    block-size: min-content;
     display: grid;
     row-gap: var(--gap-4);
   }

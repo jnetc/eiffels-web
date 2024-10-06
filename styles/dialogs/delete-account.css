@@ -1,5 +1,5 @@
 #da-dialog {
-  width: min(600px, 100%);
+  inline-size: min(600px, 100%);
 }
 
 #da__form {
@@ -47,7 +47,7 @@
   gap: var(--gap-18);
 
   & [type='radio'] {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
   }
 
@@ -66,7 +66,7 @@
   #da__form {
     & button {
       grid-column: 1 / -1;
-      min-width: 100%;
+      min-inline-size: 100%;
       justify-content: center;
     }
   }

@@ -5,7 +5,7 @@
 .pricing__options {
   grid-column: 1 / -1;
   justify-self: center;
-  max-width: 100%;
+  max-inline-size: 100%;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr min-content;
@@ -67,8 +67,8 @@
 .option-selected {
   grid-column: 1;
   grid-row: 1;
-  height: 100%;
-  width: 100%;
+  block-size: 100%;
+  inline-size: 100%;
   background-color: hsl(255 100% 100% / 70%);
   border: hsl(255 100% 100% / 70%) 2px solid;
   border-radius: 50vw;
@@ -134,7 +134,7 @@
 .plan-manager {
   grid-column: 1 / -1;
   justify-self: center;
-  max-width: 768px;
+  max-inline-size: 768px;
   margin-block-start: var(--gap-96);
   background-image: linear-gradient(var(--grey-50), var(--grey-50)),
     linear-gradient(
@@ -155,7 +155,7 @@
 }
 
 .plan__price {
-  min-height: var(--size-48);
+  min-block-size: var(--size-48);
   display: flex;
   align-items: center;
   column-gap: var(--gap-8);
@@ -179,8 +179,8 @@
     align-items: center;
 
     & .icon {
-      min-width: var(--size-32);
-      max-height: var(--size-32);
+      min-inline-size: var(--size-32);
+      max-block-size: var(--size-32);
       aspect-ratio: 1;
       fill: var(--grey-500);
     }
@@ -194,15 +194,15 @@
 
 .plan__workers-amount {
   justify-self: left;
-  height: var(--size-48);
-  min-width: var(--size-96);
+  block-size: var(--size-48);
+  min-inline-size: var(--size-96);
   display: grid;
   position: relative;
 
   &::before {
     content: '';
-    width: 1px;
-    height: 100%;
+    inline-size: 1px;
+    block-size: 100%;
     position: absolute;
     background-color: var(--grey-300);
     top: 0;
@@ -220,7 +220,7 @@
     position: absolute;
     inset-block: 0.725rem;
     inset-inline-start: var(--gap-12);
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
   }
 
@@ -230,7 +230,7 @@
 }
 
 #plan__select-workers {
-  width: 100%;
+  inline-size: 100%;
   padding-inline-start: var(--gap-48);
   border: 1px solid var(--grey-300);
   border-radius: var(--border-corner-8);

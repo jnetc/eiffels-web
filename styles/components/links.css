@@ -45,7 +45,7 @@
 }
 
 .href-with-icon {
-  width: fit-content;
+  inline-size: fit-content;
   display: flex;
   align-items: center;
   column-gap: var(--gap-8);
@@ -60,7 +60,7 @@
   white-space: nowrap;
 
   & .icon {
-    width: var(--size-28);
+    inline-size: var(--size-28);
     aspect-ratio: 1;
     fill: var(--grey-500);
   }

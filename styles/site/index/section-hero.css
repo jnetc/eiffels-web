@@ -10,7 +10,7 @@
 
   & > * {
     justify-self: center;
-    max-width: 768px;
+    max-inline-size: 768px;
   }
 
   & p {
@@ -35,7 +35,7 @@
 /* UNLOGGED HERO SECTION */
 #unlogged {
   & p:nth-of-type(2) {
-    max-width: 45ch;
+    max-inline-size: 45ch;
     font-size: var(--font-16);
     text-align: center;
     padding-block-end: var(--gap-24);
@@ -62,7 +62,7 @@
 
 /* INPUTs / FORM */
 .login__form {
-  width: min(100%, 440px);
+  inline-size: min(100%, 440px);
   display: grid;
   column-gap: var(--gap-16);
   transition: grid-template-rows 0.2s linear;
@@ -127,7 +127,7 @@
   }
 
   & .icon {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
     fill: var(--grey-500);
   }
@@ -169,7 +169,7 @@
 }
 
 #login__phone-number {
-  width: 100%;
+  inline-size: 100%;
   padding-block: var(--gap-12);
   padding-inline-start: var(--gap-8);
   background-color: transparent;
@@ -197,7 +197,7 @@
 
 .user__picture {
   --border-r: 50vw;
-  width: var(--size-152);
+  inline-size: var(--size-152);
   aspect-ratio: 1;
   justify-self: center;
   padding: var(--gap-12);
@@ -208,8 +208,8 @@
   }
 
   & > img {
-    width: var(--size-128);
-    height: var(--size-128);
+    inline-size: var(--size-128);
+    block-size: var(--size-128);
     border-radius: var(--border-r);
   }
 
@@ -234,7 +234,7 @@
   }
 
   .picture__checkmark {
-    width: var(--size-48);
+    inline-size: var(--size-48);
     aspect-ratio: 1;
     place-content: center;
     position: absolute;
@@ -245,8 +245,8 @@
     box-shadow: 0 30px 50px hsl(from var(--primary) h s l / 5%);
 
     & .icon {
-      width: var(--size-36);
-      height: var(--size-36);
+      inline-size: var(--size-36);
+      block-size: var(--size-36);
       aspect-ratio: 1;
       & use {
         fill: var(--whatsapp-dark-green);
@@ -297,14 +297,14 @@
     }
 
     & .icon {
-      width: var(--size-20);
+      inline-size: var(--size-20);
       inset-inline-start: var(--gap-40);
       inset-block: 1rem;
     }
   }
 
   #login__country-short {
-    width: var(--size-64);
+    inline-size: var(--size-64);
   }
 
   #login__country-code {

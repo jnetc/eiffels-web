@@ -68,7 +68,7 @@
   }
 
   & .icon {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
     position: absolute;
     inset-inline: auto var(--gap-6);
@@ -77,7 +77,7 @@
   }
 
   & input {
-    width: 100%;
+    inline-size: 100%;
     padding-inline: var(--gap-12);
   }
 

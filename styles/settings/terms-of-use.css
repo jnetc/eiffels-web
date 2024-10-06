@@ -1,44 +1,44 @@
 .simple-box {
-	container-type: inline-size;
-	display: grid;
-	gap: var(--gap-12);
-	padding-inline: var(--gap-18);
-	padding-block: var(--gap-24) var(--gap-36);
-	border-bottom: 1px solid var(--grey-200);
+  container-type: inline-size;
+  display: grid;
+  gap: var(--gap-12);
+  padding-inline: var(--gap-18);
+  padding-block: var(--gap-24) var(--gap-36);
+  border-bottom: 1px solid var(--grey-200);
 }
 
 .settings__of-rules {
-	grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
 
-	& > :where(h3, p) {
-		grid-column: 1;
-		width: 70cqw;
-	}
+  & > :where(h3, p) {
+    grid-column: 1;
+    inline-size: 70cqw;
+  }
 
-	& > p:last-of-type {
-		padding-block-end: var(--gap-12);
-	}
+  & > p:last-of-type {
+    padding-block-end: var(--gap-12);
+  }
 
-	& .href-of-rules {
-		grid-column: 2;
-		grid-row: 1 / 2 span;
-		align-self: center;
-	}
+  & .href-of-rules {
+    grid-column: 2;
+    grid-row: 1 / 2 span;
+    align-self: center;
+  }
 }
 
 @container (max-width: 480px) {
-	.settings__of-rules {
-		grid-template-columns: 1fr;
+  .settings__of-rules {
+    grid-template-columns: 1fr;
 
-		& > :is(h3, p) {
-			grid-column: 1;
-			width: 100cqw;
-		}
+    & > :is(h3, p) {
+      grid-column: 1;
+      inline-size: 100cqw;
+    }
 
-		& .href-of-rules {
-			grid-column: 1;
-			grid-row: 3;
-			justify-self: flex-end;
-		}
-	}
+    & .href-of-rules {
+      grid-column: 1;
+      grid-row: 3;
+      justify-self: flex-end;
+    }
+  }
 }

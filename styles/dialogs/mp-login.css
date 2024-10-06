@@ -1,5 +1,5 @@
 [id*='login-dialog'] .dialog__wrapper {
-  max-width: 768px;
+  max-inline-size: 768px;
   padding-block-end: var(--gap-36);
 }
 [id*='login-dialog'] :is(.dialog__main, .dialog__scroll-area) {
@@ -20,7 +20,7 @@
 /* INPUTs / FORM */
 .login__form {
   justify-self: center;
-  width: min(100%, 460px);
+  inline-size: min(100%, 460px);
   display: grid;
   column-gap: var(--gap-16);
   transition: grid-template-rows 0.2s linear;
@@ -60,13 +60,13 @@
   }
 
   /* & .icon-phone {
-    width: var(--size-40);
+    inline-size: var(--size-40);
     aspect-ratio: 1;
     fill: var(--grey-500);
   } */
 
   /* & .icon {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
     position: absolute;
     inset-inline-start: var(--gap-48);
@@ -122,7 +122,7 @@
   }
 
   & .icon {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
     fill: var(--grey-500);
   }
@@ -157,14 +157,14 @@
 
 /* CUSTOM SELECT */
 /* .options {
-  height: 145px;
+  block-size: 145px;
   background-color: white;
   border: 1px solid #ccc;
   overflow: auto;
 }
 
 .options-wrapper {
-  width: 100%;
+  inline-size: 100%;
   display: none;
   position: absolute;
   inset-block-start: var(--gap-56);
@@ -199,7 +199,7 @@
 }
 
 #login__phone-number {
-  width: 100%;
+  inline-size: 100%;
   padding-block: var(--gap-12);
   padding-inline-start: var(--gap-8);
   background-color: transparent;
@@ -229,14 +229,14 @@
     }
 
     & .icon {
-      width: var(--size-20);
+      inline-size: var(--size-20);
       inset-inline-start: var(--gap-36);
       inset-block: 0.9rem;
     }
   }
 
   #login__country-short {
-    width: var(--size-64);
+    inline-size: var(--size-64);
   }
 
   #login__country-code {

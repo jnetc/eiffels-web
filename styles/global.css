@@ -43,7 +43,7 @@ body {
   --outside: auto;
   --min-grid-size: calc(var(--colums) * var(--colums-width) + (var(--colums) - 1) * var(--gap));
 
-  min-height: 100dvh;
+  min-block-size: 100dvh;
   color: var(--black);
   position: relative;
   background-color: var(--grey-50);
@@ -74,7 +74,7 @@ svg,
 video,
 canvas {
   display: block;
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 img,
@@ -112,7 +112,7 @@ p,
 span,
 figcaption {
   text-wrap: pretty;
-  max-width: 65ch;
+  max-inline-size: 65ch;
 }
 
 p,

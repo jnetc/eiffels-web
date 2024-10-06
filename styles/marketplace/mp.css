@@ -3,7 +3,7 @@
 @import url('../components/links.css');
 
 .mp {
-  max-width: var(--min-grid-size);
+  max-inline-size: var(--min-grid-size);
   display: grid;
   grid-template-rows: min-content min-content 1fr min-content;
   column-gap: var(--gap-20);
@@ -78,7 +78,7 @@
     row-gap: var(--gap-8);
 
     & .icon {
-      width: var(--size-24);
+      inline-size: var(--size-24);
       aspect-ratio: 1;
       position: absolute;
       inset-inline: auto var(--gap-6);

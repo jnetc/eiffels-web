@@ -13,8 +13,8 @@
   & img {
     grid-column: 1;
     grid-row: 1 / 2 span;
-    width: var(--size-48);
-    height: var(--size-48);
+    inline-size: var(--size-48);
+    block-size: var(--size-48);
     border-radius: 50vw;
     object-fit: contain;
   }
@@ -55,15 +55,15 @@
   padding-block-start: var(--gap-8);
 
   & .icon {
-    width: var(--size-28);
-    height: var(--size-28);
+    inline-size: var(--size-28);
+    block-size: var(--size-28);
     aspect-ratio: 1;
   }
 }
 
 .card__whatsapp-btn {
   display: flex;
-  height: var(--size-40);
+  block-size: var(--size-40);
   align-items: center;
   gap: var(--gap-4);
   margin-inline-end: auto;
@@ -95,8 +95,8 @@
 }
 
 .card__open-btn {
-  height: var(--size-40);
-  width: 100%;
+  block-size: var(--size-40);
+  inline-size: 100%;
   display: grid;
   place-content: center;
   border-radius: 3rem;
@@ -120,7 +120,7 @@
   scroll-snap-type: x mandatory;
 
   & img {
-    height: var(--size-64);
+    block-size: var(--size-64);
     aspect-ratio: 1;
     border-radius: var(--border-corner-8);
     scroll-snap-align: start;

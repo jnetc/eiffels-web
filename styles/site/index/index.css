@@ -41,7 +41,7 @@
 
 section > :where(.section__title, .section__description) {
   grid-column: 1 / -1;
-  max-width: 960px;
+  max-inline-size: 960px;
   text-align: center;
   justify-self: center;
 }

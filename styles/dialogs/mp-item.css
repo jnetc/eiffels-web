@@ -4,7 +4,7 @@
 @import url('./mp-item-jobs.css');
 
 #mp-item-dialog {
-  width: min(500px, 100%);
+  inline-size: min(500px, 100%);
 }
 
 #mp-item-dialog article {

@@ -1,138 +1,138 @@
 .settings__connection {
-	container-type: inline-size;
-	position: relative;
-	user-select: none;
+  container-type: inline-size;
+  position: relative;
+  user-select: none;
 
-	&.disabled {
-		pointer-events: none;
-	}
+  &.disabled {
+    pointer-events: none;
+  }
 }
 
 .connection__checkbox {
-	width: 0;
-	height: 0;
-	position: absolute;
-	opacity: 0;
-	z-index: -1;
+  inline-size: 0;
+  block-size: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
 
 .connection__checkbox:focus-visible + .connection {
-	border: 1px solid var(--grey-500);
+  border: 1px solid var(--grey-500);
 }
 
 .connection__checkbox:checked + .connection {
-	filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .connection__checkbox:disabled + .connection {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 .connection {
-	container-type: inline-size;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: var(--gap-18);
-	padding: var(--gap-18);
-	background-color: var(--surface);
-	border: 1px solid var(--grey-200);
-	border-radius: var(--border-corner-8);
-	filter: grayscale(1) opacity(0.5);
-	cursor: pointer;
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap-18);
+  padding: var(--gap-18);
+  background-color: var(--surface);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--border-corner-8);
+  filter: grayscale(1) opacity(0.5);
+  cursor: pointer;
 
-	& .connection__name {
-		flex: 1 0 auto;
-	}
+  & .connection__name {
+    flex: 1 0 auto;
+  }
 
-	& h3 {
-		color: var(--grey-400);
-		font-size: var(--font-18);
-	}
+  & h3 {
+    color: var(--grey-400);
+    font-size: var(--font-18);
+  }
 
-	& p {
-		color: var(--grey-500);
-		font-size: var(--font-14);
-	}
+  & p {
+    color: var(--grey-500);
+    font-size: var(--font-14);
+  }
 
-	& .connection__status {
-		display: flex;
-		column-gap: var(--gap-8);
-		color: var(--grey-500);
-		font-size: var(--font-18);
-		font-weight: bold;
-	}
+  & .connection__status {
+    display: flex;
+    column-gap: var(--gap-8);
+    color: var(--grey-500);
+    font-size: var(--font-18);
+    font-weight: bold;
+  }
 
-	& .icon {
-		width: var(--size-24);
-		aspect-ratio: 1;
-		fill: var(--grey-500);
-	}
+  & .icon {
+    inline-size: var(--size-24);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
 
-	& :where(.icon__connected-cloud, .icon__updating) {
-		display: none;
-	}
+  & :where(.icon__connected-cloud, .icon__updating) {
+    display: none;
+  }
 
-	& .icon__updating {
-		transform-origin: center;
-		animation: updating 1s linear infinite;
-	}
+  & .icon__updating {
+    transform-origin: center;
+    animation: updating 1s linear infinite;
+  }
 }
 
 .connection .error-message {
-	width: 100%;
-	margin-block-end: var(--gag-24);
-	flex: 1 0 100%;
+  inline-size: 100%;
+  margin-block-end: var(--gag-24);
+  flex: 1 0 100%;
 }
 
 @container (max-width: 480px) {
-	.connection {
-		flex-direction: column;
-		padding-block-end: var(--gap-40);
+  .connection {
+    flex-direction: column;
+    padding-block-end: var(--gap-40);
 
-		& img {
-			width: var(--size-128);
-			aspect-ratio: 1;
-		}
+    & img {
+      inline-size: var(--size-128);
+      aspect-ratio: 1;
+    }
 
-		& > * {
-			text-align: center;
-		}
+    & > * {
+      text-align: center;
+    }
 
-		& h3 {
-			font-size: var(--font-20);
-		}
+    & h3 {
+      font-size: var(--font-20);
+    }
 
-		& p {
-			font-size: var(--font-16);
-		}
+    & p {
+      font-size: var(--font-16);
+    }
 
-		& .connection__status {
-			font-size: var(--font-20);
-		}
-	}
+    & .connection__status {
+      font-size: var(--font-20);
+    }
+  }
 }
 
 /* Status icon behavior */
 .settings__connection.disabled .icon__updating {
-	display: block;
+  display: block;
 }
 
 .settings__connection:not(.disabled) .connection__checkbox:checked + .connection .icon__connected-cloud {
-	display: block;
+  display: block;
 }
 
 .settings__connection.disabled :where(.icon__disconnected-cloud, .icon__connected-cloud),
 .connection__checkbox:checked + .connection :where(.icon__disconnected-cloud) {
-	display: none;
+  display: none;
 }
 
 .settings__connection:last-child {
-	margin-block-end: var(--gap-56);
+  margin-block-end: var(--gap-56);
 }
 
 @keyframes updating {
-	100% {
-		rotate: 360deg;
-	}
+  100% {
+    rotate: 360deg;
+  }
 }

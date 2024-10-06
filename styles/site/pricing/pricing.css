@@ -4,7 +4,7 @@
 
 .landing {
   /* display: grid; */
-  max-width: var(--min-grid-size);
+  max-inline-size: var(--min-grid-size);
   margin-inline: auto;
   position: relative;
   /* grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside); */
@@ -37,7 +37,7 @@
 
 section > :where(.section__title, .section__description) {
   grid-column: 1 / -1;
-  max-width: 960px;
+  max-inline-size: 960px;
   text-align: center;
   justify-self: center;
 }
@@ -70,12 +70,12 @@ section#faq h2 {
 @media screen and (max-width: 1366px) {
   .header__rs-href {
     border-radius: 50%;
-    width: var(--size-48);
+    inline-size: var(--size-48);
     aspect-ratio: 1;
 
     & a {
-      width: 100%;
-      height: 100%;
+      inline-size: 100%;
+      block-size: 100%;
     }
 
     &:has([href*='marketplace']) {
@@ -137,7 +137,7 @@ section#faq h2 {
 
   .header__nav {
     grid-column: 1 / -1;
-    min-height: 100dvh;
+    min-block-size: 100dvh;
     display: none;
     grid-template-columns: var(--gap-20) 1fr var(--gap-20);
     grid-template-rows: min-content 1fr;

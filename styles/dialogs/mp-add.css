@@ -1,5 +1,5 @@
 #mp-add-dialog {
-  width: min(1200px, 100%);
+  inline-size: min(1200px, 100%);
 }
 #mp-add-dialog .dialog__scroll-area {
   grid-auto-flow: column;
@@ -20,8 +20,8 @@
   }
 
   & img {
-    width: 100%;
-    height: 220px;
+    inline-size: 100%;
+    block-size: 220px;
     border-radius: var(--border-corner-8);
     object-fit: cover;
   }
@@ -31,7 +31,7 @@
     color: var(--grey-500);
     font-weight: bold;
     font-size: var(--font-24);
-    line-height: 1.2;
+    line-block-size: 1.2;
   }
 
   & .button-description {
@@ -39,8 +39,8 @@
   }
 
   & .button-arrow {
-    width: var(--size-48);
-    height: var(--size-48);
+    inline-size: var(--size-48);
+    block-size: var(--size-48);
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -48,8 +48,8 @@
     background-color: var(--primary);
 
     & .icon {
-      width: var(--size-32);
-      height: var(--size-32);
+      inline-size: var(--size-32);
+      block-size: var(--size-32);
       aspect-ratio: 1;
       fill: var(--grey-50);
     }
@@ -68,7 +68,7 @@ a.dialog__select {
 
 @media screen and (max-width: 960px) {
   #mp-add-dialog {
-    max-height: 95dvh;
+    max-block-size: 95dvh;
   }
 
   /* .dialog__main {
@@ -86,7 +86,7 @@ a.dialog__select {
     gap: var(--gap-12) var(--gap-16);
 
     & img {
-      height: var(--size-64);
+      block-size: var(--size-64);
     }
 
     & .button-title {

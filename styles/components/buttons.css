@@ -14,8 +14,8 @@ header a {
 .btn-56,
 .btn-48,
 .btn-40 {
-  min-width: fit-content;
-  max-width: 260px;
+  min-inline-size: fit-content;
+  max-inline-size: 260px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -28,7 +28,7 @@ header a {
   white-space: nowrap;
 
   & .icon {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
     transition: transform 0.2s ease-in-out;
   }
@@ -38,7 +38,7 @@ header a {
   }
 
   &:has(.icon):not(.btn-short) {
-    min-width: 260px;
+    min-inline-size: 260px;
     justify-content: space-between;
   }
 
@@ -48,15 +48,15 @@ header a {
 }
 
 .btn-56 {
-  height: var(--size-56);
+  block-size: var(--size-56);
 }
 
 .btn-48 {
-  height: var(--size-48);
+  block-size: var(--size-48);
 }
 
 .btn-40 {
-  height: var(--size-40);
+  block-size: var(--size-40);
 }
 
 .btn-blue {
@@ -131,17 +131,17 @@ header a {
 }
 
 .btn-circle-48 {
-  height: var(--size-48);
+  block-size: var(--size-48);
 
   & .icon {
-    width: var(--size-28);
+    inline-size: var(--size-28);
   }
 }
 .btn-circle-40 {
-  height: var(--size-40);
+  block-size: var(--size-40);
 
   & .icon {
-    width: var(--size-28);
+    inline-size: var(--size-28);
   }
 }
 
@@ -241,7 +241,7 @@ header a {
 
   &::before {
     content: '';
-    height: var(--size-16);
+    block-size: var(--size-16);
     position: absolute;
     top: 4px;
     inset-inline: 15%;

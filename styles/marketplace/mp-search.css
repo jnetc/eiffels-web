@@ -10,7 +10,7 @@
 }
 
 .search__form {
-  min-height: var(--size-72);
+  min-block-size: var(--size-72);
   display: grid;
   grid-template-columns: var(--size-32) 1fr var(--size-48);
   column-gap: var(--gap-16);
@@ -22,8 +22,8 @@
   & > .icon {
     grid-column: 1;
     justify-self: center;
-    width: var(--size-24);
-    height: var(--size-24);
+    inline-size: var(--size-24);
+    block-size: var(--size-24);
     aspect-ratio: 1;
     fill: var(--grey-300);
   }
@@ -37,7 +37,7 @@
 
 .search__input {
   grid-column: 2;
-  width: 100%;
+  inline-size: 100%;
   padding-block: var(--gap-16);
   color: var(--black);
   font-size: var(--font-20);

@@ -42,8 +42,8 @@
 }
 
 .mp-card__footer {
-  max-height: 100%;
-  height: 82px;
+  max-block-size: 100%;
+  block-size: 82px;
   display: flex;
   column-gap: var(--gap-16);
   justify-content: space-between;
@@ -67,12 +67,12 @@
   }
 
   & .ukko-logo {
-    height: var(--size-28);
+    block-size: var(--size-28);
     border-radius: var(--border-corner-8);
   }
 
   & :where(.ukko-link, .mp-card__price) {
-    height: min-content;
+    block-size: min-content;
     display: grid;
     row-gap: var(--gap-4);
   }

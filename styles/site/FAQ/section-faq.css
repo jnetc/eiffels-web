@@ -73,7 +73,7 @@ section#faq h2 {
   }
 
   & .faq__collapse-btn {
-    min-width: var(--size-32);
+    min-inline-size: var(--size-32);
     aspect-ratio: 1;
     position: relative;
     background-color: var(--black);
@@ -83,8 +83,8 @@ section#faq h2 {
     &::after,
     &::before {
       content: '';
-      width: var(--size-14);
-      height: 2px;
+      inline-size: var(--size-14);
+      block-size: 2px;
       position: absolute;
       inset-block-start: 50%;
       inset-inline-start: 50%;
@@ -136,7 +136,7 @@ section#faq h2 {
   #faq {
     & h2 {
       grid-column: 1 / -1;
-      max-width: 960px;
+      max-inline-size: 960px;
       text-align: center;
       justify-self: center;
       padding-block-end: var(--gap-96);

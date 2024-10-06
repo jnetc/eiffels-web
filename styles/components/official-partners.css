@@ -1,6 +1,6 @@
 .official-partners {
   justify-self: center;
-  max-width: fit-content;
+  max-inline-size: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-content: center;

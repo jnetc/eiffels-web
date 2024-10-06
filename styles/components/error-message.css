@@ -1,6 +1,6 @@
 /* ERROR MESSAGE */
 .error-message {
-  width: 100%;
+  inline-size: 100%;
   display: flex;
   column-gap: var(--gap-12);
   align-items: center;
@@ -21,7 +21,7 @@
 
   & .icon {
     flex: 1 0 auto;
-    width: var(--size-36);
+    inline-size: var(--size-36);
     aspect-ratio: 1;
 
     & use {

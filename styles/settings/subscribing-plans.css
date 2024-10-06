@@ -32,7 +32,7 @@
 }
 
 .plan__features {
-  width: fit-content;
+  inline-size: fit-content;
   display: flex;
   column-gap: var(--gap-8);
   padding: var(--gap-12) var(--gap-18);
@@ -47,7 +47,7 @@
   }
 
   & .icon {
-    width: var(--size-24);
+    inline-size: var(--size-24);
     aspect-ratio: 1;
     fill: var(--grey-300);
   }
@@ -85,7 +85,7 @@
 }
 .payment-history__table {
   border-collapse: collapse;
-  width: 100%;
+  inline-size: 100%;
 }
 
 .payment-history__table :where(td, th) {
