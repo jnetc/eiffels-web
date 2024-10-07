@@ -161,7 +161,7 @@
 
 #login__country-code {
   padding-inline-start: var(--gap-8);
-  color: hsl(from var(--primary) h s l / 50%);
+  color: var(--grey-400);
   font-size: var(--input-font-size);
   font-weight: bold;
   pointer-events: none;
