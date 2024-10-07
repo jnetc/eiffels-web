@@ -167,6 +167,10 @@
     font-weight: bold;
     line-height: 0.8;
   }
+
+  & .unit-hide {
+    display: none;
+  }
 }
 
 .plan__features {

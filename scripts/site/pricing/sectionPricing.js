@@ -4,9 +4,9 @@ export default function sectionPricing() {
     const yearlyOption = document.getElementById('yearly');
     const monthlyOption = document.getElementById('monthly');
     const individualPrice = document.querySelector('.plan-individuals .price');
-    const individualTimeUnit = document.querySelector('.plan-individuals .time-unit');
+    const individualTimeUnits = document.querySelectorAll('.plan-individuals .time-unit');
     const companyPrice = document.querySelector('.plan-company .price');
-    const companyTimeUnit = document.querySelector('.plan-company .time-unit');
+    const companyTimeUnits = document.querySelectorAll('.plan-company .time-unit');
     const workersInput = document.getElementById('plan__select-workers');
     const whatsappLinkIndividual = document.querySelector('.plan-individuals .plan__button');
     const whatsappLinkCompany = document.querySelector('.plan-company .plan__button');
@@ -24,19 +24,23 @@ export default function sectionPricing() {
         if (yearlyOption.checked) {
             individualSelectedPrice = individualYearlyPrice;
             individualPrice.textContent = `€${individualSelectedPrice.toFixed(2)}`;
-            individualTimeUnit.textContent = '/ annual';
+            individualTimeUnits[0].classList.remove('unit-hide');
+            individualTimeUnits[1].classList.add('unit-hide');
             companySelectedPrice = companyYearlyPrice + getWorkersAdditionalCost();
             companyPrice.textContent = `€${companySelectedPrice.toFixed(2)}`;
-            companyTimeUnit.textContent = '/ annual';
+            companyTimeUnits[0].classList.remove('unit-hide');
+            companyTimeUnits[1].classList.add('unit-hide');
         }
         // If monthly is selected, set monthly prices
         else if (monthlyOption.checked) {
             individualSelectedPrice = individualMonthlyPrice;
             individualPrice.textContent = `€${individualSelectedPrice.toFixed(2)}`;
-            individualTimeUnit.textContent = '/ monthly';
+            individualTimeUnits[0].classList.add('unit-hide');
+            individualTimeUnits[1].classList.remove('unit-hide');
             companySelectedPrice = companyMonthlyPrice + getWorkersAdditionalCost();
             companyPrice.textContent = `€${companySelectedPrice.toFixed(2)}`;
-            companyTimeUnit.textContent = '/ monthly';
+            companyTimeUnits[0].classList.add('unit-hide');
+            companyTimeUnits[1].classList.remove('unit-hide');
         }
         // Update WhatsApp links
         updateWhatsAppLinks(individualSelectedPrice, companySelectedPrice);
