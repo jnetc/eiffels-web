@@ -168,6 +168,10 @@
     line-height: 0.8;
   }
 
+  & .price-hide {
+    display: none;
+  }
+
   & .unit-hide {
     display: none;
   }

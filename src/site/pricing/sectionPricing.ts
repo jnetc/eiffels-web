@@ -3,66 +3,90 @@ export default function sectionPricing() {
   // Element selectors
   const yearlyOption = document.getElementById('yearly') as HTMLInputElement;
   const monthlyOption = document.getElementById('monthly') as HTMLInputElement;
-  const individualPrice = document.querySelector('.plan-individuals .price') as HTMLElement;
+  const individualPrices = document.querySelectorAll('.plan-individuals .price') as NodeListOf<HTMLSpanElement>;
   const individualTimeUnits = document.querySelectorAll('.plan-individuals .time-unit') as NodeListOf<HTMLSpanElement>;
-  const companyPrice = document.querySelector('.plan-company .price') as HTMLElement;
+  const companyPrices = document.querySelectorAll('.plan-company .price') as NodeListOf<HTMLSpanElement>;
   const companyTimeUnits = document.querySelectorAll('.plan-company .time-unit') as NodeListOf<HTMLSpanElement>;
   const workersInput = document.getElementById('plan__select-workers') as HTMLInputElement;
   const whatsappLinkIndividual = document.querySelector('.plan-individuals .plan__button') as HTMLAnchorElement;
   const whatsappLinkCompany = document.querySelector('.plan-company .plan__button') as HTMLAnchorElement;
 
-  // Initial prices
-  const individualYearlyPrice = 31.2;
-  const individualMonthlyPrice = 39; // Approximate price for monthly payment
-  const companyYearlyPrice = 47.2;
-  const companyMonthlyPrice = 59.0; // Approximate price for monthly payment
   const additionalCostPerWorker = 6.9;
-
+  let companyYearlyPrice: number;
+  let companyMonthlyPrice: number;
   let individualSelectedPrice: number;
   let companySelectedPrice: number;
+  let workersInitCount = 0;
 
-  // Function to update prices
+  // Function to update prices based on the selected plan (yearly or monthly)
   function updatePrices() {
     // If yearly is selected, set yearly prices
     if (yearlyOption.checked) {
-      individualSelectedPrice = individualYearlyPrice;
-      individualPrice.textContent = `€${individualSelectedPrice.toFixed(2)}`;
-      individualTimeUnits[0].classList.remove('unit-hide');
-      individualTimeUnits[1].classList.add('unit-hide');
+      individualSelectedPrice = Number(individualPrices[0].dataset.price); // Get the yearly price for individuals
 
+      // Update the visibility of time units and prices for individual plans
+      individualTimeUnits[0].classList.remove('unit-hide'); // Show yearly time unit
+      individualTimeUnits[1].classList.add('unit-hide'); // Hide monthly time unit
+      individualPrices[0].classList.remove('price-hide'); // Show yearly price
+      individualPrices[1].classList.add('price-hide'); // Hide monthly price
+
+      // Get the yearly price for companies and add the additional cost for workers
+      companyYearlyPrice = Number(companyPrices[0].dataset.price);
       companySelectedPrice = companyYearlyPrice + getWorkersAdditionalCost();
-      companyPrice.textContent = `€${companySelectedPrice.toFixed(2)}`;
-      companyTimeUnits[0].classList.remove('unit-hide');
-      companyTimeUnits[1].classList.add('unit-hide');
+
+      // Update the displayed company price if workers are selected
+      if (workersInitCount !== 0) {
+        companyPrices[0].textContent = `€${companySelectedPrice.toFixed(2)}`;
+      }
+
+      // Update the visibility of time units and prices for company plans
+      companyTimeUnits[0].classList.remove('unit-hide'); // Show yearly time unit
+      companyTimeUnits[1].classList.add('unit-hide'); // Hide monthly time unit
+      companyPrices[0].classList.remove('price-hide'); // Show yearly price
+      companyPrices[1].classList.add('price-hide'); // Hide monthly price
     }
     // If monthly is selected, set monthly prices
     else if (monthlyOption.checked) {
-      individualSelectedPrice = individualMonthlyPrice;
-      individualPrice.textContent = `€${individualSelectedPrice.toFixed(2)}`;
-      individualTimeUnits[0].classList.add('unit-hide');
-      individualTimeUnits[1].classList.remove('unit-hide');
+      individualSelectedPrice = Number(individualPrices[1].dataset.price); // Get the monthly price for individuals
 
+      // Update the visibility of time units and prices for individual plans
+      individualTimeUnits[0].classList.add('unit-hide'); // Hide yearly time unit
+      individualTimeUnits[1].classList.remove('unit-hide'); // Show monthly time unit
+      individualPrices[0].classList.add('price-hide'); // Hide yearly price
+      individualPrices[1].classList.remove('price-hide'); // Show monthly price
+
+      // Get the monthly price for companies and add the additional cost for workers
+      companyMonthlyPrice = Number(companyPrices[1].dataset.price);
       companySelectedPrice = companyMonthlyPrice + getWorkersAdditionalCost();
-      companyPrice.textContent = `€${companySelectedPrice.toFixed(2)}`;
-      companyTimeUnits[0].classList.add('unit-hide');
-      companyTimeUnits[1].classList.remove('unit-hide');
+
+      // Update the displayed company price if workers are selected
+      if (workersInitCount !== 0) {
+        companyPrices[1].textContent = `€${companySelectedPrice.toFixed(2)}`;
+      }
+
+      // Update the visibility of time units and prices for company plans
+      companyTimeUnits[0].classList.add('unit-hide'); // Hide yearly time unit
+      companyTimeUnits[1].classList.remove('unit-hide'); // Show monthly time unit
+      companyPrices[0].classList.add('price-hide'); // Hide yearly price
+      companyPrices[1].classList.remove('price-hide'); // Show monthly price
     }
 
-    // Update WhatsApp links
+    // Update WhatsApp links for both individual and company plans
     updateWhatsAppLinks(individualSelectedPrice, companySelectedPrice);
   }
 
   // Function to calculate additional cost for workers
   function getWorkersAdditionalCost(): number {
-    const workersCount = Number(workersInput.value) || 0;
-    return (workersCount - 0) * additionalCostPerWorker;
+    const workersCount = Number(workersInput.value) || 0; // Get the current number of workers
+    workersInitCount = workersCount; // Update the worker count
+    return (workersCount - 0) * additionalCostPerWorker; // Calculate additional cost based on worker count
   }
 
-  // Validation and adjustment of worker input value
+  // Function to validate and adjust the worker input value
   function validateWorkersInput() {
     let workersCount = Number(workersInput.value);
 
-    // If a number less than 1 is entered, set it to 1
+    // If a number less than 1 is entered, set it to 0
     if (Number.isNaN(workersCount) || workersCount < 0) {
       workersCount = 0;
     }
@@ -72,39 +96,38 @@ export default function sectionPricing() {
       workersCount = 50;
     }
 
-    // Update the input value
+    // Update the input field value
     workersInput.value = workersCount.toString();
   }
 
-  // Function to update WhatsApp links
+  // Function to update WhatsApp links based on the selected prices
   function updateWhatsAppLinks(individualPrice: number, companyPrice: number) {
-    // Formulate the message for Individual
+    // Formulate the message for the Individual plan
     const individualMessage = `The Individual plan for €${individualPrice.toFixed(2)}.`;
     const individualHref = `https://wa.me/3584578396777?text=${encodeURIComponent(individualMessage)}`;
-    whatsappLinkIndividual.href = individualHref;
+    whatsappLinkIndividual.href = individualHref; // Update the WhatsApp link for individuals
 
-    // Formulate the message for Company
-    const workersCount = workersInput.value || '0';
+    // Formulate the message for the Company plan
+    const workersCount = workersInput.value || '0'; // Get the worker count
     if (workersCount === '0') {
-      whatsappLinkCompany.href = '#';
+      whatsappLinkCompany.href = '#'; // If no workers are selected, disable the link
       return;
     }
     const companyMessage = `The Company plan for €${companyPrice.toFixed(2)} with ${workersCount} workers.`;
     const companyHref = `https://wa.me/3584578396777?text=${encodeURIComponent(companyMessage)}`;
-    whatsappLinkCompany.href = companyHref;
+    whatsappLinkCompany.href = companyHref; // Update the WhatsApp link for companies
   }
 
-  // Event handler for changes in the workers input
+  // Event handler for changes in the worker input field
   workersInput.addEventListener('input', () => {
-    validateWorkersInput(); // Validate the entered value
-    // Update the company plan price when the number of workers changes
-    updatePrices();
+    validateWorkersInput(); // Validate the worker count
+    updatePrices(); // Update prices based on the worker count
   });
 
-  // Event handlers for switching between yearly and monthly
+  // Event handlers for switching between yearly and monthly plans
   yearlyOption.addEventListener('change', updatePrices);
   monthlyOption.addEventListener('change', updatePrices);
 
-  // Initialize prices on load
+  // Initialize prices on page load
   updatePrices();
 }
