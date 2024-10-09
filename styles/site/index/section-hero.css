@@ -1,7 +1,6 @@
 /* HERO SECTION */
 #unlogged,
 #logged {
-  padding-block-start: clamp(var(--gap-64), 6vw, var(--gap-192));
   display: grid;
   grid-auto-rows: min-content;
   gap: var(--gap-12);
@@ -280,6 +279,41 @@
   }
 }
 
+.official-partners {
+  justify-self: center;
+  max-inline-size: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  gap: var(--gap-16);
+  padding-block-start: var(--gap-72);
+
+  & span {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  & span:nth-of-type(1) {
+    grid-row: 1;
+    font-size: var(--font-18);
+  }
+
+  & img:nth-of-type(1) {
+    justify-self: center;
+  }
+
+  & span:nth-of-type(2) {
+    font-size: var(--font-14);
+    padding-block-start: var(--gap-12);
+    grid-row: 3;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .login__fieldset {
+    --color-exeption: var(--grey-50);
+  }
+}
 @media screen and (max-width: 480px) {
   .picture__recognition span {
     display: none;

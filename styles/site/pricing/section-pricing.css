@@ -1,7 +1,3 @@
-#pricing {
-  padding-block-start: clamp(var(--gap-64), 6vw, var(--gap-192));
-}
-
 .pricing__options {
   grid-column: 1 / -1;
   justify-self: center;

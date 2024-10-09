@@ -6,10 +6,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
 	<!-- Preload for critical styles and fonts -->
-	<link rel="preload" href="../styles/fonts.css" as="style" onload="this.rel='stylesheet'">
+	<style data-style="fonts">
+		@font-face {
+			font-family: 'SF Pro Text';
+			src: url('../public/fonts/SF-Pro-Text-Bold.woff2') format('woff2');
+			font-weight: bold;
+			font-style: normal;
+			font-display: swap;
+			size-adjust: none;
+		}
+
+		@font-face {
+			font-family: 'SF Pro Text';
+			src: url('../public/fonts/SF-Pro-Text-Light.woff2') format('woff2');
+			font-weight: 300;
+			font-style: normal;
+			font-display: swap;
+			size-adjust: none;
+		}
+
+		@font-face {
+			font-family: 'Twemoji Country Flags';
+			src: url('../public/fonts/TwemojiCountryFlags.woff2') format('woff2');
+			font-weight: 300;
+			font-style: normal;
+			font-display: swap;
+			size-adjust: none;
+		}
+	</style>
 	<link rel="preload" href="../styles/global.css" as="style" onload="this.rel='stylesheet'">
 	<!-- Main styles -->
 	<link rel="stylesheet" href="../styles/variable.css" />
+	<link rel="stylesheet" href="../styles/header/header.css" />
 	<link rel="stylesheet" href="../styles/settings/settings.css" />
 	<!-- Delayed loading of dialogs -->
 	<link rel="stylesheet" href="../styles/dialogs/dialogs.css" media="print" onload="this.media='all'" />

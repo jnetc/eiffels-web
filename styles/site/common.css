@@ -1,0 +1,76 @@
+@import url('../footer/footer.css');
+
+.landing {
+  min-block-size: 100dvh;
+  display: grid;
+  position: relative;
+  grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
+  color: var(--black);
+  background-color: var(--grey-50);
+  font-family: 'SF Pro Text', sans-serif;
+  text-rendering: optimizeSpeed;
+  scrollbar-gutter: stable;
+
+  & > :where(header, main, footer, button) {
+    grid-column: 2;
+  }
+  & > #back-to-top {
+    margin-inline: auto;
+  }
+}
+
+.grid {
+  --colums: 12;
+  --colums-width: 6rem;
+  --outside: 1fr;
+
+  display: grid;
+  grid-template-columns: repeat(var(--colums), minmax(0, var(--colums-width)));
+  column-gap: var(--gap-36);
+}
+
+/* MAIN CONTENT */
+.landing__main {
+  container: main / inline-size;
+  row-gap: var(--gap-240);
+  padding-block-end: var(--gap-128);
+  column-gap: clamp(var(--gap-20), 8vw, var(--gap-128));
+}
+
+.landing__main section:first-of-type {
+  padding-block-start: clamp(var(--gap-64), 6vw, var(--gap-192));
+}
+
+section > :where(.section__title, .section__description) {
+  grid-column: 1 / -1;
+  max-inline-size: 960px;
+  text-align: center;
+  justify-self: center;
+}
+
+section:not(#faq):not(#partners) h2 {
+  color: var(--black);
+  font-size: clamp(var(--font-36), 7vw, var(--font-64));
+
+  & span {
+    color: var(--primary);
+  }
+}
+
+.section__description {
+  padding-block: var(--gap-36) var(--gap-96);
+  font-size: clamp(var(--font-18), 3vw, var(--font-24));
+  color: var(--grey-400);
+  text-wrap: balance;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    --colums: 3;
+    --colums-width: 1fr;
+    column-gap: var(--gap-16);
+  }
+  section#faq h2 span {
+    word-spacing: normal;
+  }
+}

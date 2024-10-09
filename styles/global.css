@@ -1,8 +1,6 @@
 @import url('./components/buttons.css');
 @import url('./components/links.css');
 @import url('./header/header.css');
-@import url('./footer/footer.css');
-@import url('./components/official-partners.css');
 @import url('./components/cookie.css');
 @import url('./components/error-message.css');
 @import url('./glass-effects.css');
@@ -44,21 +42,13 @@ body {
   --min-grid-size: calc(var(--colums) * var(--colums-width) + (var(--colums) - 1) * var(--gap));
 
   min-block-size: 100dvh;
-  color: var(--black);
   position: relative;
+  color: var(--black);
   background-color: var(--grey-50);
   font-family: 'SF Pro Text', sans-serif;
   text-rendering: optimizeSpeed;
   scrollbar-gutter: stable;
 }
-
-/* header,
-footer,
-main,
-section,
-article {
-  container-type: inline-size;
-} */
 
 input,
 textarea,
@@ -128,11 +118,6 @@ time {
   scroll-margin-top: var(--gap-80);
 }
 
-/* input,
-textarea {
-  outline: none;
-} */
-
 input,
 textarea,
 fieldset,
@@ -181,26 +166,11 @@ main {
   }
 }
 
-/* FOOTER GLOBAL */
-
 [class*='icon'] {
-  user-select: none;
   pointer-events: none;
 }
 
-/* Hide navigation from DOM to prevent selection by keyboard after collapsing */
-@keyframes hide-from-DOM {
-  90% {
-    visibility: visible;
-  }
-
-  100% {
-    visibility: hidden;
-  }
-}
-
 /* MEDIA QUERIES */
-
 @media (max-width: 959px) {
   :root {
     --body-padding: 1rem;

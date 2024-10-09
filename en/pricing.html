@@ -24,10 +24,38 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://eiffels.ai/en/pricing" lang="en" />
   <!-- Preload for critical styles and fonts -->
-  <link rel="preload" href="../styles/fonts.css" as="style" onload="this.rel='stylesheet'">
+  <style data-style="fonts">
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: url('../public/fonts/SF-Pro-Text-Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+      size-adjust: none;
+    }
+
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: url('../public/fonts/SF-Pro-Text-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      size-adjust: none;
+    }
+
+    @font-face {
+      font-family: 'Twemoji Country Flags';
+      src: url('../public/fonts/TwemojiCountryFlags.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      size-adjust: none;
+    }
+  </style>
   <link rel="preload" href="../styles/global.css" as="style" onload="this.rel='stylesheet'">
   <!-- Main styles -->
   <link rel="stylesheet" href="../styles/variable.css" />
+  <link rel="stylesheet" href="../styles/site/common.css" />
   <link rel="stylesheet" href="../styles/site/pricing/pricing.css" />
   <!-- Delayed loading of dialogs -->
   <link rel="stylesheet" href="../styles/dialogs/dialogs.css" media="print" onload="this.media='all'">
@@ -79,9 +107,9 @@
       <ul class="nav__links">
         <li><a href="./#overview" class="href href-grey">Overview</a></li>
         <li><a href="./#features" class="href href-grey">Features</a></li>
-        <li><a href="pricing.html" class="href href-grey active">Pricing</a></li>
+        <li><a href="./pricing.html" class="href href-grey active">Pricing</a></li>
         <li><a href="./#faq" class="href href-grey">FAQ</a></li>
-        <li><a href="./#support" class="href href-grey">Support</a></li>
+        <li><a href="./support.html" class="href href-grey">Support</a></li>
       </ul>
     </nav>
     <nav class="header__right-side" aria-label="Marketplace and Settings">
@@ -531,7 +559,7 @@
             <h3 class="footer-top__title">Resources & Help</h3>
           </li>
           <li><a href="#faq" class="href href-black">FAQ</a></li>
-          <li><a href="#support" class="href href-black">Support</a></li>
+          <li><a href="./support.html" class="href href-black">Support</a></li>
         </ul>
       </div>
       <div class="footer__rows">

@@ -15,37 +15,6 @@
 
   --inset-val: -1.5px; /* for glass effect */
 
-  /* --gradient: linear-gradient(
-    to right,
-    hsl(155 54% 47% / 1),
-    hsl(210 100% 45% / 1),
-    hsl(197 87% 30% / 1),
-    hsl(197 87% 30% / 1)
-  );
-  --gradient-10: linear-gradient(
-    to right,
-    hsl(155 54% 47% / 0.1),
-    hsl(210 100% 45% / 0.1),
-    hsl(197 87% 30% / 0.1),
-    hsl(197 87% 30% / 0.1)
-  );
-  --gradient-20: linear-gradient(
-    to right,
-    hsl(155 54% 47% / 0.2),
-    hsl(210 100% 45% / 0.2),
-    hsl(197 87% 30% / 0.2),
-    hsl(197 87% 30% / 0.2)
-  ); */
-  /* --gradient-30: linear-gradient(to right, #37b882, #0071e3, #0a688e, #003d9d); */
-  /* --reflection: linear-gradient(to top, hsl(0 0% 100% / 0), hsl(213 73% 97% / 0.7)); */
-
-  /* --opacity-3: hsl(253 75% 61% / 0.03);
-  --opacity-5: hsl(253 75% 61% / 0.05);
-  --opacity-8: hsl(253 75% 61% / 0.08);
-  --opacity-10: hsl(253 75% 61% / 0.1);
-  --opacity-20: hsl(253 75% 61% / 0.2);
-  --opacity-30: hsl(253 75% 61% / 0.3); */
-
   /* CORNER SIZES */
   --border-corner-4: 0.25rem;
   --border-corner-6: 0.375rem;
