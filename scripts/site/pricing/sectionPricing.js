@@ -1,22 +1,21 @@
 // Default export function for pricing section
 export default function sectionPricing() {
     // Element selectors
-    const yearlyOption = document.getElementById('yearly'); // Yearly option radio button
-    const monthlyOption = document.getElementById('monthly'); // Monthly option radio button
-    const individualPrices = document.querySelectorAll('.plan-individuals .price'); // Price elements for individual plans
-    const individualTimeUnits = document.querySelectorAll('.plan-individuals .time-unit'); // Time unit elements (e.g., per year, per month) for individual plans
-    const companyPrices = document.querySelectorAll('.plan-company .price'); // Price elements for company plans
-    const companyTimeUnits = document.querySelectorAll('.plan-company .time-unit'); // Time unit elements (e.g., per year, per month) for company plans
-    const workersInput = document.getElementById('plan__select-workers'); // Input field to select the number of workers for company plans
-    const whatsappLinkIndividual = document.querySelector('.plan-individuals .plan__button'); // WhatsApp link for individual plans
-    const whatsappLinkCompany = document.querySelector('.plan-company .plan__button'); // WhatsApp link for company plans
-    // Constants
-    const additionalCostPerWorker = 6.9; // Additional cost per worker for company plans
-    let companyYearlyPrice; // Company yearly base price
-    let companyMonthlyPrice; // Company monthly base price
-    let individualSelectedPrice; // The selected price for the individual plan
-    let companySelectedPrice; // The selected price for the company plan
-    let workersInitCount = 0; // Initial number of workers, starts at 0
+    const yearlyOption = document.getElementById('yearly');
+    const monthlyOption = document.getElementById('monthly');
+    const individualPrices = document.querySelectorAll('.plan-individuals .price');
+    const individualTimeUnits = document.querySelectorAll('.plan-individuals .time-unit');
+    const companyPrices = document.querySelectorAll('.plan-company .price');
+    const companyTimeUnits = document.querySelectorAll('.plan-company .time-unit');
+    const workersInput = document.getElementById('plan__select-workers');
+    const whatsappLinkIndividual = document.querySelector('.plan-individuals .plan__button');
+    const whatsappLinkCompany = document.querySelector('.plan-company .plan__button');
+    const additionalCostPerWorker = 6.9;
+    let companyYearlyPrice;
+    let companyMonthlyPrice;
+    let individualSelectedPrice;
+    let companySelectedPrice;
+    let workersInitCount = 0;
     // Function to update prices based on the selected plan (yearly or monthly)
     function updatePrices() {
         // If yearly is selected, set yearly prices
