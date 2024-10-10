@@ -120,6 +120,10 @@
 }
 .plan-custom {
   grid-column: 9 / 4 span;
+
+  & li {
+    max-inline-size: 65ch;
+  }
 }
 .plan-individuals,
 .plan-custom {
@@ -278,5 +282,9 @@
   }
   .plan-custom {
     grid-column: 1 / -1;
+  }
+  .plan-manager {
+    max-inline-size: 100%;
+    justify-self: stretch;
   }
 }

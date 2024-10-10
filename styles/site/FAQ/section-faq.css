@@ -1,4 +1,4 @@
-section#faq h2 {
+#faq h2 {
   color: var(--primary);
   font-size: clamp(var(--font-36), 4.8vw, var(--font-64));
 
@@ -133,13 +133,15 @@ section#faq h2 {
 }
 
 @media screen and (max-width: 1200px) {
-  #faq {
-    & h2 {
-      grid-column: 1 / -1;
-      max-inline-size: 960px;
-      text-align: center;
-      justify-self: center;
-      padding-block-end: var(--gap-96);
+  #faq h2 {
+    grid-column: 1 / -1;
+    max-inline-size: 960px;
+    text-align: center;
+    justify-self: center;
+    padding-block-end: var(--gap-96);
+
+    & span {
+      word-spacing: normal;
     }
   }
   .faq__list {

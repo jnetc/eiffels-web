@@ -5,3 +5,7 @@
 @import url('section-features.css');
 @import url('section-pricing.css');
 @import url('../FAQ/section-faq.css');
+
+.landing__main {
+  column-gap: clamp(var(--gap-20), 8vw, var(--gap-128));
+}
