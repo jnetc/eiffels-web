@@ -138,13 +138,46 @@
   </header>
 
   <main class="landing__main">
-    <section id="support" class="grid">
+    <section id="top" class="grid">
       <h2 class="section__title"><span>Customer</span> Support & Assistance</h2>
       <p class="section__description">
         We're dedicated to helping you resolve any issues or answer any questions you may have. Whether it's
         troubleshooting, account support, or guidance, our team is here for you. You can typically expect a response
         within 24-48 hours, depending on the complexity of your request.
       </p>
+    </section>
+
+    <section id="support-form" class="grid">
+      <img src="../public/image/features/ai_daily_reports.webp" class="support__pic" height="700" width="933"
+        alt="support image">
+      <form method="post" id="support__form" class="support__form">
+        <div class="form__group">
+          <fieldset class="form__fieldset">
+            <legend>First name</legend>
+            <input type="text" name="first-name" id="form__first-name" placeholder="Jussi" />
+          </fieldset>
+          <fieldset class="form__fieldset">
+            <legend>Last name</legend>
+            <input type="text" name="last-name" id="form__last-name" placeholder="Heinola" />
+          </fieldset>
+        </div>
+        <fieldset class="form__fieldset">
+          <legend>Company</legend>
+          <input type="text" name="company" id="form__company" placeholder="Rakennus Oy" />
+        </fieldset>
+        <fieldset class="form__fieldset">
+          <legend>Email</legend>
+          <input type="text" name="email" id="form__email" placeholder="jussi.heinola@rakennus.fi" />
+        </fieldset>
+        <fieldset class="form__fieldset">
+          <legend>Message</legend>
+          <textarea type="text" name="message" id="form__message" rows="5" placeholder="Heinola"></textarea>
+        </fieldset>
+        <div class="form__footer">
+          <!-- ERROR MESSAGE LIVING HERE -->
+          <button type="submit" class="btn-56 btn-black btn-large">Send message</button>
+        </div>
+      </form>
     </section>
   </main>
   <button type="button" id="back-to-top" class="btn-48 btn-blue-border">Back to Top</button>

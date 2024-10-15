@@ -45,6 +45,10 @@ header a {
   &.btn-short {
     column-gap: var(--gap-8);
   }
+  &.btn-large {
+    min-inline-size: 280px;
+    justify-content: center;
+  }
 }
 
 .btn-56 {
