@@ -145,39 +145,45 @@
         troubleshooting, account support, or guidance, our team is here for you. You can typically expect a response
         within 24-48 hours, depending on the complexity of your request.
       </p>
-    </section>
-
-    <section id="support-form" class="grid">
       <img src="../public/image/features/ai_daily_reports.webp" class="support__pic" height="700" width="933"
         alt="support image">
       <form method="post" id="support__form" class="support__form">
         <div class="form__group">
           <fieldset class="form__fieldset">
             <legend>First name</legend>
-            <input type="text" name="first-name" id="form__first-name" placeholder="Jussi" />
+            <input type="text" name="first-name" id="form__first-name" pattern="[\p{L}]{2,}" placeholder="Jussi"
+              required title="First name must only contain letters and be at least 2 characters long." />
           </fieldset>
           <fieldset class="form__fieldset">
             <legend>Last name</legend>
-            <input type="text" name="last-name" id="form__last-name" placeholder="Heinola" />
+            <input type="text" name="last-name" id="form__last-name" pattern="[\p{L}]{2,}" placeholder="Heinola"
+              required title="Last name must only contain letters and be at least 2 characters long." />
+          </fieldset>
+        </div>
+        <div class="form__group">
+          <fieldset class="form__fieldset">
+            <legend>Company</legend>
+            <input type="text" name="company" id="form__company" placeholder="Rakennus Oy" />
+          </fieldset>
+          <fieldset class="form__fieldset">
+            <legend>Email</legend>
+            <input type="email" name="email" id="form__email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              placeholder="jussi.heinola@rakennus.fi" required title="Please enter a valid email address." />
           </fieldset>
         </div>
         <fieldset class="form__fieldset">
-          <legend>Company</legend>
-          <input type="text" name="company" id="form__company" placeholder="Rakennus Oy" />
-        </fieldset>
-        <fieldset class="form__fieldset">
-          <legend>Email</legend>
-          <input type="text" name="email" id="form__email" placeholder="jussi.heinola@rakennus.fi" />
-        </fieldset>
-        <fieldset class="form__fieldset">
           <legend>Message</legend>
-          <textarea type="text" name="message" id="form__message" rows="5" placeholder="Heinola"></textarea>
+          <textarea type="text" name="message" id="form__message" rows="5" maxlength="5000" placeholder="Heinola"
+            required></textarea>
         </fieldset>
         <div class="form__footer">
           <!-- ERROR MESSAGE LIVING HERE -->
           <button type="submit" class="btn-56 btn-black btn-large">Send message</button>
         </div>
       </form>
+    </section>
+
+    <section id="support-contacts" class="grid">
     </section>
   </main>
   <button type="button" id="back-to-top" class="btn-48 btn-blue-border">Back to Top</button>
