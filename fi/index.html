@@ -72,7 +72,8 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 	<title>Eiffelin AI: Rakennushallinnan ja markkinapaikan mullistaminen WhatsAppissa tekoälyn ja
 		lohkoketjuteknologioiden avulla</title>
 	<meta name="description"
-		content="Eiffelin AI muuttaa rakennusalaa integroimalla GenAI WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja data-analyysin. Se sisältää myös alan ensimmäisen tekoälypohjaisen markkinapaikan, joka parantaa B2B-verkostoitumista ja tehtävien tehokkuutta ilman latauksia. Todellisen ajan dataan perustuva ja lohkoketjulla suojattu Eiffelin AI takaa vertaansa vailla olevan tarkkuuden ja kasvun." />
+		content="Eiffelin AI muuttaa rakennusalaa integroimalla GenAI
+WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja data-analyysin. Se sisältää myös alan ensimmäisen tekoälypohjaisen markkinapaikan, joka parantaa B2B-verkostoitumista ja tehtävien tehokkuutta ilman latauksia. Todellisen ajan dataan perustuva ja lohkoketjulla suojattu Eiffelin AI takaa vertaansa vailla olevan tarkkuuden ja kasvun." />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -161,7 +162,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 			<ul class="nav__links">
 				<li><a href="#overview" class="href href-grey">Yleiskatsaus</a></li>
 				<li><a href="#features" class="href href-grey">Ominaisuudet</a></li>
-				<li><a href="pricing.html" class="href href-grey">Hinnoittelu</a></li>
+				<li><a href="./pricing.html" class="href href-grey">Hinnoittelu</a></li>
 				<li><a href="#faq" class="href href-grey">UKK</a></li>
 				<li><a href="./support.html" class="href href-grey">Tuki</a></li>
 			</ul>
@@ -304,6 +305,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 						pattern="^[0-9]{6,}$" title="Ole hyvä ja syötä vain numerot puhelinnumerostasi."
 						aria-describedby="phone-number-description" required />
 				</fieldset>
+				<input type="hidden" id="login__language" value="fi">
 				<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Pääsy">
 					<span>Pääsy</span>
 					<svg class="icon" aria-hidden="true">
@@ -315,7 +317,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 				<span>Startup-kumppani</span>
 				<img src="../public/svg/logos/meta_com.svg" width="92" height="19" alt="Meta Startup-kumppani" />
 				<img src="../public/svg/logos/microsoft_com.svg" width="115" height="19" alt="Microsoft Startup-kumppani" />
-				<span>
+				<span style="display: none;">
 					Sähkösignatuurit, jotka perustuvat
 					<a href="https://letsencrypt.org/" class="href href-blue" target="_blank" rel="noopener noreferrer">
 						Lohkoketjuun
@@ -324,7 +326,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 			</div>
 		</section>
 		<section id="overview">
-			<h2 class="section__title">Onko se totta? <span>Työnkulku</span></h2>
+			<h2 class="section__title">Onko se totta? <span class="blue-color">Työnkulku</span></h2>
 			<p class="section__description">
 				Kuten monet rakennusalalla, käytät luultavasti <b class="green-color">WhatsAppia</b> päivittäin. Se on kätevä,
 				mutta sitä ei ole suunniteltu alan
@@ -390,7 +392,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 			</div>
 		</section>
 		<section id="features">
-			<h2 class="section__title">Työnkulun <span>Parantavat</span> Ominaisuudet</h2>
+			<h2 class="section__title">Työnkulun <span class="blue-color">Parantavat</span> Ominaisuudet</h2>
 			<p class="section__description">
 				Eiffelin AI ylittää perinteiset sovellukset nopealla, asennusta vaatimattomalla integraatiollaan suoraan
 				hatsAppiin, tehostaen rakennusprojektien hallintaa. Tämä mullistava tekoälyratkaisu syventyy alan
@@ -546,7 +548,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 						alt="Älykäs Laskutus kevytyrittäjille" />
 				</picture>
 				<div class="feature__content">
-					<h3 class="feature__title"><span class="blue-color">Älykäs Laskutus</span></h3>
+					<h3 class="feature__title"><span class="blue-color">Älykäs</span> Laskutus</h3>
 					<div class="feature__subtitle">
 						<strong>Kevytyrittäjille</strong>
 						<p>Eiffelin AI on virallinen kumppani
@@ -725,7 +727,6 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 				</div>
 			</article>
 		</section>
-
 		<section id="faq" class="grid">
 			<h2>U<span>sein </span>K<span>ysytyt </span>K<span>ysymykset </span></h2>
 			<ul class="faq__list">
@@ -797,7 +798,7 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 							Yrityspakettiin sisältyy 3 ilmaista tiimin jäsenen paikkaa. Tutustu hinnoitteluvaihtoehtoihimme
 							käyttämällä tätä painiketta
 						</p>
-						<a href="pricing.html" class="btn-48 btn-blue">
+						<a href="./pricing.html" class="btn-48 btn-blue">
 							<span>Hinnoittelu</span>
 							<svg class="icon" aria-hidden="true">
 								<use href="../public/svg/ui_icons.svg#arrow-right"></use>
@@ -977,7 +978,8 @@ WhatsAppiin, automatisoiden työmaahallinnan, päivittäisen raportoinnin ja dat
 	<div class="cookie" role="dialog" aria-labelledby="cookie-description">
 		<img src="../public/svg/cookie.svg" height="48" width="48" alt="cookie icon" aria-hidden="true">
 		<p id="cookie-description">Käytämme evästeitä kerätäksemme tietoja parantaaksemme käyttökokemustasi sivustollamme.
-			Lue <a href="http://#" class="href href-blue">evästekäytäntömme.</a>
+			Lue
+			<a href="http://#" class="href href-blue">evästekäytäntömme.</a>
 		</p>
 		<div class="cookie-btns">
 			<button id="cookie-decline" class="btn-40 btn-blue-border" aria-label="Hylkää evästeitä">Hylkää</button>

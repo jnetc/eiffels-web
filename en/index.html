@@ -23,7 +23,6 @@
 	<meta name="twitter:image" content="" />
 	<!-- Canonical -->
 	<link rel="canonical" href="https://eiffels.ai/en/" lang="en" />
-	<!-- Preload for critical styles and fonts -->
 	<style data-style="fonts">
 		@font-face {
 			font-family: 'SF Pro Text';
@@ -298,8 +297,10 @@
 					</select>
 					<span id="login__country-code" aria-live="polite">+358</span>
 					<input type="tel" name="phone-number" id="login__phone-number" placeholder="" inputmode="tel"
-						pattern="^[0-9]{6,}$" title="Please enter only the digits of your number." required />
+						pattern="^[0-9]{6,}$" title="Please enter only the digits of your number."
+						aria-describedby="phone-number-description" required />
 				</fieldset>
+				<input type="hidden" id="login__language" value="en">
 				<button type="submit" class="btn-56 btn-blue login__btn" aria-label="Access">
 					<span>Access</span>
 					<svg class="icon" aria-hidden="true">
@@ -514,7 +515,7 @@
 				</div>
 			</article>
 
-			<!-- <div class="feature__qoute glass-dialog" style="display: none;">
+			<div class="feature__qoute glass-dialog" style="display: none;">
 				<img src="../public/image/sampo_kurttila.webp" width="274" height="274"
 					alt="Sampo Kurttila Partnership Director">
 				<h3>Sampo Kurttila</h3>
@@ -528,7 +529,7 @@
 					The combination of AI with WhatsApp is an extraordinarily insightful idea that actually works, transforming
 					management and networking like nothing else. It meets our needs for enhanced KPIs, improved production
 					quality, and both speed and efficiency in our operations.</blockquote>
-			</div> -->
+			</div>
 
 			<article id="smart-invoicing" class="feature__item">
 				<picture class="picture-container">
@@ -538,7 +539,7 @@
 						alt="Smart Invoicing for Light Entrepreneurs" />
 				</picture>
 				<div class="feature__content">
-					<h3 class="feature__title blue-color">Smart Invoicing</h3>
+					<h3 class="feature__title blue-color"><span class="blue-color">Smart</span> Invoicing</h3>
 					<div class="feature__subtitle">
 						<strong>For Light Entreprenerus</strong>
 						<p>Eiffels AI is an Offical Patner of
@@ -593,8 +594,8 @@
 						<a class="href href-blue" href="#ai-marketplace">AI Marketplace</a>
 					</h3>
 					<div class="feature__subtitle">
-						<p>Leverage the AI Marketplace to find what you need and offer your services, boosting operations and
-							expanding your reach.</p>
+						<p>Leverage the AI Marketplace to not only find what you need but also to provide your services to others,
+							enhancing your business operations and expanding your market reach.</p>
 					</div>
 					<ul class="feature__description">
 						<li>
@@ -604,7 +605,8 @@
 								</svg>
 								Precise Matching
 							</strong>
-							Use AI-driven prompts to accurately find services tailored to your specific needs.
+							Use AI-driven prompts to accurately find services tailored to your specific needs. Our AI algorithms
+							ensure you connect with the right suppliers.
 						</li>
 						<li>
 							<strong>
@@ -624,6 +626,8 @@
 								Expand Your Offerings
 							</strong>
 							List your services in the AI Marketplace to reach more potential customers and avoid workforce layoffs.
+							Increase your business turnover and grow your customer base by showcasing your services to a targeted
+							audience.
 						</li>
 					</ul>
 				</div>
@@ -880,7 +884,7 @@
 					<svg class="icon" aria-hidden="true">
 						<use href="../public/svg/footer_icons.svg#id"></use>
 					</svg>
-					VAT: FI31411419
+					ID: FI31411419
 				</p>
 			</address>
 			<ul class="footer__rows">
@@ -900,7 +904,7 @@
 					<li>
 						<h3 class="footer-top__title">Services & Plans</h3>
 					</li>
-					<li><a href="././pricing.html" class="href href-black">Pricing</a></li>
+					<li><a href="./pricing.html" class="href href-black">Pricing</a></li>
 					<li><a href="./marketplace/" class="href href-black">AI Marketplace</a></li>
 				</ul>
 				<ul class="footer__rows">
@@ -969,8 +973,8 @@
 	</div>
 	<!-- Emulate User Access  -->
 	<div class="user-access">
-		<button id="user-enable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">on</button>
-		<button id="user-disable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">off</button>
+		<button id="user-enable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">+ User</button>
+		<button id="user-disable" class="btn-40 btn-blue-border" aria-label="Open User Access Modal">- User</button>
 	</div>
 	<!-- Modal windows for HeroSection Auth (hs-auth)  -->
 	<dialog id="hs-auth-dialog" class="dialog glass-dialog">
