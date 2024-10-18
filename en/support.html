@@ -139,51 +139,111 @@
 
   <main class="landing__main">
     <section id="top" class="grid">
-      <h2 class="section__title"><span>Customer</span> Support & Assistance</h2>
+      <h1 class="section__title"><span class="blue-color">Customer</span> Support & Assistance</h1>
       <p class="section__description">
         We're dedicated to helping you resolve any issues or answer any questions you may have. Whether it's
         troubleshooting, account support, or guidance, our team is here for you. You can typically expect a response
         within 24-48 hours, depending on the complexity of your request.
       </p>
-      <img src="../public/image/features/ai_daily_reports.webp" class="support__pic" height="700" width="933"
+      <!-- <img src="../public/image/features/ai_daily_reports.webp" class="support__pic" height="700" width="933"
         alt="support image">
       <form method="post" id="support__form" class="support__form">
-        <div class="form__group">
-          <fieldset class="form__fieldset">
-            <legend>First name</legend>
+        <fieldset class="form__fieldset">
+          <div class="form__group">
+            <label for="form__first-name">First name</label>
             <input type="text" name="first-name" id="form__first-name" pattern="[\p{L}]{2,}" placeholder="Jussi"
               required title="First name must only contain letters and be at least 2 characters long." />
-          </fieldset>
-          <fieldset class="form__fieldset">
-            <legend>Last name</legend>
+          </div>
+          <div class="form__group">
+            <label for="form__last-name">Last name</label>
             <input type="text" name="last-name" id="form__last-name" pattern="[\p{L}]{2,}" placeholder="Heinola"
               required title="Last name must only contain letters and be at least 2 characters long." />
-          </fieldset>
-        </div>
-        <div class="form__group">
-          <fieldset class="form__fieldset">
-            <legend>Company</legend>
+          </div>
+        </fieldset>
+        <fieldset class="form__fieldset">
+          <div class="form__group">
+            <label for="form__company">Company</label>
             <input type="text" name="company" id="form__company" placeholder="Rakennus Oy" />
-          </fieldset>
-          <fieldset class="form__fieldset">
-            <legend>Email</legend>
+          </div>
+          <div class="form__group">
+            <label for="form__email">Email</label>
             <input type="email" name="email" id="form__email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               placeholder="jussi.heinola@rakennus.fi" required title="Please enter a valid email address." />
-          </fieldset>
-        </div>
-        <fieldset class="form__fieldset">
-          <legend>Message</legend>
-          <textarea type="text" name="message" id="form__message" rows="5" maxlength="5000" placeholder="Heinola"
-            required></textarea>
+          </div>
         </fieldset>
+        <div class="form__group">
+          <label for="form__message">Message</label>
+          <textarea type="text" name="message" id="form__message" rows="8" maxlength="5000" placeholder="Heinola"
+            required></textarea>
+        </div>
         <div class="form__footer">
-          <!-- ERROR MESSAGE LIVING HERE -->
           <button type="submit" class="btn-56 btn-black btn-large">Send message</button>
         </div>
-      </form>
-    </section>
+      </form> -->
+      <div class="contact-cards">
+        <article class="contact-card glass-dialog">
+          <figure class="card__qr-code">
+            <img src="../public/qr-code/support_phone.svg" width="196" height="196" alt="QR-code for phone">
+            <figcaption>scan me</figcaption>
+          </figure>
+          <h3 class="card__title">Reach out by phone</h3>
+          <p class="card__desc">Need help? Our friendly team is ready to assist you, just call us!</p>
+          <p class="card__info">
+            <svg class="icon" aria-hidden="true">
+              <use href="../public/svg/footer_icons.svg#phone"></use>
+            </svg>
+            +358 45 78396777
+          </p>
+          <a href="https://tel:+3584578396777" class="btn-48 btn-blue-border" target="_blank"
+            rel="noopener noreferrer">Call us</a>
+        </article>
+        <article class="contact-card glass-dialog">
+          <figure class="card__qr-code">
+            <img src="../public/qr-code/support_whatsapp.svg" width="196" height="196" alt="QR-code for phone">
+            <figcaption>scan me</figcaption>
+          </figure>
+          <h2 class="card__title">Use WhatsApp</h2>
+          <p class="card__desc">Have a question? Reach us on WhatsApp for fast, easy support—it's our primary way to
+            assist you quickly and efficiently!
+          </p>
+          <a href="https://wa.me/3584578396777" class="btn-48 btn-blue-border" target="_blank"
+            rel="noopener noreferrer">Get in touch</a>
+        </article>
+        <article class="contact-card glass-dialog">
+          <figure class="card__qr-code">
+            <img src="../public/qr-code/support_email.svg" width="196" height="196" alt="QR-code for phone">
+            <figcaption>scan me</figcaption>
+          </figure>
+          <h2 class="card__title">Contact us by Email</h2>
+          <p class="card__desc">Have a question? Contact us on WhatsApp for quick and easy support, our team is here to
+            help!</p>
+          <p class="card__info">
+            <svg class="icon" aria-hidden="true">
+              <use href="../public/svg/footer_icons.svg#email"></use>
+            </svg>
+            support@insynergy.com
+          </p>
+          <a href="https://mailto:support@insynergy.com" class="btn-48 btn-blue-border" target="_blank"
+            rel="noopener noreferrer">Send Email</a>
+        </article>
+        <article class="contact-card glass-dialog">
+          <figure class="card__qr-code">
+            <img src="../public/qr-code/support_location.svg" width="196" height="196" alt="QR-code for phone">
+            <figcaption>scan me</figcaption>
+          </figure>
+          <h2 class="card__title">Talk to us directly</h2>
+          <p class="card__desc">Prefer a face-to-face conversation? Come by and talk to us directly!</p>
+          <p class="card__info">
+            <svg class="icon" aria-hidden="true">
+              <use href="../public/svg/footer_icons.svg#post"></use>
+            </svg>
+            00180 Helsinki, Maria 01
+          </p>
+          <a href="https://maps.app.goo.gl/cUzrY6AVa6Rm5nte8" class="btn-48 btn-blue-border" target="_blank"
+            rel="noopener noreferrer">We are Here</a>
+        </article>
+      </div>
 
-    <section id="support-contacts" class="grid">
     </section>
   </main>
   <button type="button" id="back-to-top" class="btn-48 btn-blue-border">Back to Top</button>

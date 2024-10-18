@@ -1,15 +1,8 @@
 @import url('../footer/footer.css');
 
 .landing {
-  min-block-size: 100dvh;
   display: grid;
-  position: relative;
   grid-template-columns: var(--outside) minmax(0, var(--min-grid-size)) var(--outside);
-  color: var(--black);
-  background-color: var(--grey-50);
-  font-family: 'SF Pro Text', sans-serif;
-  text-rendering: optimizeSpeed;
-  scrollbar-gutter: stable;
 
   & > :where(header, main, footer, button) {
     grid-column: 2;
@@ -47,13 +40,18 @@ section > :where(.section__title, .section__description) {
   justify-self: center;
 }
 
-section:not(#faq):not(#partners) h2 {
+/* section:not(#faq):not(#partners) h2 {
   color: var(--black);
   font-size: clamp(var(--font-36), 7vw, var(--font-64));
 
   & span {
     color: var(--primary);
   }
+} */
+
+section:where(#overview, #features) h2,
+section > h1 {
+  font-size: clamp(var(--font-36), 7vw, var(--font-64));
 }
 
 .section__description {

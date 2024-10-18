@@ -54,8 +54,11 @@
 }
 
 .feature__title {
-  color: var(--black);
   font-size: clamp(var(--font-24), 6vw, var(--font-48));
+
+  &:has(span, a) {
+    color: var(--black);
+  }
 }
 
 .feature__subtitle {
