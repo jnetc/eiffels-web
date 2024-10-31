@@ -13,5 +13,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     // BACK TO TOP BUTTON
     const { default: backToTop } = await import('../../components/backToTop.js');
     backToTop(); // Call the function to set up the back-to-top button
+    const form = document.getElementById('support__form');
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        // const button = (event.target as HTMLFormElement).querySelector('[type="submit"]') as HTMLButtonElement;
+        // const buttonName = button.firstElementChild as HTMLSpanElement;
+        // buttonName.textContent = 'Sending...';
+        // button.disabled = true;
+    });
 });
 //# sourceMappingURL=support.js.map

@@ -4,10 +4,17 @@ export default async function handlePhoneNumber(pathname) {
     // Find the phone number input field
     const phoneNumberCode = document.getElementById('login__country-code');
     const phoneNumberInput = document.getElementById('login__phone-number');
-    // Error message
-    const { default: errorMessage } = await import('../components/errorMessage.js');
-    // Variable to store the entered phone number
-    let phoneNumber = '';
+    phoneNumberInput.addEventListener('input', event => {
+        var _a;
+        // Get the current input value
+        const input = event.target.value;
+        // Remove any non-numeric characters from the input
+        const value = input.replace(/\D/g, '');
+        // Get the numeric country code from the country code element, defaulting to '358' if unavailable
+        const code = ((_a = phoneNumberCode.textContent) === null || _a === void 0 ? void 0 : _a.slice(1)) || '358';
+        // If the input starts with the country code, remove the code from the beginning of the input value
+        phoneNumberInput.value = value.startsWith(code) ? value.slice(code.length) : value;
+    });
     // Check if the login form exists
     if (loginForm) {
         // Add an event listener for form submission
@@ -19,7 +26,7 @@ export default async function handlePhoneNumber(pathname) {
             const { default: authentication } = await import('./authentication.js');
             const { openDialog } = await import('../dialogs/dialogUtils.js');
             // Collect the phone number by concatenating the country code and the number from the input field
-            const fullPhoneNumber = `${phoneNumberCode.innerText}${phoneNumber}`;
+            const fullPhoneNumber = `${phoneNumberCode.textContent}${phoneNumberInput.value}`;
             // Check if pathname contains MARKETPLACE
             if (pathname.includes(MARKETPLACE)) {
                 // Open the authentication dialog for the marketplace
@@ -39,32 +46,6 @@ export default async function handlePhoneNumber(pathname) {
                 // authentication(LOGGED);
                 return;
             }
-        });
-    }
-    // Check if the phone number input field exists
-    if (phoneNumberInput) {
-        // Immediately set focus on the phone number input field
-        // phoneNumberInput.focus();
-        // Add an event listener for input text
-        phoneNumberInput.addEventListener('input', event => {
-            const input = event.target.value;
-            // If the input field is empty
-            if (input === '') {
-                // Remove the error message
-                errorMessage(null);
-                return;
-            }
-            // If the entered value is not a number
-            if (!/^[0-9]{0,}$/.test(input)) {
-                console.log('input_error', input);
-                // Show the error message
-                errorMessage(loginForm, 'Invalid input. The phone number must start with a plus sign (+) and contain only numerical values. Please correct your entry.');
-                return;
-            }
-            // Remove the error message if the entered value is valid
-            errorMessage(null);
-            // Update the phone number variable
-            phoneNumber = input;
         });
     }
 }
